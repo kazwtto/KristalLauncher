@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Required by the LÖVE runtime: false enables launcher mode and accepts games by intent. -->
+    <bool name="embed">false</bool>
+    <bool name="is_light_theme">true</bool>
+</resources>

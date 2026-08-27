@@ -1,0 +1,126 @@
+# Android, Kotlin, and Gradle outputs
+.gradle/
+.gradle-user-home/
+**/build/
+.kotlin/
+.cxx/
+.externalNativeBuild/
+captures/
+out/
+*.class
+*.apk
+*.aab
+*.aar
+*.ap_
+*.idsig
+*.hprof
+hs_err_pid*
+
+# Final local build artifacts
+artifacts/
+dist/
+
+# Keep the Gradle Wrapper executable in version control
+!gradle/wrapper/gradle-wrapper.jar
+
+# Machine-specific Android and Java setup
+local.properties
+.android-sdk/
+.jdk*/
+cmdline-tools/
+.env
+.env.*
+!.env.example
+
+# Signing keys and credentials
+.signing/
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+*.cer
+*.crt
+keystore.properties
+*.keystore.properties
+secrets.properties
+apk-signer.jar
+
+# Launcher build-pipeline intermediates
+.merged_dex_tmp/
+merged_classes.zip
+combined_dex.zip
+merged_app.zip
+love_built.apk
+love_only.apk
+love-android.apk
+
+# Games, extracted packages, and downloaded archives
+*.love
+/*.zip
+/*.7z
+/*.rar
+/*.tar
+/*.tar.gz
+/*.tgz
+/*.exe
+.love_dex/
+.love_only/
+.love_only_extracted/
+love_decoded/
+frost_test/
+godhome_test/
+test_patch/
+gamepad_dev/
+app/src/main/assets/gamepad_patch/
+patches/packages/kristal-ptbr-2.3.1.klpatch
+tools/
+scripts patches/
+icon/
+
+# Local experiments and old generated reports
+/test.lua
+/test_ast.lua
+/syntax_check.lua
+/change_version.bat
+/Sprite-*.ase
+/notesmd.md
+/PORT_ANDROID_GUIA.md
+/RELATORIO_*.md
+/Relatorio_*.md
+/relatorio_*.md
+*.tmp
+*.bak
+*.orig
+*.log
+*.swp
+*~
+
+# Local assistant and editor-agent configuration
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+.agents/
+.agent/
+.codex/
+.claude/
+.cursor/
+.cursorrules
+.continue/
+.openai/
+.windsurf/
+.aider*
+.github/copilot-instructions.md
+copilot-instructions.md
+skills/
+
+# IDE settings
+.idea/
+.vscode/
+*.iml
+
+# Operating-system metadata
+.DS_Store
+Desktop.ini
+Thumbs.db

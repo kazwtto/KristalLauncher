@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "community.example.runtime-fix",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "Exemplo de correção de runtime",
+    "en": "Runtime fix example",
+    "es": "Ejemplo de corrección de runtime"
+  },
+  "description": {
+    "pt-BR": "Modelo para novos patches externos.",
+    "en": "Template for new external patches.",
+    "es": "Plantilla para nuevos parches externos."
+  },
+  "useCases": [
+    {
+      "pt-BR": "Use quando o jogo apresentar o problema específico descrito pelo pacote.",
+      "en": "Use when the game shows the specific issue described by the package.",
+      "es": "Úsalo cuando el juego presente el problema específico descrito por el paquete."
+    }
+  ],
+  "author": "Example Author",
+  "category": "compatibility",
+  "minimumLauncherVersion": "0.1.0",
+  "priority": 100,
+  "capabilities": ["staged_package", "inject_files", "edit_lua", "runtime_hook"],
+  "dependencies": [],
+  "conflicts": [],
+  "operations": [
+    {
+      "type": "inject",
+      "source": "payload/runtime_fix.lua",
+      "target": "kristal_launcher_patches/runtime_fix.lua"
+    },
+    {
+      "type": "append_text",
+      "source": "payload/bootstrap.lua",
+      "target": "main.lua"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "[noskip][speed:0.5][spacing:8][voice:none] THEN THE WORLD[wait:30] \n WAS COVERED[wait:30] \n IN DARKNESS.": "[noskip][speed:0.5][spacing:8][voice:none] ENTÃO O MUNDO[wait:30] \n FOI COBERTO[wait:30] \n EM ESCURIDÃO.",
+  "[noskip][speed:0.5][spacing:8][voice:none] THEN, THE FUTURE\n IS IN YOUR HANDS.": "[noskip][speed:0.5][spacing:8][voice:none] ENTÃO, O FUTURO\n ESTÁ EM SUAS MÃOS.",
+  "[speed:0.5][spacing:8][voice:none]IT APPEARS YOU\nHAVE REACHED[wait:30]\n\n   AN END.": "[speed:0.5][spacing:8][voice:none]PARECE QUE VOCÊ\nCHEGOU[wait:30]\n\n   A UM FIM.",
+  "[speed:0.5][spacing:8][voice:none]WILL YOU PERSIST?": "[speed:0.5][spacing:8][voice:none]VOCÊ VAI PERSISTIR?",
+  "[speed:0.5][spacing:8][voice:none]WILL YOU TRY AGAIN?": "[speed:0.5][spacing:8][voice:none]VOCÊ VAI TENTAR NOVAMENTE?",
+  "Come on,[wait:5]\nthat all you got!?": "Vamos,[wait:5]\nera só isso que você tinha!?",
+  "Please,[wait:5]\ndon't give up!": "Por favor,[wait:5]\nnão desista!",
+  "This is not\nyour fate...!": "Este não é\nseu destino...!",
+  "{lua1},[wait:5]\nget up...!": "{lua1},[wait:5]\nlevante-se...!",
+  "CONTINUE": "CONTINUAR",
+  "GIVE UP": "DESISTIR",
+  "NO": "NÃO",
+  "YES": "SIM"
+}

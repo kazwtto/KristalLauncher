@@ -1,0 +1,639 @@
+package kwz.love2d.launcher.util
+
+import android.content.Context
+import android.graphics.Color
+import androidx.core.content.ContextCompat
+import kwz.love2d.launcher.BuildConfig
+import kwz.love2d.launcher.R
+import kwz.love2d.launcher.model.InstalledPatch
+import kwz.love2d.launcher.model.PatchApplicationResult
+import kwz.love2d.launcher.model.PatchOperation
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileOutputStream
+import java.io.InputStream
+import java.io.OutputStream
+import java.security.MessageDigest
+import java.util.Locale
+import java.util.zip.ZipEntry
+import java.util.zip.ZipFile
+import java.util.zip.ZipInputStream
+import java.util.zip.ZipOutputStream
+
+object PatchManager {
+
+    const val PATCH_FULLSCREEN = "patch_fullscreen"
+    const val PATCH_SHADERS = "patch_shaders"
+    const val PATCH_GAMEPAD = "patch_gamepad"
+    const val PATCH_RGBA16 = "patch_rgba16"
+    const val PATCH_PHYSFS = "patch_physfs"
+    const val PATCH_NIL_ARITHMETIC = "patch_nil_arithmetic"
+    const val PATCH_BORDERS = "patch_borders"
+    const val PATCH_TEXT = "patch_text"
+
+    const val MODE_GLOBAL = 0
+    const val MODE_FORCE_ENABLED = 1
+    const val MODE_FORCE_DISABLED = 2
+
+    private const val GAMEPAD_ASSET_ROOT = "gamepad"
+    private const val GAMEPAD_ARCHIVE_ROOT = "kristal_launcher/gamepad"
+    private const val PATCH_SCRIPT_ARCHIVE_PATH = "kristal_launcher/android_patches.lua"
+    private const val MAX_ARCHIVE_ENTRIES = 20_000
+    private const val MAX_TRANSFORMED_ENTRY_BYTES = 16 * 1024 * 1024
+    private const val MAX_TOTAL_UNCOMPRESSED_BYTES = 1024L * 1024 * 1024
+
+    val ALL_PATCH_KEYS = listOf(
+        PATCH_TEXT,
+        PATCH_FULLSCREEN,
+        PATCH_SHADERS,
+        PATCH_GAMEPAD,
+        PATCH_BORDERS,
+        PATCH_RGBA16,
+        PATCH_PHYSFS,
+        PATCH_NIL_ARITHMETIC
+    )
+
+    fun isGlobalPatchEnabled(context: Context, patchKey: String): Boolean {
+        val defaultEnabled = PatchRegistry.findBuiltIn(patchKey)?.defaultEnabled ?: false
+        val preferences = context.getSharedPreferences("launcher_prefs", Context.MODE_PRIVATE)
+        return preferences.getBoolean("global_$patchKey", defaultEnabled)
+    }
+
+    fun setGlobalPatchEnabled(context: Context, patchKey: String, enabled: Boolean) {
+        context.getSharedPreferences("launcher_prefs", Context.MODE_PRIVATE)
+            .edit()
+            .putBoolean("global_$patchKey", enabled)
+            .apply()
+    }
+
+    fun getGamePatchMode(context: Context, gameFileName: String, patchKey: String): Int {
+        val preferences = context.getSharedPreferences("launcher_prefs", Context.MODE_PRIVATE)
+        return preferences.getInt(gamePreferenceKey(gameFileName, patchKey), MODE_GLOBAL)
+    }
+
+    fun setGamePatchMode(context: Context, gameFileName: String, patchKey: String, mode: Int) {
+        require(mode in MODE_GLOBAL..MODE_FORCE_DISABLED) { "Invalid patch mode: $mode" }
+        context.getSharedPreferences("launcher_prefs", Context.MODE_PRIVATE)
+            .edit()
+            .putInt(gamePreferenceKey(gameFileName, patchKey), mode)
+            .apply()
+    }
+
+    fun isPatchEnabledForGame(context: Context, gameFileName: String, patchKey: String): Boolean {
+        return when (getGamePatchMode(context, gameFileName, patchKey)) {
+            MODE_FORCE_ENABLED -> true
+            MODE_FORCE_DISABLED -> false
+            else -> isGlobalPatchEnabled(context, patchKey)
+        }
+    }
+
+    fun hasAnyPatchEnabled(context: Context, gameFileName: String): Boolean {
+        val externalIds = PatchStorage.getInstalledPatches(context).map { it.manifest.id }
+        return (ALL_PATCH_KEYS + externalIds).any { isPatchEnabledForGame(context, gameFileName, it) }
+    }
+
+    fun getPatchStateFingerprint(context: Context, gameFileName: String): String {
+        val builtInState = ALL_PATCH_KEYS.map { id ->
+            "$id:${isPatchEnabledForGame(context, gameFileName, id)}"
+        }
+        val externalState = PatchStorage.getInstalledPatches(context).map { patch ->
+            "${patch.manifest.id}:${patch.manifest.version}:${isPatchEnabledForGame(context, gameFileName, patch.manifest.id)}"
+        }
+        val gamepadRuntimeState = if (isPatchEnabledForGame(context, gameFileName, PATCH_GAMEPAD)) {
+            val runtimeConfig = getGamepadRuntimeConfig(context)
+            listOf(
+                "gamepadLanguage:${runtimeConfig.language}",
+                "gamepadAccent:${Integer.toHexString(runtimeConfig.accentColor)}"
+            )
+        } else {
+            emptyList()
+        }
+        return (builtInState + externalState + gamepadRuntimeState).sorted().joinToString("|")
+    }
+
+    fun applyPatchesToStagedGame(
+        context: Context,
+        stagedFile: File,
+        gameFileName: String
+    ): PatchApplicationResult {
+        val builtInFlags = BuiltInFlags(
+            fullscreen = isPatchEnabledForGame(context, gameFileName, PATCH_FULLSCREEN),
+            shaders = isPatchEnabledForGame(context, gameFileName, PATCH_SHADERS),
+            gamepad = isPatchEnabledForGame(context, gameFileName, PATCH_GAMEPAD),
+            rgba16 = isPatchEnabledForGame(context, gameFileName, PATCH_RGBA16),
+            physFs = isPatchEnabledForGame(context, gameFileName, PATCH_PHYSFS),
+            nilArithmetic = isPatchEnabledForGame(context, gameFileName, PATCH_NIL_ARITHMETIC),
+            borders = isPatchEnabledForGame(context, gameFileName, PATCH_BORDERS),
+            text = isPatchEnabledForGame(context, gameFileName, PATCH_TEXT)
+        )
+
+        val temporaryFile = File(stagedFile.parentFile, "${stagedFile.name}.patching")
+        val backupFile = File(stagedFile.parentFile, "${stagedFile.name}.before-patches")
+
+        return try {
+            val externalPatches = resolveEnabledExternalPatches(context, gameFileName)
+            if (!builtInFlags.anyEnabled && externalPatches.isEmpty()) {
+                return PatchApplicationResult.Success(emptyList())
+            }
+
+            temporaryFile.delete()
+            backupFile.delete()
+            val textPatchChanged = rewriteStagedPackage(
+                context,
+                stagedFile,
+                temporaryFile,
+                builtInFlags,
+                externalPatches
+            )
+            validateStagedPackage(temporaryFile)
+            replaceWithRollback(stagedFile, temporaryFile, backupFile)
+
+            val applied = buildList {
+                if (builtInFlags.text && textPatchChanged) add(PATCH_TEXT)
+                if (builtInFlags.fullscreen) add(PATCH_FULLSCREEN)
+                if (builtInFlags.shaders) add(PATCH_SHADERS)
+                if (builtInFlags.gamepad) add(PATCH_GAMEPAD)
+                if (builtInFlags.borders) add(PATCH_BORDERS)
+                if (builtInFlags.rgba16) add(PATCH_RGBA16)
+                if (builtInFlags.physFs) add(PATCH_PHYSFS)
+                if (builtInFlags.nilArithmetic) add(PATCH_NIL_ARITHMETIC)
+                addAll(externalPatches.map { it.manifest.id })
+            }
+            PatchApplicationResult.Success(applied)
+        } catch (error: Exception) {
+            if (!stagedFile.exists() && backupFile.exists()) {
+                backupFile.renameTo(stagedFile)
+            }
+            PatchApplicationResult.Failure(
+                reason = error.message ?: "Patch pipeline failed",
+                cause = error
+            )
+        } finally {
+            if (temporaryFile.exists()) temporaryFile.delete()
+            if (backupFile.exists() && stagedFile.exists()) backupFile.delete()
+        }
+    }
+
+    private fun rewriteStagedPackage(
+        context: Context,
+        sourceFile: File,
+        outputFile: File,
+        builtInFlags: BuiltInFlags,
+        externalPatches: List<InstalledPatch>
+    ): Boolean {
+        val resolvedOperations = externalPatches.flatMap { patch ->
+            patch.manifest.operations.map { operation -> ResolvedOperation(patch, operation) }
+        }
+        validateOperationCollisions(resolvedOperations)
+        val operationsByTarget = resolvedOperations.groupBy { it.operation.target.lowercase(Locale.ROOT) }
+        val processedOperations = mutableSetOf<ResolvedOperation>()
+        val existingEntries = mutableSetOf<String>()
+        var hasMainLua = false
+        var textPatchChanged = false
+        var entryCount = 0
+        var totalUncompressed = 0L
+
+        ZipInputStream(FileInputStream(sourceFile).buffered(DEFAULT_BUFFER_SIZE)).use { zipInput ->
+            ZipOutputStream(FileOutputStream(outputFile).buffered(DEFAULT_BUFFER_SIZE)).use { zipOutput ->
+                var entry = zipInput.nextEntry
+                while (entry != null) {
+                    entryCount++
+                    require(entryCount <= MAX_ARCHIVE_ENTRIES) { "Staged game contains too many entries" }
+                    val entryName = entry.name
+                    val normalizedName = entryName.lowercase(Locale.ROOT)
+                    require(PatchManifestParser.isSafeArchivePath(entryName)) {
+                        "Unsafe path in staged game: $entryName"
+                    }
+                    require(existingEntries.add(normalizedName)) { "Duplicate entry in staged game: $entryName" }
+                    if (normalizedName == "main.lua") hasMainLua = true
+
+                    val targetOperations = operationsByTarget[normalizedName].orEmpty()
+                    val needsTransformation = normalizedName == "main.lua" ||
+                        (builtInFlags.text && normalizedName in textPatchTargets) ||
+                        targetOperations.isNotEmpty()
+
+                    zipOutput.putNextEntry(ZipEntry(entryName))
+                    if (needsTransformation) {
+                        var bytes = readEntryBytesLimited(zipInput, MAX_TRANSFORMED_ENTRY_BYTES)
+                        totalUncompressed += bytes.size
+                        if (normalizedName == "main.lua" && builtInFlags.anyEnabled) {
+                            bytes = appendLuaFooter(bytes, buildBuiltInBootstrap(context, builtInFlags))
+                        }
+                        if (builtInFlags.text && normalizedName in textPatchTargets) {
+                            val patched = applyBuiltInTextPatch(bytes)
+                            bytes = patched.bytes
+                            textPatchChanged = textPatchChanged || patched.changed
+                        }
+                        targetOperations.forEach { resolved ->
+                            bytes = applyExternalOperation(bytes, resolved, targetExists = true)
+                            processedOperations.add(resolved)
+                        }
+                        require(bytes.size <= MAX_TRANSFORMED_ENTRY_BYTES) {
+                            "Patched file is too large: $entryName"
+                        }
+                        zipOutput.write(bytes)
+                    } else {
+                        totalUncompressed += copyWithLimit(
+                            zipInput,
+                            zipOutput,
+                            MAX_TOTAL_UNCOMPRESSED_BYTES - totalUncompressed
+                        )
+                    }
+                    require(totalUncompressed <= MAX_TOTAL_UNCOMPRESSED_BYTES) {
+                        "Staged game expands beyond the supported size"
+                    }
+                    zipOutput.closeEntry()
+                    zipInput.closeEntry()
+                    entry = zipInput.nextEntry
+                }
+
+                require(hasMainLua) { "The staged package does not contain main.lua" }
+
+                if (builtInFlags.anyEnabled) {
+                    injectAndroidPatchesScript(context, zipOutput, existingEntries)
+                }
+                if (builtInFlags.gamepad) {
+                    injectGamepadAssets(context, zipOutput, existingEntries)
+                }
+
+                writeMissingOperationTargets(
+                    resolvedOperations.filterNot { it in processedOperations },
+                    zipOutput,
+                    existingEntries
+                )
+            }
+        }
+        return textPatchChanged
+    }
+
+    private fun writeMissingOperationTargets(
+        operations: List<ResolvedOperation>,
+        zipOutput: ZipOutputStream,
+        existingEntries: MutableSet<String>
+    ) {
+        operations.groupBy { it.operation.target.lowercase(Locale.ROOT) }
+            .forEach { (normalizedTarget, targetOperations) ->
+                var bytes: ByteArray? = null
+                targetOperations.forEach { resolved ->
+                    val operation = resolved.operation
+                    when {
+                        operation.type == "inject" -> {
+                            require(bytes == null) { "Multiple patches create ${operation.target}" }
+                            bytes = readOperationSource(resolved)
+                        }
+                        bytes != null -> {
+                            bytes = applyExternalOperation(bytes!!, resolved, targetExists = true)
+                        }
+                        operation.required -> {
+                            throw IllegalArgumentException(
+                                "Patch ${resolved.patch.manifest.id} requires missing file ${operation.target}"
+                            )
+                        }
+                    }
+                }
+
+                bytes?.let { outputBytes ->
+                    require(outputBytes.size <= MAX_TRANSFORMED_ENTRY_BYTES) {
+                        "Patched file is too large: ${targetOperations.first().operation.target}"
+                    }
+                    require(existingEntries.add(normalizedTarget)) {
+                        "Patch target already exists: ${targetOperations.first().operation.target}"
+                    }
+                    zipOutput.putNextEntry(ZipEntry(targetOperations.first().operation.target))
+                    zipOutput.write(outputBytes)
+                    zipOutput.closeEntry()
+                }
+            }
+    }
+
+    private fun readEntryBytesLimited(input: InputStream, maximumBytes: Int): ByteArray {
+        val output = java.io.ByteArrayOutputStream(minOf(maximumBytes, 64 * 1024))
+        val buffer = ByteArray(DEFAULT_BUFFER_SIZE)
+        var total = 0
+        while (true) {
+            val read = input.read(buffer)
+            if (read < 0) break
+            total += read
+            require(total <= maximumBytes) { "Patch target expands beyond the supported size" }
+            output.write(buffer, 0, read)
+        }
+        return output.toByteArray()
+    }
+
+    private fun copyWithLimit(input: InputStream, output: OutputStream, maximumBytes: Long): Long {
+        require(maximumBytes >= 0L) { "Staged game expands beyond the supported size" }
+        val buffer = ByteArray(DEFAULT_BUFFER_SIZE)
+        var total = 0L
+        while (true) {
+            val read = input.read(buffer)
+            if (read < 0) break
+            total += read
+            require(total <= maximumBytes) { "Staged game expands beyond the supported size" }
+            output.write(buffer, 0, read)
+        }
+        return total
+    }
+
+    private fun applyExternalOperation(
+        original: ByteArray,
+        resolved: ResolvedOperation,
+        targetExists: Boolean
+    ): ByteArray {
+        val operation = resolved.operation
+        return when (operation.type) {
+            "inject" -> {
+                require(operation.replaceExisting || !targetExists) {
+                    "Patch ${resolved.patch.manifest.id} attempted to overwrite ${operation.target}"
+                }
+                readOperationSource(resolved)
+            }
+            "append_text" -> {
+                val addition = readOperationSource(resolved).toString(Charsets.UTF_8)
+                if (operation.target.equals("main.lua", ignoreCase = true)) {
+                    appendLuaFooter(original, addition)
+                } else {
+                    appendUtf8(original, addition)
+                }
+            }
+            "replace_text" -> {
+                val text = original.toString(Charsets.UTF_8)
+                val find = operation.find.orEmpty()
+                if (operation.required) {
+                    require(text.contains(find)) {
+                        "Patch ${resolved.patch.manifest.id} could not find its target text in ${operation.target}"
+                    }
+                }
+                text.replace(find, operation.replace.orEmpty()).toByteArray(Charsets.UTF_8)
+            }
+            else -> throw IllegalArgumentException("Unsupported patch operation: ${operation.type}")
+        }
+    }
+
+    private fun readOperationSource(resolved: ResolvedOperation): ByteArray {
+        val sourcePath = resolved.operation.source
+            ?: throw IllegalArgumentException("Patch operation is missing a source file")
+        val root = resolved.patch.directory.canonicalFile
+        val sourceFile = File(root, sourcePath).canonicalFile
+        require(sourceFile.path.startsWith(root.path + File.separator) && sourceFile.isFile) {
+            "Patch source file is unavailable: $sourcePath"
+        }
+        require(sourceFile.length() <= 10L * 1024 * 1024) { "Patch source file is too large: $sourcePath" }
+        return sourceFile.readBytes()
+    }
+
+    private fun validateOperationCollisions(operations: List<ResolvedOperation>) {
+        operations.groupBy { it.operation.target.lowercase(Locale.ROOT) }.forEach { (target, targetOperations) ->
+            val injectOperations = targetOperations.filter { it.operation.type == "inject" }
+            require(injectOperations.size <= 1) { "Multiple patches inject the same file: $target" }
+        }
+    }
+
+    private fun resolveEnabledExternalPatches(context: Context, gameFileName: String): List<InstalledPatch> {
+        val installed = PatchStorage.getInstalledPatches(context).associateBy { it.manifest.id }
+        val enabled = installed.values.filter {
+            isPatchEnabledForGame(context, gameFileName, it.manifest.id)
+        }.associateBy { it.manifest.id }
+
+        enabled.values.forEach { patch ->
+            patch.manifest.minimumLauncherVersion?.let { minimumVersion ->
+                require(!VersionUtils.isNewer(minimumVersion, BuildConfig.VERSION_NAME)) {
+                    "Patch ${patch.manifest.id} requires launcher $minimumVersion or newer"
+                }
+            }
+            patch.manifest.dependencies.forEach { dependency ->
+                val dependencyEnabled = if (dependency in ALL_PATCH_KEYS) {
+                    isPatchEnabledForGame(context, gameFileName, dependency)
+                } else {
+                    dependency in enabled
+                }
+                require(dependencyEnabled) {
+                    "Patch ${patch.manifest.id} requires enabled patch $dependency"
+                }
+            }
+            patch.manifest.conflicts.forEach { conflict ->
+                val conflictEnabled = if (conflict in ALL_PATCH_KEYS) {
+                    isPatchEnabledForGame(context, gameFileName, conflict)
+                } else {
+                    conflict in enabled
+                }
+                require(!conflictEnabled) { "Patch ${patch.manifest.id} conflicts with $conflict" }
+            }
+        }
+
+        val ordered = mutableListOf<InstalledPatch>()
+        val visiting = mutableSetOf<String>()
+        val visited = mutableSetOf<String>()
+
+        fun visit(id: String) {
+            if (id in visited) return
+            require(visiting.add(id)) { "Circular patch dependency involving $id" }
+            val patch = enabled[id] ?: return
+            patch.manifest.dependencies.filter { it in enabled }.sorted().forEach(::visit)
+            visiting.remove(id)
+            visited.add(id)
+            ordered.add(patch)
+        }
+
+        enabled.values.sortedWith(compareBy({ it.manifest.priority }, { it.manifest.id }))
+            .forEach { visit(it.manifest.id) }
+        return ordered
+    }
+
+    private fun buildBuiltInBootstrap(context: Context, flags: BuiltInFlags): String {
+        val gamepadRuntimeConfig = getGamepadRuntimeConfig(context)
+        val accent = gamepadRuntimeConfig.accentColor
+        return """
+
+        -- [[ START: KRISTAL LAUNCHER COMPATIBILITY PATCHES ]] --
+        _G.PATCH_FULLSCREEN = ${flags.fullscreen}
+        _G.PATCH_SHADERS = ${flags.shaders}
+        _G.PATCH_GAMEPAD = ${flags.gamepad}
+        _G.PATCH_RGBA16 = ${flags.rgba16}
+        _G.PATCH_PHYSFS = ${flags.physFs}
+        _G.PATCH_NIL_ARITHMETIC = ${flags.nilArithmetic}
+        _G.PATCH_BORDERS = ${flags.borders}
+        _G.PATCH_TEXT = ${flags.text}
+        _G.KRISTAL_LAUNCHER_LANGUAGE = "${gamepadRuntimeConfig.language}"
+        _G.KRISTAL_LAUNCHER_ACCENT = {
+            ${Color.red(accent)} / 255,
+            ${Color.green(accent)} / 255,
+            ${Color.blue(accent)} / 255
+        }
+        require("kristal_launcher.android_patches")
+        -- [[ END: KRISTAL LAUNCHER COMPATIBILITY PATCHES ]] --
+        """.trimIndent()
+    }
+
+    private fun applyBuiltInTextPatch(original: ByteArray): TextPatchResult {
+        var luaCode = original.toString(Charsets.UTF_8)
+        val originalCode = luaCode
+        luaCode = luaCode.replace(
+            Regex("if\\s+self\\.width\\s*~=\\s*self\\.canvas:getWidth\\(\\)\\s+or\\s+self\\.height\\s*~=\\s*self\\.canvas:getHeight\\(\\)\\s*then\\s*(self\\.canvas\\s*=\\s*love\\.graphics\\.newCanvas\\(self\\.width,\\s*self\\.height\\))\\s*end"),
+            "$1"
+        )
+
+        // Clear the canvas outside the active scissor and then restore the previous state.
+        val safeClear = """
+            local sx, sy, sw, sh = love.graphics.getScissor()
+            love.graphics.setScissor()
+            love.graphics.clear(0, 0, 0, 0)
+            if sx then love.graphics.setScissor(sx, sy, sw, sh) end
+        """.trimIndent()
+        luaCode = luaCode.replace(
+            Regex("if\\s+clear\\s*then\\s*love\\.graphics\\.clear\\(\\)\\s*end"),
+            "if clear then\n$safeClear\nend"
+        )
+        return TextPatchResult(
+            bytes = luaCode.toByteArray(Charsets.UTF_8),
+            changed = luaCode != originalCode
+        )
+    }
+
+    private fun appendUtf8(original: ByteArray, addition: String): ByteArray {
+        return (original.toString(Charsets.UTF_8) + "\n" + addition).toByteArray(Charsets.UTF_8)
+    }
+
+    internal fun appendLuaFooter(original: ByteArray, addition: String): ByteArray {
+        val source = original.toString(Charsets.UTF_8)
+        val returnStatement = Regex("(?m)^[\\t ]*return(?:[\\t ]|$)")
+            .findAll(source)
+            .lastOrNull { match ->
+                source.substring(match.range.first)
+                    .lineSequence()
+                    .drop(1)
+                    .all { line -> line.isBlank() || line.trimStart().startsWith("--") }
+            }
+        val footer = "\n$addition\n"
+        return if (returnStatement == null) {
+            (source + footer).toByteArray(Charsets.UTF_8)
+        } else {
+            source.substring(0, returnStatement.range.first).toByteArray(Charsets.UTF_8) +
+                footer.toByteArray(Charsets.UTF_8) +
+                source.substring(returnStatement.range.first).toByteArray(Charsets.UTF_8)
+        }
+    }
+
+    private fun injectAndroidPatchesScript(
+        context: Context,
+        zipOutput: ZipOutputStream,
+        existingEntries: MutableSet<String>
+    ) {
+        val assetName = "android_patches.lua"
+        val normalizedTarget = PATCH_SCRIPT_ARCHIVE_PATH.lowercase(Locale.ROOT)
+        require(existingEntries.add(normalizedTarget)) {
+            "The game already contains the reserved launcher patch namespace"
+        }
+        context.assets.open(assetName).use { input ->
+            zipOutput.putNextEntry(ZipEntry(PATCH_SCRIPT_ARCHIVE_PATH))
+            input.copyTo(zipOutput, DEFAULT_BUFFER_SIZE)
+            zipOutput.closeEntry()
+        }
+    }
+
+    private fun injectGamepadAssets(
+        context: Context,
+        zipOutput: ZipOutputStream,
+        existingEntries: MutableSet<String>
+    ) {
+        val rootFiles = context.assets.list(GAMEPAD_ASSET_ROOT).orEmpty()
+        require("main.lua" in rootFiles) { "Gamepad assets are missing main.lua" }
+        copyAssetFolderToZip(context, GAMEPAD_ASSET_ROOT, "", zipOutput, existingEntries)
+    }
+
+    private fun copyAssetFolderToZip(
+        context: Context,
+        assetPath: String,
+        targetPrefix: String,
+        zipOutput: ZipOutputStream,
+        existingEntries: MutableSet<String>
+    ) {
+        val files = context.assets.list(assetPath).orEmpty()
+        for (file in files) {
+            val childAssetPath = if (assetPath.isEmpty()) file else "$assetPath/$file"
+            val childTargetName = if (targetPrefix.isEmpty()) file else "$targetPrefix/$file"
+            val childFiles = context.assets.list(childAssetPath)
+            if (!childFiles.isNullOrEmpty()) {
+                copyAssetFolderToZip(context, childAssetPath, childTargetName, zipOutput, existingEntries)
+            } else {
+                val zipPath = "$GAMEPAD_ARCHIVE_ROOT/$childTargetName"
+                val normalizedTarget = zipPath.lowercase(Locale.ROOT)
+                require(existingEntries.add(normalizedTarget)) {
+                    "The game already contains reserved launcher gamepad file $zipPath"
+                }
+                context.assets.open(childAssetPath).use { input ->
+                    zipOutput.putNextEntry(ZipEntry(zipPath))
+                    input.copyTo(zipOutput, DEFAULT_BUFFER_SIZE)
+                    zipOutput.closeEntry()
+                }
+            }
+        }
+    }
+
+    private fun validateStagedPackage(file: File) {
+        require(file.isFile && file.length() > 0L) { "Patched package is empty" }
+        ZipFile(file).use { zip ->
+            require(zip.getEntry("main.lua") != null) { "Patched package is missing main.lua" }
+        }
+    }
+
+    private fun replaceWithRollback(stagedFile: File, patchedFile: File, backupFile: File) {
+        require(stagedFile.renameTo(backupFile)) { "Could not create a staged-package rollback point" }
+        if (!patchedFile.renameTo(stagedFile)) {
+            backupFile.renameTo(stagedFile)
+            throw IllegalStateException("Could not publish the patched staged package")
+        }
+        backupFile.delete()
+    }
+
+    private fun gamePreferenceKey(gameId: String, patchKey: String): String {
+        val digest = MessageDigest.getInstance("SHA-256")
+            .digest(gameId.toByteArray(Charsets.UTF_8))
+            .joinToString("") { "%02x".format(it) }
+        return "game_${digest.take(32)}_$patchKey"
+    }
+
+    private fun getGamepadRuntimeConfig(context: Context): GamepadRuntimeConfig {
+        val language = context.resources.configuration.locales[0]?.language
+            ?.lowercase(Locale.ROOT)
+            ?.takeIf { it in setOf("pt", "en", "es") }
+            ?: "en"
+        return GamepadRuntimeConfig(
+            language = language,
+            accentColor = ContextCompat.getColor(context, R.color.m3_primary)
+        )
+    }
+
+    private data class GamepadRuntimeConfig(
+        val language: String,
+        val accentColor: Int
+    )
+
+    private data class BuiltInFlags(
+        val fullscreen: Boolean,
+        val shaders: Boolean,
+        val gamepad: Boolean,
+        val rgba16: Boolean,
+        val physFs: Boolean,
+        val nilArithmetic: Boolean,
+        val borders: Boolean,
+        val text: Boolean
+    ) {
+        val anyEnabled: Boolean
+            get() = fullscreen || shaders || gamepad || rgba16 || physFs || nilArithmetic || borders || text
+    }
+
+    private data class ResolvedOperation(
+        val patch: InstalledPatch,
+        val operation: PatchOperation
+    )
+
+    private data class TextPatchResult(
+        val bytes: ByteArray,
+        val changed: Boolean
+    )
+
+    private val textPatchTargets = setOf(
+        "src/engine/objects/text.lua",
+        "src/engine/objects/dialoguetext.lua"
+    )
+}

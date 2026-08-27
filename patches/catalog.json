@@ -1,0 +1,52 @@
+{
+  "$schema": "./schema/catalog.schema.json",
+  "schemaVersion": 1,
+  "patches": [
+    {
+      "schemaVersion": 1,
+      "id": "kristal.ptbr",
+      "version": "2.3.2",
+      "name": {
+        "pt-BR": "Kristal Engine em Português (Brasil)",
+        "en": "Kristal Engine in Brazilian Portuguese",
+        "es": "Kristal Engine en portugués de Brasil"
+      },
+      "description": {
+        "pt-BR": "Traduz menus, textos integrados e elementos gráficos da Kristal Engine para português do Brasil.",
+        "en": "Translates built-in Kristal Engine menus, text, and interface graphics into Brazilian Portuguese.",
+        "es": "Traduce los menús, textos integrados y gráficos de interfaz de Kristal Engine al portugués de Brasil."
+      },
+      "useCases": [
+        {
+          "pt-BR": "Você quer jogar mods da Kristal com menus e mensagens da engine em português.",
+          "en": "You want Kristal mods to show engine menus and messages in Brazilian Portuguese.",
+          "es": "Quieres que los mods de Kristal muestren menús y mensajes del motor en portugués de Brasil."
+        },
+        {
+          "pt-BR": "Botões, telas de batalha ou imagens da interface ainda aparecem em inglês.",
+          "en": "Buttons, battle screens, or interface graphics still appear in English.",
+          "es": "Los botones, pantallas de batalla o gráficos de interfaz todavía aparecen en inglés."
+        }
+      ],
+      "releaseNotes": {
+        "pt-BR": "Melhora a instalação dos hooks, adiciona cache de traduções e mantém os erros de runtime visíveis.",
+        "en": "Improves hook installation, adds a translation cache, and keeps runtime errors visible.",
+        "es": "Mejora la instalación de hooks, añade caché de traducciones y mantiene visibles los errores de ejecución."
+      },
+      "author": "kazwtto",
+      "category": "localization",
+      "minimumLauncherVersion": "0.1.0",
+      "priority": 200,
+      "capabilities": [
+        "staged_package",
+        "inject_files",
+        "edit_lua",
+        "runtime_hook"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "package": "packages/kristal-ptbr-2.3.2.klpatch",
+      "sha256": "c078d1b3a34b362ffd285582c4d6a77f87563738867266b91ad1024943669bf4"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{ "frames": {
+   "spr_vgamepad_dp_CONCEPT_@ 0.ase": {
+    "frame": { "x": 0, "y": 0, "w": 61, "h": 61 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 59, "h": 59 },
+    "sourceSize": { "w": 59, "h": 59 },
+    "duration": 100
+   },
+   "spr_vgamepad_dp_CONCEPT_@ 1.ase": {
+    "frame": { "x": 61, "y": 0, "w": 61, "h": 61 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 59, "h": 59 },
+    "sourceSize": { "w": 59, "h": 59 },
+    "duration": 100
+   },
+   "spr_vgamepad_dp_CONCEPT_@ 2.ase": {
+    "frame": { "x": 122, "y": 0, "w": 61, "h": 61 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 59, "h": 59 },
+    "sourceSize": { "w": 59, "h": 59 },
+    "duration": 100
+   },
+   "spr_vgamepad_dp_CONCEPT_@ 3.ase": {
+    "frame": { "x": 183, "y": 0, "w": 61, "h": 61 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 59, "h": 59 },
+    "sourceSize": { "w": 59, "h": 59 },
+    "duration": 100
+   },
+   "spr_vgamepad_dp_CONCEPT_@ 4.ase": {
+    "frame": { "x": 244, "y": 0, "w": 61, "h": 61 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 59, "h": 59 },
+    "sourceSize": { "w": 59, "h": 59 },
+    "duration": 100
+   },
+   "spr_vgamepad_dp_CONCEPT_@ 5.ase": {
+    "frame": { "x": 305, "y": 0, "w": 61, "h": 61 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 59, "h": 59 },
+    "sourceSize": { "w": 59, "h": 59 },
+    "duration": 100
+   },
+   "spr_vgamepad_dp_CONCEPT_@ 6.ase": {
+    "frame": { "x": 366, "y": 0, "w": 61, "h": 61 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 59, "h": 59 },
+    "sourceSize": { "w": 59, "h": 59 },
+    "duration": 100
+   },
+   "spr_vgamepad_dp_CONCEPT_@ 7.ase": {
+    "frame": { "x": 427, "y": 0, "w": 61, "h": 61 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 59, "h": 59 },
+    "sourceSize": { "w": 59, "h": 59 },
+    "duration": 100
+   },
+   "spr_vgamepad_dp_CONCEPT_@ 8.ase": {
+    "frame": { "x": 488, "y": 0, "w": 61, "h": 61 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 59, "h": 59 },
+    "sourceSize": { "w": 59, "h": 59 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://github.com/LibreSprite/LibreSprite/",
+  "version": "1.1-dev",
+  "image": "C:\\Users\\kazwtto\\Desktop\\gamepad_patch\\gamepad\\sprites\\spr_vgamepad_dp_CONCEPT_@.png",
+  "format": "RGBA8888",
+  "size": { "w": 549, "h": 61 },
+  "scale": "1"
+ }
+}

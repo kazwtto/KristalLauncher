@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material Design 3 light palette. Dark values live in values-night. -->
+    <color name="m3_bg_dark">#F7F8FC</color>
+    <color name="m3_surface">#FFFFFF</color>
+    <color name="m3_surface_variant">#ECEFF6</color>
+    <color name="m3_surface_card">#FFFFFF</color>
+    <color name="m3_primary">#2D63D6</color>
+    <color name="m3_primary_container">#D8E2FF</color>
+    <color name="m3_on_primary">#FFFFFF</color>
+    <color name="m3_on_primary_container">#0A2E68</color>
+    <color name="m3_on_surface">#171A24</color>
+    <color name="m3_on_surface_variant">#5F6372</color>
+    <color name="m3_outline">#D7DAE3</color>
+    <color name="m3_error">#BA1A1A</color>
+    <color name="badge_demo_bg">#D8F3E3</color>
+    <color name="badge_demo_text">#146C43</color>
+    <color name="patch_unverified_container">#FFE6BD</color>
+    <color name="patch_unverified_text">#764B00</color>
+    
+    <!-- Legacy compatibility aliases -->
+    <color name="bg_dark">#F7F8FC</color>
+    <color name="bg_card">#FFFFFF</color>
+    <color name="bg_card_stroke">#D7DAE3</color>
+    <color name="pink_love">#2D63D6</color>
+    <color name="text_primary">#171A24</color>
+    <color name="text_secondary">#5F6372</color>
+</resources>
