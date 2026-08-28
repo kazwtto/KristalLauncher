@@ -1,11 +1,10 @@
 package kwz.love2d.launcher
 
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageView
-import android.widget.RadioGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.button.MaterialButtonToggleGroup
 import kwz.love2d.launcher.util.LanguageManager
 import kwz.love2d.launcher.util.NavigationAnimations
 
@@ -20,7 +19,7 @@ class LanguageSettingsActivity : AppCompatActivity() {
             override fun handleOnBackPressed() = finishWithAnimation()
         })
 
-        val languageOptions = findViewById<RadioGroup>(R.id.languageOptions)
+        val languageOptions = findViewById<MaterialButtonToggleGroup>(R.id.languageOptions)
         val checkedId = when (LanguageManager.getCurrentLanguage(this)) {
             "pt" -> R.id.languagePortuguese
             "en" -> R.id.languageEnglish
@@ -28,7 +27,8 @@ class LanguageSettingsActivity : AppCompatActivity() {
             else -> R.id.languageDevice
         }
         languageOptions.check(checkedId)
-        languageOptions.setOnCheckedChangeListener { _, id ->
+        languageOptions.addOnButtonCheckedListener { _, id, isChecked ->
+            if (!isChecked) return@addOnButtonCheckedListener
             val language = when (id) {
                 R.id.languagePortuguese -> "pt"
                 R.id.languageEnglish -> "en"
@@ -40,11 +40,6 @@ class LanguageSettingsActivity : AppCompatActivity() {
             }
         }
 
-        NavigationAnimations.revealSequentially(
-            this,
-            findViewById<View>(R.id.languageIntroCard),
-            languageOptions
-        )
     }
 
     private fun finishWithAnimation() {

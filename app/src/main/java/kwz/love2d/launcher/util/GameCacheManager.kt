@@ -19,7 +19,7 @@ object GameCacheManager {
     private const val PREF_NAME = "game_cache_settings"
     private const val KEY_FOLDER_URI = "cached_folder_uri"
     private const val KEY_CACHE_SCHEMA = "cache_schema"
-    private const val CACHE_SCHEMA_VERSION = 3
+    private const val CACHE_SCHEMA_VERSION = 4
 
     fun hasCache(context: Context): Boolean {
         val cacheFile = File(context.filesDir, CACHE_FILE_NAME)
@@ -39,6 +39,7 @@ object GameCacheManager {
                     .put("uri", game.uri.toString())
                     .put("sizeBytes", game.sizeBytes)
                     .put("lastModified", game.lastModified)
+                game.archiveEntryPath?.let { jsonObject.put("archiveEntryPath", it) }
                 game.subtitle?.let { jsonObject.put("subtitle", it) }
                 game.version?.let { jsonObject.put("version", it) }
                 game.engineVer?.let { jsonObject.put("engineVer", it) }
@@ -95,6 +96,8 @@ object GameCacheManager {
                             title = item.optString("title").ifBlank { fileName },
                             fileName = fileName,
                             uri = Uri.parse(uriValue),
+                            archiveEntryPath = item.optString("archiveEntryPath")
+                                .takeIf(String::isNotBlank),
                             icon = icon,
                             sizeBytes = item.optLong("sizeBytes", 0L),
                             lastModified = item.optLong("lastModified", 0L),
@@ -118,12 +121,19 @@ object GameCacheManager {
                 .remove(KEY_FOLDER_URI)
                 .remove(KEY_CACHE_SCHEMA)
                 .apply()
+            clearStagedGameCopies(context)
         }.onFailure(::reportRecoverableFailure)
     }
 
     fun clearRuntimeGameCopies(context: Context) {
         context.cacheDir.listFiles().orEmpty()
             .filter { it.isFile && it.name.startsWith("game_") && it.extension.equals("love", true) }
+            .forEach(File::delete)
+    }
+
+    fun clearStagedGameCopies(context: Context) {
+        File(context.filesDir, "staged").listFiles().orEmpty()
+            .filter { it.isFile }
             .forEach(File::delete)
     }
 

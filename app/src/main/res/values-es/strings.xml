@@ -53,20 +53,20 @@
     <string name="language_title">Idioma</string>
     <string name="language_summary">Elige el idioma de la interfaz. La opción del dispositivo sigue automáticamente el idioma actual de Android.</string>
     <string name="language_options_title">IDIOMA DEL LAUNCHER</string>
-    <string name="lang_device_option"><b>Idioma del dispositivo</b>\nSigue el idioma actual de Android.</string>
-    <string name="lang_pt_option"><b>Português</b>\nMuestra toda la interfaz en portugués.</string>
-    <string name="lang_en_option"><b>English</b>\nMuestra toda la interfaz en inglés.</string>
-    <string name="lang_es_option"><b>Español</b>\nMuestra toda la interfaz en español.</string>
+    <string name="lang_device_option">Idioma del dispositivo</string>
+    <string name="lang_pt_option">Português</string>
+    <string name="lang_en_option">English</string>
+    <string name="lang_es_option">Español</string>
     <string name="theme_title">TEMA</string>
     <string name="theme_device">Seguir el dispositivo</string>
     <string name="theme_light">Claro</string>
     <string name="theme_dark">Oscuro</string>
     <string name="appearance_summary">Personaliza la apariencia del launcher y elige cuánto movimiento deseas en la interfaz.</string>
-    <string name="theme_device_option"><b>Seguir el dispositivo</b>\nAlterna automáticamente entre claro y oscuro con Android.</string>
-    <string name="theme_light_option"><b>Claro</b>\nSuperficies luminosas para entornos bien iluminados.</string>
-    <string name="theme_dark_option"><b>Oscuro</b>\nReduce el brillo de la interfaz en entornos oscuros.</string>
+    <string name="theme_device_option">Dispositivo</string>
+    <string name="theme_light_option">Claro</string>
+    <string name="theme_dark_option">Oscuro</string>
     <string name="motion_title">MOVIMIENTO</string>
-    <string name="animations_enabled">Animaciones y transiciones</string>
+    <string name="animations_enabled">Animaciones de la lista</string>
     <string name="animations_summary">Suaviza los cambios de página y refuerza la jerarquía de navegación. Desactívala para eliminar todo movimiento adicional.</string>
     <!-- Compatibility patches -->
     <string name="action_patches">Correcciones</string>
@@ -75,7 +75,7 @@
     
     <string name="patch_text_title">Corrección de Texto Acumulado</string>
     <string name="patch_text_desc">Resuelve el problema de Kristal Engine donde los textos de batalla (como \'The tutorial begins…?\') no desaparecen al abrir el menú, apilándose unos sobre otros.\n\n⚠️ Ocasionalmente, puede causar recargas visuales menores del texto en pantalla.</string>
-    <string name="patch_text_warning">Este parche modifica el renderizado del texto y puede causar parpadeos o recargas visuales menores durante los diálogos en algunos juegos.\n\n¿Aún deseas activarlo?</string>
+    <string name="patch_text_warning">Desactivar esta corrección puede dejar textos antiguos en pantalla y hacer que se acumulen durante batallas o diálogos.\n\n¿Estás seguro de que quieres desactivarla?</string>
     <string name="patch_fullscreen_title">Pantalla Completa Inmersiva</string>
     <string name="patch_fullscreen_desc">Fuerza la ocultación de las barras de navegación y estado de Android (modo inmersivo), permitiendo que el juego utilice toda la pantalla de tu dispositivo.</string>
     <string name="patch_shaders_title">Corrección de Shaders (GLSL ES)</string>
@@ -148,6 +148,8 @@
     <string name="error_invalid_love_executable">Error: el archivo .exe no contiene un juego LÖVE2D válido.</string>
     <string name="error_executable_stream">Error al abrir el flujo de datos del ejecutable.</string>
     <string name="error_empty_or_corrupt_game">Error: el archivo del juego está vacío o dañado.</string>
+    <string name="error_nested_game_unavailable">Error: el juego almacenado dentro del ZIP ya no está disponible.</string>
+    <string name="error_game_runtime_unavailable">Error: el runtime LÖVE2D no fue incluido correctamente en este APK.</string>
     <string name="error_loading_game">Error al cargar el juego: %1$s</string>
     <string name="navigate_back">Volver</string>
     <string name="filter_games">Filtrar juegos</string>

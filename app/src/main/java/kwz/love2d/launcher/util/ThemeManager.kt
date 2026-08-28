@@ -16,7 +16,6 @@ object ThemeManager {
 
     private const val PREF_NAME = "appearance_settings"
     private const val KEY_THEME = "app_theme"
-    private const val KEY_ANIMATIONS = "animations_enabled"
 
     fun applySavedTheme(context: Context) {
         val mode = when (getCurrentTheme(context)) {
@@ -62,16 +61,4 @@ object ThemeManager {
             else -> R.string.theme_device
         }
     )
-
-    fun areAnimationsEnabled(context: Context): Boolean {
-        return context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
-            .getBoolean(KEY_ANIMATIONS, true)
-    }
-
-    fun setAnimationsEnabled(context: Context, enabled: Boolean) {
-        context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
-            .edit()
-            .putBoolean(KEY_ANIMATIONS, enabled)
-            .apply()
-    }
 }

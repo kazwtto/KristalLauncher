@@ -39,7 +39,7 @@ The maintained product is much smaller: Android source/resources, Lua compatibil
 
 ## Remaining risks
 
-- Unit tests now cover semantic version ordering, safe archive paths, and Lua footer placement. Fused executable parsing, full ZIP rewrites, shader behavior, and launch flows still need broader automated and device coverage.
+- Unit tests now cover semantic version ordering, safe archive paths, template-title handling, fused-executable payload detection, and Lua footer placement. Full ZIP rewrites, shader behavior, and native launch flows still need broader automated and device coverage.
 - The checked-in DEX and native libraries have no repository-level provenance/version manifest. Add their upstream version, source URL, license, and checksum before distributing releases.
 - Debug and release artifacts are signed with the project's ignored local keystore through the Android SDK's official `apksigner`; the keystore and credentials still require an external secure backup.
 - Runtime validation still requires manual tests on Android hardware with representative `.love`, `.zip`, and fused `.exe` packages.

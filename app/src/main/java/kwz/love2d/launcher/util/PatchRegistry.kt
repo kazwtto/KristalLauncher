@@ -16,7 +16,7 @@ object PatchRegistry {
             descriptionRes = R.string.patch_text_desc,
             useCasesRes = R.array.patch_text_use_cases,
             defaultEnabled = true,
-            warningOnEnableRes = R.string.patch_text_warning
+            warningOnDisableRes = R.string.patch_text_warning
         ),
         BuiltInPatchDefinition(
             id = PatchManager.PATCH_FULLSCREEN,

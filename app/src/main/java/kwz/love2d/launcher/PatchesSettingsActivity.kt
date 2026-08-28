@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.DefaultItemAnimator
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.button.MaterialButtonToggleGroup
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -30,7 +29,6 @@ import kwz.love2d.launcher.util.PatchPackageInstaller
 import kwz.love2d.launcher.util.PatchRegistry
 import kwz.love2d.launcher.util.PatchRepository
 import kwz.love2d.launcher.util.PatchStorage
-import kwz.love2d.launcher.util.ThemeManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -76,7 +74,7 @@ class PatchesSettingsActivity : AppCompatActivity() {
         )
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
-        recyclerView.itemAnimator = if (ThemeManager.areAnimationsEnabled(this)) DefaultItemAnimator() else null
+        recyclerView.itemAnimator = null
 
         findViewById<ImageView>(R.id.btnBack).setOnClickListener { finishWithAnimation() }
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {

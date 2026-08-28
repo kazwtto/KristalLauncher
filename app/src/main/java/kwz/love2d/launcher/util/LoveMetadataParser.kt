@@ -21,7 +21,27 @@ object LoveMetadataParser {
     private const val MAX_MOD_ICON_CANDIDATES = 16
     private const val MAX_TOTAL_UNCOMPRESSED_BYTES = 2L * 1024 * 1024 * 1024
     private const val MAX_SOURCE_ICON_DIMENSION = 16_384
-    private val PLACEHOLDER_MOD_TITLES = setOf("example mod", "exemple mod")
+    private val PLACEHOLDER_MOD_TITLES = setOf(
+        "example mod",
+        "exemple mod",
+        "example project",
+        "exemple project"
+    )
+
+    fun parseLoveFiles(
+        context: Context,
+        document: DocumentFile,
+        sizeBytes: Long = document.length(),
+        lastModified: Long = document.lastModified()
+    ): List<LoveGame> {
+        parseLoveFile(context, document, sizeBytes, lastModified)?.let { return listOf(it) }
+        return NestedGamePackageParser.parsePackages(
+            context = context,
+            document = document,
+            sourceSizeBytes = sizeBytes,
+            sourceLastModified = lastModified
+        )
+    }
 
     fun parseLoveFile(
         context: Context,
@@ -134,7 +154,7 @@ object LoveMetadataParser {
         }
 
         val selectedMod = modCandidates
-            .filterNot { isPlaceholderModTitle(it.name) }
+            .filterNot { isPlaceholderTitle(it.name) }
             .minByOrNull { it.folder.lowercase(Locale.ROOT) }
         val selectedIcon = selectedMod?.folder?.let(modIcons::get) ?: rootIcon
         modIcons.values.filter { it !== selectedIcon }.forEach(Bitmap::recycle)
@@ -143,7 +163,7 @@ object LoveMetadataParser {
         val cleanName = fileName.replace(Regex("(?i)\\.(love|zip|exe)$"), "")
         val title = selectedMod?.name
             ?: confTitle?.takeIf {
-                it.trim().lowercase(Locale.ROOT) != "kristal" && !isPlaceholderModTitle(it)
+                it.trim().lowercase(Locale.ROOT) != "kristal" && !isPlaceholderTitle(it)
             }
             ?: cleanName
 
@@ -276,7 +296,7 @@ object LoveMetadataParser {
                 ?.get(1)
     }
 
-    private fun isPlaceholderModTitle(title: String): Boolean {
+    internal fun isPlaceholderTitle(title: String): Boolean {
         return title.trim()
             .lowercase(Locale.ROOT)
             .replace(Regex("\\s+"), " ") in PLACEHOLDER_MOD_TITLES

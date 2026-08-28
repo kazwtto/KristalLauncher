@@ -41,13 +41,13 @@ The launcher never rewrites the package selected by the user. Every compatibilit
 
 - Scan a folder selected through Android's system document picker
 - Read game titles, subtitles, versions, authors, and icons from Kristal packages
-- Browse games in list or grid layouts, with search, favorites, and recent games
+- Browse games in a consistent list layout, with search, favorites, and recent games
 - Launch `.love`, `.zip`, and compatible fused Windows executables
 - Enable Android compatibility fixes globally or override them for one game
 - Use a configurable virtual gamepad with localized settings
 - Download verified extra patches or import a local `.klpatch` package
 - Follow the device language and theme, or choose Portuguese, English, Spanish, light, or dark manually
-- Reduce interface motion from the appearance settings
+- Follow the device theme or select the light or dark appearance explicitly
 - Check GitHub Releases automatically or on demand
 
 ## Installation

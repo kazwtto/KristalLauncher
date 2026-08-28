@@ -1,6 +1,5 @@
 package kwz.love2d.launcher
 
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -18,10 +17,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -36,7 +33,6 @@ import kwz.love2d.launcher.util.GameCacheManager
 import kwz.love2d.launcher.util.GameLauncher
 import kwz.love2d.launcher.util.GameScanner
 import kwz.love2d.launcher.util.NavigationAnimations
-import kwz.love2d.launcher.util.ThemeManager
 import kwz.love2d.launcher.util.UpdateChecker
 import kwz.love2d.launcher.util.UpdateCheckResult
 import kwz.love2d.launcher.ui.UpdatePrompter
@@ -66,7 +62,6 @@ class MainActivity : AppCompatActivity() {
     private var allGamesList: List<LoveGame> = emptyList()
     private var displayedGamesList: List<LoveGame> = emptyList()
     private var selectedFolderUri: Uri? = null
-    private var isGridView = false
     private var currentTabId = R.id.navigation_library
     private var scanJob: Job? = null
 
@@ -111,16 +106,13 @@ class MainActivity : AppCompatActivity() {
         fabAddGames = findViewById(R.id.fabAddGames)
         bottomNavigation = findViewById(R.id.bottomNavigation)
 
-        val prefs = getSharedPreferences("launcher_prefs", Context.MODE_PRIVATE)
-        isGridView = prefs.getBoolean("is_grid_view", false)
-
         setupRecyclerView()
         setupBottomNavigation()
 
         swipeRefresh.setOnRefreshListener {
             val uri = selectedFolderUri
             if (uri != null) {
-                scanFolder(uri)
+                scanFolder(uri, forceRefresh = true)
             } else {
                 swipeRefresh.isRefreshing = false
                 folderPickerLauncher.launch(null)
@@ -179,11 +171,7 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch(Dispatchers.IO) {
             GameCacheManager.clearRuntimeGameCopies(this@MainActivity)
         }
-        rvGames.itemAnimator = if (ThemeManager.areAnimationsEnabled(this)) {
-            DefaultItemAnimator().apply { supportsChangeAnimations = false }
-        } else {
-            null
-        }
+        rvGames.itemAnimator = null
         val newUri = FolderPermissionManager.getSavedFolderUri(this)
         if (newUri?.toString() != selectedFolderUri?.toString()) {
             selectedFolderUri = newUri
@@ -269,23 +257,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        // Dynamic span count based on screen width to avoid huge cards on tablets
-        val displayMetrics = resources.displayMetrics
-        val screenWidthDp = displayMetrics.widthPixels / displayMetrics.density
-        // Ideal card width is ~160dp. Max 8 columns to prevent tiny cards
-        val spanCount = (screenWidthDp / 160f).toInt().coerceIn(2, 8)
-
-        if (isGridView) {
-            rvGames.layoutManager = GridLayoutManager(this, spanCount)
-        } else {
-            rvGames.layoutManager = LinearLayoutManager(this)
-        }
+        rvGames.layoutManager = LinearLayoutManager(this)
 
         if (gameAdapter == null) {
             gameAdapter = GameAdapter(
                 context = this,
                 games = displayedGamesList,
-                isGridView = isGridView,
+                isGridView = false,
                 onGameClick = { game ->
                     GameLauncher.launchGame(this, game)
                 },
@@ -294,62 +272,32 @@ class MainActivity : AppCompatActivity() {
                 }
             )
             rvGames.adapter = gameAdapter
-        } else {
-            gameAdapter?.setGridView(isGridView)
         }
 
-        rvGames.itemAnimator = if (ThemeManager.areAnimationsEnabled(this)) {
-            DefaultItemAnimator().apply { supportsChangeAnimations = false }
-        } else {
-            null
-        }
+        rvGames.itemAnimator = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
-
-        val modeItem = menu.findItem(R.id.action_view_mode)
-        if (isGridView) {
-            modeItem?.setIcon(R.drawable.ic_view_list)
-        } else {
-            modeItem?.setIcon(R.drawable.ic_view_grid)
-        }
 
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.action_view_mode -> {
-                isGridView = !isGridView
-                saveViewMode(isGridView)
-                setupRecyclerView()
-                displayGames(displayedGamesList)
-                invalidateOptionsMenu()
-                true
-            }
-            R.id.action_refresh -> {
-                val uri = selectedFolderUri
-                if (uri != null) {
-                    scanFolder(uri)
-                } else {
-                    folderPickerLauncher.launch(null)
-                }
-                true
-            }
             R.id.action_settings -> {
                 NavigationAnimations.start(this, Intent(this, SettingsActivity::class.java))
-                true
-            }
-            R.id.action_patches -> {
-                NavigationAnimations.start(this, Intent(this, PatchesSettingsActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
     }
 
-    private fun scanFolder(folderUri: Uri, loadCache: Boolean = false) {
+    private fun scanFolder(
+        folderUri: Uri,
+        loadCache: Boolean = false,
+        forceRefresh: Boolean = false
+    ) {
         scanJob?.cancel()
         tvSelectedFolderPath.text = folderUri.path
 
@@ -364,6 +312,12 @@ class MainActivity : AppCompatActivity() {
         val newScanJob = lifecycleScope.launch(start = CoroutineStart.LAZY) {
             try {
                 var cachedGames = allGamesList
+                if (forceRefresh) {
+                    withContext(Dispatchers.IO) {
+                        GameCacheManager.clearStagedGameCopies(this@MainActivity)
+                    }
+                    cachedGames = emptyList()
+                }
                 if (loadCache) {
                     cachedGames = withContext(Dispatchers.IO) {
                         GameCacheManager.getCachedGames(this@MainActivity, folderUri)
@@ -378,6 +332,7 @@ class MainActivity : AppCompatActivity() {
                     context = this@MainActivity,
                     folderUri = folderUri,
                     cachedGames = cachedGames,
+                    forceRefresh = forceRefresh,
                     onProgress = { partialGames ->
                         withContext(Dispatchers.Main.immediate) {
                             progressBar.visibility = View.GONE
@@ -460,8 +415,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveViewMode(isGrid: Boolean) {
-        val prefs = getSharedPreferences("launcher_prefs", Context.MODE_PRIVATE)
-        prefs.edit().putBoolean("is_grid_view", isGrid).apply()
-    }
 }

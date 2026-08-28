@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.FileProvider
 import androidx.documentfile.provider.DocumentFile
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -23,10 +22,15 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.withContext
 import java.io.File
+import java.io.ByteArrayInputStream
 import java.io.FileOutputStream
 import java.io.InputStream
+import java.io.OutputStream
+import java.io.SequenceInputStream
 import java.security.MessageDigest
+import java.util.Locale
 import java.util.zip.ZipFile
+import java.util.zip.ZipInputStream
 
 object GameLauncher {
 
@@ -48,28 +52,20 @@ object GameLauncher {
 
         activity.lifecycleScope.launch {
             try {
-                val patchesEnabled = withContext(Dispatchers.IO) {
-                    PatchManager.hasAnyPatchEnabled(activity.applicationContext, game.stableId)
-                }
-                loadingMessage.text = activity.getString(
-                    if (patchesEnabled) R.string.preparing_game_with_patches else R.string.preparing_game,
-                    game.fileName
-                )
+                loadingMessage.text = activity.getString(R.string.preparing_game, game.title)
 
                 val stagedFile = withContext(Dispatchers.IO) {
                     prepareStagedGame(activity.applicationContext, game)
                 }
                 if (!activity.lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) return@launch
 
-                val contentUri = FileProvider.getUriForFile(
-                    activity,
-                    "${activity.packageName}.fileprovider",
-                    stagedFile
-                )
-                val intent = Intent(Intent.ACTION_VIEW, contentUri).apply {
+                configureLoveRuntime(stagedFile)
+                val stagedUri = Uri.fromFile(stagedFile)
+                val intent = Intent(Intent.ACTION_VIEW, stagedUri).apply {
                     setClassName(activity.packageName, "org.love2d.android.GameActivity")
-                    setDataAndType(contentUri, LOVE_MIME_TYPE)
-                    addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                    setDataAndType(stagedUri, LOVE_MIME_TYPE)
+                    putExtra("name", stagedFile.absolutePath)
+                    putExtra("gamePath", stagedFile.absolutePath)
                 }
                 activity.startActivity(intent)
             } catch (error: CancellationException) {
@@ -84,7 +80,7 @@ object GameLauncher {
                     Toast.LENGTH_LONG
                 ).show()
             } finally {
-                if (dialog.isShowing) dialog.dismiss()
+                runCatching { if (dialog.isShowing) dialog.dismiss() }
                 launchMutex.unlock()
             }
         }
@@ -96,12 +92,11 @@ object GameLauncher {
         val metadata = queryMetadata(context, resolvedUri)
         val patchState = PatchManager.getPatchStateFingerprint(context, game.stableId)
         val appUpdateTime = context.packageManager.getPackageInfo(context.packageName, 0).lastUpdateTime
-        val sourceFingerprint = if (metadata.lastModified > 0L && metadata.size >= 0L) {
-            sha256("${resolvedUri}|${metadata.size}|${metadata.lastModified}")
-        } else {
-            context.contentResolver.openInputStream(resolvedUri)?.use(::sha256)
-                ?: throw GameLaunchException(R.string.error_game_file_unavailable)
-        }
+        val effectiveSize = metadata.size.takeIf { it >= 0L } ?: game.sizeBytes
+        val effectiveLastModified = metadata.lastModified.takeIf { it > 0L } ?: game.lastModified
+        val sourceFingerprint = sha256(
+            "${resolvedUri}|$effectiveSize|$effectiveLastModified|${game.archiveEntryPath.orEmpty()}"
+        )
         val cacheKey = sha256("$sourceFingerprint|$patchState|$appUpdateTime")
         val stagedDirectory = File(context.filesDir, "staged").apply { mkdirs() }
         val stagedFile = File(stagedDirectory, "game_$cacheKey.love")
@@ -114,7 +109,7 @@ object GameLauncher {
             val temporaryFile = File(stagedDirectory, "${stagedFile.name}.copying")
             temporaryFile.delete()
             try {
-                copyGamePayload(context, resolvedUri, game.fileName, temporaryFile)
+                copyGamePayload(context, resolvedUri, game, temporaryFile)
                 validateLovePackage(temporaryFile)
                 when (val result = PatchManager.applyPatchesToStagedGame(context, temporaryFile, game.stableId)) {
                     is PatchApplicationResult.Success -> Unit
@@ -175,25 +170,94 @@ object GameLauncher {
         return SourceMetadata(size, lastModified)
     }
 
-    private fun copyGamePayload(context: Context, uri: Uri, fileName: String, outputFile: File) {
-        val zipOffset = if (fileName.endsWith(".exe", ignoreCase = true)) {
-            context.contentResolver.openInputStream(uri)?.buffered()?.use(LoveMetadataParser::findZipOffset)
-                ?: -1L
-        } else {
-            0L
-        }
-        if (zipOffset < 0L) throw GameLaunchException(R.string.error_invalid_love_executable)
-
-        val input = context.contentResolver.openInputStream(uri)?.buffered()
+    private fun copyGamePayload(context: Context, uri: Uri, game: LoveGame, outputFile: File) {
+        val input = context.contentResolver.openInputStream(uri)?.buffered(COPY_BUFFER_SIZE)
             ?: throw GameLaunchException(R.string.error_game_file_unavailable)
         input.use { source ->
-            skipFully(source, zipOffset)
             FileOutputStream(outputFile).use { destination ->
-                source.copyTo(destination, COPY_BUFFER_SIZE)
+                when {
+                    game.archiveEntryPath != null -> copyNestedPackage(
+                        source = source,
+                        outerFileName = game.fileName,
+                        entryPath = game.archiveEntryPath,
+                        destination = destination
+                    )
+                    game.fileName.endsWith(".exe", ignoreCase = true) -> {
+                        copyExecutablePayload(source, destination)
+                    }
+                    else -> source.copyTo(destination, COPY_BUFFER_SIZE)
+                }
                 destination.fd.sync()
             }
         }
         if (outputFile.length() == 0L) throw GameLaunchException(R.string.error_empty_or_corrupt_game)
+    }
+
+    private fun copyNestedPackage(
+        source: InputStream,
+        outerFileName: String,
+        entryPath: String,
+        destination: OutputStream
+    ) {
+        val outerPayload = if (outerFileName.endsWith(".exe", ignoreCase = true)) {
+            findExecutablePayload(source)
+                ?: throw GameLaunchException(R.string.error_invalid_love_executable)
+        } else {
+            source
+        }
+        val targetPath = normalizeArchivePath(entryPath)
+        var found = false
+        var entryCount = 0
+        ZipInputStream(outerPayload).use { archive ->
+            var entry = archive.nextEntry
+            while (entry != null) {
+                entryCount++
+                if (entryCount > MAX_WRAPPER_ENTRIES) {
+                    throw GameLaunchException(R.string.error_empty_or_corrupt_game)
+                }
+                val rawPath = entry.name
+                if (!PatchManifestParser.isSafeArchivePath(rawPath)) {
+                    throw GameLaunchException(R.string.error_empty_or_corrupt_game)
+                }
+                if (!entry.isDirectory && normalizeArchivePath(rawPath) == targetPath) {
+                    if (rawPath.endsWith(".exe", ignoreCase = true)) {
+                        copyExecutablePayload(archive.buffered(EXECUTABLE_SCAN_BUFFER_SIZE), destination)
+                    } else {
+                        archive.copyTo(destination, COPY_BUFFER_SIZE)
+                    }
+                    found = true
+                    break
+                }
+                archive.closeEntry()
+                entry = archive.nextEntry
+            }
+        }
+        if (!found) throw GameLaunchException(R.string.error_nested_game_unavailable)
+    }
+
+    private fun copyExecutablePayload(source: InputStream, destination: OutputStream) {
+        val payload = findExecutablePayload(source)
+            ?: throw GameLaunchException(R.string.error_invalid_love_executable)
+        payload.copyTo(destination, COPY_BUFFER_SIZE)
+    }
+
+    internal fun findExecutablePayload(source: InputStream): InputStream? {
+        var matched = 0
+        var scanned = 0L
+        while (scanned < MAX_EXECUTABLE_PREFIX_BYTES) {
+            val value = source.read()
+            if (value < 0) return null
+            scanned++
+            matched = when {
+                value.toByte() == ZIP_LOCAL_HEADER[matched] -> matched + 1
+                value.toByte() == ZIP_LOCAL_HEADER[0] -> 1
+                else -> 0
+            }
+            if (matched == ZIP_LOCAL_HEADER.size) {
+                return SequenceInputStream(ByteArrayInputStream(ZIP_LOCAL_HEADER), source)
+            }
+        }
+        return null
     }
 
     private fun validateLovePackage(file: File) {
@@ -210,31 +274,25 @@ object GameLauncher {
         }
     }
 
-    private fun skipFully(input: InputStream, byteCount: Long) {
-        var remaining = byteCount
-        while (remaining > 0L) {
-            val skipped = input.skip(remaining)
-            if (skipped > 0L) {
-                remaining -= skipped
-            } else if (input.read() >= 0) {
-                remaining--
-            } else {
-                throw GameLaunchException(R.string.error_executable_stream)
-            }
+    private fun configureLoveRuntime(stagedFile: File) {
+        try {
+            val gameActivityClass = Class.forName("org.love2d.android.GameActivity")
+            val gamePathField = gameActivityClass.getDeclaredField("gamePath")
+            gamePathField.isAccessible = true
+            gamePathField.set(null, stagedFile.absolutePath)
+        } catch (_: ReflectiveOperationException) {
+            throw GameLaunchException(R.string.error_game_runtime_unavailable)
         }
     }
 
-    private fun sha256(value: String): String = sha256(value.byteInputStream())
+    private fun normalizeArchivePath(path: String): String {
+        return path.replace('\\', '/').trimStart('/').lowercase(Locale.ROOT)
+    }
 
-    private fun sha256(input: InputStream): String {
-        val digest = MessageDigest.getInstance("SHA-256")
-        val buffer = ByteArray(COPY_BUFFER_SIZE)
-        while (true) {
-            val read = input.read(buffer)
-            if (read < 0) break
-            digest.update(buffer, 0, read)
-        }
-        return digest.digest().joinToString("") { "%02x".format(it) }
+    private fun sha256(value: String): String {
+        return MessageDigest.getInstance("SHA-256")
+            .digest(value.toByteArray(Charsets.UTF_8))
+            .joinToString("") { "%02x".format(it) }
     }
 
     private data class SourceMetadata(val size: Long, val lastModified: Long)
@@ -243,4 +301,8 @@ object GameLauncher {
 
     private const val LOVE_MIME_TYPE = "application/x-love-game"
     private const val COPY_BUFFER_SIZE = 1024 * 1024
+    private const val EXECUTABLE_SCAN_BUFFER_SIZE = 64 * 1024
+    private const val MAX_WRAPPER_ENTRIES = 10_000
+    private const val MAX_EXECUTABLE_PREFIX_BYTES = 256L * 1024 * 1024
+    private val ZIP_LOCAL_HEADER = byteArrayOf(0x50, 0x4B, 0x03, 0x04)
 }

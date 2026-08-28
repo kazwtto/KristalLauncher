@@ -53,20 +53,20 @@
     <string name="language_title">Idioma</string>
     <string name="language_summary">Escolha o idioma da interface. A opção do dispositivo acompanha automaticamente o idioma do Android.</string>
     <string name="language_options_title">IDIOMA DO LAUNCHER</string>
-    <string name="lang_device_option"><b>Idioma do dispositivo</b>\nAcompanha o idioma atual do Android.</string>
-    <string name="lang_pt_option"><b>Português</b>\nExibe toda a interface em português.</string>
-    <string name="lang_en_option"><b>English</b>\nExibe toda a interface em inglês.</string>
-    <string name="lang_es_option"><b>Español</b>\nExibe toda a interface em espanhol.</string>
+    <string name="lang_device_option">Idioma do dispositivo</string>
+    <string name="lang_pt_option">Português</string>
+    <string name="lang_en_option">English</string>
+    <string name="lang_es_option">Español</string>
     <string name="theme_title">TEMA</string>
     <string name="theme_device">Seguir o dispositivo</string>
     <string name="theme_light">Claro</string>
     <string name="theme_dark">Escuro</string>
     <string name="appearance_summary">Personalize a aparência do launcher e escolha quanto movimento deseja na interface.</string>
-    <string name="theme_device_option"><b>Seguir o dispositivo</b>\nAlterna automaticamente entre claro e escuro com o Android.</string>
-    <string name="theme_light_option"><b>Claro</b>\nSuperfícies luminosas para ambientes bem iluminados.</string>
-    <string name="theme_dark_option"><b>Escuro</b>\nReduz o brilho da interface em ambientes escuros.</string>
+    <string name="theme_device_option">Dispositivo</string>
+    <string name="theme_light_option">Claro</string>
+    <string name="theme_dark_option">Escuro</string>
     <string name="motion_title">MOVIMENTO</string>
-    <string name="animations_enabled">Animações e transições</string>
+    <string name="animations_enabled">Animações da lista</string>
     <string name="animations_summary">Suaviza a abertura das páginas e destaca a hierarquia da navegação. Desative para remover todo o movimento adicional.</string>
 
     <!-- Compatibility patches -->
@@ -76,7 +76,7 @@
     
     <string name="patch_text_title">Correção de Texto Acumulado</string>
     <string name="patch_text_desc">Resolve o problema do Kristal Engine em que textos de batalha (como \'The tutorial begins…?\') não desaparecem da tela ao abrir o menu, acumulando-se uns sobre os outros.\n\n⚠️ Ocasionalmente, pode causar pequenos recarregamentos visuais do texto na tela.</string>
-    <string name="patch_text_warning">Este patch modifica a renderização do texto e pode causar pequenos \'piscões\' ou recarregamentos visuais durante os diálogos em alguns jogos.\n\nDeseja ativar mesmo assim?</string>
+    <string name="patch_text_warning">Desativar esta correção pode fazer textos antigos permanecerem na tela e se acumularem durante batalhas ou diálogos.\n\nDeseja realmente desativar?</string>
     <string name="patch_fullscreen_title">Tela Cheia Imersiva</string>
     <string name="patch_fullscreen_desc">Força a ocultação da barra de navegação e barra de status do Android (modo imersivo), permitindo que o jogo utilize toda a extensão da tela do seu dispositivo.</string>
     <string name="patch_shaders_title">Correção de Shaders (GLSL ES)</string>
@@ -149,6 +149,8 @@
     <string name="error_invalid_love_executable">Erro: o arquivo .exe não contém um jogo LÖVE2D válido.</string>
     <string name="error_executable_stream">Erro ao abrir o fluxo de dados do executável.</string>
     <string name="error_empty_or_corrupt_game">Erro: o arquivo do jogo está vazio ou corrompido.</string>
+    <string name="error_nested_game_unavailable">Erro: o jogo armazenado dentro do ZIP não está mais disponível.</string>
+    <string name="error_game_runtime_unavailable">Erro: o runtime LÖVE2D não foi incluído corretamente neste APK.</string>
     <string name="error_loading_game">Erro ao carregar o jogo: %1$s</string>
     <string name="navigate_back">Voltar</string>
     <string name="filter_games">Filtrar jogos</string>

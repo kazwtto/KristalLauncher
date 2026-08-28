@@ -18,7 +18,7 @@ The KristalPT package source is stored under `patches/sources/kristal-ptbr/`, an
 
 | Patch | Purpose | Main risk |
 | --- | --- | --- |
-| Accumulated text | Recreates/clears affected Kristal text canvases | May cause minor visual refreshes |
+| Accumulated text | Recreates/clears affected Kristal text canvases | Disabling it may allow old text to remain on screen |
 | Immersive fullscreen | Keeps Android system bars hidden | Changes expected window behavior |
 | GLSL ES shader fixes | Applies narrowly detected shader transformations | A transformation may alter a shader that relied on desktop behavior |
 | Virtual gamepad | Injects touch controls and sprites | May overlap a game's own controls |

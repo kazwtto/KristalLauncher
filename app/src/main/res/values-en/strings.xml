@@ -53,20 +53,20 @@
     <string name="language_title">Language</string>
     <string name="language_summary">Choose the interface language. The device option automatically follows Android’s current language.</string>
     <string name="language_options_title">LAUNCHER LANGUAGE</string>
-    <string name="lang_device_option"><b>Device language</b>\nFollows Android’s current language.</string>
-    <string name="lang_pt_option"><b>Português</b>\nDisplays the entire interface in Portuguese.</string>
-    <string name="lang_en_option"><b>English</b>\nDisplays the entire interface in English.</string>
-    <string name="lang_es_option"><b>Español</b>\nDisplays the entire interface in Spanish.</string>
+    <string name="lang_device_option">Device language</string>
+    <string name="lang_pt_option">Português</string>
+    <string name="lang_en_option">English</string>
+    <string name="lang_es_option">Español</string>
     <string name="theme_title">THEME</string>
     <string name="theme_device">Follow device</string>
     <string name="theme_light">Light</string>
     <string name="theme_dark">Dark</string>
     <string name="appearance_summary">Personalize the launcher’s appearance and choose how much motion you want in the interface.</string>
-    <string name="theme_device_option"><b>Follow device</b>\nAutomatically switches between light and dark with Android.</string>
-    <string name="theme_light_option"><b>Light</b>\nBright surfaces designed for well-lit environments.</string>
-    <string name="theme_dark_option"><b>Dark</b>\nReduces interface brightness in darker environments.</string>
+    <string name="theme_device_option">Device</string>
+    <string name="theme_light_option">Light</string>
+    <string name="theme_dark_option">Dark</string>
     <string name="motion_title">MOTION</string>
-    <string name="animations_enabled">Animations and transitions</string>
+    <string name="animations_enabled">List animations</string>
     <string name="animations_summary">Smooths page changes and reinforces the navigation hierarchy. Disable it to remove all additional motion.</string>
     <!-- Compatibility patches -->
     <string name="action_patches">Fixes</string>
@@ -75,7 +75,7 @@
     
     <string name="patch_text_title">Accumulated Text Fix</string>
     <string name="patch_text_desc">Resolves an issue in Kristal Engine where battle texts (like \'The tutorial begins…?\') don\'t disappear when opening the menu, stacking on top of each other.\n\n⚠️ May occasionally cause minor visual text reloading on screen.</string>
-    <string name="patch_text_warning">This patch modifies text rendering and may cause minor visual flickering during dialogs in some games.\n\nDo you still want to enable it?</string>
+    <string name="patch_text_warning">Disabling this fix may leave old text on screen and cause it to accumulate during battles or dialogs.\n\nAre you sure you want to disable it?</string>
     <string name="patch_fullscreen_title">Immersive Fullscreen</string>
     <string name="patch_fullscreen_desc">Forces the hiding of Android\'s navigation and status bars (immersive mode), allowing the game to use your device\'s full screen.</string>
     <string name="patch_shaders_title">Shaders Fix (GLSL ES)</string>
@@ -148,6 +148,8 @@
     <string name="error_invalid_love_executable">Error: the .exe file does not contain a valid LÖVE2D game.</string>
     <string name="error_executable_stream">Error while opening the executable stream.</string>
     <string name="error_empty_or_corrupt_game">Error: the game file is empty or corrupt.</string>
+    <string name="error_nested_game_unavailable">Error: the game stored inside the ZIP is no longer available.</string>
+    <string name="error_game_runtime_unavailable">Error: the LÖVE2D runtime was not packaged correctly in this APK.</string>
     <string name="error_loading_game">Error while loading the game: %1$s</string>
     <string name="navigate_back">Back</string>
     <string name="filter_games">Filter games</string>
