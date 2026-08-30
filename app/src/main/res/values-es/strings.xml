@@ -37,7 +37,7 @@
     <string name="clear_cache">Borrar Caché de Juegos</string>
     <string name="clear_cache_desc">Elimina portadas y metadatos guardados localmente.</string>
     <string name="about_title">Kristal Launcher v%1$s</string>
-    <string name="about_desc">Launcher para Kristal Engine en Android. Organiza y ejecuta tus juegos con controles táctiles, correcciones de compatibilidad y opciones adaptadas a dispositivos móviles.</string>
+    <string name="about_desc">Launcher para Kristal Engine en Android. Organiza y ejecuta tus juegos con controles táctiles, parches de compatibilidad y opciones adaptadas a dispositivos móviles.</string>
 
     <!-- Exit Menu Overlay -->
     <string name="exit_dialog_title">¿Salir del juego?</string>
@@ -72,21 +72,21 @@
     <string name="animations_enabled">Animaciones y transiciones</string>
     <string name="animations_summary">Suaviza los cambios de página y refuerza la jerarquía de navegación. Desactívala para eliminar todo movimiento adicional.</string>
     <!-- Compatibility patches -->
-    <string name="action_patches">Correcciones</string>
-    <string name="patches_settings_title">Correcciones de compatibilidad</string>
+    <string name="action_patches">Parches</string>
+    <string name="patches_settings_title">Parches de compatibilidad</string>
     <string name="patches_settings_header">Estos son los parches globales aplicados a todos los juegos por defecto. Puedes forzar su activación o desactivación para juegos específicos tocando el icono de engranaje en la lista de juegos.</string>
 
-    <string name="patch_text_title">Corrección de Texto Acumulado</string>
+    <string name="patch_text_title">Parche de Texto Acumulado</string>
     <string name="patch_text_desc">Resuelve el problema de Kristal Engine donde los textos de batalla (como \'The tutorial begins…?\') no desaparecen al abrir el menú, apilándose unos sobre otros.\n\n⚠️ Ocasionalmente, puede causar recargas visuales menores del texto en pantalla.</string>
-    <string name="patch_text_warning">Desactivar la corrección de Texto Acumulado puede dejar fragmentos antiguos visibles durante los diálogos en algunos juegos.\n\n¿Seguro que quieres desactivarla?</string>
+    <string name="patch_text_warning">Desactivar el parche de Texto Acumulado puede dejar fragmentos antiguos visibles durante los diálogos en algunos juegos.\n\n¿Seguro que quieres desactivarlo?</string>
     <string name="patch_fullscreen_title">Pantalla Completa Inmersiva</string>
     <string name="patch_fullscreen_desc">Fuerza la ocultación de las barras de navegación y estado de Android (modo inmersivo), permitiendo que el juego utilice toda la pantalla de tu dispositivo.</string>
-    <string name="patch_shaders_title">Corrección de Shaders (Convertidor de GLSL ES)</string>
+    <string name="patch_shaders_title">Parche de Shaders (Convertidor de GLSL ES)</string>
     <string name="patch_shaders_desc">Los shaders de mods de PC suelen fallar y causar pantalla negra en Android. Este parche convierte dinámicamente la sintaxis de GLSL para cumplir con las estrictas reglas de OpenGL ES.\n\n⚠️ Mantener activado a menos que el juego pierda el color completamente.</string>
-    <string name="patch_shaders_warning">Desactivar la corrección de shaders GLSL ES puede causar pantallas negras, congelamientos o errores de inicio en la mayoría de los juegos Kristal/LÖVE2D en Android.\n\n¿Estás seguro de que quieres desactivarlo?</string>
+    <string name="patch_shaders_warning">Desactivar el parche de shaders GLSL ES puede causar pantallas negras, congelamientos o errores de inicio en la mayoría de los juegos Kristal/LÖVE2D en Android.\n\n¿Estás seguro de que quieres desactivarlo?</string>
     <string name="patch_gamepad_title">Controles Táctiles Virtuales</string>
     <string name="patch_gamepad_desc">Inyecta un mando virtual transparente en la pantalla (botones Z, X, C, Flechas, etc.). Necesario si no tienes un mando físico conectado.</string>
-    <string name="patch_borders_title">Corrección de Bordes Relativos</string>
+    <string name="patch_borders_title">Parche de Bordes Relativos</string>
     <string name="patch_borders_desc">Muchos mods de Kristal Engine usan bordes de pantalla diseñados para PC (4:3). Este parche redimensiona dinámicamente los bordes para que no se corten en las pantallas anchas de los móviles modernos.</string>
     <string name="patch_rgba16_title">Conversión RGBA16</string>
     <string name="patch_rgba16_desc">Android no soporta imágenes de 16 bits por canal. Si un mod tiene sprites así, el juego fallará. Este parche convierte automáticamente las imágenes afectadas a 8 bits en memoria.</string>
@@ -95,18 +95,18 @@
     <string name="patch_nil_arithmetic_title">Saneamiento de Nil Arithmetic y Audio</string>
     <string name="patch_nil_arithmetic_desc">Evita que el motor se cierre inmediatamente (\'attempt to perform arithmetic on a nil value\') si un mod intenta manipular el volumen de una música que no cargó correctamente.</string>
 
-    <string name="patch_list_text">Corrección de Texto Acumulado</string>
+    <string name="patch_list_text">Parche de Texto Acumulado</string>
     <string name="patch_list_text_warning">⚠️ Aviso: desactivar puede hacer que textos antiguos se acumulen en pantalla.</string>
     <string name="patch_list_fullscreen">Pantalla Completa Inmersiva</string>
-    <string name="patch_list_shaders">Corrección de Shaders (GLSL ES)</string>
+    <string name="patch_list_shaders">Parche de Shaders (GLSL ES)</string>
     <string name="patch_list_shaders_warning">⚠️ Aviso: Desactivar puede causar pantallas negras.</string>
     <string name="patch_list_gamepad">Controles Táctiles Virtuales</string>
-    <string name="patch_list_borders">Corrección de Bordes Relativas</string>
+    <string name="patch_list_borders">Parche de Bordes Relativos</string>
     <string name="patch_list_rgba16">Conversión RGBA16 (Anti-Pantalla Negra)</string>
     <string name="patch_list_physfs">Anti-Crash PhysFS</string>
     <string name="patch_list_nil_arithmetic">Saneamiento de Nil Arithmetic y Audio</string>
 
-    <string name="game_patch_text">Corrección de Texto</string>
+    <string name="game_patch_text">Parche de Texto</string>
     <string name="game_patch_fullscreen">Pantalla Completa</string>
     <string name="game_patch_shaders">Shaders (GLSL ES)</string>
     <string name="game_patch_gamepad">Controles Táctiles</string>
@@ -128,9 +128,9 @@
     <string name="patch_mode_enable">Activar</string>
     <string name="patch_mode_disable">Desactivar</string>
 
-    <string name="game_patches_dialog_title">Correcciones: %s</string>
+    <string name="game_patches_dialog_title">Parches: %s</string>
     <string name="save">Guardar</string>
-    <string name="patches_saved">¡Correcciones guardadas con éxito!</string>
+    <string name="patches_saved">¡Parches guardados con éxito!</string>
     <string name="warning_attention">⚠️ Atención</string>
     <string name="enable">Activar</string>
     <string name="disable">Desactivar</string>
@@ -162,7 +162,7 @@
     <string name="patches_settings_summary">Ajustes para juegos que necesitan ayuda en Android</string>
     <!-- Patch Center -->
     <string name="patch_author_launcher">Equipo de Kristal Launcher</string>
-    <string name="patch_center_title">Correcciones</string>
+    <string name="patch_center_title">Parches</string>
     <string name="patch_center_summary">Activa soluciones integradas o instala extras publicados en el repositorio.</string>
     <string name="patch_refresh_catalog">Actualizar catálogo de parches</string>
     <string name="patch_tab_installed">Instalados</string>
@@ -223,8 +223,8 @@
     <string name="patch_game_effective_inherited_enabled">Resultado: activado por el ajuste global</string>
     <string name="patch_game_effective_inherited_disabled">Resultado: desactivado por el ajuste global</string>
     <string name="patch_game_unverified_warning">Los siguientes parches importados se forzarán para este juego: %1$s. Continúa solo si confías en sus orígenes.</string>
-    <string name="preparing_game_with_patches">Preparando %1$s…\nAplicando correcciones de forma segura.</string>
-    <string name="error_applying_patches">No se pudieron preparar las correcciones: %1$s</string>
+    <string name="preparing_game_with_patches">Preparando %1$s…\nAplicando parches de forma segura.</string>
+    <string name="error_applying_patches">No se pudieron preparar los parches: %1$s</string>
 
     <!-- About and updates -->
     <string name="update_automatic_checks">Buscar actualizaciones automáticamente</string>

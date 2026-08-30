@@ -37,7 +37,7 @@
     <string name="clear_cache">Clear Games Cache</string>
     <string name="clear_cache_desc">Removes locally saved covers and metadata.</string>
     <string name="about_title">Kristal Launcher v%1$s</string>
-    <string name="about_desc">Launcher for Kristal Engine on Android. Organize and run your games with touch controls, compatibility fixes, and mobile-friendly options.</string>
+    <string name="about_desc">Launcher for Kristal Engine on Android. Organize and run your games with touch controls, compatibility patches, and mobile-friendly options.</string>
 
     <!-- Exit Menu Overlay -->
     <string name="exit_dialog_title">Exit game?</string>
@@ -72,21 +72,21 @@
     <string name="animations_enabled">Animations and transitions</string>
     <string name="animations_summary">Smooths page changes and reinforces the navigation hierarchy. Disable it to remove all additional motion.</string>
     <!-- Compatibility patches -->
-    <string name="action_patches">Fixes</string>
-    <string name="patches_settings_title">Compatibility fixes</string>
+    <string name="action_patches">Patches</string>
+    <string name="patches_settings_title">Compatibility patches</string>
     <string name="patches_settings_header">These are the global patches applied to all games by default. You can override them for specific games by tapping the gear icon in the games list.</string>
 
-    <string name="patch_text_title">Accumulated Text Fix</string>
+    <string name="patch_text_title">Accumulated Text Patch</string>
     <string name="patch_text_desc">Resolves an issue in Kristal Engine where battle texts (like \'The tutorial begins…?\') don\'t disappear when opening the menu, stacking on top of each other.\n\n⚠️ May occasionally cause minor visual text reloading on screen.</string>
-    <string name="patch_text_warning">Disabling the Accumulated Text fix may leave old text fragments visible during dialogs in some games.\n\nAre you sure you want to disable it?</string>
+    <string name="patch_text_warning">Disabling the Accumulated Text patch may leave old text fragments visible during dialogs in some games.\n\nAre you sure you want to disable it?</string>
     <string name="patch_fullscreen_title">Immersive Fullscreen</string>
     <string name="patch_fullscreen_desc">Forces the hiding of Android\'s navigation and status bars (immersive mode), allowing the game to use your device\'s full screen.</string>
-    <string name="patch_shaders_title">Shaders Fix (GLSL ES Converter)</string>
+    <string name="patch_shaders_title">Shaders Patch (GLSL ES Converter)</string>
     <string name="patch_shaders_desc">PC mod shaders often fail and cause a black screen on Android. This patch dynamically converts GLSL syntax to comply with strict OpenGL ES mobile rules.\n\n⚠️ Keep enabled unless the game completely loses color.</string>
-    <string name="patch_shaders_warning">Disabling the GLSL ES shaders fix may cause black screens, freezes, or startup errors in most Kristal/LÖVE2D games on Android.\n\nAre you sure you want to disable it?</string>
+    <string name="patch_shaders_warning">Disabling the GLSL ES shaders patch may cause black screens, freezes, or startup errors in most Kristal/LÖVE2D games on Android.\n\nAre you sure you want to disable it?</string>
     <string name="patch_gamepad_title">Virtual Touch Controls</string>
     <string name="patch_gamepad_desc">Injects a transparent virtual gamepad on the screen. Necessary if you don\'t have a physical controller connected.</string>
-    <string name="patch_borders_title">Relative Borders Fix</string>
+    <string name="patch_borders_title">Relative Borders Patch</string>
     <string name="patch_borders_desc">Many Kristal Engine mods use screen borders designed for fixed PC aspect ratios (4:3). This patch dynamically resizes borders so they don\'t get cut off on modern wide screens.</string>
     <string name="patch_rgba16_title">RGBA16 Conversion</string>
     <string name="patch_rgba16_desc">Android doesn\'t support 16-bit per channel images. This patch automatically converts affected images to 8-bit in memory to prevent crashes or black screens.</string>
@@ -95,18 +95,18 @@
     <string name="patch_nil_arithmetic_title">Nil Arithmetic &amp; Audio Sanitization</string>
     <string name="patch_nil_arithmetic_desc">Prevents the engine from immediately crashing (\'attempt to perform arithmetic on a nil value\') if a mod tries to manipulate the volume of a missing audio file.</string>
 
-    <string name="patch_list_text">1. Accumulated Text Fix</string>
+    <string name="patch_list_text">1. Accumulated Text Patch</string>
     <string name="patch_list_text_warning">⚠️ Warning: disabling may cause old text to accumulate on screen.</string>
     <string name="patch_list_fullscreen">2. Immersive Fullscreen</string>
-    <string name="patch_list_shaders">3. Shaders Fix (GLSL ES)</string>
+    <string name="patch_list_shaders">3. Shaders Patch (GLSL ES)</string>
     <string name="patch_list_shaders_warning">⚠️ Warning: Disabling may cause black screens.</string>
     <string name="patch_list_gamepad">4. Virtual Touch Controls</string>
-    <string name="patch_list_borders">5. Relative Borders Fix</string>
+    <string name="patch_list_borders">5. Relative Borders Patch</string>
     <string name="patch_list_rgba16">6. RGBA16 Conversion</string>
     <string name="patch_list_physfs">7. PhysFS Anti-Crash</string>
     <string name="patch_list_nil_arithmetic">8. Audio &amp; Nil Arithmetic Sanitization</string>
 
-    <string name="game_patch_text">1. Text Fix</string>
+    <string name="game_patch_text">1. Text Patch</string>
     <string name="game_patch_fullscreen">2. Immersive Fullscreen</string>
     <string name="game_patch_shaders">3. Shaders (GLSL ES)</string>
     <string name="game_patch_gamepad">4. Touch Controls</string>
@@ -115,7 +115,7 @@
     <string name="game_patch_physfs">7. PhysFS Anti-Crash</string>
     <string name="game_patch_nil_arithmetic">8. Audio Sanitization</string>
 
-    <string name="game_patch_text_desc">Fixes battle texts stacking on screen.</string>
+    <string name="game_patch_text_desc">Prevents battle texts from stacking on screen.</string>
     <string name="game_patch_fullscreen_desc">Forces immersive mode (no Android bars).</string>
     <string name="game_patch_shaders_desc">Dynamically converts PC shaders for Android.</string>
     <string name="game_patch_gamepad_desc">Forces virtual controls on screen.</string>
@@ -128,9 +128,9 @@
     <string name="patch_mode_enable">Enable</string>
     <string name="patch_mode_disable">Disable</string>
 
-    <string name="game_patches_dialog_title">Fixes: %s</string>
+    <string name="game_patches_dialog_title">Patches: %s</string>
     <string name="save">Save</string>
-    <string name="patches_saved">Fixes saved successfully!</string>
+    <string name="patches_saved">Patches saved successfully!</string>
     <string name="warning_attention">⚠️ Attention</string>
     <string name="enable">Enable</string>
     <string name="disable">Disable</string>
@@ -162,7 +162,7 @@
     <string name="patches_settings_summary">Adjustments for games that need help on Android</string>
     <!-- Patch Center -->
     <string name="patch_author_launcher">Kristal Launcher Team</string>
-    <string name="patch_center_title">Fixes</string>
+    <string name="patch_center_title">Patches</string>
     <string name="patch_center_summary">Enable built-in solutions or install extras published in the repository.</string>
     <string name="patch_refresh_catalog">Refresh patch catalog</string>
     <string name="patch_tab_installed">Installed</string>
@@ -223,8 +223,8 @@
     <string name="patch_game_effective_inherited_enabled">Result: enabled by the global default</string>
     <string name="patch_game_effective_inherited_disabled">Result: disabled by the global default</string>
     <string name="patch_game_unverified_warning">The following imported patches will be forced for this game: %1$s. Continue only if you trust their sources.</string>
-    <string name="preparing_game_with_patches">Preparing %1$s…\nApplying fixes safely.</string>
-    <string name="error_applying_patches">The fixes could not be prepared: %1$s</string>
+    <string name="preparing_game_with_patches">Preparing %1$s…\nApplying patches safely.</string>
+    <string name="error_applying_patches">The patches could not be prepared: %1$s</string>
 
     <!-- About and updates -->
     <string name="update_automatic_checks">Check for updates automatically</string>
