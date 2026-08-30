@@ -45,14 +45,14 @@ This was originally a study project to learn Gradle and Kotlin.
 - [DELTARUNE: PluggedDream](https://gamejolt.com/games/pluggeddream/1019739)
 - [DELTARUNE: Frozen Heart](https://gamejolt.com/games/frozen-heart/659908)
 - [DELTARUNE: Friendless](https://gamejolt.com/games/deltarunefriendless/1077489)
-- [DELTARUNE: Frostveil](https://gamejolt.com/games/deltarune_frostveil/1058015):
-    └ Requires Patch: Nill Arithmetic & Sanitazation.
+- [DELTARUNE: Frostveil](https://gamejolt.com/games/deltarune_frostveil/1058015)
+  - Requires the Nil Arithmetic & Audio Sanitization patch.
 - [StarRune](https://gamejolt.com/games/starrune/716680)
-    └ Requires Patch: RGBA16 Conversion Patch
+  - Requires the RGBA16 Conversion patch.
 - [Godhome](https://gamebanana.com/mods/376524)
-    └ Requires Patch: Shaders Fix Patch.
+  - Requires the Shaders patch.
 - [UNDERTALE: Cooking with Kindness](https://gamejolt.com/games/cooking_with_kindness/900285)
-    └ An optimization patch is under development.
+  - An optimization patch is under development.
 
 ## Features
 
