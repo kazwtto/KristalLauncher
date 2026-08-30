@@ -7,7 +7,8 @@ This external patch targets the `Cooking with Kindness DEMO v1.0.6` package buil
 - Replaces `beeglighttest.lua`: it no longer allocates and composites a canvas matching the full map. The original CORE Square canvas is 1920 x 1800 pixels; the replacement draws the small light set directly into the active world target.
 - Replaces `lighttest.lua`: it no longer creates an unused screen-sized canvas for every light, and it does not run an extra update from `draw()`.
 - Replaces `betterlayering.lua`: it removes two debug-console writes that would otherwise happen every frame per event.
-- Defers the engine canvas-pool cleanup and skips the demo's redundant 1 ms frame sleep on Android.
+- Skips the demo's redundant 1 ms frame sleep on Android without changing the engine's canvas lifecycle.
+- Uses the engine's immediate battle hand-off on Android. This removes the expensive `FakeClone` and blinking-heart interval that ran while the complete battle scene was already active.
 - Replaces the customer-battle timer to retain its `love.graphics.Text` object instead of allocating one every frame. The display changes only when the integer timer changes.
 - Removes a duplicate timer update in customer encounters. This affects the Grillby tutorial and every regular customer battle.
 - Removes per-frame debug logging and redundant `setSprite()` calls from the standard and Toriel whisk and oven minigames.
@@ -17,4 +18,4 @@ The patch changes only the launcher's staged copy. The source game package is ne
 
 ## Compatibility
 
-The file paths and mod ID are specific to the bundled `Cooking with Kindness DEMO v1.0.6`. The runtime hook activates only when Kristal loads the `cooking-with-kindness` mod. Do not enable this together with the general Kristal performance patch, because this package already includes the overlapping loop and canvas-pool safeguards.
+The file paths and mod ID are specific to the bundled `Cooking with Kindness DEMO v1.0.6`. The runtime hook activates only after Kristal successfully loads the `cooking-with-kindness` mod. Do not enable this together with the general Kristal performance patch because both packages change the frame loop.

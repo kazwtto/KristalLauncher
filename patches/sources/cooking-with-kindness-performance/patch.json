@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
   "id": "cooking-with-kindness.mobile-performance",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "name": {
     "pt-BR": "Otimização móvel e de batalhas para Cooking with Kindness",
     "en": "Mobile and battle optimization for Cooking with Kindness",
     "es": "Optimización móvil y de batallas para Cooking with Kindness"
   },
   "description": {
-    "pt-BR": "Patch dedicado a Cooking with Kindness DEMO v1.0.6 que reduz custo de iluminação, logs e alocações repetidas nas batalhas para melhorar FPS no Android.",
-    "en": "Patch dedicated to Cooking with Kindness DEMO v1.0.6 that reduces lighting cost, logging, and repeated battle allocations to improve Android FPS.",
-    "es": "Parche dedicado a Cooking with Kindness DEMO v1.0.6 que reduce el costo de iluminación, registros y asignaciones repetidas en batalla para mejorar los FPS en Android."
+    "pt-BR": "Patch dedicado a Cooking with Kindness DEMO v1.0.6 que reduz custo de iluminação, logs e alocações repetidas, além de evitar a transição de batalha pesada no Android.",
+    "en": "Patch dedicated to Cooking with Kindness DEMO v1.0.6 that reduces lighting cost, logging, and repeated allocations, and avoids the expensive battle transition on Android.",
+    "es": "Parche dedicado a Cooking with Kindness DEMO v1.0.6 que reduce el costo de iluminación, registros y asignaciones repetidas, y evita la transición de batalla pesada en Android."
   },
   "useCases": [
     {

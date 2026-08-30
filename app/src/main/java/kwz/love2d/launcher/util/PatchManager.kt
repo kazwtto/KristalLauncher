@@ -143,7 +143,7 @@ object PatchManager {
                 "Patched output must not replace its source"
             }
             outputFile.delete()
-            val textPatchChanged = rewriteStagedPackage(
+            val rewriteResult = rewriteStagedPackage(
                 context,
                 sourceFile,
                 outputFile,
@@ -151,9 +151,10 @@ object PatchManager {
                 externalPatches
             )
             validateStagedPackage(outputFile)
+            validateExternalPatchTargets(outputFile, rewriteResult.externalTargetDigests)
 
             val applied = buildList {
-                if (builtInFlags.text && textPatchChanged) add(PATCH_TEXT)
+                if (builtInFlags.text && rewriteResult.textPatchChanged) add(PATCH_TEXT)
                 if (builtInFlags.fullscreen) add(PATCH_FULLSCREEN)
                 if (builtInFlags.shaders) add(PATCH_SHADERS)
                 if (builtInFlags.gamepad) add(PATCH_GAMEPAD)
@@ -179,7 +180,7 @@ object PatchManager {
         outputFile: File,
         builtInFlags: BuiltInFlags,
         externalPatches: List<InstalledPatch>
-    ): Boolean {
+    ): RewriteResult {
         val resolvedOperations = externalPatches.flatMap { patch ->
             patch.manifest.operations.map { operation -> ResolvedOperation(patch, operation) }
         }
@@ -187,6 +188,7 @@ object PatchManager {
         val operationsByTarget = resolvedOperations.groupBy { it.operation.target.lowercase(Locale.ROOT) }
         val processedOperations = mutableSetOf<ResolvedOperation>()
         val existingEntries = mutableSetOf<String>()
+        val externalTargetDigests = mutableMapOf<String, String>()
         var hasMainLua = false
         var textPatchChanged = false
         var entryCount = 0
@@ -238,6 +240,9 @@ object PatchManager {
                             bytes = applyExternalOperation(bytes, resolved, targetExists = true)
                             processedOperations.add(resolved)
                         }
+                        if (targetOperations.isNotEmpty()) {
+                            externalTargetDigests[normalizedName] = sha256(bytes)
+                        }
                         require(bytes.size <= MAX_TRANSFORMED_ENTRY_BYTES) {
                             "Patched file is too large: $entryName"
                         }
@@ -268,11 +273,12 @@ object PatchManager {
                 writeMissingOperationTargets(
                     resolvedOperations.filterNot { it in processedOperations },
                     zipOutput,
-                    existingEntries
+                    existingEntries,
+                    externalTargetDigests
                 )
             }
         }
-        return textPatchChanged
+        return RewriteResult(textPatchChanged, externalTargetDigests)
     }
 
     /** Copies an unchanged entry without inflating or recompressing its payload. */
@@ -289,7 +295,8 @@ object PatchManager {
     private fun writeMissingOperationTargets(
         operations: List<ResolvedOperation>,
         zipOutput: ZipArchiveOutputStream,
-        existingEntries: MutableSet<String>
+        existingEntries: MutableSet<String>,
+        externalTargetDigests: MutableMap<String, String>
     ) {
         operations.groupBy { it.operation.target.lowercase(Locale.ROOT) }
             .forEach { (normalizedTarget, targetOperations) ->
@@ -320,6 +327,7 @@ object PatchManager {
                         "Patch target already exists: ${targetOperations.first().operation.target}"
                     }
                     writeArchiveEntry(zipOutput, targetOperations.first().operation.target, outputBytes)
+                    externalTargetDigests[normalizedTarget] = sha256(outputBytes)
                 }
             }
     }
@@ -612,6 +620,34 @@ object PatchManager {
         }
     }
 
+    /**
+     * Reopens only the files touched by external patches and verifies their final bytes. A patch
+     * is reported as applied only after the staged archive contains exactly what the rewrite pass
+     * produced; an incomplete or corrupted write therefore cannot silently launch.
+     */
+    internal fun validateExternalPatchTargets(file: File, expectedDigests: Map<String, String>) {
+        if (expectedDigests.isEmpty()) return
+        ZipFile(file).use { zip ->
+            val entriesByName = zip.entries().asSequence()
+                .filterNot { it.isDirectory }
+                .associateBy { it.name.lowercase(Locale.ROOT) }
+            expectedDigests.forEach { (target, expectedDigest) ->
+                val entry = entriesByName[target]
+                    ?: throw IllegalArgumentException("Patched package is missing external target $target")
+                val actualBytes = zip.getInputStream(entry).use { input ->
+                    readEntryBytesLimited(input, MAX_TRANSFORMED_ENTRY_BYTES)
+                }
+                require(sha256(actualBytes) == expectedDigest) {
+                    "External patch verification failed for $target"
+                }
+            }
+        }
+    }
+
+    private fun sha256(bytes: ByteArray): String = MessageDigest.getInstance("SHA-256")
+        .digest(bytes)
+        .joinToString("") { "%02x".format(it) }
+
     private fun gamePreferenceKey(gameId: String, patchKey: String): String {
         val digest = MessageDigest.getInstance("SHA-256")
             .digest(gameId.toByteArray(Charsets.UTF_8))
@@ -658,6 +694,11 @@ object PatchManager {
     private data class ResolvedOperation(
         val patch: InstalledPatch,
         val operation: PatchOperation
+    )
+
+    private data class RewriteResult(
+        val textPatchChanged: Boolean,
+        val externalTargetDigests: Map<String, String>
     )
 
     private data class TextPatchResult(

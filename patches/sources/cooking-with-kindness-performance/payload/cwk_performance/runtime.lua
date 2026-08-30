@@ -2,7 +2,6 @@
 
 local Runtime = {}
 local installed = false
-local CANVAS_CLEANUP_INTERVAL = 90
 
 local function isAndroid()
     if not (love and love.system and type(love.system.getOS) == "function") then
@@ -27,22 +26,17 @@ local function skipRedundantFrameSleep()
     end
 end
 
-local function retainSharedCanvases()
-    if type(Draw) ~= "table" or type(Draw._clearUnusedCanvases) ~= "function" then
+local function accelerateBattleTransition()
+    if not isAndroid() or type(LightEncounter) ~= "table" or
+        type(LightEncounter.onNoTransition) ~= "function" then
         return
     end
 
-    local originalCleanup = Draw._clearUnusedCanvases
-    local framesSinceCleanup = 0
-
-    Draw._clearUnusedCanvases = function(...)
-        framesSinceCleanup = framesSinceCleanup + 1
-        if framesSinceCleanup < CANVAS_CLEANUP_INTERVAL then
-            return
-        end
-
-        framesSinceCleanup = 0
-        return originalCleanup(...)
+    -- The regular transition keeps a FakeClone and the complete battle scene active while the
+    -- heart blinks. That path is disproportionately expensive on mobile GPUs. The engine's own
+    -- no-transition path preserves battle setup while completing the hand-off in one frame.
+    LightEncounter.onSoulTransition = function(self)
+        return self:onNoTransition()
     end
 end
 
@@ -53,7 +47,7 @@ function Runtime.install()
 
     installed = true
     skipRedundantFrameSleep()
-    retainSharedCanvases()
+    accelerateBattleTransition()
 end
 
 return Runtime

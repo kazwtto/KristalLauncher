@@ -5,16 +5,16 @@
     {
       "schemaVersion": 1,
       "id": "cooking-with-kindness.mobile-performance",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "name": {
         "pt-BR": "Otimização móvel e de batalhas para Cooking with Kindness",
         "en": "Mobile and battle optimization for Cooking with Kindness",
         "es": "Optimización móvil y de batallas para Cooking with Kindness"
       },
       "description": {
-        "pt-BR": "Patch dedicado a Cooking with Kindness DEMO v1.0.6 que reduz custo de iluminação, logs e alocações repetidas nas batalhas para melhorar FPS no Android.",
-        "en": "Patch dedicated to Cooking with Kindness DEMO v1.0.6 that reduces lighting cost, logging, and repeated battle allocations to improve Android FPS.",
-        "es": "Parche dedicado a Cooking with Kindness DEMO v1.0.6 que reduce el costo de iluminación, registros y asignaciones repetidas en batalla para mejorar los FPS en Android."
+        "pt-BR": "Patch dedicado a Cooking with Kindness DEMO v1.0.6 que reduz custo de iluminação, logs e alocações repetidas, além de evitar a transição de batalha pesada no Android.",
+        "en": "Patch dedicated to Cooking with Kindness DEMO v1.0.6 that reduces lighting cost, logging, and repeated allocations, and avoids the expensive battle transition on Android.",
+        "es": "Parche dedicado a Cooking with Kindness DEMO v1.0.6 que reduce el costo de iluminación, registros y asignaciones repetidas, y evita la transición de batalla pesada en Android."
       },
       "useCases": [
         {
@@ -34,9 +34,9 @@
         }
       ],
       "releaseNotes": {
-        "pt-BR": "Atualiza o patch de Cooking with Kindness DEMO v1.0.6 com correções de desempenho para batalhas: remove logs por quadro, a atualização duplicada do cronômetro e alocações repetidas de texto e sprites.",
-        "en": "Updates the Cooking with Kindness DEMO v1.0.6 patch with battle performance fixes: removes per-frame logging, duplicate timer updates, and repeated text and sprite allocations.",
-        "es": "Actualiza el parche de Cooking with Kindness DEMO v1.0.6 con correcciones de rendimiento para batallas: elimina registros por cuadro, actualizaciones duplicadas del temporizador y asignaciones repetidas de texto y sprites."
+        "pt-BR": "Corrige a entrada das batalhas no Android: remove a retenção especulativa de canvases e usa a transição imediata da própria engine, evitando a queda durante o coração piscando.",
+        "en": "Fixes battle entry on Android: removes speculative canvas retention and uses the engine's immediate transition, avoiding the slowdown while the heart blinks.",
+        "es": "Corrige la entrada a las batallas en Android: elimina la retención especulativa de canvases y usa la transición inmediata del motor, evitando la caída durante el parpadeo del corazón."
       },
       "author": "kazwtto",
       "category": "performance",
@@ -52,8 +52,8 @@
       "conflicts": [
         "kristal.general-performance"
       ],
-      "package": "packages/cooking-with-kindness-mobile-performance-1.1.0.klpatch",
-      "sha256": "9f86f9a3cdf7266b66a956dd79000904845d08c78de9c1ce403ab4738866a3bf"
+      "package": "packages/cooking-with-kindness-mobile-performance-1.1.1.klpatch",
+      "sha256": "9fc0016f2d2509516d214b8ece10fa79fcaca064e3e379488493f0bb448d2322"
     },
     {
       "schemaVersion": 1,

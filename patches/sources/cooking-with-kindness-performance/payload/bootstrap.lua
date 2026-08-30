@@ -5,9 +5,10 @@ if ok and type(runtime) == "table" and type(runtime.install) == "function" and K
     local originalLoadMod = Kristal.loadMod
 
     Kristal.loadMod = function(id, ...)
-        if id == "cooking-with-kindness" then
+        local result = originalLoadMod(id, ...)
+        if result and id == "cooking-with-kindness" then
             runtime.install()
         end
-        return originalLoadMod(id, ...)
+        return result
     end
 end

@@ -55,7 +55,10 @@ object PatchCatalogService {
         connection.connectTimeout = 12_000
         connection.readTimeout = 20_000
         connection.instanceFollowRedirects = true
+        connection.useCaches = false
         connection.setRequestProperty("Accept", "application/json")
+        connection.setRequestProperty("Cache-Control", "no-cache, no-store")
+        connection.setRequestProperty("Pragma", "no-cache")
         connection.setRequestProperty("User-Agent", "KristalLauncher/${BuildConfig.VERSION_NAME}")
         return try {
             val responseCode = connection.responseCode
