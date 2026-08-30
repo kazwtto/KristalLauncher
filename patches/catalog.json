@@ -5,16 +5,16 @@
     {
       "schemaVersion": 1,
       "id": "cooking-with-kindness.mobile-performance",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "name": {
-        "pt-BR": "Otimização móvel para Cooking with Kindness",
-        "en": "Mobile optimization for Cooking with Kindness",
-        "es": "Optimización móvil para Cooking with Kindness"
+        "pt-BR": "Otimização móvel e de batalhas para Cooking with Kindness",
+        "en": "Mobile and battle optimization for Cooking with Kindness",
+        "es": "Optimización móvil y de batallas para Cooking with Kindness"
       },
       "description": {
-        "pt-BR": "Patch dedicado a Cooking with Kindness DEMO v1.0.6 que remove canvases gigantes e não utilizados da iluminação para reduzir uso de GPU e travamentos no Android.",
-        "en": "Patch dedicated to Cooking with Kindness DEMO v1.0.6 that removes oversized and unused lighting canvases to reduce GPU use and Android crashes.",
-        "es": "Parche dedicado a Cooking with Kindness DEMO v1.0.6 que elimina canvases de iluminación sobredimensionados y sin uso para reducir el uso de GPU y los cierres en Android."
+        "pt-BR": "Patch dedicado a Cooking with Kindness DEMO v1.0.6 que reduz custo de iluminação, logs e alocações repetidas nas batalhas para melhorar FPS no Android.",
+        "en": "Patch dedicated to Cooking with Kindness DEMO v1.0.6 that reduces lighting cost, logging, and repeated battle allocations to improve Android FPS.",
+        "es": "Parche dedicado a Cooking with Kindness DEMO v1.0.6 que reduce el costo de iluminación, registros y asignaciones repetidas en batalla para mejorar los FPS en Android."
       },
       "useCases": [
         {
@@ -26,12 +26,17 @@
           "pt-BR": "O jogo consome muita memória de GPU em celular ou emulador, mesmo sem efeitos visuais complexos na tela.",
           "en": "The game uses excessive GPU memory on a phone or emulator even without complex effects on screen.",
           "es": "El juego usa demasiada memoria de GPU en un teléfono o emulador incluso sin efectos complejos en pantalla."
+        },
+        {
+          "pt-BR": "Tutoriais, minijogos ou batalhas de clientes travam ou perdem FPS durante o cronômetro e as animações.",
+          "en": "Tutorials, minigames, or customer battles freeze or lose FPS while timers and animations are active.",
+          "es": "Los tutoriales, minijuegos o batallas de clientes se congelan o pierden FPS mientras los temporizadores y las animaciones están activos."
         }
       ],
       "releaseNotes": {
-        "pt-BR": "Versão inicial para Cooking with Kindness DEMO v1.0.6. Substitui o renderizador de luzes que alocava um canvas do tamanho do mapa inteiro.",
-        "en": "Initial release for Cooking with Kindness DEMO v1.0.6. Replaces the light renderer that allocated a canvas the size of the entire map.",
-        "es": "Versión inicial para Cooking with Kindness DEMO v1.0.6. Sustituye el renderizador de luces que asignaba un canvas del tamaño de todo el mapa."
+        "pt-BR": "Atualiza o patch de Cooking with Kindness DEMO v1.0.6 com correções de desempenho para batalhas: remove logs por quadro, a atualização duplicada do cronômetro e alocações repetidas de texto e sprites.",
+        "en": "Updates the Cooking with Kindness DEMO v1.0.6 patch with battle performance fixes: removes per-frame logging, duplicate timer updates, and repeated text and sprite allocations.",
+        "es": "Actualiza el parche de Cooking with Kindness DEMO v1.0.6 con correcciones de rendimiento para batallas: elimina registros por cuadro, actualizaciones duplicadas del temporizador y asignaciones repetidas de texto y sprites."
       },
       "author": "kazwtto",
       "category": "performance",
@@ -47,8 +52,8 @@
       "conflicts": [
         "kristal.general-performance"
       ],
-      "package": "packages/cooking-with-kindness-mobile-performance-1.0.0.klpatch",
-      "sha256": "87994f4e7a98058c27811435ab68869d759092baa94bf082acf9382866878eee"
+      "package": "packages/cooking-with-kindness-mobile-performance-1.1.0.klpatch",
+      "sha256": "9f86f9a3cdf7266b66a956dd79000904845d08c78de9c1ce403ab4738866a3bf"
     },
     {
       "schemaVersion": 1,
