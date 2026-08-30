@@ -1,0 +1,85 @@
+#!/bin/sh
+
+# Reject local build output, games, credentials, assistant settings, and accidentally added large
+# files. Git ignores only affect untracked files, so this check also protects commits that already
+# contain an ignored path.
+
+set -eu
+
+max_blob_bytes=$((25 * 1024 * 1024))
+failure=0
+
+reject_path() {
+    path="$1"
+    source="$2"
+    size="$3"
+    case "$path" in
+        games_to_test/*|artifacts/*|dist/*|.signing/*|.android-sdk/*|.jdk*/*|.gradle/*|*/build/*|.codex/*|.agents/*|.agent/*|.claude/*|.cursor/*|.idea/*|.vscode/*|f)
+            printf '%s\n' "blocked: $source adds excluded path '$path'" >&2
+            failure=1
+            return
+            ;;
+        *.apk|*.aab|*.ap_|*.idsig|*.hprof|*.love|*.exe|*.7z|*.rar|*.tar|*.tar.gz|*.tgz|*.jks|*.keystore|*.p12|*.pfx|*.pem|*.key|*.cer|*.crt)
+            printf '%s\n' "blocked: $source adds excluded file '$path'" >&2
+            failure=1
+            return
+            ;;
+    esac
+
+    if git check-ignore --no-index --quiet -- "$path"; then
+        printf '%s\n' "blocked: $source adds path ignored by .gitignore: '$path'" >&2
+        failure=1
+        return
+    fi
+
+    if [ "$size" -gt "$max_blob_bytes" ] && [ "${KRISTAL_ALLOW_LARGE_FILE:-}" != "1" ]; then
+        printf '%s\n' "blocked: $source adds '$path' ($size bytes); limit is 25 MiB" >&2
+        printf '%s\n' "Set KRISTAL_ALLOW_LARGE_FILE=1 only after confirming the file belongs in the repository." >&2
+        failure=1
+    fi
+}
+
+check_staged() {
+    old_ifs=$IFS
+    IFS='
+'
+    for path in $(git diff --cached --name-only --diff-filter=AM); do
+        [ -n "$path" ] || continue
+        size=$(git cat-file -s ":$path")
+        reject_path "$path" "staging area" "$size"
+    done
+    IFS=$old_ifs
+}
+
+check_commits() {
+    for commit in "$@"; do
+        old_ifs=$IFS
+        IFS='
+'
+        for path in $(git diff-tree --no-commit-id --name-only -r --diff-filter=AM "$commit"); do
+            [ -n "$path" ] || continue
+            size=$(git cat-file -s "$commit:$path")
+            reject_path "$path" "commit $commit" "$size"
+        done
+        IFS=$old_ifs
+    done
+}
+
+case "${1:-}" in
+    --staged)
+        check_staged
+        ;;
+    --commits)
+        shift
+        check_commits "$@"
+        ;;
+    *)
+        printf '%s\n' "Usage: verify-push-content --staged | --commits <commit>..." >&2
+        exit 2
+        ;;
+esac
+
+if [ "$failure" -ne 0 ]; then
+    printf '%s\n' "Refusing the operation. Remove the file from the commit history or explicitly review it first." >&2
+    exit 1
+fi

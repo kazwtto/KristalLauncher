@@ -12,13 +12,13 @@
     <string name="toggle_view">Alternar Exibição</string>
     <string name="settings">Configurações</string>
     <string name="settings_title">Configurações</string>
-    
+
     <!-- Bottom navigation tabs -->
     <string name="tab_library">Biblioteca</string>
     <string name="tab_recent">Recente</string>
     <string name="tab_favorites">Favoritos</string>
     <string name="add_games">Adicionar Jogos</string>
-    
+
     <!-- Overflow menu actions -->
     <string name="add_favorite">Adicionar aos Favoritos</string>
     <string name="remove_favorite">Remover dos Favoritos</string>
@@ -28,7 +28,7 @@
     <string name="section_general">GERAL</string>
     <string name="section_storage">ARMAZENAMENTO</string>
     <string name="section_about">SOBRE</string>
-    
+
     <string name="app_language">Idioma do Aplicativo</string>
     <string name="appearance_title">Aparência</string>
     <string name="current_folder">Pasta Atual de Jogos</string>
@@ -38,13 +38,13 @@
     <string name="clear_cache_desc">Remove capas e metadados salvos localmente.</string>
     <string name="about_title">Kristal Launcher v%1$s</string>
     <string name="about_desc">Launcher para Kristal Engine no Android. Organize e execute seus jogos com controles touch, correções de compatibilidade e opções pensadas para dispositivos móveis.</string>
-    
+
     <!-- Exit Menu Overlay -->
     <string name="exit_dialog_title">Sair do jogo?</string>
     <string name="exit_dialog_message">Deseja encerrar a execução da partida atual e voltar ao launcher?</string>
     <string name="exit_game">Sair</string>
     <string name="cancel">Cancelar</string>
-    
+
     <!-- Languages -->
     <string name="lang_pt">Português</string>
     <string name="lang_en">English</string>
@@ -57,36 +57,39 @@
     <string name="lang_pt_option">Português</string>
     <string name="lang_en_option">English</string>
     <string name="lang_es_option">Español</string>
+    <string name="language_code_pt">PT</string>
+    <string name="language_code_en">EN</string>
+    <string name="language_code_es">ES</string>
     <string name="theme_title">TEMA</string>
     <string name="theme_device">Seguir o dispositivo</string>
     <string name="theme_light">Claro</string>
     <string name="theme_dark">Escuro</string>
     <string name="appearance_summary">Personalize a aparência do launcher e escolha quanto movimento deseja na interface.</string>
-    <string name="theme_device_option">Dispositivo</string>
+    <string name="theme_device_option">Seguir o dispositivo</string>
     <string name="theme_light_option">Claro</string>
     <string name="theme_dark_option">Escuro</string>
     <string name="motion_title">MOVIMENTO</string>
-    <string name="animations_enabled">Animações da lista</string>
+    <string name="animations_enabled">Animações e transições</string>
     <string name="animations_summary">Suaviza a abertura das páginas e destaca a hierarquia da navegação. Desative para remover todo o movimento adicional.</string>
 
     <!-- Compatibility patches -->
     <string name="action_patches">Correções</string>
     <string name="patches_settings_title">Correções de compatibilidade</string>
     <string name="patches_settings_header">Estes são os patches globais aplicados a todos os jogos por padrão. Você pode forçar a ativação ou desativação deles para jogos específicos clicando no ícone de engrenagem na lista de jogos.</string>
-    
+
     <string name="patch_text_title">Correção de Texto Acumulado</string>
     <string name="patch_text_desc">Resolve o problema do Kristal Engine em que textos de batalha (como \'The tutorial begins…?\') não desaparecem da tela ao abrir o menu, acumulando-se uns sobre os outros.\n\n⚠️ Ocasionalmente, pode causar pequenos recarregamentos visuais do texto na tela.</string>
-    <string name="patch_text_warning">Desativar esta correção pode fazer textos antigos permanecerem na tela e se acumularem durante batalhas ou diálogos.\n\nDeseja realmente desativar?</string>
+    <string name="patch_text_warning">Desativar a correção de Texto Acumulativo pode fazer trechos antigos permanecerem visíveis durante os diálogos em alguns jogos.\n\nDeseja realmente desativar?</string>
     <string name="patch_fullscreen_title">Tela Cheia Imersiva</string>
     <string name="patch_fullscreen_desc">Força a ocultação da barra de navegação e barra de status do Android (modo imersivo), permitindo que o jogo utilize toda a extensão da tela do seu dispositivo.</string>
-    <string name="patch_shaders_title">Correção de Shaders (GLSL ES)</string>
+    <string name="patch_shaders_title">Correção de Shaders (Coversor GLSL ES)</string>
     <string name="patch_shaders_desc">Shaders de mods criados para PC costumam falhar e causar tela preta no Android. Este patch converte dinamicamente a sintaxe do GLSL para funcionar nas rígidas regras do OpenGL ES de celulares (corrige aritmética mista, mod(), palavras reservadas, etc).\n\n⚠️ Mantenha ativado, a menos que o jogo perca a cor completamente.</string>
     <string name="patch_shaders_warning">Desativar a correção de shaders GLSL ES pode causar telas pretas, congelamentos ou erros de inicialização na maioria dos jogos Kristal/LÖVE2D no Android.\n\nDeseja realmente desativar?</string>
     <string name="patch_gamepad_title">Controles Virtuais Touch</string>
     <string name="patch_gamepad_desc">Injeta um gamepad virtual transparente na tela (botões Z, X, C, Setas, etc). Necessário se você não possui um controle físico ou teclado Bluetooth conectado.</string>
     <string name="patch_borders_title">Correção de Bordas Relativas</string>
     <string name="patch_borders_desc">Muitos mods da Kristal Engine utilizam bordas de tela desenhadas para o aspect ratio fixo do PC (4:3). Este patch espelha e redimensiona as bordas dinamicamente para não ficarem cortadas nas telas largas (16:9, 20:9) dos celulares modernos.</string>
-    <string name="patch_rgba16_title">Conversão RGBA16 (Anti-Tela Preta)</string>
+    <string name="patch_rgba16_title">Conversão RGBA16</string>
     <string name="patch_rgba16_desc">O Android não suporta imagens em formato de 16-bits por canal de cor. Se um mod possuir sprites salvos dessa forma, o jogo fechará ou a tela ficará preta. Este patch converte as imagens afetadas para 8-bits na memória automaticamente.</string>
     <string name="patch_physfs_title">Anti-Crash PhysFS (Stack Overflow)</string>
     <string name="patch_physfs_desc">A engine de busca de arquivos virtual do LÖVE (PhysFS) pode entrar em loop infinito se um mod tiver caminhos que referenciam o próprio diretório base de forma recursiva. Este patch impõe um limite seguro na busca para evitar crashes.</string>
@@ -94,13 +97,13 @@
     <string name="patch_nil_arithmetic_desc">Impede que a engine sofra um crash imediato (\'attempt to perform arithmetic on a nil value\') se um mod tentar manipular o volume de uma música que não carregou corretamente ou inicializou sem valor no config.</string>
 
     <string name="patch_list_text">Correção de Texto Acumulado</string>
-    <string name="patch_list_text_warning">⚠️ Aviso: Pode causar recarregamentos visuais do texto na tela.</string>
+    <string name="patch_list_text_warning">⚠️ Aviso: desativar pode fazer textos antigos se acumularem na tela.</string>
     <string name="patch_list_fullscreen">Tela Cheia Imersiva</string>
     <string name="patch_list_shaders">Correção de Shaders (GLSL ES)</string>
     <string name="patch_list_shaders_warning">⚠️ Aviso: Desativar pode causar telas pretas ou erros.</string>
     <string name="patch_list_gamepad">Controles Virtuais Touch</string>
     <string name="patch_list_borders">Correção de Bordas Relativas</string>
-    <string name="patch_list_rgba16">Conversão RGBA16 (Anti-Tela Preta)</string>
+    <string name="patch_list_rgba16">Conversão RGBA16</string>
     <string name="patch_list_physfs">Anti-Crash PhysFS (Stack Overflow)</string>
     <string name="patch_list_nil_arithmetic">Sanitização de Nil Arithmetic &amp; Áudio</string>
 
@@ -147,11 +150,11 @@
     <string name="preparing_game">Preparando %1$s…\nCarregando jogo, por favor aguarde.</string>
     <string name="error_game_file_unavailable">Erro: não foi possível acessar o arquivo do jogo.</string>
     <string name="error_invalid_love_executable">Erro: o arquivo .exe não contém um jogo LÖVE2D válido.</string>
+    <string name="error_nested_game_unavailable">Erro: o jogo interno não foi encontrado no arquivo ZIP.</string>
     <string name="error_executable_stream">Erro ao abrir o fluxo de dados do executável.</string>
     <string name="error_empty_or_corrupt_game">Erro: o arquivo do jogo está vazio ou corrompido.</string>
-    <string name="error_nested_game_unavailable">Erro: o jogo armazenado dentro do ZIP não está mais disponível.</string>
-    <string name="error_game_runtime_unavailable">Erro: o runtime LÖVE2D não foi incluído corretamente neste APK.</string>
     <string name="error_loading_game">Erro ao carregar o jogo: %1$s</string>
+    <string name="error_incompatible_love_runtime">O runtime LÖVE2D incluído é incompatível com esta versão. Reinstale o launcher usando um APK oficial.</string>
     <string name="navigate_back">Voltar</string>
     <string name="filter_games">Filtrar jogos</string>
     <string name="more_options">Mais opções</string>
@@ -174,6 +177,9 @@
     <string name="patch_trust_verified">VERIFICADO</string>
     <string name="patch_trust_unverified">NÃO VERIFICADO</string>
     <string name="patch_download">Baixar</string>
+    <string name="patch_downloading">Baixando…</string>
+    <string name="patch_validating">Validando…</string>
+    <string name="patch_installing">Instalando…</string>
     <string name="patch_update">Atualizar</string>
     <string name="patch_installed">Instalado</string>
     <string name="patch_enabled_by_default">Ativado</string>
@@ -196,10 +202,14 @@
     <string name="patch_download_confirm_message">Baixar e validar “%1$s” versão %2$s do catálogo oficial? O patch será instalado desativado.</string>
     <string name="patch_update_confirm_title">Atualizar patch?</string>
     <string name="patch_update_confirm_message">Baixar e validar a versão %2$s de “%1$s”? A configuração atual será preservada.</string>
+    <string name="patch_update_available_title">Atualização disponível para “%1$s”</string>
+    <string name="patch_update_available_message">Versão instalada: %1$s\nNova versão: %2$s\n\n%3$s</string>
+    <string name="patch_update_notes_unavailable">Esta atualização não possui notas de versão.</string>
     <string name="patch_import_confirm_title">Importar patch externo?</string>
     <string name="patch_import_confirm_message">O pacote será validado e armazenado na área privada do aplicativo. Patches importados não são verificados e permanecem desativados até sua confirmação.</string>
     <string name="patch_install_success">%1$s foi instalado e está desativado.</string>
     <string name="patch_install_failed">Não foi possível instalar o patch</string>
+    <string name="patch_install_verification_failed">A instalação não pôde ser confirmada no armazenamento do aplicativo.</string>
     <string name="patch_none">Nenhum</string>
     <string name="patch_details_body">%1$s\n\nAutor: %2$s\nVersão: %3$s\nIdentificador: %4$s\nCapacidades: %5$s\nDependências: %6$s\nConflitos: %7$s</string>
     <string name="patch_uninstall">Desinstalar</string>
@@ -247,7 +257,7 @@
         <item>O conteúdo não ocupa toda a área útil da tela.</item>
     </string-array>
     <string-array name="patch_shaders_use_cases">
-        <item>O jogo abre com tela preta, efeitos ausentes ou cores incorretas.</item>
+        <item>Para o jogos que exibe erros mencionado shaders, tela preta, efeitos ausentes ou cores incorretas.</item>
         <item>Um shader criado para computador falha no OpenGL ES do Android.</item>
     </string-array>
     <string-array name="patch_gamepad_use_cases">
@@ -273,6 +283,7 @@
     <string name="game_engine_version">Kristal %1$s</string>
     <string name="folder_permission_error">Não foi possível manter o acesso à pasta selecionada. Escolha outra pasta ou conceda o acesso novamente.</string>
     <string name="folder_scan_error">Não foi possível ler a pasta de jogos: %1$s</string>
+    <string name="games_scan_partial_failure">Alguns arquivos não puderam ser lidos: %1$s. Os outros jogos continuam disponíveis.</string>
     <string name="error_title">Erro</string>
     <string name="game_launch_in_progress">Outro jogo já está sendo preparado.</string>
 </resources>

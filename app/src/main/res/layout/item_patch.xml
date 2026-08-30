@@ -106,6 +106,17 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/patch_enabled_by_default" />
 
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/patchActionProgress"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="10dp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:indicatorColor="@color/m3_primary"
+                app:indicatorSize="20dp"
+                app:trackThickness="2dp" />
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnPatchAction"
                 style="@style/Widget.Material3.Button.OutlinedButton"

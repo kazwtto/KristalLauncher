@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="AlwaysShowAction">
+
+    <item
+        android:id="@+id/action_view_mode"
+        android:icon="@drawable/ic_view_grid"
+        android:title="@string/toggle_view"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_patches"
+        android:icon="@drawable/ic_tune"
+        android:title="@string/action_patches"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/action_settings"

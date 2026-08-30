@@ -19,7 +19,7 @@ object GameCacheManager {
     private const val PREF_NAME = "game_cache_settings"
     private const val KEY_FOLDER_URI = "cached_folder_uri"
     private const val KEY_CACHE_SCHEMA = "cache_schema"
-    private const val CACHE_SCHEMA_VERSION = 4
+    private const val CACHE_SCHEMA_VERSION = 7
 
     fun hasCache(context: Context): Boolean {
         val cacheFile = File(context.filesDir, CACHE_FILE_NAME)
@@ -49,7 +49,9 @@ object GameCacheManager {
                     val iconName = "${sha256(game.stableId)}_${game.lastModified}_${game.sizeBytes}.png"
                     val iconFile = File(iconDir, iconName)
                     retainedIcons += iconName
-                    writeBitmapAtomically(iconFile, bitmap)
+                    if (!iconFile.isFile || iconFile.length() == 0L) {
+                        writeBitmapAtomically(iconFile, bitmap)
+                    }
                     jsonObject.put("iconFile", iconName)
                 }
                 jsonArray.put(jsonObject)
@@ -68,7 +70,11 @@ object GameCacheManager {
         }.onFailure(::reportRecoverableFailure)
     }
 
-    fun getCachedGames(context: Context, folderUri: Uri? = null): List<LoveGame> {
+    fun getCachedGames(
+        context: Context,
+        folderUri: Uri? = null,
+        loadIcons: Boolean = true
+    ): List<LoveGame> {
         return runCatching {
             if (getCacheSchema(context) != CACHE_SCHEMA_VERSION) return emptyList()
             val cachedFolderUri = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
@@ -86,18 +92,21 @@ object GameCacheManager {
                     val uriValue = item.optString("uri")
                     val fileName = item.optString("fileName")
                     if (uriValue.isBlank() || fileName.isBlank()) continue
-                    val icon = item.optString("iconFile")
-                        .takeIf(String::isNotBlank)
-                        ?.let { File(iconDir, it) }
-                        ?.takeIf(File::isFile)
-                        ?.let(::decodeCachedIcon)
+                    val icon = if (loadIcons) {
+                        item.optString("iconFile")
+                            .takeIf(String::isNotBlank)
+                            ?.let { File(iconDir, it) }
+                            ?.takeIf(File::isFile)
+                            ?.let(::decodeCachedIcon)
+                    } else {
+                        null
+                    }
                     add(
                         LoveGame(
                             title = item.optString("title").ifBlank { fileName },
                             fileName = fileName,
                             uri = Uri.parse(uriValue),
-                            archiveEntryPath = item.optString("archiveEntryPath")
-                                .takeIf(String::isNotBlank),
+                            archiveEntryPath = item.optString("archiveEntryPath").takeIf(String::isNotBlank),
                             icon = icon,
                             sizeBytes = item.optLong("sizeBytes", 0L),
                             lastModified = item.optLong("lastModified", 0L),
@@ -121,19 +130,12 @@ object GameCacheManager {
                 .remove(KEY_FOLDER_URI)
                 .remove(KEY_CACHE_SCHEMA)
                 .apply()
-            clearStagedGameCopies(context)
         }.onFailure(::reportRecoverableFailure)
     }
 
     fun clearRuntimeGameCopies(context: Context) {
         context.cacheDir.listFiles().orEmpty()
             .filter { it.isFile && it.name.startsWith("game_") && it.extension.equals("love", true) }
-            .forEach(File::delete)
-    }
-
-    fun clearStagedGameCopies(context: Context) {
-        File(context.filesDir, "staged").listFiles().orEmpty()
-            .filter { it.isFile }
             .forEach(File::delete)
     }
 

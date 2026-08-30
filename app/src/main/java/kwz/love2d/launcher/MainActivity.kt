@@ -1,5 +1,6 @@
 package kwz.love2d.launcher
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -13,12 +14,15 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -33,6 +37,7 @@ import kwz.love2d.launcher.util.GameCacheManager
 import kwz.love2d.launcher.util.GameLauncher
 import kwz.love2d.launcher.util.GameScanner
 import kwz.love2d.launcher.util.NavigationAnimations
+import kwz.love2d.launcher.util.ThemeManager
 import kwz.love2d.launcher.util.UpdateChecker
 import kwz.love2d.launcher.util.UpdateCheckResult
 import kwz.love2d.launcher.ui.UpdatePrompter
@@ -43,6 +48,10 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+// warning warning unoptimized code here, AI can not do miracles
+// i rewrtie this code a lot of time
+// after each rewrite i forgot do add the comments
+// now its just a memory
 class MainActivity : AppCompatActivity() {
 
     private lateinit var rvGames: RecyclerView
@@ -62,6 +71,7 @@ class MainActivity : AppCompatActivity() {
     private var allGamesList: List<LoveGame> = emptyList()
     private var displayedGamesList: List<LoveGame> = emptyList()
     private var selectedFolderUri: Uri? = null
+    private var isGridView = false
     private var currentTabId = R.id.navigation_library
     private var scanJob: Job? = null
 
@@ -88,6 +98,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        NavigationAnimations.prepare(this)
         setContentView(R.layout.activity_main)
 
         topAppBar = findViewById(R.id.topAppBar)
@@ -105,6 +116,9 @@ class MainActivity : AppCompatActivity() {
         btnFilter = findViewById(R.id.btnFilter)
         fabAddGames = findViewById(R.id.fabAddGames)
         bottomNavigation = findViewById(R.id.bottomNavigation)
+
+        val prefs = getSharedPreferences("launcher_prefs", Context.MODE_PRIVATE)
+        isGridView = prefs.getBoolean("is_grid_view", false)
 
         setupRecyclerView()
         setupBottomNavigation()
@@ -146,7 +160,7 @@ class MainActivity : AppCompatActivity() {
         if (uri != null) {
             scanFolder(uri, loadCache = true)
         } else {
-            showNoFolderSelectedDialog()
+            displayGames(emptyList())
         }
 
         checkForUpdatesAutomatically()
@@ -171,7 +185,11 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch(Dispatchers.IO) {
             GameCacheManager.clearRuntimeGameCopies(this@MainActivity)
         }
-        rvGames.itemAnimator = null
+        rvGames.itemAnimator = if (ThemeManager.areAnimationsEnabled(this)) {
+            DefaultItemAnimator().apply { supportsChangeAnimations = false }
+        } else {
+            null
+        }
         val newUri = FolderPermissionManager.getSavedFolderUri(this)
         if (newUri?.toString() != selectedFolderUri?.toString()) {
             selectedFolderUri = newUri
@@ -244,26 +262,24 @@ class MainActivity : AppCompatActivity() {
         popup.show()
     }
 
-    private fun showNoFolderSelectedDialog() {
-        displayGames(emptyList())
-        MaterialAlertDialogBuilder(this)
-            .setTitle(R.string.select_folder_dialog_title)
-            .setMessage(R.string.select_folder_dialog_desc)
-            .setPositiveButton(R.string.select_folder) { _, _ ->
-                folderPickerLauncher.launch(null)
-            }
-            .setCancelable(true)
-            .show()
-    }
-
     private fun setupRecyclerView() {
-        rvGames.layoutManager = LinearLayoutManager(this)
+        // Dynamic span count based on screen width to avoid huge cards on tablets
+        val displayMetrics = resources.displayMetrics
+        val screenWidthDp = displayMetrics.widthPixels / displayMetrics.density
+        // Ideal card width is ~160dp. Max 8 columns to prevent tiny cards
+        val spanCount = (screenWidthDp / 160f).toInt().coerceIn(2, 8)
+
+        if (isGridView) {
+            rvGames.layoutManager = GridLayoutManager(this, spanCount)
+        } else {
+            rvGames.layoutManager = LinearLayoutManager(this)
+        }
 
         if (gameAdapter == null) {
             gameAdapter = GameAdapter(
                 context = this,
                 games = displayedGamesList,
-                isGridView = false,
+                isGridView = isGridView,
                 onGameClick = { game ->
                     GameLauncher.launchGame(this, game)
                 },
@@ -272,21 +288,46 @@ class MainActivity : AppCompatActivity() {
                 }
             )
             rvGames.adapter = gameAdapter
+        } else {
+            gameAdapter?.setGridView(isGridView)
         }
 
-        rvGames.itemAnimator = null
+        rvGames.itemAnimator = if (ThemeManager.areAnimationsEnabled(this)) {
+            DefaultItemAnimator().apply { supportsChangeAnimations = false }
+        } else {
+            null
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
+
+        val modeItem = menu.findItem(R.id.action_view_mode)
+        if (isGridView) {
+            modeItem?.setIcon(R.drawable.ic_view_list)
+        } else {
+            modeItem?.setIcon(R.drawable.ic_view_grid)
+        }
 
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.action_view_mode -> {
+                isGridView = !isGridView
+                saveViewMode(isGridView)
+                setupRecyclerView()
+                displayGames(displayedGamesList)
+                invalidateOptionsMenu()
+                true
+            }
             R.id.action_settings -> {
                 NavigationAnimations.start(this, Intent(this, SettingsActivity::class.java))
+                true
+            }
+            R.id.action_patches -> {
+                NavigationAnimations.start(this, Intent(this, PatchesSettingsActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -312,42 +353,47 @@ class MainActivity : AppCompatActivity() {
         val newScanJob = lifecycleScope.launch(start = CoroutineStart.LAZY) {
             try {
                 var cachedGames = allGamesList
-                if (forceRefresh) {
-                    withContext(Dispatchers.IO) {
-                        GameCacheManager.clearStagedGameCopies(this@MainActivity)
-                    }
-                    cachedGames = emptyList()
-                }
                 if (loadCache) {
                     cachedGames = withContext(Dispatchers.IO) {
-                        GameCacheManager.getCachedGames(this@MainActivity, folderUri)
+                        GameCacheManager.getCachedGames(
+                            context = this@MainActivity,
+                            folderUri = folderUri,
+                            loadIcons = true
+                        )
                     }
-                    if (cachedGames.isNotEmpty()) {
+                    if (cachedGames.isNotEmpty() && selectedFolderUri == folderUri) {
                         allGamesList = cachedGames
                         applyCurrentTabFilter()
+                        progressBar.visibility = View.GONE
                     }
                 }
 
-                val games = GameScanner.scanGamesInFolder(
+                val scanResult = GameScanner.scanGamesInFolder(
                     context = this@MainActivity,
                     folderUri = folderUri,
                     cachedGames = cachedGames,
-                    forceRefresh = forceRefresh,
-                    onProgress = { partialGames ->
-                        withContext(Dispatchers.Main.immediate) {
-                            progressBar.visibility = View.GONE
-                            allGamesList = partialGames
-                            applyCurrentTabFilter()
-                        }
-                    }
+                    forceRefresh = forceRefresh
                 )
-                withContext(Dispatchers.IO) {
-                    GameCacheManager.saveGamesCache(this@MainActivity, folderUri, games)
-                }
+                val games = scanResult.games
 
                 if (selectedFolderUri == folderUri) {
                     allGamesList = games
                     applyCurrentTabFilter()
+                    progressBar.visibility = View.GONE
+                    swipeRefresh.isRefreshing = false
+                    if (scanResult.failedFiles.isNotEmpty()) {
+                        Toast.makeText(
+                            this@MainActivity,
+                            getString(
+                                R.string.games_scan_partial_failure,
+                                scanResult.failedFiles.joinToString()
+                            ),
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+                withContext(Dispatchers.IO) {
+                    GameCacheManager.saveGamesCache(this@MainActivity, folderUri, games)
                 }
             } catch (error: CancellationException) {
                 throw error
@@ -415,4 +461,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun saveViewMode(isGrid: Boolean) {
+        val prefs = getSharedPreferences("launcher_prefs", Context.MODE_PRIVATE)
+        prefs.edit().putBoolean("is_grid_view", isGrid).apply()
+    }
 }

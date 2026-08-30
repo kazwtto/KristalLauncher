@@ -16,6 +16,7 @@ object ThemeManager {
 
     private const val PREF_NAME = "appearance_settings"
     private const val KEY_THEME = "app_theme"
+    private const val KEY_ANIMATIONS = "animations_enabled"
 
     fun applySavedTheme(context: Context) {
         val mode = when (getCurrentTheme(context)) {
@@ -38,14 +39,14 @@ object ThemeManager {
     }
 
     fun applyStatusBarTheme(activity: Activity) {
-        val surfaceColor = MaterialColors.getColor(
+        val backgroundColor = MaterialColors.getColor(
             activity,
-            com.google.android.material.R.attr.colorSurface,
-            activity.getColor(R.color.m3_surface)
+            android.R.attr.colorBackground,
+            activity.getColor(R.color.m3_bg_dark)
         )
-        activity.window.statusBarColor = surfaceColor
+        activity.window.statusBarColor = backgroundColor
         WindowCompat.getInsetsController(activity.window, activity.window.decorView)
-            .isAppearanceLightStatusBars = ColorUtils.calculateLuminance(surfaceColor) > 0.5
+            .isAppearanceLightStatusBars = ColorUtils.calculateLuminance(backgroundColor) > 0.5
     }
 
     fun getCurrentTheme(context: Context): String {
@@ -61,4 +62,16 @@ object ThemeManager {
             else -> R.string.theme_device
         }
     )
+
+    fun areAnimationsEnabled(context: Context): Boolean {
+        return context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+            .getBoolean(KEY_ANIMATIONS, true)
+    }
+
+    fun setAnimationsEnabled(context: Context, enabled: Boolean) {
+        context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+            .edit()
+            .putBoolean(KEY_ANIMATIONS, enabled)
+            .apply()
+    }
 }

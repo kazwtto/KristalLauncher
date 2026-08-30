@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "id": "kristal.general-performance",
+  "version": "0.0.2",
+  "name": {
+    "pt-BR": "Otimização geral para jogos Kristal Engine",
+    "en": "General performance optimization for Kristal Engine games",
+    "es": "Optimización general para juegos de Kristal Engine"
+  },
+  "description": {
+    "pt-BR": "Patch geral e experimental para jogos Kristal Engine compatíveis. Reduz sleeps redundantes e recriação de canvases quando as APIs necessárias estão disponíveis.",
+    "en": "General, experimental patch for compatible Kristal Engine games. Reduces redundant sleeps and canvas recreation when the required APIs are available.",
+    "es": "Parche general y experimental para juegos compatibles de Kristal Engine. Reduce esperas redundantes y recreación de canvases cuando las API necesarias están disponibles."
+  },
+  "useCases": [
+    {
+      "pt-BR": "O jogo perde FPS por usar sleep curto além do VSync no Android.",
+      "en": "The game loses FPS because it uses a short sleep in addition to Android VSync.",
+      "es": "El juego pierde FPS por usar una espera corta además de VSync en Android."
+    },
+    {
+      "pt-BR": "Efeitos que alternam canvases apresentam picos de renderização no Android.",
+      "en": "Effects that alternate canvases have rendering spikes on Android.",
+      "es": "Los efectos que alternan canvases presentan picos de renderizado en Android."
+    }
+  ],
+  "author": "kazwtto",
+  "category": "performance",
+  "minimumLauncherVersion": "0.17.0",
+  "priority": 100,
+  "capabilities": [
+    "staged_package",
+    "inject_files",
+    "edit_lua",
+    "runtime_hook"
+  ],
+  "dependencies": [],
+  "conflicts": [],
+  "operations": [
+    {
+      "type": "inject",
+      "source": "payload/kristal_performance/runtime.lua",
+      "target": "kristal_performance/runtime.lua"
+    },
+    {
+      "type": "append_text",
+      "source": "payload/bootstrap.lua",
+      "target": "main.lua",
+      "required": false
+    }
+  ]
+}

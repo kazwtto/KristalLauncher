@@ -1,92 +1,88 @@
 package kwz.love2d.launcher.util
 
 import android.content.Context
-import androidx.documentfile.provider.DocumentFile
+import android.net.Uri
 import kwz.love2d.launcher.model.LoveGame
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
 import java.util.Locale
 import java.util.UUID
-import java.util.zip.ZipInputStream
 
-/** Finds complete .love or fused .exe packages stored inside a wrapper ZIP. */
 object NestedGamePackageParser {
-
-    private const val MAX_ARCHIVE_ENTRIES = 10_000
+    private const val COPY_BUFFER_SIZE = 1_048_576
+    private const val MAX_ARCHIVE_ENTRIES = 50_000
     private const val MAX_NESTED_GAMES = 32
-    private const val MAX_NESTED_PACKAGE_BYTES = 2L * 1024 * 1024 * 1024
-    private const val COPY_BUFFER_SIZE = 1024 * 1024
+    private const val MAX_NESTED_PACKAGE_BYTES = 2_147_483_648L
 
     fun parsePackages(
         context: Context,
-        document: DocumentFile,
+        sourceUri: Uri,
+        sourceName: String,
         sourceSizeBytes: Long,
-        sourceLastModified: Long
+        sourceLastModified: Long,
     ): List<LoveGame> {
-        val sourceName = document.name ?: return emptyList()
-        if (!sourceName.endsWith(".zip", ignoreCase = true) &&
+        if (
+            !sourceName.endsWith(".zip", ignoreCase = true) &&
             !sourceName.endsWith(".exe", ignoreCase = true)
-        ) return emptyList()
+        ) {
+            return emptyList()
+        }
 
         val temporaryRoot = File(context.cacheDir, "nested_game_scan/${UUID.randomUUID()}")
         if (!temporaryRoot.mkdirs()) return emptyList()
 
         return try {
-            openOuterArchive(context, document, sourceName)?.use { source ->
-                ZipInputStream(source).use { archive ->
-                    val games = mutableListOf<LoveGame>()
-                    val normalizedEntries = mutableSetOf<String>()
-                    var entryCount = 0
-                    var gameCandidateCount = 0
-                    var entry = archive.nextEntry
-                    while (entry != null) {
-                        entryCount++
-                        require(entryCount <= MAX_ARCHIVE_ENTRIES) {
-                            "Wrapper archive contains too many entries"
-                        }
-                        val entryPath = entry.name
-                        require(PatchManifestParser.isSafeArchivePath(entryPath)) {
-                            "Unsafe path in wrapper archive"
-                        }
-                        val normalizedPath = entryPath.trimEnd('/').lowercase(Locale.ROOT)
-                        require(normalizedEntries.add(normalizedPath)) {
-                            "Wrapper archive contains duplicate entries"
-                        }
+            GameArchive.open(
+                context = context,
+                uri = sourceUri,
+                fileName = sourceName
+            ).use { archive ->
+                val entries = archive.entries(MAX_ARCHIVE_ENTRIES)
 
-                        if (!entry.isDirectory && isGamePackage(entryPath)) {
-                            gameCandidateCount++
-                            require(gameCandidateCount <= MAX_NESTED_GAMES) {
-                                "Wrapper archive contains too many game packages"
-                            }
-                            val safeFileName = entryPath.substringAfterLast('/')
-                                .replace(Regex("[^A-Za-z0-9._ -]"), "_")
-                                .ifBlank { "nested.love" }
-                            val extractedFile = File(temporaryRoot, safeFileName)
-                            val copiedBytes = copyEntry(archive, extractedFile)
-                            val parsed = LoveMetadataParser.parseLoveFile(
-                                context = context,
-                                document = DocumentFile.fromFile(extractedFile),
-                                sizeBytes = copiedBytes,
-                                lastModified = sourceLastModified
-                            )
-                            if (parsed != null) {
-                                games += parsed.copy(
-                                    fileName = sourceName,
-                                    uri = document.uri,
-                                    archiveEntryPath = entryPath,
-                                    sizeBytes = sourceSizeBytes,
-                                    lastModified = sourceLastModified
-                                )
-                            }
-                            extractedFile.delete()
-                        }
-                        archive.closeEntry()
-                        entry = archive.nextEntry
-                    }
-                    games
+                val packageEntries = entries.filter { !it.isDirectory && isGamePackage(it.name) }
+                val preferredPaths = selectPreferredGamePackagePaths(packageEntries.map { it.name })
+                val preferredPathSet = preferredPaths.mapTo(hashSetOf(), ::normalizePackagePath)
+                val preferredEntries = packageEntries.filter {
+                    normalizePackagePath(it.name) in preferredPathSet
                 }
-            }.orEmpty()
+
+                require(preferredEntries.size <= MAX_NESTED_GAMES) {
+                    "Wrapper archive contains too many game packages"
+                }
+
+                val preferredGames = parseEntries(
+                    archive,
+                    preferredEntries,
+                    temporaryRoot,
+                    sourceName,
+                    sourceUri,
+                    sourceSizeBytes,
+                    sourceLastModified,
+                )
+
+                val parsedIdentities = preferredGames.mapNotNullTo(hashSetOf()) { game ->
+                    game.archiveEntryPath?.let(::packageIdentity)
+                }
+                val fallbackExecutables = packageEntries.filter { entry ->
+                    entry.name.endsWith(".exe", ignoreCase = true) &&
+                        normalizePackagePath(entry.name) !in preferredPathSet &&
+                        packageIdentity(entry.name) !in parsedIdentities
+                }
+                require(preferredEntries.size + fallbackExecutables.size <= MAX_NESTED_GAMES) {
+                    "Wrapper archive contains too many game packages"
+                }
+
+                preferredGames + parseEntries(
+                    archive,
+                    fallbackExecutables,
+                    temporaryRoot,
+                    sourceName,
+                    sourceUri,
+                    sourceSizeBytes,
+                    sourceLastModified,
+                )
+            }
         } catch (error: Exception) {
             error.printStackTrace()
             emptyList()
@@ -95,51 +91,111 @@ object NestedGamePackageParser {
         }
     }
 
-    private fun openOuterArchive(
-        context: Context,
-        document: DocumentFile,
-        sourceName: String
-    ): InputStream? {
-        var input = context.contentResolver.openInputStream(document.uri)?.buffered(COPY_BUFFER_SIZE)
-            ?: return null
-        if (!sourceName.endsWith(".exe", ignoreCase = true)) return input
+    private fun parseEntries(
+        archive: GameArchive,
+        entries: List<GameArchive.Entry>,
+        temporaryRoot: File,
+        sourceName: String,
+        sourceUri: Uri,
+        sourceSizeBytes: Long,
+        sourceLastModified: Long,
+    ): List<LoveGame> = entries.mapIndexedNotNull { index, entry ->
+        parseEntry(
+            archive = archive,
+            entry = entry,
+            index = index,
+            temporaryRoot = temporaryRoot,
+            sourceName = sourceName,
+            sourceUri = sourceUri,
+            sourceSizeBytes = sourceSizeBytes,
+            sourceLastModified = sourceLastModified,
+        )
+    }
 
-        val zipOffset = input.use(LoveMetadataParser::findZipOffset)
-        if (zipOffset < 0L) return null
-        input = context.contentResolver.openInputStream(document.uri)?.buffered(COPY_BUFFER_SIZE)
-            ?: return null
-        skipFully(input, zipOffset)
-        return input
+    /**
+     * A wrapper may contain multiple packages. One malformed entry must not discard the other
+     * valid packages in the same wrapper, or fail the parent folder scan.
+     */
+    private fun parseEntry(
+        archive: GameArchive,
+        entry: GameArchive.Entry,
+        index: Int,
+        temporaryRoot: File,
+        sourceName: String,
+        sourceUri: Uri,
+        sourceSizeBytes: Long,
+        sourceLastModified: Long,
+    ): LoveGame? {
+        var extractedFile: File? = null
+        return try {
+            require(entry.size in 0..MAX_NESTED_PACKAGE_BYTES) {
+                "Nested game package is too large"
+            }
+
+            val entryPath = entry.name
+            val nestedFileName = entryPath.substringAfterLast('/').ifBlank { "nested.love" }
+            val safeFileName = Regex("[^A-Za-z0-9._ -]")
+                .replace(nestedFileName, "_")
+                .ifBlank { "nested.love" }
+            val destinationFile = File(temporaryRoot, "${index + 1}_$safeFileName")
+            extractedFile = destinationFile
+            val copiedBytes = archive.open(entry).use { input ->
+                copyEntry(input, destinationFile)
+            }
+
+            LoveMetadataParser.parseLoveFile(
+                destinationFile,
+                nestedFileName,
+                copiedBytes,
+                sourceLastModified,
+            )?.copy(
+                fileName = sourceName,
+                uri = sourceUri,
+                archiveEntryPath = entryPath,
+                sizeBytes = sourceSizeBytes,
+                lastModified = sourceLastModified,
+            )
+        } catch (_: Exception) {
+            null
+        } finally {
+            extractedFile?.delete()
+        }
     }
 
     private fun copyEntry(input: InputStream, destination: File): Long {
         var total = 0L
         val buffer = ByteArray(COPY_BUFFER_SIZE)
-        FileOutputStream(destination).use { output ->
+        FileOutputStream(destination).buffered(COPY_BUFFER_SIZE).use { output ->
             while (true) {
                 val read = input.read(buffer)
                 if (read < 0) break
                 total += read
-                require(total <= MAX_NESTED_PACKAGE_BYTES) { "Nested game package is too large" }
+                require(total <= MAX_NESTED_PACKAGE_BYTES) {
+                    "Nested game package is too large"
+                }
                 output.write(buffer, 0, read)
             }
-            output.fd.sync()
         }
         return total
     }
 
-    private fun skipFully(input: InputStream, byteCount: Long) {
-        var remaining = byteCount
-        while (remaining > 0L) {
-            val skipped = input.skip(remaining)
-            if (skipped > 0L) {
-                remaining -= skipped
-            } else if (input.read() >= 0) {
-                remaining--
-            } else {
-                throw IllegalArgumentException("Executable ended before its embedded ZIP")
+    internal fun selectPreferredGamePackagePaths(paths: List<String>): List<String> {
+        val packages = paths.filter { isGamePackage(it) }
+        return packages
+            .groupByTo(linkedMapOf(), ::packageIdentity)
+            .values
+            .flatMap { variants ->
+                variants.filter { it.endsWith(".love", ignoreCase = true) }
+                    .ifEmpty { variants.filter { it.endsWith(".exe", ignoreCase = true) } }
             }
-        }
+    }
+
+    private fun packageIdentity(path: String): String {
+        return normalizePackagePath(path).removeSuffix(".love").removeSuffix(".exe")
+    }
+
+    private fun normalizePackagePath(path: String): String {
+        return path.replace('\\', '/').trimStart('/').lowercase(Locale.ROOT)
     }
 
     internal fun isGamePackage(path: String): Boolean {

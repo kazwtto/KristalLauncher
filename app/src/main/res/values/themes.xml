@@ -12,12 +12,13 @@
         <item name="colorOnSurfaceVariant">@color/m3_on_surface_variant</item>
         <item name="colorOutline">@color/m3_outline</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@color/m3_surface</item>
+        <item name="android:statusBarColor">@color/m3_bg_dark</item>
         <item name="android:navigationBarColor">@color/m3_bg_dark</item>
         <item name="android:windowLightStatusBar">@bool/is_light_theme</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">@bool/is_light_theme</item>
         <item name="android:windowActionModeOverlay">true</item>
-        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowContentTransitions">true</item>
     </style>
 
     <style name="CustomBottomNavActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">

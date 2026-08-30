@@ -123,29 +123,8 @@ function Remove-SafeWorkDirectory([string]$path) {
     }
 }
 
-function Merge-RuntimeDex([string]$inputApk, [string]$workDirectory, [string]$java, [string]$d8Jar) {
-    $mergedArchive = Join-Path $workDirectory "merged-classes.zip"
-    $mergedDirectory = Join-Path $workDirectory "merged-classes"
+function Add-RuntimeDex([string]$inputApk, [string]$workDirectory) {
     $workingApk = Join-Path $workDirectory "runtime-merged-unaligned.apk"
-
-    Invoke-Checked $java @(
-        "-cp", $d8Jar,
-        "com.android.tools.r8.D8",
-        "--release",
-        "--min-api", "24",
-        "--output", $mergedArchive,
-        $inputApk,
-        $runtimeDex
-    )
-
-    New-Item -ItemType Directory -Path $mergedDirectory -Force | Out-Null
-    [System.IO.Compression.ZipFile]::ExtractToDirectory($mergedArchive, $mergedDirectory)
-    $dexFiles = @(Get-ChildItem -LiteralPath $mergedDirectory -File | Where-Object {
-        $_.Name -match '^classes(\d+)?\.dex$'
-    } | Sort-Object Name)
-    if ($dexFiles.Count -eq 0) {
-        throw "D8 did not produce a classes.dex file."
-    }
 
     Copy-Item -LiteralPath $inputApk -Destination $workingApk -Force
     $archive = [System.IO.Compression.ZipFile]::Open(
@@ -153,20 +132,39 @@ function Merge-RuntimeDex([string]$inputApk, [string]$workDirectory, [string]$ja
         [System.IO.Compression.ZipArchiveMode]::Update
     )
     try {
-        $obsoleteEntries = @($archive.Entries | Where-Object {
-            $_.FullName -match '^classes(\d+)?\.dex$' -or
+        $dexEntries = @($archive.Entries | Where-Object {
+            $_.FullName -match '^classes(\d+)?\.dex$'
+        })
+        if ($dexEntries.Count -eq 0) {
+            throw "The Gradle APK does not contain classes.dex."
+        }
+        $highestDexIndex = ($dexEntries | ForEach-Object {
+            if ($_.FullName -eq "classes.dex") { 1 } else {
+                [int]([regex]::Match($_.FullName, '^classes(\d+)\.dex$').Groups[1].Value)
+            }
+        } | Measure-Object -Maximum).Maximum
+        $runtimeEntryName = "classes$($highestDexIndex + 1).dex"
+        if ($archive.GetEntry($runtimeEntryName)) {
+            throw "Runtime DEX destination already exists: $runtimeEntryName"
+        }
+
+        $obsoleteSignatures = @($archive.Entries | Where-Object {
             $_.FullName -match '^(?i:META-INF/(?:MANIFEST\.MF|.*\.(?:SF|RSA|DSA|EC)))$'
         })
-        foreach ($entry in $obsoleteEntries) {
+        foreach ($entry in $obsoleteSignatures) {
             $entry.Delete()
         }
-        foreach ($dexFile in $dexFiles) {
-            [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile(
-                $archive,
-                $dexFile.FullName,
-                $dexFile.Name,
-                [System.IO.Compression.CompressionLevel]::Optimal
-            ) | Out-Null
+        $runtimeEntry = $archive.CreateEntry(
+            $runtimeEntryName,
+            [System.IO.Compression.CompressionLevel]::Optimal
+        )
+        $runtimeInput = [System.IO.File]::OpenRead($runtimeDex)
+        $runtimeOutput = $runtimeEntry.Open()
+        try {
+            $runtimeInput.CopyTo($runtimeOutput)
+        } finally {
+            $runtimeOutput.Dispose()
+            $runtimeInput.Dispose()
         }
     } finally {
         $archive.Dispose()
@@ -177,8 +175,6 @@ function Merge-RuntimeDex([string]$inputApk, [string]$workDirectory, [string]$ja
 function Build-Variant(
     [string]$variantName,
     [string]$versionName,
-    [string]$java,
-    [string]$d8Jar,
     [string]$zipalign,
     [string]$apksigner,
     [object]$signing
@@ -202,7 +198,7 @@ function Build-Variant(
         }
 
         Write-Host "Merging the embedded LOVE2D runtime..."
-        $mergedApk = Merge-RuntimeDex $inputApk $workDirectory $java $d8Jar
+        $mergedApk = Add-RuntimeDex $inputApk $workDirectory
         $alignedApk = Join-Path $workDirectory "runtime-merged-aligned.apk"
         Invoke-Checked $zipalign @("-f", "-p", "4", $mergedApk, $alignedApk)
 
@@ -279,10 +275,9 @@ $versionName = $versionMatch.Groups[1].Value
 $java = Resolve-Java
 $androidSdk = Resolve-AndroidSdk
 $buildTools = Join-Path $androidSdk "build-tools\$buildToolsVersion"
-$d8Jar = Join-Path $buildTools "lib\d8.jar"
 $zipalign = Join-Path $buildTools "zipalign.exe"
 $apksigner = Join-Path $buildTools "apksigner.bat"
-foreach ($requiredTool in @($d8Jar, $zipalign, $apksigner)) {
+foreach ($requiredTool in @($zipalign, $apksigner)) {
     if (-not (Test-Path -LiteralPath $requiredTool)) {
         throw "Required Android build tool not found: $requiredTool"
     }
@@ -298,10 +293,10 @@ $artifacts = [System.Collections.Generic.List[string]]::new()
 Push-Location $repositoryRoot
 try {
     if ($Variant -in @("Debug", "All")) {
-        $artifacts.Add((Build-Variant "Debug" $versionName $java $d8Jar $zipalign $apksigner $signing))
+        $artifacts.Add((Build-Variant "Debug" $versionName $zipalign $apksigner $signing))
     }
     if ($Variant -in @("Release", "All")) {
-        $artifacts.Add((Build-Variant "Release" $versionName $java $d8Jar $zipalign $apksigner $signing))
+        $artifacts.Add((Build-Variant "Release" $versionName $zipalign $apksigner $signing))
     }
 } finally {
     Pop-Location

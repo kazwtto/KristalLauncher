@@ -6,15 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.android.material.materialswitch.MaterialSwitch
 import kwz.love2d.launcher.R
 import kwz.love2d.launcher.model.PatchDisplayItem
 import kwz.love2d.launcher.model.PatchOrigin
 import kwz.love2d.launcher.model.PatchTrust
+import kwz.love2d.launcher.util.PatchInstallStage
 
 class PatchAdapter(
     private val onToggle: (PatchDisplayItem, Boolean) -> Unit,
@@ -23,21 +24,39 @@ class PatchAdapter(
     private val onDetails: (PatchDisplayItem) -> Unit
 ) : RecyclerView.Adapter<PatchAdapter.PatchViewHolder>() {
 
-    private val differ = AsyncListDiffer(
-        this,
-        object : DiffUtil.ItemCallback<PatchDisplayItem>() {
-            override fun areItemsTheSame(oldItem: PatchDisplayItem, newItem: PatchDisplayItem): Boolean {
-                return oldItem.id == newItem.id
+    private var items: List<PatchDisplayItem> = emptyList()
+    private var installingPatchId: String? = null
+    private var installStage: PatchInstallStage? = null
+
+    fun submitItems(newItems: List<PatchDisplayItem>, onCommitted: (() -> Unit)? = null) {
+        val previousItems = items
+        val nextItems = newItems.toList()
+        val updates = DiffUtil.calculateDiff(object : DiffUtil.Callback() {
+            override fun getOldListSize(): Int = previousItems.size
+
+            override fun getNewListSize(): Int = nextItems.size
+
+            override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+                return previousItems[oldItemPosition].id == nextItems[newItemPosition].id
             }
 
-            override fun areContentsTheSame(oldItem: PatchDisplayItem, newItem: PatchDisplayItem): Boolean {
-                return oldItem == newItem
+            override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+                return previousItems[oldItemPosition] == nextItems[newItemPosition]
             }
+        })
+        items = nextItems
+        updates.dispatchUpdatesTo(this)
+        onCommitted?.invoke()
+    }
+
+    fun setInstallProgress(patchId: String?, stage: PatchInstallStage? = null) {
+        val affectedIds = listOfNotNull(installingPatchId, patchId).toSet()
+        installingPatchId = patchId
+        installStage = stage
+        affectedIds.forEach { affectedId ->
+            val position = items.indexOfFirst { it.id == affectedId }
+            if (position >= 0) notifyItemChanged(position)
         }
-    )
-
-    fun submitItems(newItems: List<PatchDisplayItem>) {
-        differ.submitList(newItems.toList())
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PatchViewHolder {
@@ -46,10 +65,10 @@ class PatchAdapter(
     }
 
     override fun onBindViewHolder(holder: PatchViewHolder, position: Int) {
-        holder.bind(differ.currentList[position])
+        holder.bind(items[position])
     }
 
-    override fun getItemCount(): Int = differ.currentList.size
+    override fun getItemCount(): Int = items.size
 
     inner class PatchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val name: TextView = itemView.findViewById(R.id.tvPatchName)
@@ -59,6 +78,7 @@ class PatchAdapter(
         private val trustBadge: TextView = itemView.findViewById(R.id.tvPatchTrust)
         private val enabledSwitch: MaterialSwitch = itemView.findViewById(R.id.switchPatchEnabled)
         private val actionButton: MaterialButton = itemView.findViewById(R.id.btnPatchAction)
+        private val actionProgress: CircularProgressIndicator = itemView.findViewById(R.id.patchActionProgress)
         private val useCasesButton: MaterialButton = itemView.findViewById(R.id.btnPatchUseCases)
 
         fun bind(item: PatchDisplayItem) {
@@ -89,23 +109,32 @@ class PatchAdapter(
             enabledSwitch.setOnCheckedChangeListener(null)
             enabledSwitch.isChecked = item.enabled
             enabledSwitch.visibility = if (item.installed) View.VISIBLE else View.GONE
+            enabledSwitch.isEnabled = installingPatchId == null
             enabledSwitch.setOnCheckedChangeListener { _, checked -> onToggle(item, checked) }
 
+            val isInstalling = installingPatchId == item.id
+            actionProgress.visibility = if (isInstalling) View.VISIBLE else View.GONE
             when {
+                isInstalling -> {
+                    actionButton.visibility = View.VISIBLE
+                    actionButton.isEnabled = false
+                    actionButton.setText(
+                        when (installStage) {
+                            PatchInstallStage.VALIDATING -> R.string.patch_validating
+                            PatchInstallStage.INSTALLING -> R.string.patch_installing
+                            else -> R.string.patch_downloading
+                        }
+                    )
+                }
                 !item.installed -> {
                     actionButton.visibility = View.VISIBLE
-                    actionButton.isEnabled = true
+                    actionButton.isEnabled = installingPatchId == null
                     actionButton.setText(R.string.patch_download)
                 }
                 item.updateAvailable -> {
                     actionButton.visibility = View.VISIBLE
-                    actionButton.isEnabled = true
+                    actionButton.isEnabled = installingPatchId == null
                     actionButton.setText(R.string.patch_update)
-                }
-                item.catalogPatch != null -> {
-                    actionButton.visibility = View.VISIBLE
-                    actionButton.isEnabled = false
-                    actionButton.setText(R.string.patch_installed)
                 }
                 else -> actionButton.visibility = View.GONE
             }

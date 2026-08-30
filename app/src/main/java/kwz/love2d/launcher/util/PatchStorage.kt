@@ -64,13 +64,13 @@ object PatchStorage {
             .orEmpty()
             .asSequence()
             .filter { it.isDirectory }
-            .mapNotNull { parseInstalledVersion(it) }
+            .mapNotNull { readInstalledPatch(it) }
             .maxWithOrNull { left, right ->
                 VersionUtils.compare(left.manifest.version, right.manifest.version)
             }
     }
 
-    private fun parseInstalledVersion(directory: File): InstalledPatch? {
+    internal fun readInstalledPatch(directory: File): InstalledPatch? {
         return runCatching {
             val manifestFile = File(directory, "patch.json")
             if (!manifestFile.isFile || manifestFile.length() > 256 * 1024L) return null

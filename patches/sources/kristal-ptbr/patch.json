@@ -1,27 +1,27 @@
 {
     "schemaVersion":  1,
     "id":  "kristal.ptbr",
-    "version":  "2.3.2",
+    "version":  "2.3.3",
     "name":  {
-                 "pt-BR":  "Kristal Engine em PortuguÃªs (Brasil)",
+                 "pt-BR":  "Kristal Engine em Português (Brasil)",
                  "en":  "Kristal Engine in Brazilian Portuguese",
-                 "es":  "Kristal Engine en portuguÃ©s de Brasil"
+                 "es":  "Kristal Engine en portugués de Brasil"
              },
     "description":  {
-                        "pt-BR":  "Traduz menus, textos integrados e elementos grÃ¡ficos da Kristal Engine para portuguÃªs do Brasil.",
+                        "pt-BR":  "Traduz menus, textos integrados e elementos gráficos da Kristal Engine para português do Brasil.",
                         "en":  "Translates built-in Kristal Engine menus, text, and interface graphics into Brazilian Portuguese.",
-                        "es":  "Traduce los menÃºs, textos integrados y grÃ¡ficos de interfaz de Kristal Engine al portuguÃ©s de Brasil."
+                        "es":  "Traduce los menús, textos integrados y gráficos de interfaz de Kristal Engine al portugués de Brasil."
                     },
     "useCases":  [
                      {
-                         "pt-BR":  "VocÃª quer jogar mods da Kristal com menus e mensagens da engine em portuguÃªs.",
+                         "pt-BR":  "Você quer jogar mods da Kristal com menus e mensagens da engine em português.",
                          "en":  "You want Kristal mods to show engine menus and messages in Brazilian Portuguese.",
-                         "es":  "Quieres que los mods de Kristal muestren menÃºs y mensajes del motor en portuguÃ©s de Brasil."
+                         "es":  "Quieres que los mods de Kristal muestren menús y mensajes del motor en portugués de Brasil."
                      },
                      {
-                         "pt-BR":  "BotÃµes, telas de batalha ou imagens da interface ainda aparecem em inglÃªs.",
+                         "pt-BR":  "Botões, telas de batalha ou imagens da interface ainda aparecem em inglês.",
                          "en":  "Buttons, battle screens, or interface graphics still appear in English.",
-                         "es":  "Los botones, pantallas de batalla o grÃ¡ficos de interfaz todavÃ­a aparecen en inglÃ©s."
+                         "es":  "Los botones, pantallas de batalla o gráficos de interfaz todavía aparecen en inglés."
                      }
                  ],
     "author":  "kazwtto",

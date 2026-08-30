@@ -36,7 +36,6 @@ class GameAdapter(
             override fun areContentsTheSame(old: LoveGame, new: LoveGame): Boolean {
                 return old.title == new.title &&
                     old.fileName == new.fileName &&
-                    old.archiveEntryPath == new.archiveEntryPath &&
                     old.sizeBytes == new.sizeBytes &&
                     old.lastModified == new.lastModified &&
                     old.subtitle == new.subtitle &&
@@ -101,33 +100,34 @@ class GameAdapter(
             tvGameTitle.text = game.title
             tvFileName?.text = game.displayFileName
 
-            val secondaryMetadata = buildList {
-                game.subtitle?.takeIf(String::isNotBlank)?.let(::add)
-                game.author?.takeIf(String::isNotBlank)?.let {
-                    add(context.getString(R.string.game_author, it))
-                }
-            }.joinToString("  •  ")
-            if (secondaryMetadata.isNotBlank()) {
-                tvSubtitle?.text = secondaryMetadata
+            if (!game.subtitle.isNullOrBlank()) {
+                tvSubtitle?.text = game.subtitle
                 tvSubtitle?.visibility = View.VISIBLE
             } else {
-                tvSubtitle?.visibility = View.GONE
+                tvSubtitle?.text = null
+                tvSubtitle?.visibility = View.INVISIBLE
             }
-            tvAuthor?.visibility = View.GONE
 
-            val versionSummary = buildList {
-                game.version?.takeIf(String::isNotBlank)?.let(::add)
-                game.engineVer?.takeIf(String::isNotBlank)?.let {
-                    add(context.getString(R.string.game_engine_version, it))
-                }
-            }.joinToString("  •  ")
-            if (versionSummary.isNotBlank()) {
-                tvVersion?.text = versionSummary
+            if (!game.author.isNullOrBlank()) {
+                tvAuthor?.text = context.getString(R.string.game_author, game.author)
+                tvAuthor?.visibility = View.VISIBLE
+            } else {
+                tvAuthor?.visibility = View.GONE
+            }
+
+            if (!game.version.isNullOrBlank()) {
+                tvVersion?.text = game.version
                 tvVersion?.visibility = View.VISIBLE
             } else {
                 tvVersion?.visibility = View.GONE
             }
-            tvEngineVer?.visibility = View.GONE
+
+            if (!game.engineVer.isNullOrBlank()) {
+                tvEngineVer?.text = context.getString(R.string.game_engine_version, game.engineVer)
+                tvEngineVer?.visibility = View.VISIBLE
+            } else {
+                tvEngineVer?.visibility = View.GONE
+            }
 
             if (game.icon != null) {
                 ivGameIcon.setImageBitmap(game.icon)

@@ -3,7 +3,6 @@ package kwz.love2d.launcher.util
 import android.content.Context
 import android.net.Uri
 import kwz.love2d.launcher.BuildConfig
-import kwz.love2d.launcher.model.InstalledPatch
 import kwz.love2d.launcher.model.PatchInstallResult
 import kwz.love2d.launcher.model.PatchOrigin
 import java.io.BufferedInputStream
@@ -15,6 +14,12 @@ import java.net.URL
 import java.security.MessageDigest
 import java.util.UUID
 import java.util.zip.ZipFile
+
+enum class PatchInstallStage {
+    DOWNLOADING,
+    VALIDATING,
+    INSTALLING
+}
 
 object PatchPackageInstaller {
 
@@ -42,9 +47,11 @@ object PatchPackageInstaller {
         packageUrl: String,
         expectedSha256: String,
         expectedId: String,
-        expectedVersion: String
+        expectedVersion: String,
+        onStageChanged: (PatchInstallStage) -> Unit = {}
     ): PatchInstallResult {
         return runCatching {
+            onStageChanged(PatchInstallStage.DOWNLOADING)
             require(packageUrl.startsWith("https://")) { "Patch downloads must use HTTPS" }
             val connection = URL(packageUrl).openConnection() as HttpURLConnection
             connection.connectTimeout = 15_000
@@ -61,7 +68,15 @@ object PatchPackageInstaller {
                 val declaredLength = connection.contentLengthLong
                 require(declaredLength < 0 || declaredLength <= MAX_PACKAGE_SIZE) { "Patch package is too large" }
                 BufferedInputStream(connection.inputStream).use {
-                    install(context, it, PatchOrigin.OFFICIAL, expectedSha256, expectedId, expectedVersion)
+                    install(
+                        context,
+                        it,
+                        PatchOrigin.OFFICIAL,
+                        expectedSha256,
+                        expectedId,
+                        expectedVersion,
+                        onStageChanged
+                    )
                 }
             } finally {
                 connection.disconnect()
@@ -75,7 +90,8 @@ object PatchPackageInstaller {
         origin: PatchOrigin,
         expectedSha256: String?,
         expectedId: String? = null,
-        expectedVersion: String? = null
+        expectedVersion: String? = null,
+        onStageChanged: (PatchInstallStage) -> Unit = {}
     ): PatchInstallResult {
         val stagingRoot = File(PatchStorage.stagingDirectory(context), UUID.randomUUID().toString())
         val extractionRoot = File(stagingRoot, "content")
@@ -90,6 +106,7 @@ object PatchPackageInstaller {
                 }
             }
 
+            onStageChanged(PatchInstallStage.VALIDATING)
             val manifest = extractAndValidate(packageFile, extractionRoot)
             if (expectedId != null) require(manifest.id == expectedId) { "The package ID does not match the catalog" }
             if (expectedVersion != null) {
@@ -105,7 +122,7 @@ object PatchPackageInstaller {
             }
             validateCapabilities(manifest.capabilities, manifest.operations.map { it.type })
 
-            val patchParent = File(PatchStorage.rootDirectory(context), manifest.id).apply { mkdirs() }
+            val patchParent = File(PatchStorage.rootDirectory(context), manifest.id).canonicalFile.apply { mkdirs() }
             val destination = File(patchParent, manifest.version).canonicalFile
             require(destination.parentFile == patchParent.canonicalFile) {
                 "The patch version resolves outside its installation directory"
@@ -115,19 +132,18 @@ object PatchPackageInstaller {
             }
 
             PatchStorage.writeInstallationMetadata(extractionRoot, origin, actualSha256)
+            onStageChanged(PatchInstallStage.INSTALLING)
             require(extractionRoot.renameTo(destination)) { "The validated patch could not be installed" }
+            val installedPatch = PatchStorage.readInstalledPatch(destination)
+            if (installedPatch == null) {
+                destination.deleteRecursively()
+                throw IllegalStateException(context.getString(kwz.love2d.launcher.R.string.patch_install_verification_failed))
+            }
             patchParent.listFiles().orEmpty()
-                .filter { it.isDirectory && it != destination }
+                .filter { it.isDirectory && it.canonicalFile != destination }
                 .forEach(File::deleteRecursively)
 
-            PatchInstallResult.Success(
-                InstalledPatch(
-                    manifest = manifest,
-                    directory = destination,
-                    origin = origin,
-                    sha256 = actualSha256
-                )
-            )
+            PatchInstallResult.Success(installedPatch)
         } catch (error: Exception) {
             PatchInstallResult.Failure(error.message ?: "Invalid patch package")
         } finally {

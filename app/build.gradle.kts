@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    namespace = "kwz.love2d.launcher"
+    namespace = "kwz.love2d.launcher" // this package is placeholder but i forgot to change it. its kinda cringe
     compileSdk = 34
 
     defaultConfig {
         applicationId = "kwz.love2d.launcher"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = 25
+        versionName = "0.17.8"
 
         buildConfigField("String", "GITHUB_REPOSITORY_URL", "\"https://github.com/kazwtto/KristalLauncher\"")
         buildConfigField("String", "GITHUB_API_URL", "\"https://api.github.com/repos/kazwtto/KristalLauncher\"")
@@ -41,6 +41,7 @@ android {
         }
     }
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
@@ -57,6 +58,7 @@ android {
 }
 
 dependencies {
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -67,5 +69,9 @@ dependencies {
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation("org.apache.commons:commons-compress:1.28.0")
     testImplementation("junit:junit:4.13.2")
+    testImplementation("org.json:json:20240303")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test:runner:1.5.2")
 }

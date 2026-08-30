@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "id": "cooking-with-kindness.mobile-performance",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "Otimização móvel para Cooking with Kindness",
+    "en": "Mobile optimization for Cooking with Kindness",
+    "es": "Optimización móvil para Cooking with Kindness"
+  },
+  "description": {
+    "pt-BR": "Patch dedicado a Cooking with Kindness DEMO v1.0.6 que remove canvases gigantes e não utilizados da iluminação para reduzir uso de GPU e travamentos no Android.",
+    "en": "Patch dedicated to Cooking with Kindness DEMO v1.0.6 that removes oversized and unused lighting canvases to reduce GPU use and Android crashes.",
+    "es": "Parche dedicado a Cooking with Kindness DEMO v1.0.6 que elimina canvases de iluminación sobredimensionados y sin uso para reducir el uso de GPU y los cierres en Android."
+  },
+  "useCases": [
+    {
+      "pt-BR": "A demo perde muitos quadros ou fecha ao entrar nas áreas grandes de CORE Square.",
+      "en": "The demo drops many frames or closes when entering the large CORE Square areas.",
+      "es": "La demo pierde muchos cuadros o se cierra al entrar en las zonas grandes de CORE Square."
+    },
+    {
+      "pt-BR": "O jogo consome muita memória de GPU em celular ou emulador, mesmo sem efeitos visuais complexos na tela.",
+      "en": "The game uses excessive GPU memory on a phone or emulator even without complex effects on screen.",
+      "es": "El juego usa demasiada memoria de GPU en un teléfono o emulador incluso sin efectos complejos en pantalla."
+    }
+  ],
+  "author": "kazwtto",
+  "category": "performance",
+  "minimumLauncherVersion": "0.17.0",
+  "priority": 140,
+  "capabilities": [
+    "staged_package",
+    "inject_files",
+    "edit_lua",
+    "runtime_hook"
+  ],
+  "dependencies": [],
+  "conflicts": [
+    "kristal.general-performance"
+  ],
+  "operations": [
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/world/events/beeglighttest.lua",
+      "target": "mods/CookingwithKindness/scripts/world/events/beeglighttest.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/world/events/lighttest.lua",
+      "target": "mods/CookingwithKindness/scripts/world/events/lighttest.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/world/events/betterlayering.lua",
+      "target": "mods/CookingwithKindness/scripts/world/events/betterlayering.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/cwk_performance/runtime.lua",
+      "target": "cwk_performance/runtime.lua"
+    },
+    {
+      "type": "append_text",
+      "source": "payload/bootstrap.lua",
+      "target": "main.lua"
+    }
+  ]
+}

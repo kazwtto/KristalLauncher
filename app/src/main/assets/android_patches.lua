@@ -3,8 +3,9 @@
 -- Loaded from the staged package after main.lua declares the game's callbacks.
 
 local Patches = {}
+local shadersApplied = false
 
-function Patches.apply()
+function Patches.apply(shadersOnly)
     -- Read patch flags injected by the Kotlin staging pipeline.
     local enableFullscreen = _G.PATCH_FULLSCREEN == true
     local enableShaders = _G.PATCH_SHADERS == true
@@ -15,7 +16,7 @@ function Patches.apply()
     local enableBorders = _G.PATCH_BORDERS == true
 
     -- 1. FULLSCREEN PATCH (hook love.conf when available, then apply directly to love.window)
-    if enableFullscreen then
+    if enableFullscreen and not shadersOnly then
         local orig_conf = love.conf
         love.conf = function(t)
             if orig_conf then orig_conf(t) end
@@ -42,7 +43,8 @@ function Patches.apply()
     -- Each known GLSL ES compatibility issue has an independent fix that first checks
     -- whether the target pattern exists in the shader source. A fix leaves unrelated
     -- shaders unchanged instead of applying every transformation indiscriminately.
-    if enableShaders then
+    if enableShaders and not shadersApplied then
+        shadersApplied = true
         local orig_newShader = love.graphics.newShader
 
         -- Add ".0" to integer-literal arguments only inside the functions listed in
@@ -93,6 +95,48 @@ function Patches.apply()
                 end
                 code = res
             end
+            return code
+        end
+
+        -- GLSL ES does not implicitly turn an integer literal into a float for
+        -- binary arithmetic. Keep this type-aware: only literals on the right
+        -- of a declared float or a component of a declared float vector are
+        -- changed. This preserves integer loop counters and array indexes.
+        local function fixFloatArithmeticLiterals(code)
+            local scalars, vectors = {}, {}
+
+            -- `number` is normalized to `float` by an earlier shader fix.
+            for name in code:gmatch("%f[%w_]float%f[^%w_]%s+([%a_][%w_]*)") do
+                scalars[name] = true
+            end
+
+            for _, type_name in ipairs({ "vec2", "vec3", "vec4" }) do
+                local pattern = "%f[%w_]" .. type_name .. "%f[^%w_]%s+([%a_][%w_]*)"
+                for name in code:gmatch(pattern) do
+                    vectors[name] = true
+                end
+            end
+
+            local function addDecimal(pattern)
+                code = code:gsub(pattern, function(lhs, literal)
+                    return lhs .. literal .. ".0"
+                end)
+            end
+
+            for name in pairs(scalars) do
+                addDecimal(
+                    "(%f[%w_]" .. name .. "%f[^%w_]%s*[%+%-%*/]%s*)" ..
+                    "(%-?%d+)%f[^%w_%.]"
+                )
+            end
+
+            for name in pairs(vectors) do
+                addDecimal(
+                    "(%f[%w_]" .. name .. "%f[^%w_]%s*%.[xyzwrgba]+%s*[%+%-%*/]%s*)" ..
+                    "(%-?%d+)%f[^%w_%.]"
+                )
+            end
+
             return code
         end
 
@@ -173,6 +217,13 @@ function Patches.apply()
                 end,
             },
 
+            -- Expressions such as "colorSize.x - 1" or "i / 8" pair a float
+            -- operand with an integer literal, which strict GLSL ES compilers reject.
+            {
+                name = "float_arithmetic_integer_literals",
+                apply = fixFloatArithmeticLiterals,
+            },
+
             -- Comparisons such as "color.a == 0" may fail when a compiler does not
             -- implicitly convert the integer literal to the color channel's float type.
             {
@@ -249,6 +300,10 @@ function Patches.apply()
             return orig_newShader(code, code2)
         end
     end
+
+    -- The early bootstrap only installs the shader hook. All remaining runtime
+    -- patches are deliberately deferred until main.lua has initialized Kristal.
+    if shadersOnly then return end
 
     -- 3. PATCH RGBA16 -> RGBA8
     if enableRgba16 then
@@ -413,5 +468,4 @@ function Patches.apply()
     end
 end
 
-Patches.apply()
 return Patches

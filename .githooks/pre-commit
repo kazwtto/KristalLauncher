@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -eu
+
+hook_dir=${0%/*}
+[ "$hook_dir" = "$0" ] && hook_dir=.
+"$hook_dir/verify-push-content" --staged

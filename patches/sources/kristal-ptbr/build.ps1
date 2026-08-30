@@ -11,7 +11,8 @@ $textRoot = Join-Path $sourceRoot "source-text"
 $payloadRoot = Join-Path $sourceRoot "payload"
 $translationOutput = Join-Path $payloadRoot "kristal_pt\translations.lua"
 $manifestOutput = Join-Path $sourceRoot "patch.json"
-$packageOutput = Join-Path (Split-Path (Split-Path $sourceRoot -Parent) -Parent) "packages\kristal-ptbr-2.3.2.klpatch"
+$patchVersion = "2.3.3"
+$packageOutput = Join-Path (Split-Path (Split-Path $sourceRoot -Parent) -Parent) "packages\kristal-ptbr-$patchVersion.klpatch"
 
 $categoryPriority = @(
     "ui", "menus", "config", "battle", "gameover", "shops", "system",
@@ -52,7 +53,8 @@ $translationsByKey = [System.Collections.Generic.Dictionary[string,System.Collec
 foreach ($category in $categoryPriority) {
     $path = Join-Path $textRoot "$category.json"
     if (-not (Test-Path -LiteralPath $path)) { continue }
-    $mapping = $jsonSerializer.DeserializeObject((Get-Content -LiteralPath $path -Raw))
+    $jsonText = [System.IO.File]::ReadAllText($path, [System.Text.Encoding]::UTF8)
+    $mapping = $jsonSerializer.DeserializeObject($jsonText)
     foreach ($key in $mapping.Keys) {
         $translated = [string]$mapping[$key]
         if ([string]::IsNullOrWhiteSpace($translated)) { continue }
@@ -124,6 +126,13 @@ $luaLines.Add("}")
 $translationDirectory = Split-Path $translationOutput -Parent
 New-Item -ItemType Directory -Path $translationDirectory -Force | Out-Null
 [System.IO.File]::WriteAllLines($translationOutput, $luaLines, [System.Text.UTF8Encoding]::new($false))
+$generatedTranslations = [System.IO.File]::ReadAllText(
+    $translationOutput,
+    [System.Text.UTF8Encoding]::new($false, $true)
+)
+if ([regex]::IsMatch($generatedTranslations, "\u00C3[\u0080-\u00BF]|\u00C2[\u0080-\u00BF]|\uFFFD")) {
+    throw "Generated translations contain text that appears to have been decoded with the wrong character set."
+}
 
 $operations = [System.Collections.Generic.List[object]]::new()
 $operations.Add([ordered]@{
@@ -154,32 +163,40 @@ Get-ChildItem -LiteralPath $graphicsRoot -Recurse -File | Sort-Object FullName |
     })
 }
 
+$localizedMetadata = $jsonSerializer.DeserializeObject(@'
+{
+  "name": {
+    "pt-BR": "Kristal Engine em Portugu\u00eas (Brasil)",
+    "en": "Kristal Engine in Brazilian Portuguese",
+    "es": "Kristal Engine en portugu\u00e9s de Brasil"
+  },
+  "description": {
+    "pt-BR": "Traduz menus, textos integrados e elementos gr\u00e1ficos da Kristal Engine para portugu\u00eas do Brasil.",
+    "en": "Translates built-in Kristal Engine menus, text, and interface graphics into Brazilian Portuguese.",
+    "es": "Traduce los men\u00fas, textos integrados y gr\u00e1ficos de interfaz de Kristal Engine al portugu\u00e9s de Brasil."
+  },
+  "useCases": [
+    {
+      "pt-BR": "Voc\u00ea quer jogar mods da Kristal com menus e mensagens da engine em portugu\u00eas.",
+      "en": "You want Kristal mods to show engine menus and messages in Brazilian Portuguese.",
+      "es": "Quieres que los mods de Kristal muestren men\u00fas y mensajes del motor en portugu\u00e9s de Brasil."
+    },
+    {
+      "pt-BR": "Bot\u00f5es, telas de batalha ou imagens da interface ainda aparecem em ingl\u00eas.",
+      "en": "Buttons, battle screens, or interface graphics still appear in English.",
+      "es": "Los botones, pantallas de batalla o gr\u00e1ficos de interfaz todav\u00eda aparecen en ingl\u00e9s."
+    }
+  ]
+}
+'@)
+
 $manifest = [ordered]@{
     schemaVersion = 1
     id = "kristal.ptbr"
-    version = "2.3.2"
-    name = [ordered]@{
-        "pt-BR" = "Kristal Engine em Português (Brasil)"
-        en = "Kristal Engine in Brazilian Portuguese"
-        es = "Kristal Engine en portugués de Brasil"
-    }
-    description = [ordered]@{
-        "pt-BR" = "Traduz menus, textos integrados e elementos gráficos da Kristal Engine para português do Brasil."
-        en = "Translates built-in Kristal Engine menus, text, and interface graphics into Brazilian Portuguese."
-        es = "Traduce los menús, textos integrados y gráficos de interfaz de Kristal Engine al portugués de Brasil."
-    }
-    useCases = @(
-        [ordered]@{
-            "pt-BR" = "Você quer jogar mods da Kristal com menus e mensagens da engine em português."
-            en = "You want Kristal mods to show engine menus and messages in Brazilian Portuguese."
-            es = "Quieres que los mods de Kristal muestren menús y mensajes del motor en portugués de Brasil."
-        },
-        [ordered]@{
-            "pt-BR" = "Botões, telas de batalha ou imagens da interface ainda aparecem em inglês."
-            en = "Buttons, battle screens, or interface graphics still appear in English."
-            es = "Los botones, pantallas de batalla o gráficos de interfaz todavía aparecen en inglés."
-        }
-    )
+    version = $patchVersion
+    name = $localizedMetadata["name"]
+    description = $localizedMetadata["description"]
+    useCases = $localizedMetadata["useCases"]
     author = "kazwtto"
     category = "localization"
     minimumLauncherVersion = "0.1.0"

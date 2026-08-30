@@ -1,6 +1,6 @@
-# KristalPT — Portuguese (Brazil)
+# Kristal Engine — Portuguese (Brazil)
 
-This package ports the KristalPT 2.3.1 translation data and graphics to the Kristal Launcher external-patch format.
+This package contains the Brazilian Portuguese translation data and graphics maintained for the Kristal Launcher external-patch format.
 
 The patch installs a runtime translation module into the staged game, hooks Kristal's `Text`, `DialogueText`, `Draw`, and LÖVE text entry points, and overlays the translated interface sprites. Static strings and `{luaN}` dynamic placeholders from the source translation maps are supported.
 

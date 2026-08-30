@@ -186,6 +186,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="12dp"
+        android:visibility="gone"
         android:text="@string/add_games"
         android:textColor="#FFFFFF"
         android:textSize="13sp"

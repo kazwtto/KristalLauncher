@@ -10,10 +10,14 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
+import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.OvershootInterpolator
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.TextView
 import kwz.love2d.launcher.R
+import kwz.love2d.launcher.util.LanguageManager
+import kwz.love2d.launcher.util.ThemeManager
 
 object LoveOverlayManager {
 
@@ -26,6 +30,7 @@ object LoveOverlayManager {
                     if (decorView.findViewWithTag<View>("love_overlay_container") != null) return@post
 
                     val density = activity.resources.displayMetrics.density
+                    val localizedContext = LanguageManager.createLocalizedContext(activity)
 
                     val overlayContainer = FrameLayout(activity).apply {
                         tag = "love_overlay_container"
@@ -59,7 +64,7 @@ object LoveOverlayManager {
                     }
 
                     val titleText = TextView(activity).apply {
-                        text = activity.getString(R.string.overlay_menu_title)
+                        text = localizedContext.getString(R.string.overlay_menu_title)
                         setTextColor(Color.parseColor("#E3E2E6"))
                         textSize = 22f
                         gravity = Gravity.CENTER
@@ -68,7 +73,7 @@ object LoveOverlayManager {
                     }
 
                     val btnExit = TextView(activity).apply {
-                        text = activity.getString(R.string.overlay_exit_game)
+                        text = localizedContext.getString(R.string.overlay_exit_game)
                         setTextColor(Color.parseColor("#FFB4AB"))
                         textSize = 16f
                         gravity = Gravity.CENTER
@@ -84,7 +89,7 @@ object LoveOverlayManager {
                     }
 
                     val btnResume = TextView(activity).apply {
-                        text = activity.getString(R.string.overlay_resume_game)
+                        text = localizedContext.getString(R.string.overlay_resume_game)
                         setTextColor(Color.parseColor("#E3E2E6"))
                         textSize = 16f
                         gravity = Gravity.CENTER
@@ -156,9 +161,26 @@ object LoveOverlayManager {
             container.animate().cancel()
             panel.animate().cancel()
             container.visibility = View.VISIBLE
-            container.alpha = 1f
-            panel.scaleX = 1f
-            panel.scaleY = 1f
+            if (!ThemeManager.areAnimationsEnabled(container.context)) {
+                container.alpha = 1f
+                panel.scaleX = 1f
+                panel.scaleY = 1f
+                return
+            }
+            container.alpha = 0f
+            container.animate()
+                .alpha(1f)
+                .setDuration(150)
+                .start()
+
+            panel.scaleX = 0.8f
+            panel.scaleY = 0.8f
+            panel.animate()
+                .scaleX(1f)
+                .scaleY(1f)
+                .setDuration(250)
+                .setInterpolator(OvershootInterpolator(1.2f))
+                .start()
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -168,10 +190,27 @@ object LoveOverlayManager {
         try {
             container.animate().cancel()
             panel.animate().cancel()
-            container.alpha = 1f
-            panel.scaleX = 1f
-            panel.scaleY = 1f
-            container.visibility = View.GONE
+            if (!ThemeManager.areAnimationsEnabled(container.context)) {
+                container.alpha = 1f
+                panel.scaleX = 1f
+                panel.scaleY = 1f
+                container.visibility = View.GONE
+                return
+            }
+            panel.animate()
+                .scaleX(0.8f)
+                .scaleY(0.8f)
+                .setDuration(150)
+                .setInterpolator(AccelerateDecelerateInterpolator())
+                .start()
+
+            container.animate()
+                .alpha(0f)
+                .setDuration(150)
+                .withEndAction {
+                    container.visibility = View.GONE
+                }
+                .start()
         } catch (e: Exception) {
             e.printStackTrace()
         }

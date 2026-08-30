@@ -64,6 +64,7 @@ class SettingsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        NavigationAnimations.prepare(this)
         setContentView(R.layout.activity_settings)
 
         btnBack = findViewById(R.id.btnBack)

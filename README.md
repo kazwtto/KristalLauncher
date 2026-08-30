@@ -3,11 +3,11 @@
   <table>
     <tr>
       <td width="112" align="center">
-        <img src="https://raw.githubusercontent.com/kazwtto/KristalLauncher/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" width="96" alt="Kristal Launcher icon">
+        <img src="https://raw.githubusercontent.com/kazwtto/KristalLauncher/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" width="96" alt="Kristal Launcher icon">
       </td>
       <td align="left">
         <h1>Kristal Launcher</h1>
-        <p>An Android launcher for games and mods made with Kristal Engine.</p>
+        <p>Play Kristal Engine games and mods on Android device.</p>
       </td>
     </tr>
   </table>
@@ -24,6 +24,7 @@
     <a href="#installation">Installation</a> ·
     <a href="#patches">Patches</a> ·
     <a href="#building">Building</a> ·
+    <a href="#support-the-project">Support</a> ·
     <a href="#credits">Credits</a>
   </p>
 
@@ -33,22 +34,40 @@
 
 ## About
 
-Kristal Launcher keeps a local library of Kristal Engine games on Android. It reads package metadata, prepares a private Android-ready copy, applies optional compatibility patches, and starts the game with an embedded LÖVE2D runtime.
+Kristal Launcher is a wrapper that embeds the LÖVE2D engine to run Kristal Engine games on Android.
 
 The launcher never rewrites the package selected by the user. Every compatibility change is made to a staged copy inside the app's private storage, so a failed patch cannot damage the original `.love`, `.zip`, or fused executable.
 
+## Tested Games
+- [DELTARUNE: Vessel vs. Kris](https://gamejolt.com/games/dtvessel/764572)
+- [DELTARUNE: PluggedDream](https://gamejolt.com/games/pluggeddream/1019739)
+- [DELTARUNE: Frozen Heart](https://gamejolt.com/games/frozen-heart/659908)
+- [DELTARUNE: Frostveil](https://gamejolt.com/games/deltarune_frostveil/1058015)
+- [DELTARUNE: Friendless](https://gamejolt.com/games/deltarunefriendless/1077489)
+- [UNDERTALE: Cooking with Kindness](https://gamejolt.com/games/cooking_with_kindness/900285)
+- [StarRune](https://gamejolt.com/games/starrune/716680)
+- [Godhome](https://gamebanana.com/mods/376524)
+
 ## Features
 
-- Scan a folder selected through Android's system document picker
-- Read game titles, subtitles, versions, authors, and icons from Kristal packages
-- Browse games in a consistent list layout, with search, favorites, and recent games
-- Launch `.love`, `.zip`, and compatible fused Windows executables
-- Enable Android compatibility fixes globally or override them for one game
-- Use a configurable virtual gamepad with localized settings
-- Download verified extra patches or import a local `.klpatch` package
-- Follow the device language and theme, or choose Portuguese, English, Spanish, light, or dark manually
-- Follow the device theme or select the light or dark appearance explicitly
-- Check GitHub Releases automatically or on demand
+- Material 3 based design.
+- Patches to correct the compatibility of games designed for PC.
+- Browse games in list or grid layouts, with search, favorites, and recent games.
+- Launch `.love`, `.zip`, and compatible fused Windows executables `(.exe)`. Unzip is optional.
+- External patches compatible (i guess, i don't test it).
+- Portuguese, English and Spanish localization.
+
+## Known Issues
+- Virtual Gamepad settings are not universal.
+- Some patches do not respect the settings.
+- METADATA information may not be returned.
+- Zips and patches management somewhat slow. (May takes a LOT of time to load the games, sorry)
+
+> [!NOTE]
+> it's my first app like that, gimme a break-.
+
+## Future improvements
+- Add Kristal Runtime to non-excellable mods.
 
 ## Installation
 
@@ -63,15 +82,13 @@ After opening the launcher, select the folder that contains your Kristal games. 
 
 Built-in patches cover common Android differences in fullscreen behavior, GLSL ES shaders, image formats, virtual filesystems, borders, text rendering, and input. Each fix can be enabled for every game or overridden for a specific title.
 
-The Patch Center also supports external `.klpatch` packages. Packages downloaded from this repository are verified against the SHA-256 value in [`patches/catalog.json`](patches/catalog.json); local imports are labeled unverified and remain disabled until the user enables them. The first official extra is a Brazilian Portuguese localization patch based on KristalPT.
-
-See the [patch authoring guide](patches/README.md) for the package format, supported operations, limits, and publishing workflow.
+See the [patch authoring guide](docs/CREATING_PATCHES.md) for the package format, supported operations, limits, and publishing workflow.
 
 ## Updates
 
 Kristal Launcher can check this repository for new releases when the app starts. Automatic checks are optional, and a manual check is available from **Settings → About**.
 
-Release tags should use semantic versions such as `v0.2.0`. A release is offered only when its version is newer than the app's current `versionName`, and the launcher prefers a non-debug APK whose name contains `KristalLauncher`.
+Versions follow `X.Y.Z`: `X` changes for large stable updates, `Y` for smaller feature updates, and `Z` for corrections. Every APK update must advance the appropriate number and use a greater Android `versionCode`. A release is offered only when its version is newer than the app's current `versionName`, and the launcher prefers a non-debug APK whose name contains `KristalLauncher`.
 
 ## Building
 
@@ -99,13 +116,13 @@ On Windows, create the project signing key once and build both variants:
 Finished APKs are written to the ignored `artifacts/apk/` directory with versioned names:
 
 ```text
-KristalLauncher-v0.1.0-debug.apk
-KristalLauncher-v0.1.0-release.apk
+KristalLauncher-vX.Y.Z-debug.apk
+KristalLauncher-vX.Y.Z-release.apk
 ```
 
 The keystore and credentials remain under the ignored `.signing/` directory. Back them up securely; Android will only accept future updates signed with the same key.
 
-`gradlew.bat assembleDebug` compiles and checks the Android layer. Distribution APKs must use the repository build scripts because they merge `runtime/love2d/classes.dex`, align the APK, and sign the final package. See [the full building guide](docs/BUILDING.md) for details.
+`gradlew.bat assembleDebug` compiles and checks the Android layer. Distribution APKs must use the repository build scripts because they merge `runtime/love2d/classes.dex`, align the APK, and sign the final package.
 
 ## Tech stack
 
@@ -125,20 +142,31 @@ The keystore and credentials remain under the ignored `.signing/` directory. Bac
 | `app/` | Android source, resources, native libraries, and Lua runtime assets |
 | `runtime/love2d/` | Java DEX paired with the checked-in LÖVE2D native libraries |
 | `patches/` | Patch catalog, schemas, published packages, and editable sources |
-| `scripts/` | APK packaging, signing, and repository maintenance helpers |
-| `docs/` | Architecture, compatibility, build, and audit notes |
 
-Read [the architecture notes](docs/ARCHITECTURE.md) before changing launch or staging, and [the compatibility notes](docs/COMPATIBILITY_PATCHES.md) before changing patch behavior.
+Patch authors should read the [patch authoring guide](docs/CREATING_PATCHES.md) before creating or publishing a `.klpatch` package.
 
 ## Project status
 
 Kristal Launcher is under active development. Game packages and save data are important, so keep an untouched copy and report reproducible problems through [GitHub Issues](https://github.com/kazwtto/KristalLauncher/issues).
 
+## Was Generative AI used?
+
+Yes. ChatGPT (free-tier) was used for optimization, formatting of `.md` files, localizations for English and Spanish, and translation of README.md and code comments from Portuguese to English.
+
+## Support the project
+
+If Kristal Launcher is useful to you, you can support its continued development:
+
+<p align="center">
+  <a href="https://ko-fi.com/P5P0EJA8E"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support Kristal Launcher on Ko-fi"></a>
+  &nbsp;
+  <a href="https://www.paypal.com/donate/?business=XPXE646QWFWSC&amp;no_recurring=0&amp;currency_code=BRL"><img src="https://img.shields.io/badge/Donate-PayPal-0070BA?style=for-the-badge&amp;logo=paypal&amp;logoColor=white" alt="Donate to Kristal Launcher with PayPal"></a>
+</p>
+
 ## Credits
 
 - [Kristal Engine](https://github.com/KristalTeam/Kristal) — the engine and mod ecosystem targeted by the launcher
 - [LÖVE](https://love2d.org/) — the runtime used to execute games on Android
-- KristalPT — source text and interface graphics used by the Brazilian Portuguese extra patch
 
 ## Disclaimer
 

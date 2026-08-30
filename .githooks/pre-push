@@ -1,0 +1,27 @@
+#!/bin/sh
+
+set -eu
+
+hook_dir=${0%/*}
+[ "$hook_dir" = "$0" ] && hook_dir=.
+remote_name="$1"
+remote_url="$2"
+zero_oid="0000000000000000000000000000000000000000"
+commits=""
+
+while read -r local_ref local_oid remote_ref remote_oid; do
+    if [ "$local_oid" = "$zero_oid" ]; then
+        continue
+    fi
+
+    if [ "$remote_oid" = "$zero_oid" ]; then
+        range="$local_oid"
+    else
+        range="$remote_oid..$local_oid"
+    fi
+    commits="$commits $(git rev-list "$range")"
+done
+
+if [ -n "${commits# }" ]; then
+    "$hook_dir/verify-push-content" --commits $commits
+fi

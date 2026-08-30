@@ -3,25 +3,23 @@ package kwz.love2d.launcher.util
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import androidx.documentfile.provider.DocumentFile
+import android.net.Uri
 import kwz.love2d.launcher.model.LoveGame
 import org.json.JSONObject
 import java.io.ByteArrayOutputStream
+import java.io.File
 import java.io.InputStream
 import java.util.Locale
-import java.util.zip.ZipInputStream
 
 object LoveMetadataParser {
 
     private const val MAX_METADATA_BYTES = 1024 * 1024
     private const val MAX_ICON_BYTES = 2 * 1024 * 1024
     private const val MAX_ICON_DIMENSION = 192
-    private const val MAX_ENTRY_COUNT = 10_000
+    private const val MAX_ENTRY_COUNT = 50_000
     private const val MAX_MOD_CANDIDATES = 256
-    private const val MAX_MOD_ICON_CANDIDATES = 16
-    private const val MAX_TOTAL_UNCOMPRESSED_BYTES = 2L * 1024 * 1024 * 1024
     private const val MAX_SOURCE_ICON_DIMENSION = 16_384
-    private val PLACEHOLDER_MOD_TITLES = setOf(
+    private val PLACEHOLDER_TITLES = setOf(
         "example mod",
         "exemple mod",
         "example project",
@@ -30,14 +28,16 @@ object LoveMetadataParser {
 
     fun parseLoveFiles(
         context: Context,
-        document: DocumentFile,
-        sizeBytes: Long = document.length(),
-        lastModified: Long = document.lastModified()
+        uri: Uri,
+        fileName: String,
+        sizeBytes: Long,
+        lastModified: Long
     ): List<LoveGame> {
-        parseLoveFile(context, document, sizeBytes, lastModified)?.let { return listOf(it) }
+        parseLoveFile(context, uri, fileName, sizeBytes, lastModified)?.let { return listOf(it) }
         return NestedGamePackageParser.parsePackages(
             context = context,
-            document = document,
+            sourceUri = uri,
+            sourceName = fileName,
             sourceSizeBytes = sizeBytes,
             sourceLastModified = lastModified
         )
@@ -45,176 +45,260 @@ object LoveMetadataParser {
 
     fun parseLoveFile(
         context: Context,
-        document: DocumentFile,
-        sizeBytes: Long = document.length(),
-        lastModified: Long = document.lastModified()
+        uri: Uri,
+        fileName: String,
+        sizeBytes: Long,
+        lastModified: Long
     ): LoveGame? {
-        val fileName = document.name ?: return null
-        val isExecutable = fileName.endsWith(".exe", ignoreCase = true)
-        val modCandidates = mutableListOf<ModCandidate>()
-        val modIcons = linkedMapOf<String, Bitmap>()
-        var rootIcon: Bitmap? = null
-        var confTitle: String? = null
-        var hasMainLua = false
-        var entryCount = 0
-        val normalizedEntries = mutableSetOf<String>()
-        val archiveBudget = ArchiveBudget(MAX_TOTAL_UNCOMPRESSED_BYTES)
-
-        try {
-            var input = context.contentResolver.openInputStream(document.uri)?.buffered() ?: return null
-            if (isExecutable) {
-                val offset = input.use(::findZipOffset)
-                if (offset < 0L) return null
-                input = context.contentResolver.openInputStream(document.uri)?.buffered() ?: return null
-                skipBytesFully(input, offset)
-            }
-
-            ZipInputStream(input).use { zip ->
-                var entry = zip.nextEntry
-                while (entry != null) {
-                    entryCount++
-                    require(entryCount <= MAX_ENTRY_COUNT) { "Game archive contains too many entries" }
-                    val rawPath = entry.name
-                    require(PatchManifestParser.isSafeArchivePath(rawPath)) { "Unsafe game archive path" }
-                    val path = normalizeArchivePath(rawPath)
-                    require(normalizedEntries.add(path.trimEnd('/'))) {
-                        "Game archive contains duplicate entries"
-                    }
-                    if (!entry.isDirectory) {
-                        val parts = path.split('/').filter(String::isNotBlank)
-                        val relativeParts = parts
-                        val relativePath = relativeParts.joinToString("/")
-                        if (relativePath == "main.lua") hasMainLua = true
-                        var entryConsumed = false
-
-                        val modsIndex = relativeParts.indexOf("mods")
-                        val isDirectModFile = modsIndex == 0 && relativeParts.size == 3
-                        val modFolder = if (isDirectModFile) {
-                            relativeParts.take(2).joinToString("/")
-                        } else {
-                            null
-                        }
-
-                        when {
-                            isDirectModFile && relativeParts.last() == "mod.json" -> {
-                                val content = readEntryBytes(zip, MAX_METADATA_BYTES, archiveBudget)
-                                    ?.toString(Charsets.UTF_8)
-                                    .orEmpty()
-                                entryConsumed = true
-                                runCatching {
-                                    val json = JSONObject(content)
-                                    val name = json.optString("name").trim()
-                                    if (name.isNotBlank() && modCandidates.size < MAX_MOD_CANDIDATES) {
-                                        modCandidates += ModCandidate(
-                                            folder = modFolder.orEmpty(),
-                                            name = name,
-                                            subtitle = json.optString("subtitle").takeIf(String::isNotBlank),
-                                            version = json.optString("version").takeIf(String::isNotBlank),
-                                            engineVersion = json.optString("engineVer").takeIf(String::isNotBlank),
-                                            author = json.optString("author").takeIf(String::isNotBlank)
-                                        )
-                                    }
-                                }
-                            }
-                            isDirectModFile && relativeParts.last() in ICON_FILE_NAMES &&
-                                modIcons.size < MAX_MOD_ICON_CANDIDATES -> {
-                                readEntryBytes(zip, MAX_ICON_BYTES, archiveBudget)?.let(::decodeSampledBitmap)?.let { bitmap ->
-                                    if (modIcons.putIfAbsent(modFolder.orEmpty(), bitmap) != null) bitmap.recycle()
-                                }
-                                entryConsumed = true
-                            }
-                            relativeParts.size == 1 && relativeParts.last() in ICON_FILE_NAMES && rootIcon == null -> {
-                                rootIcon = readEntryBytes(zip, MAX_ICON_BYTES, archiveBudget)?.let(::decodeSampledBitmap)
-                                entryConsumed = true
-                            }
-                            relativePath == "conf.lua" && confTitle == null -> {
-                                confTitle = readEntryBytes(zip, MAX_METADATA_BYTES, archiveBudget)
-                                    ?.toString(Charsets.UTF_8)
-                                    ?.let(::extractTitleFromConfLua)
-                                entryConsumed = true
-                            }
-                        }
-                        if (!entryConsumed) drainEntry(zip, archiveBudget)
-                    }
-                    zip.closeEntry()
-                    entry = zip.nextEntry
-                }
+        return try {
+            GameArchive.open(context, uri, fileName).use { archive ->
+                parseArchive(archive, fileName, uri, sizeBytes, lastModified)
             }
         } catch (error: Exception) {
             error.printStackTrace()
-            modIcons.values.forEach(Bitmap::recycle)
-            rootIcon?.recycle()
-            return null
+            null
+        }
+    }
+
+    internal fun parseLoveFile(
+        file: File,
+        fileName: String = file.name,
+        sizeBytes: Long = file.length(),
+        lastModified: Long = file.lastModified()
+    ): LoveGame? {
+        return try {
+            GameArchive.open(file).use { archive ->
+                parseArchive(
+                    archive = archive,
+                    fileName = fileName,
+                    uri = Uri.fromFile(file),
+                    sizeBytes = sizeBytes,
+                    lastModified = lastModified
+                )
+            }
+        } catch (error: Exception) {
+            error.printStackTrace()
+            null
+        }
+    }
+
+    internal fun inspectArchive(
+        file: File,
+        fileName: String = file.name
+    ): ParsedArchiveMetadata? {
+        return GameArchive.open(file).use { archive ->
+            readArchiveMetadata(archive, fileName)
+        }
+    }
+
+    private fun parseArchive(
+        archive: GameArchive,
+        fileName: String,
+        uri: Uri,
+        sizeBytes: Long,
+        lastModified: Long
+    ): LoveGame? {
+        val metadata = readArchiveMetadata(archive, fileName) ?: return null
+        var selectedIcon: Bitmap? = null
+        try {
+            selectedIcon = metadata.iconBytes?.let(::decodeSampledBitmap)
+            return LoveGame(
+                title = metadata.title,
+                fileName = fileName,
+                uri = uri,
+                icon = selectedIcon,
+                sizeBytes = sizeBytes,
+                lastModified = lastModified,
+                subtitle = metadata.subtitle,
+                version = metadata.version,
+                engineVer = metadata.engineVersion,
+                author = metadata.author
+            )
+        } catch (error: Exception) {
+            selectedIcon?.recycle()
+            throw error
+        }
+    }
+
+    private fun readArchiveMetadata(
+        archive: GameArchive,
+        fileName: String
+    ): ParsedArchiveMetadata? {
+        val entries = archive.entries(MAX_ENTRY_COUNT)
+        if (entries.isEmpty()) return null
+
+        val indexedEntries = entries.mapNotNull { entry ->
+            val path = normalizeReadableArchivePath(entry.name) ?: return@mapNotNull null
+            IndexedEntry(
+                entry = entry,
+                path = path
+            )
         }
 
-        if (entryCount == 0 || !hasMainLua) {
-            modIcons.values.forEach(Bitmap::recycle)
-            rootIcon?.recycle()
-            return null
-        }
+        val archivePaths = indexedEntries
+            .filterNot { it.entry.isDirectory }
+            .map(IndexedEntry::path)
+        val gameRoot = LoveArchiveNormalizer.findGameRoot(archivePaths) ?: return null
+        val modsPrefix = childPath(gameRoot, "mods/")
+
+        val modCandidates = indexedEntries.asSequence()
+            .filter { indexed ->
+                if (indexed.entry.isDirectory || !indexed.path.startsWith(modsPrefix)) {
+                    false
+                } else {
+                    val relativePath = indexed.path.removePrefix(modsPrefix)
+                    relativePath.endsWith("/mod.json") && relativePath.count { it == '/' } == 1
+                }
+            }
+            .take(MAX_MOD_CANDIDATES)
+            .mapNotNull { indexed ->
+                readEntryBytes(archive, indexed.entry, MAX_METADATA_BYTES)
+                    ?.toString(Charsets.UTF_8)
+                    ?.let(::parseModCandidate)
+                    ?.copy(folder = indexed.path.substringBeforeLast('/'))
+            }
+            .toList()
 
         val selectedMod = modCandidates
             .filterNot { isPlaceholderTitle(it.name) }
             .minByOrNull { it.folder.lowercase(Locale.ROOT) }
-        val selectedIcon = selectedMod?.folder?.let(modIcons::get) ?: rootIcon
-        modIcons.values.filter { it !== selectedIcon }.forEach(Bitmap::recycle)
-        if (rootIcon !== selectedIcon) rootIcon?.recycle()
 
+        val confTitle = indexedEntries
+            .find { it.path == childPath(gameRoot, "conf.lua") && !it.entry.isDirectory }
+            ?.let { readEntryBytes(archive, it.entry, MAX_METADATA_BYTES) }
+            ?.toString(Charsets.UTF_8)
+            ?.let(::extractTitleFromConfLua)
+            ?.takeUnless(::isIgnoredFallbackTitle)
+
+        val iconEntry = selectedMod
+            ?.let { findPreferredIcon(indexedEntries, it.folder) }
+            ?: findPreferredIcon(indexedEntries, gameRoot)
+        val iconBytes = iconEntry?.let { readEntryBytes(archive, it.entry, MAX_ICON_BYTES) }
         val cleanName = fileName.replace(Regex("(?i)\\.(love|zip|exe)$"), "")
-        val title = selectedMod?.name
-            ?: confTitle?.takeIf {
-                it.trim().lowercase(Locale.ROOT) != "kristal" && !isPlaceholderTitle(it)
-            }
-            ?: cleanName
 
-        return LoveGame(
-            title = title,
-            fileName = fileName,
-            uri = document.uri,
-            icon = selectedIcon,
-            sizeBytes = sizeBytes,
-            lastModified = lastModified,
+        return ParsedArchiveMetadata(
+            title = selectedMod?.name ?: confTitle ?: cleanName,
             subtitle = selectedMod?.subtitle,
             version = selectedMod?.version,
-            engineVer = selectedMod?.engineVersion,
-            author = selectedMod?.author
+            engineVersion = selectedMod?.engineVersion,
+            author = selectedMod?.author,
+            iconBytes = iconBytes
         )
     }
 
-    private fun normalizeArchivePath(path: String): String {
-        return path.replace('\\', '/').trimStart('/').lowercase(Locale.ROOT)
+    private fun parseModCandidate(content: String): ModCandidate? {
+        return runCatching {
+            val json = JSONObject(stripJsonComments(content.removePrefix("\uFEFF")))
+            val name = json.optString("name").trim()
+            if (name.isBlank()) return null
+            ModCandidate(
+                folder = "",
+                name = name,
+                subtitle = json.optString("subtitle").trim().takeIf(String::isNotBlank),
+                version = json.optString("version").trim().takeIf(String::isNotBlank),
+                engineVersion = json.optString("engineVer").trim().takeIf(String::isNotBlank),
+                author = json.optString("author").trim().takeIf(String::isNotBlank)
+            )
+        }.getOrNull()
+    }
+
+    /** Removes JSONC comments without touching comment markers inside quoted strings. */
+    internal fun stripJsonComments(content: String): String {
+        val output = StringBuilder(content.length)
+        var index = 0
+        var inString = false
+        var escaped = false
+        var lineComment = false
+        var blockComment = false
+
+        while (index < content.length) {
+            val current = content[index]
+            val next = content.getOrNull(index + 1)
+            when {
+                lineComment -> {
+                    if (current == '\n' || current == '\r') {
+                        lineComment = false
+                        output.append(current)
+                    }
+                }
+                blockComment -> {
+                    when {
+                        current == '*' && next == '/' -> {
+                            blockComment = false
+                            index++
+                        }
+                        current == '\n' || current == '\r' -> output.append(current)
+                    }
+                }
+                inString -> {
+                    output.append(current)
+                    when {
+                        escaped -> escaped = false
+                        current == '\\' -> escaped = true
+                        current == '"' -> inString = false
+                    }
+                }
+                current == '"' -> {
+                    inString = true
+                    output.append(current)
+                }
+                current == '/' && next == '/' -> {
+                    lineComment = true
+                    index++
+                }
+                current == '/' && next == '*' -> {
+                    blockComment = true
+                    index++
+                }
+                else -> output.append(current)
+            }
+            index++
+        }
+        return output.toString()
+    }
+
+    private fun findPreferredIcon(
+        entries: List<IndexedEntry>,
+        parent: String
+    ): IndexedEntry? {
+        return ICON_FILE_NAMES.firstNotNullOfOrNull { iconName ->
+            val expectedPath = childPath(parent, iconName)
+            entries.find { !it.entry.isDirectory && it.path == expectedPath }
+        }
+    }
+
+    private fun childPath(parent: String, child: String): String {
+        return if (parent.isBlank()) child else "$parent/$child"
+    }
+
+    private fun normalizeReadableArchivePath(path: String): String? {
+        if (path.isBlank() || path.length > MAX_ARCHIVE_PATH_LENGTH) return null
+        val parts = path.replace('\\', '/')
+            .split('/')
+            .filter { it.isNotBlank() && it != "." }
+        if (parts.isEmpty() || parts.any { it == ".." }) return null
+        return parts.joinToString("/").lowercase(Locale.ROOT)
     }
 
     private fun readEntryBytes(
-        input: InputStream,
-        maximumBytes: Int,
-        budget: ArchiveBudget
+        archive: GameArchive,
+        entry: GameArchive.Entry,
+        maximumBytes: Int
     ): ByteArray? {
+        if (entry.size !in 0..maximumBytes.toLong()) return null
         val output = ByteArrayOutputStream(minOf(maximumBytes, 32 * 1024))
         val buffer = ByteArray(16 * 1024)
         var total = 0
-        var tooLarge = false
-        while (true) {
-            val count = input.read(buffer)
-            if (count < 0) break
-            budget.account(count)
-            total += count
-            if (total <= maximumBytes) {
+        archive.open(entry).use { input ->
+            while (true) {
+                val count = input.read(buffer)
+                if (count < 0) break
+                total += count
+                if (total > maximumBytes) return null
                 output.write(buffer, 0, count)
-            } else {
-                tooLarge = true
             }
         }
-        return if (tooLarge) null else output.toByteArray()
-    }
-
-    private fun drainEntry(input: InputStream, budget: ArchiveBudget) {
-        val buffer = ByteArray(16 * 1024)
-        while (true) {
-            val count = input.read(buffer)
-            if (count < 0) return
-            budget.account(count)
-        }
+        return output.toByteArray()
     }
 
     private fun decodeSampledBitmap(bytes: ByteArray): Bitmap? {
@@ -271,20 +355,6 @@ object LoveMetadataParser {
         }
     }
 
-    private fun skipBytesFully(inputStream: InputStream, bytesToSkip: Long) {
-        var remaining = bytesToSkip
-        while (remaining > 0L) {
-            val skipped = inputStream.skip(remaining)
-            if (skipped > 0L) {
-                remaining -= skipped
-            } else if (inputStream.read() >= 0) {
-                remaining--
-            } else {
-                throw IllegalArgumentException("Executable ended before the embedded archive")
-            }
-        }
-    }
-
     private fun extractTitleFromConfLua(content: String): String? {
         return Regex("""t(?:\.window)?\.title\s*=\s*["']([^"']+)["']""")
             .find(content)
@@ -296,11 +366,24 @@ object LoveMetadataParser {
                 ?.get(1)
     }
 
+    private fun isIgnoredFallbackTitle(title: String): Boolean {
+        return normalizeTitle(title) == "kristal" || isPlaceholderTitle(title)
+    }
+
     internal fun isPlaceholderTitle(title: String): Boolean {
+        return normalizeTitle(title) in PLACEHOLDER_TITLES
+    }
+
+    private fun normalizeTitle(title: String): String {
         return title.trim()
             .lowercase(Locale.ROOT)
-            .replace(Regex("\\s+"), " ") in PLACEHOLDER_MOD_TITLES
+            .replace(Regex("\\s+"), " ")
     }
+
+    private data class IndexedEntry(
+        val entry: GameArchive.Entry,
+        val path: String
+    )
 
     private data class ModCandidate(
         val folder: String,
@@ -311,14 +394,15 @@ object LoveMetadataParser {
         val author: String?
     )
 
-    private class ArchiveBudget(private val limit: Long) {
-        private var consumed = 0L
+    internal data class ParsedArchiveMetadata(
+        val title: String,
+        val subtitle: String?,
+        val version: String?,
+        val engineVersion: String?,
+        val author: String?,
+        val iconBytes: ByteArray?
+    )
 
-        fun account(byteCount: Int) {
-            consumed += byteCount
-            require(consumed <= limit) { "Game archive expands beyond the metadata scan limit" }
-        }
-    }
-
-    private val ICON_FILE_NAMES = setOf("icon.png", "bigicon.png", "icon.jpg", "icon.jpeg")
+    private val ICON_FILE_NAMES = listOf("icon.png", "bigicon.png", "icon.jpg", "icon.jpeg")
+    private const val MAX_ARCHIVE_PATH_LENGTH = 1_024
 }

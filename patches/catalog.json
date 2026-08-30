@@ -4,8 +4,102 @@
   "patches": [
     {
       "schemaVersion": 1,
+      "id": "cooking-with-kindness.mobile-performance",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "Otimização móvel para Cooking with Kindness",
+        "en": "Mobile optimization for Cooking with Kindness",
+        "es": "Optimización móvil para Cooking with Kindness"
+      },
+      "description": {
+        "pt-BR": "Patch dedicado a Cooking with Kindness DEMO v1.0.6 que remove canvases gigantes e não utilizados da iluminação para reduzir uso de GPU e travamentos no Android.",
+        "en": "Patch dedicated to Cooking with Kindness DEMO v1.0.6 that removes oversized and unused lighting canvases to reduce GPU use and Android crashes.",
+        "es": "Parche dedicado a Cooking with Kindness DEMO v1.0.6 que elimina canvases de iluminación sobredimensionados y sin uso para reducir el uso de GPU y los cierres en Android."
+      },
+      "useCases": [
+        {
+          "pt-BR": "A demo perde muitos quadros ou fecha ao entrar nas áreas grandes de CORE Square.",
+          "en": "The demo drops many frames or closes when entering the large CORE Square areas.",
+          "es": "La demo pierde muchos cuadros o se cierra al entrar en las zonas grandes de CORE Square."
+        },
+        {
+          "pt-BR": "O jogo consome muita memória de GPU em celular ou emulador, mesmo sem efeitos visuais complexos na tela.",
+          "en": "The game uses excessive GPU memory on a phone or emulator even without complex effects on screen.",
+          "es": "El juego usa demasiada memoria de GPU en un teléfono o emulador incluso sin efectos complejos en pantalla."
+        }
+      ],
+      "releaseNotes": {
+        "pt-BR": "Versão inicial para Cooking with Kindness DEMO v1.0.6. Substitui o renderizador de luzes que alocava um canvas do tamanho do mapa inteiro.",
+        "en": "Initial release for Cooking with Kindness DEMO v1.0.6. Replaces the light renderer that allocated a canvas the size of the entire map.",
+        "es": "Versión inicial para Cooking with Kindness DEMO v1.0.6. Sustituye el renderizador de luces que asignaba un canvas del tamaño de todo el mapa."
+      },
+      "author": "kazwtto",
+      "category": "performance",
+      "minimumLauncherVersion": "0.17.0",
+      "priority": 140,
+      "capabilities": [
+        "staged_package",
+        "inject_files",
+        "edit_lua",
+        "runtime_hook"
+      ],
+      "dependencies": [],
+      "conflicts": [
+        "kristal.general-performance"
+      ],
+      "package": "packages/cooking-with-kindness-mobile-performance-1.0.0.klpatch",
+      "sha256": "87994f4e7a98058c27811435ab68869d759092baa94bf082acf9382866878eee"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "kristal.general-performance",
+      "version": "0.0.2",
+      "name": {
+        "pt-BR": "Otimização geral para jogos Kristal Engine",
+        "en": "General performance optimization for Kristal Engine games",
+        "es": "Optimización general para juegos de Kristal Engine"
+      },
+      "description": {
+        "pt-BR": "Patch geral e experimental para jogos Kristal Engine compatíveis. Reduz sleeps redundantes e recriação de canvases quando as APIs necessárias estão disponíveis.",
+        "en": "General, experimental patch for compatible Kristal Engine games. Reduces redundant sleeps and canvas recreation when the required APIs are available.",
+        "es": "Parche general y experimental para juegos compatibles de Kristal Engine. Reduce esperas redundantes y recreación de canvases cuando las API necesarias están disponibles."
+      },
+      "useCases": [
+        {
+          "pt-BR": "O jogo perde FPS por usar sleep curto além do VSync no Android.",
+          "en": "The game loses FPS because it uses a short sleep in addition to Android VSync.",
+          "es": "El juego pierde FPS por usar una espera corta además de VSync en Android."
+        },
+        {
+          "pt-BR": "Efeitos que alternam canvases apresentam picos de renderização no Android.",
+          "en": "Effects that alternate canvases have rendering spikes on Android.",
+          "es": "Los efectos que alternan canvases presentan picos de renderizado en Android."
+        }
+      ],
+      "releaseNotes": {
+        "pt-BR": "Esclarece que este patch geral é destinado a jogos Kristal Engine compatíveis. O hook só age quando as APIs necessárias estão disponíveis.",
+        "en": "Clarifies that this general patch is intended for compatible Kristal Engine games. The hook acts only when the required APIs are available.",
+        "es": "Aclara que este parche general está destinado a juegos compatibles de Kristal Engine. El hook solo actúa cuando las API necesarias están disponibles."
+      },
+      "author": "kazwtto",
+      "category": "performance",
+      "minimumLauncherVersion": "0.17.0",
+      "priority": 100,
+      "capabilities": [
+        "staged_package",
+        "inject_files",
+        "edit_lua",
+        "runtime_hook"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "package": "packages/kristal-general-performance-0.0.2.klpatch",
+      "sha256": "7570480c427659bca311102e8e2cec8b6f8dfbc143670e78211dd941572d26b3"
+    },
+    {
+      "schemaVersion": 1,
       "id": "kristal.ptbr",
-      "version": "2.3.2",
+      "version": "2.3.3",
       "name": {
         "pt-BR": "Kristal Engine em Português (Brasil)",
         "en": "Kristal Engine in Brazilian Portuguese",
@@ -29,9 +123,9 @@
         }
       ],
       "releaseNotes": {
-        "pt-BR": "Melhora a instalação dos hooks, adiciona cache de traduções e mantém os erros de runtime visíveis.",
-        "en": "Improves hook installation, adds a translation cache, and keeps runtime errors visible.",
-        "es": "Mejora la instalación de hooks, añade caché de traducciones y mantiene visibles los errores de ejecución."
+        "pt-BR": "Corrige a codificação UTF-8 dos textos e das informações do pacote de tradução.",
+        "en": "Fixes UTF-8 encoding in translated text and package information.",
+        "es": "Corrige la codificación UTF-8 de los textos traducidos y de la información del paquete."
       },
       "author": "kazwtto",
       "category": "localization",
@@ -45,8 +139,8 @@
       ],
       "dependencies": [],
       "conflicts": [],
-      "package": "packages/kristal-ptbr-2.3.2.klpatch",
-      "sha256": "c078d1b3a34b362ffd285582c4d6a77f87563738867266b91ad1024943669bf4"
+      "package": "packages/kristal-ptbr-2.3.3.klpatch",
+      "sha256": "97dcc8aa5c6516d8bd702b69bd74605980157a8ac5a6c8e54914ad78069ccedd"
     }
   ]
 }

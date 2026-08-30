@@ -1,9 +1,11 @@
 package kwz.love2d.launcher.util
 
 import android.content.Context
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
 import kwz.love2d.launcher.R
+import java.util.Locale
 
 object LanguageManager {
 
@@ -44,4 +46,43 @@ object LanguageManager {
             else -> context.getString(R.string.lang_device)
         }
     }
+
+    /**
+     * Creates a context that resolves resources using the launcher's saved locale.
+     *
+     * The embedded LÖVE activity does not inherit AppCompat's per-app locale, so its
+     * resources otherwise follow only the device locale.
+     */
+    fun createLocalizedContext(context: Context): Context {
+        val language = getCurrentLanguage(context)
+        if (language == LANGUAGE_SYSTEM) return context
+
+        val configuration = Configuration(context.resources.configuration).apply {
+            setLocale(Locale.forLanguageTag(language))
+        }
+        return context.createConfigurationContext(configuration)
+    }
+
+    /**
+     * Resolves the language embedded in the virtual gamepad package.
+     *
+     * The app preference must win here. `applicationContext.resources` can still expose the
+     * device configuration after AppCompat applies a per-app locale, so reading only its locale
+     * made the in-game controls ignore an explicitly selected launcher language.
+     */
+    internal fun resolveGamepadLanguage(
+        selectedLanguage: String,
+        deviceLanguage: String?
+    ): String {
+        val selected = selectedLanguage.lowercase(Locale.ROOT)
+        if (selected in SUPPORTED_GAMEPAD_LANGUAGES) return selected
+
+        val systemLanguage = deviceLanguage
+            ?.lowercase(Locale.ROOT)
+            ?.substringBefore('-')
+            ?.substringBefore('_')
+        return systemLanguage?.takeIf { it in SUPPORTED_GAMEPAD_LANGUAGES } ?: "en"
+    }
+
+    private val SUPPORTED_GAMEPAD_LANGUAGES = setOf("pt", "en", "es")
 }
