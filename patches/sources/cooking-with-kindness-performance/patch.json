@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "cooking-with-kindness.mobile-performance",
-  "version": "1.1.1",
+  "version": "0.1.1",
   "name": {
     "pt-BR": "Otimização móvel e de batalhas para Cooking with Kindness",
     "en": "Mobile and battle optimization for Cooking with Kindness",

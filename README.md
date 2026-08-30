@@ -38,15 +38,21 @@ Kristal Launcher is a wrapper that embeds the LÖVE2D engine to run Kristal Engi
 
 The launcher never rewrites the package selected by the user. Every compatibility change is made to a staged copy inside the app's private storage, so a failed patch cannot damage the original `.love`, `.zip`, or fused executable.
 
+This was originally a study project to learn Gradle and Kotlin.
+
 ## Tested Games
 - [DELTARUNE: Vessel vs. Kris](https://gamejolt.com/games/dtvessel/764572)
 - [DELTARUNE: PluggedDream](https://gamejolt.com/games/pluggeddream/1019739)
 - [DELTARUNE: Frozen Heart](https://gamejolt.com/games/frozen-heart/659908)
-- [DELTARUNE: Frostveil](https://gamejolt.com/games/deltarune_frostveil/1058015)
 - [DELTARUNE: Friendless](https://gamejolt.com/games/deltarunefriendless/1077489)
-- [UNDERTALE: Cooking with Kindness](https://gamejolt.com/games/cooking_with_kindness/900285)
+- [DELTARUNE: Frostveil](https://gamejolt.com/games/deltarune_frostveil/1058015):
+    └ Requires Patch: Nill Arithmetic & Sanitazation.
 - [StarRune](https://gamejolt.com/games/starrune/716680)
+    └ Requires Patch: RGBA16 Conversion Patch
 - [Godhome](https://gamebanana.com/mods/376524)
+    └ Requires Patch: Shaders Fix Patch.
+- [UNDERTALE: Cooking with Kindness](https://gamejolt.com/games/cooking_with_kindness/900285)
+    └ An optimization patch is under development.
 
 ## Features
 
@@ -58,7 +64,7 @@ The launcher never rewrites the package selected by the user. Every compatibilit
 - Portuguese, English and Spanish localization.
 
 ## Known Issues
-- Virtual Gamepad settings are not universal.
+- Virtual Gamepad settings are not universal. The gamepad is added directly to the game.
 - Some patches do not respect the settings.
 - METADATA information may not be returned.
 - Zips and patches management somewhat slow. (May takes a LOT of time to load the games, sorry)
@@ -83,6 +89,11 @@ After opening the launcher, select the folder that contains your Kristal games. 
 Built-in patches cover common Android differences in fullscreen behavior, GLSL ES shaders, image formats, virtual filesystems, borders, text rendering, and input. Each fix can be enabled for every game or overridden for a specific title.
 
 See the [patch authoring guide](docs/CREATING_PATCHES.md) for the package format, supported operations, limits, and publishing workflow.
+
+> [!NOTE]
+> Can I keep all patches enabled?
+>
+> Yes, technically you can, patches will only act when needed (supposedly), but I wouldn't do that—I'd only enable them when necessary.
 
 ## Updates
 

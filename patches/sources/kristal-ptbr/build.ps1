@@ -11,7 +11,7 @@ $textRoot = Join-Path $sourceRoot "source-text"
 $payloadRoot = Join-Path $sourceRoot "payload"
 $translationOutput = Join-Path $payloadRoot "kristal_pt\translations.lua"
 $manifestOutput = Join-Path $sourceRoot "patch.json"
-$patchVersion = "2.3.3"
+$patchVersion = "2.3.4"
 $packageOutput = Join-Path (Split-Path (Split-Path $sourceRoot -Parent) -Parent) "packages\kristal-ptbr-$patchVersion.klpatch"
 
 $categoryPriority = @(
