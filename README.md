@@ -41,7 +41,7 @@ The launcher never rewrites the package selected by the user. Every compatibilit
 This was originally a study project to learn Gradle and Kotlin.
 
 ## Tested Games
-- [DELTARUNE: Vessel vs. Kris](https://gamejolt.com/games/dtvessel/764572)
+- [DELTARUNE: Vessel vs. Kris Remake](https://gamejolt.com/games/vessel_vs_kris_remake/971883)
 - [DELTARUNE: PluggedDream](https://gamejolt.com/games/pluggeddream/1019739)
 - [DELTARUNE: Frozen Heart](https://gamejolt.com/games/frozen-heart/659908)
 - [DELTARUNE: Friendless](https://gamejolt.com/games/deltarunefriendless/1077489)
