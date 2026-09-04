@@ -13,6 +13,57 @@
     <string name="settings">Configuración</string>
     <string name="settings_title">Configuración</string>
 
+    <!-- Add games tutorial -->
+    <string name="tutorial_help_action">Cómo añadir juegos</string>
+    <string name="tutorial_quick_guide">Guía rápida</string>
+    <string name="tutorial_dialog_title">Cómo poner juegos en la app</string>
+    <string name="tutorial_close">Cerrar tutorial</string>
+    <string name="tutorial_step_counter">Paso %1$d de %2$d</string>
+    <string name="tutorial_previous">Atrás</string>
+    <string name="tutorial_next">Siguiente</string>
+    <string name="tutorial_done">Terminar</string>
+    <string name="tutorial_choose_folder_now">Elegir carpeta</string>
+
+    <string name="tutorial_step_1_title">1. Prepara una carpeta de juegos</string>
+    <string name="tutorial_step_1_body">Abre la app de archivos del teléfono. Crea una carpeta llamada “Juegos” — o usa la que ya elegiste antes. Descargas/Juegos es un lugar fácil.</string>
+    <string name="tutorial_step_1_tip">💡 Importante: la app no descarga juegos. Solo encuentra y organiza archivos que ya están en tu dispositivo.</string>
+
+    <string name="tutorial_step_2_title">2. Pon los juegos dentro de esa carpeta</string>
+    <string name="tutorial_step_2_body">Copia o mueve los archivos de juego a esa carpeta. La app acepta .love, .zip y algunos .exe hechos para LÖVE/Kristal.</string>
+    <string name="tutorial_step_2_tip">✓ Deja los archivos directamente en la carpeta elegida. La app no busca juegos dentro de otras carpetas.</string>
+
+    <string name="tutorial_step_3_title">3. Toca “Seleccionar Carpeta”</string>
+    <string name="tutorial_step_3_body">En la app, toca “Seleccionar Carpeta”. Después abre la carpeta donde pusiste tus juegos.</string>
+    <string name="tutorial_step_3_tip">📁 Si esa carpeta ya está seleccionada en la app, no hace falta elegirla otra vez. Desliza la biblioteca hacia abajo para actualizar.</string>
+
+    <string name="tutorial_step_4_title">4. Toca “Usar esta carpeta”</string>
+    <string name="tutorial_step_4_body">En el selector de Android, abre tu carpeta de juegos y toca “Usar esta carpeta”. Si aparece otra confirmación, permite el acceso.</string>
+    <string name="tutorial_step_4_tip">🔒 La app usa ese acceso para leer los juegos de la carpeta que elegiste.</string>
+
+    <string name="tutorial_step_5_title">5. ¡Listo! Tus juegos aparecerán</string>
+    <string name="tutorial_step_5_body">La biblioteca se carga automáticamente. Toca un juego para abrirlo y jugar.</string>
+    <string name="tutorial_step_5_tip">¿No apareció nada? Comprueba que el archivo sea .love, .zip o un .exe compatible, que esté directamente en la carpeta y desliza la lista hacia abajo para actualizar.</string>
+
+    <string name="tutorial_mock_games_folder">JUEGOS</string>
+    <string name="tutorial_mock_games_path">Descargas / Juegos</string>
+    <string name="tutorial_mock_empty_library">Todavía no hay juegos aquí</string>
+    <string name="tutorial_mock_folder_picker_title">Carpeta Juegos</string>
+    <string name="tutorial_mock_use_folder">USAR ESTA CARPETA</string>
+    <string name="tutorial_mock_library_ready">JUEGOS ENCONTRADOS</string>
+    <string name="tutorial_mock_check">✓</string>
+    <string name="tutorial_mock_extension_love">LOVE</string>
+    <string name="tutorial_mock_extension_zip">ZIP</string>
+    <string name="tutorial_mock_extension_exe">EXE</string>
+    <string name="tutorial_mock_file_love">Aventura.love</string>
+    <string name="tutorial_mock_file_zip">MiJuego.zip</string>
+    <string name="tutorial_mock_file_exe">Demo.exe</string>
+    <string name="tutorial_mock_initial_adventure">A</string>
+    <string name="tutorial_mock_game_adventure">Aventura</string>
+    <string name="tutorial_mock_engine_kristal">Kristal</string>
+    <string name="tutorial_mock_initial_demo">D</string>
+    <string name="tutorial_mock_game_demo">Demo</string>
+    <string name="tutorial_mock_engine_love2d">Kristal</string>
+
     <!-- Navigation tabs -->
     <string name="tab_library">Biblioteca</string>
     <string name="tab_recent">Reciente</string>

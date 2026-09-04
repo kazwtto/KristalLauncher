@@ -13,6 +13,57 @@
     <string name="settings">Configurações</string>
     <string name="settings_title">Configurações</string>
 
+    <!-- Add games tutorial -->
+    <string name="tutorial_help_action">Como adicionar jogos</string>
+    <string name="tutorial_quick_guide">Guia rápido</string>
+    <string name="tutorial_dialog_title">Como colocar jogos no app</string>
+    <string name="tutorial_close">Fechar tutorial</string>
+    <string name="tutorial_step_counter">Passo %1$d de %2$d</string>
+    <string name="tutorial_previous">Voltar</string>
+    <string name="tutorial_next">Próximo</string>
+    <string name="tutorial_done">Concluir</string>
+    <string name="tutorial_choose_folder_now">Escolher pasta</string>
+
+    <string name="tutorial_step_1_title">1. Prepare uma pasta de jogos</string>
+    <string name="tutorial_step_1_body">Abra o app de arquivos do celular. Crie uma pasta chamada “Jogos” — ou use a pasta que você já escolheu antes. Um lugar fácil é Downloads/Jogos.</string>
+    <string name="tutorial_step_1_tip">💡 Importante: o app não baixa jogos. Ele só encontra e organiza arquivos que já estão no aparelho.</string>
+
+    <string name="tutorial_step_2_title">2. Coloque os jogos dentro dela</string>
+    <string name="tutorial_step_2_body">Copie ou mova os arquivos de jogo para essa pasta. O app aceita .love, .zip e alguns .exe feitos para LÖVE/Kristal.</string>
+    <string name="tutorial_step_2_tip">✓ Deixe os arquivos direto na pasta escolhida. O app não procura jogos dentro de outras pastas.</string>
+
+    <string name="tutorial_step_3_title">3. Toque em “Selecionar Pasta”</string>
+    <string name="tutorial_step_3_body">No app, toque em “Selecionar Pasta”. Depois, abra a pasta onde você colocou os jogos.</string>
+    <string name="tutorial_step_3_tip">📁 Se essa pasta já estiver escolhida no app, não precisa escolher de novo. Puxe a biblioteca para baixo para atualizar.</string>
+
+    <string name="tutorial_step_4_title">4. Toque em “Usar esta pasta”</string>
+    <string name="tutorial_step_4_body">No seletor do Android, abra sua pasta de jogos e toque em “Usar esta pasta”. Se aparecer outra confirmação, permita o acesso.</string>
+    <string name="tutorial_step_4_tip">🔒 O app usa esse acesso para ler os jogos da pasta que você escolheu.</string>
+
+    <string name="tutorial_step_5_title">5. Pronto! Seus jogos vão aparecer</string>
+    <string name="tutorial_step_5_body">A biblioteca é carregada automaticamente. Toque em um jogo para abrir e jogar.</string>
+    <string name="tutorial_step_5_tip">Não apareceu? Confira se o arquivo é .love, .zip ou um .exe compatível, se está direto na pasta e puxe a lista para baixo para atualizar.</string>
+
+    <string name="tutorial_mock_games_folder">JOGOS</string>
+    <string name="tutorial_mock_games_path">Downloads / Jogos</string>
+    <string name="tutorial_mock_empty_library">Ainda não há jogos aqui</string>
+    <string name="tutorial_mock_folder_picker_title">Pasta Jogos</string>
+    <string name="tutorial_mock_use_folder">USAR ESTA PASTA</string>
+    <string name="tutorial_mock_library_ready">JOGOS ENCONTRADOS</string>
+    <string name="tutorial_mock_check">✓</string>
+    <string name="tutorial_mock_extension_love">LOVE</string>
+    <string name="tutorial_mock_extension_zip">ZIP</string>
+    <string name="tutorial_mock_extension_exe">EXE</string>
+    <string name="tutorial_mock_file_love">Aventura.love</string>
+    <string name="tutorial_mock_file_zip">MeuJogo.zip</string>
+    <string name="tutorial_mock_file_exe">Demo.exe</string>
+    <string name="tutorial_mock_initial_adventure">A</string>
+    <string name="tutorial_mock_game_adventure">Aventura</string>
+    <string name="tutorial_mock_engine_kristal">Kristal</string>
+    <string name="tutorial_mock_initial_demo">D</string>
+    <string name="tutorial_mock_game_demo">Demo</string>
+    <string name="tutorial_mock_engine_love2d">Kristal</string>
+
     <!-- Bottom navigation tabs -->
     <string name="tab_library">Biblioteca</string>
     <string name="tab_recent">Recente</string>

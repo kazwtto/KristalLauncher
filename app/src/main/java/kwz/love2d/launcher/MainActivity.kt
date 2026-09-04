@@ -40,6 +40,7 @@ import kwz.love2d.launcher.util.NavigationAnimations
 import kwz.love2d.launcher.util.ThemeManager
 import kwz.love2d.launcher.util.UpdateChecker
 import kwz.love2d.launcher.util.UpdateCheckResult
+import kwz.love2d.launcher.ui.AddGamesTutorialDialog
 import kwz.love2d.launcher.ui.UpdatePrompter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.CancellationException
@@ -320,6 +321,12 @@ class MainActivity : AppCompatActivity() {
                 setupRecyclerView()
                 displayGames(displayedGamesList)
                 invalidateOptionsMenu()
+                true
+            }
+            R.id.action_help -> {
+                AddGamesTutorialDialog.show(this, selectedFolderUri != null) {
+                    folderPickerLauncher.launch(null)
+                }
                 true
             }
             R.id.action_settings -> {
