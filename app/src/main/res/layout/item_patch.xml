@@ -6,10 +6,10 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="12dp"
     android:foreground="?attr/selectableItemBackground"
-    app:cardBackgroundColor="@color/m3_surface_card"
-    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="?attr/colorSurface"
+    app:cardCornerRadius="?attr/kristalCorner16"
     app:cardElevation="0dp"
-    app:strokeColor="@color/m3_outline"
+    app:strokeColor="?attr/colorOutline"
     app:strokeWidth="1dp">
 
     <LinearLayout
@@ -34,7 +34,7 @@
                     android:id="@+id/tvPatchName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/m3_on_surface"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -43,7 +43,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
-                    android:textColor="@color/m3_on_surface_variant"
+                    android:textColor="?attr/colorOnSurfaceVariant"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -65,7 +65,7 @@
             android:layout_marginTop="10dp"
             android:ellipsize="end"
             android:maxLines="2"
-            android:textColor="@color/m3_on_surface_variant"
+            android:textColor="?attr/colorOnSurfaceVariant"
             android:textSize="13sp" />
 
         <TextView
@@ -73,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:textColor="@color/m3_primary"
+            android:textColor="?attr/colorPrimary"
             android:textSize="12sp" />
 
         <LinearLayout
@@ -88,12 +88,13 @@
                 style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="44dp"
+                app:cornerRadius="?attr/kristalCorner20"
                 android:minWidth="0dp"
                 android:text="@string/patch_when_useful"
-                android:textColor="@color/m3_primary"
-                app:icon="@drawable/ic_help_outline"
+                android:textColor="?attr/colorPrimary"
+                app:icon="?attr/kristalIconHelp"
                 app:iconSize="18dp"
-                app:iconTint="@color/m3_primary" />
+                app:iconTint="?attr/colorPrimary" />
 
             <Space
                 android:layout_width="0dp"
@@ -106,6 +107,14 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/patch_enabled_by_default" />
 
+            <kwz.love2d.launcher.ui.DeltaruneSquareSwitch
+                android:id="@+id/switchPatchEnabledDeltarune"
+                android:layout_width="44dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/patch_enabled_by_default"
+                android:visibility="gone" />
+
             <com.google.android.material.progressindicator.CircularProgressIndicator
                 android:id="@+id/patchActionProgress"
                 android:layout_width="20dp"
@@ -113,7 +122,7 @@
                 android:layout_marginEnd="10dp"
                 android:indeterminate="true"
                 android:visibility="gone"
-                app:indicatorColor="@color/m3_primary"
+                app:indicatorColor="?attr/colorPrimary"
                 app:indicatorSize="20dp"
                 app:trackThickness="2dp" />
 
@@ -122,6 +131,7 @@
                 style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="44dp"
+                app:cornerRadius="?attr/kristalCorner20"
                 android:minWidth="96dp" />
         </LinearLayout>
     </LinearLayout>

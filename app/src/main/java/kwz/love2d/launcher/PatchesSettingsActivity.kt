@@ -30,6 +30,8 @@ import kwz.love2d.launcher.util.PatchPackageInstaller
 import kwz.love2d.launcher.util.PatchRegistry
 import kwz.love2d.launcher.util.PatchRepository
 import kwz.love2d.launcher.util.PatchStorage
+import kwz.love2d.launcher.util.ThemeManager
+import kwz.love2d.launcher.util.showThemed
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -60,6 +62,7 @@ class PatchesSettingsActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        ThemeManager.applyActivityTheme(this)
         super.onCreate(savedInstanceState)
         NavigationAnimations.prepare(this)
         setContentView(R.layout.activity_patches_settings)
@@ -194,7 +197,7 @@ class PatchesSettingsActivity : AppCompatActivity() {
             )
             .setPositiveButton(R.string.patch_update) { _, _ -> installCatalogPatch(update) }
             .setNegativeButton(R.string.update_later, null)
-            .show()
+            .showThemed()
     }
 
     private fun handleToggle(item: PatchDisplayItem, enabled: Boolean) {
@@ -214,7 +217,7 @@ class PatchesSettingsActivity : AppCompatActivity() {
                     .setMessage(details)
                     .setPositiveButton(R.string.ok, null)
                     .setOnDismissListener { refreshCurrentTab() }
-                    .show()
+                    .showThemed()
                 return
             }
         }
@@ -238,7 +241,7 @@ class PatchesSettingsActivity : AppCompatActivity() {
                 }
                 .setNegativeButton(R.string.cancel) { _, _ -> refreshCurrentTab() }
                 .setOnCancelListener { refreshCurrentTab() }
-                .show()
+                .showThemed()
         } else {
             PatchManager.setGlobalPatchEnabled(this, item.id, enabled)
             refreshCurrentTab()
@@ -260,7 +263,7 @@ class PatchesSettingsActivity : AppCompatActivity() {
                 installCatalogPatch(item)
             }
             .setNegativeButton(R.string.cancel, null)
-            .show()
+            .showThemed()
     }
 
     private fun installCatalogPatch(item: PatchDisplayItem) {
@@ -311,7 +314,7 @@ class PatchesSettingsActivity : AppCompatActivity() {
                 }
             }
             .setNegativeButton(R.string.cancel, null)
-            .show()
+            .showThemed()
     }
 
     private fun handleInstallResult(
@@ -357,7 +360,7 @@ class PatchesSettingsActivity : AppCompatActivity() {
                     .setTitle(R.string.patch_install_failed)
                     .setMessage(result.reason)
                     .setPositiveButton(R.string.ok, null)
-                    .show()
+                    .showThemed()
                 refreshCurrentTab()
             }
         }
@@ -386,7 +389,7 @@ class PatchesSettingsActivity : AppCompatActivity() {
         if (item.installedPatch != null) {
             dialog.setNegativeButton(R.string.patch_uninstall) { _, _ -> confirmUninstall(item) }
         }
-        dialog.show()
+        dialog.showThemed()
     }
 
     private fun showPatchUseCases(item: PatchDisplayItem) {
@@ -395,7 +398,7 @@ class PatchesSettingsActivity : AppCompatActivity() {
             .setTitle(getString(R.string.patch_use_cases_title, item.name))
             .setItems(useCases.toTypedArray(), null)
             .setPositiveButton(R.string.ok, null)
-            .show()
+            .showThemed()
     }
 
     private fun confirmUninstall(item: PatchDisplayItem) {
@@ -428,7 +431,7 @@ class PatchesSettingsActivity : AppCompatActivity() {
                 }
             }
             .setNegativeButton(R.string.cancel, null)
-            .show()
+            .showThemed()
     }
 
     private fun refreshCurrentTab() {

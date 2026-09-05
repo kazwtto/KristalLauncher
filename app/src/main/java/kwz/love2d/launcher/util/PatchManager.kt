@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Color
 import androidx.core.content.ContextCompat
 import kwz.love2d.launcher.BuildConfig
+import com.google.android.material.color.MaterialColors
 import kwz.love2d.launcher.R
 import kwz.love2d.launcher.model.InstalledPatch
 import kwz.love2d.launcher.model.PatchApplicationResult
@@ -496,7 +497,6 @@ object PatchManager {
             "$1"
         )
 
-        // shit hack here guys:
         // Clear the canvas outside the active scissor and then restore the previous state.
         val safeClear = """
             local sx, sy, sw, sh = love.graphics.getScissor()
@@ -662,7 +662,11 @@ object PatchManager {
         )
         return GamepadRuntimeConfig(
             language = language,
-            accentColor = ContextCompat.getColor(context, R.color.m3_primary)
+            accentColor = MaterialColors.getColor(
+                context,
+                com.google.android.material.R.attr.colorPrimary,
+                ContextCompat.getColor(context, R.color.m3_primary)
+            )
         )
     }
 

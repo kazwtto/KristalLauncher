@@ -24,8 +24,8 @@
             android:background="@drawable/bg_primary_icon_frame"
             android:contentDescription="@null"
             android:padding="9dp"
-            android:src="@drawable/ic_help_outline"
-            app:tint="@color/m3_on_primary" />
+            android:src="?attr/kristalIconHelp"
+            app:tint="?attr/colorOnPrimary" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/tutorial_quick_guide"
                 android:textAllCaps="true"
-                android:textColor="@color/m3_primary"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="11sp"
                 android:textStyle="bold" />
 
@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
                 android:text="@string/tutorial_dialog_title"
-                android:textColor="@color/m3_on_surface"
+                android:textColor="?attr/colorOnSurface"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -61,8 +61,8 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/tutorial_close"
             android:padding="10dp"
-            android:src="@drawable/ic_close"
-            app:tint="@color/m3_on_surface_variant" />
+            android:src="?attr/kristalIconClose"
+            app:tint="?attr/colorOnSurfaceVariant" />
 
     </LinearLayout>
 
@@ -76,7 +76,7 @@
         android:paddingTop="5dp"
         android:paddingEnd="10dp"
         android:paddingBottom="5dp"
-        android:textColor="@color/m3_on_primary_container"
+        android:textColor="?attr/colorOnPrimaryContainer"
         android:textSize="12sp"
         android:textStyle="bold" />
 
@@ -96,10 +96,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="184dp"
                     android:importantForAccessibility="noHideDescendants"
-                    app:cardBackgroundColor="@color/m3_surface_variant"
-                    app:cardCornerRadius="22dp"
+                    app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                    app:cardCornerRadius="?attr/kristalCorner22"
                     app:cardElevation="0dp"
-                    app:strokeColor="@color/m3_outline"
+                    app:strokeColor="?attr/colorOutline"
                     app:strokeWidth="1dp">
 
                     <LinearLayout
@@ -121,47 +121,47 @@
                             <View
                                 android:layout_width="78dp"
                                 android:layout_height="8dp"
-                                android:background="@color/m3_outline" />
+                                android:background="?attr/colorOutline" />
 
                             <View
                                 android:layout_width="54dp"
                                 android:layout_height="8dp"
                                 android:layout_marginTop="7dp"
-                                android:background="@color/m3_outline" />
+                                android:background="?attr/colorOutline" />
 
                             <View
                                 android:layout_width="88dp"
                                 android:layout_height="8dp"
                                 android:layout_marginTop="24dp"
-                                android:background="@color/m3_outline" />
+                                android:background="?attr/colorOutline" />
 
                             <View
                                 android:layout_width="62dp"
                                 android:layout_height="8dp"
                                 android:layout_marginTop="7dp"
-                                android:background="@color/m3_outline" />
+                                android:background="?attr/colorOutline" />
 
                             <View
                                 android:layout_width="88dp"
                                 android:layout_height="8dp"
                                 android:layout_marginTop="24dp"
-                                android:background="@color/m3_outline" />
+                                android:background="?attr/colorOutline" />
 
                             <View
                                 android:layout_width="48dp"
                                 android:layout_height="8dp"
                                 android:layout_marginTop="7dp"
-                                android:background="@color/m3_outline" />
+                                android:background="?attr/colorOutline" />
 
                         </LinearLayout>
 
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="126dp"
                             android:layout_height="160dp"
-                            app:cardBackgroundColor="@color/m3_surface_card"
-                            app:cardCornerRadius="16dp"
+                            app:cardBackgroundColor="?attr/colorSurface"
+                            app:cardCornerRadius="?attr/kristalCorner16"
                             app:cardElevation="0dp"
-                            app:strokeColor="@color/m3_outline"
+                            app:strokeColor="?attr/colorOutline"
                             app:strokeWidth="1dp">
 
                             <LinearLayout
@@ -172,7 +172,7 @@
                                 <View
                                     android:layout_width="match_parent"
                                     android:layout_height="9dp"
-                                    android:background="@color/m3_primary" />
+                                    android:background="?attr/colorPrimary" />
 
                                 <ImageView
                                     android:layout_width="52dp"
@@ -180,8 +180,8 @@
                                     android:layout_gravity="center_horizontal"
                                     android:layout_marginTop="22dp"
                                     android:contentDescription="@null"
-                                    android:src="@drawable/ic_folder"
-                                    app:tint="@color/m3_primary" />
+                                    android:src="?attr/kristalIconFolder"
+                                    app:tint="?attr/colorPrimary" />
 
                                 <TextView
                                     android:layout_width="match_parent"
@@ -193,7 +193,7 @@
                                     android:gravity="center"
                                     android:paddingVertical="8dp"
                                     android:text="@string/tutorial_mock_games_folder"
-                                    android:textColor="@color/m3_on_primary"
+                                    android:textColor="?attr/colorOnPrimary"
                                     android:textSize="10sp"
                                     android:textStyle="bold" />
 
@@ -210,7 +210,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
                     android:text="@string/tutorial_step_1_title"
-                    android:textColor="@color/m3_on_surface"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="21sp"
                     android:textStyle="bold" />
 
@@ -220,7 +220,7 @@
                     android:layout_marginTop="8dp"
                     android:lineSpacingExtra="2dp"
                     android:text="@string/tutorial_step_1_body"
-                    android:textColor="@color/m3_on_surface_variant"
+                    android:textColor="?attr/colorOnSurfaceVariant"
                     android:textSize="15sp" />
 
                 <TextView
@@ -230,7 +230,7 @@
                     android:background="@drawable/bg_tutorial_tip"
                     android:padding="12dp"
                     android:text="@string/tutorial_step_1_tip"
-                    android:textColor="@color/m3_on_primary_container"
+                    android:textColor="?attr/colorOnPrimaryContainer"
                     android:textSize="13sp" />
 
             </LinearLayout>
@@ -244,10 +244,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="184dp"
                     android:importantForAccessibility="noHideDescendants"
-                    app:cardBackgroundColor="@color/m3_surface_variant"
-                    app:cardCornerRadius="22dp"
+                    app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                    app:cardCornerRadius="?attr/kristalCorner22"
                     app:cardElevation="0dp"
-                    app:strokeColor="@color/m3_outline"
+                    app:strokeColor="?attr/colorOutline"
                     app:strokeWidth="1dp">
 
                     <LinearLayout
@@ -266,8 +266,8 @@
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:contentDescription="@null"
-                                android:src="@drawable/ic_folder"
-                                app:tint="@color/m3_primary" />
+                                android:src="?attr/kristalIconFolder"
+                                app:tint="?attr/colorPrimary" />
 
                             <TextView
                                 android:layout_width="0dp"
@@ -275,7 +275,7 @@
                                 android:layout_marginStart="9dp"
                                 android:layout_weight="1"
                                 android:text="@string/tutorial_mock_games_path"
-                                android:textColor="@color/m3_on_surface"
+                                android:textColor="?attr/colorOnSurface"
                                 android:textSize="13sp"
                                 android:textStyle="bold" />
 
@@ -283,7 +283,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/tutorial_mock_check"
-                                android:textColor="@color/m3_primary"
+                                android:textColor="?attr/colorPrimary"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
 
@@ -310,7 +310,7 @@
                                     android:background="@drawable/bg_tutorial_extension"
                                     android:gravity="center"
                                     android:text="@string/tutorial_mock_extension_love"
-                                    android:textColor="@color/m3_on_primary_container"
+                                    android:textColor="?attr/colorOnPrimaryContainer"
                                     android:textSize="9sp"
                                     android:textStyle="bold" />
 
@@ -320,7 +320,7 @@
                                     android:layout_marginStart="10dp"
                                     android:layout_weight="1"
                                     android:text="@string/tutorial_mock_file_love"
-                                    android:textColor="@color/m3_on_surface"
+                                    android:textColor="?attr/colorOnSurface"
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
 
@@ -341,7 +341,7 @@
                                     android:background="@drawable/bg_tutorial_extension"
                                     android:gravity="center"
                                     android:text="@string/tutorial_mock_extension_zip"
-                                    android:textColor="@color/m3_on_primary_container"
+                                    android:textColor="?attr/colorOnPrimaryContainer"
                                     android:textSize="9sp"
                                     android:textStyle="bold" />
 
@@ -351,7 +351,7 @@
                                     android:layout_marginStart="10dp"
                                     android:layout_weight="1"
                                     android:text="@string/tutorial_mock_file_zip"
-                                    android:textColor="@color/m3_on_surface"
+                                    android:textColor="?attr/colorOnSurface"
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
 
@@ -372,7 +372,7 @@
                                     android:background="@drawable/bg_tutorial_extension"
                                     android:gravity="center"
                                     android:text="@string/tutorial_mock_extension_exe"
-                                    android:textColor="@color/m3_on_primary_container"
+                                    android:textColor="?attr/colorOnPrimaryContainer"
                                     android:textSize="9sp"
                                     android:textStyle="bold" />
 
@@ -382,7 +382,7 @@
                                     android:layout_marginStart="10dp"
                                     android:layout_weight="1"
                                     android:text="@string/tutorial_mock_file_exe"
-                                    android:textColor="@color/m3_on_surface"
+                                    android:textColor="?attr/colorOnSurface"
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
 
@@ -399,7 +399,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
                     android:text="@string/tutorial_step_2_title"
-                    android:textColor="@color/m3_on_surface"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="21sp"
                     android:textStyle="bold" />
 
@@ -409,7 +409,7 @@
                     android:layout_marginTop="8dp"
                     android:lineSpacingExtra="2dp"
                     android:text="@string/tutorial_step_2_body"
-                    android:textColor="@color/m3_on_surface_variant"
+                    android:textColor="?attr/colorOnSurfaceVariant"
                     android:textSize="15sp" />
 
                 <TextView
@@ -419,7 +419,7 @@
                     android:background="@drawable/bg_tutorial_tip"
                     android:padding="12dp"
                     android:text="@string/tutorial_step_2_tip"
-                    android:textColor="@color/m3_on_primary_container"
+                    android:textColor="?attr/colorOnPrimaryContainer"
                     android:textSize="13sp" />
 
             </LinearLayout>
@@ -433,10 +433,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="184dp"
                     android:importantForAccessibility="noHideDescendants"
-                    app:cardBackgroundColor="@color/m3_surface_variant"
-                    app:cardCornerRadius="22dp"
+                    app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                    app:cardCornerRadius="?attr/kristalCorner22"
                     app:cardElevation="0dp"
-                    app:strokeColor="@color/m3_outline"
+                    app:strokeColor="?attr/colorOutline"
                     app:strokeWidth="1dp">
 
                     <LinearLayout
@@ -457,14 +457,14 @@
                                 android:layout_width="16dp"
                                 android:layout_height="16dp"
                                 android:contentDescription="@null"
-                                android:src="@drawable/ic_search"
-                                app:tint="@color/m3_on_surface_variant" />
+                                android:src="?attr/kristalIconSearch"
+                                app:tint="?attr/colorOnSurfaceVariant" />
 
                             <View
                                 android:layout_width="74dp"
                                 android:layout_height="7dp"
                                 android:layout_marginStart="8dp"
-                                android:background="@color/m3_outline" />
+                                android:background="?attr/colorOutline" />
 
                         </LinearLayout>
 
@@ -479,15 +479,15 @@
                                 android:layout_width="48dp"
                                 android:layout_height="48dp"
                                 android:contentDescription="@null"
-                                android:src="@drawable/ic_folder"
-                                app:tint="@color/m3_on_surface_variant" />
+                                android:src="?attr/kristalIconFolder"
+                                app:tint="?attr/colorOnSurfaceVariant" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="6dp"
                                 android:text="@string/tutorial_mock_empty_library"
-                                android:textColor="@color/m3_on_surface"
+                                android:textColor="?attr/colorOnSurface"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
 
@@ -499,13 +499,13 @@
                                 android:focusable="false"
                                 android:minHeight="0dp"
                                 android:text="@string/select_folder"
-                                android:textColor="@color/m3_on_primary"
+                                android:textColor="?attr/colorOnPrimary"
                                 android:textSize="11sp"
-                                app:backgroundTint="@color/m3_primary"
-                                app:cornerRadius="20dp"
-                                app:icon="@drawable/ic_folder"
+                                app:backgroundTint="?attr/colorPrimary"
+                                app:cornerRadius="?attr/kristalCorner20"
+                                app:icon="?attr/kristalIconFolder"
                                 app:iconSize="16dp"
-                                app:iconTint="@color/m3_on_primary" />
+                                app:iconTint="?attr/colorOnPrimary" />
 
                         </LinearLayout>
 
@@ -518,7 +518,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
                     android:text="@string/tutorial_step_3_title"
-                    android:textColor="@color/m3_on_surface"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="21sp"
                     android:textStyle="bold" />
 
@@ -528,7 +528,7 @@
                     android:layout_marginTop="8dp"
                     android:lineSpacingExtra="2dp"
                     android:text="@string/tutorial_step_3_body"
-                    android:textColor="@color/m3_on_surface_variant"
+                    android:textColor="?attr/colorOnSurfaceVariant"
                     android:textSize="15sp" />
 
                 <TextView
@@ -538,7 +538,7 @@
                     android:background="@drawable/bg_tutorial_tip"
                     android:padding="12dp"
                     android:text="@string/tutorial_step_3_tip"
-                    android:textColor="@color/m3_on_primary_container"
+                    android:textColor="?attr/colorOnPrimaryContainer"
                     android:textSize="13sp" />
 
             </LinearLayout>
@@ -552,10 +552,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="184dp"
                     android:importantForAccessibility="noHideDescendants"
-                    app:cardBackgroundColor="@color/m3_surface_variant"
-                    app:cardCornerRadius="22dp"
+                    app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                    app:cardCornerRadius="?attr/kristalCorner22"
                     app:cardElevation="0dp"
-                    app:strokeColor="@color/m3_outline"
+                    app:strokeColor="?attr/colorOutline"
                     app:strokeWidth="1dp">
 
                     <LinearLayout
@@ -574,8 +574,8 @@
                                 android:layout_width="22dp"
                                 android:layout_height="22dp"
                                 android:contentDescription="@null"
-                                android:src="@drawable/ic_arrow_back"
-                                app:tint="@color/m3_on_surface_variant" />
+                                android:src="?attr/kristalIconArrowBack"
+                                app:tint="?attr/colorOnSurfaceVariant" />
 
                             <TextView
                                 android:layout_width="0dp"
@@ -583,7 +583,7 @@
                                 android:layout_marginStart="10dp"
                                 android:layout_weight="1"
                                 android:text="@string/tutorial_mock_folder_picker_title"
-                                android:textColor="@color/m3_on_surface"
+                                android:textColor="?attr/colorOnSurface"
                                 android:textSize="13sp"
                                 android:textStyle="bold" />
 
@@ -602,15 +602,15 @@
                                 android:layout_width="44dp"
                                 android:layout_height="44dp"
                                 android:contentDescription="@null"
-                                android:src="@drawable/ic_folder"
-                                app:tint="@color/m3_primary" />
+                                android:src="?attr/kristalIconFolder"
+                                app:tint="?attr/colorPrimary" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="6dp"
                                 android:text="@string/tutorial_mock_games_folder"
-                                android:textColor="@color/m3_on_surface"
+                                android:textColor="?attr/colorOnSurface"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
 
@@ -623,7 +623,7 @@
                             android:background="@drawable/bg_tutorial_mock_button"
                             android:gravity="center"
                             android:text="@string/tutorial_mock_use_folder"
-                            android:textColor="@color/m3_on_primary"
+                            android:textColor="?attr/colorOnPrimary"
                             android:textSize="11sp"
                             android:textStyle="bold" />
 
@@ -636,7 +636,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
                     android:text="@string/tutorial_step_4_title"
-                    android:textColor="@color/m3_on_surface"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="21sp"
                     android:textStyle="bold" />
 
@@ -646,7 +646,7 @@
                     android:layout_marginTop="8dp"
                     android:lineSpacingExtra="2dp"
                     android:text="@string/tutorial_step_4_body"
-                    android:textColor="@color/m3_on_surface_variant"
+                    android:textColor="?attr/colorOnSurfaceVariant"
                     android:textSize="15sp" />
 
                 <TextView
@@ -656,7 +656,7 @@
                     android:background="@drawable/bg_tutorial_tip"
                     android:padding="12dp"
                     android:text="@string/tutorial_step_4_tip"
-                    android:textColor="@color/m3_on_primary_container"
+                    android:textColor="?attr/colorOnPrimaryContainer"
                     android:textSize="13sp" />
 
             </LinearLayout>
@@ -670,10 +670,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="184dp"
                     android:importantForAccessibility="noHideDescendants"
-                    app:cardBackgroundColor="@color/m3_surface_variant"
-                    app:cardCornerRadius="22dp"
+                    app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                    app:cardCornerRadius="?attr/kristalCorner22"
                     app:cardElevation="0dp"
-                    app:strokeColor="@color/m3_outline"
+                    app:strokeColor="?attr/colorOutline"
                     app:strokeWidth="1dp">
 
                     <LinearLayout
@@ -693,7 +693,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="@string/tutorial_mock_library_ready"
-                                android:textColor="@color/m3_primary"
+                                android:textColor="?attr/colorPrimary"
                                 android:textSize="11sp"
                                 android:textStyle="bold" />
 
@@ -701,7 +701,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/tutorial_mock_check"
-                                android:textColor="@color/m3_primary"
+                                android:textColor="?attr/colorPrimary"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
 
@@ -722,7 +722,7 @@
                                 android:background="@drawable/bg_tutorial_extension"
                                 android:gravity="center"
                                 android:text="@string/tutorial_mock_initial_adventure"
-                                android:textColor="@color/m3_primary"
+                                android:textColor="?attr/colorPrimary"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
 
@@ -737,7 +737,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/tutorial_mock_game_adventure"
-                                    android:textColor="@color/m3_on_surface"
+                                    android:textColor="?attr/colorOnSurface"
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
 
@@ -746,7 +746,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="2dp"
                                     android:text="@string/tutorial_mock_engine_kristal"
-                                    android:textColor="@color/m3_on_surface_variant"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
                                     android:textSize="10sp" />
 
                             </LinearLayout>
@@ -757,8 +757,8 @@
                                 android:background="@drawable/bg_tutorial_extension"
                                 android:contentDescription="@null"
                                 android:padding="6dp"
-                                android:src="@drawable/ic_play"
-                                app:tint="@color/m3_primary" />
+                                android:src="?attr/kristalIconPlay"
+                                app:tint="?attr/colorPrimary" />
 
                         </LinearLayout>
 
@@ -777,7 +777,7 @@
                                 android:background="@drawable/bg_tutorial_extension"
                                 android:gravity="center"
                                 android:text="@string/tutorial_mock_initial_demo"
-                                android:textColor="@color/m3_primary"
+                                android:textColor="?attr/colorPrimary"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
 
@@ -792,7 +792,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/tutorial_mock_game_demo"
-                                    android:textColor="@color/m3_on_surface"
+                                    android:textColor="?attr/colorOnSurface"
                                     android:textSize="12sp"
                                     android:textStyle="bold" />
 
@@ -801,7 +801,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="2dp"
                                     android:text="@string/tutorial_mock_engine_kristal"
-                                    android:textColor="@color/m3_on_surface_variant"
+                                    android:textColor="?attr/colorOnSurfaceVariant"
                                     android:textSize="10sp" />
 
                             </LinearLayout>
@@ -812,8 +812,8 @@
                                 android:background="@drawable/bg_tutorial_extension"
                                 android:contentDescription="@null"
                                 android:padding="6dp"
-                                android:src="@drawable/ic_play"
-                                app:tint="@color/m3_primary" />
+                                android:src="?attr/kristalIconPlay"
+                                app:tint="?attr/colorPrimary" />
 
                         </LinearLayout>
 
@@ -826,7 +826,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
                     android:text="@string/tutorial_step_5_title"
-                    android:textColor="@color/m3_on_surface"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="21sp"
                     android:textStyle="bold" />
 
@@ -836,7 +836,7 @@
                     android:layout_marginTop="8dp"
                     android:lineSpacingExtra="2dp"
                     android:text="@string/tutorial_step_5_body"
-                    android:textColor="@color/m3_on_surface_variant"
+                    android:textColor="?attr/colorOnSurfaceVariant"
                     android:textSize="15sp" />
 
                 <TextView
@@ -846,7 +846,7 @@
                     android:background="@drawable/bg_tutorial_tip"
                     android:padding="12dp"
                     android:text="@string/tutorial_step_5_tip"
-                    android:textColor="@color/m3_on_primary_container"
+                    android:textColor="?attr/colorOnPrimaryContainer"
                     android:textSize="13sp" />
 
             </LinearLayout>
@@ -882,7 +882,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:text="@string/tutorial_previous"
-                android:textColor="@color/m3_on_surface_variant" />
+                android:textColor="?attr/colorOnSurfaceVariant" />
 
             <Space
                 android:layout_width="0dp"
@@ -894,12 +894,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:text="@string/tutorial_next"
-                android:textColor="@color/m3_on_primary"
-                app:backgroundTint="@color/m3_primary"
-                app:cornerRadius="24dp"
-                app:icon="@drawable/ic_chevron_right"
+                android:textColor="?attr/colorOnPrimary"
+                app:backgroundTint="?attr/colorPrimary"
+                app:cornerRadius="?attr/kristalCorner24"
+                app:icon="?attr/kristalIconChevronRight"
                 app:iconGravity="textEnd"
-                app:iconTint="@color/m3_on_primary" />
+                app:iconTint="?attr/colorOnPrimary" />
 
         </LinearLayout>
 

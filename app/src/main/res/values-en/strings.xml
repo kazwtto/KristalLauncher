@@ -114,10 +114,13 @@
     <string name="theme_title">THEME</string>
     <string name="theme_device">Follow device</string>
     <string name="theme_light">Light</string>
+    <string name="theme_deltarune">DELTARUNE</string>
+    <string name="theme_deltarune_amoled">AMOLED</string>
     <string name="theme_dark">Dark</string>
     <string name="appearance_summary">Personalize the launcher’s appearance and choose how much motion you want in the interface.</string>
     <string name="theme_device_option">Follow device</string>
     <string name="theme_light_option">Light</string>
+    <string name="theme_deltarune_option">DELTARUNE</string>
     <string name="theme_dark_option">Dark</string>
     <string name="motion_title">MOTION</string>
     <string name="animations_enabled">Animations and transitions</string>
@@ -267,7 +270,7 @@
     <string name="patch_uninstall_confirm_message">“%1$s” will be removed from private storage. Original games will not be changed.</string>
     <string name="patch_uninstalled">Patch uninstalled.</string>
     <string name="patch_uninstall_failed">The patch could not be uninstalled.</string>
-    <string name="patch_mode_inherit">Inherit</string>
+    <string name="patch_mode_inherit">Global</string>
     <string name="game_patches_dialog_summary">Choose whether each patch inherits the global default or is forced only for this game.</string>
     <string name="patch_game_effective_forced_enabled">Result: enabled only for this game</string>
     <string name="patch_game_effective_forced_disabled">Result: disabled only for this game</string>

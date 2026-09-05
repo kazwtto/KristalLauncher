@@ -8,10 +8,10 @@
     android:layout_margin="6dp"
     android:clickable="true"
     android:focusable="true"
-    app:cardBackgroundColor="@color/m3_surface_card"
-    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="?attr/colorSurface"
+    app:cardCornerRadius="?attr/kristalCorner16"
     app:cardElevation="0dp"
-    app:strokeColor="@color/m3_outline"
+    app:strokeColor="?attr/colorOutline"
     app:strokeWidth="1dp">
 
     <LinearLayout
@@ -42,7 +42,7 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="@string/more_options"
                 android:padding="4dp"
-                android:src="@drawable/ic_more_vert"
+                android:src="?attr/kristalIconMore"
                 app:tint="?attr/colorOnSurfaceVariant" />
 
             <!-- Floating play button in the bottom-right corner -->
@@ -60,13 +60,13 @@
                 android:minWidth="0dp"
                 android:minHeight="0dp"
                 android:paddingHorizontal="0dp"
-                app:backgroundTint="@color/m3_primary"
-                app:cornerRadius="18dp"
-                app:icon="@drawable/ic_play"
+                app:backgroundTint="?attr/colorPrimary"
+                app:cornerRadius="?attr/kristalCorner18"
+                app:icon="?attr/kristalIconPlay"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
                 app:iconSize="16dp"
-                app:iconTint="#FFFFFF" />
+                app:iconTint="?attr/colorOnPrimary" />
 
         </FrameLayout>
 

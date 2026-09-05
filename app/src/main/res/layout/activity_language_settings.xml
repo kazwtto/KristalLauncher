@@ -25,15 +25,15 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="@string/navigate_back"
                 android:padding="8dp"
-                android:src="@drawable/ic_arrow_back"
-                app:tint="@color/m3_on_surface" />
+                android:src="?attr/kristalIconArrowBack"
+                app:tint="?attr/colorOnSurface" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:text="@string/language_title"
-                android:textColor="@color/m3_on_surface"
+                android:textColor="?attr/colorOnSurface"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -46,7 +46,7 @@
             android:layout_marginTop="8dp"
             android:lineSpacingExtra="2dp"
             android:text="@string/language_summary"
-            android:textColor="@color/m3_on_surface_variant"
+            android:textColor="?attr/colorOnSurfaceVariant"
             android:textSize="14sp" />
 
         <TextView
@@ -56,7 +56,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="10dp"
             android:text="@string/language_options_title"
-            android:textColor="@color/m3_primary"
+            android:textColor="?attr/colorPrimary"
             android:textSize="12sp"
             android:textStyle="bold" />
 
@@ -75,7 +75,7 @@
                     <ImageView
                         style="@style/SettingsChoiceIcon"
                         android:contentDescription="@null"
-                        android:src="@drawable/ic_device" />
+                        android:src="?attr/kristalIconDevice" />
                     <TextView
                         style="@style/SettingsChoiceLabel"
                         android:text="@string/lang_device_option" />

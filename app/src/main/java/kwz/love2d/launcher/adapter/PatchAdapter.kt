@@ -9,8 +9,11 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.color.MaterialColors
 import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.android.material.materialswitch.MaterialSwitch
+import kwz.love2d.launcher.ui.DeltaruneSquareSwitch
+import kwz.love2d.launcher.util.ThemeManager
 import kwz.love2d.launcher.R
 import kwz.love2d.launcher.model.PatchDisplayItem
 import kwz.love2d.launcher.model.PatchOrigin
@@ -61,6 +64,7 @@ class PatchAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PatchViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_patch, parent, false)
+        ThemeManager.applyDeltaruneStyle(parent.context, view)
         return PatchViewHolder(view)
     }
 
@@ -77,6 +81,7 @@ class PatchAdapter(
         private val metadata: TextView = itemView.findViewById(R.id.tvPatchMetadata)
         private val trustBadge: TextView = itemView.findViewById(R.id.tvPatchTrust)
         private val enabledSwitch: MaterialSwitch = itemView.findViewById(R.id.switchPatchEnabled)
+        private val enabledSwitchDeltarune: DeltaruneSquareSwitch = itemView.findViewById(R.id.switchPatchEnabledDeltarune)
         private val actionButton: MaterialButton = itemView.findViewById(R.id.btnPatchAction)
         private val actionProgress: CircularProgressIndicator = itemView.findViewById(R.id.patchActionProgress)
         private val useCasesButton: MaterialButton = itemView.findViewById(R.id.btnPatchUseCases)
@@ -93,24 +98,45 @@ class PatchAdapter(
             )
 
             trustBadge.text = localizedTrust(item.trust)
-            val badgeColor = when (item.trust) {
-                PatchTrust.BUILT_IN -> R.color.m3_primary_container
-                PatchTrust.VERIFIED -> R.color.badge_demo_bg
-                PatchTrust.UNVERIFIED -> R.color.patch_unverified_container
+            val badgeBackgroundColor: Int
+            val badgeTextColor: Int
+            when (item.trust) {
+                PatchTrust.BUILT_IN -> {
+                    badgeBackgroundColor = MaterialColors.getColor(
+                        itemView,
+                        com.google.android.material.R.attr.colorPrimaryContainer
+                    )
+                    badgeTextColor = MaterialColors.getColor(
+                        itemView,
+                        com.google.android.material.R.attr.colorOnPrimaryContainer
+                    )
+                }
+                PatchTrust.VERIFIED -> {
+                    badgeBackgroundColor = ContextCompat.getColor(context, R.color.badge_demo_bg)
+                    badgeTextColor = ContextCompat.getColor(context, R.color.badge_demo_text)
+                }
+                PatchTrust.UNVERIFIED -> {
+                    badgeBackgroundColor = ContextCompat.getColor(context, R.color.patch_unverified_container)
+                    badgeTextColor = ContextCompat.getColor(context, R.color.patch_unverified_text)
+                }
             }
-            trustBadge.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(context, badgeColor))
-            trustBadge.setTextColor(
-                ContextCompat.getColor(
-                    context,
-                    if (item.trust == PatchTrust.UNVERIFIED) R.color.patch_unverified_text else R.color.badge_demo_text
-                )
-            )
+            trustBadge.backgroundTintList = ColorStateList.valueOf(badgeBackgroundColor)
+            trustBadge.setTextColor(badgeTextColor)
+
+            val deltarune = ThemeManager.isDeltaruneTheme(context)
+            val showSwitch = item.installed
 
             enabledSwitch.setOnCheckedChangeListener(null)
             enabledSwitch.isChecked = item.enabled
-            enabledSwitch.visibility = if (item.installed) View.VISIBLE else View.GONE
+            enabledSwitch.visibility = if (showSwitch && !deltarune) View.VISIBLE else View.GONE
             enabledSwitch.isEnabled = installingPatchId == null
             enabledSwitch.setOnCheckedChangeListener { _, checked -> onToggle(item, checked) }
+
+            enabledSwitchDeltarune.setOnCheckedChangeListener(null)
+            enabledSwitchDeltarune.setChecked(item.enabled)
+            enabledSwitchDeltarune.visibility = if (showSwitch && deltarune) View.VISIBLE else View.GONE
+            enabledSwitchDeltarune.isEnabled = installingPatchId == null
+            enabledSwitchDeltarune.setOnCheckedChangeListener { _, checked -> onToggle(item, checked) }
 
             val isInstalling = installingPatchId == item.id
             actionProgress.visibility = if (isInstalling) View.VISIBLE else View.GONE

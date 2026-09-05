@@ -31,6 +31,7 @@ object LoveOverlayManager {
 
                     val density = activity.resources.displayMetrics.density
                     val localizedContext = LanguageManager.createLocalizedContext(activity)
+                    val deltarune = ThemeManager.isDeltaruneTheme(activity)
 
                     val overlayContainer = FrameLayout(activity).apply {
                         tag = "love_overlay_container"
@@ -41,7 +42,6 @@ object LoveOverlayManager {
                         elevation = 100f * density
                     }
 
-                    // Centered minimal overlay panel
                     val menuPanel = LinearLayout(activity).apply {
                         orientation = LinearLayout.VERTICAL
                         setPadding(
@@ -50,7 +50,6 @@ object LoveOverlayManager {
                             (24 * density).toInt(),
                             (24 * density).toInt()
                         )
-                        // Keep the background transparent for the minimal layout.
                         background = null
                         elevation = 0f
                     }
@@ -80,12 +79,10 @@ object LoveOverlayManager {
                         typeface = Typeface.DEFAULT_BOLD
                         background = GradientDrawable().apply {
                             setColor(Color.parseColor("#410002"))
-                            cornerRadius = 24 * density
+                            cornerRadius = if (deltarune) 0f else 24 * density
                         }
                         setPadding(0, (16 * density).toInt(), 0, (16 * density).toInt())
-                        setOnClickListener {
-                            activity.finish()
-                        }
+                        setOnClickListener { activity.finish() }
                     }
 
                     val btnResume = TextView(activity).apply {
@@ -96,40 +93,39 @@ object LoveOverlayManager {
                         typeface = Typeface.DEFAULT_BOLD
                         background = GradientDrawable().apply {
                             setColor(Color.parseColor("#44474F"))
-                            cornerRadius = 24 * density
+                            cornerRadius = if (deltarune) 0f else 24 * density
                         }
                         setPadding(0, (16 * density).toInt(), 0, (16 * density).toInt())
-                        val layoutParams = LinearLayout.LayoutParams(
+                        layoutParams = LinearLayout.LayoutParams(
                             LinearLayout.LayoutParams.MATCH_PARENT,
                             LinearLayout.LayoutParams.WRAP_CONTENT
                         ).apply {
                             setMargins(0, (12 * density).toInt(), 0, 0)
                         }
-                        this.layoutParams = layoutParams
-                        setOnClickListener {
-                            hideOverlay(overlayContainer, menuPanel)
-                        }
+                        setOnClickListener { hideOverlay(overlayContainer, menuPanel) }
                     }
 
                     menuPanel.addView(titleText)
                     menuPanel.addView(btnExit)
                     menuPanel.addView(btnResume)
-
-                    overlayContainer.addView(menuPanel, panelParams)
-
-                    overlayContainer.setOnClickListener {
-                        hideOverlay(overlayContainer, menuPanel)
+                    if (deltarune) {
+                        ThemeManager.applyDeltaruneStyle(activity, menuPanel)
+                        menuPanel.post { ThemeManager.applyDeltaruneStyle(activity, menuPanel) }
                     }
 
-                    menuPanel.setOnClickListener { /* Consume panel touches. */ }
+                    overlayContainer.addView(menuPanel, panelParams)
+                    overlayContainer.setOnClickListener { hideOverlay(overlayContainer, menuPanel) }
+                    menuPanel.setOnClickListener { }
 
-                    decorView.addView(overlayContainer, FrameLayout.LayoutParams(
-                        FrameLayout.LayoutParams.MATCH_PARENT,
-                        FrameLayout.LayoutParams.MATCH_PARENT
-                    ))
+                    decorView.addView(
+                        overlayContainer,
+                        FrameLayout.LayoutParams(
+                            FrameLayout.LayoutParams.MATCH_PARENT,
+                            FrameLayout.LayoutParams.MATCH_PARENT
+                        )
+                    )
 
                     val originalCallback = activity.window.callback
-
                     activity.window.callback = object : WindowCallbackAdapter(originalCallback) {
                         override fun dispatchKeyEvent(event: KeyEvent): Boolean {
                             if (event.keyCode == KeyEvent.KEYCODE_BACK) {
@@ -145,7 +141,6 @@ object LoveOverlayManager {
                             return super.dispatchKeyEvent(event)
                         }
                     }
-
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
@@ -168,10 +163,7 @@ object LoveOverlayManager {
                 return
             }
             container.alpha = 0f
-            container.animate()
-                .alpha(1f)
-                .setDuration(150)
-                .start()
+            container.animate().alpha(1f).setDuration(150).start()
 
             panel.scaleX = 0.8f
             panel.scaleY = 0.8f
@@ -207,9 +199,7 @@ object LoveOverlayManager {
             container.animate()
                 .alpha(0f)
                 .setDuration(150)
-                .withEndAction {
-                    container.visibility = View.GONE
-                }
+                .withEndAction { container.visibility = View.GONE }
                 .start()
         } catch (e: Exception) {
             e.printStackTrace()
@@ -217,12 +207,7 @@ object LoveOverlayManager {
     }
 
     private open class WindowCallbackAdapter(private val wrapped: Window.Callback) : Window.Callback by wrapped {
-        override fun dispatchTouchEvent(event: MotionEvent): Boolean {
-            return wrapped.dispatchTouchEvent(event)
-        }
-        
-        override fun dispatchKeyEvent(event: KeyEvent): Boolean {
-            return wrapped.dispatchKeyEvent(event)
-        }
+        override fun dispatchTouchEvent(event: MotionEvent): Boolean = wrapped.dispatchTouchEvent(event)
+        override fun dispatchKeyEvent(event: KeyEvent): Boolean = wrapped.dispatchKeyEvent(event)
     }
 }

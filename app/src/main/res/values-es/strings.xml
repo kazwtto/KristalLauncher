@@ -114,10 +114,13 @@
     <string name="theme_title">TEMA</string>
     <string name="theme_device">Seguir el dispositivo</string>
     <string name="theme_light">Claro</string>
+    <string name="theme_deltarune">DELTARUNE</string>
+    <string name="theme_deltarune_amoled">AMOLED</string>
     <string name="theme_dark">Oscuro</string>
     <string name="appearance_summary">Personaliza la apariencia del launcher y elige cuánto movimiento deseas en la interfaz.</string>
     <string name="theme_device_option">Seguir el dispositivo</string>
     <string name="theme_light_option">Claro</string>
+    <string name="theme_deltarune_option">DELTARUNE</string>
     <string name="theme_dark_option">Oscuro</string>
     <string name="motion_title">MOVIMIENTO</string>
     <string name="animations_enabled">Animaciones y transiciones</string>
@@ -267,7 +270,7 @@
     <string name="patch_uninstall_confirm_message">“%1$s” se eliminará del almacenamiento privado. Los juegos originales no serán modificados.</string>
     <string name="patch_uninstalled">Parche desinstalado.</string>
     <string name="patch_uninstall_failed">No se pudo desinstalar el parche.</string>
-    <string name="patch_mode_inherit">Heredar</string>
+    <string name="patch_mode_inherit">Global</string>
     <string name="game_patches_dialog_summary">Elige si cada parche hereda el ajuste global o se fuerza solamente para este juego.</string>
     <string name="patch_game_effective_forced_enabled">Resultado: activado solo para este juego</string>
     <string name="patch_game_effective_forced_disabled">Resultado: desactivado solo para este juego</string>

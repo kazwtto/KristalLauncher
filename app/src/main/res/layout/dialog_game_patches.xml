@@ -1,25 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gamePatchesDialogRoot"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingTop="4dp">
+    android:padding="20dp">
 
     <TextView
+        android:id="@+id/tvGamePatchesTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="24dp"
-        android:paddingBottom="12dp"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvGamePatchesSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/game_patches_dialog_summary"
-        android:textColor="@color/m3_on_surface_variant"
+        android:textColor="?attr/colorOnSurfaceVariant"
         android:textSize="13sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvGamePatches"
         android:layout_width="match_parent"
-        android:layout_height="420dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="16dp"
         android:clipToPadding="false"
-        android:paddingHorizontal="16dp"
-        android:paddingBottom="8dp" />
+        android:paddingBottom="4dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="end|center_vertical"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancelGamePatches"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:minWidth="88dp"
+            android:text="@string/cancel"
+            android:textColor="?attr/colorPrimary"
+            app:cornerRadius="?attr/kristalCorner20" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveGamePatches"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:minWidth="88dp"
+            android:text="@string/save"
+            android:textColor="?attr/colorPrimary"
+            app:cornerRadius="?attr/kristalCorner20" />
+    </LinearLayout>
 </LinearLayout>

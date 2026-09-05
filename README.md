@@ -52,7 +52,7 @@ This was originally a study project to learn Gradle and Kotlin.
 - [Godhome](https://gamebanana.com/mods/376524)
   - Requires the Shaders patch.
 - [UNDERTALE: Cooking with Kindness](https://gamejolt.com/games/cooking_with_kindness/900285)
-  - An optimization patch is under development.
+  - works but VERY SLOW. An optimization patch is under development.
 
 ## Features
 
@@ -178,6 +178,7 @@ If Kristal Launcher is useful to you, you can support its continued development:
 
 - [Kristal Engine](https://github.com/KristalTeam/Kristal) — the engine and mod ecosystem targeted by the launcher
 - [LÖVE](https://love2d.org/) — the runtime used to execute games on Android
+- [Pixelarticons](https://github.com/halfmage/pixelarticons) — icons used in the DELTARUNE theme
 
 ## Disclaimer
 

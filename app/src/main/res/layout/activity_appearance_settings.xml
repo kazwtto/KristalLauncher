@@ -25,15 +25,15 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="@string/navigate_back"
                 android:padding="8dp"
-                android:src="@drawable/ic_arrow_back"
-                app:tint="@color/m3_on_surface" />
+                android:src="?attr/kristalIconArrowBack"
+                app:tint="?attr/colorOnSurface" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:text="@string/appearance_title"
-                android:textColor="@color/m3_on_surface"
+                android:textColor="?attr/colorOnSurface"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -46,7 +46,7 @@
             android:layout_marginTop="8dp"
             android:lineSpacingExtra="2dp"
             android:text="@string/appearance_summary"
-            android:textColor="@color/m3_on_surface_variant"
+            android:textColor="?attr/colorOnSurfaceVariant"
             android:textSize="14sp" />
 
         <TextView
@@ -56,7 +56,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="10dp"
             android:text="@string/theme_title"
-            android:textColor="@color/m3_primary"
+            android:textColor="?attr/colorPrimary"
             android:textSize="12sp"
             android:textStyle="bold" />
 
@@ -75,7 +75,7 @@
                     <ImageView
                         style="@style/SettingsChoiceIcon"
                         android:contentDescription="@null"
-                        android:src="@drawable/ic_device" />
+                        android:src="?attr/kristalIconDevice" />
                     <TextView
                         style="@style/SettingsChoiceLabel"
                         android:text="@string/theme_device_option" />
@@ -93,7 +93,7 @@
                     <ImageView
                         style="@style/SettingsChoiceIcon"
                         android:contentDescription="@null"
-                        android:src="@drawable/ic_light_mode" />
+                        android:src="?attr/kristalIconLightMode" />
                     <TextView
                         style="@style/SettingsChoiceLabel"
                         android:text="@string/theme_light_option" />
@@ -111,13 +111,70 @@
                     <ImageView
                         style="@style/SettingsChoiceIcon"
                         android:contentDescription="@null"
-                        android:src="@drawable/ic_dark_mode" />
+                        android:src="?attr/kristalIconDarkMode" />
                     <TextView
                         style="@style/SettingsChoiceLabel"
                         android:text="@string/theme_dark_option" />
                     <com.google.android.material.radiobutton.MaterialRadioButton
                         android:id="@+id/themeDark"
                         style="@style/SettingsChoiceRadio" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/themeDeltaruneCard"
+                style="@style/SettingsChoiceCard.Spaced"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/themeDeltaruneRow"
+                        style="@style/SettingsChoiceRow"
+                        android:layout_height="64dp">
+
+                        <ImageView
+                            style="@style/SettingsChoiceIcon"
+                            android:contentDescription="@null"
+                            android:src="@drawable/pixel_heart" />
+
+                        <TextView
+                            style="@style/SettingsChoiceLabel"
+                            android:text="@string/theme_deltarune_option" />
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/themeDeltarune"
+                            style="@style/SettingsChoiceRadio" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/deltaruneAmoledOptions"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="AMOLED"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <kwz.love2d.launcher.ui.DeltaruneSquareSwitch
+                            android:id="@+id/switchDeltaruneAmoled"
+                            android:layout_width="44dp"
+                            android:layout_height="24dp"
+                            android:contentDescription="AMOLED" />
+                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
@@ -129,7 +186,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="10dp"
             android:text="@string/motion_title"
-            android:textColor="@color/m3_primary"
+            android:textColor="?attr/colorPrimary"
             android:textSize="12sp"
             android:textStyle="bold" />
 
@@ -141,10 +198,10 @@
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="@color/m3_surface_card"
-            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:cardCornerRadius="?attr/kristalCorner16"
             app:cardElevation="0dp"
-            app:strokeColor="@color/m3_outline"
+            app:strokeColor="?attr/colorOutline"
             app:strokeWidth="1dp">
 
             <LinearLayout
@@ -159,14 +216,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:paddingStart="0dp"
                     android:paddingEnd="12dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/animations_enabled"
-                        android:textColor="@color/m3_on_surface"
+                        android:textColor="?attr/colorOnSurface"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
@@ -176,7 +232,7 @@
                         android:layout_marginTop="3dp"
                         android:lineSpacingExtra="1dp"
                         android:text="@string/animations_summary"
-                        android:textColor="@color/m3_on_surface_variant"
+                        android:textColor="?attr/colorOnSurfaceVariant"
                         android:textSize="13sp" />
                 </LinearLayout>
 
@@ -185,6 +241,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/animations_enabled" />
+
+                <kwz.love2d.launcher.ui.DeltaruneSquareSwitch
+                    android:id="@+id/switchAnimationsDeltarune"
+                    android:layout_width="44dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="@string/animations_enabled"
+                    android:visibility="gone" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>

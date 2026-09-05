@@ -38,6 +38,7 @@ import kwz.love2d.launcher.util.GameLauncher
 import kwz.love2d.launcher.util.GameScanner
 import kwz.love2d.launcher.util.NavigationAnimations
 import kwz.love2d.launcher.util.ThemeManager
+import kwz.love2d.launcher.util.showThemed
 import kwz.love2d.launcher.util.UpdateChecker
 import kwz.love2d.launcher.util.UpdateCheckResult
 import kwz.love2d.launcher.ui.AddGamesTutorialDialog
@@ -49,10 +50,6 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-// warning warning unoptimized code here, AI can not do miracles
-// i rewrtie this code a lot of time
-// after each rewrite i forgot do add the comments
-// now its just a memory
 class MainActivity : AppCompatActivity() {
 
     private lateinit var rvGames: RecyclerView
@@ -86,7 +83,7 @@ class MainActivity : AppCompatActivity() {
                 MaterialAlertDialogBuilder(this)
                     .setMessage(R.string.folder_permission_error)
                     .setPositiveButton(R.string.ok, null)
-                    .show()
+                    .showThemed()
                 return@registerForActivityResult
             }
             selectedFolderUri = uri
@@ -98,6 +95,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        ThemeManager.applyActivityTheme(this)
         super.onCreate(savedInstanceState)
         NavigationAnimations.prepare(this)
         setContentView(R.layout.activity_main)
@@ -260,7 +258,7 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
-        popup.show()
+        popup.showThemed(this, view)
     }
 
     private fun setupRecyclerView() {
@@ -305,9 +303,21 @@ class MainActivity : AppCompatActivity() {
 
         val modeItem = menu.findItem(R.id.action_view_mode)
         if (isGridView) {
-            modeItem?.setIcon(R.drawable.ic_view_list)
+            modeItem?.setIcon(
+                ThemeManager.resolveDrawableResource(
+                    this,
+                    R.attr.kristalIconViewList,
+                    R.drawable.ic_view_list
+                )
+            )
         } else {
-            modeItem?.setIcon(R.drawable.ic_view_grid)
+            modeItem?.setIcon(
+                ThemeManager.resolveDrawableResource(
+                    this,
+                    R.attr.kristalIconViewGrid,
+                    R.drawable.ic_view_grid
+                )
+            )
         }
 
         return true
@@ -323,18 +333,20 @@ class MainActivity : AppCompatActivity() {
                 invalidateOptionsMenu()
                 true
             }
-            R.id.action_help -> {
-                AddGamesTutorialDialog.show(this, selectedFolderUri != null) {
-                    folderPickerLauncher.launch(null)
-                }
-                true
-            }
             R.id.action_settings -> {
                 NavigationAnimations.start(this, Intent(this, SettingsActivity::class.java))
                 true
             }
             R.id.action_patches -> {
                 NavigationAnimations.start(this, Intent(this, PatchesSettingsActivity::class.java))
+                true
+            }
+            R.id.action_help -> {
+                AddGamesTutorialDialog.show(
+                    context = this,
+                    folderAlreadySelected = selectedFolderUri != null,
+                    onChooseFolder = { folderPickerLauncher.launch(null) }
+                )
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -416,7 +428,7 @@ class MainActivity : AppCompatActivity() {
                     .setTitle(R.string.error_title)
                     .setMessage(getString(R.string.folder_scan_error, error.message ?: error.javaClass.simpleName))
                     .setPositiveButton(R.string.ok, null)
-                    .show()
+                    .showThemed()
             } finally {
                 if (scanJob === kotlin.coroutines.coroutineContext[Job]) {
                     progressBar.visibility = View.GONE

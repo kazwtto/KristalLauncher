@@ -9,14 +9,12 @@ import com.google.android.material.card.MaterialCardView
 import com.google.android.material.radiobutton.MaterialRadioButton
 import kwz.love2d.launcher.util.LanguageManager
 import kwz.love2d.launcher.util.NavigationAnimations
+import kwz.love2d.launcher.util.ThemeManager
 
-// it works well
-// maybe even too well
-// im scared, whats the joke?
-// i really need comments how its works?
 class LanguageSettingsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        ThemeManager.applyActivityTheme(this)
         super.onCreate(savedInstanceState)
         NavigationAnimations.prepare(this)
         setContentView(R.layout.activity_language_settings)

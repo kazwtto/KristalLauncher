@@ -19,9 +19,9 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_heart_pixel"
+            android:src="?attr/kristalIconHeart"
             android:visibility="gone"
-            app:tint="@color/m3_primary" />
+            app:tint="?attr/colorPrimary" />
 
         <Space
             android:layout_width="0dp"
@@ -57,8 +57,8 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:contentDescription="@null"
-            android:src="@drawable/ic_search"
-            app:tint="@color/m3_on_surface_variant" />
+            android:src="?attr/kristalIconSearch"
+            app:tint="?attr/colorOnSurfaceVariant" />
 
         <!-- Search input -->
         <EditText
@@ -73,8 +73,8 @@
             android:imeOptions="actionSearch"
             android:inputType="text"
             android:maxLines="1"
-            android:textColor="@color/m3_on_surface"
-            android:textColorHint="@color/m3_on_surface_variant"
+            android:textColor="?attr/colorOnSurface"
+            android:textColorHint="?attr/colorOnSurfaceVariant"
             android:textSize="14sp" />
 
         <!-- Filter button -->
@@ -84,8 +84,8 @@
             android:layout_height="24dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/filter_games"
-            android:src="@drawable/ic_filter"
-            app:tint="@color/m3_on_surface_variant" />
+            android:src="?attr/kristalIconFilter"
+            app:tint="?attr/colorOnSurfaceVariant" />
 
     </LinearLayout>
 
@@ -117,7 +117,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:indeterminateTint="@color/m3_primary"
+                android:indeterminateTint="?attr/colorPrimary"
                 android:visibility="gone" />
 
             <!-- Empty state: no games or no selected folder -->
@@ -135,8 +135,8 @@
                     android:layout_width="72dp"
                     android:layout_height="72dp"
                     android:contentDescription="@null"
-                    android:src="@drawable/ic_folder"
-                    app:tint="@color/m3_on_surface_variant" />
+                    android:src="?attr/kristalIconFolder"
+                    app:tint="?attr/colorOnSurfaceVariant" />
 
                 <TextView
                     android:id="@+id/tvEmptyState"
@@ -145,7 +145,7 @@
                     android:layout_marginTop="16dp"
                     android:gravity="center"
                     android:text="@string/select_folder_dialog_title"
-                    android:textColor="@color/m3_on_surface"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -156,7 +156,7 @@
                     android:layout_marginTop="6dp"
                     android:gravity="center"
                     android:text="@string/select_folder_prompt"
-                    android:textColor="@color/m3_on_surface_variant"
+                    android:textColor="?attr/colorOnSurfaceVariant"
                     android:textSize="13sp" />
 
                 <com.google.android.material.button.MaterialButton
@@ -165,11 +165,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="@string/select_folder"
-                    android:textColor="#FFFFFF"
-                    app:backgroundTint="@color/m3_primary"
-                    app:cornerRadius="24dp"
-                    app:icon="@drawable/ic_folder"
-                    app:iconTint="#FFFFFF" />
+                    android:textColor="?attr/colorOnPrimary"
+                    app:backgroundTint="?attr/colorPrimary"
+                    app:cornerRadius="?attr/kristalCorner24"
+                    app:icon="?attr/kristalIconFolder"
+                    app:iconTint="?attr/colorOnPrimary" />
 
             </LinearLayout>
 
@@ -188,12 +188,12 @@
         android:layout_marginBottom="16dp"
         android:visibility="gone"
         android:text="@string/add_games"
-        android:textColor="#FFFFFF"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="14sp"
-        app:backgroundTint="@color/m3_primary"
-        app:cornerRadius="20dp"
-        app:icon="@drawable/ic_folder"
-        app:iconTint="#FFFFFF" />
+        app:backgroundTint="?attr/colorPrimary"
+        app:cornerRadius="?attr/kristalCorner20"
+        app:icon="?attr/kristalIconFolder"
+        app:iconTint="?attr/colorOnPrimary" />
 
     <!-- Expanded 80 dp Material 3 bottom navigation bar -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -201,12 +201,13 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/m3_bg_dark"
+        android:background="?android:attr/colorBackground"
+        android:backgroundTint="?android:attr/colorBackground"
         android:paddingBottom="6dp"
         app:elevation="8dp"
         app:itemActiveIndicatorStyle="@style/CustomBottomNavActiveIndicator"
         app:itemIconTint="@color/bottom_nav_item_color"
-        app:itemRippleColor="@color/m3_primary_container"
+        app:itemRippleColor="?attr/colorPrimaryContainer"
         app:itemTextColor="@color/bottom_nav_item_color"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_nav_menu" />

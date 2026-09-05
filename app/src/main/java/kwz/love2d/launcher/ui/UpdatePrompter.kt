@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kwz.love2d.launcher.R
 import kwz.love2d.launcher.util.UpdateCheckResult
+import kwz.love2d.launcher.util.showThemed
 
 object UpdatePrompter {
 
@@ -23,21 +24,21 @@ object UpdatePrompter {
                     .setPositiveButton(R.string.update_download) { _, _ -> openUrl(activity, update.downloadUrl) }
                     .setNeutralButton(R.string.update_view_release) { _, _ -> openUrl(activity, update.releaseUrl) }
                     .setNegativeButton(R.string.update_later, null)
-                    .show()
+                    .showThemed()
             }
             UpdateCheckResult.UpToDate -> if (showCurrentStatus) {
                 MaterialAlertDialogBuilder(activity)
                     .setTitle(R.string.update_up_to_date_title)
                     .setMessage(R.string.update_up_to_date_message)
                     .setPositiveButton(R.string.ok, null)
-                    .show()
+                    .showThemed()
             }
             is UpdateCheckResult.Failure -> if (showCurrentStatus) {
                 MaterialAlertDialogBuilder(activity)
                     .setTitle(R.string.update_check_failed_title)
                     .setMessage(activity.getString(R.string.update_check_failed_message, result.reason))
                     .setPositiveButton(R.string.ok, null)
-                    .show()
+                    .showThemed()
             }
         }
     }

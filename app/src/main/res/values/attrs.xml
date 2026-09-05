@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="kristalCorner12" format="dimension" />
+    <attr name="kristalCorner14" format="dimension" />
+    <attr name="kristalCorner16" format="dimension" />
+    <attr name="kristalCorner18" format="dimension" />
+    <attr name="kristalCorner19" format="dimension" />
+    <attr name="kristalCorner20" format="dimension" />
+    <attr name="kristalCorner22" format="dimension" />
+    <attr name="kristalCorner24" format="dimension" />
+    <attr name="kristalCorner4" format="dimension" />
+    <attr name="kristalCorner9" format="dimension" />
+    <attr name="kristalIconArrowBack" format="reference" />
+    <attr name="kristalIconChevronRight" format="reference" />
+    <attr name="kristalIconClose" format="reference" />
+    <attr name="kristalIconDarkMode" format="reference" />
+    <attr name="kristalIconDelete" format="reference" />
+    <attr name="kristalIconDevice" format="reference" />
+    <attr name="kristalIconFavorite" format="reference" />
+    <attr name="kristalIconFilter" format="reference" />
+    <attr name="kristalIconFolder" format="reference" />
+    <attr name="kristalIconGamepad" format="reference" />
+    <attr name="kristalIconGithub" format="reference" />
+    <attr name="kristalIconHeart" format="reference" />
+    <attr name="kristalIconHelp" format="reference" />
+    <attr name="kristalIconHistory" format="reference" />
+    <attr name="kristalIconLanguage" format="reference" />
+    <attr name="kristalIconLightMode" format="reference" />
+    <attr name="kristalIconMore" format="reference" />
+    <attr name="kristalIconPalette" format="reference" />
+    <attr name="kristalIconPlay" format="reference" />
+    <attr name="kristalIconRefresh" format="reference" />
+    <attr name="kristalIconSearch" format="reference" />
+    <attr name="kristalIconSettings" format="reference" />
+    <attr name="kristalIconTune" format="reference" />
+    <attr name="kristalIconViewGrid" format="reference" />
+    <attr name="kristalIconViewList" format="reference" />
+    <attr name="kristalPrimaryContent" format="color" />
+    <attr name="kristalPatchCardColor" format="color" />
+    <attr name="kristalSegmentedButtonUncheckedColor" format="color" />
+</resources>

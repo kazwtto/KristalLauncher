@@ -20,14 +20,17 @@ import android.widget.TextView
 import android.widget.ViewFlipper
 import androidx.core.content.ContextCompat
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.color.MaterialColors
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kwz.love2d.launcher.R
 import kwz.love2d.launcher.util.ThemeManager
+import kwz.love2d.launcher.util.showThemed
 
 object AddGamesTutorialDialog {
 
     fun show(context: Context, folderAlreadySelected: Boolean, onChooseFolder: () -> Unit) {
         val view = LayoutInflater.from(context).inflate(R.layout.dialog_add_games_tutorial, null)
+        ThemeManager.applyDeltaruneStyle(context, view)
         val root = view.findViewById<LinearLayout>(R.id.tutorialRoot)
         val header = view.findViewById<LinearLayout>(R.id.tutorialHeader)
         val flipper = view.findViewById<ViewFlipper>(R.id.tutorialFlipper)
@@ -78,11 +81,23 @@ object AddGamesTutorialDialog {
                     nextButton.icon = null
                 } else {
                     nextButton.setText(R.string.tutorial_choose_folder_now)
-                    nextButton.setIconResource(R.drawable.ic_folder)
+                    nextButton.setIconResource(
+                        ThemeManager.resolveDrawableResource(
+                            context,
+                            R.attr.kristalIconFolder,
+                            R.drawable.ic_folder
+                        )
+                    )
                 }
             } else {
                 nextButton.setText(R.string.tutorial_next)
-                nextButton.setIconResource(R.drawable.ic_chevron_right)
+                nextButton.setIconResource(
+                    ThemeManager.resolveDrawableResource(
+                        context,
+                        R.attr.kristalIconChevronRight,
+                        R.drawable.ic_chevron_right
+                    )
+                )
             }
 
             renderDots(context, dots, page, pageCount)
@@ -115,7 +130,7 @@ object AddGamesTutorialDialog {
         }
 
         updatePage()
-        dialog.show()
+        dialog.showThemed()
     }
 
     private fun configureWideLayout(
@@ -275,11 +290,21 @@ object AddGamesTutorialDialog {
                 }
                 background = GradientDrawable().apply {
                     shape = GradientDrawable.RECTANGLE
-                    cornerRadius = context.dp(4).toFloat()
+                    cornerRadius = context.dp(
+                        if (ThemeManager.isDeltaruneTheme(context)) 1 else 4
+                    ).toFloat()
                     setColor(
-                        ContextCompat.getColor(
+                        MaterialColors.getColor(
                             context,
-                            if (active) R.color.m3_primary else R.color.m3_outline
+                            if (active) {
+                                com.google.android.material.R.attr.colorPrimary
+                            } else {
+                                com.google.android.material.R.attr.colorOutline
+                            },
+                            ContextCompat.getColor(
+                                context,
+                                if (active) R.color.m3_primary else R.color.m3_outline
+                            )
                         )
                     )
                 }

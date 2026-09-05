@@ -18,12 +18,21 @@ class KristalApplication : Application() {
 
         registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
             override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
-                applyLauncherSystemBars(activity)
+                if (activity is AppCompatActivity) {
+                    ThemeManager.applyStatusBarTheme(activity)
+                    ThemeManager.applyThemeDecor(activity)
+                }
             }
+
             override fun onActivityStarted(activity: Activity) {}
 
             override fun onActivityResumed(activity: Activity) {
-                applyLauncherSystemBars(activity)
+                if (activity is AppCompatActivity) {
+                    if (!ThemeManager.ensureActivityTheme(activity)) return
+                    ThemeManager.applyStatusBarTheme(activity)
+                    ThemeManager.applyThemeDecor(activity)
+                }
+
                 try {
                     if (activity.javaClass.name == "org.love2d.android.GameActivity") {
                         LoveOverlayManager.attachOverlay(activity)
@@ -38,11 +47,5 @@ class KristalApplication : Application() {
             override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {}
             override fun onActivityDestroyed(activity: Activity) {}
         })
-    }
-
-    private fun applyLauncherSystemBars(activity: Activity) {
-        if (activity is AppCompatActivity) {
-            ThemeManager.applyStatusBarTheme(activity)
-        }
     }
 }

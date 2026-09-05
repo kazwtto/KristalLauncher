@@ -1,6 +1,5 @@
 package kwz.love2d.launcher
 
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -20,8 +19,10 @@ import kwz.love2d.launcher.util.FolderPermissionManager
 import kwz.love2d.launcher.util.LanguageManager
 import kwz.love2d.launcher.util.NavigationAnimations
 import kwz.love2d.launcher.util.ThemeManager
+import kwz.love2d.launcher.util.showThemed
 import kwz.love2d.launcher.util.UpdateChecker
 import kwz.love2d.launcher.ui.UpdatePrompter
+import kwz.love2d.launcher.ui.DeltaruneSquareSwitch
 import java.text.DateFormat
 import java.util.Date
 import kotlinx.coroutines.Dispatchers
@@ -41,6 +42,9 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var btnClearCache: LinearLayout
     private lateinit var btnOpenPatchesMenu: LinearLayout
     private lateinit var switchAutomaticUpdates: MaterialSwitch
+    private lateinit var switchAutomaticUpdatesDeltarune: DeltaruneSquareSwitch
+    private lateinit var tvAutomaticUpdatesDeltarune: TextView
+    private lateinit var rowAutomaticUpdates: LinearLayout
     private lateinit var btnCheckUpdates: MaterialButton
     private lateinit var tvLastUpdateCheck: TextView
 
@@ -54,7 +58,7 @@ class SettingsActivity : AppCompatActivity() {
                 MaterialAlertDialogBuilder(this)
                     .setMessage(R.string.folder_permission_error)
                     .setPositiveButton(R.string.ok, null)
-                    .show()
+                    .showThemed()
                 return@registerForActivityResult
             }
             updateFolderUI()
@@ -63,6 +67,7 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        ThemeManager.applyActivityTheme(this)
         super.onCreate(savedInstanceState)
         NavigationAnimations.prepare(this)
         setContentView(R.layout.activity_settings)
@@ -79,6 +84,9 @@ class SettingsActivity : AppCompatActivity() {
 
         btnOpenPatchesMenu = findViewById(R.id.btnOpenPatchesMenu)
         switchAutomaticUpdates = findViewById(R.id.switchAutomaticUpdates)
+        switchAutomaticUpdatesDeltarune = findViewById(R.id.switchAutomaticUpdatesDeltarune)
+        tvAutomaticUpdatesDeltarune = findViewById(R.id.tvAutomaticUpdatesDeltarune)
+        rowAutomaticUpdates = findViewById(R.id.rowAutomaticUpdates)
         btnCheckUpdates = findViewById(R.id.btnCheckUpdates)
         tvLastUpdateCheck = findViewById(R.id.tvLastUpdateCheck)
         findViewById<TextView>(R.id.tvAboutTitle).text = getString(R.string.about_title, BuildConfig.VERSION_NAME)
@@ -92,9 +100,22 @@ class SettingsActivity : AppCompatActivity() {
         updateFolderUI()
         updateLastUpdateCheckLabel()
 
-        switchAutomaticUpdates.isChecked = UpdateChecker.isAutomaticCheckEnabled(this)
+        val automaticUpdatesEnabled = UpdateChecker.isAutomaticCheckEnabled(this)
+        val deltarune = ThemeManager.isDeltaruneTheme(this)
+        switchAutomaticUpdates.visibility = if (deltarune) android.view.View.GONE else android.view.View.VISIBLE
+        tvAutomaticUpdatesDeltarune.visibility = if (deltarune) android.view.View.VISIBLE else android.view.View.GONE
+        switchAutomaticUpdatesDeltarune.visibility = if (deltarune) android.view.View.VISIBLE else android.view.View.GONE
+
+        switchAutomaticUpdates.isChecked = automaticUpdatesEnabled
         switchAutomaticUpdates.setOnCheckedChangeListener { _, enabled ->
             UpdateChecker.setAutomaticCheckEnabled(this, enabled)
+        }
+        switchAutomaticUpdatesDeltarune.setChecked(automaticUpdatesEnabled)
+        switchAutomaticUpdatesDeltarune.setOnCheckedChangeListener { _, enabled ->
+            UpdateChecker.setAutomaticCheckEnabled(this, enabled)
+        }
+        rowAutomaticUpdates.setOnClickListener {
+            if (deltarune) switchAutomaticUpdatesDeltarune.toggle()
         }
 
         btnCheckUpdates.setOnClickListener { checkForUpdatesManually() }
@@ -186,7 +207,7 @@ class SettingsActivity : AppCompatActivity() {
                 Toast.makeText(this, R.string.clear_folder, Toast.LENGTH_SHORT).show()
             }
             .setNegativeButton(R.string.cancel, null)
-            .show()
+            .showThemed()
     }
 
     private fun showClearCacheConfirmation() {
@@ -202,7 +223,7 @@ class SettingsActivity : AppCompatActivity() {
                 }
             }
             .setNegativeButton(R.string.cancel, null)
-            .show()
+            .showThemed()
     }
 
     private fun finishWithAnimation() {

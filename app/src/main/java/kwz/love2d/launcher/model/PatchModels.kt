@@ -21,14 +21,38 @@ data class LocalizedText(
 ) {
     fun resolve(context: Context): String {
         val locale = context.resources.configuration.locales[0] ?: Locale.ENGLISH
-        val languageTag = locale.toLanguageTag()
-        return values[languageTag]
-            ?: values[locale.language]
-            ?: values["en"]
-            ?: values["pt-BR"]
+        return resolve(locale)
+    }
+
+    internal fun resolve(locale: Locale): String {
+        val localizedValues = values.entries.map { entry ->
+            NormalizedLocalizedValue(normalizeLocaleTag(entry.key), entry.value)
+        }
+        val requestedTag = normalizeLocaleTag(locale.toLanguageTag())
+        val requestedLanguage = locale.language.lowercase(Locale.ROOT)
+
+        return localizedValues.firstOrNull { it.localeTag == requestedTag }?.text
+            ?: localizedValues.firstOrNull { it.localeTag == requestedLanguage }?.text
+            ?: localizedValues.firstOrNull { localeLanguage(it.localeTag) == requestedLanguage }?.text
+            ?: localizedValues.firstOrNull { it.localeTag == "en" }?.text
+            ?: localizedValues.firstOrNull { localeLanguage(it.localeTag) == "en" }?.text
             ?: values.values.firstOrNull()
             ?: ""
     }
+
+    private fun normalizeLocaleTag(localeTag: String): String {
+        return localeTag
+            .trim()
+            .replace('_', '-')
+            .lowercase(Locale.ROOT)
+    }
+
+    private fun localeLanguage(localeTag: String): String = localeTag.substringBefore('-')
+
+    private data class NormalizedLocalizedValue(
+        val localeTag: String,
+        val text: String
+    )
 }
 
 data class PatchOperation(

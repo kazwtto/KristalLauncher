@@ -23,15 +23,15 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/navigate_back"
             android:padding="4dp"
-            android:src="@drawable/ic_arrow_back"
-            app:tint="@color/m3_on_surface" />
+            android:src="?attr/kristalIconArrowBack"
+            app:tint="?attr/colorOnSurface" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="@string/settings_title"
-            android:textColor="@color/m3_on_surface"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -57,17 +57,17 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="@string/section_general"
-                android:textColor="@color/m3_primary"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/m3_surface_card"
-                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="?attr/kristalCorner16"
                 app:cardElevation="0dp"
-                app:strokeColor="@color/m3_outline"
+                app:strokeColor="?attr/colorOutline"
                 app:strokeWidth="1dp">
 
                 <LinearLayout
@@ -89,8 +89,8 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:contentDescription="@null"
-                            android:src="@drawable/ic_language"
-                            app:tint="@color/m3_on_surface" />
+                            android:src="?attr/kristalIconLanguage"
+                            app:tint="?attr/colorOnSurface" />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -103,7 +103,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/app_language"
-                                android:textColor="@color/m3_on_surface"
+                                android:textColor="?attr/colorOnSurface"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
 
@@ -113,7 +113,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
                                 android:text="@string/lang_device"
-                                android:textColor="@color/m3_on_surface_variant"
+                                android:textColor="?attr/colorOnSurfaceVariant"
                                 android:textSize="13sp" />
 
                         </LinearLayout>
@@ -122,8 +122,8 @@
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:contentDescription="@null"
-                            android:src="@drawable/ic_chevron_right"
-                            app:tint="@color/m3_on_surface_variant" />
+                            android:src="?attr/kristalIconChevronRight"
+                            app:tint="?attr/colorOnSurfaceVariant" />
 
                     </LinearLayout>
 
@@ -131,7 +131,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginHorizontal="16dp"
-                        android:background="@color/m3_outline" />
+                        android:background="?attr/colorOutline" />
 
                     <LinearLayout
                         android:id="@+id/btnAppearance"
@@ -146,8 +146,8 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:contentDescription="@null"
-                            android:src="@drawable/ic_palette"
-                            app:tint="@color/m3_on_surface" />
+                            android:src="?attr/kristalIconPalette"
+                            app:tint="?attr/colorOnSurface" />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -160,7 +160,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/appearance_title"
-                                android:textColor="@color/m3_on_surface"
+                                android:textColor="?attr/colorOnSurface"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
 
@@ -170,7 +170,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
                                 android:text="@string/theme_device"
-                                android:textColor="@color/m3_on_surface_variant"
+                                android:textColor="?attr/colorOnSurfaceVariant"
                                 android:textSize="13sp" />
                         </LinearLayout>
 
@@ -178,8 +178,8 @@
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:contentDescription="@null"
-                            android:src="@drawable/ic_chevron_right"
-                            app:tint="@color/m3_on_surface_variant" />
+                            android:src="?attr/kristalIconChevronRight"
+                            app:tint="?attr/colorOnSurfaceVariant" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -193,17 +193,17 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="8dp"
                 android:text="@string/section_storage"
-                android:textColor="@color/m3_primary"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/m3_surface_card"
-                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="?attr/kristalCorner16"
                 app:cardElevation="0dp"
-                app:strokeColor="@color/m3_outline"
+                app:strokeColor="?attr/colorOutline"
                 app:strokeWidth="1dp">
 
                 <LinearLayout
@@ -223,8 +223,8 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:contentDescription="@null"
-                            android:src="@drawable/ic_folder"
-                            app:tint="@color/m3_on_surface" />
+                            android:src="?attr/kristalIconFolder"
+                            app:tint="?attr/colorOnSurface" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -236,7 +236,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/current_folder"
-                                android:textColor="@color/m3_on_surface"
+                                android:textColor="?attr/colorOnSurface"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
 
@@ -248,7 +248,7 @@
                                 android:ellipsize="middle"
                                 android:maxLines="1"
                                 tools:text="/tree/primary:Lua"
-                                android:textColor="@color/m3_on_surface_variant"
+                                android:textColor="?attr/colorOnSurfaceVariant"
                                 android:textSize="13sp" />
 
                         </LinearLayout>
@@ -263,12 +263,12 @@
                         android:layout_height="48dp"
                         android:layout_marginTop="16dp"
                         android:text="@string/change_folder"
-                        android:textColor="@color/m3_primary"
+                        android:textColor="?attr/colorPrimary"
                         android:textSize="14sp"
-                        app:cornerRadius="24dp"
-                        app:icon="@drawable/ic_folder"
-                        app:iconTint="@color/m3_primary"
-                        app:strokeColor="@color/m3_primary"
+                        app:cornerRadius="?attr/kristalCorner24"
+                        app:icon="?attr/kristalIconFolder"
+                        app:iconTint="?attr/colorPrimary"
+                        app:strokeColor="?attr/colorPrimary"
                         app:strokeWidth="1dp" />
 
                     <!-- Outlined remove-folder button -->
@@ -279,19 +279,19 @@
                         android:layout_height="48dp"
                         android:layout_marginTop="10dp"
                         android:text="@string/clear_folder"
-                        android:textColor="@color/m3_error"
+                        android:textColor="?attr/colorError"
                         android:textSize="14sp"
-                        app:cornerRadius="24dp"
-                        app:icon="@drawable/ic_delete"
-                        app:iconTint="@color/m3_error"
-                        app:strokeColor="@color/m3_error"
+                        app:cornerRadius="?attr/kristalCorner24"
+                        app:icon="?attr/kristalIconDelete"
+                        app:iconTint="?attr/colorError"
+                        app:strokeColor="?attr/colorError"
                         app:strokeWidth="1dp" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginVertical="16dp"
-                        android:background="@color/m3_outline" />
+                        android:background="?attr/colorOutline" />
 
                     <!-- Clear-cache item -->
                     <LinearLayout
@@ -306,8 +306,8 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:contentDescription="@null"
-                            android:src="@drawable/ic_delete"
-                            app:tint="@color/m3_on_surface_variant" />
+                            android:src="?attr/kristalIconDelete"
+                            app:tint="?attr/colorOnSurfaceVariant" />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -320,7 +320,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/clear_cache"
-                                android:textColor="@color/m3_on_surface"
+                                android:textColor="?attr/colorOnSurface"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
 
@@ -329,7 +329,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
                                 android:text="@string/clear_cache_desc"
-                                android:textColor="@color/m3_on_surface_variant"
+                                android:textColor="?attr/colorOnSurfaceVariant"
                                 android:textSize="13sp" />
 
                         </LinearLayout>
@@ -338,8 +338,8 @@
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:contentDescription="@null"
-                            android:src="@drawable/ic_chevron_right"
-                            app:tint="@color/m3_on_surface_variant" />
+                            android:src="?attr/kristalIconChevronRight"
+                            app:tint="?attr/colorOnSurfaceVariant" />
 
                     </LinearLayout>
 
@@ -354,17 +354,17 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="8dp"
                 android:text="@string/section_compatibility"
-                android:textColor="@color/m3_primary"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/m3_surface_card"
-                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="?attr/kristalCorner16"
                 app:cardElevation="0dp"
-                app:strokeColor="@color/m3_outline"
+                app:strokeColor="?attr/colorOutline"
                 app:strokeWidth="1dp">
 
                 <LinearLayout
@@ -380,8 +380,8 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:contentDescription="@null"
-                        android:src="@drawable/ic_tune"
-                        app:tint="@color/m3_on_surface" />
+                        android:src="?attr/kristalIconTune"
+                        app:tint="?attr/colorOnSurface" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -394,7 +394,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/patches_settings_title"
-                            android:textColor="@color/m3_on_surface"
+                            android:textColor="?attr/colorOnSurface"
                             android:textSize="15sp"
                             android:textStyle="bold" />
 
@@ -403,7 +403,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
                             android:text="@string/patches_settings_summary"
-                            android:textColor="@color/m3_on_surface_variant"
+                            android:textColor="?attr/colorOnSurfaceVariant"
                             android:textSize="13sp" />
 
                     </LinearLayout>
@@ -412,8 +412,8 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:contentDescription="@null"
-                        android:src="@drawable/ic_chevron_right"
-                        app:tint="@color/m3_on_surface_variant" />
+                        android:src="?attr/kristalIconChevronRight"
+                        app:tint="?attr/colorOnSurfaceVariant" />
 
                 </LinearLayout>
 
@@ -426,17 +426,17 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="8dp"
                 android:text="@string/section_about"
-                android:textColor="@color/m3_primary"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/m3_surface_card"
-                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="?attr/kristalCorner16"
                 app:cardElevation="0dp"
-                app:strokeColor="@color/m3_outline"
+                app:strokeColor="?attr/colorOutline"
                 app:strokeWidth="1dp">
 
                 <LinearLayout
@@ -455,9 +455,9 @@
                             android:layout_width="32dp"
                             android:layout_height="32dp"
                             android:contentDescription="@null"
-                            android:src="@drawable/ic_heart_pixel"
+                            android:src="?attr/kristalIconHeart"
                             android:visibility="gone"
-                            app:tint="@color/m3_primary" />
+                            app:tint="?attr/colorPrimary" />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -470,7 +470,7 @@
                                 android:id="@+id/tvAboutTitle"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textColor="@color/m3_on_surface"
+                                android:textColor="?attr/colorOnSurface"
                                 android:textSize="16sp"
                                 android:textStyle="bold"
                                 tools:text="Kristal Launcher v0.17.7" />
@@ -480,7 +480,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
                                 android:text="@string/about_desc"
-                                android:textColor="@color/m3_on_surface_variant"
+                                android:textColor="?attr/colorOnSurfaceVariant"
                                 android:textSize="13sp" />
                         </LinearLayout>
                     </LinearLayout>
@@ -489,23 +489,49 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginVertical="16dp"
-                        android:background="@color/m3_outline" />
+                        android:background="?attr/colorOutline" />
 
-                    <com.google.android.material.materialswitch.MaterialSwitch
-                        android:id="@+id/switchAutomaticUpdates"
+                    <LinearLayout
+                        android:id="@+id/rowAutomaticUpdates"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/update_automatic_checks"
-                        android:textColor="@color/m3_on_surface"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/switchAutomaticUpdates"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/update_automatic_checks"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvAutomaticUpdatesDeltarune"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/update_automatic_checks"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <kwz.love2d.launcher.ui.DeltaruneSquareSwitch
+                            android:id="@+id/switchAutomaticUpdatesDeltarune"
+                            android:layout_width="44dp"
+                            android:layout_height="24dp"
+                            android:contentDescription="@string/update_automatic_checks"
+                            android:visibility="gone" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/tvLastUpdateCheck"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:textColor="@color/m3_on_surface_variant"
+                        android:textColor="?attr/colorOnSurfaceVariant"
                         android:textSize="12sp" />
 
                     <com.google.android.material.button.MaterialButton
@@ -515,10 +541,10 @@
                         android:layout_height="48dp"
                         android:layout_marginTop="14dp"
                         android:text="@string/update_check_now"
-                        app:cornerRadius="24dp"
-                        app:icon="@drawable/ic_refresh"
-                        app:iconTint="@color/m3_primary"
-                        app:strokeColor="@color/m3_primary" />
+                        app:cornerRadius="?attr/kristalCorner24"
+                        app:icon="?attr/kristalIconRefresh"
+                        app:iconTint="?attr/colorPrimary"
+                        app:strokeColor="?attr/colorPrimary" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnOpenRepository"
@@ -527,10 +553,10 @@
                         android:layout_height="48dp"
                         android:layout_marginTop="10dp"
                         android:text="@string/about_open_github"
-                        app:cornerRadius="24dp"
-                        app:icon="@drawable/ic_github"
-                        app:iconTint="@color/m3_primary"
-                        app:strokeColor="@color/m3_primary" />
+                        app:cornerRadius="?attr/kristalCorner24"
+                        app:icon="?attr/kristalIconGithub"
+                        app:iconTint="?attr/colorPrimary"
+                        app:strokeColor="?attr/colorPrimary" />
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>

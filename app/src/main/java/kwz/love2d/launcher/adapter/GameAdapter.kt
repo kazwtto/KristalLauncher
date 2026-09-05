@@ -15,6 +15,8 @@ import kwz.love2d.launcher.R
 import kwz.love2d.launcher.model.LoveGame
 import kwz.love2d.launcher.ui.GamePatchSettingsDialog
 import kwz.love2d.launcher.util.FavoritesManager
+import kwz.love2d.launcher.util.ThemeManager
+import kwz.love2d.launcher.util.showThemed
 
 class GameAdapter(
     private val context: Context,
@@ -62,6 +64,7 @@ class GameAdapter(
             R.layout.item_game_card
         }
         val view = LayoutInflater.from(parent.context).inflate(layoutRes, parent, false)
+        ThemeManager.applyDeltaruneStyle(parent.context, view)
         return GameViewHolder(view)
     }
 
@@ -137,10 +140,8 @@ class GameAdapter(
                 ivGameIcon.setImageResource(R.drawable.ic_launcher)
             }
 
-            itemView.setOnClickListener {
-                FavoritesManager.addRecentGame(context, game)
-                onGameClick(game)
-            }
+            itemView.setOnClickListener(null)
+            itemView.isClickable = false
 
             btnPlay?.setOnClickListener {
                 FavoritesManager.addRecentGame(context, game)
@@ -156,18 +157,12 @@ class GameAdapter(
             val popup = PopupMenu(context, view)
             val isFav = FavoritesManager.isFavorite(context, game)
 
-            popup.menu.add(0, 1, 0, context.getString(R.string.launch_game))
             val favTitle = if (isFav) context.getString(R.string.remove_favorite) else context.getString(R.string.add_favorite)
-            popup.menu.add(0, 2, 1, favTitle)
-            popup.menu.add(0, 3, 2, context.getString(R.string.action_patches))
+            popup.menu.add(0, 2, 0, favTitle)
+            popup.menu.add(0, 3, 1, context.getString(R.string.action_patches))
 
             popup.setOnMenuItemClickListener { menuItem ->
                 when (menuItem.itemId) {
-                    1 -> {
-                        FavoritesManager.addRecentGame(context, game)
-                        onGameClick(game)
-                        true
-                    }
                     2 -> {
                         val added = FavoritesManager.toggleFavorite(context, game)
                         val msg = if (added) context.getString(R.string.add_favorite) else context.getString(R.string.remove_favorite)
@@ -182,7 +177,7 @@ class GameAdapter(
                     else -> false
                 }
             }
-            popup.show()
+            popup.showThemed(context, view)
         }
 
     }

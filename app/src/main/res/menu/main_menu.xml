@@ -6,25 +6,25 @@
 
     <item
         android:id="@+id/action_view_mode"
-        android:icon="@drawable/ic_view_grid"
+        android:icon="?attr/kristalIconViewGrid"
         android:title="@string/toggle_view"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/action_patches"
-        android:icon="@drawable/ic_tune"
+        android:icon="?attr/kristalIconTune"
         android:title="@string/action_patches"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/action_help"
-        android:icon="@drawable/ic_help_outline"
+        android:icon="?attr/kristalIconHelp"
         android:title="@string/tutorial_help_action"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/action_settings"
-        android:icon="@drawable/ic_settings"
+        android:icon="?attr/kristalIconSettings"
         android:title="@string/settings"
         app:showAsAction="always" />
 

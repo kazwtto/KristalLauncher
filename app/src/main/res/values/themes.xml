@@ -5,12 +5,15 @@
         <item name="colorOnPrimary">@color/m3_on_primary</item>
         <item name="colorPrimaryContainer">@color/m3_primary_container</item>
         <item name="colorOnPrimaryContainer">@color/m3_on_primary_container</item>
+        <item name="colorError">@color/m3_error</item>
         <item name="android:colorBackground">@color/m3_bg_dark</item>
         <item name="colorSurface">@color/m3_surface</item>
         <item name="colorSurfaceVariant">@color/m3_surface_variant</item>
         <item name="colorOnSurface">@color/m3_on_surface</item>
         <item name="colorOnSurfaceVariant">@color/m3_on_surface_variant</item>
         <item name="colorOutline">@color/m3_outline</item>
+        <item name="colorControlNormal">@color/m3_on_surface_variant</item>
+        <item name="colorControlActivated">@color/m3_primary</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@color/m3_bg_dark</item>
         <item name="android:navigationBarColor">@color/m3_bg_dark</item>
@@ -19,9 +22,143 @@
         <item name="android:windowActionModeOverlay">true</item>
         <item name="android:windowActivityTransitions">true</item>
         <item name="android:windowContentTransitions">true</item>
+        <item name="kristalCorner4">4dp</item>
+        <item name="kristalCorner9">9dp</item>
+        <item name="kristalCorner12">12dp</item>
+        <item name="kristalCorner14">14dp</item>
+        <item name="kristalCorner16">16dp</item>
+        <item name="kristalCorner18">18dp</item>
+        <item name="kristalCorner19">19dp</item>
+        <item name="kristalCorner20">20dp</item>
+        <item name="kristalCorner22">22dp</item>
+        <item name="kristalCorner24">24dp</item>
+        <item name="kristalPrimaryContent">#FFFFFF</item>
+        <item name="kristalPatchCardColor">@color/m3_surface_variant</item>
+        <item name="kristalSegmentedButtonUncheckedColor">@color/m3_surface</item>
+        <item name="kristalIconArrowBack">@drawable/ic_arrow_back</item>
+        <item name="kristalIconChevronRight">@drawable/ic_chevron_right</item>
+        <item name="kristalIconClose">@drawable/ic_close</item>
+        <item name="kristalIconDarkMode">@drawable/ic_dark_mode</item>
+        <item name="kristalIconDelete">@drawable/ic_delete</item>
+        <item name="kristalIconDevice">@drawable/ic_device</item>
+        <item name="kristalIconFavorite">@drawable/ic_favorite</item>
+        <item name="kristalIconFilter">@drawable/ic_filter</item>
+        <item name="kristalIconFolder">@drawable/ic_folder</item>
+        <item name="kristalIconGamepad">@drawable/ic_gamepad</item>
+        <item name="kristalIconGithub">@drawable/ic_github</item>
+        <item name="kristalIconHeart">@drawable/ic_heart_pixel</item>
+        <item name="kristalIconHelp">@drawable/ic_help_outline</item>
+        <item name="kristalIconHistory">@drawable/ic_history</item>
+        <item name="kristalIconLanguage">@drawable/ic_language</item>
+        <item name="kristalIconLightMode">@drawable/ic_light_mode</item>
+        <item name="kristalIconMore">@drawable/ic_more_vert</item>
+        <item name="kristalIconPalette">@drawable/ic_palette</item>
+        <item name="kristalIconPlay">@drawable/ic_play</item>
+        <item name="kristalIconRefresh">@drawable/ic_refresh</item>
+        <item name="kristalIconSearch">@drawable/ic_search</item>
+        <item name="kristalIconSettings">@drawable/ic_settings</item>
+        <item name="kristalIconTune">@drawable/ic_tune</item>
+        <item name="kristalIconViewGrid">@drawable/ic_view_grid</item>
+        <item name="kristalIconViewList">@drawable/ic_view_list</item>
+    </style>
+
+    <style name="ShapeAppearance.Kristal.Pixel.Small" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Kristal.Pixel.Medium" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Kristal.Pixel.Large" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+    </style>
+
+
+    <style name="TextAppearance.Kristal.Deltarune.PopupMenu" parent="TextAppearance.AppCompat.Widget.PopupMenu.Large">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+    <style name="ThemeOverlay.Kristal.Deltarune.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Kristal.Pixel.Medium</item>
+    </style>
+
+    <style name="ThemeOverlay.Kristal.Deltarune.MaterialAlertDialog.Amoled" parent="@style/ThemeOverlay.Kristal.Deltarune.MaterialAlertDialog">
+        <item name="android:colorBackground">#000000</item>
+        <item name="colorSurface">#000000</item>
+        <item name="colorSurfaceVariant">#000000</item>
+    </style>
+
+    <style name="Theme.KristalLauncher.Deltarune" parent="@style/Theme.KristalLauncher">
+        <item name="android:fontFamily">monospace</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Kristal.Pixel.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Kristal.Pixel.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Kristal.Pixel.Large</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Kristal.Deltarune.MaterialAlertDialog</item>
+        <item name="textAppearanceLargePopupMenu">@style/TextAppearance.Kristal.Deltarune.PopupMenu</item>
+        <item name="textAppearanceSmallPopupMenu">@style/TextAppearance.Kristal.Deltarune.PopupMenu</item>
+        <item name="kristalCorner4">0dp</item>
+        <item name="kristalCorner9">0dp</item>
+        <item name="kristalCorner12">0dp</item>
+        <item name="kristalCorner14">0dp</item>
+        <item name="kristalCorner16">0dp</item>
+        <item name="kristalCorner18">0dp</item>
+        <item name="kristalCorner19">0dp</item>
+        <item name="kristalCorner20">0dp</item>
+        <item name="kristalCorner22">0dp</item>
+        <item name="kristalCorner24">0dp</item>
+        <item name="kristalPrimaryContent">#FFFFFF</item>
+        <item name="kristalIconArrowBack">@drawable/pixel_arrow_left</item>
+        <item name="kristalIconChevronRight">@drawable/pixel_chevron_right</item>
+        <item name="kristalIconClose">@drawable/pixel_close</item>
+        <item name="kristalIconDarkMode">@drawable/pixel_moon</item>
+        <item name="kristalIconDelete">@drawable/pixel_trash</item>
+        <item name="kristalIconDevice">@drawable/pixel_devices</item>
+        <item name="kristalIconFavorite">@drawable/pixel_heart</item>
+        <item name="kristalIconFilter">@drawable/pixel_filter</item>
+        <item name="kristalIconFolder">@drawable/pixel_folder</item>
+        <item name="kristalIconGamepad">@drawable/pixel_gamepad</item>
+        <item name="kristalIconGithub">@drawable/pixel_github</item>
+        <item name="kristalIconHeart">@drawable/pixel_heart</item>
+        <item name="kristalIconHelp">@drawable/pixel_circle_question</item>
+        <item name="kristalIconHistory">@drawable/pixel_clock</item>
+        <item name="kristalIconLanguage">@drawable/pixel_globe</item>
+        <item name="kristalIconLightMode">@drawable/pixel_sun</item>
+        <item name="kristalIconMore">@drawable/pixel_more_vertical</item>
+        <item name="kristalIconPalette">@drawable/pixel_paint_bucket</item>
+        <item name="kristalIconPlay">@drawable/pixel_play</item>
+        <item name="kristalIconRefresh">@drawable/pixel_refresh</item>
+        <item name="kristalIconSearch">@drawable/pixel_search</item>
+        <item name="kristalIconSettings">@drawable/pixel_gear</item>
+        <item name="kristalIconTune">@drawable/pixel_sliders</item>
+        <item name="kristalIconViewGrid">@drawable/pixel_grid</item>
+        <item name="kristalIconViewList">@drawable/pixel_list</item>
+    </style>
+
+    <style name="Theme.KristalLauncher.Deltarune.Amoled" parent="@style/Theme.KristalLauncher.Deltarune">
+        <item name="elevationOverlayEnabled">false</item>
+        <item name="android:colorBackground">#000000</item>
+        <item name="kristalPatchCardColor">#000000</item>
+        <item name="kristalSegmentedButtonUncheckedColor">#000000</item>
+        <item name="android:windowBackground">#000000</item>
+        <item name="colorSurface">#000000</item>
+        <item name="colorSurfaceVariant">#000000</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Kristal.Deltarune.MaterialAlertDialog.Amoled</item>
+        <item name="android:statusBarColor">#000000</item>
+        <item name="android:navigationBarColor">#000000</item>
+    </style>
+
+    <style name="ShapeAppearance.Kristal.BottomNavIndicator" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">?attr/kristalCorner24</item>
     </style>
 
     <style name="CustomBottomNavActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <item name="android:color">@color/m3_primary_container</item>
+        <item name="android:color">?attr/colorPrimaryContainer</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Kristal.BottomNavIndicator</item>
     </style>
 </resources>

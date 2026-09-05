@@ -8,6 +8,7 @@ import android.provider.OpenableColumns
 import android.view.LayoutInflater
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.documentfile.provider.DocumentFile
@@ -19,6 +20,7 @@ import kwz.love2d.launcher.model.LoveGame
 import kwz.love2d.launcher.model.PatchApplicationResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.withContext
@@ -42,15 +44,21 @@ object GameLauncher {
             return
         }
 
-        val dialogView = LayoutInflater.from(activity).inflate(R.layout.dialog_loading, null)
-        val loadingMessage = dialogView.findViewById<TextView>(R.id.tvLoadingMessage)
-        val dialog = MaterialAlertDialogBuilder(activity)
+        val dialogContext = ThemeManager.themedContext(activity)
+        val dialogView = LayoutInflater.from(dialogContext).inflate(R.layout.dialog_loading, null)
+        ThemeManager.applyDeltaruneStyle(activity, dialogView)
+        val loadingMessage = dialogView.findViewById<TextView>(R.id.tvLoadingMessage).apply {
+            if (ThemeManager.isDeltaruneTheme(activity)) textSize = 13f
+        }
+        val dialog = MaterialAlertDialogBuilder(dialogContext)
             .setView(dialogView)
+            .setNegativeButton(R.string.cancel, null)
             .setCancelable(false)
             .create()
-        dialog.show()
+        dialog.showThemed()
+        ThemeManager.applyDialogTheme(dialog)
 
-        activity.lifecycleScope.launch {
+        val launchJob: Job = activity.lifecycleScope.launch {
             try {
                 val patchesEnabled = withContext(Dispatchers.IO) {
                     PatchManager.hasAnyPatchEnabled(activity.applicationContext, game.stableId)
@@ -94,8 +102,15 @@ object GameLauncher {
                 ).show()
             } finally {
                 if (dialog.isShowing) dialog.dismiss()
-                launchMutex.unlock()
+                if (launchMutex.isLocked) launchMutex.unlock()
             }
+        }
+
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setOnClickListener {
+            if (launchJob.isActive) {
+                launchJob.cancel(CancellationException("Game launch cancelled by user"))
+            }
+            dialog.dismiss()
         }
     }
 
