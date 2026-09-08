@@ -16,6 +16,8 @@ object LoveMetadataParser {
     private const val MAX_METADATA_BYTES = 1024 * 1024
     private const val MAX_ICON_BYTES = 2 * 1024 * 1024
     private const val MAX_ICON_DIMENSION = 192
+    private const val MAX_PREVIEW_BYTES = 8 * 1024 * 1024
+    private const val MAX_PREVIEW_DIMENSION = 640
     private const val MAX_ENTRY_COUNT = 50_000
     private const val MAX_MOD_CANDIDATES = 256
     private const val MAX_SOURCE_ICON_DIMENSION = 16_384
@@ -100,22 +102,33 @@ object LoveMetadataParser {
     ): LoveGame? {
         val metadata = readArchiveMetadata(archive, fileName) ?: return null
         var selectedIcon: Bitmap? = null
+        val selectedPreviews = mutableListOf<Bitmap>()
         try {
-            selectedIcon = metadata.iconBytes?.let(::decodeSampledBitmap)
+            selectedIcon = metadata.iconBytes?.let { decodeSampledBitmap(it, MAX_ICON_DIMENSION) }
+            metadata.previewLayers.mapNotNullTo(selectedPreviews) {
+                decodeSampledBitmap(it, MAX_PREVIEW_DIMENSION)
+            }
             return LoveGame(
                 title = metadata.title,
                 fileName = fileName,
                 uri = uri,
                 icon = selectedIcon,
+                previewBackgrounds = selectedPreviews.toList(),
                 sizeBytes = sizeBytes,
                 lastModified = lastModified,
                 subtitle = metadata.subtitle,
+                description = metadata.description,
                 version = metadata.version,
                 engineVer = metadata.engineVersion,
-                author = metadata.author
+                author = metadata.author,
+                projectId = metadata.projectId,
+                chapter = metadata.chapter,
+                startMap = metadata.startMap,
+                party = metadata.party
             )
         } catch (error: Exception) {
             selectedIcon?.recycle()
+            selectedPreviews.forEach(Bitmap::recycle)
             throw error
         }
     }
@@ -159,10 +172,6 @@ object LoveMetadataParser {
             }
             .toList()
 
-        val selectedMod = modCandidates
-            .filterNot { isPlaceholderTitle(it.name) }
-            .minByOrNull { it.folder.lowercase(Locale.ROOT) }
-
         val confTitle = indexedEntries
             .find { it.path == childPath(gameRoot, "conf.lua") && !it.entry.isDirectory }
             ?.let { readEntryBytes(archive, it.entry, MAX_METADATA_BYTES) }
@@ -170,19 +179,45 @@ object LoveMetadataParser {
             ?.let(::extractTitleFromConfLua)
             ?.takeUnless(::isIgnoredFallbackTitle)
 
+        val targetModId = findTargetModId(archive, indexedEntries, gameRoot)
+        val selectedMod = selectModCandidate(modCandidates, targetModId, confTitle)
+
         val iconEntry = selectedMod
             ?.let { findPreferredIcon(indexedEntries, it.folder) }
             ?: findPreferredIcon(indexedEntries, gameRoot)
         val iconBytes = iconEntry?.let { readEntryBytes(archive, it.entry, MAX_ICON_BYTES) }
+        val previewEntry = selectedMod
+            ?.let { findLargestPreviewBackground(indexedEntries, it.folder) }
+            ?: selectedMod?.let {
+                findPreviewScriptBackground(archive, indexedEntries, gameRoot, it.folder)
+            }
+            ?: selectedMod?.let {
+                findEntry(indexedEntries, childPath(it.folder, DEFAULT_PREVIEW_BACKGROUND))
+            }
+            ?: findLargestPreviewBackground(indexedEntries, gameRoot)
+            ?: indexedEntries.find {
+                !it.entry.isDirectory &&
+                    it.path == childPath(gameRoot, DEFAULT_PREVIEW_BACKGROUND)
+            }
+        val previewLayers = previewEntry
+            ?.let { readEntryBytes(archive, it.entry, MAX_PREVIEW_BYTES) }
+            ?.let(::listOf)
+            .orEmpty()
         val cleanName = fileName.replace(Regex("(?i)\\.(love|zip|exe)$"), "")
 
         return ParsedArchiveMetadata(
             title = selectedMod?.name ?: confTitle ?: cleanName,
             subtitle = selectedMod?.subtitle,
+            description = selectedMod?.description,
             version = selectedMod?.version,
             engineVersion = selectedMod?.engineVersion,
             author = selectedMod?.author,
-            iconBytes = iconBytes
+            projectId = selectedMod?.id,
+            chapter = selectedMod?.chapter,
+            startMap = selectedMod?.startMap,
+            party = selectedMod?.party.orEmpty(),
+            iconBytes = iconBytes,
+            previewLayers = previewLayers
         )
     }
 
@@ -193,13 +228,78 @@ object LoveMetadataParser {
             if (name.isBlank()) return null
             ModCandidate(
                 folder = "",
+                id = json.optString("id").trim().takeIf(String::isNotBlank),
                 name = name,
                 subtitle = json.optString("subtitle").trim().takeIf(String::isNotBlank),
+                description = json.optString("description").trim().takeIf(String::isNotBlank),
                 version = json.optString("version").trim().takeIf(String::isNotBlank),
                 engineVersion = json.optString("engineVer").trim().takeIf(String::isNotBlank),
-                author = json.optString("author").trim().takeIf(String::isNotBlank)
+                author = parseAuthor(json),
+                chapter = json.opt("chapter")
+                    ?.takeUnless { it == JSONObject.NULL }
+                    ?.toString()
+                    ?.trim()
+                    ?.takeIf(String::isNotBlank),
+                startMap = json.optString("map").trim().takeIf(String::isNotBlank),
+                party = json.optJSONArray("party")?.let { members ->
+                    buildList {
+                        for (index in 0 until members.length()) {
+                            members.optString(index).trim().takeIf(String::isNotBlank)?.let(::add)
+                        }
+                    }
+                }.orEmpty(),
+                hidden = json.optBoolean("hidden", false)
             )
         }.getOrNull()
+    }
+
+    private fun parseAuthor(json: JSONObject): String? {
+        json.optString("author").trim().takeIf(String::isNotBlank)?.let { return it }
+        return json.optJSONArray("authors")?.let { authors ->
+            buildList {
+                for (index in 0 until authors.length()) {
+                    authors.optString(index).trim().takeIf(String::isNotBlank)?.let(::add)
+                }
+            }.joinToString(", ").takeIf(String::isNotBlank)
+        }
+    }
+
+    private fun findTargetModId(
+        archive: GameArchive,
+        entries: List<IndexedEntry>,
+        gameRoot: String
+    ): String? {
+        for (relativePath in TARGET_MOD_SOURCE_PATHS) {
+            val source = findEntry(entries, childPath(gameRoot, relativePath)) ?: continue
+            val content = readEntryBytes(archive, source.entry, MAX_LUA_CONFIG_BYTES)
+                ?.toString(Charsets.UTF_8)
+                ?: continue
+            TARGET_MOD_ASSIGNMENT.find(content)?.groupValues?.getOrNull(2)?.let { return it }
+        }
+        return null
+    }
+
+    private fun selectModCandidate(
+        candidates: List<ModCandidate>,
+        targetModId: String?,
+        confTitle: String?
+    ): ModCandidate? {
+        val usable = candidates.filterNot { isPlaceholderTitle(it.name) }
+        targetModId?.let { target ->
+            usable.firstOrNull { candidate ->
+                candidate.id.equals(target, ignoreCase = true) ||
+                    candidate.folder.substringAfterLast('/').equals(target, ignoreCase = true)
+            }?.let { return it }
+        }
+
+        val visible = usable.filterNot(ModCandidate::hidden).ifEmpty { usable }
+        confTitle?.let { title ->
+            val normalizedTitle = normalizeTitle(title)
+            visible.firstOrNull { normalizeTitle(it.name) == normalizedTitle }
+                ?.let { return it }
+        }
+        return visible.singleOrNull()
+            ?: visible.minByOrNull { it.folder.lowercase(Locale.ROOT) }
     }
 
     /** Removes JSONC comments without touching comment markers inside quoted strings. */
@@ -261,10 +361,152 @@ object LoveMetadataParser {
         entries: List<IndexedEntry>,
         parent: String
     ): IndexedEntry? {
+        val previewPrefix = childPath(parent, "preview/")
+        entries.asSequence()
+            .filter { indexed ->
+                if (indexed.entry.isDirectory || !indexed.path.startsWith(previewPrefix)) {
+                    return@filter false
+                }
+                val relativePath = indexed.path.removePrefix(previewPrefix)
+                '/' !in relativePath && isPreviewIconFile(relativePath)
+            }
+            .sortedWith(
+                compareBy<IndexedEntry> { previewIconOrder(it.path.substringAfterLast('/')) }
+                    .thenBy { it.path }
+            )
+            .firstOrNull()
+            ?.let { return it }
+
         return ICON_FILE_NAMES.firstNotNullOfOrNull { iconName ->
             val expectedPath = childPath(parent, iconName)
             entries.find { !it.entry.isDirectory && it.path == expectedPath }
         }
+    }
+
+    private fun isPreviewIconFile(fileName: String): Boolean {
+        val extension = fileName.substringAfterLast('.', missingDelimiterValue = "")
+        return fileName.startsWith("icon") && extension in PREVIEW_IMAGE_EXTENSIONS
+    }
+
+    private fun previewIconOrder(fileName: String): Int {
+        val stem = fileName.substringBeforeLast('.')
+        if (stem == "icon") return 0
+        return PREVIEW_ICON_NUMBER.matchEntire(stem)
+            ?.groupValues
+            ?.getOrNull(1)
+            ?.toIntOrNull()
+            ?.plus(1)
+            ?: Int.MAX_VALUE
+    }
+
+    private fun findLargestPreviewBackground(
+        entries: List<IndexedEntry>,
+        parent: String
+    ): IndexedEntry? {
+        val previewPrefix = childPath(parent, "preview/")
+        return entries.asSequence()
+            .filter { indexed ->
+                if (indexed.entry.isDirectory || indexed.entry.size !in 0..MAX_PREVIEW_BYTES.toLong()) {
+                    return@filter false
+                }
+                if (indexed.path == childPath(parent, "bg.png")) return@filter true
+                if (!indexed.path.startsWith(previewPrefix)) return@filter false
+                val relativePath = indexed.path.removePrefix(previewPrefix)
+                '/' !in relativePath &&
+                    relativePath.startsWith("bg") &&
+                    relativePath.endsWith(".png")
+            }
+            .maxWithOrNull(compareBy<IndexedEntry> { it.entry.size }.thenByDescending { it.path })
+    }
+
+    private fun findPreviewScriptBackground(
+        archive: GameArchive,
+        entries: List<IndexedEntry>,
+        gameRoot: String,
+        modFolder: String
+    ): IndexedEntry? {
+        val script = PREVIEW_SCRIPT_PATHS.firstNotNullOfOrNull { relativePath ->
+            findEntry(entries, childPath(modFolder, relativePath))
+        } ?: return null
+        val source = readEntryBytes(archive, script.entry, MAX_LUA_CONFIG_BYTES)
+            ?.toString(Charsets.UTF_8)
+            ?.let(::stripLuaLineComments)
+            ?: return null
+
+        return PREVIEW_IMAGE_ASSIGNMENT.findAll(source)
+            .mapNotNull { match ->
+                val variableName = match.groupValues[1]
+                if (!isBackgroundVariable(variableName)) return@mapNotNull null
+                val expression = match.groupValues[2]
+                val referencedPath = QUOTED_PREVIEW_IMAGE.find(expression)
+                    ?.groupValues
+                    ?.getOrNull(1)
+                    ?: return@mapNotNull null
+                resolvePreviewReference(
+                    entries = entries,
+                    gameRoot = gameRoot,
+                    modFolder = modFolder,
+                    expression = expression,
+                    referencedPath = referencedPath
+                )
+            }
+            .filter { it.entry.size in 0..MAX_PREVIEW_BYTES.toLong() }
+            .maxWithOrNull(compareBy<IndexedEntry> { it.entry.size }.thenByDescending { it.path })
+    }
+
+    private fun stripLuaLineComments(content: String): String {
+        return content.lineSequence().joinToString("\n") { line ->
+            var quote: Char? = null
+            var escaped = false
+            var index = 0
+            while (index < line.length - 1) {
+                val current = line[index]
+                when {
+                    escaped -> escaped = false
+                    current == '\\' && quote != null -> escaped = true
+                    quote != null && current == quote -> quote = null
+                    quote == null && (current == '\'' || current == '"') -> quote = current
+                    quote == null && current == '-' && line[index + 1] == '-' -> {
+                        return@joinToString line.substring(0, index)
+                    }
+                }
+                index++
+            }
+            line
+        }
+    }
+
+    private fun isBackgroundVariable(variableName: String): Boolean {
+        val normalized = variableName.lowercase(Locale.ROOT)
+        return normalized == "bg" ||
+            normalized.startsWith("bg_") ||
+            normalized.endsWith("_bg") ||
+            "background" in normalized
+    }
+
+    private fun resolvePreviewReference(
+        entries: List<IndexedEntry>,
+        gameRoot: String,
+        modFolder: String,
+        expression: String,
+        referencedPath: String
+    ): IndexedEntry? {
+        val normalizedReference = normalizeReadableArchivePath(referencedPath.trimStart('/'))
+            ?: return null
+        val isModRelative = "mod.path" in expression ||
+            "self.base_path" in expression ||
+            PREVIEW_PATH_HELPER.containsMatchIn(expression)
+        val resolvedPath = when {
+            normalizedReference.startsWith("mods/") -> childPath(gameRoot, normalizedReference)
+            isModRelative -> childPath(modFolder, normalizedReference)
+            normalizedReference.startsWith("assets/") -> childPath(gameRoot, normalizedReference)
+            else -> childPath(modFolder, normalizedReference)
+        }
+        return findEntry(entries, resolvedPath)
+    }
+
+    private fun findEntry(entries: List<IndexedEntry>, path: String): IndexedEntry? {
+        return entries.find { !it.entry.isDirectory && it.path == path }
     }
 
     private fun childPath(parent: String, child: String): String {
@@ -301,15 +543,15 @@ object LoveMetadataParser {
         return output.toByteArray()
     }
 
-    private fun decodeSampledBitmap(bytes: ByteArray): Bitmap? {
+    private fun decodeSampledBitmap(bytes: ByteArray, maximumDimension: Int): Bitmap? {
         val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
         BitmapFactory.decodeByteArray(bytes, 0, bytes.size, bounds)
         if (bounds.outWidth !in 1..MAX_SOURCE_ICON_DIMENSION ||
             bounds.outHeight !in 1..MAX_SOURCE_ICON_DIMENSION
         ) return null
         var sampleSize = 1
-        while (bounds.outWidth / sampleSize > MAX_ICON_DIMENSION * 2 ||
-            bounds.outHeight / sampleSize > MAX_ICON_DIMENSION * 2
+        while (bounds.outWidth / sampleSize > maximumDimension * 2 ||
+            bounds.outHeight / sampleSize > maximumDimension * 2
         ) {
             sampleSize *= 2
         }
@@ -323,8 +565,8 @@ object LoveMetadataParser {
             }
         ) ?: return null
         val largest = maxOf(decoded.width, decoded.height)
-        if (largest <= MAX_ICON_DIMENSION) return decoded
-        val scale = MAX_ICON_DIMENSION.toFloat() / largest
+        if (largest <= maximumDimension) return decoded
+        val scale = maximumDimension.toFloat() / largest
         return Bitmap.createScaledBitmap(
             decoded,
             (decoded.width * scale).toInt().coerceAtLeast(1),
@@ -387,22 +629,58 @@ object LoveMetadataParser {
 
     private data class ModCandidate(
         val folder: String,
+        val id: String?,
         val name: String,
         val subtitle: String?,
+        val description: String?,
         val version: String?,
         val engineVersion: String?,
-        val author: String?
+        val author: String?,
+        val chapter: String?,
+        val startMap: String?,
+        val party: List<String>,
+        val hidden: Boolean
     )
 
     internal data class ParsedArchiveMetadata(
         val title: String,
         val subtitle: String?,
+        val description: String?,
         val version: String?,
         val engineVersion: String?,
         val author: String?,
-        val iconBytes: ByteArray?
+        val projectId: String?,
+        val chapter: String?,
+        val startMap: String?,
+        val party: List<String>,
+        val iconBytes: ByteArray?,
+        val previewLayers: List<ByteArray>
     )
 
     private val ICON_FILE_NAMES = listOf("icon.png", "bigicon.png", "icon.jpg", "icon.jpeg")
+    private val PREVIEW_IMAGE_EXTENSIONS = setOf("png", "jpg", "jpeg", "webp")
+    private val PREVIEW_ICON_NUMBER = Regex("icon(?:[_ -]?(\\d+))")
+    private val TARGET_MOD_ASSIGNMENT = Regex(
+        """(?m)^\s*TARGET_MOD\s*=\s*([\"'])([^\"']+)\1"""
+    )
+    private val TARGET_MOD_SOURCE_PATHS = listOf(
+        "src/engine/vendcust.lua",
+        "src/engine/statevars.lua",
+        "src/engine/menu/menu.lua",
+        "src/engine/menu/mainmenu.lua",
+        "main.lua"
+    )
+    private val PREVIEW_SCRIPT_PATHS = listOf("preview/preview.lua", "preview.lua")
+    private val PREVIEW_IMAGE_ASSIGNMENT = Regex(
+        """^\s*(?:self\.)?([A-Za-z_][A-Za-z0-9_]*)\s*=\s*love\.graphics\.newImage\s*\((.{0,512}?)\)""",
+        setOf(RegexOption.MULTILINE, RegexOption.DOT_MATCHES_ALL)
+    )
+    private val QUOTED_PREVIEW_IMAGE = Regex(
+        """[\"']([^\"']+\.(?:png|jpg|jpeg|webp))[\"']""",
+        RegexOption.IGNORE_CASE
+    )
+    private val PREVIEW_PATH_HELPER = Regex("""\bp\s*\(""")
+    private const val DEFAULT_PREVIEW_BACKGROUND = "assets/sprites/kristal/title_bg_wave.png"
+    private const val MAX_LUA_CONFIG_BYTES = 256 * 1024
     private const val MAX_ARCHIVE_PATH_LENGTH = 1_024
 }

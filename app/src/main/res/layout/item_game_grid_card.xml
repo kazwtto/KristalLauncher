@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
+<kwz.love2d.launcher.ui.SquareMaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,76 +8,63 @@
     android:layout_margin="6dp"
     android:clickable="true"
     android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
     app:cardBackgroundColor="?attr/colorSurface"
     app:cardCornerRadius="?attr/kristalCorner16"
     app:cardElevation="0dp"
     app:strokeColor="?attr/colorOutline"
     app:strokeWidth="1dp">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <!-- Transparent banner with a centered icon -->
-        <FrameLayout
+        <View
             android:layout_width="match_parent"
-            android:layout_height="120dp">
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_grid_banner" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivGameIcon"
-                android:layout_width="76dp"
-                android:layout_height="76dp"
-                android:layout_gravity="center"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_launcher" />
+        <kwz.love2d.launcher.ui.LayeredPreviewView
+            android:id="@+id/ivGamePreview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:visibility="gone" />
 
-            <!-- Overflow menu in the top-right corner -->
-            <ImageView
-                android:id="@+id/btnMenuMore"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_gravity="top|end"
-                android:layout_margin="4dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="@string/more_options"
-                android:padding="4dp"
-                android:src="?attr/kristalIconMore"
-                app:tint="?attr/colorOnSurfaceVariant" />
+        <View
+            android:id="@+id/gamePreviewScrim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/scrim_bottom_gradient" />
 
-            <!-- Floating play button in the bottom-right corner -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnPlay"
-                style="@style/Widget.Material3.Button.Icon"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="6dp"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                android:insetLeft="0dp"
-                android:insetRight="0dp"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:paddingHorizontal="0dp"
-                app:backgroundTint="?attr/colorPrimary"
-                app:cornerRadius="?attr/kristalCorner18"
-                app:icon="?attr/kristalIconPlay"
-                app:iconGravity="textStart"
-                app:iconPadding="0dp"
-                app:iconSize="16dp"
-                app:iconTint="?attr/colorOnPrimary" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivGameIcon"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="28dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher" />
 
-        </FrameLayout>
+        <ImageView
+            android:id="@+id/btnMenuMore"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/more_options"
+            android:padding="4dp"
+            android:src="?attr/kristalIconMore"
+            app:tint="?attr/colorOnSurface" />
 
-        <!-- Text metadata on the solid lower panel -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
             android:orientation="vertical"
-            android:gravity="center"
-            android:paddingHorizontal="12dp"
-            android:paddingTop="10dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
             android:paddingBottom="12dp">
 
             <TextView
@@ -85,14 +72,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
-                android:gravity="center"
-                android:textAlignment="center"
                 android:maxLines="2"
-                android:minLines="1"
-                tools:text="Game Title"
+                android:shadowColor="#66000000"
+                android:shadowDx="0"
+                android:shadowDy="1"
+                android:shadowRadius="2"
                 android:textColor="?attr/colorOnSurface"
-                android:textSize="13sp"
-                android:textStyle="bold" />
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="Frostveil" />
 
             <TextView
                 android:id="@+id/tvSubtitle"
@@ -100,53 +88,39 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:ellipsize="end"
-                android:gravity="center"
-                android:textAlignment="center"
                 android:maxLines="1"
-                tools:text="Game Subtitle"
                 android:textColor="?attr/colorOnSurfaceVariant"
                 android:textSize="11sp"
-                android:visibility="gone" />
+                android:visibility="gone"
+                tools:text="Weird Route"
+                tools:visibility="visible" />
 
-            <TextView
-                android:id="@+id/tvAuthor"
+            <LinearLayout
+                android:id="@+id/gameTagsContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:ellipsize="end"
-                android:gravity="center"
-                android:textAlignment="center"
-                android:maxLines="1"
-                tools:text="by Author"
-                android:textColor="?attr/colorPrimary"
-                android:textSize="11sp"
-                android:textStyle="italic"
-                android:visibility="gone" />
-
-            <!-- Badges Container -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_marginTop="6dp"
-                android:orientation="horizontal">
+                android:gravity="start|center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/tvVersion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="4dp"
+                    android:layout_marginEnd="5dp"
                     android:background="@drawable/bg_badge_demo"
-                    app:backgroundTint="?attr/colorSecondaryContainer"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:paddingHorizontal="4dp"
+                    android:paddingHorizontal="5dp"
                     android:paddingVertical="1dp"
-                    tools:text="v1.0"
                     android:textColor="?attr/colorOnSecondaryContainer"
                     android:textSize="11sp"
                     android:textStyle="bold"
-                    android:visibility="gone" />
+                    android:visibility="gone"
+                    app:backgroundTint="?attr/colorSecondaryContainer"
+                    tools:text="v1.3.2"
+                    tools:visibility="visible" />
 
                 <TextView
                     android:id="@+id/tvEngineVer"
@@ -154,21 +128,18 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/bg_badge_demo"
-                    app:backgroundTint="?attr/colorTertiaryContainer"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:paddingHorizontal="4dp"
+                    android:paddingHorizontal="5dp"
                     android:paddingVertical="1dp"
-                    tools:text="Kristal"
                     android:textColor="?attr/colorOnTertiaryContainer"
                     android:textSize="11sp"
                     android:textStyle="bold"
-                    android:visibility="gone" />
-
+                    android:visibility="gone"
+                    app:backgroundTint="?attr/colorTertiaryContainer"
+                    tools:text="Kristal v0.10.0-dev"
+                    tools:visibility="visible" />
             </LinearLayout>
-
         </LinearLayout>
-
-    </LinearLayout>
-
-</com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
+</kwz.love2d.launcher.ui.SquareMaterialCardView>

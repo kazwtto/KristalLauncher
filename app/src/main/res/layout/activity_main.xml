@@ -23,6 +23,19 @@
             android:visibility="gone"
             app:tint="?attr/colorPrimary" />
 
+        <TextView
+            android:id="@+id/tvBetaBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:background="@drawable/bg_badge_demo"
+            android:gravity="center"
+            android:paddingHorizontal="9dp"
+            android:text="@string/beta_badge"
+            android:textColor="?attr/colorOnPrimaryContainer"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:backgroundTint="?attr/colorPrimaryContainer" />
+
         <Space
             android:layout_width="0dp"
             android:layout_height="1dp"
@@ -194,6 +207,20 @@
         app:cornerRadius="?attr/kristalCorner20"
         app:icon="?attr/kristalIconFolder"
         app:iconTint="?attr/colorOnPrimary" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabKristalRuntime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomNavigation"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/kristal_runtime_open"
+        android:visibility="gone"
+        app:backgroundTint="?attr/colorPrimary"
+        app:srcCompat="?attr/kristalIconPlay"
+        app:tint="?attr/colorOnPrimary" />
 
     <!-- Expanded 80 dp Material 3 bottom navigation bar -->
     <com.google.android.material.bottomnavigation.BottomNavigationView

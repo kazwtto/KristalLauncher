@@ -15,22 +15,27 @@ object GameCacheManager {
 
     private const val CACHE_FILE_NAME = "games_metadata.json"
     private const val ICONS_DIR_NAME = "cached_icons"
+    private const val PREVIEWS_DIR_NAME = "cached_previews"
     private const val MAX_ICON_DIMENSION = 192
+    private const val MAX_PREVIEW_DIMENSION = 640
     private const val PREF_NAME = "game_cache_settings"
     private const val KEY_FOLDER_URI = "cached_folder_uri"
     private const val KEY_CACHE_SCHEMA = "cache_schema"
-    private const val CACHE_SCHEMA_VERSION = 7
+    private const val CACHE_SCHEMA_VERSION = 13
+    private const val MIN_SUPPORTED_CACHE_SCHEMA_VERSION = 12
 
     fun hasCache(context: Context): Boolean {
         val cacheFile = File(context.filesDir, CACHE_FILE_NAME)
-        return getCacheSchema(context) == CACHE_SCHEMA_VERSION && cacheFile.isFile && cacheFile.length() > 0
+        return isSupportedCacheSchema(getCacheSchema(context)) && cacheFile.isFile && cacheFile.length() > 0
     }
 
     fun saveGamesCache(context: Context, folderUri: Uri, games: List<LoveGame>) {
         runCatching {
             val jsonArray = JSONArray()
             val iconDir = File(context.filesDir, ICONS_DIR_NAME).apply { mkdirs() }
+            val previewDir = File(context.filesDir, PREVIEWS_DIR_NAME).apply { mkdirs() }
             val retainedIcons = mutableSetOf<String>()
+            val retainedPreviews = mutableSetOf<String>()
 
             for (game in games) {
                 val jsonObject = JSONObject()
@@ -41,9 +46,14 @@ object GameCacheManager {
                     .put("lastModified", game.lastModified)
                 game.archiveEntryPath?.let { jsonObject.put("archiveEntryPath", it) }
                 game.subtitle?.let { jsonObject.put("subtitle", it) }
+                game.description?.let { jsonObject.put("description", it) }
                 game.version?.let { jsonObject.put("version", it) }
                 game.engineVer?.let { jsonObject.put("engineVer", it) }
                 game.author?.let { jsonObject.put("author", it) }
+                game.projectId?.let { jsonObject.put("projectId", it) }
+                game.chapter?.let { jsonObject.put("chapter", it) }
+                game.startMap?.let { jsonObject.put("startMap", it) }
+                if (game.party.isNotEmpty()) jsonObject.put("party", JSONArray(game.party))
 
                 game.icon?.let { bitmap ->
                     val iconName = "${sha256(game.stableId)}_${game.lastModified}_${game.sizeBytes}.png"
@@ -53,6 +63,19 @@ object GameCacheManager {
                         writeBitmapAtomically(iconFile, bitmap)
                     }
                     jsonObject.put("iconFile", iconName)
+                }
+                if (game.previewBackgrounds.isNotEmpty()) {
+                    val previewFiles = JSONArray()
+                    game.previewBackgrounds.forEachIndexed { index, bitmap ->
+                        val previewName = "${sha256(game.stableId)}_${game.lastModified}_${game.sizeBytes}_$index.png"
+                        val previewFile = File(previewDir, previewName)
+                        retainedPreviews += previewName
+                        if (!previewFile.isFile || previewFile.length() == 0L) {
+                            writeBitmapAtomically(previewFile, bitmap)
+                        }
+                        previewFiles.put(previewName)
+                    }
+                    jsonObject.put("previewFiles", previewFiles)
                 }
                 jsonArray.put(jsonObject)
             }
@@ -67,6 +90,9 @@ object GameCacheManager {
             iconDir.listFiles().orEmpty()
                 .filter { it.isFile && it.name !in retainedIcons }
                 .forEach(File::delete)
+            previewDir.listFiles().orEmpty()
+                .filter { it.isFile && it.name !in retainedPreviews }
+                .forEach(File::delete)
         }.onFailure(::reportRecoverableFailure)
     }
 
@@ -76,7 +102,7 @@ object GameCacheManager {
         loadIcons: Boolean = true
     ): List<LoveGame> {
         return runCatching {
-            if (getCacheSchema(context) != CACHE_SCHEMA_VERSION) return emptyList()
+            if (!isSupportedCacheSchema(getCacheSchema(context))) return emptyList()
             val cachedFolderUri = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
                 .getString(KEY_FOLDER_URI, null)
             if (folderUri != null && cachedFolderUri != folderUri.toString()) return emptyList()
@@ -85,6 +111,7 @@ object GameCacheManager {
             if (!cacheFile.isFile || cacheFile.length() == 0L) return emptyList()
             val jsonArray = JSONArray(cacheFile.readText(Charsets.UTF_8))
             val iconDir = File(context.filesDir, ICONS_DIR_NAME)
+            val previewDir = File(context.filesDir, PREVIEWS_DIR_NAME)
 
             buildList {
                 for (index in 0 until jsonArray.length()) {
@@ -97,9 +124,25 @@ object GameCacheManager {
                             .takeIf(String::isNotBlank)
                             ?.let { File(iconDir, it) }
                             ?.takeIf(File::isFile)
-                            ?.let(::decodeCachedIcon)
+                            ?.let { decodeCachedBitmap(it, MAX_ICON_DIMENSION) }
                     } else {
                         null
+                    }
+                    val previews = if (loadIcons) {
+                        item.optJSONArray("previewFiles")?.let { previewFiles ->
+                            buildList {
+                                for (previewIndex in 0 until previewFiles.length()) {
+                                    previewFiles.optString(previewIndex)
+                                        .takeIf(String::isNotBlank)
+                                        ?.let { File(previewDir, it) }
+                                        ?.takeIf(File::isFile)
+                                        ?.let { decodeCachedBitmap(it, MAX_PREVIEW_DIMENSION) }
+                                        ?.let(::add)
+                                }
+                            }
+                        }.orEmpty()
+                    } else {
+                        emptyList()
                     }
                     add(
                         LoveGame(
@@ -108,12 +151,26 @@ object GameCacheManager {
                             uri = Uri.parse(uriValue),
                             archiveEntryPath = item.optString("archiveEntryPath").takeIf(String::isNotBlank),
                             icon = icon,
+                            previewBackgrounds = previews,
                             sizeBytes = item.optLong("sizeBytes", 0L),
                             lastModified = item.optLong("lastModified", 0L),
                             subtitle = item.optString("subtitle").takeIf(String::isNotBlank),
+                            description = item.optString("description").takeIf(String::isNotBlank),
                             version = item.optString("version").takeIf(String::isNotBlank),
                             engineVer = item.optString("engineVer").takeIf(String::isNotBlank),
-                            author = item.optString("author").takeIf(String::isNotBlank)
+                            author = item.optString("author").takeIf(String::isNotBlank),
+                            projectId = item.optString("projectId").takeIf(String::isNotBlank),
+                            chapter = item.optString("chapter").takeIf(String::isNotBlank),
+                            startMap = item.optString("startMap").takeIf(String::isNotBlank),
+                            party = item.optJSONArray("party")?.let { members ->
+                                buildList {
+                                    for (partyIndex in 0 until members.length()) {
+                                        members.optString(partyIndex)
+                                            .takeIf(String::isNotBlank)
+                                            ?.let(::add)
+                                    }
+                                }
+                            }.orEmpty()
                         )
                     )
                 }
@@ -125,6 +182,7 @@ object GameCacheManager {
         runCatching {
             File(context.filesDir, CACHE_FILE_NAME).delete()
             File(context.filesDir, ICONS_DIR_NAME).deleteRecursively()
+            File(context.filesDir, PREVIEWS_DIR_NAME).deleteRecursively()
             context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
                 .edit()
                 .remove(KEY_FOLDER_URI)
@@ -139,26 +197,26 @@ object GameCacheManager {
             .forEach(File::delete)
     }
 
-    private fun decodeCachedIcon(iconFile: File): Bitmap? {
+    private fun decodeCachedBitmap(bitmapFile: File, maximumDimension: Int): Bitmap? {
         val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
-        BitmapFactory.decodeFile(iconFile.absolutePath, bounds)
+        BitmapFactory.decodeFile(bitmapFile.absolutePath, bounds)
         if (bounds.outWidth <= 0 || bounds.outHeight <= 0) return null
         var sampleSize = 1
-        while (bounds.outWidth / sampleSize > MAX_ICON_DIMENSION * 2 ||
-            bounds.outHeight / sampleSize > MAX_ICON_DIMENSION * 2
+        while (bounds.outWidth / sampleSize > maximumDimension * 2 ||
+            bounds.outHeight / sampleSize > maximumDimension * 2
         ) {
             sampleSize *= 2
         }
         val decoded = BitmapFactory.decodeFile(
-            iconFile.absolutePath,
+            bitmapFile.absolutePath,
             BitmapFactory.Options().apply {
                 inSampleSize = sampleSize
                 inPreferredConfig = Bitmap.Config.ARGB_8888
             }
         ) ?: return null
         val largest = maxOf(decoded.width, decoded.height)
-        if (largest <= MAX_ICON_DIMENSION) return decoded
-        val scale = MAX_ICON_DIMENSION.toFloat() / largest
+        if (largest <= maximumDimension) return decoded
+        val scale = maximumDimension.toFloat() / largest
         return Bitmap.createScaledBitmap(
             decoded,
             (decoded.width * scale).toInt().coerceAtLeast(1),
@@ -202,6 +260,10 @@ object GameCacheManager {
     private fun getCacheSchema(context: Context): Int {
         return context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
             .getInt(KEY_CACHE_SCHEMA, 0)
+    }
+
+    private fun isSupportedCacheSchema(schemaVersion: Int): Boolean {
+        return schemaVersion in MIN_SUPPORTED_CACHE_SCHEMA_VERSION..CACHE_SCHEMA_VERSION
     }
 
     private fun reportRecoverableFailure(error: Throwable) {

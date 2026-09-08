@@ -13,10 +13,12 @@ import org.apache.commons.compress.archivers.zip.ZipArchiveEntry
 import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream
 import org.apache.commons.compress.archivers.zip.ZipFile as CommonsZipFile
 import java.io.File
+import java.io.FilterInputStream
 import java.io.InputStream
 import java.security.MessageDigest
 import java.util.Locale
 import java.util.zip.ZipFile
+import kotlinx.coroutines.CancellationException
 
 object PatchManager {
 
@@ -166,6 +168,9 @@ object PatchManager {
                 addAll(externalPatches.map { it.manifest.id })
             }
             PatchApplicationResult.Success(applied)
+        } catch (error: CancellationException) {
+            outputFile.delete()
+            throw error
         } catch (error: Exception) {
             outputFile.delete()
             PatchApplicationResult.Failure(
@@ -199,6 +204,7 @@ object PatchManager {
             ZipArchiveOutputStream(outputFile).use { zipOutput ->
                 val entries = sourceZip.entries
                 while (entries.hasMoreElements()) {
+                    ensureNotInterrupted()
                     val entry = entries.nextElement()
                     entryCount++
                     require(entryCount <= MAX_ARCHIVE_ENTRIES) { "Staged game contains too many entries" }
@@ -289,7 +295,7 @@ object PatchManager {
         outputZip: ZipArchiveOutputStream
     ) {
         sourceZip.getRawInputStream(entry).use { rawInput ->
-            outputZip.addRawArchiveEntry(entry, rawInput)
+            outputZip.addRawArchiveEntry(entry, InterruptibleInputStream(rawInput))
         }
     }
 
@@ -338,6 +344,7 @@ object PatchManager {
         val buffer = ByteArray(DEFAULT_BUFFER_SIZE)
         var total = 0
         while (true) {
+            ensureNotInterrupted()
             val read = input.read(buffer)
             if (read < 0) break
             total += read
@@ -572,6 +579,7 @@ object PatchManager {
     ) {
         val files = context.assets.list(assetPath).orEmpty()
         for (file in files) {
+            ensureNotInterrupted()
             val childAssetPath = if (assetPath.isEmpty()) file else "$assetPath/$file"
             val childTargetName = if (targetPrefix.isEmpty()) file else "$targetPrefix/$file"
             val childFiles = context.assets.list(childAssetPath)
@@ -609,8 +617,36 @@ object PatchManager {
         input: InputStream
     ) {
         zipOutput.putArchiveEntry(ZipArchiveEntry(entryName))
-        input.copyTo(zipOutput, DEFAULT_BUFFER_SIZE)
+        copyInterruptibly(input, zipOutput)
         zipOutput.closeArchiveEntry()
+    }
+
+    private fun copyInterruptibly(input: InputStream, output: java.io.OutputStream) {
+        val buffer = ByteArray(DEFAULT_BUFFER_SIZE)
+        while (true) {
+            ensureNotInterrupted()
+            val read = input.read(buffer)
+            if (read < 0) return
+            output.write(buffer, 0, read)
+        }
+    }
+
+    private fun ensureNotInterrupted() {
+        if (Thread.currentThread().isInterrupted) {
+            throw CancellationException("Patch application cancelled")
+        }
+    }
+
+    private class InterruptibleInputStream(input: InputStream) : FilterInputStream(input) {
+        override fun read(): Int {
+            ensureNotInterrupted()
+            return super.read()
+        }
+
+        override fun read(buffer: ByteArray, offset: Int, length: Int): Int {
+            ensureNotInterrupted()
+            return super.read(buffer, offset, length)
+        }
     }
 
     private fun validateStagedPackage(file: File) {
@@ -656,6 +692,7 @@ object PatchManager {
     }
 
     private fun getGamepadRuntimeConfig(context: Context): GamepadRuntimeConfig {
+        val themedContext = ThemeManager.themedContext(context)
         val language = LanguageManager.resolveGamepadLanguage(
             selectedLanguage = LanguageManager.getCurrentLanguage(context),
             deviceLanguage = context.resources.configuration.locales[0]?.language
@@ -663,7 +700,7 @@ object PatchManager {
         return GamepadRuntimeConfig(
             language = language,
             accentColor = MaterialColors.getColor(
-                context,
+                themedContext,
                 com.google.android.material.R.attr.colorPrimary,
                 ContextCompat.getColor(context, R.color.m3_primary)
             )

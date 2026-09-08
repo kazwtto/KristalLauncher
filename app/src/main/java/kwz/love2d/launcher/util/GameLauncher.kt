@@ -17,11 +17,13 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kwz.love2d.launcher.R
 import kwz.love2d.launcher.model.LoveGame
+import kwz.love2d.launcher.model.InstalledKristalRuntime
 import kwz.love2d.launcher.model.PatchApplicationResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runInterruptible
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.withContext
 import java.io.ByteArrayInputStream
@@ -37,6 +39,22 @@ import java.util.zip.ZipInputStream
 object GameLauncher {
 
     private val launchMutex = Mutex()
+
+    fun launchKristalRuntime(activity: AppCompatActivity, runtime: InstalledKristalRuntime) {
+        launchGame(
+            activity,
+            LoveGame(
+                title = activity.getString(R.string.kristal_runtime_launch_title, runtime.version),
+                fileName = runtime.file.name,
+                uri = Uri.fromFile(runtime.file),
+                sizeBytes = runtime.file.length(),
+                lastModified = runtime.file.lastModified(),
+                subtitle = activity.getString(R.string.kristal_runtime_title),
+                version = runtime.version,
+                engineVer = runtime.version
+            )
+        )
+    }
 
     fun launchGame(activity: AppCompatActivity, game: LoveGame) {
         if (!launchMutex.tryLock()) {
@@ -68,7 +86,7 @@ object GameLauncher {
                     game.title
                 )
 
-                val stagedFile = withContext(Dispatchers.IO) {
+                val stagedFile = runInterruptible(Dispatchers.IO) {
                     prepareStagedGame(activity.applicationContext, game)
                 }
                 if (!activity.lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) return@launch
@@ -286,7 +304,7 @@ object GameLauncher {
                     game.fileName.endsWith(".exe", ignoreCase = true) -> {
                         copyExecutablePayload(source, destination)
                     }
-                    else -> source.copyTo(destination, COPY_BUFFER_SIZE)
+                    else -> copyInterruptibly(source, destination)
                 }
             }
         }
@@ -322,7 +340,7 @@ object GameLauncher {
                     if (rawPath.endsWith(".exe", ignoreCase = true)) {
                         copyExecutablePayload(archive.buffered(EXECUTABLE_SCAN_BUFFER_SIZE), destination)
                     } else {
-                        archive.copyTo(destination, COPY_BUFFER_SIZE)
+                        copyInterruptibly(archive, destination)
                     }
                     found = true
                     break
@@ -337,13 +355,14 @@ object GameLauncher {
     private fun copyExecutablePayload(source: InputStream, destination: OutputStream) {
         val payload = findExecutablePayload(source)
             ?: throw GameLaunchException(R.string.error_invalid_love_executable)
-        payload.copyTo(destination, COPY_BUFFER_SIZE)
+        copyInterruptibly(payload, destination)
     }
 
     internal fun findExecutablePayload(source: InputStream): InputStream? {
         var matched = 0
         var scanned = 0L
         while (scanned < MAX_EXECUTABLE_PREFIX_BYTES) {
+            ensureNotInterrupted()
             val value = source.read()
             if (value < 0) return null
             scanned++
@@ -379,11 +398,28 @@ object GameLauncher {
         val digest = MessageDigest.getInstance("SHA-256")
         val buffer = ByteArray(COPY_BUFFER_SIZE)
         while (true) {
+            ensureNotInterrupted()
             val read = input.read(buffer)
             if (read < 0) break
             digest.update(buffer, 0, read)
         }
         return digest.digest().joinToString("") { "%02x".format(it) }
+    }
+
+    private fun copyInterruptibly(source: InputStream, destination: OutputStream) {
+        val buffer = ByteArray(COPY_BUFFER_SIZE)
+        while (true) {
+            ensureNotInterrupted()
+            val read = source.read(buffer)
+            if (read < 0) return
+            destination.write(buffer, 0, read)
+        }
+    }
+
+    private fun ensureNotInterrupted() {
+        if (Thread.currentThread().isInterrupted) {
+            throw CancellationException("Game launch cancelled")
+        }
     }
 
     private data class SourceMetadata(val size: Long, val lastModified: Long)

@@ -41,6 +41,8 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var btnClearFolder: MaterialButton
     private lateinit var btnClearCache: LinearLayout
     private lateinit var btnOpenPatchesMenu: LinearLayout
+    private lateinit var btnKristalRuntime: LinearLayout
+    private lateinit var tvKristalRuntimeStatus: TextView
     private lateinit var switchAutomaticUpdates: MaterialSwitch
     private lateinit var switchAutomaticUpdatesDeltarune: DeltaruneSquareSwitch
     private lateinit var tvAutomaticUpdatesDeltarune: TextView
@@ -83,6 +85,8 @@ class SettingsActivity : AppCompatActivity() {
         btnClearCache = findViewById(R.id.btnClearCache)
 
         btnOpenPatchesMenu = findViewById(R.id.btnOpenPatchesMenu)
+        btnKristalRuntime = findViewById(R.id.btnKristalRuntime)
+        tvKristalRuntimeStatus = findViewById(R.id.tvKristalRuntimeStatus)
         switchAutomaticUpdates = findViewById(R.id.switchAutomaticUpdates)
         switchAutomaticUpdatesDeltarune = findViewById(R.id.switchAutomaticUpdatesDeltarune)
         tvAutomaticUpdatesDeltarune = findViewById(R.id.tvAutomaticUpdatesDeltarune)
@@ -127,6 +131,10 @@ class SettingsActivity : AppCompatActivity() {
             NavigationAnimations.start(this, Intent(this, PatchesSettingsActivity::class.java))
         }
 
+        btnKristalRuntime.setOnClickListener {
+            NavigationAnimations.start(this, Intent(this, KristalRuntimeSettingsActivity::class.java))
+        }
+
         btnLanguage.setOnClickListener {
             NavigationAnimations.start(this, Intent(this, LanguageSettingsActivity::class.java))
         }
@@ -152,6 +160,7 @@ class SettingsActivity : AppCompatActivity() {
         super.onResume()
         updateLanguageUI()
         tvCurrentTheme.text = ThemeManager.getThemeDisplayName(this)
+        updateKristalRuntimeUI()
     }
 
     private fun checkForUpdatesManually() {
@@ -183,6 +192,15 @@ class SettingsActivity : AppCompatActivity() {
 
     private fun updateLanguageUI() {
         tvCurrentLanguage.text = LanguageManager.getLanguageDisplayName(this)
+    }
+
+    private fun updateKristalRuntimeUI() {
+        val runtime = kwz.love2d.launcher.util.KristalRuntimeStorage.selectedRuntime(this)
+        tvKristalRuntimeStatus.text = if (runtime == null) {
+            getString(R.string.kristal_runtime_not_installed)
+        } else {
+            getString(R.string.kristal_runtime_selected_version, runtime.version)
+        }
     }
 
     private fun updateFolderUI() {

@@ -20,15 +20,19 @@ class KristalApplication : Application() {
             override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
                 if (activity is AppCompatActivity) {
                     ThemeManager.applyStatusBarTheme(activity)
+                }
+            }
+
+            override fun onActivityStarted(activity: Activity) {
+                if (activity is AppCompatActivity) {
+                    if (!ThemeManager.ensureActivityTheme(activity)) return
+                    ThemeManager.applyStatusBarTheme(activity)
                     ThemeManager.applyThemeDecor(activity)
                 }
             }
 
-            override fun onActivityStarted(activity: Activity) {}
-
             override fun onActivityResumed(activity: Activity) {
                 if (activity is AppCompatActivity) {
-                    if (!ThemeManager.ensureActivityTheme(activity)) return
                     ThemeManager.applyStatusBarTheme(activity)
                     ThemeManager.applyThemeDecor(activity)
                 }

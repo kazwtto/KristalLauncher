@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Kristal Launcher</string>
+    <string name="beta_badge">BETA</string>
     <string name="select_folder">Seleccionar Carpeta</string>
     <string name="select_folder_dialog_title">Ninguna carpeta de juegos seleccionada</string>
     <string name="select_folder_dialog_desc">Selecciona la carpeta donde guardas tus juegos (.love) para empezar a jugar.</string>
@@ -23,6 +24,10 @@
     <string name="tutorial_next">Siguiente</string>
     <string name="tutorial_done">Terminar</string>
     <string name="tutorial_choose_folder_now">Elegir carpeta</string>
+    <string name="tutorial_supported_files">Archivos compatibles</string>
+    <string name="tutorial_supported_extensions">.love · .zip · .exe compatible</string>
+    <string name="switch_state_on">Activado</string>
+    <string name="switch_state_off">Desactivado</string>
 
     <string name="tutorial_step_1_title">1. Prepara una carpeta de juegos</string>
     <string name="tutorial_step_1_body">Abre la app de archivos del teléfono. Crea una carpeta llamada “Juegos” — o usa la que ya elegiste antes. Descargas/Juegos es un lugar fácil.</string>
@@ -41,28 +46,14 @@
     <string name="tutorial_step_4_tip">🔒 La app usa ese acceso para leer los juegos de la carpeta que elegiste.</string>
 
     <string name="tutorial_step_5_title">5. ¡Listo! Tus juegos aparecerán</string>
-    <string name="tutorial_step_5_body">La biblioteca se carga automáticamente. Toca un juego para abrirlo y jugar.</string>
+    <string name="tutorial_step_5_body">La biblioteca se carga automáticamente. Usa el botón Jugar para abrir un juego.</string>
     <string name="tutorial_step_5_tip">¿No apareció nada? Comprueba que el archivo sea .love, .zip o un .exe compatible, que esté directamente en la carpeta y desliza la lista hacia abajo para actualizar.</string>
 
     <string name="tutorial_mock_games_folder">JUEGOS</string>
     <string name="tutorial_mock_games_path">Descargas / Juegos</string>
-    <string name="tutorial_mock_empty_library">Todavía no hay juegos aquí</string>
-    <string name="tutorial_mock_folder_picker_title">Carpeta Juegos</string>
     <string name="tutorial_mock_use_folder">USAR ESTA CARPETA</string>
     <string name="tutorial_mock_library_ready">JUEGOS ENCONTRADOS</string>
-    <string name="tutorial_mock_check">✓</string>
-    <string name="tutorial_mock_extension_love">LOVE</string>
-    <string name="tutorial_mock_extension_zip">ZIP</string>
-    <string name="tutorial_mock_extension_exe">EXE</string>
-    <string name="tutorial_mock_file_love">Aventura.love</string>
-    <string name="tutorial_mock_file_zip">MiJuego.zip</string>
-    <string name="tutorial_mock_file_exe">Demo.exe</string>
-    <string name="tutorial_mock_initial_adventure">A</string>
-    <string name="tutorial_mock_game_adventure">Aventura</string>
     <string name="tutorial_mock_engine_kristal">Kristal</string>
-    <string name="tutorial_mock_initial_demo">D</string>
-    <string name="tutorial_mock_game_demo">Demo</string>
-    <string name="tutorial_mock_engine_love2d">Kristal</string>
 
     <!-- Navigation tabs -->
     <string name="tab_library">Biblioteca</string>
@@ -211,6 +202,19 @@
     <string name="navigate_back">Volver</string>
     <string name="filter_games">Filtrar juegos</string>
     <string name="more_options">Más opciones</string>
+    <string name="game_details_close">Cerrar detalles del juego</string>
+    <string name="game_details_favorite">Favorito</string>
+    <string name="game_details_info">Info</string>
+    <string name="game_details_compatibility">Compatibilidad</string>
+    <string name="game_details_more">Más</string>
+    <string name="game_details_about">Acerca de</string>
+    <string name="game_details_author">Autor</string>
+    <string name="game_details_project_id">ID del proyecto</string>
+    <string name="game_details_chapter">Capítulo</string>
+    <string name="game_details_start_map">Mapa inicial</string>
+    <string name="game_details_party">Grupo inicial</string>
+    <string name="game_details_file">Archivo</string>
+    <string name="game_details_no_description">No se proporcionó una descripción para este juego.</string>
     <string name="loading_game">Cargando…</string>
     <string name="section_compatibility">COMPATIBILIDAD</string>
     <string name="patches_settings_summary">Ajustes para juegos que necesitan ayuda en Android</string>
@@ -339,4 +343,34 @@
     <string name="games_scan_partial_failure">No se pudieron leer algunos archivos: %1$s. Los demás juegos siguen disponibles.</string>
     <string name="error_title">Error</string>
     <string name="game_launch_in_progress">Ya se está preparando otro juego.</string>
+    <string name="section_kristal_engine">Kristal Engine</string>
+    <string name="kristal_runtime_title">Runtime de Kristal Engine</string>
+    <string name="kristal_runtime_not_installed">No instalado</string>
+    <string name="kristal_runtime_selected_version">Versión %1$s seleccionada</string>
+    <string name="kristal_runtime_page_summary">Descarga versiones oficiales de Kristal Engine, conserva las que necesites sin conexión y elige cuál abrirá el launcher.</string>
+    <string name="kristal_runtime_refresh">Actualizar versiones</string>
+    <string name="kristal_runtime_catalog_unavailable">Versiones no disponibles</string>
+    <string name="kristal_runtime_catalog_error">No se pudieron cargar las versiones de Kristal: %1$s</string>
+    <string name="kristal_runtime_catalog_cached">El catálogo en línea no está disponible. Se muestra la lista guardada más reciente.</string>
+    <string name="kristal_runtime_version">Kristal %1$s</string>
+    <string name="kristal_runtime_prerelease">Versión preliminar</string>
+    <string name="kristal_runtime_download_progress">%1$s / %2$s</string>
+    <string name="kristal_runtime_downloaded_amount">%1$s descargados</string>
+    <string name="kristal_runtime_selected">Seleccionada</string>
+    <string name="kristal_runtime_recommended">Recomendada</string>
+    <string name="kristal_runtime_download">Descargar</string>
+    <string name="kristal_runtime_select">Seleccionar</string>
+    <string name="kristal_runtime_downloading">Descargando…</string>
+    <string name="kristal_runtime_validating">Validando…</string>
+    <string name="kristal_runtime_installing">Instalando…</string>
+    <string name="kristal_runtime_install_success">Kristal %1$s se descargó y quedó seleccionado.</string>
+    <string name="kristal_runtime_install_failed">No se pudo instalar el runtime: %1$s</string>
+    <string name="kristal_runtime_selection_saved">Versión del runtime seleccionada.</string>
+    <string name="kristal_runtime_remove">Eliminar</string>
+    <string name="kristal_runtime_remove_title">¿Eliminar runtime?</string>
+    <string name="kristal_runtime_remove_message">Kristal %1$s se eliminará del almacenamiento privado del launcher.</string>
+    <string name="kristal_runtime_removed">Runtime eliminado.</string>
+    <string name="kristal_runtime_remove_failed">No se pudo eliminar el runtime.</string>
+    <string name="kristal_runtime_open">Abrir Kristal Engine</string>
+    <string name="kristal_runtime_launch_title">Kristal Engine %1$s</string>
 </resources>

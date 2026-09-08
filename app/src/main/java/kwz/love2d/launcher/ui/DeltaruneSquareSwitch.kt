@@ -4,9 +4,12 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.RectF
+import android.os.Build
 import android.util.AttributeSet
 import android.view.View
+import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.Checkable
+import android.widget.Switch
 import com.google.android.material.color.MaterialColors
 import kwz.love2d.launcher.R
 
@@ -23,21 +26,22 @@ class DeltaruneSquareSwitch @JvmOverloads constructor(
         strokeWidth = density
     }
     private val thumbPaint = Paint()
+    private val trackBounds = RectF()
     private var checked = false
     private var checkedChangeListener: ((DeltaruneSquareSwitch, Boolean) -> Unit)? = null
 
     init {
         isClickable = true
         isFocusable = true
-        minimumWidth = dp(44)
-        minimumHeight = dp(24)
+        minimumWidth = dp(MINIMUM_TOUCH_SIZE_DP)
+        minimumHeight = dp(MINIMUM_TOUCH_SIZE_DP)
         importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_YES
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         setMeasuredDimension(
-            resolveSize(dp(44), widthMeasureSpec),
-            resolveSize(dp(24), heightMeasureSpec)
+            resolveSize(dp(MINIMUM_TOUCH_SIZE_DP), widthMeasureSpec),
+            resolveSize(dp(MINIMUM_TOUCH_SIZE_DP), heightMeasureSpec)
         )
     }
 
@@ -67,30 +71,37 @@ class DeltaruneSquareSwitch @JvmOverloads constructor(
             else -> onSurfaceVariant
         }
 
+        val trackWidth = dpF(TRACK_WIDTH_DP)
+        val trackHeight = dpF(TRACK_HEIGHT_DP)
+        val trackLeft = (width - trackWidth) / 2f
+        val trackTop = (height - trackHeight) / 2f
         val borderInset = density * 0.5f
-        val track = RectF(
-            borderInset,
-            borderInset,
-            width - borderInset,
-            height - borderInset
+        trackBounds.set(
+            trackLeft + borderInset,
+            trackTop + borderInset,
+            trackLeft + trackWidth - borderInset,
+            trackTop + trackHeight - borderInset
         )
         trackPaint.color = trackColor
         borderPaint.color = borderColor
-        canvas.drawRect(track, trackPaint)
-        canvas.drawRect(track, borderPaint)
+        canvas.drawRect(trackBounds, trackPaint)
+        canvas.drawRect(trackBounds, borderPaint)
 
         val padding = dpF(3f)
         val thumbSize = dpF(16f)
-        val left = if (checked) width - padding - thumbSize else padding
-        val top = (height - thumbSize) / 2f
+        val left = if (checked) {
+            trackLeft + trackWidth - padding - thumbSize
+        } else {
+            trackLeft + padding
+        }
+        val top = trackTop + (trackHeight - thumbSize) / 2f
         thumbPaint.color = thumbColor
         canvas.drawRect(left, top, left + thumbSize, top + thumbSize, thumbPaint)
     }
 
     override fun performClick(): Boolean {
-        super.performClick()
         toggle()
-        return true
+        return super.performClick()
     }
 
     override fun setChecked(value: Boolean) {
@@ -99,13 +110,30 @@ class DeltaruneSquareSwitch @JvmOverloads constructor(
         refreshDrawableState()
         invalidate()
         checkedChangeListener?.invoke(this, value)
-        sendAccessibilityEvent(android.view.accessibility.AccessibilityEvent.TYPE_VIEW_CLICKED)
     }
 
     override fun isChecked(): Boolean = checked
 
     override fun toggle() {
         setChecked(!checked)
+    }
+
+    override fun onCreateDrawableState(extraSpace: Int): IntArray {
+        val drawableState = super.onCreateDrawableState(extraSpace + 1)
+        if (checked) mergeDrawableStates(drawableState, CHECKED_STATE_SET)
+        return drawableState
+    }
+
+    override fun onInitializeAccessibilityNodeInfo(info: AccessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(info)
+        info.className = Switch::class.java.name
+        info.isCheckable = true
+        info.isChecked = checked
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            info.stateDescription = context.getString(
+                if (checked) R.string.switch_state_on else R.string.switch_state_off
+            )
+        }
     }
 
     override fun setEnabled(enabled: Boolean) {
@@ -127,4 +155,11 @@ class DeltaruneSquareSwitch @JvmOverloads constructor(
 
     private fun dp(value: Int): Int = (value * density).toInt()
     private fun dpF(value: Float): Float = value * density
+
+    private companion object {
+        const val MINIMUM_TOUCH_SIZE_DP = 48
+        const val TRACK_WIDTH_DP = 44f
+        const val TRACK_HEIGHT_DP = 24f
+        val CHECKED_STATE_SET = intArrayOf(android.R.attr.state_checked)
+    }
 }

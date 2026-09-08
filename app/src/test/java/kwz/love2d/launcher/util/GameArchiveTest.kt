@@ -82,6 +82,7 @@ class GameArchiveTest {
         val directory = Files.createTempDirectory("renamed-love-test").toFile()
         val renamedLove = directory.resolve("distribution.zip")
         val iconBytes = byteArrayOf(0x01, 0x23, 0x45, 0x67)
+        val previewBytes = byteArrayOf(0x10, 0x20, 0x30, 0x40)
         try {
             ZipOutputStream(renamedLove.outputStream()).use { zip ->
                 writeEntry(zip, "examples/template/main.lua", "return true")
@@ -95,6 +96,10 @@ class GameArchiveTest {
                 zip.putNextEntry(ZipEntry("release/game/mods/real/icon.png"))
                 zip.write(iconBytes)
                 zip.closeEntry()
+                writeEntry(zip, "release/game/mods/real/preview/bg_01.png", "secondary")
+                zip.putNextEntry(ZipEntry("release/game/mods/real/preview/bg.png"))
+                zip.write(previewBytes)
+                zip.closeEntry()
             }
 
             val metadata = requireNotNull(LoveMetadataParser.inspectArchive(renamedLove))
@@ -104,6 +109,161 @@ class GameArchiveTest {
             assertEquals("v0.10.0", metadata.engineVersion)
             assertEquals("Author", metadata.author)
             assertArrayEquals(iconBytes, metadata.iconBytes)
+            assertEquals(1, metadata.previewLayers.size)
+            assertArrayEquals("secondary".toByteArray(), metadata.previewLayers[0])
+        } finally {
+            assertTrue(directory.deleteRecursively())
+        }
+    }
+
+    @Test
+    fun ignoresPreviewImagesThatAreNotBackgrounds() {
+        val directory = Files.createTempDirectory("preview-fallback-test").toFile()
+        val archiveFile = directory.resolve("preview-fallback.love")
+        val previewBytes = byteArrayOf(0x51, 0x52, 0x53)
+        try {
+            ZipOutputStream(archiveFile.outputStream()).use { zip ->
+                writeEntry(zip, "main.lua", "return true")
+                writeEntry(zip, "mods/demo/mod.json", """{"name":"Preview Fallback"}""")
+                zip.putNextEntry(ZipEntry("mods/demo/preview/forest-art.webp"))
+                zip.write(previewBytes)
+                zip.closeEntry()
+            }
+
+            val metadata = requireNotNull(LoveMetadataParser.inspectArchive(archiveFile))
+            assertTrue(metadata.previewLayers.isEmpty())
+        } finally {
+            assertTrue(directory.deleteRecursively())
+        }
+    }
+
+    @Test
+    fun fallsBackToKristalTitleBackgroundWhenTheModHasNoBackground() {
+        val directory = Files.createTempDirectory("default-preview-test").toFile()
+        val archiveFile = directory.resolve("default-preview.love")
+        val fallbackBytes = "default-kristal-background".toByteArray()
+        try {
+            ZipOutputStream(archiveFile.outputStream()).use { zip ->
+                writeEntry(zip, "main.lua", "return true")
+                writeEntry(zip, "mods/demo/mod.json", """{"name":"Default Preview"}""")
+                zip.putNextEntry(ZipEntry("assets/sprites/kristal/title_bg_wave.png"))
+                zip.write(fallbackBytes)
+                zip.closeEntry()
+            }
+
+            val metadata = requireNotNull(LoveMetadataParser.inspectArchive(archiveFile))
+            assertEquals(1, metadata.previewLayers.size)
+            assertArrayEquals(fallbackBytes, metadata.previewLayers.single())
+        } finally {
+            assertTrue(directory.deleteRecursively())
+        }
+    }
+
+    @Test
+    fun targetModSelectsMetadataAndPreviewInsteadOfAlphabeticalFolder() {
+        val directory = Files.createTempDirectory("target-mod-test").toFile()
+        val archiveFile = directory.resolve("target-mod.love")
+        val targetIcon = "target-icon".toByteArray()
+        val largestBackground = "largest-target-background".toByteArray()
+        try {
+            ZipOutputStream(archiveFile.outputStream()).use { zip ->
+                writeEntry(zip, "main.lua", "return true")
+                writeEntry(zip, "src/engine/statevars.lua", "TARGET_MOD = \"actual_game\"")
+                writeEntry(zip, "mods/aaa/mod.json", """{"id":"wrong","name":"Wrong Game"}""")
+                writeEntry(zip, "mods/aaa/preview/bg.png", "wrong-background-is-deliberately-long")
+                writeEntry(
+                    zip,
+                    "mods/zzz/mod.json",
+                    """{"id":"actual_game","name":"Actual Game","version":"v2.0.0"}"""
+                )
+                zip.putNextEntry(ZipEntry("mods/zzz/preview/icon_01.png"))
+                zip.write(targetIcon)
+                zip.closeEntry()
+                writeEntry(zip, "mods/zzz/preview/bg.png", "small")
+                zip.putNextEntry(ZipEntry("mods/zzz/preview/bg_01.png"))
+                zip.write(largestBackground)
+                zip.closeEntry()
+            }
+
+            val metadata = requireNotNull(LoveMetadataParser.inspectArchive(archiveFile))
+            assertEquals("Actual Game", metadata.title)
+            assertEquals("v2.0.0", metadata.version)
+            assertArrayEquals(targetIcon, metadata.iconBytes)
+            assertArrayEquals(largestBackground, metadata.previewLayers.single())
+        } finally {
+            assertTrue(directory.deleteRecursively())
+        }
+    }
+
+    @Test
+    fun previewScriptSelectsSemanticBackgroundInsteadOfLargerOverlay() {
+        val directory = Files.createTempDirectory("script-preview-test").toFile()
+        val archiveFile = directory.resolve("script-preview.love")
+        val roomBackground = "room-background".toByteArray()
+        try {
+            ZipOutputStream(archiveFile.outputStream()).use { zip ->
+                writeEntry(zip, "main.lua", "return true")
+                writeEntry(zip, "mods/frozen/mod.json", """{"id":"frozen","name":"Frozen"}""")
+                writeEntry(
+                    zip,
+                    "mods/frozen/preview/preview.lua",
+                    """
+                    local preview = {}
+                    function preview:init(mod)
+                        self.bg = love.graphics.newImage(mod.path.."/preview/room.png")
+                        self.overlay = love.graphics.newImage(mod.path.."/preview/very_large_overlay.png")
+                    end
+                    return preview
+                    """.trimIndent()
+                )
+                zip.putNextEntry(ZipEntry("mods/frozen/preview/room.png"))
+                zip.write(roomBackground)
+                zip.closeEntry()
+                writeEntry(
+                    zip,
+                    "mods/frozen/preview/very_large_overlay.png",
+                    "this-overlay-is-larger-but-is-not-a-background"
+                )
+                writeEntry(zip, "assets/sprites/kristal/title_bg_wave.png", "fallback")
+            }
+
+            val metadata = requireNotNull(LoveMetadataParser.inspectArchive(archiveFile))
+            assertArrayEquals(roomBackground, metadata.previewLayers.single())
+        } finally {
+            assertTrue(directory.deleteRecursively())
+        }
+    }
+
+    @Test
+    fun previewScriptCanResolveAModRelativePathHelper() {
+        val directory = Files.createTempDirectory("mod-preview-helper-test").toFile()
+        val archiveFile = directory.resolve("mod-preview-helper.love")
+        val modBackground = "mod-specific-wave".toByteArray()
+        try {
+            ZipOutputStream(archiveFile.outputStream()).use { zip ->
+                writeEntry(zip, "main.lua", "return true")
+                writeEntry(zip, "mods/crocker/mod.json", """{"id":"crocker","name":"Crocker"}""")
+                writeEntry(
+                    zip,
+                    "mods/crocker/preview/preview.lua",
+                    """
+                    function preview:init(mod)
+                        self.base_path = mod.path
+                        local function p(file) return self.base_path .. "/" .. file end
+                        self.background_image_wave = love.graphics.newImage(
+                            p("assets/sprites/kristal/title_bg_wave.png")
+                        )
+                    end
+                    """.trimIndent()
+                )
+                zip.putNextEntry(ZipEntry("mods/crocker/assets/sprites/kristal/title_bg_wave.png"))
+                zip.write(modBackground)
+                zip.closeEntry()
+                writeEntry(zip, "assets/sprites/kristal/title_bg_wave.png", "global-fallback")
+            }
+
+            val metadata = requireNotNull(LoveMetadataParser.inspectArchive(archiveFile))
+            assertArrayEquals(modBackground, metadata.previewLayers.single())
         } finally {
             assertTrue(directory.deleteRecursively())
         }

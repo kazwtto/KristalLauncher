@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,7 +31,9 @@ object GamePatchSettingsDialog {
         val dialogContext = ThemeManager.themedContext(context)
         val deltarune = ThemeManager.isDeltaruneTheme(dialogContext)
         val amoled = deltarune && ThemeManager.isDeltaruneAmoledEnabled(dialogContext)
-        val dialogView = LayoutInflater.from(dialogContext).inflate(R.layout.dialog_game_patches, null)
+        val inflationRoot = FrameLayout(dialogContext)
+        val dialogView = LayoutInflater.from(dialogContext)
+            .inflate(R.layout.dialog_game_patches, inflationRoot, false)
         val root = dialogView.findViewById<View>(R.id.gamePatchesDialogRoot)
         val title = dialogView.findViewById<TextView>(R.id.tvGamePatchesTitle)
         val recyclerView = dialogView.findViewById<RecyclerView>(R.id.rvGamePatches)
@@ -109,10 +112,9 @@ object GamePatchSettingsDialog {
             val margin = (24f * density).toInt()
             val maxWidth = (560f * density).toInt()
             val targetWidth = (metrics.widthPixels - margin * 2)
+                .coerceAtLeast(1)
                 .coerceAtMost(maxWidth)
-                .coerceAtLeast((280f * density).toInt())
-            val maxHeight = (metrics.heightPixels - margin * 2)
-                .coerceAtLeast((320f * density).toInt())
+            val availableHeight = (metrics.heightPixels - margin * 2).coerceAtLeast(1)
 
             window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             window.setGravity(Gravity.CENTER)
@@ -121,11 +123,11 @@ object GamePatchSettingsDialog {
             window.setLayout(targetWidth, WindowManager.LayoutParams.WRAP_CONTENT)
 
             dialogView.post {
-                val excess = (dialogView.height - maxHeight).coerceAtLeast(0)
-                if (excess > 0) {
-                    val minRecyclerHeight = (120f * density).toInt()
+                val fixedContentHeight = (dialogView.height - recyclerView.height).coerceAtLeast(0)
+                val availableRecyclerHeight = (availableHeight - fixedContentHeight).coerceAtLeast(0)
+                if (recyclerView.height > availableRecyclerHeight) {
                     recyclerView.layoutParams = recyclerView.layoutParams.apply {
-                        height = (recyclerView.height - excess).coerceAtLeast(minRecyclerHeight)
+                        height = availableRecyclerHeight
                     }
                     recyclerView.requestLayout()
                 }

@@ -29,12 +29,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kwz.love2d.launcher.adapter.GameAdapter
 import kwz.love2d.launcher.model.LoveGame
 import kwz.love2d.launcher.util.FavoritesManager
 import kwz.love2d.launcher.util.FolderPermissionManager
 import kwz.love2d.launcher.util.GameCacheManager
 import kwz.love2d.launcher.util.GameLauncher
+import kwz.love2d.launcher.util.KristalRuntimeStorage
 import kwz.love2d.launcher.util.GameScanner
 import kwz.love2d.launcher.util.NavigationAnimations
 import kwz.love2d.launcher.util.ThemeManager
@@ -62,6 +64,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var etSearch: EditText
     private lateinit var btnFilter: ImageView
     private lateinit var fabAddGames: ExtendedFloatingActionButton
+    private lateinit var fabKristalRuntime: FloatingActionButton
     private lateinit var bottomNavigation: BottomNavigationView
     private lateinit var topAppBar: MaterialToolbar
 
@@ -114,6 +117,7 @@ class MainActivity : AppCompatActivity() {
         etSearch = findViewById(R.id.etSearch)
         btnFilter = findViewById(R.id.btnFilter)
         fabAddGames = findViewById(R.id.fabAddGames)
+        fabKristalRuntime = findViewById(R.id.fabKristalRuntime)
         bottomNavigation = findViewById(R.id.bottomNavigation)
 
         val prefs = getSharedPreferences("launcher_prefs", Context.MODE_PRIVATE)
@@ -138,6 +142,12 @@ class MainActivity : AppCompatActivity() {
 
         fabAddGames.setOnClickListener {
             folderPickerLauncher.launch(null)
+        }
+
+        fabKristalRuntime.setOnClickListener {
+            KristalRuntimeStorage.selectedRuntime(this)?.let { runtime ->
+                GameLauncher.launchKristalRuntime(this, runtime)
+            } ?: updateKristalRuntimeButton()
         }
 
         btnFilter.setOnClickListener { view ->
@@ -181,6 +191,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        updateKristalRuntimeButton()
         lifecycleScope.launch(Dispatchers.IO) {
             GameCacheManager.clearRuntimeGameCopies(this@MainActivity)
         }
@@ -203,6 +214,14 @@ class MainActivity : AppCompatActivity() {
             }
         } else {
             applyCurrentTabFilter()
+        }
+    }
+
+    private fun updateKristalRuntimeButton() {
+        fabKristalRuntime.visibility = if (KristalRuntimeStorage.selectedRuntime(this) != null) {
+            View.VISIBLE
+        } else {
+            View.GONE
         }
     }
 

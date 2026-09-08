@@ -12,8 +12,10 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import kwz.love2d.launcher.R
+import kwz.love2d.launcher.GameDetailsActivity
 import kwz.love2d.launcher.model.LoveGame
 import kwz.love2d.launcher.ui.GamePatchSettingsDialog
+import kwz.love2d.launcher.ui.LayeredPreviewView
 import kwz.love2d.launcher.util.FavoritesManager
 import kwz.love2d.launcher.util.ThemeManager
 import kwz.love2d.launcher.util.showThemed
@@ -29,7 +31,6 @@ class GameAdapter(
     companion object {
         const val TYPE_LIST = 0
         const val TYPE_GRID = 1
-
         private val GAME_DIFF = object : DiffUtil.ItemCallback<LoveGame>() {
             override fun areItemsTheSame(oldItem: LoveGame, newItem: LoveGame): Boolean {
                 return oldItem.stableId == newItem.stableId
@@ -41,10 +42,16 @@ class GameAdapter(
                     old.sizeBytes == new.sizeBytes &&
                     old.lastModified == new.lastModified &&
                     old.subtitle == new.subtitle &&
+                    old.description == new.description &&
                     old.version == new.version &&
                     old.engineVer == new.engineVer &&
                     old.author == new.author &&
-                    old.hasIcon == new.hasIcon
+                    old.projectId == new.projectId &&
+                    old.chapter == new.chapter &&
+                    old.startMap == new.startMap &&
+                    old.party == new.party &&
+                    old.hasIcon == new.hasIcon &&
+                    old.hasPreviewBackground == new.hasPreviewBackground
             }
         }
     }
@@ -88,6 +95,8 @@ class GameAdapter(
 
     inner class GameViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val ivGameIcon: ImageView = itemView.findViewById(R.id.ivGameIcon)
+        private val ivGamePreview: LayeredPreviewView? = itemView.findViewById(R.id.ivGamePreview)
+        private val gamePreviewScrim: View? = itemView.findViewById(R.id.gamePreviewScrim)
         private val tvGameTitle: TextView = itemView.findViewById(R.id.tvGameTitle)
         private val tvFileName: TextView? = itemView.findViewById(R.id.tvFileName)
         private val btnPlay: View? = itemView.findViewById(R.id.btnPlay)
@@ -98,6 +107,7 @@ class GameAdapter(
         private val tvAuthor: TextView? = itemView.findViewById(R.id.tvAuthor)
         private val tvVersion: TextView? = itemView.findViewById(R.id.tvVersion)
         private val tvEngineVer: TextView? = itemView.findViewById(R.id.tvEngineVer)
+        private val gameTagsContainer: View? = itemView.findViewById(R.id.gameTagsContainer)
 
         fun bind(game: LoveGame) {
             tvGameTitle.text = game.title
@@ -108,7 +118,7 @@ class GameAdapter(
                 tvSubtitle?.visibility = View.VISIBLE
             } else {
                 tvSubtitle?.text = null
-                tvSubtitle?.visibility = View.INVISIBLE
+                tvSubtitle?.visibility = if (gameTagsContainer != null) View.GONE else View.INVISIBLE
             }
 
             if (!game.author.isNullOrBlank()) {
@@ -132,6 +142,10 @@ class GameAdapter(
                 tvEngineVer?.visibility = View.GONE
             }
 
+            gameTagsContainer?.visibility = if (
+                !game.version.isNullOrBlank() || !game.engineVer.isNullOrBlank()
+            ) View.VISIBLE else View.GONE
+
             if (game.icon != null) {
                 ivGameIcon.setImageBitmap(game.icon)
                 (ivGameIcon.drawable as? android.graphics.drawable.BitmapDrawable)?.paint?.isFilterBitmap = false
@@ -140,17 +154,30 @@ class GameAdapter(
                 ivGameIcon.setImageResource(R.drawable.ic_launcher)
             }
 
-            itemView.setOnClickListener(null)
-            itemView.isClickable = false
+            bindPreviewBackground(game)
+
+            itemView.setOnClickListener {
+                GameDetailsActivity.open(context, game)
+            }
+            itemView.isClickable = true
 
             btnPlay?.setOnClickListener {
-                FavoritesManager.addRecentGame(context, game)
-                onGameClick(game)
+                launch(game)
             }
 
             btnMenuMore?.setOnClickListener { view ->
                 showPopupMenu(view, game)
             }
+        }
+
+        private fun bindPreviewBackground(game: LoveGame) {
+            ivGamePreview?.setLayers(game.previewBackgrounds)
+            gamePreviewScrim?.visibility = View.VISIBLE
+        }
+
+        private fun launch(game: LoveGame) {
+            FavoritesManager.addRecentGame(context, game)
+            onGameClick(game)
         }
 
         private fun showPopupMenu(view: View, game: LoveGame) {
@@ -181,4 +208,5 @@ class GameAdapter(
         }
 
     }
+
 }

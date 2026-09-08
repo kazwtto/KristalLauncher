@@ -83,7 +83,7 @@ object ThemeManager {
         preferences(context)
             .edit()
             .putString(KEY_THEME, theme)
-            .commit()
+            .apply()
 
         val targetMode = nightModeFor(theme)
         if (AppCompatDelegate.getDefaultNightMode() != targetMode) {
@@ -95,7 +95,7 @@ object ThemeManager {
         preferences(context)
             .edit()
             .putBoolean(KEY_DELTARUNE_AMOLED, enabled)
-            .commit()
+            .apply()
     }
 
     fun isDeltaruneAmoledEnabled(context: Context): Boolean {
@@ -122,55 +122,32 @@ object ThemeManager {
         val decor = activity.window.decorView
         applyDeltaruneStyle(activity, decor)
         applyAmoledMainChrome(activity)
-        decor.post {
-            applyDeltaruneStyle(activity, decor)
-            applyAmoledMainChrome(activity)
-        }
     }
 
 
     private fun applyAmoledMainChrome(activity: Activity) {
         if (!isDeltaruneTheme(activity) || !isDeltaruneAmoledEnabled(activity)) return
 
-        val bottomNavigationId = activity.resources.getIdentifier(
-            "bottomNavigation",
-            "id",
-            activity.packageName
-        )
-        if (bottomNavigationId != 0) {
-            activity.findViewById<View>(bottomNavigationId)?.let { bottomNavigation ->
-                val applyBlackBackground = {
-                    val black = ColorStateList.valueOf(Color.BLACK)
-                    bottomNavigation.backgroundTintList = black
-                    bottomNavigation.setBackgroundColor(Color.BLACK)
-                    bottomNavigation.elevation = 0f
-                    applyDeltaruneStyle(activity, bottomNavigation)
-                }
-                applyBlackBackground()
-                bottomNavigation.post { applyBlackBackground() }
-            }
+        activity.findViewById<View>(R.id.bottomNavigation)?.let { bottomNavigation ->
+            val black = ColorStateList.valueOf(Color.BLACK)
+            bottomNavigation.backgroundTintList = black
+            bottomNavigation.setBackgroundColor(Color.BLACK)
+            bottomNavigation.elevation = 0f
+            applyDeltaruneStyle(activity, bottomNavigation)
         }
 
-        val searchContainerId = activity.resources.getIdentifier(
-            "searchContainer",
-            "id",
-            activity.packageName
-        )
-        if (searchContainerId != 0) {
-            val searchContainer = activity.findViewById<View>(searchContainerId)
-            if (searchContainer != null) {
-                val outlineColor = MaterialColors.getColor(
-                    activity,
-                    com.google.android.material.R.attr.colorOutline,
-                    activity.getColor(R.color.m3_outline)
-                )
-                val density: Float = activity.resources.displayMetrics.density
-                val strokeWidth = (density + 0.5f).toInt().coerceAtLeast(1)
-                searchContainer.background = GradientDrawable().apply {
-                    setColor(Color.BLACK)
-                    cornerRadius = 0f
-                    setStroke(strokeWidth, outlineColor)
-                }
+        activity.findViewById<View>(R.id.searchContainer)?.let { searchContainer ->
+            val outlineColor = MaterialColors.getColor(
+                activity,
+                com.google.android.material.R.attr.colorOutline,
+                activity.getColor(R.color.m3_outline)
+            )
+            val density = activity.resources.displayMetrics.density
+            val strokeWidth = (density + 0.5f).toInt().coerceAtLeast(1)
+            searchContainer.background = GradientDrawable().apply {
+                setColor(Color.BLACK)
+                cornerRadius = 0f
+                setStroke(strokeWidth, outlineColor)
             }
         }
     }
@@ -236,7 +213,13 @@ object ThemeManager {
 
     fun applyDeltaruneStyle(context: Context, root: View) {
         if (!isDeltaruneTheme(context)) return
-        applyDeltaruneStyleRecursive(context, root, getPixelTypefaces(context))
+        val metrics = context.resources.displayMetrics
+        applyDeltaruneStyleRecursive(
+            root = root,
+            typefaces = getPixelTypefaces(context),
+            compactTextThreshold = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12f, metrics),
+            compactBoldThreshold = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 13.5f, metrics)
+        )
     }
 
     @DrawableRes
@@ -358,30 +341,33 @@ object ThemeManager {
     }
 
     private fun applyDeltaruneStyleRecursive(
-        context: Context,
-        view: View,
-        typefaces: PixelTypefaces?
+        root: View,
+        typefaces: PixelTypefaces?,
+        compactTextThreshold: Float,
+        compactBoldThreshold: Float
     ) {
-        squareDeltaruneShape(view)
-        if (view is TextView && typefaces != null) {
-            val style = view.typeface?.style ?: Typeface.NORMAL
+        squareDeltaruneShape(root)
+        if (root is TextView && typefaces != null) {
+            val style = root.typeface?.style ?: Typeface.NORMAL
             val bold = style and Typeface.BOLD != 0
-            val metrics = context.resources.displayMetrics
-            val compactTextThreshold = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 12f, metrics)
-            val compactBoldThreshold = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 13.5f, metrics)
-            val mono = view is Button || view.textSize < compactTextThreshold ||
-                (bold && view.textSize <= compactBoldThreshold)
+            val mono = root is Button || root.textSize < compactTextThreshold ||
+                (bold && root.textSize <= compactBoldThreshold)
 
-            view.typeface = when {
+            root.typeface = when {
                 mono && bold -> typefaces.monoBold
                 mono -> typefaces.mono
                 bold -> typefaces.bold
                 else -> typefaces.regular
             }
         }
-        if (view is ViewGroup) {
-            for (index in 0 until view.childCount) {
-                applyDeltaruneStyleRecursive(context, view.getChildAt(index), typefaces)
+        if (root is ViewGroup) {
+            for (index in 0 until root.childCount) {
+                applyDeltaruneStyleRecursive(
+                    root.getChildAt(index),
+                    typefaces,
+                    compactTextThreshold,
+                    compactBoldThreshold
+                )
             }
         }
     }
@@ -463,7 +449,11 @@ object ThemeManager {
                 .setAllCornerSizes(0f)
                 .build()
         }
-        (view.background as? GradientDrawable)?.cornerRadius = 0f
+        (view.background as? GradientDrawable)?.let { background ->
+            val isolatedBackground = background.mutate() as GradientDrawable
+            isolatedBackground.cornerRadius = 0f
+            if (isolatedBackground !== background) view.background = isolatedBackground
+        }
     }
 
     private data class PixelTypefaces(

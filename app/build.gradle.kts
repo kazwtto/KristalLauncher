@@ -11,12 +11,13 @@ android {
         applicationId = "kwz.love2d.launcher"
         minSdk = 24
         targetSdk = 34
-        versionCode = 28
-        versionName = "0.17.11"
+        versionCode = 42
+        versionName = "0.17.25"
 
         buildConfigField("String", "GITHUB_REPOSITORY_URL", "\"https://github.com/kazwtto/KristalLauncher\"")
         buildConfigField("String", "GITHUB_API_URL", "\"https://api.github.com/repos/kazwtto/KristalLauncher\"")
         buildConfigField("String", "PATCH_CATALOG_URL", "\"https://raw.githubusercontent.com/kazwtto/KristalLauncher/main/patches/catalog.json\"")
+        buildConfigField("String", "KRISTAL_RELEASES_API_URL", "\"https://api.github.com/repos/KristalTeam/Kristal/releases?per_page=100\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 

@@ -164,16 +164,16 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="AMOLED"
+                            android:text="@string/theme_deltarune_amoled"
                             android:textColor="?attr/colorOnSurface"
                             android:textSize="14sp"
                             android:textStyle="bold" />
 
                         <kwz.love2d.launcher.ui.DeltaruneSquareSwitch
                             android:id="@+id/switchDeltaruneAmoled"
-                            android:layout_width="44dp"
-                            android:layout_height="24dp"
-                            android:contentDescription="AMOLED" />
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:contentDescription="@string/theme_deltarune_amoled" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -216,6 +216,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
+                    android:paddingStart="0dp"
                     android:paddingEnd="12dp">
 
                     <TextView
@@ -244,8 +245,8 @@
 
                 <kwz.love2d.launcher.ui.DeltaruneSquareSwitch
                     android:id="@+id/switchAnimationsDeltarune"
-                    android:layout_width="44dp"
-                    android:layout_height="24dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:contentDescription="@string/animations_enabled"
                     android:visibility="gone" />
             </LinearLayout>

@@ -33,6 +33,11 @@
             android:theme="@style/Theme.KristalLauncher" />
 
         <activity
+            android:name=".GameDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KristalLauncher" />
+
+        <activity
             android:name=".PatchesSettingsActivity"
             android:exported="false"
             android:label="@string/patch_center_title"
@@ -48,6 +53,12 @@
             android:name=".AppearanceSettingsActivity"
             android:exported="false"
             android:label="@string/appearance_title"
+            android:theme="@style/Theme.KristalLauncher" />
+
+        <activity
+            android:name=".KristalRuntimeSettingsActivity"
+            android:exported="false"
+            android:label="@string/kristal_runtime_title"
             android:theme="@style/Theme.KristalLauncher" />
 
         <!-- Embedded Native LÖVE2D Game Activity -->

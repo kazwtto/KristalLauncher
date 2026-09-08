@@ -9,12 +9,18 @@ data class LoveGame(
     val uri: Uri,
     val archiveEntryPath: String? = null,
     val icon: Bitmap? = null,
+    val previewBackgrounds: List<Bitmap> = emptyList(),
     val sizeBytes: Long = 0,
     val lastModified: Long = 0,
     val subtitle: String? = null,
+    val description: String? = null,
     val version: String? = null,
     val engineVer: String? = null,
-    val author: String? = null
+    val author: String? = null,
+    val projectId: String? = null,
+    val chapter: String? = null,
+    val startMap: String? = null,
+    val party: List<String> = emptyList()
 ) {
     val stableId: String
         get() = archiveEntryPath
@@ -26,4 +32,7 @@ data class LoveGame(
 
     val hasIcon: Boolean
         get() = icon != null
+
+    val hasPreviewBackground: Boolean
+        get() = previewBackgrounds.isNotEmpty()
 }

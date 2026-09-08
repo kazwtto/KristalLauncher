@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/tutorialRoot"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tutorialRoot"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingStart="20dp"
     android:paddingTop="16dp"
-    android:paddingEnd="20dp"
-    android:paddingBottom="0dp">
+    android:paddingEnd="20dp">
 
     <LinearLayout
         android:id="@+id/tutorialHeader"
@@ -51,7 +50,6 @@
                 android:textColor="?attr/colorOnSurface"
                 android:textSize="18sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
 
         <ImageButton
@@ -63,14 +61,13 @@
             android:padding="10dp"
             android:src="?attr/kristalIconClose"
             app:tint="?attr/colorOnSurfaceVariant" />
-
     </LinearLayout>
 
     <TextView
         android:id="@+id/tvTutorialStep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/bg_tutorial_step"
         android:paddingStart="10dp"
         android:paddingTop="5dp"
@@ -80,790 +77,112 @@
         android:textSize="12sp"
         android:textStyle="bold" />
 
-    <ViewFlipper
-        android:id="@+id/tutorialFlipper"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/tutorialScroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:animateFirstView="false">
+        android:layout_marginTop="10dp"
+        android:clipToPadding="false"
+        android:fillViewport="false"
+        android:overScrollMode="never"
+        android:scrollbars="none">
 
-            <LinearLayout
+        <LinearLayout
+            android:id="@+id/tutorialPageContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="132dp"
+                android:importantForAccessibility="noHideDescendants"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                app:cardCornerRadius="?attr/kristalCorner22"
+                app:cardElevation="0dp"
+                app:strokeColor="?attr/colorOutline"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <ImageView
+                        android:id="@+id/ivTutorialIllustration"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/bg_primary_icon_frame"
+                        android:contentDescription="@null"
+                        android:padding="10dp"
+                        app:tint="?attr/colorOnPrimary" />
+
+                    <TextView
+                        android:id="@+id/tvTutorialIllustrationTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:gravity="center"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvTutorialIllustrationSubtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tvTutorialPageTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_marginTop="14dp"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="184dp"
-                    android:importantForAccessibility="noHideDescendants"
-                    app:cardBackgroundColor="?attr/colorSurfaceVariant"
-                    app:cardCornerRadius="?attr/kristalCorner22"
-                    app:cardElevation="0dp"
-                    app:strokeColor="?attr/colorOutline"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:padding="12dp">
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginEnd="10dp"
-                            android:layout_weight="1"
-                            android:gravity="center_vertical"
-                            android:orientation="vertical"
-                            android:paddingHorizontal="4dp">
-
-                            <View
-                                android:layout_width="78dp"
-                                android:layout_height="8dp"
-                                android:background="?attr/colorOutline" />
-
-                            <View
-                                android:layout_width="54dp"
-                                android:layout_height="8dp"
-                                android:layout_marginTop="7dp"
-                                android:background="?attr/colorOutline" />
-
-                            <View
-                                android:layout_width="88dp"
-                                android:layout_height="8dp"
-                                android:layout_marginTop="24dp"
-                                android:background="?attr/colorOutline" />
-
-                            <View
-                                android:layout_width="62dp"
-                                android:layout_height="8dp"
-                                android:layout_marginTop="7dp"
-                                android:background="?attr/colorOutline" />
-
-                            <View
-                                android:layout_width="88dp"
-                                android:layout_height="8dp"
-                                android:layout_marginTop="24dp"
-                                android:background="?attr/colorOutline" />
-
-                            <View
-                                android:layout_width="48dp"
-                                android:layout_height="8dp"
-                                android:layout_marginTop="7dp"
-                                android:background="?attr/colorOutline" />
-
-                        </LinearLayout>
-
-                        <com.google.android.material.card.MaterialCardView
-                            android:layout_width="126dp"
-                            android:layout_height="160dp"
-                            app:cardBackgroundColor="?attr/colorSurface"
-                            app:cardCornerRadius="?attr/kristalCorner16"
-                            app:cardElevation="0dp"
-                            app:strokeColor="?attr/colorOutline"
-                            app:strokeWidth="1dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="9dp"
-                                    android:background="?attr/colorPrimary" />
-
-                                <ImageView
-                                    android:layout_width="52dp"
-                                    android:layout_height="52dp"
-                                    android:layout_gravity="center_horizontal"
-                                    android:layout_marginTop="22dp"
-                                    android:contentDescription="@null"
-                                    android:src="?attr/kristalIconFolder"
-                                    app:tint="?attr/colorPrimary" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_marginTop="14dp"
-                                    android:layout_marginEnd="10dp"
-                                    android:background="@drawable/bg_tutorial_mock_button"
-                                    android:gravity="center"
-                                    android:paddingVertical="8dp"
-                                    android:text="@string/tutorial_mock_games_folder"
-                                    android:textColor="?attr/colorOnPrimary"
-                                    android:textSize="10sp"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-                        </com.google.android.material.card.MaterialCardView>
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:text="@string/tutorial_step_1_title"
-                    android:textColor="?attr/colorOnSurface"
-                    android:textSize="21sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:lineSpacingExtra="2dp"
-                    android:text="@string/tutorial_step_1_body"
-                    android:textColor="?attr/colorOnSurfaceVariant"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/bg_tutorial_tip"
-                    android:padding="12dp"
-                    android:text="@string/tutorial_step_1_tip"
-                    android:textColor="?attr/colorOnPrimaryContainer"
-                    android:textSize="13sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/tvTutorialPageBody"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="2dp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="14sp" />
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="184dp"
-                    android:importantForAccessibility="noHideDescendants"
-                    app:cardBackgroundColor="?attr/colorSurfaceVariant"
-                    app:cardCornerRadius="?attr/kristalCorner22"
-                    app:cardElevation="0dp"
-                    app:strokeColor="?attr/colorOutline"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="14dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:contentDescription="@null"
-                                android:src="?attr/kristalIconFolder"
-                                app:tint="?attr/colorPrimary" />
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="9dp"
-                                android:layout_weight="1"
-                                android:text="@string/tutorial_mock_games_path"
-                                android:textColor="?attr/colorOnSurface"
-                                android:textSize="13sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/tutorial_mock_check"
-                                android:textColor="?attr/colorPrimary"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="40dp"
-                                android:background="@drawable/bg_tutorial_file_row"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal"
-                                android:paddingHorizontal="10dp">
-
-                                <TextView
-                                    android:layout_width="44dp"
-                                    android:layout_height="24dp"
-                                    android:background="@drawable/bg_tutorial_extension"
-                                    android:gravity="center"
-                                    android:text="@string/tutorial_mock_extension_love"
-                                    android:textColor="?attr/colorOnPrimaryContainer"
-                                    android:textSize="9sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_weight="1"
-                                    android:text="@string/tutorial_mock_file_love"
-                                    android:textColor="?attr/colorOnSurface"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="40dp"
-                                android:layout_marginTop="5dp"
-                                android:background="@drawable/bg_tutorial_file_row"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal"
-                                android:paddingHorizontal="10dp">
-
-                                <TextView
-                                    android:layout_width="44dp"
-                                    android:layout_height="24dp"
-                                    android:background="@drawable/bg_tutorial_extension"
-                                    android:gravity="center"
-                                    android:text="@string/tutorial_mock_extension_zip"
-                                    android:textColor="?attr/colorOnPrimaryContainer"
-                                    android:textSize="9sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_weight="1"
-                                    android:text="@string/tutorial_mock_file_zip"
-                                    android:textColor="?attr/colorOnSurface"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="40dp"
-                                android:layout_marginTop="5dp"
-                                android:background="@drawable/bg_tutorial_file_row"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal"
-                                android:paddingHorizontal="10dp">
-
-                                <TextView
-                                    android:layout_width="44dp"
-                                    android:layout_height="24dp"
-                                    android:background="@drawable/bg_tutorial_extension"
-                                    android:gravity="center"
-                                    android:text="@string/tutorial_mock_extension_exe"
-                                    android:textColor="?attr/colorOnPrimaryContainer"
-                                    android:textSize="9sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="10dp"
-                                    android:layout_weight="1"
-                                    android:text="@string/tutorial_mock_file_exe"
-                                    android:textColor="?attr/colorOnSurface"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:text="@string/tutorial_step_2_title"
-                    android:textColor="?attr/colorOnSurface"
-                    android:textSize="21sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:lineSpacingExtra="2dp"
-                    android:text="@string/tutorial_step_2_body"
-                    android:textColor="?attr/colorOnSurfaceVariant"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/bg_tutorial_tip"
-                    android:padding="12dp"
-                    android:text="@string/tutorial_step_2_tip"
-                    android:textColor="?attr/colorOnPrimaryContainer"
-                    android:textSize="13sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/tvTutorialPageTip"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="184dp"
-                    android:importantForAccessibility="noHideDescendants"
-                    app:cardBackgroundColor="?attr/colorSurfaceVariant"
-                    app:cardCornerRadius="?attr/kristalCorner22"
-                    app:cardElevation="0dp"
-                    app:strokeColor="?attr/colorOutline"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="14dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:background="@drawable/bg_tutorial_file_row"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal"
-                            android:paddingHorizontal="10dp">
-
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:contentDescription="@null"
-                                android:src="?attr/kristalIconSearch"
-                                app:tint="?attr/colorOnSurfaceVariant" />
-
-                            <View
-                                android:layout_width="74dp"
-                                android:layout_height="7dp"
-                                android:layout_marginStart="8dp"
-                                android:background="?attr/colorOutline" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="48dp"
-                                android:layout_height="48dp"
-                                android:contentDescription="@null"
-                                android:src="?attr/kristalIconFolder"
-                                app:tint="?attr/colorOnSurfaceVariant" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="6dp"
-                                android:text="@string/tutorial_mock_empty_library"
-                                android:textColor="?attr/colorOnSurface"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="40dp"
-                                android:layout_marginTop="10dp"
-                                android:clickable="false"
-                                android:focusable="false"
-                                android:minHeight="0dp"
-                                android:text="@string/select_folder"
-                                android:textColor="?attr/colorOnPrimary"
-                                android:textSize="11sp"
-                                app:backgroundTint="?attr/colorPrimary"
-                                app:cornerRadius="?attr/kristalCorner20"
-                                app:icon="?attr/kristalIconFolder"
-                                app:iconSize="16dp"
-                                app:iconTint="?attr/colorOnPrimary" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:text="@string/tutorial_step_3_title"
-                    android:textColor="?attr/colorOnSurface"
-                    android:textSize="21sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:lineSpacingExtra="2dp"
-                    android:text="@string/tutorial_step_3_body"
-                    android:textColor="?attr/colorOnSurfaceVariant"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/bg_tutorial_tip"
-                    android:padding="12dp"
-                    android:text="@string/tutorial_step_3_tip"
-                    android:textColor="?attr/colorOnPrimaryContainer"
-                    android:textSize="13sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="184dp"
-                    android:importantForAccessibility="noHideDescendants"
-                    app:cardBackgroundColor="?attr/colorSurfaceVariant"
-                    app:cardCornerRadius="?attr/kristalCorner22"
-                    app:cardElevation="0dp"
-                    app:strokeColor="?attr/colorOutline"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="14dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="36dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="22dp"
-                                android:layout_height="22dp"
-                                android:contentDescription="@null"
-                                android:src="?attr/kristalIconArrowBack"
-                                app:tint="?attr/colorOnSurfaceVariant" />
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_weight="1"
-                                android:text="@string/tutorial_mock_folder_picker_title"
-                                android:textColor="?attr/colorOnSurface"
-                                android:textSize="13sp"
-                                android:textStyle="bold" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_marginTop="6dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_tutorial_file_row"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="44dp"
-                                android:layout_height="44dp"
-                                android:contentDescription="@null"
-                                android:src="?attr/kristalIconFolder"
-                                app:tint="?attr/colorPrimary" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="6dp"
-                                android:text="@string/tutorial_mock_games_folder"
-                                android:textColor="?attr/colorOnSurface"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="36dp"
-                            android:layout_marginTop="8dp"
-                            android:background="@drawable/bg_tutorial_mock_button"
-                            android:gravity="center"
-                            android:text="@string/tutorial_mock_use_folder"
-                            android:textColor="?attr/colorOnPrimary"
-                            android:textSize="11sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:text="@string/tutorial_step_4_title"
-                    android:textColor="?attr/colorOnSurface"
-                    android:textSize="21sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:lineSpacingExtra="2dp"
-                    android:text="@string/tutorial_step_4_body"
-                    android:textColor="?attr/colorOnSurfaceVariant"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/bg_tutorial_tip"
-                    android:padding="12dp"
-                    android:text="@string/tutorial_step_4_tip"
-                    android:textColor="?attr/colorOnPrimaryContainer"
-                    android:textSize="13sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="184dp"
-                    android:importantForAccessibility="noHideDescendants"
-                    app:cardBackgroundColor="?attr/colorSurfaceVariant"
-                    app:cardCornerRadius="?attr/kristalCorner22"
-                    app:cardElevation="0dp"
-                    app:strokeColor="?attr/colorOutline"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="14dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="32dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/tutorial_mock_library_ready"
-                                android:textColor="?attr/colorPrimary"
-                                android:textSize="11sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/tutorial_mock_check"
-                                android:textColor="?attr/colorPrimary"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="58dp"
-                            android:layout_marginTop="6dp"
-                            android:background="@drawable/bg_tutorial_file_row"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal"
-                            android:paddingHorizontal="10dp">
-
-                            <TextView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:background="@drawable/bg_tutorial_extension"
-                                android:gravity="center"
-                                android:text="@string/tutorial_mock_initial_adventure"
-                                android:textColor="?attr/colorPrimary"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/tutorial_mock_game_adventure"
-                                    android:textColor="?attr/colorOnSurface"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="2dp"
-                                    android:text="@string/tutorial_mock_engine_kristal"
-                                    android:textColor="?attr/colorOnSurfaceVariant"
-                                    android:textSize="10sp" />
-
-                            </LinearLayout>
-
-                            <ImageView
-                                android:layout_width="26dp"
-                                android:layout_height="26dp"
-                                android:background="@drawable/bg_tutorial_extension"
-                                android:contentDescription="@null"
-                                android:padding="6dp"
-                                android:src="?attr/kristalIconPlay"
-                                app:tint="?attr/colorPrimary" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="58dp"
-                            android:layout_marginTop="6dp"
-                            android:background="@drawable/bg_tutorial_file_row"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal"
-                            android:paddingHorizontal="10dp">
-
-                            <TextView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:background="@drawable/bg_tutorial_extension"
-                                android:gravity="center"
-                                android:text="@string/tutorial_mock_initial_demo"
-                                android:textColor="?attr/colorPrimary"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/tutorial_mock_game_demo"
-                                    android:textColor="?attr/colorOnSurface"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="2dp"
-                                    android:text="@string/tutorial_mock_engine_kristal"
-                                    android:textColor="?attr/colorOnSurfaceVariant"
-                                    android:textSize="10sp" />
-
-                            </LinearLayout>
-
-                            <ImageView
-                                android:layout_width="26dp"
-                                android:layout_height="26dp"
-                                android:background="@drawable/bg_tutorial_extension"
-                                android:contentDescription="@null"
-                                android:padding="6dp"
-                                android:src="?attr/kristalIconPlay"
-                                app:tint="?attr/colorPrimary" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:text="@string/tutorial_step_5_title"
-                    android:textColor="?attr/colorOnSurface"
-                    android:textSize="21sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:lineSpacingExtra="2dp"
-                    android:text="@string/tutorial_step_5_body"
-                    android:textColor="?attr/colorOnSurfaceVariant"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/bg_tutorial_tip"
-                    android:padding="12dp"
-                    android:text="@string/tutorial_step_5_tip"
-                    android:textColor="?attr/colorOnPrimaryContainer"
-                    android:textSize="13sp" />
-
-            </LinearLayout>
-
-    </ViewFlipper>
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_tutorial_tip"
+                android:lineSpacingExtra="1dp"
+                android:padding="10dp"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <LinearLayout
         android:id="@+id/tutorialFooter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="8dp">
+        android:paddingBottom="10dp">
 
         <LinearLayout
             android:id="@+id/tutorialDots"
             android:layout_width="match_parent"
-            android:layout_height="18dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:gravity="center"
             android:orientation="horizontal" />
@@ -872,8 +191,8 @@
             android:id="@+id/tutorialButtonRow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            android:gravity="end|center_vertical"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
@@ -881,8 +200,7 @@
                 style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:text="@string/tutorial_previous"
-                android:textColor="?attr/colorOnSurfaceVariant" />
+                android:text="@string/tutorial_previous" />
 
             <Space
                 android:layout_width="0dp"
@@ -891,18 +209,12 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnTutorialNext"
+                style="@style/Widget.Material3.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:text="@string/tutorial_next"
-                android:textColor="?attr/colorOnPrimary"
-                app:backgroundTint="?attr/colorPrimary"
-                app:cornerRadius="?attr/kristalCorner24"
-                app:icon="?attr/kristalIconChevronRight"
                 app:iconGravity="textEnd"
-                app:iconTint="?attr/colorOnPrimary" />
-
+                app:iconPadding="8dp" />
         </LinearLayout>
-
     </LinearLayout>
-
 </LinearLayout>
