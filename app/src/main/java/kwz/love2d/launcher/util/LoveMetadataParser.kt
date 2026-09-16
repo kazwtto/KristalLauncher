@@ -129,7 +129,8 @@ object LoveMetadataParser {
                 startMap = metadata.startMap,
                 party = metadata.party,
                 packageType = metadata.packageType,
-                modArchiveRoot = metadata.modArchiveRoot
+                modArchiveRoot = metadata.modArchiveRoot,
+                translationRoot = metadata.translationRoot
             )
         } catch (error: Exception) {
             selectedIcon?.recycle()
@@ -222,7 +223,11 @@ object LoveMetadataParser {
             startMap = selectedMod?.startMap,
             party = selectedMod?.party.orEmpty(),
             iconBytes = iconBytes,
-            previewLayers = previewLayers
+            previewLayers = previewLayers,
+            translationRoot = selectedMod?.folder?.let { folder ->
+                val rootPrefix = gameRoot.takeIf(String::isNotBlank)?.let { "$it/" }.orEmpty()
+                folder.removePrefix(rootPrefix).trim('/').takeIf(String::isNotBlank)
+            }
         )
     }
 
@@ -276,7 +281,8 @@ object LoveMetadataParser {
                 iconBytes = iconBytes,
                 previewLayers = previewLayers,
                 packageType = GamePackageType.KRISTAL_MOD,
-                modArchiveRoot = root
+                modArchiveRoot = root,
+                translationRoot = root
             )
         }
         return null
@@ -787,7 +793,8 @@ object LoveMetadataParser {
         val iconBytes: ByteArray?,
         val previewLayers: List<ByteArray>,
         val packageType: GamePackageType = GamePackageType.EXECUTABLE,
-        val modArchiveRoot: String? = null
+        val modArchiveRoot: String? = null,
+        val translationRoot: String? = null
     )
 
     private val ICON_FILE_NAMES = listOf("icon.png", "bigicon.png", "icon.jpg", "icon.jpeg")

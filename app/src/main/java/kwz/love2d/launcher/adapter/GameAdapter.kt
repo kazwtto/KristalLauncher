@@ -49,9 +49,11 @@ class GameAdapter(
                     old.projectId == new.projectId &&
                     old.chapter == new.chapter &&
                     old.startMap == new.startMap &&
-                    old.party == new.party &&
+                    old.party.size == new.party.size &&
+                    old.party.indices.all { old.party[it] == new.party[it] } &&
                     old.packageType == new.packageType &&
                     old.modArchiveRoot == new.modArchiveRoot &&
+                    old.translationRoot == new.translationRoot &&
                     old.hasIcon == new.hasIcon &&
                     old.hasPreviewBackground == new.hasPreviewBackground
             }

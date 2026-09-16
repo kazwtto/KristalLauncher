@@ -1,0 +1,29 @@
+{
+  "$schema": "./schema/catalog.schema.json",
+  "schemaVersion": 1,
+  "translations": [
+    {
+      "schemaVersion": 1,
+      "id": "plugged-dream.pt-br",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "Plugged Dream em Português (Brasil)",
+        "en": "Plugged Dream in Brazilian Portuguese",
+        "es": "Plugged Dream en portugués de Brasil"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de Deltarune: Plugged Dream para português do Brasil.",
+        "en": "Community translation of Deltarune: Plugged Dream text into Brazilian Portuguese.",
+        "es": "Traducción comunitaria de los textos de Deltarune: Plugged Dream al portugués de Brasil."
+      },
+      "author": "kazwtto",
+      "gameProjectId": "plugged_dream",
+      "gameVersion": "v1.3.0",
+      "sourceLanguage": "en",
+      "targetLanguage": "pt-BR",
+      "minimumLauncherVersion": "0.17.40",
+      "package": "packages/plugged-dream-ptbr-1.0.0.kllang",
+      "sha256": "f9633b8cf97548943770b423583ba6262120deaa0a01af6ea65060739f5819c8"
+    }
+  ]
+}

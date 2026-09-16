@@ -149,42 +149,150 @@
                 android:layout_marginTop="20dp"
                 android:background="?attr/colorOutline" />
 
-            <TextView
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/gameDetailsTabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/action_patches"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/game_patches_dialog_summary"
-                android:textColor="?attr/colorOnSurfaceVariant"
-                android:textSize="13sp" />
-
-            <TextView
-                android:id="@+id/tvDetailsPatchesEmpty"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="46dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/patch_installed_empty"
-                android:textColor="?attr/colorOnSurfaceVariant"
-                android:textSize="13sp"
-                android:visibility="gone" />
+                app:selectionRequired="true"
+                app:singleSelection="true">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvDetailsPatches"
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/tabDetailsPatches"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/action_patches" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/tabDetailsLanguages"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/community_languages" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                android:layout_marginTop="16dp"
-                android:clipToPadding="false"
-                android:paddingBottom="8dp"
-                android:nestedScrollingEnabled="false" />
+                android:layout_marginTop="12dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:id="@+id/detailsPatchesContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_patches_dialog_summary"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tvDetailsPatchesEmpty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/patch_installed_empty"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvDetailsPatches"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingBottom="8dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/detailsLanguagesContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/community_languages_summary"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardOriginalLanguage"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"
+                        android:checkable="true"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/segmented_button_background"
+                        app:cardCornerRadius="?attr/kristalCorner16"
+                        app:cardElevation="0dp"
+                        app:checkedIcon="@null"
+                        app:strokeColor="@color/segmented_button_stroke"
+                        app:strokeWidth="1dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:duplicateParentState="true"
+                            android:gravity="center_vertical"
+                            android:paddingHorizontal="14dp"
+                            android:text="@string/translation_original_game"
+                            android:textColor="@color/segmented_button_text"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvDetailsLanguages"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:clipToPadding="false"
+                        android:paddingBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/tvDetailsLanguagesStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingVertical="12dp"
+                        android:text="@string/translation_none_available"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+
+                    <ProgressBar
+                        android:id="@+id/progressTranslationScan"
+                        style="?android:attr/progressBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginVertical="8dp"
+                        android:visibility="gone" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCreateTranslation"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:text="@string/translation_create" />
+                </LinearLayout>
+            </FrameLayout>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

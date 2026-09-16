@@ -192,6 +192,8 @@ object GameLauncher {
         val metadata = queryMetadata(context, resolvedUri)
         val patchState = PatchManager.getPatchStateFingerprint(context, game.stableId)
         val patchesEnabled = PatchManager.hasAnyPatchEnabled(context, game.stableId)
+        val translationPlan = TranslationManager.activePlan(context, game)
+        val translationState = TranslationManager.stateFingerprint(context, game)
         val appUpdateTime = context.packageManager.getPackageInfo(context.packageName, 0).lastUpdateTime
         val sourceFingerprint = if (metadata.lastModified > 0L && metadata.size >= 0L) {
             sha256("${resolvedUri}|${metadata.size}|${metadata.lastModified}|${game.archiveEntryPath.orEmpty()}")
@@ -204,19 +206,20 @@ object GameLauncher {
             "${it.tag}|${it.file.length()}|${it.file.lastModified()}"
         }.orEmpty()
         val baseKey = sha256("$sourceFingerprint|$appUpdateTime|${game.packageType}|$runtimeFingerprint")
-        val cacheKey = sha256("$baseKey|$patchState")
+        val cacheKey = sha256("$baseKey|$patchState|$translationState")
         val stagedDirectory = File(context.filesDir, "staged").apply { mkdirs() }
         val baseFile = File(stagedDirectory, "base_$baseKey.love")
         val stagedFile = File(stagedDirectory, "game_$cacheKey.love")
 
-        val activeFile = if (patchesEnabled) stagedFile else baseFile
+        val transformationsEnabled = patchesEnabled || translationPlan != null
+        val activeFile = if (transformationsEnabled) stagedFile else baseFile
         if (isReusableStagedPackage(activeFile)) {
             trimStagedCopies(stagedDirectory, activeFile, baseFile)
             return activeFile
         }
 
         ensureBaseGame(context, resolvedUri, game, kristalRuntime, baseFile)
-        if (!patchesEnabled) {
+        if (!transformationsEnabled) {
             trimStagedCopies(stagedDirectory, baseFile, baseFile)
             return baseFile
         }
@@ -225,7 +228,15 @@ object GameLauncher {
         val temporaryFile = File(stagedDirectory, "${stagedFile.name}.building")
         temporaryFile.delete()
         try {
-            when (val result = PatchManager.writePatchedGame(context, baseFile, temporaryFile, game.stableId)) {
+            when (
+                val result = PatchManager.writePatchedGame(
+                    context,
+                    baseFile,
+                    temporaryFile,
+                    game.stableId,
+                    translationPlan
+                )
+            ) {
                 is PatchApplicationResult.Success -> Unit
                 is PatchApplicationResult.Failure -> throw IllegalArgumentException(result.reason, result.cause)
             }
@@ -286,6 +297,38 @@ object GameLauncher {
             check(temporaryFile.renameTo(baseFile)) { "Could not publish the staged game" }
         } finally {
             temporaryFile.delete()
+        }
+    }
+
+    /** Materializes a private, normalized source archive for the translation editor. */
+    internal fun materializeTranslationSource(context: Context, game: LoveGame): File {
+        val directory = File(context.cacheDir, "translation_sources").apply { mkdirs() }
+        val key = sha256("${game.stableId}|${game.sizeBytes}|${game.lastModified}|${game.packageType}")
+        val destination = File(directory, "$key.zip")
+        if (destination.isFile && destination.length() > 0L) return destination
+
+        val sourceUri = resolveReadableUri(context, game)
+            ?: throw GameLaunchException(R.string.error_game_file_unavailable)
+        val temporary = File(directory, "$key.building")
+        temporary.delete()
+        try {
+            if (game.isKristalMod) {
+                context.contentResolver.openInputStream(sourceUri)?.use { input ->
+                    FileOutputStream(temporary).buffered(COPY_BUFFER_SIZE).use { output ->
+                        copyInterruptibly(input, output)
+                    }
+                } ?: throw GameLaunchException(R.string.error_game_file_unavailable)
+            } else {
+                copyGamePayload(context, sourceUri, game, temporary)
+                LoveArchiveNormalizer.normalizeRootInPlace(temporary)
+            }
+            GameArchive.open(temporary).use { archive ->
+                requireNotNull(archive.firstEntry()) { "The game/mod archive is empty" }
+            }
+            check(temporary.renameTo(destination)) { "Could not publish the translation source" }
+            return destination
+        } finally {
+            temporary.delete()
         }
     }
 

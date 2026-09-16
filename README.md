@@ -69,6 +69,7 @@ If Kristal Launcher is useful to you, you can support its continued development:
 
 - Material 3 based design.
 - Patches to correct the compatibility of games designed for PC.
+- Download community translations matched to each game's project ID and version, or create and export your own.
 - Browse games in list or grid layouts, with search, favorites, and recent games.
 - Launch `.love`, `.zip`, and compatible fused Windows executables `(.exe)`. Unzip is optional.
 - External patches compatible (i guess, i don't test it).

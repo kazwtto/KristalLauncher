@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Kristal Launcher community translation catalog",
+  "type": "object",
+  "required": ["schemaVersion", "translations"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "translations": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          { "$ref": "translation.schema.json" },
+          {
+            "type": "object",
+            "required": ["package", "sha256"],
+            "properties": {
+              "package": { "type": "string" },
+              "sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

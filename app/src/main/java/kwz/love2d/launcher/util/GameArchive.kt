@@ -50,20 +50,25 @@ internal class GameArchive private constructor(
         internal val portableSource: ZipArchiveEntry? = null
     )
 
+    /** Returns one archive entry without materializing or counting the complete central directory. */
+    fun firstEntry(): Entry? {
+        platformZipFile?.entries()?.let { entries ->
+            if (!entries.hasMoreElements()) return null
+            return entries.nextElement().toEntry()
+        }
+
+        val entries = requireNotNull(portableZipFile).entries
+        if (!entries.hasMoreElements()) return null
+        return entries.nextElement().toEntry()
+    }
+
     fun entries(maximumCount: Int = Int.MAX_VALUE): List<Entry> = buildList {
         require(maximumCount >= 0) { "Maximum entry count must not be negative" }
         platformZipFile?.entries()?.let { entries ->
             while (entries.hasMoreElements()) {
                 require(size < maximumCount) { "Game archive contains too many entries" }
                 val source = entries.nextElement()
-                add(
-                    Entry(
-                        name = source.name,
-                        isDirectory = source.isDirectory,
-                        size = source.size,
-                        platformSource = source
-                    )
-                )
+                add(source.toEntry())
             }
             return@buildList
         }
@@ -72,16 +77,23 @@ internal class GameArchive private constructor(
         while (entries.hasMoreElements()) {
             require(size < maximumCount) { "Game archive contains too many entries" }
             val source = entries.nextElement()
-            add(
-                Entry(
-                    name = source.name,
-                    isDirectory = source.isDirectory,
-                    size = source.size,
-                    portableSource = source
-                )
-            )
+            add(source.toEntry())
         }
     }
+
+    private fun ZipEntry.toEntry() = Entry(
+        name = name,
+        isDirectory = isDirectory,
+        size = size,
+        platformSource = this
+    )
+
+    private fun ZipArchiveEntry.toEntry() = Entry(
+        name = name,
+        isDirectory = isDirectory,
+        size = size,
+        portableSource = this
+    )
 
     fun open(entry: Entry): InputStream {
         entry.platformSource?.let { source ->

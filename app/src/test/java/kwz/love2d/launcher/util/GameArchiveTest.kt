@@ -189,6 +189,7 @@ class GameArchiveTest {
             val metadata = requireNotNull(LoveMetadataParser.inspectArchive(archiveFile))
             assertEquals("Actual Game", metadata.title)
             assertEquals("v2.0.0", metadata.version)
+            assertEquals("mods/zzz", metadata.translationRoot)
             assertArrayEquals(targetIcon, metadata.iconBytes)
             assertArrayEquals(largestBackground, metadata.previewLayers.single())
         } finally {
@@ -336,6 +337,7 @@ class GameArchiveTest {
             assertEquals("Ralsei: Prince of Darkness", metadata.title)
             assertEquals("ralsei_prince_of_darkness", metadata.projectId)
             assertEquals("ralsei_prince_of_darkness", metadata.modArchiveRoot)
+            assertEquals("ralsei_prince_of_darkness", metadata.translationRoot)
             assertEquals(GamePackageType.KRISTAL_MOD, metadata.packageType)
         } finally {
             assertTrue(directory.deleteRecursively())

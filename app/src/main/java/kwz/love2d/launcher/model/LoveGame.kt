@@ -22,7 +22,9 @@ data class LoveGame(
     val startMap: String? = null,
     val party: List<String> = emptyList(),
     val packageType: GamePackageType = GamePackageType.EXECUTABLE,
-    val modArchiveRoot: String? = null
+    val modArchiveRoot: String? = null,
+    /** Archive path containing only this game's/mod's content, never the Kristal engine root. */
+    val translationRoot: String? = null
 ) {
     val stableId: String
         get() = archiveEntryPath

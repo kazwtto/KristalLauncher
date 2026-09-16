@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Kristal Launcher community translation package",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "version",
+    "name",
+    "description",
+    "author",
+    "gameProjectId",
+    "gameVersion",
+    "sourceLanguage",
+    "targetLanguage"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,95}$" },
+    "version": { "type": "string" },
+    "name": { "$ref": "#/$defs/localized" },
+    "description": { "$ref": "#/$defs/localized" },
+    "author": { "type": "string" },
+    "gameProjectId": { "type": "string" },
+    "gameVersion": { "type": "string" },
+    "sourceLanguage": { "type": "string" },
+    "targetLanguage": { "type": "string" },
+    "minimumLauncherVersion": { "type": "string" },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "target", "sourceSha256", "translatedSha256"],
+        "properties": {
+          "source": { "type": "string" },
+          "target": { "type": "string", "pattern": "^scripts/.+\\.lua$" },
+          "sourceSha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+          "translatedSha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "localized": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "additionalProperties": { "type": "string" },
+          "minProperties": 1
+        }
+      ]
+    }
+  }
+}

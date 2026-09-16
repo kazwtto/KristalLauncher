@@ -9,6 +9,7 @@ import kwz.love2d.launcher.R
 import kwz.love2d.launcher.model.InstalledPatch
 import kwz.love2d.launcher.model.PatchApplicationResult
 import kwz.love2d.launcher.model.PatchOperation
+import kwz.love2d.launcher.model.TranslationPlan
 import org.apache.commons.compress.archivers.zip.ZipArchiveEntry
 import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream
 import org.apache.commons.compress.archivers.zip.ZipFile as CommonsZipFile
@@ -122,7 +123,8 @@ object PatchManager {
         context: Context,
         sourceFile: File,
         outputFile: File,
-        gameFileName: String
+        gameFileName: String,
+        translationPlan: TranslationPlan? = null
     ): PatchApplicationResult {
         val builtInFlags = BuiltInFlags(
             fullscreen = isPatchEnabledForGame(context, gameFileName, PATCH_FULLSCREEN),
@@ -137,7 +139,7 @@ object PatchManager {
 
         return try {
             val externalPatches = resolveEnabledExternalPatches(context, gameFileName)
-            if (!builtInFlags.anyEnabled && externalPatches.isEmpty()) {
+            if (!builtInFlags.anyEnabled && externalPatches.isEmpty() && translationPlan == null) {
                 return PatchApplicationResult.Success(emptyList())
             }
 
@@ -151,7 +153,8 @@ object PatchManager {
                 sourceFile,
                 outputFile,
                 builtInFlags,
-                externalPatches
+                externalPatches,
+                translationPlan
             )
             validateStagedPackage(outputFile)
             validateExternalPatchTargets(outputFile, rewriteResult.externalTargetDigests)
@@ -185,7 +188,8 @@ object PatchManager {
         sourceFile: File,
         outputFile: File,
         builtInFlags: BuiltInFlags,
-        externalPatches: List<InstalledPatch>
+        externalPatches: List<InstalledPatch>,
+        translationPlan: TranslationPlan?
     ): RewriteResult {
         val resolvedOperations = externalPatches.flatMap { patch ->
             patch.manifest.operations.map { operation -> ResolvedOperation(patch, operation) }
@@ -195,6 +199,7 @@ object PatchManager {
         val processedOperations = mutableSetOf<ResolvedOperation>()
         val existingEntries = mutableSetOf<String>()
         val externalTargetDigests = mutableMapOf<String, String>()
+        val appliedTranslationFiles = mutableSetOf<String>()
         var hasMainLua = false
         var textPatchChanged = false
         var entryCount = 0
@@ -217,15 +222,26 @@ object PatchManager {
                     if (normalizedName == "main.lua") hasMainLua = true
 
                     val targetOperations = operationsByTarget[normalizedName].orEmpty()
+                    val translationReplacements = translationPlan?.replacementsByPath?.get(normalizedName).orEmpty()
+                    val translationFile = translationPlan?.filesByPath?.get(normalizedName)
                     val needsTransformation = normalizedName == "main.lua" ||
                         (builtInFlags.text && normalizedName in textPatchTargets) ||
-                        targetOperations.isNotEmpty()
+                        targetOperations.isNotEmpty() ||
+                        translationReplacements.isNotEmpty() ||
+                        translationFile != null
 
                     if (needsTransformation) {
                         var bytes = sourceZip.getInputStream(entry).use { input ->
                             readEntryBytesLimited(input, MAX_TRANSFORMED_ENTRY_BYTES)
                         }
                         totalUncompressed += bytes.size
+                        if (translationFile != null) {
+                            bytes = TranslationManager.applyFileReplacement(bytes, translationFile)
+                            appliedTranslationFiles += normalizedName
+                        }
+                        if (translationReplacements.isNotEmpty()) {
+                            bytes = TranslationManager.applyToLua(bytes, translationReplacements)
+                        }
                         if (normalizedName == "main.lua") {
                             // Kristal compiles its built-in shaders while main.lua loads
                             // engine modules. Install only that hook before the game code;
@@ -269,6 +285,10 @@ object PatchManager {
                 }
 
                 require(hasMainLua) { "The staged package does not contain main.lua" }
+                val missingTranslationFiles = translationPlan?.filesByPath.orEmpty().keys - appliedTranslationFiles
+                require(missingTranslationFiles.isEmpty()) {
+                    "Translation targets are missing from this game: ${missingTranslationFiles.first()}"
+                }
 
                 if (builtInFlags.hasRuntimePatches) {
                     injectAndroidPatchesScript(context, zipOutput, existingEntries)

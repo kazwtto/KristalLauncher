@@ -22,8 +22,10 @@ object GameCacheManager {
     private const val PREF_NAME = "game_cache_settings"
     private const val KEY_FOLDER_URI = "cached_folder_uri"
     private const val KEY_CACHE_SCHEMA = "cache_schema"
-    private const val CACHE_SCHEMA_VERSION = 14
-    private const val MIN_SUPPORTED_CACHE_SCHEMA_VERSION = 12
+    private const val CACHE_SCHEMA_VERSION = 15
+    // Older cache entries do not contain translationRoot. Reusing them could make a translation
+    // scan fall back to the package root and accidentally include Kristal engine scripts.
+    private const val MIN_SUPPORTED_CACHE_SCHEMA_VERSION = 15
 
     fun hasCache(context: Context): Boolean {
         val cacheFile = File(context.filesDir, CACHE_FILE_NAME)
@@ -56,6 +58,7 @@ object GameCacheManager {
                 game.startMap?.let { jsonObject.put("startMap", it) }
                 jsonObject.put("packageType", game.packageType.name)
                 game.modArchiveRoot?.let { jsonObject.put("modArchiveRoot", it) }
+                game.translationRoot?.let { jsonObject.put("translationRoot", it) }
                 if (game.party.isNotEmpty()) jsonObject.put("party", JSONArray(game.party))
 
                 game.icon?.let { bitmap ->
@@ -177,7 +180,8 @@ object GameCacheManager {
                             packageType = runCatching {
                                 GamePackageType.valueOf(item.optString("packageType"))
                             }.getOrDefault(GamePackageType.EXECUTABLE),
-                            modArchiveRoot = item.optString("modArchiveRoot").takeIf(String::isNotBlank)
+                            modArchiveRoot = item.optString("modArchiveRoot").takeIf(String::isNotBlank),
+                            translationRoot = item.optString("translationRoot").takeIf(String::isNotBlank)
                         )
                     )
                 }
