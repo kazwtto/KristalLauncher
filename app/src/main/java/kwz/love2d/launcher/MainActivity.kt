@@ -288,8 +288,23 @@ class MainActivity : AppCompatActivity() {
         val spanCount = (screenWidthDp / 160f).toInt().coerceIn(2, 8)
 
         if (isGridView) {
+            // Together with the card's 6 dp margin, this keeps the outer card edges
+            // aligned with the search bar while reducing each two-column card by ~5%.
+            val horizontalGridPadding = (10f * displayMetrics.density).toInt()
+            rvGames.setPaddingRelative(
+                horizontalGridPadding,
+                rvGames.paddingTop,
+                horizontalGridPadding,
+                rvGames.paddingBottom
+            )
             rvGames.layoutManager = GridLayoutManager(this, spanCount)
         } else {
+            rvGames.setPaddingRelative(
+                0,
+                rvGames.paddingTop,
+                0,
+                rvGames.paddingBottom
+            )
             rvGames.layoutManager = LinearLayoutManager(this)
         }
 

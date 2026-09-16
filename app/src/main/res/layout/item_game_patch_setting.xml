@@ -34,15 +34,7 @@
             android:textColor="?attr/colorOnSurfaceVariant"
             android:textSize="12sp" />
 
-        <TextView
-            android:id="@+id/tvGamePatchEffectiveState"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:textColor="?attr/colorPrimary"
-            android:textSize="12sp" />
-
-        <com.google.android.material.button.MaterialButtonToggleGroup
+        <kwz.love2d.launcher.ui.PatchSegmentedButtonGroup
             android:id="@+id/gamePatchModeGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,39 +47,45 @@
                 style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="44dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
                 app:cornerRadius="?attr/kristalCorner20"
                 android:layout_weight="1"
                 android:text="@string/patch_mode_inherit"
                 android:textSize="11sp"
                 android:textColor="@color/segmented_button_text"
                 app:backgroundTint="@color/segmented_button_background"
-                app:strokeColor="@color/segmented_button_stroke" />
+                app:strokeWidth="0dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnGamePatchEnabled"
                 style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="44dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
                 app:cornerRadius="?attr/kristalCorner20"
                 android:layout_weight="1"
                 android:text="@string/patch_mode_enable"
                 android:textSize="11sp"
                 android:textColor="@color/segmented_button_text"
                 app:backgroundTint="@color/segmented_button_background"
-                app:strokeColor="@color/segmented_button_stroke" />
+                app:strokeWidth="0dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnGamePatchDisabled"
                 style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="44dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
                 app:cornerRadius="?attr/kristalCorner20"
                 android:layout_weight="1"
                 android:text="@string/patch_mode_disable"
                 android:textSize="11sp"
                 android:textColor="@color/segmented_button_text"
                 app:backgroundTint="@color/segmented_button_background"
-                app:strokeColor="@color/segmented_button_stroke" />
-        </com.google.android.material.button.MaterialButtonToggleGroup>
+                app:strokeWidth="0dp" />
+        </kwz.love2d.launcher.ui.PatchSegmentedButtonGroup>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

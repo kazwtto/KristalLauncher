@@ -14,20 +14,23 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.color.MaterialColors
+import kwz.love2d.launcher.adapter.GamePatchSettingsAdapter
 import kwz.love2d.launcher.model.LoveGame
-import kwz.love2d.launcher.ui.GamePatchSettingsDialog
+import kwz.love2d.launcher.model.GamePackageType
 import kwz.love2d.launcher.util.FavoritesManager
 import kwz.love2d.launcher.util.GameLauncher
 import kwz.love2d.launcher.util.NavigationAnimations
+import kwz.love2d.launcher.util.PatchRepository
 import kwz.love2d.launcher.util.ThemeManager
 
 class GameDetailsActivity : AppCompatActivity() {
 
     private lateinit var game: LoveGame
     private lateinit var favoriteButton: ImageButton
-    private lateinit var favoriteActionIcon: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         ThemeManager.applyActivityTheme(this)
@@ -41,9 +44,9 @@ class GameDetailsActivity : AppCompatActivity() {
         }
 
         favoriteButton = findViewById(R.id.btnDetailsFavoriteTop)
-        favoriteActionIcon = findViewById(R.id.ivDetailsFavoriteAction)
         bindGame()
         bindActions()
+        bindPatchSettings()
         refreshFavorite()
 
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
@@ -58,8 +61,7 @@ class GameDetailsActivity : AppCompatActivity() {
 
     private fun bindGame() {
         findViewById<TextView>(R.id.tvDetailsTitle).text = game.title
-        findViewById<TextView>(R.id.tvDetailsFileName).text = game.displayFileName
-        findViewById<TextView>(R.id.tvDetailsAbout).text =
+        findViewById<TextView>(R.id.tvDetailsDescription).text =
             game.description?.takeIf(String::isNotBlank)
                 ?: game.subtitle?.takeIf(String::isNotBlank)
                 ?: getString(R.string.game_details_no_description)
@@ -67,22 +69,6 @@ class GameDetailsActivity : AppCompatActivity() {
         bindOptionalText(
             findViewById(R.id.tvDetailsEngine),
             game.engineVer?.let { getString(R.string.game_engine_version, it) }
-        )
-
-        val authorLabel = findViewById<TextView>(R.id.tvDetailsAuthorLabel)
-        val author = findViewById<TextView>(R.id.tvDetailsAuthor)
-        val hasAuthor = !game.author.isNullOrBlank()
-        authorLabel.visibility = if (hasAuthor) View.VISIBLE else View.GONE
-        author.visibility = if (hasAuthor) View.VISIBLE else View.GONE
-        author.text = game.author
-
-        bindMetadataRow(R.id.detailsProjectIdRow, R.id.tvDetailsProjectId, game.projectId)
-        bindMetadataRow(R.id.detailsChapterRow, R.id.tvDetailsChapter, game.chapter)
-        bindMetadataRow(R.id.detailsStartMapRow, R.id.tvDetailsStartMap, game.startMap)
-        bindMetadataRow(
-            R.id.detailsPartyRow,
-            R.id.tvDetailsParty,
-            game.party.takeIf { it.isNotEmpty() }?.joinToString(", ")
         )
 
         val icon = findViewById<ImageView>(R.id.ivDetailsIcon)
@@ -113,16 +99,23 @@ class GameDetailsActivity : AppCompatActivity() {
             FavoritesManager.addRecentGame(this, game)
             GameLauncher.launchGame(this, game)
         }
-        findViewById<View>(R.id.actionDetailsFavorite).setOnClickListener { toggleFavorite() }
-        findViewById<View>(R.id.actionDetailsSettings).setOnClickListener {
-            NavigationAnimations.start(this, Intent(this, SettingsActivity::class.java))
-        }
-        findViewById<View>(R.id.actionDetailsCompatibility).setOnClickListener {
-            GamePatchSettingsDialog.show(this, game)
-        }
-        findViewById<View>(R.id.actionDetailsMore).apply {
-            isEnabled = false
-            isClickable = false
+    }
+
+    private fun bindPatchSettings() {
+        val patches = PatchRepository.installedDisplayItems(this)
+        findViewById<TextView>(R.id.tvDetailsPatchesEmpty).visibility =
+            if (patches.isEmpty()) View.VISIBLE else View.GONE
+        findViewById<RecyclerView>(R.id.rvDetailsPatches).apply {
+            visibility = if (patches.isEmpty()) View.GONE else View.VISIBLE
+            layoutManager = LinearLayoutManager(this@GameDetailsActivity)
+            adapter = GamePatchSettingsAdapter(
+                context = this@GameDetailsActivity,
+                gameId = game.stableId,
+                items = patches,
+                saveImmediately = true
+            )
+            itemAnimator = null
+            isNestedScrollingEnabled = false
         }
     }
 
@@ -140,8 +133,6 @@ class GameDetailsActivity : AppCompatActivity() {
         )
         favoriteButton.imageTintList = ColorStateList.valueOf(color)
         favoriteButton.isSelected = selected
-        favoriteActionIcon.imageTintList = ColorStateList.valueOf(color)
-        favoriteActionIcon.isSelected = selected
     }
 
     private fun resolveGame(): LoveGame? {
@@ -165,7 +156,11 @@ class GameDetailsActivity : AppCompatActivity() {
             projectId = intent.getStringExtra(EXTRA_PROJECT_ID),
             chapter = intent.getStringExtra(EXTRA_CHAPTER),
             startMap = intent.getStringExtra(EXTRA_START_MAP),
-            party = intent.getStringArrayListExtra(EXTRA_PARTY).orEmpty()
+            party = intent.getStringArrayListExtra(EXTRA_PARTY).orEmpty(),
+            packageType = runCatching {
+                GamePackageType.valueOf(intent.getStringExtra(EXTRA_PACKAGE_TYPE).orEmpty())
+            }.getOrDefault(GamePackageType.EXECUTABLE),
+            modArchiveRoot = intent.getStringExtra(EXTRA_MOD_ARCHIVE_ROOT)
         )
     }
 
@@ -174,14 +169,8 @@ class GameDetailsActivity : AppCompatActivity() {
         view.visibility = if (value.isNullOrBlank()) View.GONE else View.VISIBLE
     }
 
-    private fun bindMetadataRow(rowId: Int, valueId: Int, value: String?) {
-        val hasValue = !value.isNullOrBlank()
-        findViewById<View>(rowId).visibility = if (hasValue) View.VISIBLE else View.GONE
-        findViewById<TextView>(valueId).text = value
-    }
-
     companion object {
-        private const val DETAILS_ICON_WIDTH_RATIO = 0.4f
+        private const val DETAILS_ICON_WIDTH_RATIO = 0.25f
 
         @Volatile
         private var selectedGame: LoveGame? = null
@@ -205,6 +194,8 @@ class GameDetailsActivity : AppCompatActivity() {
                 putExtra(EXTRA_CHAPTER, game.chapter)
                 putExtra(EXTRA_START_MAP, game.startMap)
                 putStringArrayListExtra(EXTRA_PARTY, ArrayList(game.party))
+                putExtra(EXTRA_PACKAGE_TYPE, game.packageType.name)
+                putExtra(EXTRA_MOD_ARCHIVE_ROOT, game.modArchiveRoot)
             }
             if (context is Activity) {
                 NavigationAnimations.start(context, intent)
@@ -229,5 +220,7 @@ class GameDetailsActivity : AppCompatActivity() {
         private const val EXTRA_CHAPTER = "game_chapter"
         private const val EXTRA_START_MAP = "game_start_map"
         private const val EXTRA_PARTY = "game_party"
+        private const val EXTRA_PACKAGE_TYPE = "game_package_type"
+        private const val EXTRA_MOD_ARCHIVE_ROOT = "game_mod_archive_root"
     }
 }

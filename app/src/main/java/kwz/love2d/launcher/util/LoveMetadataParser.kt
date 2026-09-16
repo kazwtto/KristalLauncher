@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
+import kwz.love2d.launcher.model.GamePackageType
 import kwz.love2d.launcher.model.LoveGame
 import org.json.JSONObject
 import java.io.ByteArrayOutputStream
@@ -89,7 +90,7 @@ object LoveMetadataParser {
         fileName: String = file.name
     ): ParsedArchiveMetadata? {
         return GameArchive.open(file).use { archive ->
-            readArchiveMetadata(archive, fileName)
+            readArchiveMetadata(archive, fileName) ?: readStandaloneModMetadata(archive, fileName)
         }
     }
 
@@ -100,7 +101,9 @@ object LoveMetadataParser {
         sizeBytes: Long,
         lastModified: Long
     ): LoveGame? {
-        val metadata = readArchiveMetadata(archive, fileName) ?: return null
+        val metadata = readArchiveMetadata(archive, fileName)
+            ?: readStandaloneModMetadata(archive, fileName)
+            ?: return null
         var selectedIcon: Bitmap? = null
         val selectedPreviews = mutableListOf<Bitmap>()
         try {
@@ -124,7 +127,9 @@ object LoveMetadataParser {
                 projectId = metadata.projectId,
                 chapter = metadata.chapter,
                 startMap = metadata.startMap,
-                party = metadata.party
+                party = metadata.party,
+                packageType = metadata.packageType,
+                modArchiveRoot = metadata.modArchiveRoot
             )
         } catch (error: Exception) {
             selectedIcon?.recycle()
@@ -221,9 +226,66 @@ object LoveMetadataParser {
         )
     }
 
+    /**
+     * Reads a distributable Kristal mod that has no LÖVE entry point of its own. Mod archives may
+     * place their files at the ZIP root or below a single repository/release directory.
+     */
+    private fun readStandaloneModMetadata(
+        archive: GameArchive,
+        fileName: String
+    ): ParsedArchiveMetadata? {
+        val indexedEntries = archive.entries(MAX_ENTRY_COUNT).mapNotNull { entry ->
+            normalizeReadableArchivePath(entry.name)?.let { path -> IndexedEntry(entry, path) }
+        }
+        if (indexedEntries.none { !it.entry.isDirectory && it.path == "main.lua" }) {
+            val manifestEntry = indexedEntries.asSequence()
+                .filter {
+                    !it.entry.isDirectory &&
+                        (it.path.endsWith("/mod.json") || it.path == "mod.json")
+                }
+                .filterNot { it.path.startsWith("mods/") }
+                .minWithOrNull(compareBy<IndexedEntry> { it.path.count { character -> character == '/' } }
+                    .thenBy { it.path })
+                ?: return null
+            val mod = readEntryBytes(archive, manifestEntry.entry, MAX_METADATA_BYTES)
+                ?.toString(Charsets.UTF_8)
+                ?.let(::parseModCandidate)
+                ?: return null
+            val root = manifestEntry.path.substringBeforeLast('/', missingDelimiterValue = "")
+            val cleanName = fileName.replace(Regex("(?i)\\.(love|zip|exe)$"), "")
+            val title = mod.name.takeUnless(::isPlaceholderTitle) ?: cleanName
+            val iconBytes = findPreferredIcon(indexedEntries, root)
+                ?.let { readEntryBytes(archive, it.entry, MAX_ICON_BYTES) }
+            val previewEntry = findLargestPreviewBackground(indexedEntries, root)
+                ?: findPreviewScriptBackground(archive, indexedEntries, root, root)
+            val previewLayers = previewEntry
+                ?.let { readEntryBytes(archive, it.entry, MAX_PREVIEW_BYTES) }
+                ?.let(::listOf)
+                .orEmpty()
+            return ParsedArchiveMetadata(
+                title = title,
+                subtitle = mod.subtitle,
+                description = mod.description,
+                version = mod.version,
+                engineVersion = mod.engineVersion,
+                author = mod.author,
+                projectId = mod.id ?: root.substringAfterLast('/').takeIf(String::isNotBlank),
+                chapter = mod.chapter,
+                startMap = mod.startMap,
+                party = mod.party,
+                iconBytes = iconBytes,
+                previewLayers = previewLayers,
+                packageType = GamePackageType.KRISTAL_MOD,
+                modArchiveRoot = root
+            )
+        }
+        return null
+    }
+
     private fun parseModCandidate(content: String): ModCandidate? {
-        return runCatching {
-            val json = JSONObject(stripJsonComments(content.removePrefix("\uFEFF")))
+        val parsed = runCatching {
+            val sanitized = stripJsonComments(content.removePrefix("\uFEFF"))
+            val json = JSONObject(NULL_OBJECT_VALUE.replace(sanitized, "$1\"\""))
             val name = json.optString("name").trim()
             if (name.isBlank()) return null
             ModCandidate(
@@ -251,7 +313,76 @@ object LoveMetadataParser {
                 hidden = json.optBoolean("hidden", false)
             )
         }.getOrNull()
+        return parsed ?: parseLooseModCandidate(content)
     }
+
+    /** Reads the metadata fields needed by the launcher when a platform JSONObject is too strict. */
+    private fun parseLooseModCandidate(content: String): ModCandidate? {
+        val sanitized = stripJsonComments(content.removePrefix("\uFEFF"))
+        val name = extractJsonString(sanitized, "name")?.trim()?.takeIf(String::isNotBlank)
+            ?: return null
+        return ModCandidate(
+            folder = "",
+            id = extractJsonString(sanitized, "id")?.trim()?.takeIf(String::isNotBlank),
+            name = name,
+            subtitle = extractJsonString(sanitized, "subtitle")?.trim()?.takeIf(String::isNotBlank),
+            description = extractJsonString(sanitized, "description")?.trim()?.takeIf(String::isNotBlank),
+            version = extractJsonString(sanitized, "version")?.trim()?.takeIf(String::isNotBlank),
+            engineVersion = extractJsonString(sanitized, "engineVer")?.trim()?.takeIf(String::isNotBlank),
+            author = extractJsonString(sanitized, "author")?.trim()?.takeIf(String::isNotBlank),
+            chapter = jsonPrimitiveField("chapter").find(sanitized)
+                ?.groupValues
+                ?.getOrNull(1)
+                ?.trim()
+                ?.trim('"')
+                ?.takeIf(String::isNotBlank),
+            startMap = extractJsonString(sanitized, "map")?.trim()?.takeIf(String::isNotBlank),
+            party = jsonArrayField("party").find(sanitized)
+                ?.groupValues
+                ?.getOrNull(1)
+                ?.let { array ->
+                    JSON_STRING_VALUE.findAll(array)
+                        .mapNotNull { match -> decodeJsonString(match.groupValues[1]) }
+                        .map(String::trim)
+                        .filter(String::isNotBlank)
+                        .toList()
+                }
+                .orEmpty(),
+            hidden = jsonBooleanField("hidden").find(sanitized)
+                ?.groupValues
+                ?.getOrNull(1)
+                ?.toBooleanStrictOrNull()
+                ?: false
+        )
+    }
+
+    private fun extractJsonString(content: String, key: String): String? {
+        return jsonStringField(key).find(content)
+            ?.groupValues
+            ?.getOrNull(1)
+            ?.let(::decodeJsonString)
+    }
+
+    private fun decodeJsonString(escapedValue: String): String? = runCatching {
+        JSONObject("{\"value\":\"$escapedValue\"}").getString("value")
+    }.getOrNull()
+
+    private fun jsonStringField(key: String) = Regex(
+        """"${Regex.escape(key)}"\s*:\s*"((?:\\.|[^"\\])*)""""
+    )
+
+    private fun jsonArrayField(key: String) = Regex(
+        """"${Regex.escape(key)}"\s*:\s*\[([^\]]*)]""",
+        RegexOption.DOT_MATCHES_ALL
+    )
+
+    private fun jsonBooleanField(key: String) = Regex(
+        """"${Regex.escape(key)}"\s*:\s*(true|false)"""
+    )
+
+    private fun jsonPrimitiveField(key: String) = Regex(
+        """"${Regex.escape(key)}"\s*:\s*("(?:\\.|[^"\\])*"|-?\d+(?:\.\d+)?)"""
+    )
 
     private fun parseAuthor(json: JSONObject): String? {
         json.optString("author").trim().takeIf(String::isNotBlank)?.let { return it }
@@ -654,7 +785,9 @@ object LoveMetadataParser {
         val startMap: String?,
         val party: List<String>,
         val iconBytes: ByteArray?,
-        val previewLayers: List<ByteArray>
+        val previewLayers: List<ByteArray>,
+        val packageType: GamePackageType = GamePackageType.EXECUTABLE,
+        val modArchiveRoot: String? = null
     )
 
     private val ICON_FILE_NAMES = listOf("icon.png", "bigicon.png", "icon.jpg", "icon.jpeg")
@@ -680,6 +813,8 @@ object LoveMetadataParser {
         RegexOption.IGNORE_CASE
     )
     private val PREVIEW_PATH_HELPER = Regex("""\bp\s*\(""")
+    private val NULL_OBJECT_VALUE = Regex("""(:\s*)null(?=\s*[,}])""")
+    private val JSON_STRING_VALUE = Regex(""""((?:\\.|[^"\\])*)"""")
     private const val DEFAULT_PREVIEW_BACKGROUND = "assets/sprites/kristal/title_bg_wave.png"
     private const val MAX_LUA_CONFIG_BYTES = 256 * 1024
     private const val MAX_ARCHIVE_PATH_LENGTH = 1_024

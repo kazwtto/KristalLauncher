@@ -2,13 +2,14 @@ package kwz.love2d.launcher.util
 
 import org.junit.Assert.assertArrayEquals
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.io.ByteArrayOutputStream
 import java.nio.file.Files
 import java.util.zip.ZipEntry
+import java.util.zip.ZipFile
 import java.util.zip.ZipOutputStream
+import kwz.love2d.launcher.model.GamePackageType
 
 class GameArchiveTest {
 
@@ -318,7 +319,7 @@ class GameArchiveTest {
     }
 
     @Test
-    fun ignoresAModSourceThatDoesNotContainALoveGame() {
+    fun recognizesAStandaloneKristalModBelowAWrapperFolder() {
         val directory = Files.createTempDirectory("mod-source-test").toFile()
         val modSource = directory.resolve("prince-of-darkness.love")
         try {
@@ -326,12 +327,54 @@ class GameArchiveTest {
                 writeEntry(
                     zip,
                     "ralsei_prince_of_darkness/mod.json",
-                    """{"name":"Ralsei: Prince of Darkness","version":"v1.5.0"}"""
+                    """{"id":"ralsei_prince_of_darkness","name":"Ralsei: Prince of Darkness","version":"v1.5.0","author":null}"""
                 )
                 writeEntry(zip, "ralsei_prince_of_darkness/preview/icon_1.png", "preview")
             }
 
-            assertNull(LoveMetadataParser.inspectArchive(modSource))
+            val metadata = requireNotNull(LoveMetadataParser.inspectArchive(modSource))
+            assertEquals("Ralsei: Prince of Darkness", metadata.title)
+            assertEquals("ralsei_prince_of_darkness", metadata.projectId)
+            assertEquals("ralsei_prince_of_darkness", metadata.modArchiveRoot)
+            assertEquals(GamePackageType.KRISTAL_MOD, metadata.packageType)
+        } finally {
+            assertTrue(directory.deleteRecursively())
+        }
+    }
+
+    @Test
+    fun buildsARunnablePrivateRuntimeWithTheStandaloneMod() {
+        val directory = Files.createTempDirectory("standalone-mod-launch-test").toFile()
+        val runtime = directory.resolve("kristal.love")
+        val mod = directory.resolve("mod.zip")
+        val combined = directory.resolve("combined.love")
+        try {
+            ZipOutputStream(runtime.outputStream()).use { zip ->
+                writeEntry(
+                    zip,
+                    "main.lua",
+                    "require(\"src.engine.vendcust\")\nKristal = require(\"src.kristal\")"
+                )
+                writeEntry(zip, "src/engine/vendcust.lua", "TARGET_MOD = nil\nAUTO_MOD_START = false")
+            }
+            ZipOutputStream(mod.outputStream()).use { zip ->
+                writeEntry(zip, "release/mod.json", """{"id":"demo","name":"Demo"}""")
+                writeEntry(zip, "release/scripts/world/MyCutscene.lua", "return true")
+            }
+
+            mod.inputStream().use { input ->
+                GameLauncher.writeKristalModPackage(runtime, input, "release", "demo", combined)
+            }
+
+            ZipFile(combined).use { zip ->
+                val mainLua = zip.getInputStream(zip.getEntry("main.lua"))
+                    .bufferedReader()
+                    .use { it.readText() }
+                assertTrue(mainLua.contains("TARGET_MOD = \"demo\""))
+                assertTrue(mainLua.contains("AUTO_MOD_START = true"))
+                assertTrue(zip.getEntry("mods/demo/mod.json") != null)
+                assertTrue(zip.getEntry("mods/demo/scripts/world/MyCutscene.lua") != null)
+            }
         } finally {
             assertTrue(directory.deleteRecursively())
         }

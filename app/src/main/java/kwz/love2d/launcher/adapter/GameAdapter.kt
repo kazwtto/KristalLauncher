@@ -50,6 +50,8 @@ class GameAdapter(
                     old.chapter == new.chapter &&
                     old.startMap == new.startMap &&
                     old.party == new.party &&
+                    old.packageType == new.packageType &&
+                    old.modArchiveRoot == new.modArchiveRoot &&
                     old.hasIcon == new.hasIcon &&
                     old.hasPreviewBackground == new.hasPreviewBackground
             }

@@ -15,6 +15,7 @@ import androidx.documentfile.provider.DocumentFile
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kwz.love2d.launcher.KristalRuntimeSettingsActivity
 import kwz.love2d.launcher.R
 import kwz.love2d.launcher.model.LoveGame
 import kwz.love2d.launcher.model.InstalledKristalRuntime
@@ -33,8 +34,11 @@ import java.io.InputStream
 import java.io.OutputStream
 import java.io.SequenceInputStream
 import java.security.MessageDigest
+import java.util.Locale
 import java.util.zip.ZipFile
+import java.util.zip.ZipEntry
 import java.util.zip.ZipInputStream
+import java.util.zip.ZipOutputStream
 
 object GameLauncher {
 
@@ -57,6 +61,14 @@ object GameLauncher {
     }
 
     fun launchGame(activity: AppCompatActivity, game: LoveGame) {
+        val kristalRuntime = if (game.isKristalMod) {
+            KristalRuntimeStorage.selectedRuntime(activity) ?: run {
+                showMissingKristalRuntimeDialog(activity, game)
+                return
+            }
+        } else {
+            null
+        }
         if (!launchMutex.tryLock()) {
             Toast.makeText(activity, R.string.game_launch_in_progress, Toast.LENGTH_SHORT).show()
             return
@@ -87,7 +99,7 @@ object GameLauncher {
                 )
 
                 val stagedFile = runInterruptible(Dispatchers.IO) {
-                    prepareStagedGame(activity.applicationContext, game)
+                    prepareStagedGame(activity.applicationContext, game, kristalRuntime)
                 }
                 if (!activity.lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) return@launch
 
@@ -132,6 +144,22 @@ object GameLauncher {
         }
     }
 
+    private fun showMissingKristalRuntimeDialog(activity: AppCompatActivity, game: LoveGame) {
+        val dialogContext = ThemeManager.themedContext(activity)
+        MaterialAlertDialogBuilder(dialogContext)
+            .setTitle(R.string.kristal_mod_runtime_required_title)
+            .setMessage(activity.getString(R.string.kristal_mod_runtime_required_message, game.title))
+            .setNegativeButton(R.string.cancel, null)
+            .setPositiveButton(R.string.kristal_runtime_download) { _, _ ->
+                activity.startActivity(Intent(activity, KristalRuntimeSettingsActivity::class.java))
+            }
+            .create()
+            .also { dialog ->
+                dialog.showThemed()
+                ThemeManager.applyDialogTheme(dialog)
+            }
+    }
+
     /**
      * Restores the launch contract used by the known-working launcher snapshot.
      * The runtime receives both its current embed resource ID and the staged path;
@@ -154,7 +182,11 @@ object GameLauncher {
         }
     }
 
-    private fun prepareStagedGame(context: Context, game: LoveGame): File {
+    private fun prepareStagedGame(
+        context: Context,
+        game: LoveGame,
+        kristalRuntime: InstalledKristalRuntime?
+    ): File {
         val resolvedUri = resolveReadableUri(context, game)
             ?: throw GameLaunchException(R.string.error_game_file_unavailable)
         val metadata = queryMetadata(context, resolvedUri)
@@ -168,7 +200,10 @@ object GameLauncher {
                 ?: throw GameLaunchException(R.string.error_game_file_unavailable)
             sha256("$contentHash|${game.archiveEntryPath.orEmpty()}")
         }
-        val baseKey = sha256("$sourceFingerprint|$appUpdateTime")
+        val runtimeFingerprint = kristalRuntime?.let {
+            "${it.tag}|${it.file.length()}|${it.file.lastModified()}"
+        }.orEmpty()
+        val baseKey = sha256("$sourceFingerprint|$appUpdateTime|${game.packageType}|$runtimeFingerprint")
         val cacheKey = sha256("$baseKey|$patchState")
         val stagedDirectory = File(context.filesDir, "staged").apply { mkdirs() }
         val baseFile = File(stagedDirectory, "base_$baseKey.love")
@@ -180,7 +215,7 @@ object GameLauncher {
             return activeFile
         }
 
-        ensureBaseGame(context, resolvedUri, game, baseFile)
+        ensureBaseGame(context, resolvedUri, game, kristalRuntime, baseFile)
         if (!patchesEnabled) {
             trimStagedCopies(stagedDirectory, baseFile, baseFile)
             return baseFile
@@ -211,6 +246,7 @@ object GameLauncher {
         context: Context,
         sourceUri: Uri,
         game: LoveGame,
+        kristalRuntime: InstalledKristalRuntime?,
         baseFile: File
     ) {
         if (isReusableStagedPackage(baseFile)) return
@@ -219,17 +255,144 @@ object GameLauncher {
         val temporaryFile = File(baseFile.parentFile, "${baseFile.name}.building")
         temporaryFile.delete()
         try {
-            copyGamePayload(context, sourceUri, game, temporaryFile)
-            try {
-                LoveArchiveNormalizer.normalizeRootInPlace(temporaryFile)
-            } catch (_: Exception) {
-                throw GameLaunchException(R.string.error_empty_or_corrupt_game)
+            if (game.isKristalMod) {
+                val runtime = kristalRuntime
+                    ?: throw GameLaunchException(R.string.kristal_mod_runtime_missing_error)
+                val modId = game.projectId
+                    ?.trim()
+                    ?.takeIf(String::isNotBlank)
+                    ?: game.modArchiveRoot
+                        ?.substringAfterLast('/')
+                        ?.takeIf(String::isNotBlank)
+                    ?: throw GameLaunchException(R.string.kristal_mod_invalid_error)
+                context.contentResolver.openInputStream(sourceUri)?.buffered(COPY_BUFFER_SIZE)?.use { modSource ->
+                    writeKristalModPackage(
+                        runtimeFile = runtime.file,
+                        modSource = modSource,
+                        modArchiveRoot = game.modArchiveRoot.orEmpty(),
+                        modId = modId,
+                        destination = temporaryFile
+                    )
+                } ?: throw GameLaunchException(R.string.error_game_file_unavailable)
+            } else {
+                copyGamePayload(context, sourceUri, game, temporaryFile)
+                try {
+                    LoveArchiveNormalizer.normalizeRootInPlace(temporaryFile)
+                } catch (_: Exception) {
+                    throw GameLaunchException(R.string.error_empty_or_corrupt_game)
+                }
             }
             validateLovePackage(temporaryFile)
             check(temporaryFile.renameTo(baseFile)) { "Could not publish the staged game" }
         } finally {
             temporaryFile.delete()
         }
+    }
+
+    /** Builds a private runnable Kristal package without changing either source archive. */
+    internal fun writeKristalModPackage(
+        runtimeFile: File,
+        modSource: InputStream,
+        modArchiveRoot: String,
+        modId: String,
+        destination: File
+    ) {
+        val targetFolder = modId.replace(Regex("[^A-Za-z0-9_.-]"), "_")
+            .trim('_', '.')
+            .takeIf(String::isNotBlank)
+            ?: throw IllegalArgumentException("The mod ID cannot be used as a folder name")
+        val targetPrefix = "mods/$targetFolder/"
+        val normalizedRoot = LoveArchiveNormalizer.normalizePath(modArchiveRoot).trimEnd('/')
+        var configuredRuntime = false
+        var copiedManifest = false
+
+        ZipOutputStream(FileOutputStream(destination).buffered(COPY_BUFFER_SIZE)).use { output ->
+            ZipFile(runtimeFile).use { runtime ->
+                val runtimeEntries = runtime.entries().asSequence().toList()
+                for (entry in runtimeEntries) {
+                    ensureNotInterrupted()
+                    val outputPath = canonicalArchivePath(entry.name) ?: continue
+                    val pathKey = outputPath.lowercase(Locale.ROOT)
+                    if (pathKey.startsWith(targetPrefix.lowercase(Locale.ROOT))) continue
+                    val outputEntry = ZipEntry(if (entry.isDirectory) "$outputPath/" else outputPath)
+                        .apply { time = entry.time }
+                    output.putNextEntry(outputEntry)
+                    if (!entry.isDirectory) {
+                        runtime.getInputStream(entry).use { input ->
+                            if (pathKey == "main.lua") {
+                                val source = input.bufferedReader(Charsets.UTF_8).use { it.readText() }
+                                val configured = configureKristalEntryPoint(source, modId)
+                                output.write(configured.toByteArray(Charsets.UTF_8))
+                                configuredRuntime = configured != source
+                            } else {
+                                copyInterruptibly(input, output)
+                            }
+                        }
+                    }
+                    output.closeEntry()
+                }
+            }
+            if (!configuredRuntime) {
+                throw IllegalArgumentException("The selected Kristal runtime has an unsupported main.lua")
+            }
+
+            ZipInputStream(modSource).use { modArchive ->
+                var entry = modArchive.nextEntry
+                var entryCount = 0
+                val rootPartCount = normalizedRoot
+                    .split('/')
+                    .count(String::isNotBlank)
+                while (entry != null) {
+                    ensureNotInterrupted()
+                    entryCount++
+                    if (entryCount > MAX_WRAPPER_ENTRIES) {
+                        throw IllegalArgumentException("The mod archive contains too many files")
+                    }
+                    val sourcePath = canonicalArchivePath(entry.name).orEmpty()
+                    val sourcePathKey = sourcePath.lowercase(Locale.ROOT)
+                    val relativePath = when {
+                        normalizedRoot.isBlank() -> sourcePath
+                        sourcePathKey == normalizedRoot -> ""
+                        sourcePathKey.startsWith("$normalizedRoot/") ->
+                            sourcePath.split('/').drop(rootPartCount).joinToString("/")
+                        else -> ""
+                    }
+                    if (!entry.isDirectory && relativePath.isNotBlank()) {
+                        val destinationPath = "$targetPrefix$relativePath"
+                        output.putNextEntry(ZipEntry(destinationPath).apply { time = entry.time })
+                        copyInterruptibly(modArchive, output)
+                        output.closeEntry()
+                        if (relativePath.equals("mod.json", ignoreCase = true)) copiedManifest = true
+                    }
+                    modArchive.closeEntry()
+                    entry = modArchive.nextEntry
+                }
+            }
+        }
+        if (!copiedManifest) {
+            destination.delete()
+            throw IllegalArgumentException("The mod archive does not contain mod.json at its detected root")
+        }
+    }
+
+    private fun configureKristalEntryPoint(source: String, modId: String): String {
+        val escapedId = modId
+            .replace("\\", "\\\\")
+            .replace("\"", "\\\"")
+            .replace("\r", "\\r")
+            .replace("\n", "\\n")
+        val configuration = "TARGET_MOD = \"$escapedId\"\nAUTO_MOD_START = true\n"
+        val marker = KRISTAL_REQUIRE.find(source) ?: return source
+        return source.substring(0, marker.range.first) + configuration + source.substring(marker.range.first)
+    }
+
+    private fun canonicalArchivePath(path: String): String? {
+        if (path.isBlank() || path.length > 1_024 || '\u0000' in path || ':' in path) return null
+        val parts = path.replace('\\', '/')
+            .split('/')
+            .filter { it.isNotBlank() && it != "." }
+        if (parts.isEmpty() || parts.any { it == ".." }) return null
+        return parts.joinToString("/")
     }
 
     private fun isReusableStagedPackage(file: File): Boolean {
@@ -433,4 +596,5 @@ object GameLauncher {
     private const val MAX_EXECUTABLE_PREFIX_BYTES = 256L * 1024 * 1024
     private const val MAX_ADDITIONAL_STAGED_VARIANTS = 1
     private val ZIP_LOCAL_HEADER = byteArrayOf(0x50, 0x4B, 0x03, 0x04)
+    private val KRISTAL_REQUIRE = Regex("(?m)^\\s*Kristal\\s*=\\s*require\\s*\\([\"']src\\.kristal[\"']\\)")
 }

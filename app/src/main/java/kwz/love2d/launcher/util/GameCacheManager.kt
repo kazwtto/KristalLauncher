@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.util.AtomicFile
+import kwz.love2d.launcher.model.GamePackageType
 import kwz.love2d.launcher.model.LoveGame
 import org.json.JSONArray
 import org.json.JSONObject
@@ -21,7 +22,7 @@ object GameCacheManager {
     private const val PREF_NAME = "game_cache_settings"
     private const val KEY_FOLDER_URI = "cached_folder_uri"
     private const val KEY_CACHE_SCHEMA = "cache_schema"
-    private const val CACHE_SCHEMA_VERSION = 13
+    private const val CACHE_SCHEMA_VERSION = 14
     private const val MIN_SUPPORTED_CACHE_SCHEMA_VERSION = 12
 
     fun hasCache(context: Context): Boolean {
@@ -53,6 +54,8 @@ object GameCacheManager {
                 game.projectId?.let { jsonObject.put("projectId", it) }
                 game.chapter?.let { jsonObject.put("chapter", it) }
                 game.startMap?.let { jsonObject.put("startMap", it) }
+                jsonObject.put("packageType", game.packageType.name)
+                game.modArchiveRoot?.let { jsonObject.put("modArchiveRoot", it) }
                 if (game.party.isNotEmpty()) jsonObject.put("party", JSONArray(game.party))
 
                 game.icon?.let { bitmap ->
@@ -170,7 +173,11 @@ object GameCacheManager {
                                             ?.let(::add)
                                     }
                                 }
-                            }.orEmpty()
+                            }.orEmpty(),
+                            packageType = runCatching {
+                                GamePackageType.valueOf(item.optString("packageType"))
+                            }.getOrDefault(GamePackageType.EXECUTABLE),
+                            modArchiveRoot = item.optString("modArchiveRoot").takeIf(String::isNotBlank)
                         )
                     )
                 }

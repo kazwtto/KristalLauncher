@@ -207,6 +207,7 @@
     <string name="game_details_info">Info</string>
     <string name="game_details_compatibility">Compatibilidad</string>
     <string name="game_details_more">Más</string>
+    <string name="game_details_manage_patches">Administrar parches del juego</string>
     <string name="game_details_about">Acerca de</string>
     <string name="game_details_author">Autor</string>
     <string name="game_details_project_id">ID del proyecto</string>
@@ -373,4 +374,8 @@
     <string name="kristal_runtime_remove_failed">No se pudo eliminar el runtime.</string>
     <string name="kristal_runtime_open">Abrir Kristal Engine</string>
     <string name="kristal_runtime_launch_title">Kristal Engine %1$s</string>
+    <string name="kristal_mod_runtime_required_title">Se necesita Kristal Engine</string>
+    <string name="kristal_mod_runtime_required_message">%1$s es un mod de Kristal y no puede ejecutarse por sí solo. ¿Quieres descargar ahora un runtime de Kristal Engine?</string>
+    <string name="kristal_mod_runtime_missing_error">No hay ningún runtime de Kristal Engine instalado.</string>
+    <string name="kristal_mod_invalid_error">Este mod de Kristal no tiene un ID válido.</string>
 </resources>

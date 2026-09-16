@@ -40,6 +40,17 @@ The launcher never rewrites the package selected by the user. Every compatibilit
 
 This was originally a study project to learn Gradle and Kotlin.
 
+## Support the project
+
+If Kristal Launcher is useful to you, you can support its continued development:
+
+<p align="center">
+  <a href="https://ko-fi.com/P5P0EJA8E"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support Kristal Launcher on Ko-fi"></a>
+  &nbsp;
+  <a href="https://www.paypal.com/donate/?business=XPXE646QWFWSC&amp;no_recurring=0&amp;currency_code=BRL"><img src="https://img.shields.io/badge/Donate-PayPal-0070BA?style=for-the-badge&amp;logo=paypal&amp;logoColor=white" alt="Donate to Kristal Launcher with PayPal"></a>
+</p>
+
+
 ## Tested Games
 - [DELTARUNE: Vessel vs. Kris Remake](https://gamejolt.com/games/vessel_vs_kris_remake/971883)
 - [DELTARUNE: PluggedDream](https://gamejolt.com/games/pluggeddream/1019739)
@@ -163,16 +174,6 @@ Kristal Launcher is under active development. Game packages and save data are im
 ## Was Generative AI used?
 
 Yes. ChatGPT (free-tier) was used for optimization, formatting of `.md` files, localizations for English and Spanish, and translation of README.md and code comments from Portuguese to English.
-
-## Support the project
-
-If Kristal Launcher is useful to you, you can support its continued development:
-
-<p align="center">
-  <a href="https://ko-fi.com/P5P0EJA8E"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support Kristal Launcher on Ko-fi"></a>
-  &nbsp;
-  <a href="https://www.paypal.com/donate/?business=XPXE646QWFWSC&amp;no_recurring=0&amp;currency_code=BRL"><img src="https://img.shields.io/badge/Donate-PayPal-0070BA?style=for-the-badge&amp;logo=paypal&amp;logoColor=white" alt="Donate to Kristal Launcher with PayPal"></a>
-</p>
 
 ## Credits
 

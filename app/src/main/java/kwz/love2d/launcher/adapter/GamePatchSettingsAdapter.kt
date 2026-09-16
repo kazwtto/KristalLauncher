@@ -21,7 +21,8 @@ import kwz.love2d.launcher.util.ThemeManager
 class GamePatchSettingsAdapter(
     private val context: Context,
     private val gameId: String,
-    private val items: List<PatchDisplayItem>
+    private val items: List<PatchDisplayItem>,
+    private val saveImmediately: Boolean = false
 ) : RecyclerView.Adapter<GamePatchSettingsAdapter.GamePatchViewHolder>() {
 
     private val amoled = ThemeManager.isDeltaruneTheme(context) &&
@@ -62,7 +63,6 @@ class GamePatchSettingsAdapter(
         private val cardContent: View = itemView.findViewById(R.id.gamePatchCardContent)
         private val name: TextView = itemView.findViewById(R.id.tvGamePatchName)
         private val description: TextView = itemView.findViewById(R.id.tvGamePatchDescription)
-        private val effectiveState: TextView = itemView.findViewById(R.id.tvGamePatchEffectiveState)
         private val toggleGroup: MaterialButtonToggleGroup = itemView.findViewById(R.id.gamePatchModeGroup)
         private val inheritButton: MaterialButton = itemView.findViewById(R.id.btnGamePatchInherit)
         private val enabledButton: MaterialButton = itemView.findViewById(R.id.btnGamePatchEnabled)
@@ -80,7 +80,9 @@ class GamePatchSettingsAdapter(
                     R.id.btnGamePatchDisabled -> PatchManager.MODE_FORCE_DISABLED
                     else -> PatchManager.MODE_GLOBAL
                 }
-                updateEffectiveState(patchId)
+                if (saveImmediately) {
+                    PatchManager.setGamePatchMode(context, gameId, patchId, modes.getValue(patchId))
+                }
                 if (amoled) {
                     applyAmoledVisuals()
                     toggleGroup.post { applyAmoledVisuals() }
@@ -101,7 +103,6 @@ class GamePatchSettingsAdapter(
                 }
             )
             binding = false
-            updateEffectiveState(item.id)
             if (amoled) {
                 applyAmoledVisuals()
                 itemView.post { applyAmoledVisuals() }
@@ -170,17 +171,5 @@ class GamePatchSettingsAdapter(
             }
         }
 
-        private fun updateEffectiveState(patchId: String) {
-            val mode = modes[patchId] ?: PatchManager.MODE_GLOBAL
-            effectiveState.text = when (mode) {
-                PatchManager.MODE_FORCE_ENABLED -> context.getString(R.string.patch_game_effective_forced_enabled)
-                PatchManager.MODE_FORCE_DISABLED -> context.getString(R.string.patch_game_effective_forced_disabled)
-                else -> if (PatchManager.isGlobalPatchEnabled(context, patchId)) {
-                    context.getString(R.string.patch_game_effective_inherited_enabled)
-                } else {
-                    context.getString(R.string.patch_game_effective_inherited_disabled)
-                }
-            }
-        }
     }
 }

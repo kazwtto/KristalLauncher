@@ -20,7 +20,9 @@ data class LoveGame(
     val projectId: String? = null,
     val chapter: String? = null,
     val startMap: String? = null,
-    val party: List<String> = emptyList()
+    val party: List<String> = emptyList(),
+    val packageType: GamePackageType = GamePackageType.EXECUTABLE,
+    val modArchiveRoot: String? = null
 ) {
     val stableId: String
         get() = archiveEntryPath
@@ -35,4 +37,12 @@ data class LoveGame(
 
     val hasPreviewBackground: Boolean
         get() = previewBackgrounds.isNotEmpty()
+
+    val isKristalMod: Boolean
+        get() = packageType == GamePackageType.KRISTAL_MOD
+}
+
+enum class GamePackageType {
+    EXECUTABLE,
+    KRISTAL_MOD
 }

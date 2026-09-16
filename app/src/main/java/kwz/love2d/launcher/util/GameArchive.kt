@@ -27,6 +27,7 @@ internal class GameArchive private constructor(
     private val platformZipFile: PlatformZipFile?,
     private val portableZipFile: CommonsZipFile?,
     private val ownedResource: Closeable?,
+    private val temporaryFile: File?,
     internal val accessMode: AccessMode,
     internal val backend: Backend
 ) : Closeable {
@@ -98,7 +99,11 @@ internal class GameArchive private constructor(
         try {
             platformZipFile?.close() ?: portableZipFile?.close()
         } finally {
-            runCatching { ownedResource?.close() }
+            try {
+                runCatching { ownedResource?.close() }
+            } finally {
+                temporaryFile?.delete()
+            }
         }
     }
 
@@ -109,15 +114,25 @@ internal class GameArchive private constructor(
             }
 
             openWithPlatformDescriptor(context, uri)?.let { return it }
-            return openWithPortableDescriptor(context, uri, fileName)
+            return runCatching { openWithPortableDescriptor(context, uri, fileName) }
+                .getOrElse { descriptorError ->
+                    runCatching { openWithTemporaryCopy(context, uri, fileName) }
+                        .getOrElse { copyError ->
+                            copyError.addSuppressed(descriptorError)
+                            throw copyError
+                        }
+                }
         }
 
-        fun open(file: File): GameArchive {
+        fun open(file: File): GameArchive = openFile(file, temporaryFile = null)
+
+        private fun openFile(file: File, temporaryFile: File?): GameArchive {
             try {
                 return GameArchive(
                     platformZipFile = PlatformZipFile(file),
                     portableZipFile = null,
                     ownedResource = null,
+                    temporaryFile = temporaryFile,
                     accessMode = AccessMode.DIRECT_FILE,
                     backend = Backend.PLATFORM_ZIP_FILE
                 )
@@ -128,10 +143,12 @@ internal class GameArchive private constructor(
             val stream = FileInputStream(file)
             return try {
                 verifySeekable(stream.channel)
+                stream.channel.position(0L)
                 GameArchive(
                     platformZipFile = null,
                     portableZipFile = openPortableZip(stream.channel),
                     ownedResource = stream,
+                    temporaryFile = temporaryFile,
                     accessMode = AccessMode.DIRECT_FILE,
                     backend = Backend.COMMONS_COMPRESS
                 )
@@ -148,14 +165,14 @@ internal class GameArchive private constructor(
                 GameArchive(
                     platformZipFile = PlatformZipFile(descriptorPath),
                     portableZipFile = null,
-                    ownedResource = null,
+                    ownedResource = descriptor,
+                    temporaryFile = null,
                     accessMode = AccessMode.DIRECT_DESCRIPTOR,
                     backend = Backend.PLATFORM_ZIP_FILE
                 )
             } catch (_: Exception) {
-                null
-            } finally {
                 runCatching { descriptor.close() }
+                null
             }
         }
 
@@ -169,15 +186,44 @@ internal class GameArchive private constructor(
                 ?: throw IllegalArgumentException("Unable to open a file descriptor for $fileName")
             return try {
                 verifySeekable(stream.channel)
+                stream.channel.position(0L)
                 GameArchive(
                     platformZipFile = null,
                     portableZipFile = openPortableZip(stream.channel),
                     ownedResource = stream,
+                    temporaryFile = null,
                     accessMode = AccessMode.DIRECT_DESCRIPTOR,
                     backend = Backend.COMMONS_COMPRESS
                 )
             } catch (error: Exception) {
                 runCatching { stream.close() }
+                throw error
+            }
+        }
+
+        private fun openWithTemporaryCopy(
+            context: Context,
+            uri: Uri,
+            fileName: String
+        ): GameArchive {
+            val directory = File(context.cacheDir, "archive_reader").apply { mkdirs() }
+            val suffix = fileName.substringAfterLast('.', "zip")
+                .take(8)
+                .let { ".$it" }
+            val temporaryFile = File.createTempFile("archive_", suffix, directory)
+            try {
+                val input = context.contentResolver.openFileDescriptor(uri, "r")
+                    ?.let(ParcelFileDescriptor::AutoCloseInputStream)
+                    ?: throw IllegalArgumentException("Unable to read $fileName")
+                input.use {
+                    if (input.channel.size() > 0L) input.channel.position(0L)
+                    temporaryFile.outputStream().buffered(COPY_BUFFER_SIZE).use { output ->
+                        input.copyTo(output, COPY_BUFFER_SIZE)
+                    }
+                }
+                return openFile(temporaryFile, temporaryFile)
+            } catch (error: Exception) {
+                temporaryFile.delete()
                 throw error
             }
         }
@@ -198,5 +244,7 @@ internal class GameArchive private constructor(
             }
             channel.position(originalPosition)
         }
+
+        private const val COPY_BUFFER_SIZE = 1024 * 1024
     }
 }
