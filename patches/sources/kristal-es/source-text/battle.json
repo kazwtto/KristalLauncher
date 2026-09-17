@@ -1,0 +1,12 @@
+{
+  "%": "%",
+  "* Your soul shined its power on\n{lua1}!": "* Su alma brillaba con el poder de\n{lua1}!",
+  "[instant]{lua1}": "[instant]{lua1}",
+  "HP": "PV",
+  "MERCY": "PIEDAD",
+  "RALSEI": "RALSEI",
+  "xact": "xact",
+  "{lua1}%": "{lua1}%",
+  "{lua1}% {lua2}": "{lua1}% {lua2}",
+  "* {lua1} spared {lua2}!": "* {lua1} poupou {lua2}!"
+}

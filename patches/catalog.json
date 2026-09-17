@@ -93,6 +93,54 @@
       "conflicts": [],
       "package": "packages/kristal-ptbr-2.3.4.klpatch",
       "sha256": "8049e312ae6564bebe7a124e8b9c29a92b2d5180811277f4f2937208919c0112"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "kristal.es",
+      "version": "0.0.1",
+      "name": {
+        "pt-BR": "Kristal Engine em Espanhol",
+        "en": "Kristal Engine in Spanish",
+        "es": "Kristal Engine en Español"
+      },
+      "description": {
+        "pt-BR": "Traduz menus, textos integrados e elementos gráficos da Kristal Engine para espanhol.",
+        "en": "Translates built-in Kristal Engine menus, text, and interface graphics into Spanish.",
+        "es": "Traduce al español los menús, textos integrados y gráficos de interfaz de Kristal Engine."
+      },
+      "useCases": [
+        {
+          "pt-BR": "Você quer jogar mods da Kristal com menus e mensagens da engine em espanhol.",
+          "en": "You want Kristal mods to show engine menus and messages in Spanish.",
+          "es": "Quieres que los mods de Kristal muestren en español los menús y mensajes del motor."
+        },
+        {
+          "pt-BR": "Botões, telas de batalha ou imagens da interface ainda aparecem em inglês.",
+          "en": "Buttons, battle screens, or interface graphics still appear in English.",
+          "es": "Los botones, pantallas de batalla o gráficos de interfaz todavía aparecen en inglés."
+        }
+      ],
+      "releaseNotes": {
+        "pt-BR": "Primeira versão da tradução da Kristal Engine para espanhol.",
+        "en": "First release of the Kristal Engine Spanish translation.",
+        "es": "Primera versión de la traducción de Kristal Engine al español."
+      },
+      "author": "kazwtto",
+      "category": "localization",
+      "minimumLauncherVersion": "0.1.0",
+      "priority": 200,
+      "capabilities": [
+        "staged_package",
+        "inject_files",
+        "edit_lua",
+        "runtime_hook"
+      ],
+      "dependencies": [],
+      "conflicts": [
+        "kristal.ptbr"
+      ],
+      "package": "packages/kristal-es-0.0.1.klpatch",
+      "sha256": "ff1af44afee737eb922bb821e131b4eeff200c0e8f4e1c48aba2000f4c480706"
     }
   ]
 }

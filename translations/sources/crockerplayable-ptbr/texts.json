@@ -157,7 +157,7 @@
     "source": "* Tutorial constricts you...\n* ([color:yellow]TP[color:reset] Gain reduced outside of [color:green]using tension items like a cheater[color:reset])\n",
     "translation": "* O tutorial te limita...\n* (Ganho de [color:yellow]TP[color:reset] menor fora de [color:green]usar itens de tensão como trapaceiro[color:reset])\n",
     "originalExpression": "[==[\n* Tutorial constricts you...\n* ([color:yellow]TP[color:reset] Gain reduced outside of [color:green]using tension items like a cheater[color:reset])\n]==]",
-    "replacementExpression": "\"* O tutorial te limita...\\n* (Ganho de [color:yellow]TP[color:reset] menor fora de [color:green]usar itens de tensão como trapaceiro[color:reset])\\n\""
+    "replacementExpression": "[==[* O tutorial te limita...\n* (Ganho de [color:yellow]TP[color:reset] menor fora de [color:green]usar itens de tensão como trapaceiro[color:reset])\n]==]"
   },
   "2f99aaa5d21a": {
     "file": "scripts/battle/encounters/lancerspawn.lua",
@@ -259,16 +259,6 @@
     "originalExpression": "\"* Darkness constricts to a familiar form...[wait:5]\\n* [color:yellow]TP[color:white] Gain reduced outside of [color:green]COURAGE[color:white]!\"",
     "replacementExpression": "\"* A escuridão toma uma forma familiar...[wait:5]\\n* Ganho de [color:yellow]TP[color:white] menor sem [color:green]CORAGEM[color:white]!\""
   },
-  "640e03934966": {
-    "file": "scripts/battle/enemies/dummy.lua",
-    "fileHash": "fbd40baeb90d3ea0dc9f89d830fd0eba35e7b9e8d199a9b9af6f44a1c5caaa86",
-    "startOffset": 797,
-    "endOffset": 802,
-    "source": "...",
-    "translation": "...",
-    "originalExpression": "\"...\"",
-    "replacementExpression": "\"...\""
-  },
   "29bbd6d84e31": {
     "file": "scripts/battle/enemies/dummy.lua",
     "fileHash": "fbd40baeb90d3ea0dc9f89d830fd0eba35e7b9e8d199a9b9af6f44a1c5caaa86",
@@ -299,16 +289,6 @@
     "originalExpression": "\"* The power of fluffy boys is\\nin the air.\"",
     "replacementExpression": "\"* O poder dos garotos fofinhos\\nestá no ar.\""
   },
-  "12a7b8f20308": {
-    "file": "scripts/battle/enemies/dummy.lua",
-    "fileHash": "fbd40baeb90d3ea0dc9f89d830fd0eba35e7b9e8d199a9b9af6f44a1c5caaa86",
-    "startOffset": 1148,
-    "endOffset": 1174,
-    "source": "* Smells like cardboard.",
-    "translation": "* Cheira a papelão.",
-    "originalExpression": "\"* Smells like cardboard.\"",
-    "replacementExpression": "\"* Cheira a papelão.\""
-  },
   "dc0b97e44c2c": {
     "file": "scripts/battle/enemies/dummy.lua",
     "fileHash": "fbd40baeb90d3ea0dc9f89d830fd0eba35e7b9e8d199a9b9af6f44a1c5caaa86",
@@ -318,36 +298,6 @@
     "translation": "* O boneco parece que está\nprestes a cair.",
     "originalExpression": "\"* The dummy looks like it's\\nabout to fall over.\"",
     "replacementExpression": "\"* O boneco parece que está\\nprestes a cair.\""
-  },
-  "a43e49ec1f80": {
-    "file": "scripts/battle/enemies/dummy.lua",
-    "fileHash": "fbd40baeb90d3ea0dc9f89d830fd0eba35e7b9e8d199a9b9af6f44a1c5caaa86",
-    "startOffset": 1396,
-    "endOffset": 1403,
-    "source": "Smile",
-    "translation": "Sorrir",
-    "originalExpression": "\"Smile\"",
-    "replacementExpression": "\"Sorrir\""
-  },
-  "df7e9859610d": {
-    "file": "scripts/battle/enemies/dummy.lua",
-    "fileHash": "fbd40baeb90d3ea0dc9f89d830fd0eba35e7b9e8d199a9b9af6f44a1c5caaa86",
-    "startOffset": 1539,
-    "endOffset": 1551,
-    "source": "Tell Story",
-    "translation": "Contar História",
-    "originalExpression": "\"Tell Story\"",
-    "replacementExpression": "\"Contar História\""
-  },
-  "74835a4cd095": {
-    "file": "scripts/battle/enemies/dummy.lua",
-    "fileHash": "fbd40baeb90d3ea0dc9f89d830fd0eba35e7b9e8d199a9b9af6f44a1c5caaa86",
-    "startOffset": 1788,
-    "endOffset": 1796,
-    "source": "... ^^",
-    "translation": "... ^^",
-    "originalExpression": "\"... ^^\"",
-    "replacementExpression": "\"... ^^\""
   },
   "2deb1cbae403": {
     "file": "scripts/battle/enemies/dummy.lua",
@@ -397,7 +347,7 @@
     "source": "* {lua1} straightened the\ndummy's hat.",
     "translation": "* {lua1} ajeitou o\nchapéu do boneco.",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \" straightened the\\ndummy's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" ajeitou o\\nchapéu do boneco.\""
+    "replacementExpression": "\"* {lua1} ajeitou o\\nchapéu do boneco.\""
   },
   "b6ed2b3df0b3": {
     "file": "scripts/battle/enemies/kitty.lua",
@@ -459,16 +409,6 @@
     "originalExpression": "\"Dance\"",
     "replacementExpression": "\"Dançar\""
   },
-  "57daf0463467": {
-    "file": "scripts/battle/enemies/kitty.lua",
-    "fileHash": "1948a8ea41098c36e0837764913e0de3e4d6b07365b8fc70a550c907bbef6573",
-    "startOffset": 1769,
-    "endOffset": 1777,
-    "source": "... ^^",
-    "translation": "... ^^",
-    "originalExpression": "\"... ^^\"",
-    "replacementExpression": "\"... ^^\""
-  },
   "6d65d7fc9981": {
     "file": "scripts/battle/enemies/kitty.lua",
     "fileHash": "1948a8ea41098c36e0837764913e0de3e4d6b07365b8fc70a550c907bbef6573",
@@ -517,7 +457,7 @@
     "source": "* {lua1} straightened the\nkitty's hat.",
     "translation": "* {lua1} ajeitou o\nchapéu do gatinho.",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \" straightened the\\nkitty's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" ajeitou o\\nchapéu do gatinho.\""
+    "replacementExpression": "\"* {lua1} ajeitou o\\nchapéu do gatinho.\""
   },
   "8b3164c6d527": {
     "file": "scripts/battle/enemies/lancerspawn.lua",
@@ -717,7 +657,7 @@
     "source": "* {lua1}'s SOUL shone brighter!",
     "translation": "* A ALMA de {lua1} brilhou mais forte!",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \"'s SOUL shone brighter!\"",
-    "replacementExpression": "\"* A ALMA de \" .. (battler.chara:getName()) .. \" brilhou mais forte!\""
+    "replacementExpression": "\"* A ALMA de {lua1} brilhou mais forte!\""
   },
   "ddb0eef35c23": {
     "file": "scripts/battle/enemies/lancerspawn.lua",
@@ -727,7 +667,7 @@
     "source": "* {lua1}'s SOUL emitted a brilliant light!",
     "translation": "* A ALMA de {lua1} emitiu uma luz brilhante!",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \"'s SOUL emitted a brilliant light!\"",
-    "replacementExpression": "\"* A ALMA de \" .. (battler.chara:getName()) .. \" emitiu uma luz brilhante!\""
+    "replacementExpression": "\"* A ALMA de {lua1} emitiu uma luz brilhante!\""
   },
   "a55eb13dcdc7": {
     "file": "scripts/battle/enemies/lancerspawn.lua",
@@ -1097,7 +1037,7 @@
     "source": "* {lua1} tried to \"[color:yellow]ACT[color:reset]\"...\n* But, the enemy couldn't understand!",
     "translation": "* {lua1} tentou \"[color:yellow]AGIR[color:reset]\"...\n* Mas o inimigo não entendeu!",
     "originalExpression": "\n                \"* \" .. battler.chara:getName()\n                    .. \" tried to \\\"[color:yellow]ACT[color:reset]\\\"...\\n* But, the enemy couldn't understand!\"\n            ",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" tentou \\\"[color:yellow]AGIR[color:reset]\\\"...\\n* Mas o inimigo não entendeu!\""
+    "replacementExpression": "\n* {lua1} tentou \"[color:yellow]AGIR[color:reset]\"...\\n* Mas o inimigo não entendeu!\n"
   },
   "ba2fcfa7f24b": {
     "file": "scripts/battle/enemies/lancerspawn.lua",
@@ -1207,7 +1147,7 @@
     "source": "* {lua1}'s SOUL shone brighter!",
     "translation": "* A ALMA de {lua1} brilhou mais forte!",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \"'s SOUL shone brighter!\"",
-    "replacementExpression": "\"* A ALMA de \" .. (battler.chara:getName()) .. \" brilhou mais forte!\""
+    "replacementExpression": "\"* A ALMA de {lua1} brilhou mais forte!\""
   },
   "d466e8a58991": {
     "file": "scripts/battle/enemies/pippins.lua",
@@ -1217,7 +1157,7 @@
     "source": "* {lua1}'s SOUL emitted a brilliant light!",
     "translation": "* A ALMA de {lua1} emitiu uma luz brilhante!",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \"'s SOUL emitted a brilliant light!\"",
-    "replacementExpression": "\"* A ALMA de \" .. (battler.chara:getName()) .. \" emitiu uma luz brilhante!\""
+    "replacementExpression": "\"* A ALMA de {lua1} emitiu uma luz brilhante!\""
   },
   "258da62f3415": {
     "file": "scripts/battle/enemies/pippins.lua",
@@ -1227,7 +1167,7 @@
     "source": "* {lua1} tried to \"[color:yellow]ACT[color:reset]\"...\n* But, the enemy couldn't understand!",
     "translation": "* {lua1} tentou \"[color:yellow]AGIR[color:reset]\"...\n* Mas o inimigo não entendeu!",
     "originalExpression": "\n                \"* \" .. battler.chara:getName()\n                    .. \" tried to \\\"[color:yellow]ACT[color:reset]\\\"...\\n* But, the enemy couldn't understand!\"\n            ",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" tentou \\\"[color:yellow]AGIR[color:reset]\\\"...\\n* Mas o inimigo não entendeu!\""
+    "replacementExpression": "\n* {lua1} tentou \"[color:yellow]AGIR[color:reset]\"...\\n* Mas o inimigo não entendeu!\n"
   },
   "bfb9a39df25b": {
     "file": "scripts/battle/enemies/pippins.lua",
@@ -1377,7 +1317,7 @@
     "source": "* {lua1}'s SOUL shone brighter!",
     "translation": "* A ALMA de {lua1} brilhou mais forte!",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \"'s SOUL shone brighter!\"",
-    "replacementExpression": "\"* A ALMA de \" .. (battler.chara:getName()) .. \" brilhou mais forte!\""
+    "replacementExpression": "\"* A ALMA de {lua1} brilhou mais forte!\""
   },
   "8f90da6633c9": {
     "file": "scripts/battle/enemies/rudinn.lua",
@@ -1387,7 +1327,7 @@
     "source": "* {lua1}'s SOUL emitted a brilliant light!",
     "translation": "* A ALMA de {lua1} emitiu uma luz brilhante!",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \"'s SOUL emitted a brilliant light!\"",
-    "replacementExpression": "\"* A ALMA de \" .. (battler.chara:getName()) .. \" emitiu uma luz brilhante!\""
+    "replacementExpression": "\"* A ALMA de {lua1} emitiu uma luz brilhante!\""
   },
   "2e9303058b7d": {
     "file": "scripts/battle/enemies/rudinn.lua",
@@ -1397,7 +1337,7 @@
     "source": "* {lua1} tried to \"[color:yellow]ACT[color:reset]\"...\n* But, the enemy couldn't understand!",
     "translation": "* {lua1} tentou \"[color:yellow]AGIR[color:reset]\"...\n* Mas o inimigo não entendeu!",
     "originalExpression": "\n                \"* \" .. battler.chara:getName()\n                    .. \" tried to \\\"[color:yellow]ACT[color:reset]\\\"...\\n* But, the enemy couldn't understand!\"\n            ",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" tentou \\\"[color:yellow]AGIR[color:reset]\\\"...\\n* Mas o inimigo não entendeu!\""
+    "replacementExpression": "\n* {lua1} tentou \"[color:yellow]AGIR[color:reset]\"...\\n* Mas o inimigo não entendeu!\n"
   },
   "da9fa97bedc2": {
     "file": "scripts/battle/enemies/rudinn.lua",
@@ -1487,7 +1427,7 @@
     "source": "* {lua1}'s SOUL shone brighter!",
     "translation": "* A ALMA de {lua1} brilhou mais forte!",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \"'s SOUL shone brighter!\"",
-    "replacementExpression": "\"* A ALMA de \" .. (battler.chara:getName()) .. \" brilhou mais forte!\""
+    "replacementExpression": "\"* A ALMA de {lua1} brilhou mais forte!\""
   },
   "4e4029e05941": {
     "file": "scripts/battle/enemies/tasque.lua",
@@ -1497,7 +1437,7 @@
     "source": "* {lua1}'s SOUL emitted a brilliant light!",
     "translation": "* A ALMA de {lua1} emitiu uma luz brilhante!",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \"'s SOUL emitted a brilliant light!\"",
-    "replacementExpression": "\"* A ALMA de \" .. (battler.chara:getName()) .. \" emitiu uma luz brilhante!\""
+    "replacementExpression": "\"* A ALMA de {lua1} emitiu uma luz brilhante!\""
   },
   "6ca843c1cff2": {
     "file": "scripts/battle/enemies/tasque.lua",
@@ -1507,7 +1447,7 @@
     "source": "* {lua1} tried to \"[color:yellow]ACT[color:reset]\"...\n* But, the enemy couldn't understand!",
     "translation": "* {lua1} tentou \"[color:yellow]AGIR[color:reset]\"...\n* Mas o inimigo não entendeu!",
     "originalExpression": "\n                \"* \" .. battler.chara:getName()\n                    .. \" tried to \\\"[color:yellow]ACT[color:reset]\\\"...\\n* But, the enemy couldn't understand!\"\n            ",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" tentou \\\"[color:yellow]AGIR[color:reset]\\\"...\\n* Mas o inimigo não entendeu!\""
+    "replacementExpression": "\n* {lua1} tentou \"[color:yellow]AGIR[color:reset]\"...\\n* Mas o inimigo não entendeu!\n"
   },
   "da5351f2ed2a": {
     "file": "scripts/battle/enemies/tasque.lua",
@@ -1558,16 +1498,6 @@
     "translation": "(Como uma aurora boreal...)",
     "originalExpression": "\"(Like the northern lights...)\"",
     "replacementExpression": "\"(Como uma aurora boreal...)\""
-  },
-  "29b0f7901c9e": {
-    "file": "scripts/data/items/armors/rainbowribbon.lua",
-    "fileHash": "f2b1e37913991d5e8a728cdff825fde4ce18cd81f2f8803c3a7eda97e3371d90",
-    "startOffset": 1452,
-    "endOffset": 1456,
-    "source": "OK",
-    "translation": "OK",
-    "originalExpression": "\"OK\"",
-    "replacementExpression": "\"OK\""
   },
   "e44209523df4": {
     "file": "scripts/data/items/key_a.lua",
@@ -1627,7 +1557,7 @@
     "source": "In the \nshape of\n\"NEODIAMOND\"\nHeals ??HP",
     "translation": "No \nformato de\n\"NEODIAMOND\"\nCura ??HP",
     "originalExpression": "'In the \\nshape of\\n\"NEODIAMOND\"\\nHeals ??HP'",
-    "replacementExpression": "\"No \\nformato de\\n\\\"NEODIAMOND\\\"\\nCura ??HP\""
+    "replacementExpression": "'No \\nformato de\\n\"NEODIAMOND\"\\nCura ??HP'"
   },
   "c19fec4d2851": {
     "file": "scripts/data/items/neochocdiamond.lua",
@@ -1749,16 +1679,6 @@
     "originalExpression": "\"GOOD THING I'M NOT A REAL CAT!\"",
     "replacementExpression": "\"AINDA BEM QUE NÃO SOU UM GATO REAL!\""
   },
-  "2f330cf2afb9": {
-    "file": "scripts/data/items/ultimate_candy.lua",
-    "fileHash": "dd02b48be83850334060fcce3c6406377aa15c4625b1370224ffb6cc8c8623b0",
-    "startOffset": 309,
-    "endOffset": 325,
-    "source": "ULTIMATE CANDY",
-    "translation": "DOCE SUPREMO",
-    "originalExpression": "\"ULTIMATE CANDY\"",
-    "replacementExpression": "\"DOCE SUPREMO\""
-  },
   "ed02e53a97b7": {
     "file": "scripts/data/items/ultimate_candy.lua",
     "fileHash": "dd02b48be83850334060fcce3c6406377aa15c4625b1370224ffb6cc8c8623b0",
@@ -1768,16 +1688,6 @@
     "translation": "Melhor\ncura",
     "originalExpression": "\"Best\\nhealing\"",
     "replacementExpression": "\"Melhor\\ncura\""
-  },
-  "8a24673fd869": {
-    "file": "scripts/data/items/ultimate_candy.lua",
-    "fileHash": "dd02b48be83850334060fcce3c6406377aa15c4625b1370224ffb6cc8c8623b0",
-    "startOffset": 548,
-    "endOffset": 560,
-    "source": "Perfection",
-    "translation": "Perfeição",
-    "originalExpression": "\"Perfection\"",
-    "replacementExpression": "\"Perfeição\""
   },
   "9dab9f4ef4ed": {
     "file": "scripts/data/items/ultimate_candy.lua",
@@ -1789,36 +1699,6 @@
     "originalExpression": "\"Sparkles with perfection.\\nMust be shared with everyone. +??HP\"",
     "replacementExpression": "\"Brilha com perfeição.\\nDeve ser dividido com todo mundo. +??HP\""
   },
-  "f45e269201d3": {
-    "file": "scripts/data/items/ultimate_candy.lua",
-    "fileHash": "dd02b48be83850334060fcce3c6406377aa15c4625b1370224ffb6cc8c8623b0",
-    "startOffset": 1588,
-    "endOffset": 1614,
-    "source": "Hey! It's hollow inside!",
-    "translation": "Ei! É oco por dentro!",
-    "originalExpression": "\"Hey! It's hollow inside!\"",
-    "replacementExpression": "\"Ei! É oco por dentro!\""
-  },
-  "02727f3ba815": {
-    "file": "scripts/data/items/ultimate_candy.lua",
-    "fileHash": "dd02b48be83850334060fcce3c6406377aa15c4625b1370224ffb6cc8c8623b0",
-    "startOffset": 1633,
-    "endOffset": 1654,
-    "source": "I like the texture!",
-    "translation": "Gostei da textura!",
-    "originalExpression": "\"I like the texture!\"",
-    "replacementExpression": "\"Gostei da textura!\""
-  },
-  "e815128a8f7c": {
-    "file": "scripts/data/items/ultimate_candy.lua",
-    "fileHash": "dd02b48be83850334060fcce3c6406377aa15c4625b1370224ffb6cc8c8623b0",
-    "startOffset": 1673,
-    "endOffset": 1700,
-    "source": "That was underwhelming...",
-    "translation": "Isso foi decepcionante...",
-    "originalExpression": "\"That was underwhelming...\"",
-    "replacementExpression": "\"Isso foi decepcionante...\""
-  },
   "9cd1b3216b0f": {
     "file": "scripts/data/items/weapons/justiceaxe.lua",
     "fileHash": "7e3ad704cb92f0b9fd375303b3c28d852890d0c34318237c1f5c4a711a8db63d",
@@ -1828,36 +1708,6 @@
     "translation": "Não tem poderes especiais. Porém, para\nconseguir este item, você ficou bem mais forte!",
     "originalExpression": "\"It has no special powers. However, in order to\\nattain this item, you became much stronger!\"",
     "replacementExpression": "\"Não tem poderes especiais. Porém, para\\nconseguir este item, você ficou bem mais forte!\""
-  },
-  "495a30a0a3fc": {
-    "file": "scripts/data/items/weapons/justiceaxe.lua",
-    "fileHash": "7e3ad704cb92f0b9fd375303b3c28d852890d0c34318237c1f5c4a711a8db63d",
-    "startOffset": 1395,
-    "endOffset": 1417,
-    "source": "Watch this, old man!",
-    "translation": "Olha só, velhote!",
-    "originalExpression": "\"Watch this, old man!\"",
-    "replacementExpression": "\"Olha só, velhote!\""
-  },
-  "47b082bf0497": {
-    "file": "scripts/data/items/weapons/justiceaxe.lua",
-    "fileHash": "7e3ad704cb92f0b9fd375303b3c28d852890d0c34318237c1f5c4a711a8db63d",
-    "startOffset": 1436,
-    "endOffset": 1462,
-    "source": "... isn't Susie amazing?",
-    "translation": "... Susie não é incrível?",
-    "originalExpression": "\"... isn't Susie amazing?\"",
-    "replacementExpression": "\"... Susie não é incrível?\""
-  },
-  "fd8d9ccb6a43": {
-    "file": "scripts/data/items/weapons/justiceaxe.lua",
-    "fileHash": "7e3ad704cb92f0b9fd375303b3c28d852890d0c34318237c1f5c4a711a8db63d",
-    "startOffset": 1481,
-    "endOffset": 1513,
-    "source": "... Susie beat up an old man!?",
-    "translation": "... Susie bateu num velhote!?",
-    "originalExpression": "\"... Susie beat up an old man!?\"",
-    "replacementExpression": "\"... Susie bateu num velhote!?\""
   },
   "205224ff9148": {
     "file": "scripts/data/party/dessel.lua",
@@ -1999,16 +1849,6 @@
     "originalExpression": "\"Vessel\\nHope crossed \\non heart.\"",
     "replacementExpression": "\"Receptáculo\\nEsperança cruza\\no coração.\""
   },
-  "ec33060e328a": {
-    "file": "scripts/data/party/soulsusie.lua",
-    "fileHash": "b409d818e2c4f727141ed9c0846f9e36278e944f355fdb38e4372fc5b290cca5",
-    "startOffset": 4447,
-    "endOffset": 4464,
-    "source": "Hey, hands off!",
-    "translation": "Ei, tire as mãos!",
-    "originalExpression": "\"Hey, hands off!\"",
-    "replacementExpression": "\"Ei, tire as mãos!\""
-  },
   "9e29fad45448": {
     "file": "scripts/data/party/susie.lua",
     "fileHash": "1fdaa3624ecd550075adfa4fbe8d504bfffd63e87fda000a49fa4f9497891805",
@@ -2018,16 +1858,6 @@
     "translation": "Cavaleira Sombria\nCausa dano usando\nenergia sombria.",
     "originalExpression": "\"Dark Knight\\nDoes damage using\\ndark energy.\"",
     "replacementExpression": "\"Cavaleira Sombria\\nCausa dano usando\\nenergia sombria.\""
-  },
-  "0a92b9b38a0d": {
-    "file": "scripts/data/party/susie.lua",
-    "fileHash": "1fdaa3624ecd550075adfa4fbe8d504bfffd63e87fda000a49fa4f9497891805",
-    "startOffset": 5009,
-    "endOffset": 5026,
-    "source": "Hey, hands off!",
-    "translation": "Ei, tire as mãos!",
-    "originalExpression": "\"Hey, hands off!\"",
-    "replacementExpression": "\"Ei, tire as mãos!\""
   },
   "1035f0279571": {
     "file": "scripts/data/spells/dual_heal.lua",
@@ -2129,16 +1959,6 @@
     "originalExpression": "\"Spare\\nTIRED foe\"",
     "replacementExpression": "\"Poupar\\nCANSADO\""
   },
-  "1c053aa8a645": {
-    "file": "scripts/data/spells/pacify.lua",
-    "fileHash": "673fbefe8d0b039de79fede6bd87b516c30717fee5fc135a0565a974743a6f6d",
-    "startOffset": 313,
-    "endOffset": 360,
-    "source": "SPARE a tired enemy by putting them to sleep.",
-    "translation": "POUPE um inimigo cansado fazendo-o dormir.",
-    "originalExpression": "\"SPARE a tired enemy by putting them to sleep.\"",
-    "replacementExpression": "\"POUPE um inimigo cansado fazendo-o dormir.\""
-  },
   "a1e679da0109": {
     "file": "scripts/data/spells/pacify.lua",
     "fileHash": "673fbefe8d0b039de79fede6bd87b516c30717fee5fc135a0565a974743a6f6d",
@@ -2147,7 +1967,7 @@
     "source": "{lua1}\n[wait:0.25s]* But the enemy wasn't [color:blue]TIRED[color:reset]...",
     "translation": "{lua1}\n[wait:0.25s]* Mas o inimigo não estava [color:blue]CANSADO[color:reset]...",
     "originalExpression": "message .. \"\\n[wait:0.25s]* But the enemy wasn't [color:blue]TIRED[color:reset]...\"",
-    "replacementExpression": "(message) .. \"\\n[wait:0.25s]* Mas o inimigo não estava [color:blue]CANSADO[color:reset]...\""
+    "replacementExpression": "m{lua1}\\n[wait:0.25s]* Mas o ini\\migo não estava [color:blue]CANSADO[color:reset]...m"
   },
   "d98a999d8862": {
     "file": "scripts/data/spells/soul_buster.lua",
@@ -2187,7 +2007,7 @@
     "source": "* {lua1} used {lua2}!",
     "translation": "* {lua1} usou {lua2}!",
     "originalExpression": "\"* \" .. user.chara:getName() .. \" used \" .. self:getCastName() .. \"!\"",
-    "replacementExpression": "\"* \" .. (user.chara:getName()) .. \" usou \" .. (self:getCastName()) .. \"!\""
+    "replacementExpression": "\"* {lua1} usou {lua2}!\""
   },
   "57abddf1fb13": {
     "file": "scripts/data/spells/ultimate_heal.lua",
@@ -2547,7 +2367,7 @@
     "source": "[instant]Hello!![wait:10]\n\nThanks for trying out the project...\nThis is still a HEAVY WORK IN PROGRESS!!! It will be updated when videos come out.[wait:10]\nI apologize for any potential bugs found...[wait:10]\n\nIf you find any, Please let me know in the discord!",
     "translation": "[instant]Olá!![wait:10]\n\nAgradeço por testar o projeto...\nIsto ainda está MUITO EM DESENVOLVIMENTO!!! Será atualizado quando saírem vídeos.[wait:10]\nPeço desculpas por qualquer possível erro encontrado...[wait:10]\n\nSe achar algum, por favor, avise no Discord!",
     "originalExpression": "\n        \"[instant]Hello!![wait:10]\\n\\n\" .. \"Thanks for trying out the project...\\n\"\n            .. \"This is still a HEAVY WORK IN PROGRESS!!! It will be updated when videos come out.[wait:10]\\n\"\n            .. \"I apologize for any potential bugs found...[wait:10]\\n\\nIf you find any, Please let me know in the discord!\"\n    ",
-    "replacementExpression": "\"[instant]Olá!![wait:10]\\n\\nAgradeço por testar o projeto...\\nIsto ainda está MUITO EM DESENVOLVIMENTO!!! Será atualizado quando saírem vídeos.[wait:10]\\nPeço desculpas por qualquer possível erro encontrado...[wait:10]\\n\\nSe achar algum, por favor, avise no Discord!\""
+    "replacementExpression": "\n[instant]Olá!![wait:10]\\n\\nAgradeço por testar o projeto...\\nIsto ainda está MUITO EM DESENVOLVIMENTO!!! Será atualizado quando saírem vídeos.[wait:10]\\nPeço desculpas por qualquer possível erro encontrado...[wait:10]\\n\\nSe achar algum, por favor, avise no Discord!\n"
   },
   "9204e48b0ca2": {
     "file": "scripts/world/cutscenes/dogchk.lua",
@@ -2567,7 +2387,7 @@
     "source": "            [font:small]\n[color:AAAAAA] Press [Z] or [ENTER] to return to menu",
     "translation": "            [font:small]\n[color:AAAAAA] Pressione [Z] ou [ENTER] para voltar ao menu",
     "originalExpression": "[[\n            [font:small]\n[color:AAAAAA] Press [Z] or [ENTER] to return to menu]]",
-    "replacementExpression": "\"            [font:small]\\n[color:AAAAAA] Pressione [Z] ou [ENTER] para voltar ao menu\""
+    "replacementExpression": "[[            [font:small]\n[color:AAAAAA] Pressione [Z] ou [ENTER] para voltar ao menu]]"
   },
   "e718c583911f": {
     "file": "scripts/world/cutscenes/dummy.lua",
@@ -3559,16 +3379,6 @@
     "originalExpression": "\"I am\\n\"",
     "replacementExpression": "\"Eu sou\\n\""
   },
-  "f382e04a510b": {
-    "file": "scripts/world/cutscenes/results.lua",
-    "fileHash": "72a42d42a7cf8383e21c24a798b06eb72c51d22d8bb0302741ae3a4387934c26",
-    "startOffset": 2246,
-    "endOffset": 2251,
-    "source": "...",
-    "translation": "...",
-    "originalExpression": "\"...\"",
-    "replacementExpression": "\"...\""
-  },
   "119f79b4bb5a": {
     "file": "scripts/world/cutscenes/results.lua",
     "fileHash": "72a42d42a7cf8383e21c24a798b06eb72c51d22d8bb0302741ae3a4387934c26",
@@ -3577,7 +3387,7 @@
     "source": "[voice:susiehushed]* {lua1}???",
     "translation": "[voice:susiehushed]* {lua1}???",
     "originalExpression": "\"[voice:susiehushed]* \".. Game.save_name ..\"???\"",
-    "replacementExpression": "\"[voice:susiehushed]* \" .. (Game.save_name) .. \"???\""
+    "replacementExpression": "\"[voice:susiehushed]* {lua1}???\""
   },
   "9be84fb008e7": {
     "file": "scripts/world/cutscenes/results.lua",
@@ -3777,7 +3587,7 @@
     "source": "*[voice:susiehushed] {lua1}...",
     "translation": "*[voice:susiehushed] {lua1}...",
     "originalExpression": "\"*[voice:susiehushed] \" .. Game.save_name ..\"...\"",
-    "replacementExpression": "\"*[voice:susiehushed] \" .. (Game.save_name) .. \"...\""
+    "replacementExpression": "\"*[voice:susiehushed] {lua1}...\""
   },
   "0e9c310e7166": {
     "file": "scripts/world/cutscenes/results.lua",
@@ -3927,7 +3737,7 @@
     "source": "*[voice:susiehushed] C'mon,[wait:5]{lua1}.",
     "translation": "*[voice:susiehushed] Vamos,[wait:5]{lua1}.",
     "originalExpression": "\"*[voice:susiehushed] C'mon,[wait:5]\" .. Game.save_name ..\".\"",
-    "replacementExpression": "\"*[voice:susiehushed] Vamos,[wait:5]\" .. (Game.save_name) .. \".\""
+    "replacementExpression": "\"*[voice:susiehushed] Vamos,[wait:5]{lua1}.\""
   },
   "a4653ab7973f": {
     "file": "scripts/world/cutscenes/results.lua",
@@ -3977,7 +3787,7 @@
     "source": "[color:yellow]{lua1} SECONDS!",
     "translation": "[color:yellow]{lua1} SEGUNDOS!",
     "originalExpression": "\"[color:yellow]\" .. content .. \" SECONDS!\"",
-    "replacementExpression": "\"[color:yellow]\" .. (content) .. \" SEGUNDOS!\""
+    "replacementExpression": "\"[color:yellow]{lua1} SEGUNDOS!\""
   },
   "57f27a79e8c9": {
     "file": "scripts/world/cutscenes/results.lua",
@@ -4129,16 +3939,6 @@
     "originalExpression": "\"Good\"",
     "replacementExpression": "\"Bom\""
   },
-  "4784da054840": {
-    "file": "scripts/world/cutscenes/results.lua",
-    "fileHash": "72a42d42a7cf8383e21c24a798b06eb72c51d22d8bb0302741ae3a4387934c26",
-    "startOffset": 14969,
-    "endOffset": 14973,
-    "source": "OK",
-    "translation": "OK",
-    "originalExpression": "\"OK\"",
-    "replacementExpression": "\"OK\""
-  },
   "8893bf2bf204": {
     "file": "scripts/world/cutscenes/results.lua",
     "fileHash": "72a42d42a7cf8383e21c24a798b06eb72c51d22d8bb0302741ae3a4387934c26",
@@ -4157,7 +3957,7 @@
     "source": "[font:small][color:AAAAAA]PB: {lua1}",
     "translation": "[font:small][color:AAAAAA]RECORDE: {lua1}",
     "originalExpression": "\"[font:small][color:AAAAAA]PB: \".. Game.RUNTIMER:getBest()",
-    "replacementExpression": "\"[font:small][color:AAAAAA]RECORDE: \" .. (Game.RUNTIMER:getBest())"
+    "replacementExpression": "\"[font:small][color:AAAAAA]RECORDE: {lua1}\""
   },
   "bda3c653837c": {
     "file": "scripts/world/cutscenes/results.lua",
@@ -4167,17 +3967,7 @@
     "source": "            [font:small]\n[color:AAAAAA] Press [Z] or [ENTER] to return to menu",
     "translation": "            [font:small]\n[color:AAAAAA] Pressione [Z] ou [ENTER] para voltar ao menu",
     "originalExpression": "[[\n            [font:small]\n[color:AAAAAA] Press [Z] or [ENTER] to return to menu]]",
-    "replacementExpression": "\"            [font:small]\\n[color:AAAAAA] Pressione [Z] ou [ENTER] para voltar ao menu\""
-  },
-  "c3ab0d3aee95": {
-    "file": "scripts/world/events/treasurechest.lua",
-    "fileHash": "78e93bd19963bc339f32e6a260e1f527b6b8c32170618574aec58d1abc193c70",
-    "startOffset": 2586,
-    "endOffset": 2611,
-    "source": "* (The chest is empty.)",
-    "translation": "* (O baú está vazio.)",
-    "originalExpression": "\"* (The chest is empty.)\"",
-    "replacementExpression": "\"* (O baú está vazio.)\""
+    "replacementExpression": "[[            [font:small]\n[color:AAAAAA] Pressione [Z] ou [ENTER] para voltar ao menu]]"
   },
   "0227bb84130c": {
     "file": "scripts/world/events/treasurechest.lua",
@@ -4189,26 +3979,6 @@
     "originalExpression": "\"* (You opened the treasure\\nchest.)[wait:5]\\n* (Inside was [color:yellow]\"",
     "replacementExpression": "\"* (Você abriu o baú do\\ntesouro.)[wait:5]\\n* (Dentro havia [color:yellow]\""
   },
-  "fb770758faca": {
-    "file": "scripts/world/events/treasurechest.lua",
-    "fileHash": "78e93bd19963bc339f32e6a260e1f527b6b8c32170618574aec58d1abc193c70",
-    "startOffset": 3545,
-    "endOffset": 3562,
-    "source": "[color:reset].)",
-    "translation": "[color:reset].)",
-    "originalExpression": "\"[color:reset].)\"",
-    "replacementExpression": "\"[color:reset].)\""
-  },
-  "7777cff562fc": {
-    "file": "scripts/world/events/treasurechest.lua",
-    "fileHash": "78e93bd19963bc339f32e6a260e1f527b6b8c32170618574aec58d1abc193c70",
-    "startOffset": 3867,
-    "endOffset": 3892,
-    "source": "* (The chest is empty.)",
-    "translation": "* (O baú está vazio.)",
-    "originalExpression": "\"* (The chest is empty.)\"",
-    "replacementExpression": "\"* (O baú está vazio.)\""
-  },
   "e063388dd7fc": {
     "file": "scripts/world/maps/dogcheck/map.lua",
     "fileHash": "d163d6c110564116ab5e6260f89362b0785dea2a45ffe0276b844f060c79992d",
@@ -4217,7 +3987,7 @@
     "source": "PB:{lua1}",
     "translation": "RECORDE:{lua1}",
     "originalExpression": "\"PB:\" .. Game:getFlag(\"DogCheckMinigamePoint\", 0)",
-    "replacementExpression": "\"RECORDE:\" .. (Game:getFlag(\"DogCheckMinigamePoint\", 0))"
+    "replacementExpression": "\"RECORDE:{lua1}\""
   },
   "5d5c4a1700ed": {
     "file": "scripts/world/maps/dogcheck/map.lua",
@@ -4227,7 +3997,7 @@
     "source": "POINTS:{lua1}",
     "translation": "PONTOS:{lua1}",
     "originalExpression": "\"POINTS:\" .. self.clicknum",
-    "replacementExpression": "\"PONTOS:\" .. (self.clicknum)"
+    "replacementExpression": "\"PONTOS:{lua1}\""
   },
   "2dd9eb7b829c": {
     "file": "scripts/world/maps/glassfield/palaceview/data.lua",
@@ -4285,8 +4055,278 @@
     "startOffset": 9825,
     "endOffset": 9843,
     "source": "temporary biitch",
-    "translation": "vadia temporária",
+    "translation": "vaadia temporária",
     "originalExpression": "\"temporary biitch\"",
-    "replacementExpression": "\"vadia temporária\""
+    "replacementExpression": "\"vaadia temporária\""
+  },
+  "198bf97975cd": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 353,
+    "endOffset": 376,
+    "source": "[2] RUDINNSPAWN FIGHT",
+    "translation": "[2] LUTA CONTRA RUDINNSPAWN",
+    "originalExpression": "\"[2] RUDINNSPAWN FIGHT\"",
+    "replacementExpression": "\"[2] LUTA CONTRA RUDINNSPAWN\""
+  },
+  "f3b080b3f54a": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 2262,
+    "endOffset": 2285,
+    "source": "[2] RUDINNSPAWN FIGHT",
+    "translation": "[2] LUTA CONTRA RUDINNSPAWN",
+    "originalExpression": "\"[2] RUDINNSPAWN FIGHT\"",
+    "replacementExpression": "\"[2] LUTA CONTRA RUDINNSPAWN\""
+  },
+  "faeb8bc84e26": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 378,
+    "endOffset": 394,
+    "source": "[3] KRIS CHASE",
+    "translation": "[3] PERSEGUIÇÃO DE KRIS",
+    "originalExpression": "\"[3] KRIS CHASE\"",
+    "replacementExpression": "\"[3] PERSEGUIÇÃO DE KRIS\""
+  },
+  "71b6d926fb38": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 2370,
+    "endOffset": 2386,
+    "source": "[3] KRIS CHASE",
+    "translation": "[3] PERSEGUIÇÃO DE KRIS",
+    "originalExpression": "\"[3] KRIS CHASE\"",
+    "replacementExpression": "\"[3] PERSEGUIÇÃO DE KRIS\""
+  },
+  "b9af2e353d59": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 396,
+    "endOffset": 419,
+    "source": "[4] LANCERSPAWN FIGHT",
+    "translation": "[4] LUTA CONTRA LANCERSPAWN",
+    "originalExpression": "\"[4] LANCERSPAWN FIGHT\"",
+    "replacementExpression": "\"[4] LUTA CONTRA LANCERSPAWN\""
+  },
+  "06636f792028": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 2465,
+    "endOffset": 2488,
+    "source": "[4] LANCERSPAWN FIGHT",
+    "translation": "[4] LUTA CONTRA LANCERSPAWN",
+    "originalExpression": "\"[4] LANCERSPAWN FIGHT\"",
+    "replacementExpression": "\"[4] LUTA CONTRA LANCERSPAWN\""
+  },
+  "09a48f5dbfa5": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 421,
+    "endOffset": 439,
+    "source": "[5] HOMETOWN...?",
+    "translation": "[5] CIDADE NATAL...?",
+    "originalExpression": "\"[5] HOMETOWN...?\"",
+    "replacementExpression": "\"[5] CIDADE NATAL...?\""
+  },
+  "92880e7f5b33": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 2681,
+    "endOffset": 2699,
+    "source": "[5] HOMETOWN...?",
+    "translation": "[5] CIDADE NATAL...?",
+    "originalExpression": "\"[5] HOMETOWN...?\"",
+    "replacementExpression": "\"[5] CIDADE NATAL...?\""
+  },
+  "00bdcbd61ab1": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 441,
+    "endOffset": 464,
+    "source": "[?] TITAN SPAWN FIGHT",
+    "translation": "[?] LUTA CONTRA CRIA DE TITÃ",
+    "originalExpression": "\"[?] TITAN SPAWN FIGHT\"",
+    "replacementExpression": "\"[?] LUTA CONTRA CRIA DE TITÃ\""
+  },
+  "ce750a332d4f": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 3264,
+    "endOffset": 3287,
+    "source": "[?] TITAN SPAWN FIGHT",
+    "translation": "[?] LUTA CONTRA CRIA DE TITÃ",
+    "originalExpression": "\"[?] TITAN SPAWN FIGHT\"",
+    "replacementExpression": "\"[?] LUTA CONTRA CRIA DE TITÃ\""
+  },
+  "26ccd0fd459b": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 485,
+    "endOffset": 494,
+    "source": "Youtube",
+    "translation": "Youtube",
+    "originalExpression": "\"Youtube\"",
+    "replacementExpression": "\"Youtube\""
+  },
+  "4b14e6ee6e0b": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 668,
+    "endOffset": 677,
+    "source": "Youtube",
+    "translation": "Youtube",
+    "originalExpression": "\"Youtube\"",
+    "replacementExpression": "\"Youtube\""
+  },
+  "cc559a47327c": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 496,
+    "endOffset": 503,
+    "source": "Demos",
+    "translation": "Demos",
+    "originalExpression": "\"Demos\"",
+    "replacementExpression": "\"Demos\""
+  },
+  "9fed032dd856": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 815,
+    "endOffset": 822,
+    "source": "Demos",
+    "translation": "Demos",
+    "originalExpression": "\"Demos\"",
+    "replacementExpression": "\"Demos\""
+  },
+  "32af05af3263": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 1005,
+    "endOffset": 1013,
+    "source": "Config",
+    "translation": "Config",
+    "originalExpression": "\"Config\"",
+    "replacementExpression": "\"Config\""
+  },
+  "e2c1879158d2": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 1371,
+    "endOffset": 1390,
+    "source": "Open Demos Folder",
+    "translation": "Abrir Pasta de Demos",
+    "originalExpression": "\"Open Demos Folder\"",
+    "replacementExpression": "\"Abrir Pasta de Demos\""
+  },
+  "141bdf008d08": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 17142,
+    "endOffset": 17155,
+    "source": "Select one!",
+    "translation": "Escolha um!",
+    "originalExpression": "\"Select one!\"",
+    "replacementExpression": "\"Escolha um!\""
+  },
+  "947c8a736fd5": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 19095,
+    "endOffset": 19105,
+    "source": "version ",
+    "translation": "versão ",
+    "originalExpression": "\"version \"",
+    "replacementExpression": "\"versão \""
+  },
+  "eff552306169": {
+    "file": "scripts/objects/CrokConfigMenu.lua",
+    "fileHash": "07659784979b859292a28b2ed336c92894e8fd0d2725710f50eba2c056c43e0b",
+    "startOffset": 7128,
+    "endOffset": 7141,
+    "source": "Skip Intros",
+    "translation": "Pular Intros",
+    "originalExpression": "\"Skip Intros\"",
+    "replacementExpression": "\"Pular Intros\""
+  },
+  "69f3cf327849": {
+    "file": "scripts/objects/CrokConfigMenu.lua",
+    "fileHash": "07659784979b859292a28b2ed336c92894e8fd0d2725710f50eba2c056c43e0b",
+    "startOffset": 7283,
+    "endOffset": 7293,
+    "source": "Show HUD",
+    "translation": "Mostrar HUD",
+    "originalExpression": "\"Show HUD\"",
+    "replacementExpression": "\"Mostrar HUD\""
+  },
+  "54f6c23fa68a": {
+    "file": "scripts/objects/CrokConfigMenu.lua",
+    "fileHash": "07659784979b859292a28b2ed336c92894e8fd0d2725710f50eba2c056c43e0b",
+    "startOffset": 7609,
+    "endOffset": 7623,
+    "source": "Record Demos",
+    "translation": "Gravar Demos",
+    "originalExpression": "\"Record Demos\"",
+    "replacementExpression": "\"Gravar Demos\""
+  },
+  "e84d541321d3": {
+    "file": "scripts/objects/HoldSkipper.lua",
+    "fileHash": "203564a6768877920ada6e2cee105247ed6c6fda32f72a7bc3be7611de4e6bb7",
+    "startOffset": 1507,
+    "endOffset": 1526,
+    "source": "Hold [P] to skip.",
+    "translation": "Segure [P] para pular.",
+    "originalExpression": "\"Hold [P] to skip.\"",
+    "replacementExpression": "\"Segure [P] para pular.\""
+  },
+  "2f39466655a4": {
+    "file": "scripts/objects/HoldSkipper.lua",
+    "fileHash": "203564a6768877920ada6e2cee105247ed6c6fda32f72a7bc3be7611de4e6bb7",
+    "startOffset": 1560,
+    "endOffset": 1579,
+    "source": "Hold [P] to skip.",
+    "translation": "Segure [P] para pular.",
+    "originalExpression": "\"Hold [P] to skip.\"",
+    "replacementExpression": "\"Segure [P] para pular.\""
+  },
+  "d94b212fbd2c": {
+    "file": "scripts/objects/HoldSkipper.lua",
+    "fileHash": "203564a6768877920ada6e2cee105247ed6c6fda32f72a7bc3be7611de4e6bb7",
+    "startOffset": 1613,
+    "endOffset": 1632,
+    "source": "Hold [P] to skip.",
+    "translation": "Segure [P] para pular.",
+    "originalExpression": "\"Hold [P] to skip.\"",
+    "replacementExpression": "\"Segure [P] para pular.\""
+  },
+  "4fb1a208d8c4": {
+    "file": "scripts/objects/HoldSkipper.lua",
+    "fileHash": "203564a6768877920ada6e2cee105247ed6c6fda32f72a7bc3be7611de4e6bb7",
+    "startOffset": 1666,
+    "endOffset": 1685,
+    "source": "Hold [P] to skip.",
+    "translation": "Segure [P] para pular.",
+    "originalExpression": "\"Hold [P] to skip.\"",
+    "replacementExpression": "\"Segure [P] para pular.\""
+  },
+  "4e7bdcc9aa54": {
+    "file": "scripts/objects/HoldSkipper.lua",
+    "fileHash": "203564a6768877920ada6e2cee105247ed6c6fda32f72a7bc3be7611de4e6bb7",
+    "startOffset": 1760,
+    "endOffset": 1779,
+    "source": "Hold [P] to skip.",
+    "translation": "Segure [P] para pular.",
+    "originalExpression": "\"Hold [P] to skip.\"",
+    "replacementExpression": "\"Segure [P] para pular.\""
+  },
+  "8acb0f7e14d6": {
+    "file": "scripts/objects/PLAYABLE/PLAYABLE_SELECTOR.lua",
+    "fileHash": "7b22e3ae54bc41ae3341b77d0c63839bdbd31b3b02e11d8f71662f39174678f7",
+    "startOffset": 10787,
+    "endOffset": 12328,
+    "source": "\n            [font:plain]\n[color:yellow]\n    ------------------------\n          CrockerFan08\n    ------------------------[color:white]\n          by Autumn64\n    [color:yellow]\n    ------------------------\n           Sprites\n    ------------------------\n    [color:white]\n           Autumn64\n           Melodots\n           Razfraz\n    [color:yellow]\n    ------------------------\n           Music/SFX\n    ------------------------\n    [color:white]\n           Autumn64\n           Razfraz\n           Punkipatch\n           Doedreem\n           Lexxiemow\n           Oftome\n           Toby Fox\n    [color:yellow]\n    ------------------------\n           Writing\n    ------------------------\n    [color:white]\n           Autumn64\n           Tomura Shimura\n           Punkipatch\n           Yeetussnoopy\n    [color:yellow]\n    ------------------------\n           Coding\n    ------------------------\n    [color:white]\n           Autumn64\n           Yeetussnoopy\n           Hyperboid\n           Kristal Team\n    [color:yellow]\n    ------------------------\n     Kristal Libraries Used\n    ------------------------\n    [color:white]\n         Asriel BG \n         Friend Voice \n         Ch4 Library \n         Ch1 Enemy Recreation \n         Particle Library \n         Darkness Library\n         Knight Library\n         Hometown Recreation\n    [color:yellow]\n    ------------------------\n        Special Thanks\n    ------------------------\n    [color:white]\n        Cupidian - Testing\n        TheSkerch - Testing\n        Mason - Testing, Kristal Preview\n    ",
+    "translation": "\n            [font:plain]\n[color:yellow]\n    ------------------------\n          CrockerFan08\n    ------------------------[color:white]\n          por Autumn64\n    [color:yellow]\n    ------------------------\n           Sprites\n    ------------------------\n    [color:white]\n           Autumn64\n           Melodots\n           Razfraz\n    [color:yellow]\n    ------------------------\n           Música/SFX\n    ------------------------\n    [color:white]\n           Autumn64\n           Razfraz\n           Punkipatch\n           Doedreem\n           Lexxiemow\n           Oftome\n           Toby Fox\n    [color:yellow]\n    ------------------------\n           Roteiro\n    ------------------------\n    [color:white]\n           Autumn64\n           Tomura Shimura\n           Punkipatch\n           Yeetussnoopy\n    [color:yellow]\n    ------------------------\n           Programação\n    ------------------------\n    [color:white]\n           Autumn64\n           Yeetussnoopy\n           Hyperboid\n           Kristal Team\n    [color:yellow]\n    ------------------------\n     Bibliotecas Kristal Usadas\n    ------------------------\n    [color:white]\n         Asriel BG \n         Friend Voice \n         Ch4 Library \n         Ch1 Enemy Recreation \n         Particle Library \n         Darkness Library\n         Knight Library\n         Hometown Recreation\n    [color:yellow]\n    ------------------------\n        Agradecimentos Especiais\n    ------------------------\n    [color:white]\n        Cupidian - Testes\n        TheSkerch - Testes\n        Mason - Testes, Kristal Preview\n    ",
+    "originalExpression": "[[\n            [font:plain]\n[color:yellow]\n    ------------------------\n          CrockerFan08\n    ------------------------[color:white]\n          by Autumn64\n    [color:yellow]\n    ------------------------\n           Sprites\n    ------------------------\n    [color:white]\n           Autumn64\n           Melodots\n           Razfraz\n    [color:yellow]\n    ------------------------\n           Music/SFX\n    ------------------------\n    [color:white]\n           Autumn64\n           Razfraz\n           Punkipatch\n           Doedreem\n           Lexxiemow\n           Oftome\n           Toby Fox\n    [color:yellow]\n    ------------------------\n           Writing\n    ------------------------\n    [color:white]\n           Autumn64\n           Tomura Shimura\n           Punkipatch\n           Yeetussnoopy\n    [color:yellow]\n    ------------------------\n           Coding\n    ------------------------\n    [color:white]\n           Autumn64\n           Yeetussnoopy\n           Hyperboid\n           Kristal Team\n    [color:yellow]\n    ------------------------\n     Kristal Libraries Used\n    ------------------------\n    [color:white]\n         Asriel BG \n         Friend Voice \n         Ch4 Library \n         Ch1 Enemy Recreation \n         Particle Library \n         Darkness Library\n         Knight Library\n         Hometown Recreation\n    [color:yellow]\n    ------------------------\n        Special Thanks\n    ------------------------\n    [color:white]\n        Cupidian - Testing\n        TheSkerch - Testing\n        Mason - Testing, Kristal Preview\n    ]]",
+    "replacementExpression": "[[\n            [font:plain]\n[color:yellow]\n    ------------------------\n          CrockerFan08\n    ------------------------[color:white]\n          por Autumn64\n    [color:yellow]\n    ------------------------\n           Sprites\n    ------------------------\n    [color:white]\n           Autumn64\n           Melodots\n           Razfraz\n    [color:yellow]\n    ------------------------\n           Música/SFX\n    ------------------------\n    [color:white]\n           Autumn64\n           Razfraz\n           Punkipatch\n           Doedreem\n           Lexxiemow\n           Oftome\n           Toby Fox\n    [color:yellow]\n    ------------------------\n           Roteiro\n    ------------------------\n    [color:white]\n           Autumn64\n           Tomura Shimura\n           Punkipatch\n           Yeetussnoopy\n    [color:yellow]\n    ------------------------\n           Programação\n    ------------------------\n    [color:white]\n           Autumn64\n           Yeetussnoopy\n           Hyperboid\n           Kristal Team\n    [color:yellow]\n    ------------------------\n     Bibliotecas Kristal Usadas\n    ------------------------\n    [color:white]\n         Asriel BG \n         Friend Voice \n         Ch4 Library \n         Ch1 Enemy Recreation \n         Particle Library \n         Darkness Library\n         Knight Library\n         Hometown Recreation\n    [color:yellow]\n    ------------------------\n        Agradecimentos Especiais\n    ------------------------\n    [color:white]\n        Cupidian - Testes\n        TheSkerch - Testes\n        Mason - Testes, Kristal Preview\n    ]]"
   }
 }

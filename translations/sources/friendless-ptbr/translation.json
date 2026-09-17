@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "friendless.pt-br",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "DELTARUNE Friendless em Português (Brasil)",
+    "en": "DELTARUNE Friendless in Brazilian Portuguese",
+    "es": "DELTARUNE Friendless en portugués de Brasil"
+  },
+  "description": {
+    "pt-BR": "Tradução comunitária dos textos de DELTARUNE Friendless para português do Brasil.",
+    "en": "Community translation of DELTARUNE Friendless text into Brazilian Portuguese.",
+    "es": "Traducción comunitaria de los textos de DELTARUNE Friendless al portugués de Brasil."
+  },
+  "author": "kazwtto",
+  "gameProjectId": "friendless",
+  "gameVersion": "v0.3.0",
+  "sourceLanguage": "en",
+  "targetLanguage": "pt-BR",
+  "minimumLauncherVersion": "0.17.48",
+  "textsFile": "texts.json",
+  "textsSha256": "13edcf7eea0ec54715b862605aa7de7e28247ad0692ca7f844e4b863b6ae1942"
+}

@@ -1,0 +1,2772 @@
+{
+  "9b278d01abfa": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 2289,
+    "endOffset": 2294,
+    "source": "...",
+    "translation": "...",
+    "originalExpression": "\"...\"",
+    "replacementExpression": "\"...\""
+  },
+  "fb64bd91dd7c": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 2326,
+    "endOffset": 2349,
+    "source": "SsSO THISsS\nISsS IT?",
+    "translation": "SsSERÁ QUE É\nISsSSO?",
+    "originalExpression": "\"SsSO THISsS\\nISsS IT?\"",
+    "replacementExpression": "\"SsSERÁ QUE É\\nISsSSO?\""
+  },
+  "038c4ffd6afe": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 2381,
+    "endOffset": 2438,
+    "source": "HAHA![wait:8] YOU ARE\nMUCH SsSTRONGER THAN I\nTHOUGHT!",
+    "translation": "HAHA![wait:8] VOCÊ É\nMUITO MAISsS FORTE DO QUE\nEU PENSsSEI!",
+    "originalExpression": "\"HAHA![wait:8] YOU ARE\\nMUCH SsSTRONGER THAN I\\nTHOUGHT!\"",
+    "replacementExpression": "\"HAHA![wait:8] VOCÊ É\\nMUITO MAISsS FORTE DO QUE\\nEU PENSsSEI!\""
+  },
+  "785c94900615": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 2470,
+    "endOffset": 2522,
+    "source": "SsSO THAT'S HOW\nYOU MANAGED TO GET THISsS\nFAR...",
+    "translation": "ENTÃO FOI AsSsSIM\nQUE VOCÊ CHEGOU TÃO\nLONGE...",
+    "originalExpression": "\"SsSO THAT'S HOW\\nYOU MANAGED TO GET THISsS\\nFAR...\"",
+    "replacementExpression": "\"ENTÃO FOI AsSsSIM\\nQUE VOCÊ CHEGOU TÃO\\nLONGE...\""
+  },
+  "9a820318fd49": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 2556,
+    "endOffset": 2590,
+    "source": "A BIG FUTURE ISsS\nAHEAD OF YOU.",
+    "translation": "UM GRANDE FUTURO EsSsTÁ\nÀ SUA FRENTE.",
+    "originalExpression": "\"A BIG FUTURE ISsS\\nAHEAD OF YOU.\"",
+    "replacementExpression": "\"UM GRANDE FUTURO EsSsTÁ\\nÀ SUA FRENTE.\""
+  },
+  "74f769432c89": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 2623,
+    "endOffset": 2646,
+    "source": "AND YOU CAN\nKEEP IT!",
+    "translation": "E VOCÊ PODE\nFICAR COM ELE!",
+    "originalExpression": "\"AND YOU CAN\\nKEEP IT!\"",
+    "replacementExpression": "\"E VOCÊ PODE\\nFICAR COM ELE!\""
+  },
+  "edd9ab168bd5": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 2680,
+    "endOffset": 2696,
+    "source": "ASsS FOR ME...",
+    "translation": "QUANTO A MIM...",
+    "originalExpression": "\"ASsS FOR ME...\"",
+    "replacementExpression": "\"QUANTO A MIM...\""
+  },
+  "c5ddbfb7b2ac": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 2729,
+    "endOffset": 2783,
+    "source": "WELL,[wait:4] IT DOESsSN'T\nMATTER...\n[wait:6]HAHA.",
+    "translation": "BEM,[wait:4] IsSsSO NÃO\nIMPORTA...\n[wait:6]HAHA.",
+    "originalExpression": "\"WELL,[wait:4] IT DOESsSN'T\\nMATTER...\\n[wait:6]HAHA.\"",
+    "replacementExpression": "\"BEM,[wait:4] IsSsSO NÃO\\nIMPORTA...\\n[wait:6]HAHA.\""
+  },
+  "b76b7a2a3757": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 2815,
+    "endOffset": 2856,
+    "source": "After all,[wait:8] I don't\neven exist.",
+    "translation": "Afinal,[wait:8] eu nem\nexisto.",
+    "originalExpression": "\"After all,[wait:8] I don't\\neven exist.\"",
+    "replacementExpression": "\"Afinal,[wait:8] eu nem\\nexisto.\""
+  },
+  "fe503b6c8255": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 7149,
+    "endOffset": 7154,
+    "source": "...",
+    "translation": "...",
+    "originalExpression": "\"...\"",
+    "replacementExpression": "\"...\""
+  },
+  "8eed2328d4c6": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 7186,
+    "endOffset": 7193,
+    "source": "HA...",
+    "translation": "HA...",
+    "originalExpression": "\"HA...\"",
+    "replacementExpression": "\"HA...\""
+  },
+  "d5a663e1e232": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 7225,
+    "endOffset": 7232,
+    "source": "HAHA.",
+    "translation": "HAHA.",
+    "originalExpression": "\"HAHA.\"",
+    "replacementExpression": "\"HAHA.\""
+  },
+  "3f4c990fb900": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 7264,
+    "endOffset": 7279,
+    "source": "HAHAHAHAHAHA!",
+    "translation": "HAHAHAHAHAHA!",
+    "originalExpression": "\"HAHAHAHAHAHA!\"",
+    "replacementExpression": "\"HAHAHAHAHAHA!\""
+  },
+  "b3fe3439cc13": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 7312,
+    "endOffset": 7332,
+    "source": "CONGRATULATIONSsS!",
+    "translation": "PARABÉNSsS!",
+    "originalExpression": "\"CONGRATULATIONSsS!\"",
+    "replacementExpression": "\"PARABÉNSsS!\""
+  },
+  "4ff10c1c1483": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 7366,
+    "endOffset": 7393,
+    "source": "YOU BROKE MY\nILLUSsSION.",
+    "translation": "VOCÊ QUEBROU MINHA\nILUSsSÃO.",
+    "originalExpression": "\"YOU BROKE MY\\nILLUSsSION.\"",
+    "replacementExpression": "\"VOCÊ QUEBROU MINHA\\nILUSsSÃO.\""
+  },
+  "08081de34dff": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 7425,
+    "endOffset": 7456,
+    "source": "... BUT IT DOESsSN'T\nMATTER.",
+    "translation": "... MASsS IsSsSO NÃO\nIMPORTA.",
+    "originalExpression": "\"... BUT IT DOESsSN'T\\nMATTER.\"",
+    "replacementExpression": "\"... MASsS IsSsSO NÃO\\nIMPORTA.\""
+  },
+  "447e2ee387b8": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 7490,
+    "endOffset": 7513,
+    "source": "I ALREADY BROKE\nYOU.",
+    "translation": "EU JÁ QUEBREI\nVOCÊ.",
+    "originalExpression": "\"I ALREADY BROKE\\nYOU.\"",
+    "replacementExpression": "\"EU JÁ QUEBREI\\nVOCÊ.\""
+  },
+  "4cc4a0dd85ef": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 7545,
+    "endOffset": 7579,
+    "source": "YOUR LIFE\nIS COVERED IN LIESsS.",
+    "translation": "SUA VIDA\nEsSsTÁ COBERTA DE MENTIRASsS.",
+    "originalExpression": "\"YOUR LIFE\\nIS COVERED IN LIESsS.\"",
+    "replacementExpression": "\"SUA VIDA\\nEsSsTÁ COBERTA DE MENTIRASsS.\""
+  },
+  "6079f27cc079": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 7612,
+    "endOffset": 7655,
+    "source": "AND THE ONLY THING\n[wait:8]YOU CAN DO...",
+    "translation": "E A ÚNICA COISsSA\n[wait:8]QUE VOCÊ PODE FAZER...",
+    "originalExpression": "\"AND THE ONLY THING\\n[wait:8]YOU CAN DO...\"",
+    "replacementExpression": "\"E A ÚNICA COISsSA\\n[wait:8]QUE VOCÊ PODE FAZER...\""
+  },
+  "c2d2aa1d4f30": {
+    "file": "scripts/battle/cutscenes/eternal_lumia.lua",
+    "fileHash": "4777c65025d5199c0feff24e391ba8158956963819cb015e9ecaf36a085eff13",
+    "startOffset": 7687,
+    "endOffset": 7719,
+    "source": "IS TO ACT LIKE\nA WILD ANIMAL!",
+    "translation": "É AGIR COMO\nUM ANIMAL SsSELVAGEM!",
+    "originalExpression": "\"IS TO ACT LIKE\\nA WILD ANIMAL!\"",
+    "replacementExpression": "\"É AGIR COMO\\nUM ANIMAL SsSELVAGEM!\""
+  },
+  "fbe76ecfd36c": {
+    "file": "scripts/battle/cutscenes/novanna.lua",
+    "fileHash": "6fd4498291b4c5554867dcc00b5a28a9f5b5bdce5e63be694d07210c487f7d3f",
+    "startOffset": 696,
+    "endOffset": 713,
+    "source": "ohhh nooo!! ;-;",
+    "translation": "aaah nããão!! ;-;",
+    "originalExpression": "\"ohhh nooo!! ;-;\"",
+    "replacementExpression": "\"aaah nããão!! ;-;\""
+  },
+  "d9ce16e0a5cc": {
+    "file": "scripts/battle/cutscenes/novanna.lua",
+    "fileHash": "6fd4498291b4c5554867dcc00b5a28a9f5b5bdce5e63be694d07210c487f7d3f",
+    "startOffset": 745,
+    "endOffset": 785,
+    "source": "ballon will start to\ngo down now <:((",
+    "translation": "o balão vai começar a\ndescer agora <:((",
+    "originalExpression": "\"ballon will start to\\ngo down now <:((\"",
+    "replacementExpression": "\"o balão vai começar a\\ndescer agora <:((\""
+  },
+  "d8a3424f05e5": {
+    "file": "scripts/battle/encounters/bookworm n drawgon.lua",
+    "fileHash": "1e2c99d81a42b974b061c821f27a84dc33d43b48f1e49fb18a3a4ab85949b4f9",
+    "startOffset": 201,
+    "endOffset": 229,
+    "source": "* Smells like burnt books.",
+    "translation": "* Cheira a livros queimados.",
+    "originalExpression": "\"* Smells like burnt books.\"",
+    "replacementExpression": "\"* Cheira a livros queimados.\""
+  },
+  "9f1aa0976251": {
+    "file": "scripts/battle/encounters/bookworm.lua",
+    "fileHash": "ce5dbae8d7e95ba77106eea0f10fa0a76cee1d55d83111fa783125be41c583c7",
+    "startOffset": 152,
+    "endOffset": 192,
+    "source": "* Bookworm crawled out of\nthe ground!",
+    "translation": "* Bookworm rastejou para fora\ndo chão!",
+    "originalExpression": "\"* Bookworm crawled out of\\nthe ground!\"",
+    "replacementExpression": "\"* Bookworm rastejou para fora\\ndo chão!\""
+  },
+  "06003b7431ac": {
+    "file": "scripts/battle/encounters/eternal lumia.lua",
+    "fileHash": "bc8027315d81599dce122b6b5aea6434f53c42d4a53259189a6d649eeb070900",
+    "startOffset": 2257,
+    "endOffset": 2291,
+    "source": "* The air crackles with freedom.",
+    "translation": "* O ar crepita com liberdade.",
+    "originalExpression": "\"* The air crackles with freedom.\"",
+    "replacementExpression": "\"* O ar crepita com liberdade.\""
+  },
+  "f500fc99ba1d": {
+    "file": "scripts/battle/encounters/eternal lumia.lua",
+    "fileHash": "bc8027315d81599dce122b6b5aea6434f53c42d4a53259189a6d649eeb070900",
+    "startOffset": 2295,
+    "endOffset": 2326,
+    "source": "* Memories fly off the scene.",
+    "translation": "* Memórias voam para fora da cena.",
+    "originalExpression": "\"* Memories fly off the scene.\"",
+    "replacementExpression": "\"* Memórias voam para fora da cena.\""
+  },
+  "ddfd86f671d1": {
+    "file": "scripts/battle/encounters/eternal lumia.lua",
+    "fileHash": "bc8027315d81599dce122b6b5aea6434f53c42d4a53259189a6d649eeb070900",
+    "startOffset": 2330,
+    "endOffset": 2356,
+    "source": "* History repeats again.",
+    "translation": "* A história se repete outra vez.",
+    "originalExpression": "\"* History repeats again.\"",
+    "replacementExpression": "\"* A história se repete outra vez.\""
+  },
+  "528cb8f7829d": {
+    "file": "scripts/battle/encounters/eternal lumia.lua",
+    "fileHash": "bc8027315d81599dce122b6b5aea6434f53c42d4a53259189a6d649eeb070900",
+    "startOffset": 2360,
+    "endOffset": 2404,
+    "source": "* TOO DETERMINED?[wait:6]\nI CAN FIX THAT.",
+    "translation": "* DETERMINAÇÃO DEMAIS?[wait:6]\nEU POSsSO RESsSOLVER.",
+    "originalExpression": "\"* TOO DETERMINED?[wait:6]\\nI CAN FIX THAT.\"",
+    "replacementExpression": "\"* DETERMINAÇÃO DEMAIS?[wait:6]\\nEU POSsSO RESsSOLVER.\""
+  },
+  "e6bc239d28e7": {
+    "file": "scripts/battle/encounters/eternal lumia.lua",
+    "fileHash": "bc8027315d81599dce122b6b5aea6434f53c42d4a53259189a6d649eeb070900",
+    "startOffset": 2408,
+    "endOffset": 2443,
+    "source": "* Grand Illusions are everywhere.",
+    "translation": "* Grandes Ilusões estão por toda parte.",
+    "originalExpression": "\"* Grand Illusions are everywhere.\"",
+    "replacementExpression": "\"* Grandes Ilusões estão por toda parte.\""
+  },
+  "6ae333c32964": {
+    "file": "scripts/battle/encounters/eternal lumia.lua",
+    "fileHash": "bc8027315d81599dce122b6b5aea6434f53c42d4a53259189a6d649eeb070900",
+    "startOffset": 2447,
+    "endOffset": 2478,
+    "source": "* Feels like an utopian show.",
+    "translation": "* Parece um show utópico.",
+    "originalExpression": "\"* Feels like an utopian show.\"",
+    "replacementExpression": "\"* Parece um show utópico.\""
+  },
+  "3d2d8e5a28b6": {
+    "file": "scripts/battle/encounters/eternal lumia.lua",
+    "fileHash": "bc8027315d81599dce122b6b5aea6434f53c42d4a53259189a6d649eeb070900",
+    "startOffset": 2482,
+    "endOffset": 2509,
+    "source": "* Is any of this real...?",
+    "translation": "* Alguma coisa disso é real...?",
+    "originalExpression": "\"* Is any of this real...?\"",
+    "replacementExpression": "\"* Alguma coisa disso é real...?\""
+  },
+  "300a49bf8081": {
+    "file": "scripts/battle/encounters/eternal lumia.lua",
+    "fileHash": "bc8027315d81599dce122b6b5aea6434f53c42d4a53259189a6d649eeb070900",
+    "startOffset": 2513,
+    "endOffset": 2585,
+    "source": "* Memories flash before your eyes,[wait:8]as if they were just frames.",
+    "translation": "* Memórias passam diante dos seus olhos,[wait:8]como se fossem apenas quadros.",
+    "originalExpression": "\"* Memories flash before your eyes,[wait:8]as if they were just frames.\"",
+    "replacementExpression": "\"* Memórias passam diante dos seus olhos,[wait:8]como se fossem apenas quadros.\""
+  },
+  "0a6a85de02c8": {
+    "file": "scripts/battle/encounters/eternal lumia.lua",
+    "fileHash": "bc8027315d81599dce122b6b5aea6434f53c42d4a53259189a6d649eeb070900",
+    "startOffset": 2589,
+    "endOffset": 2620,
+    "source": "* Many layers of abstraction.",
+    "translation": "* Muitas camadas de abstração.",
+    "originalExpression": "\"* Many layers of abstraction.\"",
+    "replacementExpression": "\"* Muitas camadas de abstração.\""
+  },
+  "83fa2685fcfc": {
+    "file": "scripts/battle/encounters/eternal lumia.lua",
+    "fileHash": "bc8027315d81599dce122b6b5aea6434f53c42d4a53259189a6d649eeb070900",
+    "startOffset": 2982,
+    "endOffset": 3002,
+    "source": "* FATE is decided.",
+    "translation": "* O DESTINO está decidido.",
+    "originalExpression": "\"* FATE is decided.\"",
+    "replacementExpression": "\"* O DESTINO está decidido.\""
+  },
+  "396bf3e131da": {
+    "file": "scripts/battle/encounters/lumia.lua",
+    "fileHash": "938299da6f6e3cb306e7c52fec96ae3343ac60813efe4fcfcefec7a4d78d916c",
+    "startOffset": 685,
+    "endOffset": 749,
+    "source": "[facec:susie/teeth_b][voice:susie]* WHO ARE WE EVEN FIGHTING??",
+    "translation": "[facec:susie/teeth_b][voice:susie]* COM QUEM A GENTE ESTÁ LUTANDO??",
+    "originalExpression": "\"[facec:susie/teeth_b][voice:susie]* WHO ARE WE EVEN FIGHTING??\"",
+    "replacementExpression": "\"[facec:susie/teeth_b][voice:susie]* COM QUEM A GENTE ESTÁ LUTANDO??\""
+  },
+  "a4418a277f46": {
+    "file": "scripts/battle/encounters/machine.lua",
+    "fileHash": "5cff6faed7b74dfd36ac338237aa9bd3030bdb21f82893d1031e85c50956de88",
+    "startOffset": 306,
+    "endOffset": 325,
+    "source": "* NO HELP NEEDED.",
+    "translation": "* NÃO PRECISA DE AJUDA.",
+    "originalExpression": "\"* NO HELP NEEDED.\"",
+    "replacementExpression": "\"* NÃO PRECISA DE AJUDA.\""
+  },
+  "ae737da4a4cc": {
+    "file": "scripts/battle/encounters/novanna.lua",
+    "fileHash": "87664b52fdfab8b655893dbec080f627a91514f25fb2b971a58f39caf3a77f08",
+    "startOffset": 2942,
+    "endOffset": 2979,
+    "source": "* Novanna laughs with her pony pet!",
+    "translation": "* Novanna ri com seu pônei de estimação!",
+    "originalExpression": "\"* Novanna laughs with her pony pet!\"",
+    "replacementExpression": "\"* Novanna ri com seu pônei de estimação!\""
+  },
+  "92d510998ee7": {
+    "file": "scripts/battle/encounters/rouxls.lua",
+    "fileHash": "8810c23c649a471a304ce025e87dcb5e46b14e160ab3bb76583ed57a7123bdf5",
+    "startOffset": 142,
+    "endOffset": 177,
+    "source": "* Everyobdy wanna be a superstar!",
+    "translation": "* Todo mundo quer ser uma superestrela!",
+    "originalExpression": "\"* Everyobdy wanna be a superstar!\"",
+    "replacementExpression": "\"* Todo mundo quer ser uma superestrela!\""
+  },
+  "bdd3b773daa8": {
+    "file": "scripts/battle/encounters/tenna.lua",
+    "fileHash": "d085cf78775cdc6c0c276b00621d105d5b2d92989f4bf118fe31d4813c2a64b8",
+    "startOffset": 322,
+    "endOffset": 351,
+    "source": "* Tenna C. blocked the way!",
+    "translation": "* Tenna C. bloqueou o caminho!",
+    "originalExpression": "\"* Tenna C. blocked the way!\"",
+    "replacementExpression": "\"* Tenna C. bloqueou o caminho!\""
+  },
+  "58754b34e815": {
+    "file": "scripts/battle/encounters/two superstars.lua",
+    "fileHash": "98539a0e63d1e4c51e5a68f14573ff2b301bb39dbd08ccf74c11908455a7b9dd",
+    "startOffset": 176,
+    "endOffset": 211,
+    "source": "* Everybody wanna be a superstar!",
+    "translation": "* Todo mundo quer ser uma superestrela!",
+    "originalExpression": "\"* Everybody wanna be a superstar!\"",
+    "replacementExpression": "\"* Todo mundo quer ser uma superestrela!\""
+  },
+  "a0e2eed883db": {
+    "file": "scripts/battle/enemies/bookworm.lua",
+    "fileHash": "afad21246534c1977f594053ad44e511b271e1e6f5b0bfd12162a4f8edc8ceca",
+    "startOffset": 856,
+    "endOffset": 887,
+    "source": "* There's a snake in my boot!",
+    "translation": "* Tem uma cobra na minha bota!",
+    "originalExpression": "\"* There's a snake in my boot!\"",
+    "replacementExpression": "\"* Tem uma cobra na minha bota!\""
+  },
+  "f0f18bb4b64e": {
+    "file": "scripts/battle/enemies/bookworm.lua",
+    "fileHash": "afad21246534c1977f594053ad44e511b271e1e6f5b0bfd12162a4f8edc8ceca",
+    "startOffset": 897,
+    "endOffset": 961,
+    "source": "* Bookworm tries to grow legs...[wait:8]\nIt fails ultimately.",
+    "translation": "* Bookworm tenta criar pernas...[wait:8]\nNo fim, fracassa.",
+    "originalExpression": "\"* Bookworm tries to grow legs...[wait:8]\\nIt fails ultimately.\"",
+    "replacementExpression": "\"* Bookworm tenta criar pernas...[wait:8]\\nNo fim, fracassa.\""
+  },
+  "0730ccc2baf0": {
+    "file": "scripts/battle/enemies/drawgon.lua",
+    "fileHash": "94c205db7c24758deb7f591d78ef13bfbe75d1a9bbb484b26a50a403a5f745f5",
+    "startOffset": 1204,
+    "endOffset": 1233,
+    "source": "* It's getting hot in here.",
+    "translation": "* Está ficando quente aqui.",
+    "originalExpression": "\"* It's getting hot in here.\"",
+    "replacementExpression": "\"* Está ficando quente aqui.\""
+  },
+  "c9bbc32dcab1": {
+    "file": "scripts/battle/enemies/drawgon.lua",
+    "fileHash": "94c205db7c24758deb7f591d78ef13bfbe75d1a9bbb484b26a50a403a5f745f5",
+    "startOffset": 1237,
+    "endOffset": 1290,
+    "source": "* Drawgon wonders about the purpose\nof his life...",
+    "translation": "* Drawgon se pergunta qual é o propósito\nda própria vida...",
+    "originalExpression": "\"* Drawgon wonders about the purpose\\nof his life...\"",
+    "replacementExpression": "\"* Drawgon se pergunta qual é o propósito\\nda própria vida...\""
+  },
+  "7ff9159827bf": {
+    "file": "scripts/battle/enemies/drawgon.lua",
+    "fileHash": "94c205db7c24758deb7f591d78ef13bfbe75d1a9bbb484b26a50a403a5f745f5",
+    "startOffset": 1294,
+    "endOffset": 1326,
+    "source": "* Through the fire and flames!",
+    "translation": "* Através do fogo e das chamas!",
+    "originalExpression": "\"* Through the fire and flames!\"",
+    "replacementExpression": "\"* Através do fogo e das chamas!\""
+  },
+  "3686ac956a9f": {
+    "file": "scripts/battle/enemies/eternal lumia.lua",
+    "fileHash": "f578f19fa97695a18d73dc5acb332520c80ee2352f5767c24e86798cbd157333",
+    "startOffset": 1353,
+    "endOffset": 1383,
+    "source": "* You tried to expose Lumia!",
+    "translation": "* Você tentou desmascarar Lumia!",
+    "originalExpression": "\"* You tried to expose Lumia!\"",
+    "replacementExpression": "\"* Você tentou desmascarar Lumia!\""
+  },
+  "7f4fec24a73e": {
+    "file": "scripts/battle/enemies/eternal lumia.lua",
+    "fileHash": "f578f19fa97695a18d73dc5acb332520c80ee2352f5767c24e86798cbd157333",
+    "startOffset": 1468,
+    "endOffset": 1503,
+    "source": "* Everyone tried to expose Lumia!",
+    "translation": "* Todos tentaram desmascarar Lumia!",
+    "originalExpression": "\"* Everyone tried to expose Lumia!\"",
+    "replacementExpression": "\"* Todos tentaram desmascarar Lumia!\""
+  },
+  "10a8c436442d": {
+    "file": "scripts/battle/enemies/eternal lumia.lua",
+    "fileHash": "f578f19fa97695a18d73dc5acb332520c80ee2352f5767c24e86798cbd157333",
+    "startOffset": 1621,
+    "endOffset": 1651,
+    "source": "* You created second shield!",
+    "translation": "* Você criou um segundo escudo!",
+    "originalExpression": "\"* You created second shield!\"",
+    "replacementExpression": "\"* Você criou um segundo escudo!\""
+  },
+  "8291c20dcdbd": {
+    "file": "scripts/battle/enemies/eternal lumia.lua",
+    "fileHash": "f578f19fa97695a18d73dc5acb332520c80ee2352f5767c24e86798cbd157333",
+    "startOffset": 1763,
+    "endOffset": 1791,
+    "source": "* You made soul explosive!",
+    "translation": "* Você tornou a ALMA explosiva!",
+    "originalExpression": "\"* You made soul explosive!\"",
+    "replacementExpression": "\"* Você tornou a ALMA explosiva!\""
+  },
+  "53aa75faf2a4": {
+    "file": "scripts/battle/enemies/eternal lumia.lua",
+    "fileHash": "f578f19fa97695a18d73dc5acb332520c80ee2352f5767c24e86798cbd157333",
+    "startOffset": 4466,
+    "endOffset": 4493,
+    "source": "Your heartbeat quickened.",
+    "translation": "Seu coração acelerou.",
+    "originalExpression": "\"Your heartbeat quickened.\"",
+    "replacementExpression": "\"Seu coração acelerou.\""
+  },
+  "9e64b2a54956": {
+    "file": "scripts/battle/enemies/eternal lumia.lua",
+    "fileHash": "f578f19fa97695a18d73dc5acb332520c80ee2352f5767c24e86798cbd157333",
+    "startOffset": 4742,
+    "endOffset": 4750,
+    "source": "Expose",
+    "translation": "Desmascarar",
+    "originalExpression": "\"Expose\"",
+    "replacementExpression": "\"Desmascarar\""
+  },
+  "b41cfd998209": {
+    "file": "scripts/battle/enemies/eternal lumia.lua",
+    "fileHash": "f578f19fa97695a18d73dc5acb332520c80ee2352f5767c24e86798cbd157333",
+    "startOffset": 4782,
+    "endOffset": 4791,
+    "source": "ExposeX",
+    "translation": "DesmascararX",
+    "originalExpression": "\"ExposeX\"",
+    "replacementExpression": "\"DesmascararX\""
+  },
+  "4f6132403675": {
+    "file": "scripts/battle/enemies/eternal lumia.lua",
+    "fileHash": "f578f19fa97695a18d73dc5acb332520c80ee2352f5767c24e86798cbd157333",
+    "startOffset": 4825,
+    "endOffset": 4834,
+    "source": "Believe",
+    "translation": "Acreditar",
+    "originalExpression": "\"Believe\"",
+    "replacementExpression": "\"Acreditar\""
+  },
+  "208269219828": {
+    "file": "scripts/battle/enemies/eternal lumia.lua",
+    "fileHash": "f578f19fa97695a18d73dc5acb332520c80ee2352f5767c24e86798cbd157333",
+    "startOffset": 4836,
+    "endOffset": 4848,
+    "source": "Dual\nHeal",
+    "translation": "Cura\nDupla",
+    "originalExpression": "\"Dual\\nHeal\"",
+    "replacementExpression": "\"Cura\\nDupla\""
+  },
+  "287779f7478c": {
+    "file": "scripts/battle/enemies/knight.lua",
+    "fileHash": "7fe55cbafe16be9c1582aaf28144f2f7905104ef4580118d2478828680376863",
+    "startOffset": 900,
+    "endOffset": 929,
+    "source": "* It's getting hot in here.",
+    "translation": "* Está ficando quente aqui.",
+    "originalExpression": "\"* It's getting hot in here.\"",
+    "replacementExpression": "\"* Está ficando quente aqui.\""
+  },
+  "50d475f3656a": {
+    "file": "scripts/battle/enemies/knight.lua",
+    "fileHash": "7fe55cbafe16be9c1582aaf28144f2f7905104ef4580118d2478828680376863",
+    "startOffset": 933,
+    "endOffset": 986,
+    "source": "* Drawgon wonders about the purpose\nof his life...",
+    "translation": "* Drawgon se pergunta qual é o propósito\nda própria vida...",
+    "originalExpression": "\"* Drawgon wonders about the purpose\\nof his life...\"",
+    "replacementExpression": "\"* Drawgon se pergunta qual é o propósito\\nda própria vida...\""
+  },
+  "ce13db3181bb": {
+    "file": "scripts/battle/enemies/knight.lua",
+    "fileHash": "7fe55cbafe16be9c1582aaf28144f2f7905104ef4580118d2478828680376863",
+    "startOffset": 990,
+    "endOffset": 1022,
+    "source": "* Through the fire and flames!",
+    "translation": "* Através do fogo e das chamas!",
+    "originalExpression": "\"* Through the fire and flames!\"",
+    "replacementExpression": "\"* Através do fogo e das chamas!\""
+  },
+  "36a8bf5f4c72": {
+    "file": "scripts/battle/enemies/lumia.lua",
+    "fileHash": "2387f4a6fe1e8b73c30ac29f8dc3cc34f8831f0ab3b4920e6d1727be70b27aa7",
+    "startOffset": 1202,
+    "endOffset": 1222,
+    "source": "An illusory being.",
+    "translation": "Um ser ilusório.",
+    "originalExpression": "\"An illusory being.\"",
+    "replacementExpression": "\"Um ser ilusório.\""
+  },
+  "c159178f9000": {
+    "file": "scripts/battle/enemies/lumia.lua",
+    "fileHash": "2387f4a6fe1e8b73c30ac29f8dc3cc34f8831f0ab3b4920e6d1727be70b27aa7",
+    "startOffset": 1250,
+    "endOffset": 1295,
+    "source": "* Lumia is showcasing various\nshenanigans!",
+    "translation": "* Lumia está exibindo várias\ntravessuras!",
+    "originalExpression": "\"* Lumia is showcasing various\\nshenanigans!\"",
+    "replacementExpression": "\"* Lumia está exibindo várias\\ntravessuras!\""
+  },
+  "7d8753de57dc": {
+    "file": "scripts/battle/enemies/lumia.lua",
+    "fileHash": "2387f4a6fe1e8b73c30ac29f8dc3cc34f8831f0ab3b4920e6d1727be70b27aa7",
+    "startOffset": 1299,
+    "endOffset": 1316,
+    "source": "* Say CHEESsSE!",
+    "translation": "* Digam XIsSsS!",
+    "originalExpression": "\"* Say CHEESsSE!\"",
+    "replacementExpression": "\"* Digam XIsSsS!\""
+  },
+  "115d7ceca0a5": {
+    "file": "scripts/battle/enemies/lumia.lua",
+    "fileHash": "2387f4a6fe1e8b73c30ac29f8dc3cc34f8831f0ab3b4920e6d1727be70b27aa7",
+    "startOffset": 1320,
+    "endOffset": 1340,
+    "source": "* History repeats.",
+    "translation": "* A história se repete.",
+    "originalExpression": "\"* History repeats.\"",
+    "replacementExpression": "\"* A história se repete.\""
+  },
+  "81143439e42b": {
+    "file": "scripts/battle/enemies/lumia.lua",
+    "fileHash": "2387f4a6fe1e8b73c30ac29f8dc3cc34f8831f0ab3b4920e6d1727be70b27aa7",
+    "startOffset": 1344,
+    "endOffset": 1375,
+    "source": "* Grand Illusions are coming.",
+    "translation": "* Grandes Ilusões estão chegando.",
+    "originalExpression": "\"* Grand Illusions are coming.\"",
+    "replacementExpression": "\"* Grandes Ilusões estão chegando.\""
+  },
+  "7fa3cedbe377": {
+    "file": "scripts/battle/enemies/lumia.lua",
+    "fileHash": "2387f4a6fe1e8b73c30ac29f8dc3cc34f8831f0ab3b4920e6d1727be70b27aa7",
+    "startOffset": 1379,
+    "endOffset": 1437,
+    "source": "* You want to try snake oil...\nFor some unknown reason.",
+    "translation": "* Você quer experimentar óleo de cobra...\nPor algum motivo desconhecido.",
+    "originalExpression": "\"* You want to try snake oil...\\nFor some unknown reason.\"",
+    "replacementExpression": "\"* Você quer experimentar óleo de cobra...\\nPor algum motivo desconhecido.\""
+  },
+  "fb4dbcf7a14e": {
+    "file": "scripts/battle/enemies/lumia.lua",
+    "fileHash": "2387f4a6fe1e8b73c30ac29f8dc3cc34f8831f0ab3b4920e6d1727be70b27aa7",
+    "startOffset": 2081,
+    "endOffset": 2088,
+    "source": "Trick",
+    "translation": "Truque",
+    "originalExpression": "\"Trick\"",
+    "replacementExpression": "\"Truque\""
+  },
+  "bbd0b2c5a459": {
+    "file": "scripts/battle/enemies/lumia.lua",
+    "fileHash": "2387f4a6fe1e8b73c30ac29f8dc3cc34f8831f0ab3b4920e6d1727be70b27aa7",
+    "startOffset": 2090,
+    "endOffset": 2097,
+    "source": "Magic",
+    "translation": "Magia",
+    "originalExpression": "\"Magic\"",
+    "replacementExpression": "\"Magia\""
+  },
+  "c97d4d271a5e": {
+    "file": "scripts/battle/enemies/lumia.lua",
+    "fileHash": "2387f4a6fe1e8b73c30ac29f8dc3cc34f8831f0ab3b4920e6d1727be70b27aa7",
+    "startOffset": 2125,
+    "endOffset": 2133,
+    "source": "TrickX",
+    "translation": "TruqueX",
+    "originalExpression": "\"TrickX\"",
+    "replacementExpression": "\"TruqueX\""
+  },
+  "697c508a7405": {
+    "file": "scripts/battle/enemies/lumia.lua",
+    "fileHash": "2387f4a6fe1e8b73c30ac29f8dc3cc34f8831f0ab3b4920e6d1727be70b27aa7",
+    "startOffset": 2135,
+    "endOffset": 2149,
+    "source": "Super\nMagic",
+    "translation": "Super\nMagia",
+    "originalExpression": "\"Super\\nMagic\"",
+    "replacementExpression": "\"Super\\nMagia\""
+  },
+  "dcedff911806": {
+    "file": "scripts/battle/enemies/lumia.lua",
+    "fileHash": "2387f4a6fe1e8b73c30ac29f8dc3cc34f8831f0ab3b4920e6d1727be70b27aa7",
+    "startOffset": 5488,
+    "endOffset": 5527,
+    "source": "* You showcased cool tricks to Lumia!",
+    "translation": "* Você mostrou truques legais para Lumia!",
+    "originalExpression": "\"* You showcased cool tricks to Lumia!\"",
+    "replacementExpression": "\"* Você mostrou truques legais para Lumia!\""
+  },
+  "a9e522f41d80": {
+    "file": "scripts/battle/enemies/lumia.lua",
+    "fileHash": "2387f4a6fe1e8b73c30ac29f8dc3cc34f8831f0ab3b4920e6d1727be70b27aa7",
+    "startOffset": 5712,
+    "endOffset": 5756,
+    "source": "* Everyone showcased cool tricks to Lumia!",
+    "translation": "* Todos mostraram truques legais para Lumia!",
+    "originalExpression": "\"* Everyone showcased cool tricks to Lumia!\"",
+    "replacementExpression": "\"* Todos mostraram truques legais para Lumia!\""
+  },
+  "ab7a769a1f6f": {
+    "file": "scripts/battle/enemies/lumia.lua",
+    "fileHash": "2387f4a6fe1e8b73c30ac29f8dc3cc34f8831f0ab3b4920e6d1727be70b27aa7",
+    "startOffset": 5830,
+    "endOffset": 5865,
+    "source": "* You applause to Lumia's tricks!",
+    "translation": "* Você aplaudiu os truques de Lumia!",
+    "originalExpression": "\"* You applause to Lumia's tricks!\"",
+    "replacementExpression": "\"* Você aplaudiu os truques de Lumia!\""
+  },
+  "3596350d44cb": {
+    "file": "scripts/battle/enemies/lumia.lua",
+    "fileHash": "2387f4a6fe1e8b73c30ac29f8dc3cc34f8831f0ab3b4920e6d1727be70b27aa7",
+    "startOffset": 5867,
+    "endOffset": 5891,
+    "source": "* Lumia respects that!",
+    "translation": "* Lumia respeita isso!",
+    "originalExpression": "\"* Lumia respects that!\"",
+    "replacementExpression": "\"* Lumia respeita isso!\""
+  },
+  "b95064661b68": {
+    "file": "scripts/battle/enemies/novanna.lua",
+    "fileHash": "f57f9915321895f4c3d43fb8d4ef7a1469a0bca3620501e6b228b2edc526b02f",
+    "startOffset": 1224,
+    "endOffset": 1248,
+    "source": "Beware of Gamer girls!",
+    "translation": "Cuidado com garotas gamers!",
+    "originalExpression": "\"Beware of Gamer girls!\"",
+    "replacementExpression": "\"Cuidado com garotas gamers!\""
+  },
+  "094b10fbcfd5": {
+    "file": "scripts/battle/enemies/novanna.lua",
+    "fileHash": "f57f9915321895f4c3d43fb8d4ef7a1469a0bca3620501e6b228b2edc526b02f",
+    "startOffset": 1417,
+    "endOffset": 1428,
+    "source": "Overthrow",
+    "translation": "Derrubar",
+    "originalExpression": "\"Overthrow\"",
+    "replacementExpression": "\"Derrubar\""
+  },
+  "2e92f4e6f379": {
+    "file": "scripts/battle/enemies/novanna.lua",
+    "fileHash": "f57f9915321895f4c3d43fb8d4ef7a1469a0bca3620501e6b228b2edc526b02f",
+    "startOffset": 1460,
+    "endOffset": 1472,
+    "source": "OverthrowX",
+    "translation": "DerrubarX",
+    "originalExpression": "\"OverthrowX\"",
+    "replacementExpression": "\"DerrubarX\""
+  },
+  "6c3a7aace333": {
+    "file": "scripts/battle/enemies/novanna.lua",
+    "fileHash": "f57f9915321895f4c3d43fb8d4ef7a1469a0bca3620501e6b228b2edc526b02f",
+    "startOffset": 1584,
+    "endOffset": 1642,
+    "source": "kris, susie uwu\ni understand how\nhard it is to give up",
+    "translation": "kris, susie uwu\neu entendo como é\ndifícil desistir",
+    "originalExpression": "\"kris, susie uwu\\ni understand how\\nhard it is to give up\"",
+    "replacementExpression": "\"kris, susie uwu\\neu entendo como é\\ndifícil desistir\""
+  },
+  "184688ba7324": {
+    "file": "scripts/battle/enemies/novanna.lua",
+    "fileHash": "f57f9915321895f4c3d43fb8d4ef7a1469a0bca3620501e6b228b2edc526b02f",
+    "startOffset": 1647,
+    "endOffset": 1675,
+    "source": "but don't you\nget it? ;-;",
+    "translation": "mas vocês não\nentendem? ;-;",
+    "originalExpression": "\"but don't you\\nget it? ;-;\"",
+    "replacementExpression": "\"mas vocês não\\nentendem? ;-;\""
+  },
+  "d052ab98d526": {
+    "file": "scripts/battle/enemies/novanna.lua",
+    "fileHash": "f57f9915321895f4c3d43fb8d4ef7a1469a0bca3620501e6b228b2edc526b02f",
+    "startOffset": 1677,
+    "endOffset": 1719,
+    "source": "toriel would be happier\nwith my daddy!!",
+    "translation": "toriel seria mais feliz\ncom meu papai!!",
+    "originalExpression": "\"toriel would be happier\\nwith my daddy!!\"",
+    "replacementExpression": "\"toriel seria mais feliz\\ncom meu papai!!\""
+  },
+  "1f1994b7b919": {
+    "file": "scripts/battle/enemies/novanna.lua",
+    "fileHash": "f57f9915321895f4c3d43fb8d4ef7a1469a0bca3620501e6b228b2edc526b02f",
+    "startOffset": 1725,
+    "endOffset": 1744,
+    "source": "sad and broken...",
+    "translation": "triste e destruída...",
+    "originalExpression": "\"sad and broken...\"",
+    "replacementExpression": "\"triste e destruída...\""
+  },
+  "605bbc43829d": {
+    "file": "scripts/battle/enemies/novanna.lua",
+    "fileHash": "f57f9915321895f4c3d43fb8d4ef7a1469a0bca3620501e6b228b2edc526b02f",
+    "startOffset": 1746,
+    "endOffset": 1791,
+    "source": "don't you want\nto make your mommy happier?",
+    "translation": "vocês não querem\ndeixar sua mamãe mais feliz?",
+    "originalExpression": "\"don't you want\\nto make your mommy happier?\"",
+    "replacementExpression": "\"vocês não querem\\ndeixar sua mamãe mais feliz?\""
+  },
+  "1687aefabdd4": {
+    "file": "scripts/battle/enemies/novanna.lua",
+    "fileHash": "f57f9915321895f4c3d43fb8d4ef7a1469a0bca3620501e6b228b2edc526b02f",
+    "startOffset": 1796,
+    "endOffset": 1847,
+    "source": "they would create\na new world...\ntogether!! uwu",
+    "translation": "eles criariam\num mundo novo...\njuntos!! uwu",
+    "originalExpression": "\"they would create\\na new world...\\ntogether!! uwu\"",
+    "replacementExpression": "\"eles criariam\\num mundo novo...\\njuntos!! uwu\""
+  },
+  "886871277b5c": {
+    "file": "scripts/battle/enemies/novanna.lua",
+    "fileHash": "f57f9915321895f4c3d43fb8d4ef7a1469a0bca3620501e6b228b2edc526b02f",
+    "startOffset": 1851,
+    "endOffset": 1899,
+    "source": "a world where happiness\nknows no bounds!! ;w;",
+    "translation": "um mundo onde a felicidade\nnão tem limites!! ;w;",
+    "originalExpression": "\"a world where happiness\\nknows no bounds!! ;w;\"",
+    "replacementExpression": "\"um mundo onde a felicidade\\nnão tem limites!! ;w;\""
+  },
+  "f00a7719bc8f": {
+    "file": "scripts/battle/enemies/novanna.lua",
+    "fileHash": "f57f9915321895f4c3d43fb8d4ef7a1469a0bca3620501e6b228b2edc526b02f",
+    "startOffset": 1904,
+    "endOffset": 1947,
+    "source": "but if you wish\nto continue resisting...",
+    "translation": "mas se vocês quiserem\ncontinuar resistindo...",
+    "originalExpression": "\"but if you wish\\nto continue resisting...\"",
+    "replacementExpression": "\"mas se vocês quiserem\\ncontinuar resistindo...\""
+  },
+  "0a4586e2b1e7": {
+    "file": "scripts/battle/enemies/novanna.lua",
+    "fileHash": "f57f9915321895f4c3d43fb8d4ef7a1469a0bca3620501e6b228b2edc526b02f",
+    "startOffset": 1949,
+    "endOffset": 1983,
+    "source": "i will continue\nto fight back!!",
+    "translation": "eu vou continuar\nlutando de volta!!",
+    "originalExpression": "\"i will continue\\nto fight back!!\"",
+    "replacementExpression": "\"eu vou continuar\\nlutando de volta!!\""
+  },
+  "23936b4fef52": {
+    "file": "scripts/battle/enemies/novanna.lua",
+    "fileHash": "f57f9915321895f4c3d43fb8d4ef7a1469a0bca3620501e6b228b2edc526b02f",
+    "startOffset": 2082,
+    "endOffset": 2106,
+    "source": "rain, rain,\ngo away!!",
+    "translation": "chuva, chuva,\nvá embora!!",
+    "originalExpression": "\"rain, rain,\\ngo away!!\"",
+    "replacementExpression": "\"chuva, chuva,\\nvá embora!!\""
+  },
+  "5f8ee05292e7": {
+    "file": "scripts/battle/enemies/novanna.lua",
+    "fileHash": "f57f9915321895f4c3d43fb8d4ef7a1469a0bca3620501e6b228b2edc526b02f",
+    "startOffset": 2111,
+    "endOffset": 2165,
+    "source": "darkners on\npostter won't be happy\nabout it... ;-;",
+    "translation": "os darkners do\npostter não vão gostar\ndisso... ;-;",
+    "originalExpression": "\"darkners on\\npostter won't be happy\\nabout it... ;-;\"",
+    "replacementExpression": "\"os darkners do\\npostter não vão gostar\\ndisso... ;-;\""
+  },
+  "c2d49cdce5a9": {
+    "file": "scripts/battle/enemies/rouxls.lua",
+    "fileHash": "9e74aaee3b7b2f73369031243ed7b16ae0ef79437d0b331ea8c915148dd14401",
+    "startOffset": 921,
+    "endOffset": 950,
+    "source": "* It's getting hot in here.",
+    "translation": "* Está ficando quente aqui.",
+    "originalExpression": "\"* It's getting hot in here.\"",
+    "replacementExpression": "\"* Está ficando quente aqui.\""
+  },
+  "e4142e438eaa": {
+    "file": "scripts/battle/enemies/rouxls.lua",
+    "fileHash": "9e74aaee3b7b2f73369031243ed7b16ae0ef79437d0b331ea8c915148dd14401",
+    "startOffset": 954,
+    "endOffset": 1007,
+    "source": "* Drawgon wonders about the purpose\nof his life...",
+    "translation": "* Drawgon se pergunta qual é o propósito\nda própria vida...",
+    "originalExpression": "\"* Drawgon wonders about the purpose\\nof his life...\"",
+    "replacementExpression": "\"* Drawgon se pergunta qual é o propósito\\nda própria vida...\""
+  },
+  "32b3407b8e39": {
+    "file": "scripts/battle/enemies/rouxls.lua",
+    "fileHash": "9e74aaee3b7b2f73369031243ed7b16ae0ef79437d0b331ea8c915148dd14401",
+    "startOffset": 1011,
+    "endOffset": 1043,
+    "source": "* Through the fire and flames!",
+    "translation": "* Através do fogo e das chamas!",
+    "originalExpression": "\"* Through the fire and flames!\"",
+    "replacementExpression": "\"* Através do fogo e das chamas!\""
+  },
+  "4cc3998be175": {
+    "file": "scripts/battle/enemies/superstar.lua",
+    "fileHash": "27d60baf19231eae0bfebff771a35a008727e054955e09ed6bd403520eb4f1a9",
+    "startOffset": 928,
+    "endOffset": 957,
+    "source": "* It's getting hot in here.",
+    "translation": "* Está ficando quente aqui.",
+    "originalExpression": "\"* It's getting hot in here.\"",
+    "replacementExpression": "\"* Está ficando quente aqui.\""
+  },
+  "a8a2c9227543": {
+    "file": "scripts/battle/enemies/superstar.lua",
+    "fileHash": "27d60baf19231eae0bfebff771a35a008727e054955e09ed6bd403520eb4f1a9",
+    "startOffset": 961,
+    "endOffset": 1014,
+    "source": "* Drawgon wonders about the purpose\nof his life...",
+    "translation": "* Drawgon se pergunta qual é o propósito\nda própria vida...",
+    "originalExpression": "\"* Drawgon wonders about the purpose\\nof his life...\"",
+    "replacementExpression": "\"* Drawgon se pergunta qual é o propósito\\nda própria vida...\""
+  },
+  "4e0b06a0f4ad": {
+    "file": "scripts/battle/enemies/superstar.lua",
+    "fileHash": "27d60baf19231eae0bfebff771a35a008727e054955e09ed6bd403520eb4f1a9",
+    "startOffset": 1018,
+    "endOffset": 1050,
+    "source": "* Through the fire and flames!",
+    "translation": "* Através do fogo e das chamas!",
+    "originalExpression": "\"* Through the fire and flames!\"",
+    "replacementExpression": "\"* Através do fogo e das chamas!\""
+  },
+  "7457eac354b4": {
+    "file": "scripts/data/items/armors/supersocks.lua",
+    "fileHash": "85f6cc10ed60d37b6f99bd662f10cc5763cadf8faae02a4292e08385d2755159",
+    "startOffset": 416,
+    "endOffset": 438,
+    "source": "They warm your legs.",
+    "translation": "Elas aquecem suas pernas.",
+    "originalExpression": "\"They warm your legs.\"",
+    "replacementExpression": "\"Elas aquecem suas pernas.\""
+  },
+  "6be8b884ddc1": {
+    "file": "scripts/data/items/armors/supersocks.lua",
+    "fileHash": "85f6cc10ed60d37b6f99bd662f10cc5763cadf8faae02a4292e08385d2755159",
+    "startOffset": 1308,
+    "endOffset": 1324,
+    "source": "Ew, it stinks.",
+    "translation": "Eca, isso fede.",
+    "originalExpression": "\"Ew, it stinks.\"",
+    "replacementExpression": "\"Eca, isso fede.\""
+  },
+  "00b77c001d9b": {
+    "file": "scripts/data/items/armors/supersocks.lua",
+    "fileHash": "85f6cc10ed60d37b6f99bd662f10cc5763cadf8faae02a4292e08385d2755159",
+    "startOffset": 1343,
+    "endOffset": 1366,
+    "source": "They feel powerful...",
+    "translation": "Elas parecem poderosas...",
+    "originalExpression": "\"They feel powerful...\"",
+    "replacementExpression": "\"Elas parecem poderosas...\""
+  },
+  "b350e9428f15": {
+    "file": "scripts/data/items/armors/yellow_ribbon.lua",
+    "fileHash": "80351d4e4f745fc315643b5912fd4671481709706fcf0e387a11cc7a93aa2bd6",
+    "startOffset": 422,
+    "endOffset": 494,
+    "source": "A cute hair ribbon that increases\nthe range bullets increase tension.",
+    "translation": "Uma fita de cabelo fofa que aumenta\no alcance em que projéteis geram tensão.",
+    "originalExpression": "\"A cute hair ribbon that increases\\nthe range bullets increase tension.\"",
+    "replacementExpression": "\"Uma fita de cabelo fofa que aumenta\\no alcance em que projéteis geram tensão.\""
+  },
+  "a12e3a9dcf88": {
+    "file": "scripts/data/items/armors/yellow_ribbon.lua",
+    "fileHash": "80351d4e4f745fc315643b5912fd4671481709706fcf0e387a11cc7a93aa2bd6",
+    "startOffset": 1420,
+    "endOffset": 1445,
+    "source": "... Are you kidding me?",
+    "translation": "... Você está de brincadeira?",
+    "originalExpression": "\"... Are you kidding me?\"",
+    "replacementExpression": "\"... Você está de brincadeira?\""
+  },
+  "1bb518b0e5ae": {
+    "file": "scripts/data/items/armors/yellow_ribbon.lua",
+    "fileHash": "80351d4e4f745fc315643b5912fd4671481709706fcf0e387a11cc7a93aa2bd6",
+    "startOffset": 1464,
+    "endOffset": 1476,
+    "source": "I love it!",
+    "translation": "Eu adorei!",
+    "originalExpression": "\"I love it!\"",
+    "replacementExpression": "\"Eu adorei!\""
+  },
+  "5c5d941579a9": {
+    "file": "scripts/data/items/items/fuzzypizza.lua",
+    "fileHash": "5ce16e17e922fa2051b68e38eda33ee3c24772de000216b604d08dff0424d988",
+    "startOffset": 386,
+    "endOffset": 400,
+    "source": "Heals\n110HP",
+    "translation": "Cura\n110HP",
+    "originalExpression": "\"Heals\\n110HP\"",
+    "replacementExpression": "\"Cura\\n110HP\""
+  },
+  "ef440c2fa9cb": {
+    "file": "scripts/data/items/items/fuzzypizza.lua",
+    "fileHash": "5ce16e17e922fa2051b68e38eda33ee3c24772de000216b604d08dff0424d988",
+    "startOffset": 493,
+    "endOffset": 551,
+    "source": "A certain pizza from a certain pizzeria... Heals 110 HP.",
+    "translation": "Uma certa pizza de uma certa pizzaria... Cura 110 HP.",
+    "originalExpression": "\"A certain pizza from a certain pizzeria... Heals 110 HP.\"",
+    "replacementExpression": "\"Uma certa pizza de uma certa pizzaria... Cura 110 HP.\""
+  },
+  "692851efafdf": {
+    "file": "scripts/data/items/items/fuzzypizza.lua",
+    "fileHash": "5ce16e17e922fa2051b68e38eda33ee3c24772de000216b604d08dff0424d988",
+    "startOffset": 1586,
+    "endOffset": 1603,
+    "source": "Chalk is better",
+    "translation": "Giz é melhor",
+    "originalExpression": "\"Chalk is better\"",
+    "replacementExpression": "\"Giz é melhor\""
+  },
+  "d8bb484a255c": {
+    "file": "scripts/data/items/items/fuzzypizza.lua",
+    "fileHash": "5ce16e17e922fa2051b68e38eda33ee3c24772de000216b604d08dff0424d988",
+    "startOffset": 1622,
+    "endOffset": 1634,
+    "source": "Cheeeseee!",
+    "translation": "Queeeijo!",
+    "originalExpression": "\"Cheeeseee!\"",
+    "replacementExpression": "\"Queeeijo!\""
+  },
+  "a0fdc868765e": {
+    "file": "scripts/data/items/items/koola.lua",
+    "fileHash": "0a48d4b3c1eb8e82e68865cb8f7f0a6f588990fc340950ce16899c5ed0175d7e",
+    "startOffset": 376,
+    "endOffset": 389,
+    "source": "Heals\n50HP",
+    "translation": "Cura\n50HP",
+    "originalExpression": "\"Heals\\n50HP\"",
+    "replacementExpression": "\"Cura\\n50HP\""
+  },
+  "838e608ab419": {
+    "file": "scripts/data/items/items/koola.lua",
+    "fileHash": "0a48d4b3c1eb8e82e68865cb8f7f0a6f588990fc340950ce16899c5ed0175d7e",
+    "startOffset": 482,
+    "endOffset": 510,
+    "source": "A kool drink. Heals 50 HP.",
+    "translation": "Uma bebida da hora. Cura 50 HP.",
+    "originalExpression": "\"A kool drink. Heals 50 HP.\"",
+    "replacementExpression": "\"Uma bebida da hora. Cura 50 HP.\""
+  },
+  "1efc215720a5": {
+    "file": "scripts/data/items/items/koola.lua",
+    "fileHash": "0a48d4b3c1eb8e82e68865cb8f7f0a6f588990fc340950ce16899c5ed0175d7e",
+    "startOffset": 1544,
+    "endOffset": 1556,
+    "source": "Cool down.",
+    "translation": "Refresca.",
+    "originalExpression": "\"Cool down.\"",
+    "replacementExpression": "\"Refresca.\""
+  },
+  "8f7c12414649": {
+    "file": "scripts/data/items/items/koola.lua",
+    "fileHash": "0a48d4b3c1eb8e82e68865cb8f7f0a6f588990fc340950ce16899c5ed0175d7e",
+    "startOffset": 1575,
+    "endOffset": 1590,
+    "source": "Why it's hot?",
+    "translation": "Por que está quente?",
+    "originalExpression": "\"Why it's hot?\"",
+    "replacementExpression": "\"Por que está quente?\""
+  },
+  "8e8192cd17d8": {
+    "file": "scripts/data/items/items/popcorn.lua",
+    "fileHash": "ba48601b5764fadcfdf5a214d2133c26e9d31eab8630d9da577f01e962b533ca",
+    "startOffset": 381,
+    "endOffset": 394,
+    "source": "Heals\n90HP",
+    "translation": "Cura\n90HP",
+    "originalExpression": "\"Heals\\n90HP\"",
+    "replacementExpression": "\"Cura\\n90HP\""
+  },
+  "08d7ec93c12d": {
+    "file": "scripts/data/items/items/popcorn.lua",
+    "fileHash": "ba48601b5764fadcfdf5a214d2133c26e9d31eab8630d9da577f01e962b533ca",
+    "startOffset": 487,
+    "endOffset": 535,
+    "source": "Hot popcorn!\nBe careful with it! Heals 90 HP.",
+    "translation": "Pipoca quente!\nCuidado com ela! Cura 90 HP.",
+    "originalExpression": "\"Hot popcorn!\\nBe careful with it! Heals 90 HP.\"",
+    "replacementExpression": "\"Pipoca quente!\\nCuidado com ela! Cura 90 HP.\""
+  },
+  "e45242519000": {
+    "file": "scripts/data/items/items/popcorn.lua",
+    "fileHash": "ba48601b5764fadcfdf5a214d2133c26e9d31eab8630d9da577f01e962b533ca",
+    "startOffset": 1569,
+    "endOffset": 1590,
+    "source": "Right into my face!",
+    "translation": "Bem na minha cara!",
+    "originalExpression": "\"Right into my face!\"",
+    "replacementExpression": "\"Bem na minha cara!\""
+  },
+  "6f77bfd965c3": {
+    "file": "scripts/data/items/items/popcorn.lua",
+    "fileHash": "ba48601b5764fadcfdf5a214d2133c26e9d31eab8630d9da577f01e962b533ca",
+    "startOffset": 1609,
+    "endOffset": 1627,
+    "source": "It's so shaky...",
+    "translation": "Está tremendo tanto...",
+    "originalExpression": "\"It's so shaky...\"",
+    "replacementExpression": "\"Está tremendo tanto...\""
+  },
+  "cb2f8d6d5126": {
+    "file": "scripts/data/items/key/shadow_mantle.lua",
+    "fileHash": "b7dacc842fa2f37e60adff4b170ab33ae699c85eb05689dc7c047fd22b57ba7b",
+    "startOffset": 479,
+    "endOffset": 523,
+    "source": "A strange mantle. Protects from illusions.",
+    "translation": "Um manto estranho. Protege contra ilusões.",
+    "originalExpression": "\"A strange mantle. Protects from illusions.\"",
+    "replacementExpression": "\"Um manto estranho. Protege contra ilusões.\""
+  },
+  "b815e7f3f376": {
+    "file": "scripts/data/party/kris.lua",
+    "fileHash": "2d5bac75989f66717512caf166c29ef1a1517fd16817dfdbbf9fa6b5d0c8be35",
+    "startOffset": 435,
+    "endOffset": 483,
+    "source": "Leader\nCommands the party\nwith various ACTs.",
+    "translation": "Líder\nComanda o grupo\ncom vários AGIR.",
+    "originalExpression": "\"Leader\\nCommands the party\\nwith various ACTs.\"",
+    "replacementExpression": "\"Líder\\nComanda o grupo\\ncom vários AGIR.\""
+  },
+  "4efdff2b67d1": {
+    "file": "scripts/data/party/kris.lua",
+    "fileHash": "2d5bac75989f66717512caf166c29ef1a1517fd16817dfdbbf9fa6b5d0c8be35",
+    "startOffset": 514,
+    "endOffset": 566,
+    "source": "Tactician\nCommands the party\nby ACTs. Sometimes.",
+    "translation": "Estrategista\nComanda o grupo\ncom AGIR. Às vezes.",
+    "originalExpression": "\"Tactician\\nCommands the party\\nby ACTs. Sometimes.\"",
+    "replacementExpression": "\"Estrategista\\nComanda o grupo\\ncom AGIR. Às vezes.\""
+  },
+  "cb091dc76d5b": {
+    "file": "scripts/data/party/noelle.lua",
+    "fileHash": "c5d441e3633e6545e6226e52cf856da0a0b6b47a13df2dd60148c0e4384fd3f9",
+    "startOffset": 392,
+    "endOffset": 444,
+    "source": "Snowcaster\nMight be able to\nuse some cool moves.",
+    "translation": "Conjuradora de Neve\nTalvez consiga usar\nuns golpes legais.",
+    "originalExpression": "\"Snowcaster\\nMight be able to\\nuse some cool moves.\"",
+    "replacementExpression": "\"Conjuradora de Neve\\nTalvez consiga usar\\nuns golpes legais.\""
+  },
+  "68c2dfa24c5a": {
+    "file": "scripts/data/party/ralsei.lua",
+    "fileHash": "4fbf03deafc19eaaef09b8c57bd7e58643fa0bd19bd74b25ce161ec18d6eefa6",
+    "startOffset": 446,
+    "endOffset": 498,
+    "source": "Lonely Prince\nDark-World being.\nHas no subjects.",
+    "translation": "Príncipe Solitário\nSer do Mundo Sombrio.\nNão tem súditos.",
+    "originalExpression": "\"Lonely Prince\\nDark-World being.\\nHas no subjects.\"",
+    "replacementExpression": "\"Príncipe Solitário\\nSer do Mundo Sombrio.\\nNão tem súditos.\""
+  },
+  "4c2cfeda2326": {
+    "file": "scripts/data/party/ralsei.lua",
+    "fileHash": "4fbf03deafc19eaaef09b8c57bd7e58643fa0bd19bd74b25ce161ec18d6eefa6",
+    "startOffset": 529,
+    "endOffset": 579,
+    "source": "Dark Prince\nDark-World being.\nHas friends now.",
+    "translation": "Príncipe Sombrio\nSer do Mundo Sombrio.\nAgora tem amigos.",
+    "originalExpression": "\"Dark Prince\\nDark-World being.\\nHas friends now.\"",
+    "replacementExpression": "\"Príncipe Sombrio\\nSer do Mundo Sombrio.\\nAgora tem amigos.\""
+  },
+  "b9d80af6d155": {
+    "file": "scripts/data/party/ralsei.lua",
+    "fileHash": "4fbf03deafc19eaaef09b8c57bd7e58643fa0bd19bd74b25ce161ec18d6eefa6",
+    "startOffset": 3538,
+    "endOffset": 3566,
+    "source": "This is not\nyour fate...!",
+    "translation": "Este não é\nseu destino...!",
+    "originalExpression": "\"This is not\\nyour fate...!\"",
+    "replacementExpression": "\"Este não é\\nseu destino...!\""
+  },
+  "92d4661337ab": {
+    "file": "scripts/data/party/ralsei.lua",
+    "fileHash": "4fbf03deafc19eaaef09b8c57bd7e58643fa0bd19bd74b25ce161ec18d6eefa6",
+    "startOffset": 3576,
+    "endOffset": 3609,
+    "source": "Please,[wait:5]\ndon't give up!",
+    "translation": "Por favor,[wait:5]\nnão desista!",
+    "originalExpression": "\"Please,[wait:5]\\ndon't give up!\"",
+    "replacementExpression": "\"Por favor,[wait:5]\\nnão desista!\""
+  },
+  "9e29fad45448": {
+    "file": "scripts/data/party/susie.lua",
+    "fileHash": "e254da3309cd7e8f1b08f2c9d1b550039360bb50471b585e369658a85816ed36",
+    "startOffset": 388,
+    "endOffset": 434,
+    "source": "Dark Knight\nDoes damage using\ndark energy.",
+    "translation": "Cavaleira Sombria\nCausa dano usando\nenergia sombria.",
+    "originalExpression": "\"Dark Knight\\nDoes damage using\\ndark energy.\"",
+    "replacementExpression": "\"Cavaleira Sombria\\nCausa dano usando\\nenergia sombria.\""
+  },
+  "0a92b9b38a0d": {
+    "file": "scripts/data/party/susie.lua",
+    "fileHash": "e254da3309cd7e8f1b08f2c9d1b550039360bb50471b585e369658a85816ed36",
+    "startOffset": 4803,
+    "endOffset": 4820,
+    "source": "Hey, hands off!",
+    "translation": "Ei, tire as mãos!",
+    "originalExpression": "\"Hey, hands off!\"",
+    "replacementExpression": "\"Ei, tire as mãos!\""
+  },
+  "5b35a3dab213": {
+    "file": "scripts/data/party/toriel.lua",
+    "fileHash": "53107143b537e8c907902983a71d885976999f1944321e29928b3a55ba9b1734",
+    "startOffset": 403,
+    "endOffset": 455,
+    "source": "Snowcaster\nMight be able to\nuse some cool moves.",
+    "translation": "Conjuradora de Neve\nTalvez consiga usar\nuns golpes legais.",
+    "originalExpression": "\"Snowcaster\\nMight be able to\\nuse some cool moves.\"",
+    "replacementExpression": "\"Conjuradora de Neve\\nTalvez consiga usar\\nuns golpes legais.\""
+  },
+  "351fcbde06c7": {
+    "file": "scripts/world/cutscenes/credits.lua",
+    "fileHash": "27badbb3d81813c3e0f68a56e2f35626c0798cbbc3e91d8c8cdd9e7c98ebc35a",
+    "startOffset": 1758,
+    "endOffset": 1786,
+    "source": "Press [Confirm] to skip...",
+    "translation": "Pressione [Confirm] para pular...",
+    "originalExpression": "\"Press [Confirm] to skip...\"",
+    "replacementExpression": "\"Pressione [Confirm] para pular...\""
+  },
+  "8950fbc3409f": {
+    "file": "scripts/world/cutscenes/dess.lua",
+    "fileHash": "030962339ae8d0191d7565fdccb00f90008efbf85c1be1b2ea7a2a07d1764604",
+    "startOffset": 260,
+    "endOffset": 292,
+    "source": "* Uhm...[wait:8] Hi, I guess??",
+    "translation": "* Hum...[wait:8] Oi, eu acho??",
+    "originalExpression": "\"* Uhm...[wait:8] Hi, I guess??\"",
+    "replacementExpression": "\"* Hum...[wait:8] Oi, eu acho??\""
+  },
+  "35e86dfe9f13": {
+    "file": "scripts/world/cutscenes/dess.lua",
+    "fileHash": "030962339ae8d0191d7565fdccb00f90008efbf85c1be1b2ea7a2a07d1764604",
+    "startOffset": 323,
+    "endOffset": 398,
+    "source": "* My name is December Holiday![wait:8] You can also call me[wait:4] Dess!",
+    "translation": "* Meu nome é December Holiday![wait:8] Você também pode me chamar de[wait:4] Dess!",
+    "originalExpression": "\"* My name is December Holiday![wait:8] You can also call me[wait:4] Dess!\"",
+    "replacementExpression": "\"* Meu nome é December Holiday![wait:8] Você também pode me chamar de[wait:4] Dess!\""
+  },
+  "5e63d245f214": {
+    "file": "scripts/world/cutscenes/dess.lua",
+    "fileHash": "030962339ae8d0191d7565fdccb00f90008efbf85c1be1b2ea7a2a07d1764604",
+    "startOffset": 430,
+    "endOffset": 437,
+    "source": "* ...",
+    "translation": "* ...",
+    "originalExpression": "\"* ...\"",
+    "replacementExpression": "\"* ...\""
+  },
+  "050fdb25afa1": {
+    "file": "scripts/world/cutscenes/dess.lua",
+    "fileHash": "030962339ae8d0191d7565fdccb00f90008efbf85c1be1b2ea7a2a07d1764604",
+    "startOffset": 469,
+    "endOffset": 539,
+    "source": "* Damn,[wait:4] I'm really starting to look crazy,[wait:4] isn't it?",
+    "translation": "* Droga,[wait:4] estou mesmo começando a parecer maluca,[wait:4] não estou?",
+    "originalExpression": "\"* Damn,[wait:4] I'm really starting to look crazy,[wait:4] isn't it?\"",
+    "replacementExpression": "\"* Droga,[wait:4] estou mesmo começando a parecer maluca,[wait:4] não estou?\""
+  },
+  "e2966796dde5": {
+    "file": "scripts/world/cutscenes/dess.lua",
+    "fileHash": "030962339ae8d0191d7565fdccb00f90008efbf85c1be1b2ea7a2a07d1764604",
+    "startOffset": 569,
+    "endOffset": 620,
+    "source": "* Azzy told me cameras are very useful sometimes.",
+    "translation": "* Azzy me disse que câmeras podem ser muito úteis às vezes.",
+    "originalExpression": "\"* Azzy told me cameras are very useful sometimes.\"",
+    "replacementExpression": "\"* Azzy me disse que câmeras podem ser muito úteis às vezes.\""
+  },
+  "977cead6b1df": {
+    "file": "scripts/world/cutscenes/dess.lua",
+    "fileHash": "030962339ae8d0191d7565fdccb00f90008efbf85c1be1b2ea7a2a07d1764604",
+    "startOffset": 654,
+    "endOffset": 708,
+    "source": "* \"Otherworld creatures talk via electronic stuff\"",
+    "translation": "* \"Criaturas de outros mundos falam por coisas eletrônicas\"",
+    "originalExpression": "[[* \"Otherworld creatures talk via electronic stuff\"]]",
+    "replacementExpression": "\"* \\\"Criaturas de outros mundos falam por coisas eletrônicas\\\"\""
+  },
+  "a44f991a9411": {
+    "file": "scripts/world/cutscenes/dess.lua",
+    "fileHash": "030962339ae8d0191d7565fdccb00f90008efbf85c1be1b2ea7a2a07d1764604",
+    "startOffset": 748,
+    "endOffset": 775,
+    "source": "* Hahaha![wait:8] Haha...",
+    "translation": "* Hahaha![wait:8] Haha...",
+    "originalExpression": "\"* Hahaha![wait:8] Haha...\"",
+    "replacementExpression": "\"* Hahaha![wait:8] Haha...\""
+  },
+  "6e1dbe978b2b": {
+    "file": "scripts/world/cutscenes/dess.lua",
+    "fileHash": "030962339ae8d0191d7565fdccb00f90008efbf85c1be1b2ea7a2a07d1764604",
+    "startOffset": 807,
+    "endOffset": 816,
+    "source": "* Ha...",
+    "translation": "* Ha...",
+    "originalExpression": "\"* Ha...\"",
+    "replacementExpression": "\"* Ha...\""
+  },
+  "49280caddf1d": {
+    "file": "scripts/world/cutscenes/dess.lua",
+    "fileHash": "030962339ae8d0191d7565fdccb00f90008efbf85c1be1b2ea7a2a07d1764604",
+    "startOffset": 856,
+    "endOffset": 924,
+    "source": "* Welp,[wait:4] here I am![wait:6] In this...[wait:6] Weird place.",
+    "translation": "* Bem,[wait:4] aqui estou![wait:6] Neste...[wait:6] lugar estranho.",
+    "originalExpression": "\"* Welp,[wait:4] here I am![wait:6] In this...[wait:6] Weird place.\"",
+    "replacementExpression": "\"* Bem,[wait:4] aqui estou![wait:6] Neste...[wait:6] lugar estranho.\""
+  },
+  "26b2d7901ce7": {
+    "file": "scripts/world/cutscenes/dess.lua",
+    "fileHash": "030962339ae8d0191d7565fdccb00f90008efbf85c1be1b2ea7a2a07d1764604",
+    "startOffset": 964,
+    "endOffset": 1017,
+    "source": "* ... Hoping that my voice and music will be heard.",
+    "translation": "* ... Esperando que minha voz e minha música sejam ouvidas.",
+    "originalExpression": "\"* ... Hoping that my voice and music will be heard.\"",
+    "replacementExpression": "\"* ... Esperando que minha voz e minha música sejam ouvidas.\""
+  },
+  "826e574d90c7": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 1891,
+    "endOffset": 1903,
+    "source": "* WELCOME!",
+    "translation": "* BEM-VINDO!",
+    "originalExpression": "\"* WELCOME!\"",
+    "replacementExpression": "\"* BEM-VINDO!\""
+  },
+  "be4e62f95752": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 1935,
+    "endOffset": 1942,
+    "source": "* ...",
+    "translation": "* ...",
+    "originalExpression": "\"* ...\"",
+    "replacementExpression": "\"* ...\""
+  },
+  "c5a7b99bcfd8": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 1974,
+    "endOffset": 2023,
+    "source": "* I KNOW YOU, KRISsS.[wait:4] I KNOW YOUR TYPE.",
+    "translation": "* EU CONHEÇO VOCÊ, KRISsS.[wait:4] CONHEÇO SsSEU TIPO.",
+    "originalExpression": "\"* I KNOW YOU, KRISsS.[wait:4] I KNOW YOUR TYPE.\"",
+    "replacementExpression": "\"* EU CONHEÇO VOCÊ, KRISsS.[wait:4] CONHEÇO SsSEU TIPO.\""
+  },
+  "a0f52c4eeb4f": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 2055,
+    "endOffset": 2108,
+    "source": "* NEVER DOUBTED FOR A SsSECOND THAT YOU WOULD COME.",
+    "translation": "* NUNCA DUVIDEI NEM POR UM SsSEGUNDO QUE VOCÊ VIRIA.",
+    "originalExpression": "\"* NEVER DOUBTED FOR A SsSECOND THAT YOU WOULD COME.\"",
+    "replacementExpression": "\"* NUNCA DUVIDEI NEM POR UM SsSEGUNDO QUE VOCÊ VIRIA.\""
+  },
+  "8095a4dd2b9b": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 2140,
+    "endOffset": 2189,
+    "source": "* THISsS[wait:6] WASsS MY PLACE OF LIVING ONCE.",
+    "translation": "* IsSsSO[wait:6] JÁ FOI O LUGAR ONDE EU VIVIA.",
+    "originalExpression": "\"* THISsS[wait:6] WASsS MY PLACE OF LIVING ONCE.\"",
+    "replacementExpression": "\"* IsSsSO[wait:6] JÁ FOI O LUGAR ONDE EU VIVIA.\""
+  },
+  "0db0e3b13f53": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 2224,
+    "endOffset": 2272,
+    "source": "* BOUQUETS OF FLOWERSsS ALWAYS FELL DOWN HERE.",
+    "translation": "* BUQUÊS DE FLORESsS SsSEMPRE CAÍAM AQUI.",
+    "originalExpression": "\"* BOUQUETS OF FLOWERSsS ALWAYS FELL DOWN HERE.\"",
+    "replacementExpression": "\"* BUQUÊS DE FLORESsS SsSEMPRE CAÍAM AQUI.\""
+  },
+  "a22a35a1429b": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 2307,
+    "endOffset": 2369,
+    "source": "* ALMOST AS IF[wait:8] THEY WERE BEING PLACED ON MY GRAVE...",
+    "translation": "* QUASsSE COMO SsSE[wait:8] EsSsTIVESsSEM SsSENDO POSTOS NO MEU TÚMULO...",
+    "originalExpression": "\"* ALMOST AS IF[wait:8] THEY WERE BEING PLACED ON MY GRAVE...\"",
+    "replacementExpression": "\"* QUASsSE COMO SsSE[wait:8] EsSsTIVESsSEM SsSENDO POSTOS NO MEU TÚMULO...\""
+  },
+  "37e8a4f752c4": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 2404,
+    "endOffset": 2444,
+    "source": "* ... I WANTED TO COME BACK SsSO MUCH.",
+    "translation": "* ... EU QUERIA TANTO VOLTAR.",
+    "originalExpression": "\"* ... I WANTED TO COME BACK SsSO MUCH.\"",
+    "replacementExpression": "\"* ... EU QUERIA TANTO VOLTAR.\""
+  },
+  "bd77050c08a1": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 2479,
+    "endOffset": 2535,
+    "source": "* I WANTED TO BE ALIVE!\nI WANTED TO MEAN SsSOMETHING!",
+    "translation": "* EU QUERIA CONTINUAR VIVENDO!\nEU QUERIA SsSIGNIFICAR ALGO!",
+    "originalExpression": "\"* I WANTED TO BE ALIVE!\\nI WANTED TO MEAN SsSOMETHING!\"",
+    "replacementExpression": "\"* EU QUERIA CONTINUAR VIVENDO!\\nEU QUERIA SsSIGNIFICAR ALGO!\""
+  },
+  "fa73c4339a14": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 2570,
+    "endOffset": 2595,
+    "source": "* But it didn't matter.",
+    "translation": "* Mas isso não importava.",
+    "originalExpression": "\"* But it didn't matter.\"",
+    "replacementExpression": "\"* Mas isso não importava.\""
+  },
+  "fe1c1077306d": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 2630,
+    "endOffset": 2659,
+    "source": "* AND THEN YOU CAME HERE...",
+    "translation": "* E ENTÃO VOCÊ VEIO ATÉ AQUI...",
+    "originalExpression": "\"* AND THEN YOU CAME HERE...\"",
+    "replacementExpression": "\"* E ENTÃO VOCÊ VEIO ATÉ AQUI...\""
+  },
+  "78024d965dbb": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 2694,
+    "endOffset": 2755,
+    "source": "* YOU VENTURED DEEP INSsSIDE AND SsSAVED ME FROM THIS FATE.",
+    "translation": "* VOCÊ SsSE AVENTUROU FUNDO E ME SsSALVOU DESsSTE DESTINO.",
+    "originalExpression": "\"* YOU VENTURED DEEP INSsSIDE AND SsSAVED ME FROM THIS FATE.\"",
+    "replacementExpression": "\"* VOCÊ SsSE AVENTUROU FUNDO E ME SsSALVOU DESsSTE DESTINO.\""
+  },
+  "f4c6038076ce": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 2790,
+    "endOffset": 2846,
+    "source": "* BUT YOU REMEMBERED SsSOMETHING ELSE BESIDES JUST ME.",
+    "translation": "* MASsS VOCÊ SsSE LEMBROU DE OUTRA COISsSA ALÉM DE MIM.",
+    "originalExpression": "\"* BUT YOU REMEMBERED SsSOMETHING ELSE BESIDES JUST ME.\"",
+    "replacementExpression": "\"* MASsS VOCÊ SsSE LEMBROU DE OUTRA COISsSA ALÉM DE MIM.\""
+  },
+  "642e9951d810": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 2881,
+    "endOffset": 2950,
+    "source": "* SsSO,[wait:8] ARE YOU READY TO FACE THE TRUTH?[wait:8] YOUR FATE?",
+    "translation": "* ENTÃO,[wait:8] EsSsTÁ PRONTO PARA ENCARAR A VERDADE?[wait:8] SsSEU DESTINO?",
+    "originalExpression": "\"* SsSO,[wait:8] ARE YOU READY TO FACE THE TRUTH?[wait:8] YOUR FATE?\"",
+    "replacementExpression": "\"* ENTÃO,[wait:8] EsSsTÁ PRONTO PARA ENCARAR A VERDADE?[wait:8] SsSEU DESTINO?\""
+  },
+  "481aaabb4f26": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 3005,
+    "endOffset": 3010,
+    "source": "Yes",
+    "translation": "Sim",
+    "originalExpression": "\"Yes\"",
+    "replacementExpression": "\"Sim\""
+  },
+  "402fc4a011e0": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 3012,
+    "endOffset": 3016,
+    "source": "No",
+    "translation": "Não",
+    "originalExpression": "\"No\"",
+    "replacementExpression": "\"Não\""
+  },
+  "ee64bbafa342": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 3123,
+    "endOffset": 3144,
+    "source": "* ME DON'T CARESsS!",
+    "translation": "* EU NÃO ME IMPORTO!",
+    "originalExpression": "\"* ME DON'T CARESsS!\"",
+    "replacementExpression": "\"* EU NÃO ME IMPORTO!\""
+  },
+  "f2ce84dc38f0": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 3180,
+    "endOffset": 3223,
+    "source": "* LET THE MISsST TAKE CARE OF EVERYTHING!",
+    "translation": "* DEIXE A NÉVOA CUIDAR DE TUDO!",
+    "originalExpression": "\"* LET THE MISsST TAKE CARE OF EVERYTHING!\"",
+    "replacementExpression": "\"* DEIXE A NÉVOA CUIDAR DE TUDO!\""
+  },
+  "1c5fd27e0217": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 3268,
+    "endOffset": 3326,
+    "source": "* GREAT![wait:6] LET THE MISsST TAKE CARE OF EVERYTHING!",
+    "translation": "* ÓTIMO![wait:6] DEIXE A NÉVOA CUIDAR DE TUDO!",
+    "originalExpression": "\"* GREAT![wait:6] LET THE MISsST TAKE CARE OF EVERYTHING!\"",
+    "replacementExpression": "\"* ÓTIMO![wait:6] DEIXE A NÉVOA CUIDAR DE TUDO!\""
+  },
+  "52d999b9c4a7": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 6023,
+    "endOffset": 6045,
+    "source": "* What is going on?!",
+    "translation": "* O que está acontecendo?!",
+    "originalExpression": "\"* What is going on?!\"",
+    "replacementExpression": "\"* O que está acontecendo?!\""
+  },
+  "72717f4cbd3f": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 6077,
+    "endOffset": 6103,
+    "source": "* KRIS![wait:4] WAKE UP!",
+    "translation": "* KRIS![wait:4] ACORDE!",
+    "originalExpression": "\"* KRIS![wait:4] WAKE UP!\"",
+    "replacementExpression": "\"* KRIS![wait:4] ACORDE!\""
+  },
+  "e6d37df265cc": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 15903,
+    "endOffset": 15970,
+    "source": "* YOUR SsSOUL TRIESsS TO PROTECT ITSsSELF IN ANY WAY POSsSIBLE...",
+    "translation": "* SsSUA ALMA TENTA SsSE PROTEGER DE QUALQUER JEITO POSsSÍVEL...",
+    "originalExpression": "\"* YOUR SsSOUL TRIESsS TO PROTECT ITSsSELF IN ANY WAY POSsSIBLE...\"",
+    "replacementExpression": "\"* SsSUA ALMA TENTA SsSE PROTEGER DE QUALQUER JEITO POSsSÍVEL...\""
+  },
+  "0e2819569e6b": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 16002,
+    "endOffset": 16078,
+    "source": "* BUT NOBODY WILL SsSAVE YOU IN THE FUTURE, BECAUSsE YOU'LL FAIL EVERYONE.",
+    "translation": "* MASsS NINGUÉM VAI SsSALVAR VOCÊ NO FUTURO, PORQUE VOCÊ VAI DECEPCIONAR TODO MUNDO.",
+    "originalExpression": "\"* BUT NOBODY WILL SsSAVE YOU IN THE FUTURE, BECAUSsE YOU'LL FAIL EVERYONE.\"",
+    "replacementExpression": "\"* MASsS NINGUÉM VAI SsSALVAR VOCÊ NO FUTURO, PORQUE VOCÊ VAI DECEPCIONAR TODO MUNDO.\""
+  },
+  "5c328728274e": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 16110,
+    "endOffset": 16169,
+    "source": "* And the consequences of your actions came down to this.",
+    "translation": "* E as consequências das suas ações levaram a isto.",
+    "originalExpression": "\"* And the consequences of your actions came down to this.\"",
+    "replacementExpression": "\"* E as consequências das suas ações levaram a isto.\""
+  },
+  "d715e9b37e8d": {
+    "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",
+    "fileHash": "943c1630ae720b040478fb46c318fbfefd682c59294e7bb47c979151519b823d",
+    "startOffset": 16201,
+    "endOffset": 16247,
+    "source": "* LET ME REVEAL MY[wait:6] GRAND ILLUSsSION!",
+    "translation": "* DEIXE-ME REVELAR MINHA[wait:6] GRANDE ILUSsSÃO!",
+    "originalExpression": "\"* LET ME REVEAL MY[wait:6] GRAND ILLUSsSION!\"",
+    "replacementExpression": "\"* DEIXE-ME REVELAR MINHA[wait:6] GRANDE ILUSsSÃO!\""
+  },
+  "4fb21dd881c5": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 550,
+    "endOffset": 601,
+    "source": "* Kris...[wait:12] Are you sleeping or something?",
+    "translation": "* Kris...[wait:12] Você está dormindo ou algo assim?",
+    "originalExpression": "\"* Kris...[wait:12] Are you sleeping or something?\"",
+    "replacementExpression": "\"* Kris...[wait:12] Você está dormindo ou algo assim?\""
+  },
+  "43d3218c4979": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 1166,
+    "endOffset": 1210,
+    "source": "* Finally![wait:8] What's gotten into you?",
+    "translation": "* Finalmente![wait:8] O que deu em você?",
+    "originalExpression": "\"* Finally![wait:8] What's gotten into you?\"",
+    "replacementExpression": "\"* Finalmente![wait:8] O que deu em você?\""
+  },
+  "3f3acf9d9cee": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 1255,
+    "endOffset": 1299,
+    "source": "* Kris,[wait:4] did you have a nice dream?",
+    "translation": "* Kris,[wait:4] teve um sonho bom?",
+    "originalExpression": "\"* Kris,[wait:4] did you have a nice dream?\"",
+    "replacementExpression": "\"* Kris,[wait:4] teve um sonho bom?\""
+  },
+  "da274cea3673": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 1366,
+    "endOffset": 1387,
+    "source": "It was a\nnightmare",
+    "translation": "Foi um\npesadelo",
+    "originalExpression": "\"It was a\\nnightmare\"",
+    "replacementExpression": "\"Foi um\\npesadelo\""
+  },
+  "e64f6a5f190d": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 1389,
+    "endOffset": 1394,
+    "source": "...",
+    "translation": "...",
+    "originalExpression": "\"...\"",
+    "replacementExpression": "\"...\""
+  },
+  "3d5638132d33": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 1443,
+    "endOffset": 1452,
+    "source": "* Oh...",
+    "translation": "* Ah...",
+    "originalExpression": "\"* Oh...\"",
+    "replacementExpression": "\"* Ah...\""
+  },
+  "1b5cbf11827a": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 1491,
+    "endOffset": 1550,
+    "source": "* Well,[wait:4] everything is fine now,[wait:4] isn't it?",
+    "translation": "* Bem,[wait:4] agora está tudo bem,[wait:4] não está?",
+    "originalExpression": "\"* Well,[wait:4] everything is fine now,[wait:4] isn't it?\"",
+    "replacementExpression": "\"* Bem,[wait:4] agora está tudo bem,[wait:4] não está?\""
+  },
+  "245c0ae974f4": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 1646,
+    "endOffset": 1653,
+    "source": "* ...",
+    "translation": "* ...",
+    "originalExpression": "\"* ...\"",
+    "replacementExpression": "\"* ...\""
+  },
+  "00cf7bfe8f2e": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 1693,
+    "endOffset": 1744,
+    "source": "* Not gonna lie,[wait:6] this place feels... Off.",
+    "translation": "* Não vou mentir,[wait:6] este lugar parece... estranho.",
+    "originalExpression": "\"* Not gonna lie,[wait:6] this place feels... Off.\"",
+    "replacementExpression": "\"* Não vou mentir,[wait:6] este lugar parece... estranho.\""
+  },
+  "022a0f7a6be7": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 1784,
+    "endOffset": 1815,
+    "source": "* Let's just get out of here.",
+    "translation": "* Vamos apenas sair daqui.",
+    "originalExpression": "\"* Let's just get out of here.\"",
+    "replacementExpression": "\"* Vamos apenas sair daqui.\""
+  },
+  "6f0a34c1ab3e": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 2010,
+    "endOffset": 2057,
+    "source": "* (You felt a dark pressence in your pocket.)",
+    "translation": "* (Você sentiu uma presença sombria no bolso.)",
+    "originalExpression": "\"* (You felt a dark pressence in your pocket.)\"",
+    "replacementExpression": "\"* (Você sentiu uma presença sombria no bolso.)\""
+  },
+  "35a1672faaf9": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 2108,
+    "endOffset": 2133,
+    "source": "* (You got MagicCloak.)",
+    "translation": "* (Você obteve Manto Mágico.)",
+    "originalExpression": "\"* (You got MagicCloak.)\"",
+    "replacementExpression": "\"* (Você obteve Manto Mágico.)\""
+  },
+  "00128559d2ed": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 2217,
+    "endOffset": 2245,
+    "source": "* (You got ShadowCrystal.)",
+    "translation": "* (Você obteve Cristal Sombrio.)",
+    "originalExpression": "\"* (You got ShadowCrystal.)\"",
+    "replacementExpression": "\"* (Você obteve Cristal Sombrio.)\""
+  },
+  "b943f55707ec": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 2978,
+    "endOffset": 3029,
+    "source": "* Kris...[wait:12] Are you sleeping or something?",
+    "translation": "* Kris...[wait:12] Você está dormindo ou algo assim?",
+    "originalExpression": "\"* Kris...[wait:12] Are you sleeping or something?\"",
+    "replacementExpression": "\"* Kris...[wait:12] Você está dormindo ou algo assim?\""
+  },
+  "62e71a687a5a": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 3594,
+    "endOffset": 3638,
+    "source": "* Finally![wait:8] What's gotten into you?",
+    "translation": "* Finalmente![wait:8] O que deu em você?",
+    "originalExpression": "\"* Finally![wait:8] What's gotten into you?\"",
+    "replacementExpression": "\"* Finalmente![wait:8] O que deu em você?\""
+  },
+  "7f83d3f9f6e5": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 3683,
+    "endOffset": 3727,
+    "source": "* Kris,[wait:4] did you have a nice dream?",
+    "translation": "* Kris,[wait:4] teve um sonho bom?",
+    "originalExpression": "\"* Kris,[wait:4] did you have a nice dream?\"",
+    "replacementExpression": "\"* Kris,[wait:4] teve um sonho bom?\""
+  },
+  "a583b0bf3082": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 3794,
+    "endOffset": 3808,
+    "source": "It was great",
+    "translation": "Foi ótimo",
+    "originalExpression": "\"It was great\"",
+    "replacementExpression": "\"Foi ótimo\""
+  },
+  "f904c86d1063": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 3810,
+    "endOffset": 3824,
+    "source": "It was great",
+    "translation": "Foi ótimo",
+    "originalExpression": "\"It was great\"",
+    "replacementExpression": "\"Foi ótimo\""
+  },
+  "d1de95a98930": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 3847,
+    "endOffset": 3888,
+    "source": "* You sure?[wait:6] You look annoyed...",
+    "translation": "* Tem certeza?[wait:6] Você parece irritado...",
+    "originalExpression": "\"* You sure?[wait:6] You look annoyed...\"",
+    "replacementExpression": "\"* Tem certeza?[wait:6] Você parece irritado...\""
+  },
+  "7b1b7293e24d": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 3976,
+    "endOffset": 3983,
+    "source": "* ...",
+    "translation": "* ...",
+    "originalExpression": "\"* ...\"",
+    "replacementExpression": "\"* ...\""
+  },
+  "1f6d4be27416": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 4023,
+    "endOffset": 4074,
+    "source": "* Not gonna lie,[wait:6] this place feels... Off.",
+    "translation": "* Não vou mentir,[wait:6] este lugar parece... estranho.",
+    "originalExpression": "\"* Not gonna lie,[wait:6] this place feels... Off.\"",
+    "replacementExpression": "\"* Não vou mentir,[wait:6] este lugar parece... estranho.\""
+  },
+  "748fc7785eba": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 4114,
+    "endOffset": 4145,
+    "source": "* Let's just get out of here.",
+    "translation": "* Vamos apenas sair daqui.",
+    "originalExpression": "\"* Let's just get out of here.\"",
+    "replacementExpression": "\"* Vamos apenas sair daqui.\""
+  },
+  "8f539be274f3": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 4339,
+    "endOffset": 4386,
+    "source": "* (You felt a dark pressence in your pocket.)",
+    "translation": "* (Você sentiu uma presença sombria no bolso.)",
+    "originalExpression": "\"* (You felt a dark pressence in your pocket.)\"",
+    "replacementExpression": "\"* (Você sentiu uma presença sombria no bolso.)\""
+  },
+  "c511dbdb8cea": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 4437,
+    "endOffset": 4460,
+    "source": "* (You got HauntCam.)",
+    "translation": "* (Você obteve Câmera Assombrada.)",
+    "originalExpression": "\"* (You got HauntCam.)\"",
+    "replacementExpression": "\"* (Você obteve Câmera Assombrada.)\""
+  },
+  "9ce3e5571ad4": {
+    "file": "scripts/world/cutscenes/eternal_lumia_end.lua",
+    "fileHash": "82920447ab7c7210652cd3aa486851e6c99d7d6d5b350519035ac19ecd72d77a",
+    "startOffset": 4544,
+    "endOffset": 4572,
+    "source": "* (You got ShadowCrystal.)",
+    "translation": "* (Você obteve Cristal Sombrio.)",
+    "originalExpression": "\"* (You got ShadowCrystal.)\"",
+    "replacementExpression": "\"* (Você obteve Cristal Sombrio.)\""
+  },
+  "e8ed1472c9a4": {
+    "file": "scripts/world/cutscenes/knight/prebattle.lua",
+    "fileHash": "234a98876619a71b872b107d6937095a4c3784a9652b7931201e16cab17429f7",
+    "startOffset": 634,
+    "endOffset": 641,
+    "source": "* ...",
+    "translation": "* ...",
+    "originalExpression": "\"* ...\"",
+    "replacementExpression": "\"* ...\""
+  },
+  "e8ede111b1f4": {
+    "file": "scripts/world/cutscenes/knight/prebattle.lua",
+    "fileHash": "234a98876619a71b872b107d6937095a4c3784a9652b7931201e16cab17429f7",
+    "startOffset": 677,
+    "endOffset": 704,
+    "source": "* So it has come to this.",
+    "translation": "* Então chegamos a este ponto.",
+    "originalExpression": "\"* So it has come to this.\"",
+    "replacementExpression": "\"* Então chegamos a este ponto.\""
+  },
+  "f3b3508a2f45": {
+    "file": "scripts/world/cutscenes/knight/prebattle.lua",
+    "fileHash": "234a98876619a71b872b107d6937095a4c3784a9652b7931201e16cab17429f7",
+    "startOffset": 740,
+    "endOffset": 753,
+    "source": "* ... Kris.",
+    "translation": "* ... Kris.",
+    "originalExpression": "\"* ... Kris.\"",
+    "replacementExpression": "\"* ... Kris.\""
+  },
+  "fca54bbc0819": {
+    "file": "scripts/world/cutscenes/knight/prebattle.lua",
+    "fileHash": "234a98876619a71b872b107d6937095a4c3784a9652b7931201e16cab17429f7",
+    "startOffset": 790,
+    "endOffset": 813,
+    "source": "* Just so you know...",
+    "translation": "* Só para você saber...",
+    "originalExpression": "\"* Just so you know...\"",
+    "replacementExpression": "\"* Só para você saber...\""
+  },
+  "4b343b5f1dfe": {
+    "file": "scripts/world/cutscenes/knight/prebattle.lua",
+    "fileHash": "234a98876619a71b872b107d6937095a4c3784a9652b7931201e16cab17429f7",
+    "startOffset": 850,
+    "endOffset": 877,
+    "source": "* We don't have to fight.",
+    "translation": "* Nós não precisamos lutar.",
+    "originalExpression": "\"* We don't have to fight.\"",
+    "replacementExpression": "\"* Nós não precisamos lutar.\""
+  },
+  "b53a2be973d5": {
+    "file": "scripts/world/cutscenes/knight/prebattle.lua",
+    "fileHash": "234a98876619a71b872b107d6937095a4c3784a9652b7931201e16cab17429f7",
+    "startOffset": 936,
+    "endOffset": 981,
+    "source": "* We could just go back to our normal life.",
+    "translation": "* Poderíamos simplesmente voltar à nossa vida normal.",
+    "originalExpression": "\"* We could just go back to our normal life.\"",
+    "replacementExpression": "\"* Poderíamos simplesmente voltar à nossa vida normal.\""
+  },
+  "58528062690e": {
+    "file": "scripts/world/cutscenes/knight/prebattle.lua",
+    "fileHash": "234a98876619a71b872b107d6937095a4c3784a9652b7931201e16cab17429f7",
+    "startOffset": 1018,
+    "endOffset": 1066,
+    "source": "* Opening and closing fountains, having fun...",
+    "translation": "* Abrindo e fechando Fontes, nos divertindo...",
+    "originalExpression": "\"* Opening and closing fountains, having fun...\"",
+    "replacementExpression": "\"* Abrindo e fechando Fontes, nos divertindo...\""
+  },
+  "74ad689b2f02": {
+    "file": "scripts/world/cutscenes/knight/prebattle.lua",
+    "fileHash": "234a98876619a71b872b107d6937095a4c3784a9652b7931201e16cab17429f7",
+    "startOffset": 1103,
+    "endOffset": 1141,
+    "source": "* Isn't that what you always wanted?",
+    "translation": "* Não é isso que você sempre quis?",
+    "originalExpression": "\"* Isn't that what you always wanted?\"",
+    "replacementExpression": "\"* Não é isso que você sempre quis?\""
+  },
+  "59e7fe096ceb": {
+    "file": "scripts/world/cutscenes/knight/prebattle.lua",
+    "fileHash": "234a98876619a71b872b107d6937095a4c3784a9652b7931201e16cab17429f7",
+    "startOffset": 1200,
+    "endOffset": 1262,
+    "source": "* I know you only feel hatred towards me now,[wait:4] but...",
+    "translation": "* Eu sei que agora você só sente ódio de mim,[wait:4] mas...",
+    "originalExpression": "\"* I know you only feel hatred towards me now,[wait:4] but...\"",
+    "replacementExpression": "\"* Eu sei que agora você só sente ódio de mim,[wait:4] mas...\""
+  },
+  "2e73180ddae0": {
+    "file": "scripts/world/cutscenes/knight/prebattle.lua",
+    "fileHash": "234a98876619a71b872b107d6937095a4c3784a9652b7931201e16cab17429f7",
+    "startOffset": 1683,
+    "endOffset": 1690,
+    "source": "* Oh.",
+    "translation": "* Ah.",
+    "originalExpression": "\"* Oh.\"",
+    "replacementExpression": "\"* Ah.\""
+  },
+  "a4213972329a": {
+    "file": "scripts/world/cutscenes/knight/prebattle.lua",
+    "fileHash": "234a98876619a71b872b107d6937095a4c3784a9652b7931201e16cab17429f7",
+    "startOffset": 1726,
+    "endOffset": 1786,
+    "source": "* ... Sorry.[wait:8] It doesn't justify my actions at all.",
+    "translation": "* ... Desculpe.[wait:8] Isso não justifica minhas ações.",
+    "originalExpression": "\"* ... Sorry.[wait:8] It doesn't justify my actions at all.\"",
+    "replacementExpression": "\"* ... Desculpe.[wait:8] Isso não justifica minhas ações.\""
+  },
+  "8a83bed62260": {
+    "file": "scripts/world/cutscenes/knight/prebattle.lua",
+    "fileHash": "234a98876619a71b872b107d6937095a4c3784a9652b7931201e16cab17429f7",
+    "startOffset": 1822,
+    "endOffset": 1836,
+    "source": "* Well then.",
+    "translation": "* Pois bem.",
+    "originalExpression": "\"* Well then.\"",
+    "replacementExpression": "\"* Pois bem.\""
+  },
+  "83e258688d53": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 858,
+    "endOffset": 908,
+    "source": "* Uhh...[wait:8] Kris,[wait:4] why did you stop?",
+    "translation": "* Hum...[wait:8] Kris,[wait:4] por que você parou?",
+    "originalExpression": "\"* Uhh...[wait:8] Kris,[wait:4] why did you stop?\"",
+    "replacementExpression": "\"* Hum...[wait:8] Kris,[wait:4] por que você parou?\""
+  },
+  "37475df4b623": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 947,
+    "endOffset": 969,
+    "source": "* Is anything wrong?",
+    "translation": "* Aconteceu alguma coisa?",
+    "originalExpression": "\"* Is anything wrong?\"",
+    "replacementExpression": "\"* Aconteceu alguma coisa?\""
+  },
+  "907c8d3d1e39": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 1008,
+    "endOffset": 1056,
+    "source": "* Kris,[wait:4] there's nothing on our path...",
+    "translation": "* Kris,[wait:4] não há nada no nosso caminho...",
+    "originalExpression": "\"* Kris,[wait:4] there's nothing on our path...\"",
+    "replacementExpression": "\"* Kris,[wait:4] não há nada no nosso caminho...\""
+  },
+  "e332e02a355f": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 1286,
+    "endOffset": 1301,
+    "source": "* HEY GUYSsS!",
+    "translation": "* EI, GENTE!",
+    "originalExpression": "\"* HEY GUYSsS!\"",
+    "replacementExpression": "\"* EI, GENTE!\""
+  },
+  "0baf715ec43c": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 1331,
+    "endOffset": 1362,
+    "source": "* MY NAME ISsS[wait:4] LUMIA!",
+    "translation": "* MEU NOME É[wait:4] LUMIA!",
+    "originalExpression": "\"* MY NAME ISsS[wait:4] LUMIA!\"",
+    "replacementExpression": "\"* MEU NOME É[wait:4] LUMIA!\""
+  },
+  "f44628c63aa6": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 1392,
+    "endOffset": 1460,
+    "source": "* OH RIGHT,[wait:4] HAHAHA,[wait:4] YOUR FRIENDSsS CAN'T SsSEE ME!",
+    "translation": "* AH, CERTO,[wait:4] HAHAHA,[wait:4] SsSEUS AMIGOSsS NÃO CONSEGUEM ME VER!",
+    "originalExpression": "\"* OH RIGHT,[wait:4] HAHAHA,[wait:4] YOUR FRIENDSsS CAN'T SsSEE ME!\"",
+    "replacementExpression": "\"* AH, CERTO,[wait:4] HAHAHA,[wait:4] SsSEUS AMIGOSsS NÃO CONSEGUEM ME VER!\""
+  },
+  "bb66a789b329": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 1490,
+    "endOffset": 1502,
+    "source": "* HOLD ON.",
+    "translation": "* SsSÓ UM INSTANTE.",
+    "originalExpression": "\"* HOLD ON.\"",
+    "replacementExpression": "\"* SsSÓ UM INSTANTE.\""
+  },
+  "4066ba527119": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 1996,
+    "endOffset": 2058,
+    "source": "* HAHA!! GOLLY,[wait:4] YOUR FACE IS SO FUNNY ON THIS PHOTO!",
+    "translation": "* HAHA!! NOSsSA,[wait:4] SsSUA CARA FICOU TÃO ENGRAÇADA NEsSsSA FOTO!",
+    "originalExpression": "\"* HAHA!! GOLLY,[wait:4] YOUR FACE IS SO FUNNY ON THIS PHOTO!\"",
+    "replacementExpression": "\"* HAHA!! NOSsSA,[wait:4] SsSUA CARA FICOU TÃO ENGRAÇADA NEsSsSA FOTO!\""
+  },
+  "9e6d11e8bbf9": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 2088,
+    "endOffset": 2101,
+    "source": "* ANYWAYSsS",
+    "translation": "* ENFIM",
+    "originalExpression": "\"* ANYWAYSsS\"",
+    "replacementExpression": "\"* ENFIM\""
+  },
+  "04316593409c": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 2198,
+    "endOffset": 2260,
+    "source": "* NAME'SsS LUMIA![wait:6] I'M JUST A SIMPLE ILLUSsSIONISsST!",
+    "translation": "* O NOME É LUMIA![wait:6] SsSOU APENASsS UMA ILUSsSIONIsSsTA!",
+    "originalExpression": "\"* NAME'SsS LUMIA![wait:6] I'M JUST A SIMPLE ILLUSsSIONISsST!\"",
+    "replacementExpression": "\"* O NOME É LUMIA![wait:6] SsSOU APENASsS UMA ILUSsSIONIsSsTA!\""
+  },
+  "f1245539dd5a": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 2290,
+    "endOffset": 2348,
+    "source": "* I MAKE PEOPLE HAPPIER BY LETTING THEM SsSEE MY LIESsS!",
+    "translation": "* EU DEIXO AsSs PEsSsOAS FELIZESsS MOSTRANDO MINHASsS MENTIRASsS!",
+    "originalExpression": "\"* I MAKE PEOPLE HAPPIER BY LETTING THEM SsSEE MY LIESsS!\"",
+    "replacementExpression": "\"* EU DEIXO AsSs PEsSsOAS FELIZESsS MOSTRANDO MINHASsS MENTIRASsS!\""
+  },
+  "63d3cf8f532f": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 2378,
+    "endOffset": 2469,
+    "source": "* BUT TRUSsST ME ON THIS,[wait:4] KRISsS,[wait:4] THISsS ISsS FAR FROM MY FULL POTENTIAL!",
+    "translation": "* MASsS ACREDITE EM MIM,[wait:4] KRISsS,[wait:4] IsSsSO EsSsTÁ LONGE DO MEU POTENCIAL MÁXIMO!",
+    "originalExpression": "\"* BUT TRUSsST ME ON THIS,[wait:4] KRISsS,[wait:4] THISsS ISsS FAR FROM MY FULL POTENTIAL!\"",
+    "replacementExpression": "\"* MASsS ACREDITE EM MIM,[wait:4] KRISsS,[wait:4] IsSsSO EsSsTÁ LONGE DO MEU POTENCIAL MÁXIMO!\""
+  },
+  "3fe54ffb3f55": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 2499,
+    "endOffset": 2520,
+    "source": "* THE THING ISsS...",
+    "translation": "* A QUESTÃO É...",
+    "originalExpression": "\"* THE THING ISsS...\"",
+    "replacementExpression": "\"* A QUESTÃO É...\""
+  },
+  "9a87b7930426": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 2603,
+    "endOffset": 2634,
+    "source": "* I'm not as alive as before.",
+    "translation": "* Eu já não tenho tanta vida quanto antes.",
+    "originalExpression": "\"* I'm not as alive as before.\"",
+    "replacementExpression": "\"* Eu já não tenho tanta vida quanto antes.\""
+  },
+  "4c2571e90a1f": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 2719,
+    "endOffset": 2741,
+    "source": "* AND I DON'T CARE!!",
+    "translation": "* E EU NÃO ME IMPORTO!!",
+    "originalExpression": "\"* AND I DON'T CARE!!\"",
+    "replacementExpression": "\"* E EU NÃO ME IMPORTO!!\""
+  },
+  "5ad4716c38bf": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 2771,
+    "endOffset": 2816,
+    "source": "* BECAUSsSE I'M STILL ALIVE IN YOUR MEMORY!",
+    "translation": "* PORQUE AINDA EsSsTOU VIVA NA SsSUA MEMÓRIA!",
+    "originalExpression": "\"* BECAUSsSE I'M STILL ALIVE IN YOUR MEMORY!\"",
+    "replacementExpression": "\"* PORQUE AINDA EsSsTOU VIVA NA SsSUA MEMÓRIA!\""
+  },
+  "73cb5cdfc229": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 2846,
+    "endOffset": 2885,
+    "source": "* THANKSsS TO YOU,[wait:4] I EXISsST!",
+    "translation": "* GRAÇASsS A VOCÊ,[wait:4] EU EXIsSsTO!",
+    "originalExpression": "\"* THANKSsS TO YOU,[wait:4] I EXISsST!\"",
+    "replacementExpression": "\"* GRAÇASsS A VOCÊ,[wait:4] EU EXIsSsTO!\""
+  },
+  "02ccabff3e76": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 2968,
+    "endOffset": 3027,
+    "source": "* But...[wait:6] What's the point if nobody else sees me?",
+    "translation": "* Mas...[wait:6] qual é o sentido se ninguém mais me vê?",
+    "originalExpression": "\"* But...[wait:6] What's the point if nobody else sees me?\"",
+    "replacementExpression": "\"* Mas...[wait:6] qual é o sentido se ninguém mais me vê?\""
+  },
+  "245c691601a9": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 3112,
+    "endOffset": 3125,
+    "source": "* ANYWAYSsS",
+    "translation": "* ENFIM",
+    "originalExpression": "\"* ANYWAYSsS\"",
+    "replacementExpression": "\"* ENFIM\""
+  },
+  "deac32916a80": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 3155,
+    "endOffset": 3233,
+    "source": "* WHY NOT HAVE A HEART-TO-HEART TALK AFTER SsSO MANY YEARSsS OF ABANDONMENT?",
+    "translation": "* QUE TAL UMA CONVERSsSA SsSINCERA DEPOISsS DE TANTOSsS ANOSsS DE ABANDONO?",
+    "originalExpression": "\"* WHY NOT HAVE A HEART-TO-HEART TALK AFTER SsSO MANY YEARSsS OF ABANDONMENT?\"",
+    "replacementExpression": "\"* QUE TAL UMA CONVERSsSA SsSINCERA DEPOISsS DE TANTOSsS ANOSsS DE ABANDONO?\""
+  },
+  "883f25f17553": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 3264,
+    "endOffset": 3308,
+    "source": "* (Psst,[wait:4] want me to do something?)",
+    "translation": "* (Psiu,[wait:4] quer que eu faça alguma coisa?)",
+    "originalExpression": "\"* (Psst,[wait:4] want me to do something?)\"",
+    "replacementExpression": "\"* (Psiu,[wait:4] quer que eu faça alguma coisa?)\""
+  },
+  "ad47e4f2987b": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 3340,
+    "endOffset": 3394,
+    "source": "* (Huh,[wait:6] you want me to hit this empty spot?)",
+    "translation": "* (Hã,[wait:6] quer que eu bata neste espaço vazio?)",
+    "originalExpression": "\"* (Huh,[wait:6] you want me to hit this empty spot?)\"",
+    "replacementExpression": "\"* (Hã,[wait:6] quer que eu bata neste espaço vazio?)\""
+  },
+  "29860958d6f3": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 3815,
+    "endOffset": 3822,
+    "source": "* OH.",
+    "translation": "* AH.",
+    "originalExpression": "\"* OH.\"",
+    "replacementExpression": "\"* AH.\""
+  },
+  "e11934b19599": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 3852,
+    "endOffset": 3866,
+    "source": "* I see now.",
+    "translation": "* Agora entendo.",
+    "originalExpression": "\"* I see now.\"",
+    "replacementExpression": "\"* Agora entendo.\""
+  },
+  "613674fa54c2": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 3896,
+    "endOffset": 3978,
+    "source": "* WELL,[wait:4] LET'S SsSEE IF YOU FULFILL THE ROLE OF HERO,[wait:6] SsSHALL WE?",
+    "translation": "* BEM,[wait:4] VAMOSsS VER SsSE VOCÊ CUMPRE O PAPEL DE HERÓI,[wait:6] CERTO?",
+    "originalExpression": "\"* WELL,[wait:4] LET'S SsSEE IF YOU FULFILL THE ROLE OF HERO,[wait:6] SsSHALL WE?\"",
+    "replacementExpression": "\"* BEM,[wait:4] VAMOSsS VER SsSE VOCÊ CUMPRE O PAPEL DE HERÓI,[wait:6] CERTO?\""
+  },
+  "b3b0574bf575": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 4770,
+    "endOffset": 4793,
+    "source": "* THAT WAS SsSO GOOD!",
+    "translation": "* IsSsSO FOI TÃO BOM!",
+    "originalExpression": "\"* THAT WAS SsSO GOOD!\"",
+    "replacementExpression": "\"* IsSsSO FOI TÃO BOM!\""
+  },
+  "a1f2d87965c5": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 4823,
+    "endOffset": 4870,
+    "source": "* KRISsS,[wait:4] I HAVE A FORTUNE TO TELL...",
+    "translation": "* KRISsS,[wait:4] TENHO UMA PREVISsSÃO PARA CONTAR...",
+    "originalExpression": "\"* KRISsS,[wait:4] I HAVE A FORTUNE TO TELL...\"",
+    "replacementExpression": "\"* KRISsS,[wait:4] TENHO UMA PREVISsSÃO PARA CONTAR...\""
+  },
+  "191fa7021f37": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 4900,
+    "endOffset": 4938,
+    "source": "* I WONDER IF YOU CAN FIND ME AGAIN.",
+    "translation": "* SsSERÁ QUE VOCÊ ME ENCONTRA DE NOVO.",
+    "originalExpression": "\"* I WONDER IF YOU CAN FIND ME AGAIN.\"",
+    "replacementExpression": "\"* SsSERÁ QUE VOCÊ ME ENCONTRA DE NOVO.\""
+  },
+  "bdcc455a3b30": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 5535,
+    "endOffset": 5566,
+    "source": "* ... The heck just happened?",
+    "translation": "* ... Que diabos acabou de acontecer?",
+    "originalExpression": "\"* ... The heck just happened?\"",
+    "replacementExpression": "\"* ... Que diabos acabou de acontecer?\""
+  },
+  "bd21146c10cd": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 5660,
+    "endOffset": 5692,
+    "source": "* Why would we fight THE AIR??",
+    "translation": "* Por que a gente lutaria contra O AR??",
+    "originalExpression": "\"* Why would we fight THE AIR??\"",
+    "replacementExpression": "\"* Por que a gente lutaria contra O AR??\""
+  },
+  "d491691ac562": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 5744,
+    "endOffset": 5770,
+    "source": "* It doesn't make sense!",
+    "translation": "* Isso não faz sentido!",
+    "originalExpression": "\"* It doesn't make sense!\"",
+    "replacementExpression": "\"* Isso não faz sentido!\""
+  },
+  "7edcb97c2c91": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 5830,
+    "endOffset": 5881,
+    "source": "* I think Kris saw something that we don't see...",
+    "translation": "* Acho que Kris viu algo que a gente não vê...",
+    "originalExpression": "\"* I think Kris saw something that we don't see...\"",
+    "replacementExpression": "\"* Acho que Kris viu algo que a gente não vê...\""
+  },
+  "07a9c187bc2b": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 5975,
+    "endOffset": 6018,
+    "source": "* Huh...[wait:6] And how that's possible?",
+    "translation": "* Hã...[wait:6] E como isso é possível?",
+    "originalExpression": "\"* Huh...[wait:6] And how that's possible?\"",
+    "replacementExpression": "\"* Hã...[wait:6] E como isso é possível?\""
+  },
+  "3c74ae50aa4a": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 6051,
+    "endOffset": 6114,
+    "source": "* Unfortunately,[wait:4] some darkners get...[wait:6] Broken.",
+    "translation": "* Infelizmente,[wait:4] alguns Darkners ficam...[wait:6] quebrados.",
+    "originalExpression": "\"* Unfortunately,[wait:4] some darkners get...[wait:6] Broken.\"",
+    "replacementExpression": "\"* Infelizmente,[wait:4] alguns Darkners ficam...[wait:6] quebrados.\""
+  },
+  "f2b23696bb9d": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 6149,
+    "endOffset": 6221,
+    "source": "* They are visible only to lightners to whom they were once important.",
+    "translation": "* Eles só são visíveis para Lightners para quem já foram importantes.",
+    "originalExpression": "\"* They are visible only to lightners to whom they were once important.\"",
+    "replacementExpression": "\"* Eles só são visíveis para Lightners para quem já foram importantes.\""
+  },
+  "3e0e643744bd": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 6258,
+    "endOffset": 6283,
+    "source": "* ... That explains it.",
+    "translation": "* ... Isso explica.",
+    "originalExpression": "\"* ... That explains it.\"",
+    "replacementExpression": "\"* ... Isso explica.\""
+  },
+  "4282bc1c0bbe": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 6365,
+    "endOffset": 6410,
+    "source": "* You can always count on us,[wait:6] Kris.",
+    "translation": "* Você sempre pode contar com a gente,[wait:6] Kris.",
+    "originalExpression": "\"* You can always count on us,[wait:6] Kris.\"",
+    "replacementExpression": "\"* Você sempre pode contar com a gente,[wait:6] Kris.\""
+  },
+  "16a3f97aaa24": {
+    "file": "scripts/world/cutscenes/lumia_encounter.lua",
+    "fileHash": "c9e08b4aecb9027704954a86573da9e47288f3d938afa8d1d2c285890714b21b",
+    "startOffset": 6443,
+    "endOffset": 6477,
+    "source": "* If... Anything happens to you.",
+    "translation": "* Se... alguma coisa acontecer com você.",
+    "originalExpression": "\"* If... Anything happens to you.\"",
+    "replacementExpression": "\"* Se... alguma coisa acontecer com você.\""
+  },
+  "70cfc42f3a42": {
+    "file": "scripts/world/cutscenes/novanna/battle.lua",
+    "fileHash": "79f46db94360cfc5c908ec337a264cf8a4ce62e8201a3d0f72f33edc8b41251a",
+    "startOffset": 2016,
+    "endOffset": 2043,
+    "source": "* Hey,[wait:4] look down!",
+    "translation": "* Ei,[wait:4] olha para baixo!",
+    "originalExpression": "\"* Hey,[wait:4] look down!\"",
+    "replacementExpression": "\"* Ei,[wait:4] olha para baixo!\""
+  },
+  "248d1a14d792": {
+    "file": "scripts/world/cutscenes/novanna/battle.lua",
+    "fileHash": "79f46db94360cfc5c908ec337a264cf8a4ce62e8201a3d0f72f33edc8b41251a",
+    "startOffset": 2085,
+    "endOffset": 2131,
+    "source": "* We're pretty high in the sky,[wait:4] huh?",
+    "translation": "* Estamos bem alto no céu,[wait:4] não estamos?",
+    "originalExpression": "\"* We're pretty high in the sky,[wait:4] huh?\"",
+    "replacementExpression": "\"* Estamos bem alto no céu,[wait:4] não estamos?\""
+  },
+  "42f9cdc30020": {
+    "file": "scripts/world/cutscenes/novanna/battle.lua",
+    "fileHash": "79f46db94360cfc5c908ec337a264cf8a4ce62e8201a3d0f72f33edc8b41251a",
+    "startOffset": 2164,
+    "endOffset": 2208,
+    "source": "* ... I wonder if Novanna escaped already.",
+    "translation": "* ... Será que Novanna já escapou?",
+    "originalExpression": "\"* ... I wonder if Novanna escaped already.\"",
+    "replacementExpression": "\"* ... Será que Novanna já escapou?\""
+  },
+  "9428d2d0a2cc": {
+    "file": "scripts/world/cutscenes/novanna/battle.lua",
+    "fileHash": "79f46db94360cfc5c908ec337a264cf8a4ce62e8201a3d0f72f33edc8b41251a",
+    "startOffset": 2423,
+    "endOffset": 2448,
+    "source": "* hi-hi-hi!![react:sus]",
+    "translation": "* o-o-oi!![react:sus]",
+    "originalExpression": "\"* hi-hi-hi!![react:sus]\"",
+    "replacementExpression": "\"* o-o-oi!![react:sus]\""
+  },
+  "08e578e8f47f": {
+    "file": "scripts/world/cutscenes/novanna/battle.lua",
+    "fileHash": "79f46db94360cfc5c908ec337a264cf8a4ce62e8201a3d0f72f33edc8b41251a",
+    "startOffset": 2577,
+    "endOffset": 2623,
+    "source": "* didn't expect for you to care about me uwu",
+    "translation": "* não esperava que vocês se importassem comigo uwu",
+    "originalExpression": "\"* didn't expect for you to care about me uwu\"",
+    "replacementExpression": "\"* não esperava que vocês se importassem comigo uwu\""
+  },
+  "3dbe1e995bd7": {
+    "file": "scripts/world/cutscenes/novanna/battle.lua",
+    "fileHash": "79f46db94360cfc5c908ec337a264cf8a4ce62e8201a3d0f72f33edc8b41251a",
+    "startOffset": 2656,
+    "endOffset": 2687,
+    "source": "* did you need something? owo",
+    "translation": "* precisavam de alguma coisa? owo",
+    "originalExpression": "\"* did you need something? owo\"",
+    "replacementExpression": "\"* precisavam de alguma coisa? owo\""
+  },
+  "8557462edadb": {
+    "file": "scripts/world/cutscenes/novanna/battle.lua",
+    "fileHash": "79f46db94360cfc5c908ec337a264cf8a4ce62e8201a3d0f72f33edc8b41251a",
+    "startOffset": 2722,
+    "endOffset": 2762,
+    "source": "* Yeah,[wait:6] actually I needed you.",
+    "translation": "* Sim,[wait:6] na verdade eu precisava de você.",
+    "originalExpression": "\"* Yeah,[wait:6] actually I needed you.\"",
+    "replacementExpression": "\"* Sim,[wait:6] na verdade eu precisava de você.\""
+  },
+  "380e506da61e": {
+    "file": "scripts/world/cutscenes/novanna/battle.lua",
+    "fileHash": "79f46db94360cfc5c908ec337a264cf8a4ce62e8201a3d0f72f33edc8b41251a",
+    "startOffset": 2797,
+    "endOffset": 2835,
+    "source": "* ... So you could give over Toriel.",
+    "translation": "* ... Para você entregar Toriel.",
+    "originalExpression": "\"* ... So you could give over Toriel.\"",
+    "replacementExpression": "\"* ... Para você entregar Toriel.\""
+  },
+  "3fdeb70c6e87": {
+    "file": "scripts/world/cutscenes/novanna/battle.lua",
+    "fileHash": "79f46db94360cfc5c908ec337a264cf8a4ce62e8201a3d0f72f33edc8b41251a",
+    "startOffset": 2870,
+    "endOffset": 2886,
+    "source": "* wwwwwwwww!!!",
+    "translation": "* aaaaaaaaaa!!!",
+    "originalExpression": "\"* wwwwwwwww!!!\"",
+    "replacementExpression": "\"* aaaaaaaaaa!!!\""
+  },
+  "54efbb5a3165": {
+    "file": "scripts/world/cutscenes/splash.lua",
+    "fileHash": "3e6a13794936142c3dec4676d7020a9d15b30eb9ace1ab2c30ba8bf93c62103b",
+    "startOffset": 2717,
+    "endOffset": 2738,
+    "source": "[color:yellow]Lumia",
+    "translation": "[color:yellow]Lumia",
+    "originalExpression": "\"[color:yellow]Lumia\"",
+    "replacementExpression": "\"[color:yellow]Lumia\""
+  },
+  "04a62749a5f9": {
+    "file": "scripts/world/cutscenes/splash.lua",
+    "fileHash": "3e6a13794936142c3dec4676d7020a9d15b30eb9ace1ab2c30ba8bf93c62103b",
+    "startOffset": 5945,
+    "endOffset": 5962,
+    "source": "Category: Items",
+    "translation": "Categoria: Itens",
+    "originalExpression": "\"Category: Items\"",
+    "replacementExpression": "\"Categoria: Itens\""
+  },
+  "cb18e71c3b6a": {
+    "file": "scripts/world/cutscenes/splash.lua",
+    "fileHash": "3e6a13794936142c3dec4676d7020a9d15b30eb9ace1ab2c30ba8bf93c62103b",
+    "startOffset": 6237,
+    "endOffset": 6405,
+    "source": "Press [Left/Right] to change values\nPress [Confirm] to save the change\nPress [Menu] to change value to default\nPress [Cancel] or any other button to revert changes\n",
+    "translation": "Pressione [Left/Right] para alterar os valores\nPressione [Confirm] para salvar a alteração\nPressione [Menu] para restaurar o valor padrão\nPressione [Cancel] ou outro botão para reverter as alterações\n",
+    "originalExpression": "[[Press [Left/Right] to change values\nPress [Confirm] to save the change\nPress [Menu] to change value to default\nPress [Cancel] or any other button to revert changes\n]]",
+    "replacementExpression": "\"Pressione [Left/Right] para alterar os valores\\nPressione [Confirm] para salvar a alteração\\nPressione [Menu] para restaurar o valor padrão\\nPressione [Cancel] ou outro botão para reverter as alterações\\n\""
+  },
+  "0c0cf776d3fa": {
+    "file": "scripts/world/cutscenes/splash.lua",
+    "fileHash": "3e6a13794936142c3dec4676d7020a9d15b30eb9ace1ab2c30ba8bf93c62103b",
+    "startOffset": 6814,
+    "endOffset": 6851,
+    "source": "Category: {lua1}",
+    "translation": "Categoria: {lua1}",
+    "originalExpression": "\"Category: \" .. (category or \"Items\")",
+    "replacementExpression": "\"Categoria: \" .. ((category or \"Items\"))"
+  },
+  "b089c9fb71e4": {
+    "file": "scripts/world/cutscenes/splash.lua",
+    "fileHash": "3e6a13794936142c3dec4676d7020a9d15b30eb9ace1ab2c30ba8bf93c62103b",
+    "startOffset": 7215,
+    "endOffset": 7236,
+    "source": "Go back to the menu",
+    "translation": "Voltar ao menu",
+    "originalExpression": "\"Go back to the menu\"",
+    "replacementExpression": "\"Voltar ao menu\""
+  },
+  "fb5e7b0684f3": {
+    "file": "scripts/world/cutscenes/splash.lua",
+    "fileHash": "3e6a13794936142c3dec4676d7020a9d15b30eb9ace1ab2c30ba8bf93c62103b",
+    "startOffset": 12634,
+    "endOffset": 12646,
+    "source": "FuzzyPizza",
+    "translation": "FuzzyPizza",
+    "originalExpression": "\"FuzzyPizza\"",
+    "replacementExpression": "\"FuzzyPizza\""
+  },
+  "3e29096109e3": {
+    "file": "scripts/world/cutscenes/splash.lua",
+    "fileHash": "3e6a13794936142c3dec4676d7020a9d15b30eb9ace1ab2c30ba8bf93c62103b",
+    "startOffset": 12706,
+    "endOffset": 12713,
+    "source": "Koola",
+    "translation": "Koola",
+    "originalExpression": "\"Koola\"",
+    "replacementExpression": "\"Koola\""
+  },
+  "4c8eea3f6fd5": {
+    "file": "scripts/world/cutscenes/splash.lua",
+    "fileHash": "3e6a13794936142c3dec4676d7020a9d15b30eb9ace1ab2c30ba8bf93c62103b",
+    "startOffset": 12773,
+    "endOffset": 12783,
+    "source": "Pop!Corn",
+    "translation": "Pop!Corn",
+    "originalExpression": "\"Pop!Corn\"",
+    "replacementExpression": "\"Pop!Corn\""
+  },
+  "77e64a5475a0": {
+    "file": "scripts/world/cutscenes/splash.lua",
+    "fileHash": "3e6a13794936142c3dec4676d7020a9d15b30eb9ace1ab2c30ba8bf93c62103b",
+    "startOffset": 12844,
+    "endOffset": 12857,
+    "source": "ReviveBrite",
+    "translation": "ReviveBrite",
+    "originalExpression": "\"ReviveBrite\"",
+    "replacementExpression": "\"ReviveBrite\""
+  },
+  "626c07530cd7": {
+    "file": "scripts/world/cutscenes/splash.lua",
+    "fileHash": "3e6a13794936142c3dec4676d7020a9d15b30eb9ace1ab2c30ba8bf93c62103b",
+    "startOffset": 12916,
+    "endOffset": 12942,
+    "source": "No ShadowMantle (No Hit)",
+    "translation": "Sem Manto Sombrio (Sem Dano)",
+    "originalExpression": "\"No ShadowMantle (No Hit)\"",
+    "replacementExpression": "\"Sem Manto Sombrio (Sem Dano)\""
+  },
+  "f35b9eb7f784": {
+    "file": "scripts/world/cutscenes/splash.lua",
+    "fileHash": "3e6a13794936142c3dec4676d7020a9d15b30eb9ace1ab2c30ba8bf93c62103b",
+    "startOffset": 13001,
+    "endOffset": 13015,
+    "source": "Instant Mode",
+    "translation": "Modo Instantâneo",
+    "originalExpression": "\"Instant Mode\"",
+    "replacementExpression": "\"Modo Instantâneo\""
+  },
+  "c30889a000bd": {
+    "file": "scripts/world/cutscenes/splash.lua",
+    "fileHash": "3e6a13794936142c3dec4676d7020a9d15b30eb9ace1ab2c30ba8bf93c62103b",
+    "startOffset": 13064,
+    "endOffset": 13070,
+    "source": "Back",
+    "translation": "Voltar",
+    "originalExpression": "\"Back\"",
+    "replacementExpression": "\"Voltar\""
+  },
+  "6904b9fc28e0": {
+    "file": "scripts/world/cutscenes/splash.lua",
+    "fileHash": "3e6a13794936142c3dec4676d7020a9d15b30eb9ace1ab2c30ba8bf93c62103b",
+    "startOffset": 13610,
+    "endOffset": 13631,
+    "source": "Encounter Bossfight",
+    "translation": "Batalha do Encontro",
+    "originalExpression": "\"Encounter Bossfight\"",
+    "replacementExpression": "\"Batalha do Encontro\""
+  },
+  "9c589c8908e0": {
+    "file": "scripts/world/cutscenes/splash.lua",
+    "fileHash": "3e6a13794936142c3dec4676d7020a9d15b30eb9ace1ab2c30ba8bf93c62103b",
+    "startOffset": 13648,
+    "endOffset": 13666,
+    "source": "Secret Bossfight",
+    "translation": "Batalha do Chefe Secreto",
+    "originalExpression": "\"Secret Bossfight\"",
+    "replacementExpression": "\"Batalha do Chefe Secreto\""
+  },
+  "3ef538a41fb3": {
+    "file": "scripts/world/cutscenes/splash.lua",
+    "fileHash": "3e6a13794936142c3dec4676d7020a9d15b30eb9ace1ab2c30ba8bf93c62103b",
+    "startOffset": 13683,
+    "endOffset": 13692,
+    "source": "Options",
+    "translation": "Opções",
+    "originalExpression": "\"Options\"",
+    "replacementExpression": "\"Opções\""
+  },
+  "2dcbe164c83d": {
+    "file": "scripts/world/cutscenes/splash.lua",
+    "fileHash": "3e6a13794936142c3dec4676d7020a9d15b30eb9ace1ab2c30ba8bf93c62103b",
+    "startOffset": 13710,
+    "endOffset": 13719,
+    "source": "Credits",
+    "translation": "Créditos",
+    "originalExpression": "\"Credits\"",
+    "replacementExpression": "\"Créditos\""
+  },
+  "a35aff742428": {
+    "file": "scripts/world/cutscenes/splash.lua",
+    "fileHash": "3e6a13794936142c3dec4676d7020a9d15b30eb9ace1ab2c30ba8bf93c62103b",
+    "startOffset": 13737,
+    "endOffset": 13743,
+    "source": "Quit",
+    "translation": "Sair",
+    "originalExpression": "\"Quit\"",
+    "replacementExpression": "\"Sair\""
+  },
+  "fd3310c54069": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 274,
+    "endOffset": 315,
+    "source": "* Umm...[wait:4] WHO THE HELL ARE YOU?!",
+    "translation": "* Hum...[wait:4] QUEM DIABOS É VOCÊ?!",
+    "originalExpression": "\"* Umm...[wait:4] WHO THE HELL ARE YOU?!\"",
+    "replacementExpression": "\"* Hum...[wait:4] QUEM DIABOS É VOCÊ?!\""
+  },
+  "6206b7fe44ff": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 354,
+    "endOffset": 400,
+    "source": "* ... What do you mean by I DON'T KNOW YOU??",
+    "translation": "* ... Como assim EU NÃO CONHEÇO VOCÊ??",
+    "originalExpression": "\"* ... What do you mean by I DON'T KNOW YOU??\"",
+    "replacementExpression": "\"* ... Como assim EU NÃO CONHEÇO VOCÊ??\""
+  },
+  "223499980f6b": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 439,
+    "endOffset": 527,
+    "source": "* I'm Witchdoctor![wait:8] Son of The Father![wait:8] Y' know that guy,[wait:4] right?",
+    "translation": "* Eu sou Witchdoctor![wait:8] Filho do Pai![wait:8] Você conhece aquele cara,[wait:4] não conhece?",
+    "originalExpression": "\"* I'm Witchdoctor![wait:8] Son of The Father![wait:8] Y' know that guy,[wait:4] right?\"",
+    "replacementExpression": "\"* Eu sou Witchdoctor![wait:8] Filho do Pai![wait:8] Você conhece aquele cara,[wait:4] não conhece?\""
+  },
+  "4f5a6fec3bdb": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 568,
+    "endOffset": 575,
+    "source": "* ...",
+    "translation": "* ...",
+    "originalExpression": "\"* ...\"",
+    "replacementExpression": "\"* ...\""
+  },
+  "42a484ec1643": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 616,
+    "endOffset": 691,
+    "source": "* ... Oh sorry,[wait:4] this isn't a right tone at all,[wait:4] isn't it?",
+    "translation": "* ... Ah, desculpe,[wait:4] este tom não está certo,[wait:4] está?",
+    "originalExpression": "\"* ... Oh sorry,[wait:4] this isn't a right tone at all,[wait:4] isn't it?\"",
+    "replacementExpression": "\"* ... Ah, desculpe,[wait:4] este tom não está certo,[wait:4] está?\""
+  },
+  "6eb79c3a9509": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 730,
+    "endOffset": 739,
+    "source": "* Ahem.",
+    "translation": "* Cof, cof.",
+    "originalExpression": "\"* Ahem.\"",
+    "replacementExpression": "\"* Cof, cof.\""
+  },
+  "bf875c3133a4": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 777,
+    "endOffset": 852,
+    "source": "* My name is Witchdoctor.[wait:8] I patrol this world and blah-blah-blah!",
+    "translation": "* Meu nome é Witchdoctor.[wait:8] Eu patrulho este mundo e blá-blá-blá!",
+    "originalExpression": "\"* My name is Witchdoctor.[wait:8] I patrol this world and blah-blah-blah!\"",
+    "replacementExpression": "\"* Meu nome é Witchdoctor.[wait:8] Eu patrulho este mundo e blá-blá-blá!\""
+  },
+  "a38032de564a": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 892,
+    "endOffset": 944,
+    "source": "* Don't take me like some serious guy,[wait:4] ok?",
+    "translation": "* Não me trate como um cara sério,[wait:4] certo?",
+    "originalExpression": "\"* Don't take me like some serious guy,[wait:4] ok?\"",
+    "replacementExpression": "\"* Não me trate como um cara sério,[wait:4] certo?\""
+  },
+  "46c18994a0c9": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 982,
+    "endOffset": 1061,
+    "source": "* Imagine me as a friend,[wait:4] who's gonna drink that adult juice with ya!",
+    "translation": "* Pense em mim como um amigo,[wait:4] que vai tomar aquele suco de adulto com você!",
+    "originalExpression": "\"* Imagine me as a friend,[wait:4] who's gonna drink that adult juice with ya!\"",
+    "replacementExpression": "\"* Pense em mim como um amigo,[wait:4] que vai tomar aquele suco de adulto com você!\""
+  },
+  "7dabb9c3eccf": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 1102,
+    "endOffset": 1146,
+    "source": "* I'm not like my stupid religious father.",
+    "translation": "* Eu não sou como meu pai religioso e idiota.",
+    "originalExpression": "\"* I'm not like my stupid religious father.\"",
+    "replacementExpression": "\"* Eu não sou como meu pai religioso e idiota.\""
+  },
+  "d6b397cdae40": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 1187,
+    "endOffset": 1244,
+    "source": "* I don't like.[wait:8] PRAY for some Knight and stuff.",
+    "translation": "* Eu não gosto.[wait:8] De REZAR para algum Cavaleiro e essas coisas.",
+    "originalExpression": "\"* I don't like.[wait:8] PRAY for some Knight and stuff.\"",
+    "replacementExpression": "\"* Eu não gosto.[wait:8] De REZAR para algum Cavaleiro e essas coisas.\""
+  },
+  "affa97281e7f": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 1285,
+    "endOffset": 1343,
+    "source": "* You may have a lot of questions in your head, dontcha?",
+    "translation": "* Você deve estar com um monte de perguntas na cabeça, não é?",
+    "originalExpression": "\"* You may have a lot of questions in your head, dontcha?\"",
+    "replacementExpression": "\"* Você deve estar com um monte de perguntas na cabeça, não é?\""
+  },
+  "90e0c0fd6339": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 1384,
+    "endOffset": 1418,
+    "source": "* \"Why his name is Witchdoctor?\"",
+    "translation": "* \"Por que o nome dele é Witchdoctor?\"",
+    "originalExpression": "'* \"Why his name is Witchdoctor?\"'",
+    "replacementExpression": "\"* \\\"Por que o nome dele é Witchdoctor?\\\"\""
+  },
+  "156c653f0932": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 1459,
+    "endOffset": 1506,
+    "source": "* \"Why he wears Witchdoctor skull and stuff?\"",
+    "translation": "* \"Por que ele usa caveira de Witchdoctor e essas coisas?\"",
+    "originalExpression": "'* \"Why he wears Witchdoctor skull and stuff?\"'",
+    "replacementExpression": "\"* \\\"Por que ele usa caveira de Witchdoctor e essas coisas?\\\"\""
+  },
+  "2d96faf16a67": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 1547,
+    "endOffset": 1587,
+    "source": "* The answer is quite simple actually.",
+    "translation": "* Na verdade, a resposta é bem simples.",
+    "originalExpression": "\"* The answer is quite simple actually.\"",
+    "replacementExpression": "\"* Na verdade, a resposta é bem simples.\""
+  },
+  "e847a8d2dbcf": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 1625,
+    "endOffset": 1655,
+    "source": "* Juuust a part of my style!",
+    "translation": "* Ééé só parte do meu estilo!",
+    "originalExpression": "\"* Juuust a part of my style!\"",
+    "replacementExpression": "\"* Ééé só parte do meu estilo!\""
+  },
+  "0694fdbdff6c": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 1693,
+    "endOffset": 1754,
+    "source": "* I'm a free person![wait:8] Free from this religious shit!",
+    "translation": "* Eu sou livre![wait:8] Livre dessa merda religiosa!",
+    "originalExpression": "\"* I'm a free person![wait:8] Free from this religious shit!\"",
+    "replacementExpression": "\"* Eu sou livre![wait:8] Livre dessa merda religiosa!\""
+  },
+  "43500a74b1d6": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 1793,
+    "endOffset": 1807,
+    "source": "* ... Oh no.",
+    "translation": "* ... Ah, não.",
+    "originalExpression": "\"* ... Oh no.\"",
+    "replacementExpression": "\"* ... Ah, não.\""
+  },
+  "7b8114f844b4": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 1846,
+    "endOffset": 1906,
+    "source": "* I think[wait:8] I've said it out loud,[wait:4] didn't I?",
+    "translation": "* Acho que[wait:8] falei isso em voz alta,[wait:4] não falei?",
+    "originalExpression": "\"* I think[wait:8] I've said it out loud,[wait:4] didn't I?\"",
+    "replacementExpression": "\"* Acho que[wait:8] falei isso em voz alta,[wait:4] não falei?\""
+  },
+  "a0ad49aba2f5": {
+    "file": "scripts/world/cutscenes/witchdoctor/test.lua",
+    "fileHash": "a878dad3a45054b4acbe3653170eecc8276a3b31e15bfd3875ab3c6808e94ea4",
+    "startOffset": 1945,
+    "endOffset": 2004,
+    "source": "* Well,[wait:4] goodbye then,[wait:4] random blue person!",
+    "translation": "* Bem,[wait:4] então adeus,[wait:4] pessoa azul aleatória!",
+    "originalExpression": "\"* Well,[wait:4] goodbye then,[wait:4] random blue person!\"",
+    "replacementExpression": "\"* Bem,[wait:4] então adeus,[wait:4] pessoa azul aleatória!\""
+  }
+}

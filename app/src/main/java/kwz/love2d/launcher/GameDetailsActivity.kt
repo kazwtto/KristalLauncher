@@ -202,6 +202,7 @@ class GameDetailsActivity : AppCompatActivity() {
         findViewById<MaterialButton>(R.id.btnImportTranslation).setOnClickListener {
             importTranslationDocument.launch(arrayOf("application/zip", "application/octet-stream"))
         }
+        catalogTranslations = CommunityTranslationCatalogService.cachedTranslations(this)
         refreshTranslations()
         fetchCommunityTranslations()
     }
@@ -296,7 +297,9 @@ class GameDetailsActivity : AppCompatActivity() {
             findViewById<ProgressBar>(R.id.progressTranslationScan).visibility = View.GONE
             catalogTranslations = when (result) {
                 is CommunityTranslationCatalogResult.Success -> result.translations
-                is CommunityTranslationCatalogResult.Failure -> emptyList()
+                is CommunityTranslationCatalogResult.Failure ->
+                    CommunityTranslationCatalogService.cachedTranslations(this@GameDetailsActivity)
+                        .ifEmpty { catalogTranslations }
             }
             refreshTranslations()
         }

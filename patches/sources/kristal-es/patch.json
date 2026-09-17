@@ -1,0 +1,342 @@
+{
+    "schemaVersion":  1,
+    "id":  "kristal.es",
+    "version":  "0.0.1",
+    "name":  {
+                 "pt-BR":  "Kristal Engine em Espanhol",
+                 "en":  "Kristal Engine in Spanish",
+                 "es":  "Kristal Engine en Español"
+             },
+    "description":  {
+                        "pt-BR":  "Traduz menus, textos integrados e elementos gráficos da Kristal Engine para espanhol.",
+                        "en":  "Translates built-in Kristal Engine menus, text, and interface graphics into Spanish.",
+                        "es":  "Traduce al español los menús, textos integrados y gráficos de interfaz de Kristal Engine."
+                    },
+    "useCases":  [
+                     {
+                         "pt-BR":  "Você quer jogar mods da Kristal com menus e mensagens da engine em espanhol.",
+                         "en":  "You want Kristal mods to show engine menus and messages in Spanish.",
+                         "es":  "Quieres que los mods de Kristal muestren en español los menús y mensajes del motor."
+                     },
+                     {
+                         "pt-BR":  "Botões, telas de batalha ou imagens da interface ainda aparecem em inglês.",
+                         "en":  "Buttons, battle screens, or interface graphics still appear in English.",
+                         "es":  "Los botones, pantallas de batalla o gráficos de interfaz todavía aparecen en inglés."
+                     }
+                 ],
+    "author":  "kazwtto",
+    "category":  "localization",
+    "minimumLauncherVersion":  "0.1.0",
+    "priority":  200,
+    "capabilities":  [
+                         "staged_package",
+                         "inject_files",
+                         "edit_lua",
+                         "runtime_hook"
+                     ],
+    "dependencies":  [
+
+                     ],
+    "conflicts":  [
+                      "kristal.ptbr"
+                  ],
+    "operations":  [
+                       {
+                           "type":  "inject",
+                           "source":  "payload/kristal_es/runtime.lua",
+                           "target":  "kristal_es/runtime.lua"
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/kristal_es/translations.lua",
+                           "target":  "kristal_es/translations.lua"
+                       },
+                       {
+                           "type":  "append_text",
+                           "source":  "payload/bootstrap.lua",
+                           "target":  "main.lua"
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/btn/act.png",
+                           "target":  "assets/sprites/ui/battle/btn/act.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/btn/act_a.png",
+                           "target":  "assets/sprites/ui/battle/btn/act_a.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/btn/act_h.png",
+                           "target":  "assets/sprites/ui/battle/btn/act_h.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/btn/defend.png",
+                           "target":  "assets/sprites/ui/battle/btn/defend.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/btn/defend_h.png",
+                           "target":  "assets/sprites/ui/battle/btn/defend_h.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/btn/fight.png",
+                           "target":  "assets/sprites/ui/battle/btn/fight.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/btn/fight_a.png",
+                           "target":  "assets/sprites/ui/battle/btn/fight_a.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/btn/fight_h.png",
+                           "target":  "assets/sprites/ui/battle/btn/fight_h.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/btn/item.png",
+                           "target":  "assets/sprites/ui/battle/btn/item.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/btn/item_h.png",
+                           "target":  "assets/sprites/ui/battle/btn/item_h.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/btn/spare.png",
+                           "target":  "assets/sprites/ui/battle/btn/spare.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/btn/spare_a.png",
+                           "target":  "assets/sprites/ui/battle/btn/spare_a.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/btn/spare_h.png",
+                           "target":  "assets/sprites/ui/battle/btn/spare_h.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/btn/tech.png",
+                           "target":  "assets/sprites/ui/battle/btn/tech.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/btn/tech_a.png",
+                           "target":  "assets/sprites/ui/battle/btn/tech_a.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/btn/tech_h.png",
+                           "target":  "assets/sprites/ui/battle/btn/tech_h.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/chartarget_1.png",
+                           "target":  "assets/sprites/ui/battle/chartarget_1.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/chartarget_2.png",
+                           "target":  "assets/sprites/ui/battle/chartarget_2.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/msg/down.png",
+                           "target":  "assets/sprites/ui/battle/msg/down.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/msg/dumbass.png",
+                           "target":  "assets/sprites/ui/battle/msg/dumbass.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/msg/frozen.png",
+                           "target":  "assets/sprites/ui/battle/msg/frozen.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/msg/lost.png",
+                           "target":  "assets/sprites/ui/battle/msg/lost.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/msg/max.png",
+                           "target":  "assets/sprites/ui/battle/msg/max.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/msg/miss.png",
+                           "target":  "assets/sprites/ui/battle/msg/miss.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/msg/recruit.png",
+                           "target":  "assets/sprites/ui/battle/msg/recruit.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/battle/msg/up.png",
+                           "target":  "assets/sprites/ui/battle/msg/up.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/loading_1.png",
+                           "target":  "assets/sprites/ui/loading_1.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/loading_2.png",
+                           "target":  "assets/sprites/ui/loading_2.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/loading_3.png",
+                           "target":  "assets/sprites/ui/loading_3.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/loading_4.png",
+                           "target":  "assets/sprites/ui/loading_4.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/loading_5.png",
+                           "target":  "assets/sprites/ui/loading_5.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/menu/caption_armors.png",
+                           "target":  "assets/sprites/ui/menu/caption_armors.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/menu/caption_char.png",
+                           "target":  "assets/sprites/ui/menu/caption_char.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/menu/caption_equipped.png",
+                           "target":  "assets/sprites/ui/menu/caption_equipped.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/menu/caption_spells.png",
+                           "target":  "assets/sprites/ui/menu/caption_spells.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/menu/caption_stats.png",
+                           "target":  "assets/sprites/ui/menu/caption_stats.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/menu/caption_weapons.png",
+                           "target":  "assets/sprites/ui/menu/caption_weapons.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/menu/desc/config.png",
+                           "target":  "assets/sprites/ui/menu/desc/config.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/menu/desc/equip.png",
+                           "target":  "assets/sprites/ui/menu/desc/equip.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/menu/desc/item.png",
+                           "target":  "assets/sprites/ui/menu/desc/item.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/menu/desc/power.png",
+                           "target":  "assets/sprites/ui/menu/desc/power.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/menu/desc/talk.png",
+                           "target":  "assets/sprites/ui/menu/desc/talk.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/quit_1.png",
+                           "target":  "assets/sprites/ui/quit_1.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/quit_2.png",
+                           "target":  "assets/sprites/ui/quit_2.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/quit_3.png",
+                           "target":  "assets/sprites/ui/quit_3.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/quit_4.png",
+                           "target":  "assets/sprites/ui/quit_4.png",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/sprites/ui/quit_5.png",
+                           "target":  "assets/sprites/ui/quit_5.png",
+                           "replaceExisting":  true
+                       }
+                   ]
+}

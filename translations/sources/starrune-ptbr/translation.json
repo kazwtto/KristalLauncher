@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "starrunefinal.pt-br",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "Star Rune em Português (Brasil)",
+    "en": "Star Rune in Brazilian Portuguese",
+    "es": "Star Rune en portugués de Brasil"
+  },
+  "description": {
+    "pt-BR": "Tradução comunitária dos textos de Star Rune para português do Brasil.",
+    "en": "Community translation of Star Rune text into Brazilian Portuguese.",
+    "es": "Traducción comunitaria de los textos de Star Rune al portugués de Brasil."
+  },
+  "author": "kazwtto",
+  "gameProjectId": "starrunefinal",
+  "gameVersion": "v2.0.0",
+  "sourceLanguage": "en",
+  "targetLanguage": "pt-BR",
+  "minimumLauncherVersion": "0.17.48",
+  "textsFile": "texts.json",
+  "textsSha256": "e143404e4a4ae3fffe25ce20df2a3f8ee67d1821ce425984a87d82ef29db461e"
+}

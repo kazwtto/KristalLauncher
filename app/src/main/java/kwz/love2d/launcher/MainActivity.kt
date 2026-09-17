@@ -38,6 +38,7 @@ import kwz.love2d.launcher.util.GameCacheManager
 import kwz.love2d.launcher.util.GameLauncher
 import kwz.love2d.launcher.util.KristalRuntimeStorage
 import kwz.love2d.launcher.util.GameScanner
+import kwz.love2d.launcher.util.CommunityTranslationCatalogService
 import kwz.love2d.launcher.util.NavigationAnimations
 import kwz.love2d.launcher.util.ThemeManager
 import kwz.love2d.launcher.util.showThemed
@@ -170,6 +171,12 @@ class MainActivity : AppCompatActivity() {
             scanFolder(uri, loadCache = true)
         } else {
             displayGames(emptyList())
+        }
+
+        // Warm the shared translation catalog while the player is on Home. Game details can then
+        // display repository translations immediately instead of requiring a second visit.
+        lifecycleScope.launch(Dispatchers.IO) {
+            CommunityTranslationCatalogService.fetch(this@MainActivity)
         }
 
         checkForUpdatesAutomatically()

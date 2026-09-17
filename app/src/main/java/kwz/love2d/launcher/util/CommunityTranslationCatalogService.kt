@@ -23,26 +23,54 @@ object CommunityTranslationCatalogService {
     private const val MAX_CATALOG_BYTES = 512 * 1024
     private const val MAX_CATALOG_ENTRIES = 500
     private const val CACHE_FILE = "community_translation_catalog.json"
+    private const val BUNDLED_CATALOG_ASSET = "community_translation_catalog.json"
     private const val MAX_CACHE_AGE_MS = 7L * 24 * 60 * 60 * 1000
+    private const val MIN_REFRESH_INTERVAL_MS = 60_000L
     private val checksum = Regex("^[a-fA-F0-9]{64}$")
+    @Volatile
+    private var memoryCatalog: List<CatalogTranslation> = emptyList()
+    @Volatile
+    private var lastFetchAttemptAt = 0L
 
-    fun fetch(context: Context): CommunityTranslationCatalogResult = try {
-        val json = downloadCatalog()
-        val parsed = parseCatalog(json)
-        writeCache(File(context.cacheDir, CACHE_FILE), json)
-        CommunityTranslationCatalogResult.Success(parsed, fromCache = false)
-    } catch (networkError: Exception) {
+    /**
+     * Returns the last catalog already available locally without performing network I/O.
+     * This lets game details render translations immediately while a background refresh runs.
+     */
+    fun cachedTranslations(context: Context): List<CatalogTranslation> {
+        memoryCatalog.takeIf { it.isNotEmpty() }?.let { return it }
         val cache = File(context.cacheDir, CACHE_FILE)
         val age = System.currentTimeMillis() - cache.lastModified()
-        if (cache.isFile && age in 0..MAX_CACHE_AGE_MS) {
-            runCatching { parseCatalog(cache.readText(Charsets.UTF_8)) }.fold(
-                onSuccess = { CommunityTranslationCatalogResult.Success(it, fromCache = true) },
-                onFailure = {
-                    CommunityTranslationCatalogResult.Failure(networkError.message ?: "Translation catalog unavailable")
-                }
-            )
+        val localCatalog = if (cache.isFile && age in 0..MAX_CACHE_AGE_MS) {
+            runCatching { parseCatalog(cache.readText(Charsets.UTF_8)) }.getOrDefault(emptyList())
         } else {
-            CommunityTranslationCatalogResult.Failure(networkError.message ?: "Translation catalog unavailable")
+            emptyList()
+        }
+        val available = localCatalog.ifEmpty { readBundledCatalog(context) }
+        if (available.isNotEmpty()) memoryCatalog = available
+        return available
+    }
+
+    @Synchronized
+    fun fetch(context: Context): CommunityTranslationCatalogResult {
+        return try {
+            val now = System.currentTimeMillis()
+            if (memoryCatalog.isNotEmpty() && now - lastFetchAttemptAt in 0 until MIN_REFRESH_INTERVAL_MS) {
+                CommunityTranslationCatalogResult.Success(memoryCatalog, fromCache = true)
+            } else {
+                lastFetchAttemptAt = now
+                val json = downloadCatalog()
+                val parsed = parseCatalog(json)
+                writeCache(File(context.cacheDir, CACHE_FILE), json)
+                memoryCatalog = parsed
+                CommunityTranslationCatalogResult.Success(parsed, fromCache = false)
+            }
+        } catch (networkError: Exception) {
+            val cached = cachedTranslations(context)
+            if (cached.isNotEmpty()) {
+                CommunityTranslationCatalogResult.Success(cached, fromCache = true)
+            } else {
+                CommunityTranslationCatalogResult.Failure(networkError.message ?: "Translation catalog unavailable")
+            }
         }
     }
 
@@ -105,6 +133,12 @@ object CommunityTranslationCatalogService {
             connection.disconnect()
         }
     }
+
+    private fun readBundledCatalog(context: Context): List<CatalogTranslation> = runCatching {
+        context.assets.open(BUNDLED_CATALOG_ASSET).bufferedReader(Charsets.UTF_8).use { reader ->
+            parseCatalog(reader.readText())
+        }
+    }.getOrDefault(emptyList())
 
     private fun writeCache(file: File, value: String) {
         val atomic = AtomicFile(file)
