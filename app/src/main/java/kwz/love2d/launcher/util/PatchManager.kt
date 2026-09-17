@@ -42,6 +42,12 @@ object PatchManager {
     private const val MAX_ARCHIVE_ENTRIES = 20_000
     private const val MAX_TRANSFORMED_ENTRY_BYTES = 16 * 1024 * 1024
     private const val MAX_TOTAL_UNCOMPRESSED_BYTES = 1024L * 1024 * 1024
+    private val supportedExternalCapabilities = setOf(
+        "staged_package",
+        "inject_files",
+        "edit_lua",
+        "runtime_hook"
+    )
 
     val ALL_PATCH_KEYS = listOf(
         PATCH_TEXT,
@@ -55,12 +61,14 @@ object PatchManager {
     )
 
     fun isGlobalPatchEnabled(context: Context, patchKey: String): Boolean {
+        if (!IdentifierPolicy.isPatchId(patchKey)) return false
         val defaultEnabled = PatchRegistry.findBuiltIn(patchKey)?.defaultEnabled ?: false
         val preferences = context.getSharedPreferences("launcher_prefs", Context.MODE_PRIVATE)
         return preferences.getBoolean("global_$patchKey", defaultEnabled)
     }
 
     fun setGlobalPatchEnabled(context: Context, patchKey: String, enabled: Boolean) {
+        IdentifierPolicy.requirePatchId(patchKey)
         context.getSharedPreferences("launcher_prefs", Context.MODE_PRIVATE)
             .edit()
             .putBoolean("global_$patchKey", enabled)
@@ -68,11 +76,13 @@ object PatchManager {
     }
 
     fun getGamePatchMode(context: Context, gameFileName: String, patchKey: String): Int {
+        if (!IdentifierPolicy.isPatchId(patchKey)) return MODE_GLOBAL
         val preferences = context.getSharedPreferences("launcher_prefs", Context.MODE_PRIVATE)
         return preferences.getInt(gamePreferenceKey(gameFileName, patchKey), MODE_GLOBAL)
     }
 
     fun setGamePatchMode(context: Context, gameFileName: String, patchKey: String, mode: Int) {
+        IdentifierPolicy.requirePatchId(patchKey)
         require(mode in MODE_GLOBAL..MODE_FORCE_DISABLED) { "Invalid patch mode: $mode" }
         context.getSharedPreferences("launcher_prefs", Context.MODE_PRIVATE)
             .edit()
@@ -410,8 +420,12 @@ object PatchManager {
     }
 
     private fun readOperationSource(resolved: ResolvedOperation): ByteArray {
+        validatePatchForApplication(resolved.patch)
         val sourcePath = resolved.operation.source
             ?: throw IllegalArgumentException("Patch operation is missing a source file")
+        require(PatchManifestParser.isSafeArchivePath(sourcePath) && sourcePath.startsWith("payload/")) {
+            "Patch operation source is unsafe"
+        }
         val root = resolved.patch.directory.canonicalFile
         val sourceFile = File(root, sourcePath).canonicalFile
         require(sourceFile.path.startsWith(root.path + File.separator) && sourceFile.isFile) {
@@ -435,6 +449,7 @@ object PatchManager {
         }.associateBy { it.manifest.id }
 
         enabled.values.forEach { patch ->
+            validatePatchForApplication(patch)
             patch.manifest.minimumLauncherVersion?.let { minimumVersion ->
                 require(!VersionUtils.isNewer(minimumVersion, BuildConfig.VERSION_NAME)) {
                     "Patch ${patch.manifest.id} requires launcher $minimumVersion or newer"
@@ -477,6 +492,31 @@ object PatchManager {
         enabled.values.sortedWith(compareBy({ it.manifest.priority }, { it.manifest.id }))
             .forEach { visit(it.manifest.id) }
         return ordered
+    }
+
+    private fun validatePatchForApplication(patch: InstalledPatch) {
+        val manifest = patch.manifest
+        IdentifierPolicy.requirePatchId(manifest.id)
+        IdentifierPolicy.requirePackageVersion(manifest.version, "Patch version")
+        require(patch.directory.isDirectory) { "Patch storage is unavailable" }
+        require(patch.directory.name == manifest.version && patch.directory.parentFile?.name == manifest.id) {
+            "Patch identity does not match its storage path"
+        }
+        manifest.dependencies.forEach { IdentifierPolicy.requirePatchId(it, "Patch dependency ID") }
+        manifest.conflicts.forEach { IdentifierPolicy.requirePatchId(it, "Patch conflict ID") }
+        require(manifest.capabilities.all { it in supportedExternalCapabilities }) {
+            "Patch requests an unsupported capability"
+        }
+        manifest.operations.forEach { operation ->
+            require(PatchManifestParser.isSafeArchivePath(operation.target) && !operation.target.endsWith('/')) {
+                "Patch target is unsafe"
+            }
+            operation.source?.let { source ->
+                require(PatchManifestParser.isSafeArchivePath(source) && source.startsWith("payload/")) {
+                    "Patch source is unsafe"
+                }
+            }
+        }
     }
 
     private fun buildBuiltInBootstrap(context: Context, flags: BuiltInFlags): String {

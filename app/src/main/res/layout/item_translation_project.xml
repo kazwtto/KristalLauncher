@@ -51,6 +51,18 @@
         </LinearLayout>
 
         <ImageButton
+            android:id="@+id/btnTranslationVersionWarning"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/translation_version_warning_title"
+            android:padding="10dp"
+            android:src="?attr/kristalIconWarning"
+            android:visibility="gone"
+            app:tint="?attr/colorError"
+            tools:visibility="visible" />
+
+        <ImageButton
             android:id="@+id/btnEditTranslation"
             android:layout_width="44dp"
             android:layout_height="44dp"

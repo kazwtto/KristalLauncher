@@ -46,7 +46,7 @@
           "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)+$",
           "maxLength": 120
         },
-        "version": { "type": "string", "minLength": 1, "maxLength": 64 },
+        "version": { "type": "string", "pattern": "^[0-9]+(?:\\.[0-9]+){0,3}(?:-[0-9A-Za-z]+(?:[.-][0-9A-Za-z]+)*)?(?:\\+[0-9A-Za-z]+(?:[.-][0-9A-Za-z]+)*)?$", "maxLength": 64 },
         "name": { "$ref": "#/$defs/localizedText" },
         "description": { "$ref": "#/$defs/localizedText" },
         "useCases": {
@@ -57,11 +57,11 @@
         "releaseNotes": { "$ref": "#/$defs/localizedText" },
         "author": { "type": "string", "minLength": 1, "maxLength": 160 },
         "category": { "type": "string" },
-        "minimumLauncherVersion": { "type": "string" },
+        "minimumLauncherVersion": { "type": "string", "pattern": "^[0-9]+(?:\\.[0-9]+){0,3}(?:-[0-9A-Za-z]+(?:[.-][0-9A-Za-z]+)*)?(?:\\+[0-9A-Za-z]+(?:[.-][0-9A-Za-z]+)*)?$", "maxLength": 64 },
         "priority": { "type": "integer" },
         "capabilities": { "type": "array", "items": { "type": "string" } },
-        "dependencies": { "type": "array", "items": { "type": "string" } },
-        "conflicts": { "type": "array", "items": { "type": "string" } },
+        "dependencies": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)+$", "maxLength": 120 } },
+        "conflicts": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)+$", "maxLength": 120 } },
         "package": {
           "type": "string",
           "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\)(?!.*:)[^/]+(?:/[^/]+)*\\.klpatch$"

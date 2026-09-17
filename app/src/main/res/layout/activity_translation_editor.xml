@@ -29,47 +29,43 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="2"
             android:text="@string/translation_editor_title"
             android:textColor="?attr/colorOnSurface"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <ImageButton
+            android:id="@+id/btnTranslationSettings"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/translation_settings_title"
+            android:padding="10dp"
+            android:src="?attr/kristalIconSettings"
+            app:tint="?attr/colorOnSurface" />
+
+        <ImageButton
             android:id="@+id/btnExportTranslation"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/translation_export"
-            android:padding="12dp"
-            android:src="@android:drawable/ic_menu_share"
+            android:padding="10dp"
+            android:src="?attr/kristalIconExport"
+            app:tint="?attr/colorOnSurface" />
+
+        <ImageButton
+            android:id="@+id/btnEditTranslationExternal"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/translation_edit_external"
+            android:padding="10dp"
+            android:src="?attr/kristalIconOpenExternal"
             app:tint="?attr/colorOnSurface" />
     </LinearLayout>
-
-    <com.google.android.material.button.MaterialButtonToggleGroup
-        android:id="@+id/translationEditorTabs"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        app:selectionRequired="true"
-        app:singleSelection="true">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/tabTranslationTexts"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:checked="true"
-            android:text="@string/translation_texts_tab" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/tabTranslationImages"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:enabled="false"
-            android:text="@string/translation_images_tab" />
-    </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <TextView
         android:id="@+id/tvTranslationEditorProgress"
@@ -80,11 +76,13 @@
         android:textSize="13sp" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/translationSearchInputLayout"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="@string/translation_search">
+        android:hint="@string/translation_search"
+        app:startIconDrawable="?attr/kristalIconSearch">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etTranslationSearch"
@@ -95,11 +93,71 @@
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/translationCompletionFilters"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="10dp"
+        app:checkedButton="@id/filterTranslationAll"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/filterTranslationAll"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:minWidth="0dp"
+            android:paddingHorizontal="4dp"
+            android:text="@string/translation_filter_all" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/filterTranslationPending"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:minWidth="0dp"
+            android:paddingHorizontal="4dp"
+            android:text="@string/translation_filter_pending" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/filterTranslationTranslated"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:minWidth="0dp"
+            android:paddingHorizontal="4dp"
+            android:text="@string/translation_filter_translated" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:scrollbars="none">
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/translationKindFilters"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            app:selectionRequired="true"
+            app:singleSelection="true" />
+    </HorizontalScrollView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTranslationEntries"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:layout_weight="1"
         android:clipToPadding="false"
         android:paddingBottom="16dp" />

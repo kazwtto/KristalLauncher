@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "vs-kris.pt-br",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "VS Kris em Português (Brasil)",
+    "en": "VS Kris in Brazilian Portuguese",
+    "es": "VS Kris en portugués de Brasil"
+  },
+  "description": {
+    "pt-BR": "Tradução comunitária dos textos de VS Kris para português do Brasil.",
+    "en": "Community translation of VS Kris text into Brazilian Portuguese.",
+    "es": "Traducción comunitaria de los textos de VS Kris al portugués de Brasil."
+  },
+  "author": "kazwtto",
+  "gameProjectId": "vs_kris",
+  "gameVersion": "v1.0.0",
+  "sourceLanguage": "en",
+  "targetLanguage": "pt-BR",
+  "minimumLauncherVersion": "0.17.48",
+  "textsFile": "texts.json",
+  "textsSha256": "fa9baa21c315c88c2da7df2f1dafe2df49adeebe830c5314a2c11444863fb12d"
+}

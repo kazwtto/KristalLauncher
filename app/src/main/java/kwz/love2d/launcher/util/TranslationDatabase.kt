@@ -15,6 +15,8 @@ internal class TranslationDatabase private constructor(context: Context) :
             """
             CREATE TABLE projects (
                 id TEXT PRIMARY KEY,
+                name TEXT NOT NULL,
+                author TEXT NOT NULL DEFAULT '',
                 game_stable_id TEXT NOT NULL,
                 game_project_id TEXT,
                 game_title TEXT NOT NULL,
@@ -56,7 +58,13 @@ internal class TranslationDatabase private constructor(context: Context) :
         db.setForeignKeyConstraintsEnabled(true)
     }
 
-    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) = Unit
+    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+        if (oldVersion < 2) {
+            db.execSQL("ALTER TABLE projects ADD COLUMN name TEXT NOT NULL DEFAULT ''")
+            db.execSQL("ALTER TABLE projects ADD COLUMN author TEXT NOT NULL DEFAULT ''")
+            db.execSQL("UPDATE projects SET name = game_title || ' translation' WHERE name = ''")
+        }
+    }
 
     fun insertProject(project: TranslationProject, entries: List<TranslationEntry>) {
         writableDatabase.beginTransaction()
@@ -141,8 +149,72 @@ internal class TranslationDatabase private constructor(context: Context) :
         }
     }
 
+    fun updateProject(projectId: String, name: String, author: String, targetLanguage: String) {
+        writableDatabase.update(
+            "projects",
+            ContentValues().apply {
+                put("name", name)
+                put("author", author)
+                put("target_language", targetLanguage)
+                put("updated_at", System.currentTimeMillis())
+            },
+            "id = ?",
+            arrayOf(projectId)
+        )
+    }
+
+    fun clearTranslations(projectId: String) {
+        writableDatabase.beginTransaction()
+        try {
+            writableDatabase.update(
+                "entries",
+                ContentValues().apply { put("translated_text", "") },
+                "project_id = ?",
+                arrayOf(projectId)
+            )
+            writableDatabase.update(
+                "projects",
+                ContentValues().apply { put("updated_at", System.currentTimeMillis()) },
+                "id = ?",
+                arrayOf(projectId)
+            )
+            writableDatabase.setTransactionSuccessful()
+        } finally {
+            writableDatabase.endTransaction()
+        }
+    }
+
+    fun updateTranslations(projectId: String, translations: Map<String, String>) {
+        writableDatabase.beginTransaction()
+        try {
+            translations.forEach { (entryId, value) ->
+                writableDatabase.update(
+                    "entries",
+                    ContentValues().apply { put("translated_text", value) },
+                    "project_id = ? AND entry_id = ?",
+                    arrayOf(projectId, entryId)
+                )
+            }
+            writableDatabase.update(
+                "projects",
+                ContentValues().apply { put("updated_at", System.currentTimeMillis()) },
+                "id = ?",
+                arrayOf(projectId)
+            )
+            writableDatabase.setTransactionSuccessful()
+        } finally {
+            writableDatabase.endTransaction()
+        }
+    }
+
+    fun deleteProject(projectId: String) {
+        writableDatabase.delete("projects", "id = ?", arrayOf(projectId))
+    }
+
     private fun projectValues(project: TranslationProject) = ContentValues().apply {
         put("id", project.id)
+        put("name", project.name)
+        put("author", project.author)
         put("game_stable_id", project.gameStableId)
         put("game_project_id", project.gameProjectId)
         put("game_title", project.gameTitle)
@@ -172,6 +244,8 @@ internal class TranslationDatabase private constructor(context: Context) :
 
     private fun projectFromCursor(cursor: android.database.Cursor) = TranslationProject(
         id = cursor.string("id"),
+        name = cursor.string("name"),
+        author = cursor.string("author"),
         gameStableId = cursor.string("game_stable_id"),
         gameProjectId = cursor.nullableString("game_project_id"),
         gameTitle = cursor.string("game_title"),
@@ -209,7 +283,7 @@ internal class TranslationDatabase private constructor(context: Context) :
 
     companion object {
         private const val DATABASE_NAME = "community_translations.db"
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 2
 
         @Volatile private var instance: TranslationDatabase? = null
 

@@ -21,18 +21,19 @@ object PatchStorage {
         return root.listFiles()
             .orEmpty()
             .asSequence()
-            .filter { it.isDirectory && !it.name.startsWith('.') }
+            .filter { it.isDirectory && IdentifierPolicy.isPatchId(it.name) }
             .mapNotNull { patchDirectory -> newestInstalledVersion(patchDirectory) }
             .sortedBy { it.manifest.id }
             .toList()
     }
 
     fun findInstalledPatch(context: Context, id: String): InstalledPatch? {
+        if (!IdentifierPolicy.isPatchId(id)) return null
         return getInstalledPatches(context).find { it.manifest.id == id }
     }
 
     fun uninstall(context: Context, id: String): Boolean {
-        if (!PatchManifestParser.isSafeArchivePath(id)) return false
+        if (!IdentifierPolicy.isPatchId(id)) return false
         val root = rootDirectory(context).canonicalFile
         val target = File(root, id).canonicalFile
         if (target.parentFile != root || !target.exists()) return false
@@ -44,6 +45,7 @@ object PatchStorage {
         origin: PatchOrigin,
         sha256: String
     ) {
+        require(IdentifierPolicy.isSha256(sha256)) { "Patch package checksum is invalid" }
         val metadata = JSONObject()
             .put("origin", origin.name)
             .put("sha256", sha256)
@@ -63,7 +65,7 @@ object PatchStorage {
         return patchDirectory.listFiles()
             .orEmpty()
             .asSequence()
-            .filter { it.isDirectory }
+            .filter { it.isDirectory && IdentifierPolicy.isPackageVersion(it.name) }
             .mapNotNull { readInstalledPatch(it) }
             .maxWithOrNull { left, right ->
                 VersionUtils.compare(left.manifest.version, right.manifest.version)
@@ -75,6 +77,8 @@ object PatchStorage {
             val manifestFile = File(directory, "patch.json")
             if (!manifestFile.isFile || manifestFile.length() > 256 * 1024L) return null
             val manifest = PatchManifestParser.parse(manifestFile.readText(Charsets.UTF_8))
+            IdentifierPolicy.requirePatchId(manifest.id)
+            IdentifierPolicy.requirePackageVersion(manifest.version, "Patch version")
             if (manifest.id != directory.parentFile?.name || manifest.version != directory.name) return null
 
             val metadataFile = File(directory, INSTALLATION_METADATA)
@@ -83,11 +87,13 @@ object PatchStorage {
                 PatchOrigin.valueOf(metadata.optString("origin", PatchOrigin.IMPORTED.name))
             }.getOrDefault(PatchOrigin.IMPORTED)
 
+            val sha256 = metadata.optString("sha256", "").trim()
+            require(sha256.isBlank() || IdentifierPolicy.isSha256(sha256))
             InstalledPatch(
                 manifest = manifest,
                 directory = directory,
                 origin = origin,
-                sha256 = metadata.optString("sha256", "").takeIf { it.isNotBlank() }
+                sha256 = sha256.takeIf { it.isNotBlank() }?.lowercase()
             )
         }.getOrNull()
     }

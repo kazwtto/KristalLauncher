@@ -20,9 +20,12 @@ import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.graphics.ColorUtils
+import androidx.core.view.doOnPreDraw
 import androidx.core.view.WindowCompat
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.color.MaterialColors
 import com.google.android.material.shape.Shapeable
+import com.google.android.material.textfield.TextInputLayout
 import kwz.love2d.launcher.R
 import java.lang.reflect.Method
 import java.util.Collections
@@ -44,6 +47,7 @@ object ThemeManager {
     private val supportedThemes = setOf(THEME_SYSTEM, THEME_LIGHT, THEME_DARK, THEME_DELTARUNE)
 
     private val appliedActivityThemes = Collections.synchronizedMap(WeakHashMap<Activity, String>())
+    private val pendingThemeRecreations = Collections.newSetFromMap(WeakHashMap<Activity, Boolean>())
 
     @Volatile
     private var pixelTypefacesInitialized = false
@@ -73,7 +77,7 @@ object ThemeManager {
     fun ensureActivityTheme(activity: Activity): Boolean {
         val applied = appliedActivityThemes[activity] ?: return true
         if (applied == themeFingerprint(activity)) return true
-        if (!activity.isFinishing && !activity.isDestroyed) activity.recreate()
+        requestActivityThemeRefresh(activity)
         return false
     }
 
@@ -83,7 +87,7 @@ object ThemeManager {
         preferences(context)
             .edit()
             .putString(KEY_THEME, theme)
-            .apply()
+            .commit()
 
         val targetMode = nightModeFor(theme)
         if (AppCompatDelegate.getDefaultNightMode() != targetMode) {
@@ -91,11 +95,25 @@ object ThemeManager {
         }
     }
 
+    fun requestActivityThemeRefresh(activity: Activity) {
+        synchronized(pendingThemeRecreations) {
+            if (!pendingThemeRecreations.add(activity)) return
+        }
+        activity.window.decorView.post {
+            synchronized(pendingThemeRecreations) {
+                pendingThemeRecreations.remove(activity)
+            }
+            if (!activity.isFinishing && !activity.isDestroyed && !activity.isChangingConfigurations) {
+                activity.recreate()
+            }
+        }
+    }
+
     fun setDeltaruneAmoledEnabled(context: Context, enabled: Boolean) {
         preferences(context)
             .edit()
             .putBoolean(KEY_DELTARUNE_AMOLED, enabled)
-            .apply()
+            .commit()
     }
 
     fun isDeltaruneAmoledEnabled(context: Context): Boolean {
@@ -120,6 +138,15 @@ object ThemeManager {
 
     fun applyThemeDecor(activity: Activity) {
         val decor = activity.window.decorView
+        applyThemeDecorNow(activity, decor)
+        decor.doOnPreDraw {
+            if (!activity.isFinishing && !activity.isDestroyed) {
+                applyThemeDecorNow(activity, decor)
+            }
+        }
+    }
+
+    private fun applyThemeDecorNow(activity: Activity, decor: View) {
         applyDeltaruneStyle(activity, decor)
         applyAmoledMainChrome(activity)
     }
@@ -347,6 +374,19 @@ object ThemeManager {
         compactBoldThreshold: Float
     ) {
         squareDeltaruneShape(root)
+        if (root is RecyclerView && root.getTag(R.id.tag_deltarune_child_styler) != true) {
+            root.setTag(R.id.tag_deltarune_child_styler, true)
+            root.addOnChildAttachStateChangeListener(object : RecyclerView.OnChildAttachStateChangeListener {
+                override fun onChildViewAttachedToWindow(view: View) {
+                    applyDeltaruneStyle(root.context, view)
+                }
+
+                override fun onChildViewDetachedFromWindow(view: View) = Unit
+            })
+        }
+        if (root is TextInputLayout && typefaces != null) {
+            root.typeface = typefaces.regular
+        }
         if (root is TextView && typefaces != null) {
             val style = root.typeface?.style ?: Typeface.NORMAL
             val bold = style and Typeface.BOLD != 0

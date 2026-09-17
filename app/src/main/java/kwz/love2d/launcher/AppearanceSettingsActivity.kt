@@ -43,7 +43,7 @@ class AppearanceSettingsActivity : AppCompatActivity() {
                 if (enabled == ThemeManager.isDeltaruneAmoledEnabled(this@AppearanceSettingsActivity)) return@setOnCheckedChangeListener
                 beginThemeApply {
                     ThemeManager.setDeltaruneAmoledEnabled(this@AppearanceSettingsActivity, enabled)
-                    recreateIfAlive()
+                    ThemeManager.requestActivityThemeRefresh(this@AppearanceSettingsActivity)
                 }
             }
         }
@@ -77,7 +77,7 @@ class AppearanceSettingsActivity : AppCompatActivity() {
                 updateThemeSelection(choice.value)
                 beginThemeApply {
                     ThemeManager.setTheme(this, choice.value)
-                    recreateIfAlive()
+                    ThemeManager.requestActivityThemeRefresh(this)
                 }
             }
         }
@@ -197,10 +197,6 @@ class AppearanceSettingsActivity : AppCompatActivity() {
             )
             ThemeManager.applyDeltaruneStyle(this@AppearanceSettingsActivity, panel)
         }
-    }
-
-    private fun recreateIfAlive() {
-        if (!isFinishing && !isDestroyed) recreate()
     }
 
     private fun dp(value: Int): Int = (value * resources.displayMetrics.density).toInt()

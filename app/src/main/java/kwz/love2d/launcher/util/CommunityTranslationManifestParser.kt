@@ -6,29 +6,37 @@ import kwz.love2d.launcher.model.LocalizedText
 import org.json.JSONObject
 
 object CommunityTranslationManifestParser {
-    private val identifier = Regex("^[a-z0-9][a-z0-9._-]{2,95}$")
-    private val languageTag = Regex("^[A-Za-z]{2,8}(?:-[A-Za-z0-9]{1,8})*$")
-    private val checksum = Regex("^[a-fA-F0-9]{64}$")
-
     fun parse(json: String, requireFiles: Boolean = true): CommunityTranslationManifest =
         parse(JSONObject(json), requireFiles)
 
     fun parse(root: JSONObject, requireFiles: Boolean = true): CommunityTranslationManifest {
         require(root.optInt("schemaVersion", -1) == 1) { "Unsupported translation package version" }
         val id = root.requiredString("id")
-        require(identifier.matches(id)) { "Invalid translation ID" }
+        IdentifierPolicy.requireTranslationId(id)
         val version = root.requiredString("version")
-        require(version.length <= 48) { "Invalid translation version" }
+        IdentifierPolicy.requirePackageVersion(version, "Translation version")
         val gameProjectId = root.requiredString("gameProjectId")
-        require(identifier.matches(gameProjectId.lowercase())) { "Invalid game project ID" }
+        require(IdentifierPolicy.isGameProjectId(gameProjectId)) { "Invalid game project ID" }
         val targetLanguage = root.requiredString("targetLanguage").replace('_', '-')
-        require(languageTag.matches(targetLanguage)) { "Invalid target language" }
+        require(IdentifierPolicy.isLanguageTag(targetLanguage)) { "Invalid target language" }
         val sourceLanguage = root.optString("sourceLanguage", "en").trim().replace('_', '-')
-        require(languageTag.matches(sourceLanguage)) { "Invalid source language" }
+        require(IdentifierPolicy.isLanguageTag(sourceLanguage)) { "Invalid source language" }
 
+        val textsFile = root.optString("textsFile", "").trim().takeIf(String::isNotBlank)
+        val textsSha256 = root.optString("textsSha256", "").trim().takeIf(String::isNotBlank)
+        if (textsFile != null) {
+            require(textsFile == "texts.json" && PatchManifestParser.isSafeArchivePath(textsFile)) {
+                "Invalid translation text payload path"
+            }
+            require(textsSha256 != null && IdentifierPolicy.isSha256(textsSha256)) {
+                "Invalid translation text payload checksum"
+            }
+        } else {
+            require(textsSha256 == null) { "Translation text checksum has no payload" }
+        }
         val filesArray = root.optJSONArray("files")
-        if (requireFiles) require(filesArray != null && filesArray.length() > 0) {
-            "Translation package does not contain files"
+        if (requireFiles) require(textsFile != null || (filesArray != null && filesArray.length() > 0)) {
+            "Translation package does not contain text replacements"
         }
         require((filesArray?.length() ?: 0) <= 512) { "Translation package contains too many files" }
         val targets = mutableSetOf<String>()
@@ -44,7 +52,7 @@ object CommunityTranslationManifestParser {
                 require(targets.add(target.lowercase())) { "Duplicate translation target: $target" }
                 val sourceSha256 = item.requiredString("sourceSha256")
                 val translatedSha256 = item.requiredString("translatedSha256")
-                require(checksum.matches(sourceSha256) && checksum.matches(translatedSha256)) {
+                require(IdentifierPolicy.isSha256(sourceSha256) && IdentifierPolicy.isSha256(translatedSha256)) {
                     "Invalid translation file checksum"
                 }
                 add(
@@ -58,6 +66,12 @@ object CommunityTranslationManifestParser {
             }
         }
 
+        val minimumLauncherVersion = root.optString("minimumLauncherVersion", "")
+            .trim()
+            .takeIf(String::isNotBlank)
+        minimumLauncherVersion?.let {
+            IdentifierPolicy.requirePackageVersion(it, "Minimum launcher version")
+        }
         return CommunityTranslationManifest(
             schemaVersion = 1,
             id = id,
@@ -66,10 +80,14 @@ object CommunityTranslationManifestParser {
             description = parseLocalized(root.opt("description"), "Translation description"),
             author = root.requiredString("author").take(120),
             gameProjectId = gameProjectId,
-            gameVersion = root.requiredString("gameVersion"),
+            gameVersion = root.requiredString("gameVersion").also {
+                require(it.length <= 64 && it.none(Char::isISOControl)) { "Invalid game version" }
+            },
             sourceLanguage = sourceLanguage,
             targetLanguage = targetLanguage,
-            minimumLauncherVersion = root.optString("minimumLauncherVersion", "").trim().takeIf(String::isNotBlank),
+            minimumLauncherVersion = minimumLauncherVersion,
+            textsFile = textsFile,
+            textsSha256 = textsSha256?.lowercase(),
             files = files
         )
     }
@@ -94,6 +112,6 @@ object CommunityTranslationManifestParser {
     }
 
     private fun JSONObject.requiredString(name: String): String =
-        optString(name, "").trim().takeIf(String::isNotBlank)
-            ?: throw IllegalArgumentException("Missing $name")
+        (opt(name) as? String)?.trim()?.takeIf(String::isNotBlank)
+            ?: throw IllegalArgumentException("Missing or invalid $name")
 }

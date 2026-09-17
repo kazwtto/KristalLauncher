@@ -14,6 +14,7 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -57,6 +58,12 @@ class GameDetailsActivity : AppCompatActivity() {
     private var translationCatalogLoading = false
     private var translationBusyKey: String? = null
     private var translationBusyText: String? = null
+
+    private val importTranslationDocument = registerForActivityResult(
+        ActivityResultContracts.OpenDocument()
+    ) { uri ->
+        if (uri != null && ::game.isInitialized) importTranslation(uri)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         ThemeManager.applyActivityTheme(this)
@@ -170,6 +177,14 @@ class GameDetailsActivity : AppCompatActivity() {
             onAction = { item ->
                 item.localProject?.let { openTranslationEditor(it.id) }
                     ?: item.catalogTranslation?.let(::installCommunityTranslation)
+            },
+            onVersionWarning = { item ->
+                MaterialAlertDialogBuilder(this)
+                    .setTitle(R.string.translation_version_warning_title)
+                    .setMessage(item.versionWarning)
+                    .setPositiveButton(android.R.string.ok, null)
+                    .create()
+                    .also { it.showThemed() }
             }
         )
         findViewById<RecyclerView>(R.id.rvDetailsLanguages).apply {
@@ -182,7 +197,10 @@ class GameDetailsActivity : AppCompatActivity() {
             refreshTranslations()
         }
         findViewById<MaterialButton>(R.id.btnCreateTranslation).setOnClickListener {
-            showCreateTranslationDialog()
+            createTranslation()
+        }
+        findViewById<MaterialButton>(R.id.btnImportTranslation).setOnClickListener {
+            importTranslationDocument.launch(arrayOf("application/zip", "application/octet-stream"))
         }
         refreshTranslations()
         fetchCommunityTranslations()
@@ -193,10 +211,8 @@ class GameDetailsActivity : AppCompatActivity() {
         val selectedCommunityId = TranslationManager.selectedCommunityTranslationId(this, game.stableId)
         val projects = TranslationManager.projectsForGame(this, game.stableId)
         val installed = CommunityTranslationStorage.installedForGame(this, game.projectId)
-            .filter { it.manifest.gameVersion.equals(game.version, ignoreCase = true) }
         val matchingCatalog = catalogTranslations
             .filter { it.manifest.gameProjectId.equals(game.projectId, ignoreCase = true) }
-            .filter { it.manifest.gameVersion.equals(game.version, ignoreCase = true) }
             .associateBy { it.manifest.id }
         val installedIds = installed.mapTo(mutableSetOf()) { it.manifest.id }
         val items = buildList {
@@ -217,6 +233,7 @@ class GameDetailsActivity : AppCompatActivity() {
                         selected = selectedCommunityId == translation.manifest.id,
                         selectable = true,
                         action = if (updateAvailable) TranslationItemAction.UPDATE else TranslationItemAction.NONE,
+                        versionWarning = translationVersionWarning(translation.manifest.gameVersion),
                         catalogTranslation = catalog,
                         communityTranslationId = translation.manifest.id
                     )
@@ -226,7 +243,7 @@ class GameDetailsActivity : AppCompatActivity() {
                 add(
                     TranslationDisplayItem(
                         key = "local:${project.id}",
-                        name = languageDisplayName(project.targetLanguage),
+                        name = project.name,
                         summary = getString(
                             R.string.translation_progress,
                             project.translatedEntries,
@@ -235,6 +252,7 @@ class GameDetailsActivity : AppCompatActivity() {
                         selected = selectedProjectId == project.id,
                         selectable = true,
                         action = TranslationItemAction.EDIT,
+                        versionWarning = translationVersionWarning(project.gameVersion),
                         localProject = project
                     )
                 )
@@ -251,6 +269,7 @@ class GameDetailsActivity : AppCompatActivity() {
                             selected = false,
                             selectable = false,
                             action = TranslationItemAction.DOWNLOAD,
+                            versionWarning = translationVersionWarning(catalog.manifest.gameVersion),
                             catalogTranslation = catalog,
                             communityTranslationId = catalog.manifest.id
                         )
@@ -350,40 +369,43 @@ class GameDetailsActivity : AppCompatActivity() {
         return locale.getDisplayName(locale).replaceFirstChar { it.titlecase(locale) }.ifBlank { tag }
     }
 
+    private fun translationVersionWarning(translationVersion: String?): String? {
+        val currentVersion = game.version?.trim().orEmpty()
+        if (currentVersion.isBlank()) return null
+        val expectedVersion = translationVersion?.trim().orEmpty()
+        val versionsMatch = expectedVersion.isNotBlank() &&
+            expectedVersion.trimStart('v', 'V')
+                .equals(currentVersion.trimStart('v', 'V'), ignoreCase = true)
+        if (versionsMatch) return null
+        return getString(
+            R.string.translation_version_warning_message,
+            expectedVersion.ifBlank { getString(R.string.translation_version_unknown) },
+            currentVersion
+        )
+    }
+
     private fun formatMegabytes(bytes: Long): String = String.format(
         java.util.Locale.getDefault(),
         "%.1f MB",
         bytes.coerceAtLeast(0L) / (1024.0 * 1024.0)
     )
 
-    private fun showCreateTranslationDialog() {
-        val languageTags = arrayOf("pt-BR", "es", "en")
-        val languageNames = arrayOf(
-            getString(R.string.translation_language_pt_br),
-            getString(R.string.translation_language_es),
-            getString(R.string.translation_language_en)
-        )
-        MaterialAlertDialogBuilder(this)
-            .setTitle(R.string.translation_choose_language)
-            .setItems(languageNames) { _, index -> createTranslation(languageTags[index]) }
-            .setNegativeButton(R.string.cancel, null)
-            .create()
-            .also { it.showThemed() }
-    }
-
-    private fun createTranslation(languageTag: String) {
+    private fun createTranslation() {
         val progress = findViewById<ProgressBar>(R.id.progressTranslationScan)
         val createButton = findViewById<MaterialButton>(R.id.btnCreateTranslation)
+        val importButton = findViewById<MaterialButton>(R.id.btnImportTranslation)
         progress.visibility = View.VISIBLE
         createButton.isEnabled = false
+        importButton.isEnabled = false
         lifecycleScope.launch {
             val result = runCatching {
                 withContext(Dispatchers.IO) {
-                    TranslationManager.createProject(this@GameDetailsActivity, game, languageTag)
+                    TranslationManager.createProject(this@GameDetailsActivity, game)
                 }
             }
             progress.visibility = View.GONE
             createButton.isEnabled = true
+            importButton.isEnabled = true
             result.onSuccess { project ->
                 refreshTranslations()
                 openTranslationEditor(project.id)
@@ -394,6 +416,36 @@ class GameDetailsActivity : AppCompatActivity() {
                     .setPositiveButton(android.R.string.ok, null)
                     .create()
                     .also { it.showThemed() }
+            }
+        }
+    }
+
+    private fun importTranslation(uri: Uri) {
+        val progress = findViewById<ProgressBar>(R.id.progressTranslationScan)
+        val createButton = findViewById<MaterialButton>(R.id.btnCreateTranslation)
+        val importButton = findViewById<MaterialButton>(R.id.btnImportTranslation)
+        progress.visibility = View.VISIBLE
+        createButton.isEnabled = false
+        importButton.isEnabled = false
+        lifecycleScope.launch {
+            val result = runCatching {
+                withContext(Dispatchers.IO) {
+                    TranslationManager.importProject(this@GameDetailsActivity, game, uri)
+                }
+            }
+            progress.visibility = View.GONE
+            createButton.isEnabled = true
+            importButton.isEnabled = true
+            result.onSuccess { project ->
+                refreshTranslations()
+                openTranslationEditor(project.id)
+            }.onFailure {
+                MaterialAlertDialogBuilder(this@GameDetailsActivity)
+                    .setTitle(R.string.translation_import_failed_title)
+                    .setMessage(R.string.translation_import_failed)
+                    .setPositiveButton(android.R.string.ok, null)
+                    .create()
+                    .also { dialog -> dialog.showThemed() }
             }
         }
     }

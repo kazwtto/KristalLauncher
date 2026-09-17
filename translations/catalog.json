@@ -12,18 +12,195 @@
         "es": "Plugged Dream en portugués de Brasil"
       },
       "description": {
-        "pt-BR": "Tradução comunitária dos textos de Deltarune: Plugged Dream para português do Brasil.",
-        "en": "Community translation of Deltarune: Plugged Dream text into Brazilian Portuguese.",
-        "es": "Traducción comunitaria de los textos de Deltarune: Plugged Dream al portugués de Brasil."
+        "pt-BR": "Tradução comunitária dos textos de Plugged Dream para português do Brasil.",
+        "en": "Community translation of Plugged Dream text into Brazilian Portuguese.",
+        "es": "Traducción comunitaria de los textos de Plugged Dream al portugués de Brasil."
       },
       "author": "kazwtto",
       "gameProjectId": "plugged_dream",
       "gameVersion": "v1.3.0",
       "sourceLanguage": "en",
       "targetLanguage": "pt-BR",
-      "minimumLauncherVersion": "0.17.40",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "6c3b060e09262ece24cd0281d8b8b6be1752dc55319929ac0243f3f4d3c0e081",
       "package": "packages/plugged-dream-ptbr-1.0.0.kllang",
-      "sha256": "f9633b8cf97548943770b423583ba6262120deaa0a01af6ea65060739f5819c8"
+      "sha256": "5aae93f85b5545f1058c62560fc42cdb60ebb99d3f60381706e3e203a2539b02"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "crockerplayable.pt-br",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "Crockerfan08's Chapter 6 em Português (Brasil)",
+        "en": "Crockerfan08's Chapter 6 in Brazilian Portuguese",
+        "es": "Crockerfan08's Chapter 6 en portugués de Brasil"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de Crockerfan08's Chapter 6 para português do Brasil.",
+        "en": "Community translation of Crockerfan08's Chapter 6 text into Brazilian Portuguese.",
+        "es": "Traducción comunitaria de los textos de Crockerfan08's Chapter 6 al portugués de Brasil."
+      },
+      "author": "kazwtto",
+      "gameProjectId": "crockerplayable",
+      "gameVersion": "v1.0.3",
+      "sourceLanguage": "en",
+      "targetLanguage": "pt-BR",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "7ffb292c927735a977446036acea8133ac7828324fff68ede8c6fb927182f599",
+      "package": "packages/crockerplayable-ptbr-1.0.0.kllang",
+      "sha256": "84fec0800fe3ca4e932e630293d2bfeb22347536a5df905578286a3dcd9d2c96"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "chapter-5-weird.pt-br",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "Frostveil em Português (Brasil)",
+        "en": "Frostveil in Brazilian Portuguese",
+        "es": "Frostveil en portugués de Brasil"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de Frostveil para português do Brasil.",
+        "en": "Community translation of Frostveil text into Brazilian Portuguese.",
+        "es": "Traducción comunitaria de los textos de Frostveil al portugués de Brasil."
+      },
+      "author": "kazwtto",
+      "gameProjectId": "chapter_5_weird",
+      "gameVersion": "v1.3.1",
+      "sourceLanguage": "en",
+      "targetLanguage": "pt-BR",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "4166620a54660435bcbdfa4c4db511fa481070be826f0076ff79e87c28cea7c8",
+      "package": "packages/chapter-5-weird-ptbr-1.0.0.kllang",
+      "sha256": "6adf8b530b4175e67cb23fd76f1e7130aa7ae70d94abcc4acda3cfcf85c4bbdf"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "frozen-heart.pt-br",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "Frozen Heart em Português (Brasil)",
+        "en": "Frozen Heart in Brazilian Portuguese",
+        "es": "Frozen Heart en portugués de Brasil"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de Frozen Heart para português do Brasil.",
+        "en": "Community translation of Frozen Heart text into Brazilian Portuguese.",
+        "es": "Traducción comunitaria de los textos de Frozen Heart al portugués de Brasil."
+      },
+      "author": "kazwtto",
+      "gameProjectId": "frozen_heart",
+      "gameVersion": "v1.1.5",
+      "sourceLanguage": "en",
+      "targetLanguage": "pt-BR",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "552289b300d2fe4df5653627ca758dff3e87dd2b63d4c5bbfa56b661f9d1ef72",
+      "package": "packages/frozen-heart-ptbr-1.0.0.kllang",
+      "sha256": "6cdaf993022843caf590f3d00df14ffb66abb9c160d0d824325b86735b333c10"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "godhome.pt-br",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "Godhome em Português (Brasil)",
+        "en": "Godhome in Brazilian Portuguese",
+        "es": "Godhome en portugués de Brasil"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de Godhome para português do Brasil.",
+        "en": "Community translation of Godhome text into Brazilian Portuguese.",
+        "es": "Traducción comunitaria de los textos de Godhome al portugués de Brasil."
+      },
+      "author": "kazwtto",
+      "gameProjectId": "godhome",
+      "gameVersion": "v1.1.7",
+      "sourceLanguage": "en",
+      "targetLanguage": "pt-BR",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "0397267125623a5ad1c96a58fb46e463b526e503b17b29909d8b8c2d1f43d221",
+      "package": "packages/godhome-ptbr-1.0.0.kllang",
+      "sha256": "6672ee60da0a6df2721136c5ce69ee43df230e9e6016e5829d08d2285607d46d"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "goofball-mod.pt-br",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "Sermon's Sang em Português (Brasil)",
+        "en": "Sermon's Sang in Brazilian Portuguese",
+        "es": "Sermon's Sang en portugués de Brasil"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de Sermon's Sang para português do Brasil.",
+        "en": "Community translation of Sermon's Sang text into Brazilian Portuguese.",
+        "es": "Traducción comunitaria de los textos de Sermon's Sang al portugués de Brasil."
+      },
+      "author": "kazwtto",
+      "gameProjectId": "goofball_mod",
+      "gameVersion": "v1.0.9 (Release)",
+      "sourceLanguage": "en",
+      "targetLanguage": "pt-BR",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "6a6058fe76e575fcc4b1b74504850461bd24793fd15b92eb3dd319388a5870aa",
+      "package": "packages/goofball-mod-ptbr-1.0.0.kllang",
+      "sha256": "b458cedca59803a01011c3dc4a4a7dc123764d9a384da05a9b51bcd4c9b1994b"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "vs-kris.pt-br",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "VS Kris em Português (Brasil)",
+        "en": "VS Kris in Brazilian Portuguese",
+        "es": "VS Kris en portugués de Brasil"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de VS Kris para português do Brasil.",
+        "en": "Community translation of VS Kris text into Brazilian Portuguese.",
+        "es": "Traducción comunitaria de los textos de VS Kris al portugués de Brasil."
+      },
+      "author": "kazwtto",
+      "gameProjectId": "vs_kris",
+      "gameVersion": "v1.0.0",
+      "sourceLanguage": "en",
+      "targetLanguage": "pt-BR",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "fa9baa21c315c88c2da7df2f1dafe2df49adeebe830c5314a2c11444863fb12d",
+      "package": "packages/vs-kris-ptbr-1.0.0.kllang",
+      "sha256": "2ade356ee4cfd3db7441b807f25534ad7b29cfff939e5fe397308243d016a6c8"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "wilter-boss-fight.pt-br",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "Wilter Boss Fight em Português (Brasil)",
+        "en": "Wilter Boss Fight in Brazilian Portuguese",
+        "es": "Wilter Boss Fight en portugués de Brasil"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de Wilter Boss Fight para português do Brasil.",
+        "en": "Community translation of Wilter Boss Fight text into Brazilian Portuguese.",
+        "es": "Traducción comunitaria de los textos de Wilter Boss Fight al portugués de Brasil."
+      },
+      "author": "kazwtto",
+      "gameProjectId": "wilter_boss_fight",
+      "gameVersion": "v1.0.1",
+      "sourceLanguage": "en",
+      "targetLanguage": "pt-BR",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "cb38d71d56b6fb2d6fc642a05bbb278507b061c7f4dacdc201ee48af4e325eb4",
+      "package": "packages/wilter-boss-fight-ptbr-1.0.0.kllang",
+      "sha256": "5f8c2a243cbf38a1bf6662309e60618accf67b906b028460f5ab23263af3fc15"
     }
   ]
 }

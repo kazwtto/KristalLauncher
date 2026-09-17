@@ -31,6 +31,9 @@ object CommunityTranslationInstaller {
         onStageChanged: (CommunityTranslationInstallStage) -> Unit = {},
         onProgress: (downloaded: Long, total: Long) -> Unit = { _, _ -> }
     ): CommunityTranslationInstallResult = runCatching {
+        IdentifierPolicy.requireTranslationId(catalogItem.manifest.id, "Catalog translation ID")
+        IdentifierPolicy.requirePackageVersion(catalogItem.manifest.version, "Catalog translation version")
+        require(IdentifierPolicy.isSha256(catalogItem.sha256)) { "Catalog translation checksum is invalid" }
         require(catalogItem.packageUrl.startsWith("https://")) { "Translation downloads must use HTTPS" }
         onStageChanged(CommunityTranslationInstallStage.DOWNLOADING)
         val stagingRoot = File(
@@ -44,6 +47,8 @@ object CommunityTranslationInstaller {
             onStageChanged(CommunityTranslationInstallStage.VALIDATING)
             val content = File(stagingRoot, "content").apply { mkdirs() }
             val manifest = extractAndValidate(packageFile, content)
+            IdentifierPolicy.requireTranslationId(manifest.id)
+            IdentifierPolicy.requirePackageVersion(manifest.version, "Translation version")
             require(manifest.id == catalogItem.manifest.id && manifest.version == catalogItem.manifest.version) {
                 "Translation package identity does not match the catalog"
             }
@@ -58,8 +63,10 @@ object CommunityTranslationInstaller {
             CommunityTranslationStorage.writeInstallationMetadata(content, actualSha256)
 
             onStageChanged(CommunityTranslationInstallStage.INSTALLING)
-            val idDirectory = File(CommunityTranslationStorage.rootDirectory(context), manifest.id).canonicalFile
-                .apply { mkdirs() }
+            val translationsRoot = CommunityTranslationStorage.rootDirectory(context).canonicalFile
+            val idDirectory = File(translationsRoot, manifest.id).canonicalFile
+            require(idDirectory.parentFile == translationsRoot) { "Translation ID resolves outside translation storage" }
+            idDirectory.mkdirs()
             val destination = File(idDirectory, manifest.version).canonicalFile
             require(destination.parentFile == idDirectory) { "Invalid translation installation path" }
             if (destination.exists()) destination.deleteRecursively()
@@ -133,6 +140,7 @@ object CommunityTranslationInstaller {
         val manifestJson = zip.getInputStream(manifestEntry).bufferedReader(Charsets.UTF_8).use { it.readText() }
         val manifest = CommunityTranslationManifestParser.parse(manifestJson)
         val allowedFiles = manifest.files.mapTo(mutableSetOf("translation.json")) { it.source }
+        manifest.textsFile?.let(allowedFiles::add)
         require(entries.filterNot { it.isDirectory }.all { it.name in allowedFiles }) {
             "Translation package contains undeclared files"
         }
@@ -159,6 +167,16 @@ object CommunityTranslationInstaller {
             require(payload.isFile && TranslationExtractor.sha256(payload.readBytes()) == file.translatedSha256) {
                 "Translation payload checksum is invalid: ${file.target}"
             }
+        }
+        manifest.textsFile?.let { relativePath ->
+            val payload = CommunityTranslationStorage.safeChild(destination, relativePath)
+            require(payload.isFile && payload.length() in 2..(16L * 1024 * 1024)) {
+                "Translation text payload is invalid"
+            }
+            require(TranslationExtractor.sha256(payload.readBytes()) == manifest.textsSha256) {
+                "Translation text payload checksum is invalid"
+            }
+            CommunityTranslationTextParser.parse(payload.readText(Charsets.UTF_8))
         }
         manifest
     }

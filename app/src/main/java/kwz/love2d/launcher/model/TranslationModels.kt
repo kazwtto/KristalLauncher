@@ -4,6 +4,8 @@ import java.io.File
 
 data class TranslationProject(
     val id: String,
+    val name: String,
+    val author: String,
     val gameStableId: String,
     val gameProjectId: String?,
     val gameTitle: String,
@@ -46,7 +48,9 @@ data class TranslationReplacement(
     val startOffset: Int,
     val endOffset: Int,
     val sourceText: String,
-    val translatedText: String
+    val translatedText: String,
+    val originalExpression: String? = null,
+    val replacementExpression: String? = null
 )
 
 data class TranslationFileReplacement(
@@ -82,6 +86,8 @@ data class CommunityTranslationManifest(
     val sourceLanguage: String,
     val targetLanguage: String,
     val minimumLauncherVersion: String?,
+    val textsFile: String?,
+    val textsSha256: String?,
     val files: List<CommunityTranslationFile>
 )
 

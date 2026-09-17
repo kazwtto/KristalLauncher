@@ -8,154 +8,16 @@
     "es": "Plugged Dream en portugués de Brasil"
   },
   "description": {
-    "pt-BR": "Tradução comunitária dos textos de Deltarune: Plugged Dream para português do Brasil.",
-    "en": "Community translation of Deltarune: Plugged Dream text into Brazilian Portuguese.",
-    "es": "Traducción comunitaria de los textos de Deltarune: Plugged Dream al portugués de Brasil."
+    "pt-BR": "Tradução comunitária dos textos de Plugged Dream para português do Brasil.",
+    "en": "Community translation of Plugged Dream text into Brazilian Portuguese.",
+    "es": "Traducción comunitaria de los textos de Plugged Dream al portugués de Brasil."
   },
   "author": "kazwtto",
   "gameProjectId": "plugged_dream",
   "gameVersion": "v1.3.0",
   "sourceLanguage": "en",
   "targetLanguage": "pt-BR",
-  "minimumLauncherVersion": "0.17.40",
-  "files": [
-    {
-      "source": "payload/scripts/battle/cutscenes/cheatheal.lua",
-      "target": "scripts/battle/cutscenes/cheatheal.lua",
-      "sourceSha256": "682a951f8aecacbf458721125065cc3f4d120b1b81a1c94007e9685ff5069d5d",
-      "translatedSha256": "67a8bbf6f73603073f26883c3c60f11b9aa4231ba214d78137f6b55341862ae7"
-    },
-    {
-      "source": "payload/scripts/battle/cutscenes/dummy.lua",
-      "target": "scripts/battle/cutscenes/dummy.lua",
-      "sourceSha256": "38c5f6afa38fda56e4a65c04b85f9815a25643ba315eac5a06915f829a192b31",
-      "translatedSha256": "5aa8df4e8b56927bec9b64cf9bd1391f3008a5bd90c47f5bfbf3b0f306590d82"
-    },
-    {
-      "source": "payload/scripts/battle/cutscenes/romb.lua",
-      "target": "scripts/battle/cutscenes/romb.lua",
-      "sourceSha256": "340a9772c46b22d9f563b9cb282ac2a785325e63160ff7d3a5b9475ec95cb130",
-      "translatedSha256": "00841b436de3d3a88211d1a9ed60d1fe59e028abb70b31d66683a9e2de1b7f23"
-    },
-    {
-      "source": "payload/scripts/battle/encounters/dummy.lua",
-      "target": "scripts/battle/encounters/dummy.lua",
-      "sourceSha256": "460d0d39c97ec09bc35437cd0241f00e1a02435f93f1ea53cb5a9064d9ccd353",
-      "translatedSha256": "638ae299d840ee900e07ceca31c2e7e692510b261625e18f466cf94beb014e84"
-    },
-    {
-      "source": "payload/scripts/battle/encounters/romb.lua",
-      "target": "scripts/battle/encounters/romb.lua",
-      "sourceSha256": "c9bb014f741206c6aaa43dbfcdb555b9b99449ba026b632af6a70eac62c14451",
-      "translatedSha256": "aa40042b36d38c83319189fb4e5a393bf3e312f4dacc65bb7111ffe6fd6750ab"
-    },
-    {
-      "source": "payload/scripts/battle/enemies/dummy.lua",
-      "target": "scripts/battle/enemies/dummy.lua",
-      "sourceSha256": "e3b684847f9e66cd38a65f27c6f0fbef9e75e5ae251aedd23ce2bd55f6970d06",
-      "translatedSha256": "2469e8677ca917112c9160e449637040ccadb9f685af1a6a1c07614eeada3ad2"
-    },
-    {
-      "source": "payload/scripts/battle/enemies/romb.lua",
-      "target": "scripts/battle/enemies/romb.lua",
-      "sourceSha256": "64ba419478d643ed137a0f7c0020d9181572a0fc0d52293772c8951cc622d522",
-      "translatedSha256": "6bd82fa0d38e4502a73fae1d5987a310a90111a8e1dd763d70a5cf82aa26b2aa"
-    },
-    {
-      "source": "payload/scripts/battle/waves/errortest.lua",
-      "target": "scripts/battle/waves/errortest.lua",
-      "sourceSha256": "0740c47ec29d13608d170ee0c7ce188ef738347929d60f5c486678da0a30e697",
-      "translatedSha256": "094d0020581d663d1920598336663cb2de454aac72fff1e7895e965f054288eb"
-    },
-    {
-      "source": "payload/scripts/battle/waves/mantle/10.lua",
-      "target": "scripts/battle/waves/mantle/10.lua",
-      "sourceSha256": "71350f3da6b7fb9dfb4caac8905f1b5bb45ca452cf9e951c9d0e160ddb31612a",
-      "translatedSha256": "a45ddbdb5c45d0cb43fba31231a61c4e274512f3532c0743bad07c1e27b34321"
-    },
-    {
-      "source": "payload/scripts/battle/waves/romb/killpurple.lua",
-      "target": "scripts/battle/waves/romb/killpurple.lua",
-      "sourceSha256": "e3aeaeb9ef91136b49aa641938f711eafe65be9e611991982d6d4590971fd8bb",
-      "translatedSha256": "292c45f050594a99afb4b305688449f0f59f144cde0162ddc295137b2aab005d"
-    },
-    {
-      "source": "payload/scripts/battle/waves/romb/killpurple2.lua",
-      "target": "scripts/battle/waves/romb/killpurple2.lua",
-      "sourceSha256": "c61882e0105c6f55902bb948b2b5e7274b8fbde78c35ccc8cb9575de237c8b0b",
-      "translatedSha256": "8a59d6e17e10ccb15bd183d0e7df36e6b4ebe552971be0fc1c41fba67a548a03"
-    },
-    {
-      "source": "payload/scripts/battle/waves/romb/killpurple3.lua",
-      "target": "scripts/battle/waves/romb/killpurple3.lua",
-      "sourceSha256": "dcb8504e99f52030b94d07ed82400d5e52ada6e930f44ac19b8db3df041fbbcd",
-      "translatedSha256": "71970d58a4173a3248efc19d2b28e4e758058323f3257acc50a5c6f1bf9e14d3"
-    },
-    {
-      "source": "payload/scripts/data/items/oddcontroller.lua",
-      "target": "scripts/data/items/oddcontroller.lua",
-      "sourceSha256": "d664f631b3dedbd83b77cea7e736a738a9f17ac1381d009a6b91f6fc0621a220",
-      "translatedSha256": "2a1095cb15ef087f82860b5cbb152140a2442cff41bb07bbbe9a52af3b469156"
-    },
-    {
-      "source": "payload/scripts/data/items/oddplug.lua",
-      "target": "scripts/data/items/oddplug.lua",
-      "sourceSha256": "16d445cacb36c58affb86631242d57dee436b87ff204c7a489b69e88982c563c",
-      "translatedSha256": "667e45ef0cc80e80fd0acd60fb6829e13f46f5fffd04cd77e1f883ffc4fe24f0"
-    },
-    {
-      "source": "payload/scripts/data/party/kris.lua",
-      "target": "scripts/data/party/kris.lua",
-      "sourceSha256": "e6b81f95a655b415c4dbe286766e0b02c568d42bcc6b97ec842b043c845ce047",
-      "translatedSha256": "3da5798ddd365a278defa578d894d990671e36b0f99dc270804759b7f743bc39"
-    },
-    {
-      "source": "payload/scripts/data/spells/xslash.lua",
-      "target": "scripts/data/spells/xslash.lua",
-      "sourceSha256": "8affac16b58d24f39acf0b8fd6168561e5cf799608b6eb6cbf3b9b03d4d7e84a",
-      "translatedSha256": "7133d29e0ca1f42e9a5a2f8c3a9a03ce5f4f907bc4817b7bdc67231ea40a31d6"
-    },
-    {
-      "source": "payload/scripts/world/cutscenes/credits.lua",
-      "target": "scripts/world/cutscenes/credits.lua",
-      "sourceSha256": "97dafa509bc9f75e477e05c75fc6c5278a82c4d2e59ab5b0dce6160f7bb2cd56",
-      "translatedSha256": "ebe2272b5e4bd1c8cae43b1df8114673fd5f6a490ef9c402771fa2f78831c274"
-    },
-    {
-      "source": "payload/scripts/world/cutscenes/ramb_ending.lua",
-      "target": "scripts/world/cutscenes/ramb_ending.lua",
-      "sourceSha256": "fd2e6837c357e11beb4330e99802eb0f32ad85740c5aabf34b3a87f472c8b991",
-      "translatedSha256": "0047071601d8fd0caef0324fdb15f35463e8a058925e0e1d1856744f2a1f361a"
-    },
-    {
-      "source": "payload/scripts/world/cutscenes/ramb_intro.lua",
-      "target": "scripts/world/cutscenes/ramb_intro.lua",
-      "sourceSha256": "e155d886d4051827ae23261d5dbd38ce7589aa54cbd100cd98228cfa80a1abff",
-      "translatedSha256": "2b3e92653650a84585ef1a5311846b169d5ea37091283b57d68536a33ead970b"
-    },
-    {
-      "source": "payload/scripts/world/cutscenes/ramb_test.lua",
-      "target": "scripts/world/cutscenes/ramb_test.lua",
-      "sourceSha256": "fb5f83657bc949b58a7a0bc9bcf1b10c9974c53ed489ab205337fa871f710315",
-      "translatedSha256": "2bb9da6a2fe351ec5e5ab5935cab701e5f429db22da6965a97ac4bcabb1f47aa"
-    },
-    {
-      "source": "payload/scripts/world/cutscenes/room1.lua",
-      "target": "scripts/world/cutscenes/room1.lua",
-      "sourceSha256": "bb1c721d1ef7a3636fc43e0f17d6ed303f06da581e34042d6928df532a25ed70",
-      "translatedSha256": "f776cd14e04cd349be3a5665922d6a81a380a823d6b04586c499a4094e238988"
-    },
-    {
-      "source": "payload/scripts/world/maps/consoleroom/data.lua",
-      "target": "scripts/world/maps/consoleroom/data.lua",
-      "sourceSha256": "260d00ec3a75ebcc9cfe679cb27c078514fbde4d92444b5175e18d3e5f9f128a",
-      "translatedSha256": "8ade042ba519312845ae2d8c9e0aba30193dfb11503646dd5284f89b1235795b"
-    },
-    {
-      "source": "payload/scripts/world/maps/room1.lua",
-      "target": "scripts/world/maps/room1.lua",
-      "sourceSha256": "36d4d331388a94ecc305e50da12dcff49178e42f87b9c7d1b6b99ac3ffa10adb",
-      "translatedSha256": "294e713c1ef73dc6a139d00b24541ee602936c6e25182ef225b28b9eb18ea1f5"
-    }
-  ]
+  "minimumLauncherVersion": "0.17.48",
+  "textsFile": "texts.json",
+  "textsSha256": "6c3b060e09262ece24cd0281d8b8b6be1752dc55319929ac0243f3f4d3c0e081"
 }

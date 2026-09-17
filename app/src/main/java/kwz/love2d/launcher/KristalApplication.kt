@@ -33,6 +33,7 @@ class KristalApplication : Application() {
 
             override fun onActivityResumed(activity: Activity) {
                 if (activity is AppCompatActivity) {
+                    if (!ThemeManager.ensureActivityTheme(activity)) return
                     ThemeManager.applyStatusBarTheme(activity)
                     ThemeManager.applyThemeDecor(activity)
                 }

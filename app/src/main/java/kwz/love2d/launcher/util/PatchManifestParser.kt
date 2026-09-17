@@ -11,8 +11,6 @@ object PatchManifestParser {
     const val SUPPORTED_SCHEMA_VERSION = 1
     private const val MAX_OPERATIONS = 64
     private const val MAX_TEXT_LENGTH = 64 * 1024
-    private val validId = Regex("^[a-z0-9]+(?:[._-][a-z0-9]+)+$")
-    private val validVersion = Regex("^[0-9]+(?:\\.[0-9]+){0,3}(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$")
     private val supportedOperations = setOf("inject", "append_text", "replace_text")
 
     fun parse(json: String, requireOperations: Boolean = true): PatchManifest {
@@ -26,10 +24,10 @@ object PatchManifestParser {
         }
 
         val id = root.requireShortString("id", 120)
-        require(validId.matches(id)) { "Invalid patch identifier: $id" }
+        IdentifierPolicy.requirePatchId(id, "Patch identifier")
 
         val version = root.requireShortString("version", 64)
-        require(validVersion.matches(version)) { "Invalid patch version: $version" }
+        IdentifierPolicy.requirePackageVersion(version, "Patch version")
         val name = parseLocalizedText(root, "name")
         val description = parseLocalizedText(root, "description")
         val useCases = parseLocalizedTextList(root.optJSONArray("useCases"))
@@ -39,12 +37,15 @@ object PatchManifestParser {
         val minimumLauncherVersion = root.optString("minimumLauncherVersion", "")
             .trim()
             .takeIf { it.isNotBlank() }
+        minimumLauncherVersion?.let {
+            IdentifierPolicy.requirePackageVersion(it, "Minimum launcher version")
+        }
 
         val capabilities = parseStringList(root.optJSONArray("capabilities"))
         val dependencies = parseStringList(root.optJSONArray("dependencies"))
         val conflicts = parseStringList(root.optJSONArray("conflicts"))
-        require(dependencies.all(validId::matches)) { "Invalid patch dependency identifier" }
-        require(conflicts.all(validId::matches)) { "Invalid patch conflict identifier" }
+        require(dependencies.all(IdentifierPolicy::isPatchId)) { "Invalid patch dependency identifier" }
+        require(conflicts.all(IdentifierPolicy::isPatchId)) { "Invalid patch conflict identifier" }
         val priority = root.optInt("priority", 100).coerceIn(-10_000, 10_000)
         val operations = parseOperations(root.optJSONArray("operations"))
 
@@ -164,7 +165,9 @@ object PatchManifestParser {
     }
 
     private fun JSONObject.requireShortString(key: String, maxLength: Int): String {
-        val value = optString(key, "").trim()
+        val raw = opt(key)
+        require(raw is String) { "Field $key must be text" }
+        val value = raw.trim()
         require(value.isNotBlank()) { "Missing field: $key" }
         require(value.length <= maxLength) { "Field $key is too large" }
         return value

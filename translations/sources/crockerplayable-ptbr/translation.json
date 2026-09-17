@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "crockerplayable.pt-br",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "Crockerfan08's Chapter 6 em Português (Brasil)",
+    "en": "Crockerfan08's Chapter 6 in Brazilian Portuguese",
+    "es": "Crockerfan08's Chapter 6 en portugués de Brasil"
+  },
+  "description": {
+    "pt-BR": "Tradução comunitária dos textos de Crockerfan08's Chapter 6 para português do Brasil.",
+    "en": "Community translation of Crockerfan08's Chapter 6 text into Brazilian Portuguese.",
+    "es": "Traducción comunitaria de los textos de Crockerfan08's Chapter 6 al portugués de Brasil."
+  },
+  "author": "kazwtto",
+  "gameProjectId": "crockerplayable",
+  "gameVersion": "v1.0.3",
+  "sourceLanguage": "en",
+  "targetLanguage": "pt-BR",
+  "minimumLauncherVersion": "0.17.48",
+  "textsFile": "texts.json",
+  "textsSha256": "7ffb292c927735a977446036acea8133ac7828324fff68ede8c6fb927182f599"
+}

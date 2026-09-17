@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "godhome.pt-br",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "Godhome em Português (Brasil)",
+    "en": "Godhome in Brazilian Portuguese",
+    "es": "Godhome en portugués de Brasil"
+  },
+  "description": {
+    "pt-BR": "Tradução comunitária dos textos de Godhome para português do Brasil.",
+    "en": "Community translation of Godhome text into Brazilian Portuguese.",
+    "es": "Traducción comunitaria de los textos de Godhome al portugués de Brasil."
+  },
+  "author": "kazwtto",
+  "gameProjectId": "godhome",
+  "gameVersion": "v1.1.7",
+  "sourceLanguage": "en",
+  "targetLanguage": "pt-BR",
+  "minimumLauncherVersion": "0.17.48",
+  "textsFile": "texts.json",
+  "textsSha256": "0397267125623a5ad1c96a58fb46e463b526e503b17b29909d8b8c2d1f43d221"
+}

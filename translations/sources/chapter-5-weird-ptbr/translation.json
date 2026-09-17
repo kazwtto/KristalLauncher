@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "chapter-5-weird.pt-br",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "Frostveil em Português (Brasil)",
+    "en": "Frostveil in Brazilian Portuguese",
+    "es": "Frostveil en portugués de Brasil"
+  },
+  "description": {
+    "pt-BR": "Tradução comunitária dos textos de Frostveil para português do Brasil.",
+    "en": "Community translation of Frostveil text into Brazilian Portuguese.",
+    "es": "Traducción comunitaria de los textos de Frostveil al portugués de Brasil."
+  },
+  "author": "kazwtto",
+  "gameProjectId": "chapter_5_weird",
+  "gameVersion": "v1.3.1",
+  "sourceLanguage": "en",
+  "targetLanguage": "pt-BR",
+  "minimumLauncherVersion": "0.17.48",
+  "textsFile": "texts.json",
+  "textsSha256": "4166620a54660435bcbdfa4c4db511fa481070be826f0076ff79e87c28cea7c8"
+}

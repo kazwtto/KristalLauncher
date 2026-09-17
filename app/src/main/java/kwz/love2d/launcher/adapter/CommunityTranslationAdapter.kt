@@ -26,6 +26,7 @@ data class TranslationDisplayItem(
     val selected: Boolean,
     val selectable: Boolean,
     val action: TranslationItemAction,
+    val versionWarning: String? = null,
     val localProject: TranslationProject? = null,
     val catalogTranslation: CatalogTranslation? = null,
     val communityTranslationId: String? = null
@@ -33,7 +34,8 @@ data class TranslationDisplayItem(
 
 class CommunityTranslationAdapter(
     private val onSelect: (TranslationDisplayItem) -> Unit,
-    private val onAction: (TranslationDisplayItem) -> Unit
+    private val onAction: (TranslationDisplayItem) -> Unit,
+    private val onVersionWarning: (TranslationDisplayItem) -> Unit
 ) : RecyclerView.Adapter<CommunityTranslationAdapter.ViewHolder>() {
     private var items: List<TranslationDisplayItem> = emptyList()
     private var busyKey: String? = null
@@ -58,6 +60,7 @@ class CommunityTranslationAdapter(
     inner class ViewHolder(private val root: MaterialCardView) : RecyclerView.ViewHolder(root) {
         private val name: TextView = root.findViewById(R.id.tvTranslationLanguage)
         private val summary: TextView = root.findViewById(R.id.tvTranslationProgress)
+        private val warning: ImageButton = root.findViewById(R.id.btnTranslationVersionWarning)
         private val edit: ImageButton = root.findViewById(R.id.btnEditTranslation)
         private val download: MaterialButton = root.findViewById(R.id.btnDownloadTranslation)
 
@@ -67,6 +70,7 @@ class CommunityTranslationAdapter(
             summary.text = item.summary
             root.isCheckable = item.selectable
             root.isChecked = item.selectable && item.selected
+            warning.visibility = if (item.versionWarning != null) View.VISIBLE else View.GONE
             edit.visibility = if (item.action == TranslationItemAction.EDIT) View.VISIBLE else View.GONE
             download.visibility = if (
                 item.action == TranslationItemAction.DOWNLOAD || item.action == TranslationItemAction.UPDATE
@@ -80,6 +84,7 @@ class CommunityTranslationAdapter(
             root.isEnabled = !busy
             root.alpha = if (busy) 0.8f else 1f
             root.setOnClickListener { if (item.selectable && !busy) onSelect(item) }
+            warning.setOnClickListener { if (!busy && item.versionWarning != null) onVersionWarning(item) }
             edit.setOnClickListener { if (!busy) onAction(item) }
             download.setOnClickListener { if (!busy) onAction(item) }
         }

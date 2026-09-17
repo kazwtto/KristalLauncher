@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "frozen-heart.pt-br",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "Frozen Heart em Português (Brasil)",
+    "en": "Frozen Heart in Brazilian Portuguese",
+    "es": "Frozen Heart en portugués de Brasil"
+  },
+  "description": {
+    "pt-BR": "Tradução comunitária dos textos de Frozen Heart para português do Brasil.",
+    "en": "Community translation of Frozen Heart text into Brazilian Portuguese.",
+    "es": "Traducción comunitaria de los textos de Frozen Heart al portugués de Brasil."
+  },
+  "author": "kazwtto",
+  "gameProjectId": "frozen_heart",
+  "gameVersion": "v1.1.5",
+  "sourceLanguage": "en",
+  "targetLanguage": "pt-BR",
+  "minimumLauncherVersion": "0.17.48",
+  "textsFile": "texts.json",
+  "textsSha256": "552289b300d2fe4df5653627ca758dff3e87dd2b63d4c5bbfa56b661f9d1ef72"
+}

@@ -48,6 +48,11 @@
             android:theme="@style/Theme.KristalLauncher" />
 
         <activity
+            android:name=".TranslationSettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.KristalLauncher" />
+
+        <activity
             android:name=".PatchesSettingsActivity"
             android:exported="false"
             android:label="@string/patch_center_title"

@@ -11,6 +11,7 @@
     <attr name="kristalCorner4" format="dimension" />
     <attr name="kristalCorner9" format="dimension" />
     <attr name="kristalIconArrowBack" format="reference" />
+    <attr name="kristalIconAdd" format="reference" />
     <attr name="kristalIconChevronRight" format="reference" />
     <attr name="kristalIconClose" format="reference" />
     <attr name="kristalIconDarkMode" format="reference" />
@@ -24,6 +25,10 @@
     <attr name="kristalIconHeart" format="reference" />
     <attr name="kristalIconHelp" format="reference" />
     <attr name="kristalIconHistory" format="reference" />
+    <attr name="kristalIconImport" format="reference" />
+    <attr name="kristalIconExport" format="reference" />
+    <attr name="kristalIconOpenExternal" format="reference" />
+    <attr name="kristalIconWarning" format="reference" />
     <attr name="kristalIconLanguage" format="reference" />
     <attr name="kristalIconLightMode" format="reference" />
     <attr name="kristalIconMore" format="reference" />

@@ -16,16 +16,18 @@
   ],
   "properties": {
     "schemaVersion": { "const": 1 },
-    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,95}$" },
-    "version": { "type": "string" },
+    "id": { "type": "string", "pattern": "^[a-z0-9](?:[a-z0-9._-]{1,94}[a-z0-9])?$" },
+    "version": { "type": "string", "pattern": "^[0-9]+(?:\\.[0-9]+){0,3}(?:-[0-9A-Za-z]+(?:[.-][0-9A-Za-z]+)*)?(?:\\+[0-9A-Za-z]+(?:[.-][0-9A-Za-z]+)*)?$", "maxLength": 64 },
     "name": { "$ref": "#/$defs/localized" },
     "description": { "$ref": "#/$defs/localized" },
     "author": { "type": "string" },
-    "gameProjectId": { "type": "string" },
-    "gameVersion": { "type": "string" },
-    "sourceLanguage": { "type": "string" },
-    "targetLanguage": { "type": "string" },
-    "minimumLauncherVersion": { "type": "string" },
+    "gameProjectId": { "type": "string", "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9._-]{0,94}[A-Za-z0-9])?$" },
+    "gameVersion": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "sourceLanguage": { "type": "string", "pattern": "^[A-Za-z]{2,8}(?:-[A-Za-z0-9]{1,8})*$", "maxLength": 32 },
+    "targetLanguage": { "type": "string", "pattern": "^[A-Za-z]{2,8}(?:-[A-Za-z0-9]{1,8})*$", "maxLength": 32 },
+    "minimumLauncherVersion": { "type": "string", "pattern": "^[0-9]+(?:\\.[0-9]+){0,3}(?:-[0-9A-Za-z]+(?:[.-][0-9A-Za-z]+)*)?(?:\\+[0-9A-Za-z]+(?:[.-][0-9A-Za-z]+)*)?$", "maxLength": 64 },
+    "textsFile": { "const": "texts.json" },
+    "textsSha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
     "files": {
       "type": "array",
       "items": {
@@ -40,6 +42,10 @@
       }
     }
   },
+  "anyOf": [
+    { "required": ["textsFile", "textsSha256"] },
+    { "required": ["files"] }
+  ],
   "$defs": {
     "localized": {
       "oneOf": [

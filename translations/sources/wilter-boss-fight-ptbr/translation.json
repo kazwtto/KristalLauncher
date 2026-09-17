@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "wilter-boss-fight.pt-br",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "Wilter Boss Fight em Português (Brasil)",
+    "en": "Wilter Boss Fight in Brazilian Portuguese",
+    "es": "Wilter Boss Fight en portugués de Brasil"
+  },
+  "description": {
+    "pt-BR": "Tradução comunitária dos textos de Wilter Boss Fight para português do Brasil.",
+    "en": "Community translation of Wilter Boss Fight text into Brazilian Portuguese.",
+    "es": "Traducción comunitaria de los textos de Wilter Boss Fight al portugués de Brasil."
+  },
+  "author": "kazwtto",
+  "gameProjectId": "wilter_boss_fight",
+  "gameVersion": "v1.0.1",
+  "sourceLanguage": "en",
+  "targetLanguage": "pt-BR",
+  "minimumLauncherVersion": "0.17.48",
+  "textsFile": "texts.json",
+  "textsSha256": "cb38d71d56b6fb2d6fc642a05bbb278507b061c7f4dacdc201ee48af4e325eb4"
+}

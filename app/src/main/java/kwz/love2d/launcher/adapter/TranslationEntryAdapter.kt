@@ -7,12 +7,20 @@ import androidx.recyclerview.widget.RecyclerView
 import kwz.love2d.launcher.R
 import kwz.love2d.launcher.model.TranslationEntry
 
+enum class TranslationCompletionFilter {
+    ALL,
+    PENDING,
+    TRANSLATED
+}
+
 class TranslationEntryAdapter(
     private val onClick: (TranslationEntry) -> Unit
 ) : RecyclerView.Adapter<TranslationEntryAdapter.ViewHolder>() {
 
     private var allEntries: List<TranslationEntry> = emptyList()
     private var query: String = ""
+    private var kind: String? = null
+    private var completion = TranslationCompletionFilter.ALL
     private var displayedEntries: List<TranslationEntry> = emptyList()
 
     fun submit(entries: List<TranslationEntry>) {
@@ -25,11 +33,34 @@ class TranslationEntryAdapter(
         applyFilter()
     }
 
+    fun filterKind(value: String?) {
+        kind = value
+        applyFilter()
+    }
+
+    fun filterCompletion(value: TranslationCompletionFilter) {
+        completion = value
+        applyFilter()
+    }
+
+    fun availableKinds(): List<String> = allEntries.map(TranslationEntry::kind)
+        .filter(String::isNotBlank)
+        .distinct()
+        .sorted()
+
     private fun applyFilter() {
-        displayedEntries = if (query.isBlank()) allEntries else allEntries.filter {
-            it.sourceText.contains(query, ignoreCase = true) ||
-                it.translatedText.contains(query, ignoreCase = true) ||
-                it.filePath.contains(query, ignoreCase = true)
+        displayedEntries = allEntries.filter { entry ->
+            val matchesQuery = query.isBlank() ||
+                entry.sourceText.contains(query, ignoreCase = true) ||
+                entry.translatedText.contains(query, ignoreCase = true) ||
+                entry.filePath.contains(query, ignoreCase = true)
+            val matchesKind = kind == null || entry.kind == kind
+            val matchesCompletion = when (completion) {
+                TranslationCompletionFilter.ALL -> true
+                TranslationCompletionFilter.PENDING -> entry.translatedText.isBlank()
+                TranslationCompletionFilter.TRANSLATED -> entry.translatedText.isNotBlank()
+            }
+            matchesQuery && matchesKind && matchesCompletion
         }
         notifyDataSetChanged()
     }

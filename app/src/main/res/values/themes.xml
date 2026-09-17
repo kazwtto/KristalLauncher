@@ -36,6 +36,7 @@
         <item name="kristalPatchCardColor">@color/m3_surface_variant</item>
         <item name="kristalSegmentedButtonUncheckedColor">@color/m3_surface</item>
         <item name="kristalIconArrowBack">@drawable/ic_arrow_back</item>
+        <item name="kristalIconAdd">@drawable/ic_add</item>
         <item name="kristalIconChevronRight">@drawable/ic_chevron_right</item>
         <item name="kristalIconClose">@drawable/ic_close</item>
         <item name="kristalIconDarkMode">@drawable/ic_dark_mode</item>
@@ -49,6 +50,10 @@
         <item name="kristalIconHeart">@drawable/ic_heart_pixel</item>
         <item name="kristalIconHelp">@drawable/ic_help_outline</item>
         <item name="kristalIconHistory">@drawable/ic_history</item>
+        <item name="kristalIconImport">@drawable/ic_file_download</item>
+        <item name="kristalIconExport">@drawable/ic_file_upload</item>
+        <item name="kristalIconOpenExternal">@drawable/ic_open_in_new</item>
+        <item name="kristalIconWarning">@drawable/ic_warning</item>
         <item name="kristalIconLanguage">@drawable/ic_language</item>
         <item name="kristalIconLightMode">@drawable/ic_light_mode</item>
         <item name="kristalIconMore">@drawable/ic_more_vert</item>
@@ -113,6 +118,7 @@
         <item name="kristalCorner24">0dp</item>
         <item name="kristalPrimaryContent">#FFFFFF</item>
         <item name="kristalIconArrowBack">@drawable/pixel_arrow_left</item>
+        <item name="kristalIconAdd">@drawable/pixel_add</item>
         <item name="kristalIconChevronRight">@drawable/pixel_chevron_right</item>
         <item name="kristalIconClose">@drawable/pixel_close</item>
         <item name="kristalIconDarkMode">@drawable/pixel_moon</item>
@@ -126,6 +132,10 @@
         <item name="kristalIconHeart">@drawable/pixel_heart</item>
         <item name="kristalIconHelp">@drawable/pixel_circle_question</item>
         <item name="kristalIconHistory">@drawable/pixel_clock</item>
+        <item name="kristalIconImport">@drawable/pixel_file_download</item>
+        <item name="kristalIconExport">@drawable/pixel_file_upload</item>
+        <item name="kristalIconOpenExternal">@drawable/pixel_open_in_new</item>
+        <item name="kristalIconWarning">@drawable/pixel_warning</item>
         <item name="kristalIconLanguage">@drawable/pixel_globe</item>
         <item name="kristalIconLightMode">@drawable/pixel_sun</item>
         <item name="kristalIconMore">@drawable/pixel_more_vertical</item>

@@ -192,7 +192,8 @@
                         android:layout_height="wrap_content"
                         android:text="@string/game_patches_dialog_summary"
                         android:textColor="?attr/colorOnSurfaceVariant"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tvDetailsPatchesEmpty"
@@ -208,7 +209,6 @@
                         android:id="@+id/rvDetailsPatches"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_marginTop="12dp"
                         android:layout_weight="1"
                         android:clipToPadding="false"
                         android:nestedScrollingEnabled="false"
@@ -227,13 +227,13 @@
                         android:layout_height="wrap_content"
                         android:text="@string/community_languages_summary"
                         android:textColor="?attr/colorOnSurfaceVariant"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:visibility="gone" />
 
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardOriginalLanguage"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
-                        android:layout_marginTop="8dp"
                         android:checkable="true"
                         android:clickable="true"
                         android:focusable="true"
@@ -285,12 +285,33 @@
                         android:layout_marginVertical="8dp"
                         android:visibility="gone" />
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnCreateTranslation"
-                        style="@style/Widget.Material3.Button.OutlinedButton"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
-                        android:text="@string/translation_create" />
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnImportTranslation"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="6dp"
+                            android:layout_weight="1"
+                            android:text="@string/translation_import"
+                            app:icon="?attr/kristalIconImport"
+                            app:iconGravity="textStart" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCreateTranslation"
+                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="6dp"
+                            android:layout_weight="1"
+                            android:text="@string/translation_create_short"
+                            app:icon="?attr/kristalIconAdd"
+                            app:iconGravity="textStart" />
+                    </LinearLayout>
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>

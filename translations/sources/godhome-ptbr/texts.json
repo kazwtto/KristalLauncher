@@ -1,0 +1,3022 @@
+{
+  "42b2c7c9c3a8": {
+    "file": "scripts/battle/cutscenes/sistersofbattle.lua",
+    "fileHash": "de98e3a3befcfe45b3c0a2d3937eb05fb8bc1977cb7d500d15a34d938f8e8b71",
+    "startOffset": 834,
+    "endOffset": 893,
+    "source": "* The Sisters of Battle team up to\ntest your full might.",
+    "translation": "* As Irmãs da Batalha se unem para\ntestar todo o seu poder.",
+    "originalExpression": "\"* The Sisters of Battle team up to\\ntest your full might.\"",
+    "replacementExpression": "\"* As Irmãs da Batalha se unem para\\ntestar todo o seu poder.\""
+  },
+  "aca88a0b7bba": {
+    "file": "scripts/battle/cutscenes/wingednosktransform.lua",
+    "fileHash": "965d51cf4801c4c4f7c3258d41d4ba2a01525cdd3367029896ef5ac5f23ab2c0",
+    "startOffset": 1739,
+    "endOffset": 1774,
+    "source": "* You've fallen into Nosk's trap.",
+    "translation": "* Você caiu na armadilha do Nosk.",
+    "originalExpression": "\"* You've fallen into Nosk's trap.\"",
+    "replacementExpression": "\"* Você caiu na armadilha do Nosk.\""
+  },
+  "d4d998780a14": {
+    "file": "scripts/battle/cutscenes/wingednosktransform.lua",
+    "fileHash": "965d51cf4801c4c4f7c3258d41d4ba2a01525cdd3367029896ef5ac5f23ab2c0",
+    "startOffset": 1866,
+    "endOffset": 1901,
+    "source": "* You've fallen into Nosk's trap.",
+    "translation": "* Você caiu na armadilha do Nosk.",
+    "originalExpression": "\"* You've fallen into Nosk's trap.\"",
+    "replacementExpression": "\"* Você caiu na armadilha do Nosk.\""
+  },
+  "0a9b996730b2": {
+    "file": "scripts/battle/encounters/ordeal.lua",
+    "fileHash": "c6e2b5dc61c0823c3d5fc9ab1a6be357f602f464abf288527581b2040203da57",
+    "startOffset": 263,
+    "endOffset": 297,
+    "source": "* you did it\n* the ordeal ended",
+    "translation": "* você conseguiu\n* a provação terminou",
+    "originalExpression": "\"* you did it\\n* the ordeal ended\"",
+    "replacementExpression": "\"* você conseguiu\\n* a provação terminou\""
+  },
+  "f06ee1d16f73": {
+    "file": "scripts/battle/encounters/p1/broodingmawlek.lua",
+    "fileHash": "3ba987b397f0d4f2912611afb572bf3baff2afa81b45183e39e234ba5d4c556e",
+    "startOffset": 207,
+    "endOffset": 245,
+    "source": "* Brooding Mawlek leaps towards you.",
+    "translation": "* Mawlek Incubador salta em sua direção.",
+    "originalExpression": "\"* Brooding Mawlek leaps towards you.\"",
+    "replacementExpression": "\"* Mawlek Incubador salta em sua direção.\""
+  },
+  "2821dc5a5f0a": {
+    "file": "scripts/battle/encounters/p1/dungdefender.lua",
+    "fileHash": "1ed29e82f27b22c830582ff2960119508c0d8dfee461be90ca4bc31bedb2277b",
+    "startOffset": 185,
+    "endOffset": 212,
+    "source": "* The ground bursts open!",
+    "translation": "* O chão explode se abrindo!",
+    "originalExpression": "\"* The ground bursts open!\"",
+    "replacementExpression": "\"* O chão explode se abrindo!\""
+  },
+  "64689efa3d5e": {
+    "file": "scripts/battle/encounters/p1/falseknight.lua",
+    "fileHash": "5fd4d48a4eff7679533c4f9364015884b76b3995014425ea57eacda065012620",
+    "startOffset": 198,
+    "endOffset": 226,
+    "source": "* The ceiling breaks open!",
+    "translation": "* O teto se quebra se abrindo!",
+    "originalExpression": "\"* The ceiling breaks open!\"",
+    "replacementExpression": "\"* O teto se quebra se abrindo!\""
+  },
+  "a52905db04a6": {
+    "file": "scripts/battle/encounters/p1/gorb.lua",
+    "fileHash": "fbcddc785c3c58f9076d61025543e3bd1b253afda3b4ef1d4795990dd637adee",
+    "startOffset": 177,
+    "endOffset": 206,
+    "source": "* Ascend! Ascend with Gorb!",
+    "translation": "* Ascenda! Ascenda com Gorb!",
+    "originalExpression": "\"* Ascend! Ascend with Gorb!\"",
+    "replacementExpression": "\"* Ascenda! Ascenda com Gorb!\""
+  },
+  "a90b0e5f6573": {
+    "file": "scripts/battle/encounters/p1/gruzmother.lua",
+    "fileHash": "cce6c9abb24a41d235facffa625910bdf6624e8d29c69c762d48e4cd94613a83",
+    "startOffset": 195,
+    "endOffset": 233,
+    "source": "* Gruz Mother wakes up from her nap!",
+    "translation": "* Mãe Gruz acorda do seu cochilo!",
+    "originalExpression": "\"* Gruz Mother wakes up from her nap!\"",
+    "replacementExpression": "\"* Mãe Gruz acorda do seu cochilo!\""
+  },
+  "8ca37a474077": {
+    "file": "scripts/battle/encounters/p1/hornet.lua",
+    "fileHash": "a88831cc47c54fd97caa3eb46112bffb31dec56327d837f4ed1475f6d7122fab",
+    "startOffset": 183,
+    "endOffset": 231,
+    "source": "* The Protector of Hallownest\nchallenges you.",
+    "translation": "* A Protetora de Hallownest\ndesafia você.",
+    "originalExpression": "\"* The Protector of Hallownest\\nchallenges you.\"",
+    "replacementExpression": "\"* A Protetora de Hallownest\\ndesafia você.\""
+  },
+  "0c0b1dbe8b58": {
+    "file": "scripts/battle/encounters/p1/mosscharger.lua",
+    "fileHash": "295ebada5960a18c1475aa2e82913a28391b0e2dcd91900193cb379f58584aca",
+    "startOffset": 186,
+    "endOffset": 218,
+    "source": "* A nearby bush jumps to life!",
+    "translation": "* Um arbusto próximo ganha vida!",
+    "originalExpression": "\"* A nearby bush jumps to life!\"",
+    "replacementExpression": "\"* Um arbusto próximo ganha vida!\""
+  },
+  "b9f564b9ed60": {
+    "file": "scripts/battle/encounters/p1/nailmasters.lua",
+    "fileHash": "8e9af7fee0501293e369c015f78a06d95b2dc22f4256678dcd7910c083da2cb7",
+    "startOffset": 215,
+    "endOffset": 249,
+    "source": "* The Nailmaster challenges you.",
+    "translation": "* O Mestre do Ferrão desafia você.",
+    "originalExpression": "\"* The Nailmaster challenges you.\"",
+    "replacementExpression": "\"* O Mestre do Ferrão desafia você.\""
+  },
+  "34612e720008": {
+    "file": "scripts/battle/encounters/p1/nailmasters.lua",
+    "fileHash": "8e9af7fee0501293e369c015f78a06d95b2dc22f4256678dcd7910c083da2cb7",
+    "startOffset": 756,
+    "endOffset": 798,
+    "source": "* Oro and Mato reluctantly join\nforces!",
+    "translation": "* Oro e Mato unem forças\nrelutantemente!",
+    "originalExpression": "\"* Oro and Mato reluctantly join\\nforces!\"",
+    "replacementExpression": "\"* Oro e Mato unem forças\\nrelutantemente!\""
+  },
+  "214d2aaec729": {
+    "file": "scripts/battle/encounters/p1/nailmasters.lua",
+    "fileHash": "8e9af7fee0501293e369c015f78a06d95b2dc22f4256678dcd7910c083da2cb7",
+    "startOffset": 1012,
+    "endOffset": 1047,
+    "source": "Oro and Mato glare at each other.",
+    "translation": "Oro e Mato se encaram.",
+    "originalExpression": "\"Oro and Mato glare at each other.\"",
+    "replacementExpression": "\"Oro e Mato se encaram.\""
+  },
+  "1f0f162a4982": {
+    "file": "scripts/battle/encounters/p1/soulwarrior.lua",
+    "fileHash": "a25373fe0cd70c50de372aa3d93822723d48177be537addd491baad99569f1ae",
+    "startOffset": 198,
+    "endOffset": 237,
+    "source": "* The Sanctum's warrior teleports in.",
+    "translation": "* O guerreiro do Santuário se teletransporta.",
+    "originalExpression": "\"* The Sanctum's warrior teleports in.\"",
+    "replacementExpression": "\"* O guerreiro do Santuário se teletransporta.\""
+  },
+  "31beccc5c4fe": {
+    "file": "scripts/battle/encounters/p1/vengeflyking.lua",
+    "fileHash": "65a2726fa2d0e133002b4cab7420049a445f9464468fc149e5fe8033a60645fd",
+    "startOffset": 201,
+    "endOffset": 233,
+    "source": "* The Vengefly King swoops in!",
+    "translation": "* O Rei Vengemosca adentra a batalha!",
+    "originalExpression": "\"* The Vengefly King swoops in!\"",
+    "replacementExpression": "\"* O Rei Vengemosca adentra a batalha!\""
+  },
+  "71dbd11b0166": {
+    "file": "scripts/battle/encounters/p1/vengeflyking_asc.lua",
+    "fileHash": "edaa0c7e86667af626b10305df997ca638fe9e9afd740e3587ce74e01e084b77",
+    "startOffset": 278,
+    "endOffset": 310,
+    "source": "* Vengefly Kings surround you!",
+    "translation": "* Reis Vengemoscas te cercam!",
+    "originalExpression": "\"* Vengefly Kings surround you!\"",
+    "replacementExpression": "\"* Reis Vengemoscas te cercam!\""
+  },
+  "56d0a0f78e3f": {
+    "file": "scripts/battle/encounters/p2/brokenvessel.lua",
+    "fileHash": "efdddef0643206cc944ff2d9593d6fb726a718cb1228d9b772cdc23515f89408",
+    "startOffset": 201,
+    "endOffset": 237,
+    "source": "* The Broken Vessel comes to life.",
+    "translation": "* O Receptáculo Quebrado ganha vida.",
+    "originalExpression": "\"* The Broken Vessel comes to life.\"",
+    "replacementExpression": "\"* O Receptáculo Quebrado ganha vida.\""
+  },
+  "fea827c580b4": {
+    "file": "scripts/battle/encounters/p2/crystalguardian.lua",
+    "fileHash": "c1ae875d313f0a3ede8c246e445a95c0de633e7bd3feedd4d7880825f7f256b6",
+    "startOffset": 196,
+    "endOffset": 230,
+    "source": "* The Crystal Guardian wakes up!",
+    "translation": "* O Guardião de Cristal acorda!",
+    "originalExpression": "\"* The Crystal Guardian wakes up!\"",
+    "replacementExpression": "\"* O Guardião de Cristal acorda!\""
+  },
+  "b7a6dea927c8": {
+    "file": "scripts/battle/encounters/p2/flukemarm.lua",
+    "fileHash": "b38c6b5d0def9da3fdc87092722f28699bf357917ef558009729eafec8aaf35a",
+    "startOffset": 192,
+    "endOffset": 225,
+    "source": "* The Mother of flukes attacks!",
+    "translation": "* A Mãe das vermes ataca!",
+    "originalExpression": "\"* The Mother of flukes attacks!\"",
+    "replacementExpression": "\"* A Mãe das vermes ataca!\""
+  },
+  "26cb9687d0ee": {
+    "file": "scripts/battle/encounters/p2/mantislords.lua",
+    "fileHash": "6b803369d14e1add058420adbeb22edc28bba1a916631e0ff61b4687e4869d4b",
+    "startOffset": 433,
+    "endOffset": 468,
+    "source": "* You challenge the Mantis Lords.",
+    "translation": "* Você desafia os Lordes Louva-a-Deus.",
+    "originalExpression": "\"* You challenge the Mantis Lords.\"",
+    "replacementExpression": "\"* Você desafia os Lordes Louva-a-Deus.\""
+  },
+  "c1d56062fa11": {
+    "file": "scripts/battle/encounters/p2/mantislords.lua",
+    "fileHash": "6b803369d14e1add058420adbeb22edc28bba1a916631e0ff61b4687e4869d4b",
+    "startOffset": 1389,
+    "endOffset": 1460,
+    "source": "* The audience can't see what's\ngoing on, but assumes you're losing.",
+    "translation": "* A plateia não consegue ver o que está\nacontecendo, mas assume que você está perdendo.",
+    "originalExpression": "\"* The audience can't see what's\\ngoing on, but assumes you're losing.\"",
+    "replacementExpression": "\"* A plateia não consegue ver o que está\\nacontecendo, mas assume que você está perdendo.\""
+  },
+  "ec61f40ac63a": {
+    "file": "scripts/battle/encounters/p2/mantislords.lua",
+    "fileHash": "6b803369d14e1add058420adbeb22edc28bba1a916631e0ff61b4687e4869d4b",
+    "startOffset": 1475,
+    "endOffset": 1530,
+    "source": "* The sisters sharpen their lances\nwith their claws.",
+    "translation": "* As irmãs afiam suas lanças\ncom suas garras.",
+    "originalExpression": "\"* The sisters sharpen their lances\\nwith their claws.\"",
+    "replacementExpression": "\"* As irmãs afiam suas lanças\\ncom suas garras.\""
+  },
+  "a9a2c9bf6320": {
+    "file": "scripts/battle/encounters/p2/mantislords.lua",
+    "fileHash": "6b803369d14e1add058420adbeb22edc28bba1a916631e0ff61b4687e4869d4b",
+    "startOffset": 1545,
+    "endOffset": 1591,
+    "source": "* Mantis children watch their lords\nin awe.",
+    "translation": "* Crianças louva-a-deus observam seus lordes\ncom admiração.",
+    "originalExpression": "\"* Mantis children watch their lords\\nin awe.\"",
+    "replacementExpression": "\"* Crianças louva-a-deus observam seus lordes\\ncom admiração.\""
+  },
+  "b989d4b1d899": {
+    "file": "scripts/battle/encounters/p2/marmu.lua",
+    "fileHash": "0e4c2f0ab551d8999f507fbdd1930a43137451ac39d2fdb3f604eafe5521aac0",
+    "startOffset": 180,
+    "endOffset": 213,
+    "source": "* Marmu eagerly plays with you!",
+    "translation": "* Marmu brinca animada com você!",
+    "originalExpression": "\"* Marmu eagerly plays with you!\"",
+    "replacementExpression": "\"* Marmu brinca animada com você!\""
+  },
+  "8c08c8b96c37": {
+    "file": "scripts/battle/encounters/p2/nosk.lua",
+    "fileHash": "18704d39999893a5726a73ba89b3b6980650d144010b9c92e56f3ff4c7884932",
+    "startOffset": 177,
+    "endOffset": 209,
+    "source": "* Nosk traps you in its arena!",
+    "translation": "* Nosk te prende em sua arena!",
+    "originalExpression": "\"* Nosk traps you in its arena!\"",
+    "replacementExpression": "\"* Nosk te prende em sua arena!\""
+  },
+  "268885dbfab1": {
+    "file": "scripts/battle/encounters/p2/oblobbles.lua",
+    "fileHash": "49cd5940a4be4f6f194e198434a32c1a289d2762c32e88639af71a34b308892c",
+    "startOffset": 258,
+    "endOffset": 288,
+    "source": "* Oblobbles enter the arena!",
+    "translation": "* Os Oblobbles entram na arena!",
+    "originalExpression": "\"* Oblobbles enter the arena!\"",
+    "replacementExpression": "\"* Os Oblobbles entram na arena!\""
+  },
+  "6df2dc41ab65": {
+    "file": "scripts/battle/encounters/p2/oblobbles.lua",
+    "fileHash": "49cd5940a4be4f6f194e198434a32c1a289d2762c32e88639af71a34b308892c",
+    "startOffset": 720,
+    "endOffset": 757,
+    "source": "* The audience roars with applause.",
+    "translation": "* A plateia aplaude estrondosamente.",
+    "originalExpression": "\"* The audience roars with applause.\"",
+    "replacementExpression": "\"* A plateia aplaude estrondosamente.\""
+  },
+  "3e3dd5ba66fd": {
+    "file": "scripts/battle/encounters/p2/oblobbles.lua",
+    "fileHash": "49cd5940a4be4f6f194e198434a32c1a289d2762c32e88639af71a34b308892c",
+    "startOffset": 768,
+    "endOffset": 802,
+    "source": "* Chains stretch to the ceiling.",
+    "translation": "* Correntes se estendem até o teto.",
+    "originalExpression": "\"* Chains stretch to the ceiling.\"",
+    "replacementExpression": "\"* Correntes se estendem até o teto.\""
+  },
+  "141a2a035a7b": {
+    "file": "scripts/battle/encounters/p2/oblobbles.lua",
+    "fileHash": "49cd5940a4be4f6f194e198434a32c1a289d2762c32e88639af71a34b308892c",
+    "startOffset": 813,
+    "endOffset": 856,
+    "source": "* The Oblobbles are forced to fight\nyou.",
+    "translation": "* Os Oblobbles são forçados a lutar\ncontra você.",
+    "originalExpression": "\"* The Oblobbles are forced to fight\\nyou.\"",
+    "replacementExpression": "\"* Os Oblobbles são forçados a lutar\\ncontra você.\""
+  },
+  "9b980970cf91": {
+    "file": "scripts/battle/encounters/p2/oblobbles.lua",
+    "fileHash": "49cd5940a4be4f6f194e198434a32c1a289d2762c32e88639af71a34b308892c",
+    "startOffset": 947,
+    "endOffset": 984,
+    "source": "* The Oblobbles look at each other.",
+    "translation": "* Os Oblobbles se olham.",
+    "originalExpression": "\"* The Oblobbles look at each other.\"",
+    "replacementExpression": "\"* Os Oblobbles se olham.\""
+  },
+  "11a1251a26c4": {
+    "file": "scripts/battle/encounters/p2/oblobbles.lua",
+    "fileHash": "49cd5940a4be4f6f194e198434a32c1a289d2762c32e88639af71a34b308892c",
+    "startOffset": 1051,
+    "endOffset": 1083,
+    "source": "* The Oblobble is in a frenzy.",
+    "translation": "* O Oblobble está em frenesi.",
+    "originalExpression": "\"* The Oblobble is in a frenzy.\"",
+    "replacementExpression": "\"* O Oblobble está em frenesi.\""
+  },
+  "ea2ab57a27c5": {
+    "file": "scripts/battle/encounters/p2/oblobbles.lua",
+    "fileHash": "49cd5940a4be4f6f194e198434a32c1a289d2762c32e88639af71a34b308892c",
+    "startOffset": 1098,
+    "endOffset": 1134,
+    "source": "* The Oblobble has lost its faith.",
+    "translation": "* O Oblobble perdeu sua fé.",
+    "originalExpression": "\"* The Oblobble has lost its faith.\"",
+    "replacementExpression": "\"* O Oblobble perdeu sua fé.\""
+  },
+  "cbb9a5ba6d63": {
+    "file": "scripts/battle/encounters/p2/oblobbles.lua",
+    "fileHash": "49cd5940a4be4f6f194e198434a32c1a289d2762c32e88639af71a34b308892c",
+    "startOffset": 1219,
+    "endOffset": 1290,
+    "source": "* This bug is [color:yellow]pissing[color:reset] the Oblobble\noff...",
+    "translation": "* Esse inseto está [color:yellow]deixando[color:reset]\no Oblobble puto...",
+    "originalExpression": "\"* This bug is [color:yellow]pissing[color:reset] the Oblobble\\noff...\"",
+    "replacementExpression": "\"* Esse inseto está [color:yellow]deixando[color:reset]\\no Oblobble puto...\""
+  },
+  "4810abd4a83d": {
+    "file": "scripts/battle/encounters/p2/sheo.lua",
+    "fileHash": "8252864d1ec5f3df1a7a3bef6b7929936bdb26c9efa4193c5fdf5eb947f2d876",
+    "startOffset": 191,
+    "endOffset": 246,
+    "source": "* Sheo takes a break from painting\nto challenge you!",
+    "translation": "* Sheo faz uma pausa na pintura\npara te desafiar!",
+    "originalExpression": "\"* Sheo takes a break from painting\\nto challenge you!\"",
+    "replacementExpression": "\"* Sheo faz uma pausa na pintura\\npara te desafiar!\""
+  },
+  "e2354a936807": {
+    "file": "scripts/battle/encounters/p2/soulmaster.lua",
+    "fileHash": "ef101b82778c5b7f502b81d1b2cf64f69b25c8067b7806da11ddf163c9bba7f0",
+    "startOffset": 195,
+    "endOffset": 238,
+    "source": "* The ruler of the Sanctum ambushes\nyou!",
+    "translation": "* O governante do Santuário embosca\nvocê!",
+    "originalExpression": "\"* The ruler of the Sanctum ambushes\\nyou!\"",
+    "replacementExpression": "\"* O governante do Santuário embosca\\nvocê!\""
+  },
+  "a55f4c1fc369": {
+    "file": "scripts/battle/encounters/p2/xero.lua",
+    "fileHash": "efe711c540c9d65a02e4e92a22492726ef4b8801501700e3335280df7862f26d",
+    "startOffset": 177,
+    "endOffset": 203,
+    "source": "* Here lies the traitor.",
+    "translation": "* Aqui jaz o traidor.",
+    "originalExpression": "\"* Here lies the traitor.\"",
+    "replacementExpression": "\"* Aqui jaz o traidor.\""
+  },
+  "379b600300f6": {
+    "file": "scripts/battle/encounters/p3/collector.lua",
+    "fileHash": "649b3071c1aa1e58126bb036f55aba27a178c2c53adaf33249e9e11411d7f3a4",
+    "startOffset": 192,
+    "endOffset": 230,
+    "source": "* The Collector jumps on top of you!",
+    "translation": "* O Colecionador salta sobre você!",
+    "originalExpression": "\"* The Collector jumps on top of you!\"",
+    "replacementExpression": "\"* O Colecionador salta sobre você!\""
+  },
+  "599db4af4166": {
+    "file": "scripts/battle/encounters/p3/elderhu.lua",
+    "fileHash": "8135088be4a859d8ef6ddfebac146e5f66020f03fef95d65a75182c5f6237060",
+    "startOffset": 182,
+    "endOffset": 238,
+    "source": "* The Elder challenges the mantises!\n... oh, and you.",
+    "translation": "* O Ancião desafia os louva-a-deus!\n... ah, e você também.",
+    "originalExpression": "\"* The Elder challenges the mantises!\\n... oh, and you.\"",
+    "replacementExpression": "\"* O Ancião desafia os louva-a-deus!\\n... ah, e você também.\""
+  },
+  "2ceba07d772c": {
+    "file": "scripts/battle/encounters/p3/galien.lua",
+    "fileHash": "24fe732607bf98c57b1bcd3cb2a8edf3baf6876dadb8f53e9369908da5a14aad",
+    "startOffset": 183,
+    "endOffset": 222,
+    "source": "* Galien challenges a fellow warrior!",
+    "translation": "* Galien desafia um colega guerreiro!",
+    "originalExpression": "\"* Galien challenges a fellow warrior!\"",
+    "replacementExpression": "\"* Galien desafia um colega guerreiro!\""
+  },
+  "65e1fb949db1": {
+    "file": "scripts/battle/encounters/p3/godtamer.lua",
+    "fileHash": "6844bf79ee0444a0bffc7feab3d1f166be36e5a04281800224a26dec173b2b2c",
+    "startOffset": 230,
+    "endOffset": 277,
+    "source": "* The God Tamer and her beast\nchallenge you!",
+    "translation": "* A Domadora de Deuses e sua fera\ndesafiam você!",
+    "originalExpression": "\"* The God Tamer and her beast\\nchallenge you!\"",
+    "replacementExpression": "\"* A Domadora de Deuses e sua fera\\ndesafiam você!\""
+  },
+  "d4c25924cb70": {
+    "file": "scripts/battle/encounters/p3/greyprince.lua",
+    "fileHash": "d6c77cd370e06cf0b53565e7623b81057b6661698e6d52698b1b74b8fa90fccb",
+    "startOffset": 195,
+    "endOffset": 383,
+    "source": "* The Terrifying, Beautiful, Powerful,\nGorgeous, Passionate, Diligent,\nOverwhelming, Vigorous, Enchanting,\nMysterious, Sensual, Fearless,\nInvincible Grey Prince Zote\nchallenges you!",
+    "translation": "* O Aterrorizante, Belo, Poderoso,\nDeslumbrante, Apaixonado, Diligente,\nAvassalador, Vigoroso, Encantador,\nMisterioso, Sensual, Destemido,\nInvencível Príncipe Cinza Zote\ndesafia você!",
+    "originalExpression": "\"* The Terrifying, Beautiful, Powerful,\\nGorgeous, Passionate, Diligent,\\nOverwhelming, Vigorous, Enchanting,\\nMysterious, Sensual, Fearless,\\nInvincible Grey Prince Zote\\nchallenges you!\"",
+    "replacementExpression": "\"* O Aterrorizante, Belo, Poderoso,\\nDeslumbrante, Apaixonado, Diligente,\\nAvassalador, Vigoroso, Encantador,\\nMisterioso, Sensual, Destemido,\\nInvencível Príncipe Cinza Zote\\ndesafia você!\""
+  },
+  "f56d7bc8e838": {
+    "file": "scripts/battle/encounters/p3/grimm.lua",
+    "fileHash": "8c08c15270b6d6c5e4275e3cdb1d50b6edee27bb9cd7744f0327bd4beaaf01cf",
+    "startOffset": 223,
+    "endOffset": 265,
+    "source": "* Grimm takes a bow and challenges\nyou!",
+    "translation": "* Grimm faz uma reverência e desafia\nvocê!",
+    "originalExpression": "\"* Grimm takes a bow and challenges\\nyou!\"",
+    "replacementExpression": "\"* Grimm faz uma reverência e desafia\\nvocê!\""
+  },
+  "827ba229592b": {
+    "file": "scripts/battle/encounters/p3/hiveknight.lua",
+    "fileHash": "2a63277bb02c89e12dd17cc470f960b4de77679098e12c53adab8ccaf66d400a",
+    "startOffset": 195,
+    "endOffset": 239,
+    "source": "* Hive Knight comes to protect his\nqueen!",
+    "translation": "* O Cavaleiro da Colmeia vem proteger\nsua rainha!",
+    "originalExpression": "\"* Hive Knight comes to protect his\\nqueen!\"",
+    "replacementExpression": "\"* O Cavaleiro da Colmeia vem proteger\\nsua rainha!\""
+  },
+  "5889cc947452": {
+    "file": "scripts/battle/encounters/p3/hornet2.lua",
+    "fileHash": "3f0a15fdff20072853f1c13da13ded20ad2ec7c00f71751e01e8d2ab85759e9a",
+    "startOffset": 184,
+    "endOffset": 236,
+    "source": "* The Sentinel of Hallownest tests\nyou once more.",
+    "translation": "* A Sentinela de Hallownest te testa\nmais uma vez.",
+    "originalExpression": "\"* The Sentinel of Hallownest tests\\nyou once more.\"",
+    "replacementExpression": "\"* A Sentinela de Hallownest te testa\\nmais uma vez.\""
+  },
+  "768e817a9186": {
+    "file": "scripts/battle/encounters/p3/sly.lua",
+    "fileHash": "ee41730fe8d78f9b239eb1771d26bda837dfa528a81a4a59001bfc580f65f535",
+    "startOffset": 184,
+    "endOffset": 238,
+    "source": "* The final Nailmaster is honored to\nchallenge you!",
+    "translation": "* O último Mestre do Ferrão tem a honra\nde te desafiar!",
+    "originalExpression": "\"* The final Nailmaster is honored to\\nchallenge you!\"",
+    "replacementExpression": "\"* O último Mestre do Ferrão tem a honra\\nde te desafiar!\""
+  },
+  "e48bcbb81e3d": {
+    "file": "scripts/battle/encounters/p3/uumuu.lua",
+    "fileHash": "dd3ae8716abef47f592299ec85ce78c015983ec17e6d0400e6a29f5f26460e04",
+    "startOffset": 180,
+    "endOffset": 215,
+    "source": "* Monomon's creation defends her!",
+    "translation": "* A criação de Monomon a defende!",
+    "originalExpression": "\"* Monomon's creation defends her!\"",
+    "replacementExpression": "\"* A criação de Monomon a defende!\""
+  },
+  "b284d8ef079c": {
+    "file": "scripts/battle/encounters/p4/enragedguardian.lua",
+    "fileHash": "5633bd3a1287b20b4e4855d8558bda87c9a1095ad3a74d5ef04a8b834b0d330e",
+    "startOffset": 196,
+    "endOffset": 228,
+    "source": "* The Crystal Guardian is angy",
+    "translation": "* O Guardião de Cristal está bravo",
+    "originalExpression": "\"* The Crystal Guardian is angy\"",
+    "replacementExpression": "\"* O Guardião de Cristal está bravo\""
+  },
+  "76fbb715f146": {
+    "file": "scripts/battle/encounters/p4/failedchamp.lua",
+    "fileHash": "cc22eb878d75a505103b7b5067ffab17689ba83e96d3aaca08fb79b065689120",
+    "startOffset": 198,
+    "endOffset": 226,
+    "source": "* The ceiling breaks open!",
+    "translation": "* O teto se quebra se abrindo!",
+    "originalExpression": "\"* The ceiling breaks open!\"",
+    "replacementExpression": "\"* O teto se quebra se abrindo!\""
+  },
+  "7eca41fb5043": {
+    "file": "scripts/battle/encounters/p4/lostkin.lua",
+    "fileHash": "7e19fc8d5935196e4d6e9789b0e8e26ccb1c0e73df1732dca2a3d2346c736e0e",
+    "startOffset": 186,
+    "endOffset": 232,
+    "source": "* Lost Kin challenges you in the\nafterlife.",
+    "translation": "* Parente Perdido desafia você no\nalém-vida.",
+    "originalExpression": "\"* Lost Kin challenges you in the\\nafterlife.\"",
+    "replacementExpression": "\"* Parente Perdido desafia você no\\nalém-vida.\""
+  },
+  "1e4aae89b1c8": {
+    "file": "scripts/battle/encounters/p4/markoth.lua",
+    "fileHash": "c5d2e06c3c7d5daf1b727150e0d8da814c4ec04771964dbb92fec5354b92fa5b",
+    "startOffset": 186,
+    "endOffset": 231,
+    "source": "* The moth tribe's warrior challenges\nyou.",
+    "translation": "* O guerreiro da tribo das mariposas\ndesafia você.",
+    "originalExpression": "\"* The moth tribe's warrior challenges\\nyou.\"",
+    "replacementExpression": "\"* O guerreiro da tribo das mariposas\\ndesafia você.\""
+  },
+  "5c9f4899d245": {
+    "file": "scripts/battle/encounters/p4/noeyes.lua",
+    "fileHash": "1ceef706ca2109c99eab8d053e8b148cfb5e6a2c2885a8ae63b902307b765023",
+    "startOffset": 183,
+    "endOffset": 219,
+    "source": "* No Eyes tries to defend herself!",
+    "translation": "* Sem Olhos tenta se defender!",
+    "originalExpression": "\"* No Eyes tries to defend herself!\"",
+    "replacementExpression": "\"* Sem Olhos tenta se defender!\""
+  },
+  "dbf9ada7d427": {
+    "file": "scripts/battle/encounters/p4/purevessel.lua",
+    "fileHash": "e7e10425c57df905b892c027e6b58fe228fb30acc77eea6d500344b1a20bdc9f",
+    "startOffset": 195,
+    "endOffset": 240,
+    "source": "* The Hollow Knight is prepared to\nbattle.",
+    "translation": "* O Cavaleiro Vazio está preparado\npara a batalha.",
+    "originalExpression": "\"* The Hollow Knight is prepared to\\nbattle.\"",
+    "replacementExpression": "\"* O Cavaleiro Vazio está preparado\\npara a batalha.\""
+  },
+  "8d7d64b08ab2": {
+    "file": "scripts/battle/encounters/p4/soultyrant.lua",
+    "fileHash": "4c8e73f5e4ffe5c5b5b771eb069c09f997e062bd84321e0238f82cc60b507974",
+    "startOffset": 195,
+    "endOffset": 242,
+    "source": "* The commander of soul has been\nchallenged!",
+    "translation": "* O comandante das almas foi\ndesafiado!",
+    "originalExpression": "\"* The commander of soul has been\\nchallenged!\"",
+    "replacementExpression": "\"* O comandante das almas foi\\ndesafiado!\""
+  },
+  "bf755296f8ea": {
+    "file": "scripts/battle/encounters/p4/traitorlord.lua",
+    "fileHash": "6abafe4b6996962b959e18f096d691c30188c627bde76f8a51da855eae908324",
+    "startOffset": 198,
+    "endOffset": 245,
+    "source": "* Traitor Lord ambushes you in a\nblind fury!",
+    "translation": "* Lorde Traidor embosca você em uma\nfúria cega!",
+    "originalExpression": "\"* Traitor Lord ambushes you in a\\nblind fury!\"",
+    "replacementExpression": "\"* Lorde Traidor embosca você em uma\\nfúria cega!\""
+  },
+  "346a36d421cf": {
+    "file": "scripts/battle/encounters/p4/watcherknights.lua",
+    "fileHash": "27d49007ac214060f74143e9944bb2f3297e81072f24244ceb3ceba2ddc3cf31",
+    "startOffset": 523,
+    "endOffset": 566,
+    "source": "* The Watcher Knights all challenge\nyou!",
+    "translation": "* Todos os Cavaleiros Sentinelas\ndesafiam você!",
+    "originalExpression": "\"* The Watcher Knights all challenge\\nyou!\"",
+    "replacementExpression": "\"* Todos os Cavaleiros Sentinelas\\ndesafiam você!\""
+  },
+  "e67e0d35e1ce": {
+    "file": "scripts/battle/encounters/p4/whitedefender.lua",
+    "fileHash": "e3b9c93946b19afacf3480d1caa5f012697bb656fbaaba88f730d775d0477629",
+    "startOffset": 186,
+    "endOffset": 246,
+    "source": "* The White Defender bursts from the\nfloor for a rematch!",
+    "translation": "* O Defensor Branco irrompe do chão\npara uma revanche!",
+    "originalExpression": "\"* The White Defender bursts from the\\nfloor for a rematch!\"",
+    "replacementExpression": "\"* O Defensor Branco irrompe do chão\\npara uma revanche!\""
+  },
+  "670f980df3e6": {
+    "file": "scripts/battle/encounters/p5/kristalguardian.lua",
+    "fileHash": "eaf90356138b29b395245e99a3878d88e556e336bcd555100989eebbb227603e",
+    "startOffset": 196,
+    "endOffset": 221,
+    "source": "* LET THE GAMES BEGIN!?",
+    "translation": "* QUE OS JOGOS COMECEM!?",
+    "originalExpression": "\"* LET THE GAMES BEGIN!?\"",
+    "replacementExpression": "\"* QUE OS JOGOS COMECEM!?\""
+  },
+  "1281b39e2cae": {
+    "file": "scripts/battle/encounters/p5/nkg.lua",
+    "fileHash": "95cdd582fad03513d87a9302690c4c679a0a45321527e37a0c9f898b3fea501f",
+    "startOffset": 186,
+    "endOffset": 219,
+    "source": "* Burn away the Nightmare King.",
+    "translation": "* Queime o Rei do Pesadelo.",
+    "originalExpression": "\"* Burn away the Nightmare King.\"",
+    "replacementExpression": "\"* Queime o Rei do Pesadelo.\""
+  },
+  "f524da7c597a": {
+    "file": "scripts/battle/encounters/p5/radiance.lua",
+    "fileHash": "70bfc9e11a90c8ddb83e472f0ab070f94f31637a299d1cd7a13bfa47ebdb6cc8",
+    "startOffset": 189,
+    "endOffset": 251,
+    "source": "* The Absolute Radiance, God of\nDreams, appears before you.",
+    "translation": "* A Radiância Absoluta, Deusa dos\nSonhos, surge diante de você.",
+    "originalExpression": "\"* The Absolute Radiance, God of\\nDreams, appears before you.\"",
+    "replacementExpression": "\"* A Radiância Absoluta, Deusa dos\\nSonhos, surge diante de você.\""
+  },
+  "ad8a519e542c": {
+    "file": "scripts/battle/encounters/p5/sisters.lua",
+    "fileHash": "eaf402d207064d63715c19b1c6710f0ac8e12339517b6546db363d0f12ed1fe0",
+    "startOffset": 501,
+    "endOffset": 536,
+    "source": "* You challenge the Mantis Lords.",
+    "translation": "* Você desafia os Lordes Louva-a-Deus.",
+    "originalExpression": "\"* You challenge the Mantis Lords.\"",
+    "replacementExpression": "\"* Você desafia os Lordes Louva-a-Deus.\""
+  },
+  "e71c05d8d5e0": {
+    "file": "scripts/battle/encounters/p5/sisters.lua",
+    "fileHash": "eaf402d207064d63715c19b1c6710f0ac8e12339517b6546db363d0f12ed1fe0",
+    "startOffset": 1490,
+    "endOffset": 1569,
+    "source": "* The audience can't see what's\ngoing on, but assumes it's very\nimpressive.",
+    "translation": "* A plateia não vê o que está\nacontecendo, mas presume que é\nimpressionante.",
+    "originalExpression": "\"* The audience can't see what's\\ngoing on, but assumes it's very\\nimpressive.\"",
+    "replacementExpression": "\"* A plateia não vê o que está\\nacontecendo, mas presume que é\\nimpressionante.\""
+  },
+  "2d9f6fc92871": {
+    "file": "scripts/battle/encounters/p5/sisters.lua",
+    "fileHash": "eaf402d207064d63715c19b1c6710f0ac8e12339517b6546db363d0f12ed1fe0",
+    "startOffset": 1584,
+    "endOffset": 1639,
+    "source": "* The sisters sharpen their lances\nwith their claws.",
+    "translation": "* As irmãs afiam suas lanças\ncom suas garras.",
+    "originalExpression": "\"* The sisters sharpen their lances\\nwith their claws.\"",
+    "replacementExpression": "\"* As irmãs afiam suas lanças\\ncom suas garras.\""
+  },
+  "15062322624c": {
+    "file": "scripts/battle/encounters/p5/sisters.lua",
+    "fileHash": "eaf402d207064d63715c19b1c6710f0ac8e12339517b6546db363d0f12ed1fe0",
+    "startOffset": 1654,
+    "endOffset": 1715,
+    "source": "* Mantis children watch their lords\nwith complete respect.",
+    "translation": "* Crianças louva-a-deus observam seus lordes\ncom total respeito.",
+    "originalExpression": "\"* Mantis children watch their lords\\nwith complete respect.\"",
+    "replacementExpression": "\"* Crianças louva-a-deus observam seus lordes\\ncom total respeito.\""
+  },
+  "20008278e89c": {
+    "file": "scripts/battle/encounters/p5/wingednosk.lua",
+    "fileHash": "10b50a1e8e2936c0c514d9a953d60cba3695ea66e83361f69f7b8009aecb32f5",
+    "startOffset": 195,
+    "endOffset": 249,
+    "source": "* The Sentinel of Hallownest tests\nyou once more..?",
+    "translation": "* A Sentinela de Hallownest testa\nvocê mais uma vez..?",
+    "originalExpression": "\"* The Sentinel of Hallownest tests\\nyou once more..?\"",
+    "replacementExpression": "\"* A Sentinela de Hallownest testa\\nvocê mais uma vez..?\""
+  },
+  "842d695b7401": {
+    "file": "scripts/battle/enemies/boss.lua",
+    "fileHash": "60db53bec0ba243a91906072ae2e7b4a46d04cadfc1ec4b0acc7bb3da16da944",
+    "startOffset": 1589,
+    "endOffset": 1653,
+    "source": "* Press {lua1} while at 16% TP to heal!",
+    "translation": "* Pressione {lua1} com 16% de TP para curar!",
+    "originalExpression": "\"* Press \"..Input.getText(\"cancel\")..\" while at 16% TP to heal!\"",
+    "replacementExpression": "\"* Pressione \" .. (Input.getText(\"cancel\")) .. \" com 16% de TP para curar!\""
+  },
+  "4715fee9b0f3": {
+    "file": "scripts/battle/enemies/p1/broodingmawlek.lua",
+    "fileHash": "3f29f382014db12e34050a04b0a34ea80ddb927fee4bde7a92ff84ffa00b122c",
+    "startOffset": 353,
+    "endOffset": 393,
+    "source": "* Brooding Mawlek feels a bit\nlonely.",
+    "translation": "* Mawlek Incubador sente-se um pouco\nsolitário.",
+    "originalExpression": "\"* Brooding Mawlek feels a bit\\nlonely.\"",
+    "replacementExpression": "\"* Mawlek Incubador sente-se um pouco\\nsolitário.\""
+  },
+  "83e241b99094": {
+    "file": "scripts/battle/enemies/p1/broodingmawlek.lua",
+    "fileHash": "3f29f382014db12e34050a04b0a34ea80ddb927fee4bde7a92ff84ffa00b122c",
+    "startOffset": 404,
+    "endOffset": 439,
+    "source": "* Brooding Mawlek lets out a cry.",
+    "translation": "* Mawlek Incubador solta um clamor.",
+    "originalExpression": "\"* Brooding Mawlek lets out a cry.\"",
+    "replacementExpression": "\"* Mawlek Incubador solta um clamor.\""
+  },
+  "189e7330ca56": {
+    "file": "scripts/battle/enemies/p1/dungdefender.lua",
+    "fileHash": "ab9995f003e999c82347369a65f0bb8d32c1205fc99ec8115c8d260970bd82ab",
+    "startOffset": 348,
+    "endOffset": 359,
+    "source": "* Smells.",
+    "translation": "* Cheira mal.",
+    "originalExpression": "\"* Smells.\"",
+    "replacementExpression": "\"* Cheira mal.\""
+  },
+  "213123703bee": {
+    "file": "scripts/battle/enemies/p1/dungdefender.lua",
+    "fileHash": "ab9995f003e999c82347369a65f0bb8d32c1205fc99ec8115c8d260970bd82ab",
+    "startOffset": 370,
+    "endOffset": 402,
+    "source": "* The air stings with acidity.",
+    "translation": "* O ar arde com acidez.",
+    "originalExpression": "\"* The air stings with acidity.\"",
+    "replacementExpression": "\"* O ar arde com acidez.\""
+  },
+  "ede9fa10c4d7": {
+    "file": "scripts/battle/enemies/p1/dungdefender.lua",
+    "fileHash": "ab9995f003e999c82347369a65f0bb8d32c1205fc99ec8115c8d260970bd82ab",
+    "startOffset": 413,
+    "endOffset": 434,
+    "source": "* Isma is sleeping.",
+    "translation": "* Isma está dormindo.",
+    "originalExpression": "\"* Isma is sleeping.\"",
+    "replacementExpression": "\"* Isma está dormindo.\""
+  },
+  "6506acd8286c": {
+    "file": "scripts/battle/enemies/p1/dungdefender.lua",
+    "fileHash": "ab9995f003e999c82347369a65f0bb8d32c1205fc99ec8115c8d260970bd82ab",
+    "startOffset": 445,
+    "endOffset": 487,
+    "source": "* Dripping sounds echo from\neverywhere.",
+    "translation": "* Sons de pingos ecoam por\ntodos os lados.",
+    "originalExpression": "\"* Dripping sounds echo from\\neverywhere.\"",
+    "replacementExpression": "\"* Sons de pingos ecoam por\\ntodos os lados.\""
+  },
+  "4f0fab98ac61": {
+    "file": "scripts/battle/enemies/p1/falseknight.lua",
+    "fileHash": "5e5b4981ce36c29d3f27e0e5ea03d13731a399a075a8dc00d6ee611eccb000e4",
+    "startOffset": 251,
+    "endOffset": 277,
+    "source": "* Hegemol died long ago.",
+    "translation": "* Hegemol morreu há muito tempo.",
+    "originalExpression": "\"* Hegemol died long ago.\"",
+    "replacementExpression": "\"* Hegemol morreu há muito tempo.\""
+  },
+  "78804a85d87d": {
+    "file": "scripts/battle/enemies/p1/falseknight.lua",
+    "fileHash": "5e5b4981ce36c29d3f27e0e5ea03d13731a399a075a8dc00d6ee611eccb000e4",
+    "startOffset": 288,
+    "endOffset": 313,
+    "source": "* The floor is cracked.",
+    "translation": "* O chão está rachado.",
+    "originalExpression": "\"* The floor is cracked.\"",
+    "replacementExpression": "\"* O chão está rachado.\""
+  },
+  "cc6325e792fb": {
+    "file": "scripts/battle/enemies/p1/falseknight.lua",
+    "fileHash": "5e5b4981ce36c29d3f27e0e5ea03d13731a399a075a8dc00d6ee611eccb000e4",
+    "startOffset": 324,
+    "endOffset": 364,
+    "source": "* Whimpers echo from within the armor.",
+    "translation": "* Choramingos ecoam de dentro da armadura.",
+    "originalExpression": "\"* Whimpers echo from within the armor.\"",
+    "replacementExpression": "\"* Choramingos ecoam de dentro da armadura.\""
+  },
+  "035ac569b541": {
+    "file": "scripts/battle/enemies/p1/falseknight.lua",
+    "fileHash": "5e5b4981ce36c29d3f27e0e5ea03d13731a399a075a8dc00d6ee611eccb000e4",
+    "startOffset": 375,
+    "endOffset": 419,
+    "source": "* False Knight pretends not to be\nscared.",
+    "translation": "* Falso Cavaleiro finge não estar\ncom medo.",
+    "originalExpression": "\"* False Knight pretends not to be\\nscared.\"",
+    "replacementExpression": "\"* Falso Cavaleiro finge não estar\\ncom medo.\""
+  },
+  "c8719a2f0ca1": {
+    "file": "scripts/battle/enemies/p1/gorb.lua",
+    "fileHash": "0088db56a06a98251396dd8d327bba3ea5d47cff5b84660399d54a42e745e0aa",
+    "startOffset": 280,
+    "endOffset": 298,
+    "source": "* Gorb wriggles.",
+    "translation": "* Gorb se contorce.",
+    "originalExpression": "\"* Gorb wriggles.\"",
+    "replacementExpression": "\"* Gorb se contorce.\""
+  },
+  "809fad3229fe": {
+    "file": "scripts/battle/enemies/p1/gorb.lua",
+    "fileHash": "0088db56a06a98251396dd8d327bba3ea5d47cff5b84660399d54a42e745e0aa",
+    "startOffset": 309,
+    "endOffset": 344,
+    "source": "* Gorb is a lot smarter than you.",
+    "translation": "* Gorb é muito mais inteligente que você.",
+    "originalExpression": "\"* Gorb is a lot smarter than you.\"",
+    "replacementExpression": "\"* Gorb é muito mais inteligente que você.\""
+  },
+  "408bf7e783a3": {
+    "file": "scripts/battle/enemies/p1/gorb.lua",
+    "fileHash": "0088db56a06a98251396dd8d327bba3ea5d47cff5b84660399d54a42e745e0aa",
+    "startOffset": 355,
+    "endOffset": 411,
+    "source": "* Gorb seems to be on a different\nplane of existence.",
+    "translation": "* Gorb parece estar em um plano de\nexistência diferente.",
+    "originalExpression": "\"* Gorb seems to be on a different\\nplane of existence.\"",
+    "replacementExpression": "\"* Gorb parece estar em um plano de\\nexistência diferente.\""
+  },
+  "b1822c537bd6": {
+    "file": "scripts/battle/enemies/p1/gorb.lua",
+    "fileHash": "0088db56a06a98251396dd8d327bba3ea5d47cff5b84660399d54a42e745e0aa",
+    "startOffset": 422,
+    "endOffset": 450,
+    "source": "* Mmmmmonomonomonomononomo",
+    "translation": "* Mmmmmonomonomonomononomo",
+    "originalExpression": "\"* Mmmmmonomonomonomononomo\"",
+    "replacementExpression": "\"* Mmmmmonomonomonomononomo\""
+  },
+  "21afe5d22853": {
+    "file": "scripts/battle/enemies/p1/gruzmother.lua",
+    "fileHash": "7c4c2e6e11e69331e8bd041aa1c98f24ec842e735e6dbd055d617d7c66abbbf9",
+    "startOffset": 336,
+    "endOffset": 359,
+    "source": "* Gruz Mother snores.",
+    "translation": "* Mãe Gruz ronca.",
+    "originalExpression": "\"* Gruz Mother snores.\"",
+    "replacementExpression": "\"* Mãe Gruz ronca.\""
+  },
+  "5cc82bedec19": {
+    "file": "scripts/battle/enemies/p1/gruzmother.lua",
+    "fileHash": "7c4c2e6e11e69331e8bd041aa1c98f24ec842e735e6dbd055d617d7c66abbbf9",
+    "startOffset": 370,
+    "endOffset": 410,
+    "source": "* Buzzing sounds come from her\nbelly.",
+    "translation": "* Sons de zumbido vêm da\nbarriga dela.",
+    "originalExpression": "\"* Buzzing sounds come from her\\nbelly.\"",
+    "replacementExpression": "\"* Sons de zumbido vêm da\\nbarriga dela.\""
+  },
+  "7a5bc4f60c18": {
+    "file": "scripts/battle/enemies/p1/gruzmother.lua",
+    "fileHash": "7c4c2e6e11e69331e8bd041aa1c98f24ec842e735e6dbd055d617d7c66abbbf9",
+    "startOffset": 421,
+    "endOffset": 445,
+    "source": "* Gruz Mother sneezes.",
+    "translation": "* Mãe Gruz espirra.",
+    "originalExpression": "\"* Gruz Mother sneezes.\"",
+    "replacementExpression": "\"* Mãe Gruz espirra.\""
+  },
+  "7a119702f1cf": {
+    "file": "scripts/battle/enemies/p1/hornet.lua",
+    "fileHash": "99ca1a2637491b4cd0132ddeb9f53c05d1cc19b9bd91e5844b4a2d36d402b450",
+    "startOffset": 363,
+    "endOffset": 394,
+    "source": "* Silk flies through the air.",
+    "translation": "* A seda voa pelo ar.",
+    "originalExpression": "\"* Silk flies through the air.\"",
+    "replacementExpression": "\"* A seda voa pelo ar.\""
+  },
+  "41dbe0d172a4": {
+    "file": "scripts/battle/enemies/p1/hornet.lua",
+    "fileHash": "99ca1a2637491b4cd0132ddeb9f53c05d1cc19b9bd91e5844b4a2d36d402b450",
+    "startOffset": 405,
+    "endOffset": 447,
+    "source": "* Hornet taps her needle on the\nground.",
+    "translation": "* Hornet bate sua agulha no\nchão.",
+    "originalExpression": "\"* Hornet taps her needle on the\\nground.\"",
+    "replacementExpression": "\"* Hornet bate sua agulha no\\nchão.\""
+  },
+  "f8d0870fbe90": {
+    "file": "scripts/battle/enemies/p1/hornet.lua",
+    "fileHash": "99ca1a2637491b4cd0132ddeb9f53c05d1cc19b9bd91e5844b4a2d36d402b450",
+    "startOffset": 458,
+    "endOffset": 480,
+    "source": "* She's testing you.",
+    "translation": "* Ela está testando você.",
+    "originalExpression": "\"* She's testing you.\"",
+    "replacementExpression": "\"* Ela está testando você.\""
+  },
+  "f9f26e70433a": {
+    "file": "scripts/battle/enemies/p1/mato.lua",
+    "fileHash": "ec7f22dc55018440b58db76344a2a90d241ef577f46911c7b63f7b97792fe37e",
+    "startOffset": 329,
+    "endOffset": 347,
+    "source": "* Winds howl by.",
+    "translation": "* Os ventos uivam ao redor.",
+    "originalExpression": "\"* Winds howl by.\"",
+    "replacementExpression": "\"* Os ventos uivam ao redor.\""
+  },
+  "0fab9f9862b8": {
+    "file": "scripts/battle/enemies/p1/mato.lua",
+    "fileHash": "ec7f22dc55018440b58db76344a2a90d241ef577f46911c7b63f7b97792fe37e",
+    "startOffset": 358,
+    "endOffset": 391,
+    "source": "* Mato sits down and meditates.",
+    "translation": "* Mato se senta e medita.",
+    "originalExpression": "\"* Mato sits down and meditates.\"",
+    "replacementExpression": "\"* Mato se senta e medita.\""
+  },
+  "2992b30e0e97": {
+    "file": "scripts/battle/enemies/p1/mato.lua",
+    "fileHash": "ec7f22dc55018440b58db76344a2a90d241ef577f46911c7b63f7b97792fe37e",
+    "startOffset": 402,
+    "endOffset": 464,
+    "source": "* The world is spinning, spinning.\n* ...no, it's just Mato.",
+    "translation": "* O mundo está girando, girando.\n* ...não, é só o Mato.",
+    "originalExpression": "\"* The world is spinning, spinning.\\n* ...no, it's just Mato.\"",
+    "replacementExpression": "\"* O mundo está girando, girando.\\n* ...não, é só o Mato.\""
+  },
+  "b26d2faa89c8": {
+    "file": "scripts/battle/enemies/p1/mosscharger.lua",
+    "fileHash": "54810f67ac4848442a93edefded130dd4c62c2f02b3dcf1d7a98440c60b3fca6",
+    "startOffset": 293,
+    "endOffset": 326,
+    "source": "* The grass shifts beneath you.",
+    "translation": "* A grama se move sob seus pés.",
+    "originalExpression": "\"* The grass shifts beneath you.\"",
+    "replacementExpression": "\"* A grama se move sob seus pés.\""
+  },
+  "af605ca80516": {
+    "file": "scripts/battle/enemies/p1/mosscharger.lua",
+    "fileHash": "54810f67ac4848442a93edefded130dd4c62c2f02b3dcf1d7a98440c60b3fca6",
+    "startOffset": 337,
+    "endOffset": 369,
+    "source": "* There's strength in numbers.",
+    "translation": "* Há força em números.",
+    "originalExpression": "\"* There's strength in numbers.\"",
+    "replacementExpression": "\"* Há força em números.\""
+  },
+  "74a3f354be4c": {
+    "file": "scripts/battle/enemies/p1/mosscharger.lua",
+    "fileHash": "54810f67ac4848442a93edefded130dd4c62c2f02b3dcf1d7a98440c60b3fca6",
+    "startOffset": 380,
+    "endOffset": 425,
+    "source": "* The floor peeks at you with\norange eyes.",
+    "translation": "* O chão espreita você com\nolhos laranjas.",
+    "originalExpression": "\"* The floor peeks at you with\\norange eyes.\"",
+    "replacementExpression": "\"* O chão espreita você com\\nolhos laranjas.\""
+  },
+  "d08c44723936": {
+    "file": "scripts/battle/enemies/p1/oro.lua",
+    "fileHash": "580849cc8dfb12922a87f5f59533b944a67c159b019a0519a08631e05f235e11",
+    "startOffset": 323,
+    "endOffset": 361,
+    "source": "* Fighting at the edge of the world.",
+    "translation": "* Lutando na borda do mundo.",
+    "originalExpression": "\"* Fighting at the edge of the world.\"",
+    "replacementExpression": "\"* Lutando na borda do mundo.\""
+  },
+  "8c97566a0a18": {
+    "file": "scripts/battle/enemies/p1/oro.lua",
+    "fileHash": "580849cc8dfb12922a87f5f59533b944a67c159b019a0519a08631e05f235e11",
+    "startOffset": 372,
+    "endOffset": 432,
+    "source": "* Those who do not share their\nstrength will never learn.",
+    "translation": "* Aqueles que não compartilham sua\nforça nunca aprenderão.",
+    "originalExpression": "\"* Those who do not share their\\nstrength will never learn.\"",
+    "replacementExpression": "\"* Aqueles que não compartilham sua\\nforça nunca aprenderão.\""
+  },
+  "959c2011cb2a": {
+    "file": "scripts/battle/enemies/p1/oro.lua",
+    "fileHash": "580849cc8dfb12922a87f5f59533b944a67c159b019a0519a08631e05f235e11",
+    "startOffset": 443,
+    "endOffset": 498,
+    "source": "* Those who do not share their Geo\nwill never learn.",
+    "translation": "* Aqueles que não compartilham seu Geo\nnunca aprenderão.",
+    "originalExpression": "\"* Those who do not share their Geo\\nwill never learn.\"",
+    "replacementExpression": "\"* Aqueles que não compartilham seu Geo\\nnunca aprenderão.\""
+  },
+  "d8790e61b046": {
+    "file": "scripts/battle/enemies/p1/soulwarrior.lua",
+    "fileHash": "73219bee09f5a10684b7a2469f8f22893e15126949946cc896820442b7f089f2",
+    "startOffset": 341,
+    "endOffset": 372,
+    "source": "* Soul flows through the air.",
+    "translation": "* A alma flui pelo ar.",
+    "originalExpression": "\"* Soul flows through the air.\"",
+    "replacementExpression": "\"* A alma flui pelo ar.\""
+  },
+  "5962cbedefca": {
+    "file": "scripts/battle/enemies/p1/soulwarrior.lua",
+    "fileHash": "73219bee09f5a10684b7a2469f8f22893e15126949946cc896820442b7f089f2",
+    "startOffset": 383,
+    "endOffset": 426,
+    "source": "* Soul warrior forgets why they're\nhere.",
+    "translation": "* O Guerreiro das Almas esquece por que está\naqui.",
+    "originalExpression": "\"* Soul warrior forgets why they're\\nhere.\"",
+    "replacementExpression": "\"* O Guerreiro das Almas esquece por que está\\naqui.\""
+  },
+  "124f4bf54203": {
+    "file": "scripts/battle/enemies/p1/soulwarrior.lua",
+    "fileHash": "73219bee09f5a10684b7a2469f8f22893e15126949946cc896820442b7f089f2",
+    "startOffset": 437,
+    "endOffset": 471,
+    "source": "* Something whispers behind you.",
+    "translation": "* Algo sussurra atrás de você.",
+    "originalExpression": "\"* Something whispers behind you.\"",
+    "replacementExpression": "\"* Algo sussurra atrás de você.\""
+  },
+  "cf2a7b996e4f": {
+    "file": "scripts/battle/enemies/p1/vengeflyking.lua",
+    "fileHash": "f1277de7dac4f0066054feff1a0240ec25ed3cf8c38d9a60453941df0c1740c6",
+    "startOffset": 358,
+    "endOffset": 393,
+    "source": "* Vengefly King screeches loudly.",
+    "translation": "* Rei Vengemosca guincha alto.",
+    "originalExpression": "\"* Vengefly King screeches loudly.\"",
+    "replacementExpression": "\"* Rei Vengemosca guincha alto.\""
+  },
+  "28e3aafaa52d": {
+    "file": "scripts/battle/enemies/p1/vengeflyking.lua",
+    "fileHash": "f1277de7dac4f0066054feff1a0240ec25ed3cf8c38d9a60453941df0c1740c6",
+    "startOffset": 404,
+    "endOffset": 438,
+    "source": "* Vengefly King chews on a bone.",
+    "translation": "* Rei Vengemosca roe um osso.",
+    "originalExpression": "\"* Vengefly King chews on a bone.\"",
+    "replacementExpression": "\"* Rei Vengemosca roe um osso.\""
+  },
+  "2c5e13a428f8": {
+    "file": "scripts/battle/enemies/p1/vengeflyking.lua",
+    "fileHash": "f1277de7dac4f0066054feff1a0240ec25ed3cf8c38d9a60453941df0c1740c6",
+    "startOffset": 449,
+    "endOffset": 499,
+    "source": "* Vengeflies are awaiting their King's\ncommand.",
+    "translation": "* As vengemoscas aguardam as ordens\ndo seu Rei.",
+    "originalExpression": "\"* Vengeflies are awaiting their King's\\ncommand.\"",
+    "replacementExpression": "\"* As vengemoscas aguardam as ordens\\ndo seu Rei.\""
+  },
+  "09d63b30361d": {
+    "file": "scripts/battle/enemies/p1/vengeflyking.lua",
+    "fileHash": "f1277de7dac4f0066054feff1a0240ec25ed3cf8c38d9a60453941df0c1740c6",
+    "startOffset": 821,
+    "endOffset": 903,
+    "source": "* Press {lua1} to use your NAIL\nagainst orange enemies!",
+    "translation": "* Pressione {lua1} para usar seu FERRÃO\ncontra inimigos laranjas!",
+    "originalExpression": "\"* Press \"..Input.getText(\"confirm\")..\" to use your NAIL\\nagainst orange enemies!\"",
+    "replacementExpression": "\"* Pressione \" .. (Input.getText(\"confirm\")) .. \" para usar seu FERRÃO\\ncontra inimigos laranjas!\""
+  },
+  "b3a8a094e59d": {
+    "file": "scripts/battle/enemies/p1/vengeflyking.lua",
+    "fileHash": "f1277de7dac4f0066054feff1a0240ec25ed3cf8c38d9a60453941df0c1740c6",
+    "startOffset": 1076,
+    "endOffset": 1158,
+    "source": "* Press {lua1} to use your NAIL\nagainst orange enemies!",
+    "translation": "* Pressione {lua1} para usar seu FERRÃO\ncontra inimigos laranjas!",
+    "originalExpression": "\"* Press \"..Input.getText(\"confirm\")..\" to use your NAIL\\nagainst orange enemies!\"",
+    "replacementExpression": "\"* Pressione \" .. (Input.getText(\"confirm\")) .. \" para usar seu FERRÃO\\ncontra inimigos laranjas!\""
+  },
+  "a9d7266b00e1": {
+    "file": "scripts/battle/enemies/p2/brokenvessel.lua",
+    "fileHash": "e2c8bf1bd7181ac8b9b0633541a691b4491d0ce2cb5caa4cbe30fd49458e0132",
+    "startOffset": 384,
+    "endOffset": 414,
+    "source": "* Your sibling looks at you.",
+    "translation": "* Um parente seu olha para você.",
+    "originalExpression": "\"* Your sibling looks at you.\"",
+    "replacementExpression": "\"* Um parente seu olha para você.\""
+  },
+  "800af1232a42": {
+    "file": "scripts/battle/enemies/p2/brokenvessel.lua",
+    "fileHash": "e2c8bf1bd7181ac8b9b0633541a691b4491d0ce2cb5caa4cbe30fd49458e0132",
+    "startOffset": 425,
+    "endOffset": 452,
+    "source": "* It's thinking too much.",
+    "translation": "* Está pensando demais.",
+    "originalExpression": "\"* It's thinking too much.\"",
+    "replacementExpression": "\"* Está pensando demais.\""
+  },
+  "7e6fd5969224": {
+    "file": "scripts/battle/enemies/p2/crystalguardian.lua",
+    "fileHash": "ee7af502921c0915f99a30f57302def071b3ef2ba01a0b4b59138ac687f2e32e",
+    "startOffset": 356,
+    "endOffset": 399,
+    "source": "* You look through the Crystal\nGuardian.",
+    "translation": "* Você enxerga através do Guardião\nde Cristal.",
+    "originalExpression": "\"* You look through the Crystal\\nGuardian.\"",
+    "replacementExpression": "\"* Você enxerga através do Guardião\\nde Cristal.\""
+  },
+  "cc20e7427d9a": {
+    "file": "scripts/battle/enemies/p2/crystalguardian.lua",
+    "fileHash": "ee7af502921c0915f99a30f57302def071b3ef2ba01a0b4b59138ac687f2e32e",
+    "startOffset": 410,
+    "endOffset": 457,
+    "source": "* The floor is scratched with pickaxe\nmarks.",
+    "translation": "* O chão está riscado com marcas de\npicareta.",
+    "originalExpression": "\"* The floor is scratched with pickaxe\\nmarks.\"",
+    "replacementExpression": "\"* O chão está riscado com marcas de\\npicareta.\""
+  },
+  "faf57ee1b9e9": {
+    "file": "scripts/battle/enemies/p2/crystalguardian.lua",
+    "fileHash": "ee7af502921c0915f99a30f57302def071b3ef2ba01a0b4b59138ac687f2e32e",
+    "startOffset": 468,
+    "endOffset": 519,
+    "source": "* A mechanical heartbeat pounds in the\ndistance.",
+    "translation": "* Um batimento mecânico pulsa à\ndistância.",
+    "originalExpression": "\"* A mechanical heartbeat pounds in the\\ndistance.\"",
+    "replacementExpression": "\"* Um batimento mecânico pulsa à\\ndistância.\""
+  },
+  "809e85117059": {
+    "file": "scripts/battle/enemies/p2/flukemarm.lua",
+    "fileHash": "cdf434acc780816b13df0633ed2413805a807968521bf956cbe3258b338f597d",
+    "startOffset": 339,
+    "endOffset": 367,
+    "source": "* Flukemarm is disgusting.",
+    "translation": "* Flukemarm é nojenta.",
+    "originalExpression": "\"* Flukemarm is disgusting.\"",
+    "replacementExpression": "\"* Flukemarm é nojenta.\""
+  },
+  "8255385a5d00": {
+    "file": "scripts/battle/enemies/p2/marmu.lua",
+    "fileHash": "c9ddaffb6065e5e9e2241061b605175bcefc2e7db0f8676c33d2239e83a18603",
+    "startOffset": 251,
+    "endOffset": 271,
+    "source": "* Marmu is flying!",
+    "translation": "* Marmu está voando!",
+    "originalExpression": "\"* Marmu is flying!\"",
+    "replacementExpression": "\"* Marmu está voando!\""
+  },
+  "743003b225b9": {
+    "file": "scripts/battle/enemies/p2/marmu.lua",
+    "fileHash": "c9ddaffb6065e5e9e2241061b605175bcefc2e7db0f8676c33d2239e83a18603",
+    "startOffset": 282,
+    "endOffset": 316,
+    "source": "* Marmu asks where the Queen is.",
+    "translation": "* Marmu pergunta onde está a Rainha.",
+    "originalExpression": "\"* Marmu asks where the Queen is.\"",
+    "replacementExpression": "\"* Marmu pergunta onde está a Rainha.\""
+  },
+  "01a36c02e481": {
+    "file": "scripts/battle/enemies/p2/marmu.lua",
+    "fileHash": "c9ddaffb6065e5e9e2241061b605175bcefc2e7db0f8676c33d2239e83a18603",
+    "startOffset": 327,
+    "endOffset": 354,
+    "source": "* Float like a butterfly.",
+    "translation": "* Flutue como uma borboleta.",
+    "originalExpression": "\"* Float like a butterfly.\"",
+    "replacementExpression": "\"* Flutue como uma borboleta.\""
+  },
+  "e6e461619038": {
+    "file": "scripts/battle/enemies/p2/nosk.lua",
+    "fileHash": "72c3ffcf34627db19feffee1bfa890e8d187bec885c9c4987a15a3696811670d",
+    "startOffset": 333,
+    "endOffset": 371,
+    "source": "* Nosk tries to look into your soul.",
+    "translation": "* Nosk tenta olhar na sua alma.",
+    "originalExpression": "\"* Nosk tries to look into your soul.\"",
+    "replacementExpression": "\"* Nosk tenta olhar na sua alma.\""
+  },
+  "dea0ed23e83c": {
+    "file": "scripts/battle/enemies/p2/nosk.lua",
+    "fileHash": "72c3ffcf34627db19feffee1bfa890e8d187bec885c9c4987a15a3696811670d",
+    "startOffset": 382,
+    "endOffset": 404,
+    "source": "* Nosk's head spins.",
+    "translation": "* A cabeça de Nosk gira.",
+    "originalExpression": "\"* Nosk's head spins.\"",
+    "replacementExpression": "\"* A cabeça de Nosk gira.\""
+  },
+  "65c2ffd1d1db": {
+    "file": "scripts/battle/enemies/p2/nosk.lua",
+    "fileHash": "72c3ffcf34627db19feffee1bfa890e8d187bec885c9c4987a15a3696811670d",
+    "startOffset": 415,
+    "endOffset": 449,
+    "source": "* Good thing you have a lantern.",
+    "translation": "* Ainda bem que você tem uma lanterna.",
+    "originalExpression": "\"* Good thing you have a lantern.\"",
+    "replacementExpression": "\"* Ainda bem que você tem uma lanterna.\""
+  },
+  "f72f5cb275eb": {
+    "file": "scripts/battle/enemies/p2/sheo.lua",
+    "fileHash": "3f8e665db51de9c0216d392665f8014bd433097489b664986667f09f55746070",
+    "startOffset": 361,
+    "endOffset": 419,
+    "source": "* Sheo paints a picture of you, as a\nsymbol of respect.",
+    "translation": "* Sheo pinta um quadro seu, como um\nsímbolo de respeito.",
+    "originalExpression": "\"* Sheo paints a picture of you, as a\\nsymbol of respect.\"",
+    "replacementExpression": "\"* Sheo pinta um quadro seu, como um\\nsímbolo de respeito.\""
+  },
+  "79a4fbea2d3c": {
+    "file": "scripts/battle/enemies/p2/sheo.lua",
+    "fileHash": "3f8e665db51de9c0216d392665f8014bd433097489b664986667f09f55746070",
+    "startOffset": 430,
+    "endOffset": 481,
+    "source": "* Sheo is disappointed that he has to\nfight you.",
+    "translation": "* Sheo está decepcionado por ter que\nlutar contra você.",
+    "originalExpression": "\"* Sheo is disappointed that he has to\\nfight you.\"",
+    "replacementExpression": "\"* Sheo está decepcionado por ter que\\nlutar contra você.\""
+  },
+  "2567837167cd": {
+    "file": "scripts/battle/enemies/p2/sheo.lua",
+    "fileHash": "3f8e665db51de9c0216d392665f8014bd433097489b664986667f09f55746070",
+    "startOffset": 492,
+    "endOffset": 530,
+    "source": "* The floor is covered in wet paint.",
+    "translation": "* O chão está coberto de tinta fresca.",
+    "originalExpression": "\"* The floor is covered in wet paint.\"",
+    "replacementExpression": "\"* O chão está coberto de tinta fresca.\""
+  },
+  "e014cea060e6": {
+    "file": "scripts/battle/enemies/p2/sheo.lua",
+    "fileHash": "3f8e665db51de9c0216d392665f8014bd433097489b664986667f09f55746070",
+    "startOffset": 541,
+    "endOffset": 594,
+    "source": "* Audience members strike poses for Sheo\nto paint.",
+    "translation": "* Membros da plateia fazem poses para Sheo\npintar.",
+    "originalExpression": "\"* Audience members strike poses for Sheo\\nto paint.\"",
+    "replacementExpression": "\"* Membros da plateia fazem poses para Sheo\\npintar.\""
+  },
+  "d7cea9496008": {
+    "file": "scripts/battle/enemies/p2/soulmaster.lua",
+    "fileHash": "a0d28ef04ad351af25683681a07c90323eb0e6633960d5d03dbfd0ecdfa2f2c8",
+    "startOffset": 243,
+    "endOffset": 278,
+    "source": "* Organs blare in the background.",
+    "translation": "* Órgãos retumbam ao fundo.",
+    "originalExpression": "\"* Organs blare in the background.\"",
+    "replacementExpression": "\"* Órgãos retumbam ao fundo.\""
+  },
+  "e2a78c7a4998": {
+    "file": "scripts/battle/enemies/p2/soulmaster.lua",
+    "fileHash": "a0d28ef04ad351af25683681a07c90323eb0e6633960d5d03dbfd0ecdfa2f2c8",
+    "startOffset": 289,
+    "endOffset": 320,
+    "source": "* The air is thick with soul.",
+    "translation": "* O ar está carregado de alma.",
+    "originalExpression": "\"* The air is thick with soul.\"",
+    "replacementExpression": "\"* O ar está carregado de alma.\""
+  },
+  "87fbd4564fff": {
+    "file": "scripts/battle/enemies/p2/soulmaster.lua",
+    "fileHash": "a0d28ef04ad351af25683681a07c90323eb0e6633960d5d03dbfd0ecdfa2f2c8",
+    "startOffset": 331,
+    "endOffset": 369,
+    "source": "* Something whispers all around you.",
+    "translation": "* Algo sussurra ao seu redor.",
+    "originalExpression": "\"* Something whispers all around you.\"",
+    "replacementExpression": "\"* Algo sussurra ao seu redor.\""
+  },
+  "9d6ba7fdf121": {
+    "file": "scripts/battle/enemies/p2/xero.lua",
+    "fileHash": "0be73977db0968007ea761c93b388a6390115e1b3ebc62ff892fd41d1882d48c",
+    "startOffset": 247,
+    "endOffset": 295,
+    "source": "* Cursed are those who turn against\nthe King.",
+    "translation": "* Amaldiçoados são os que se voltam contra\no Rei.",
+    "originalExpression": "\"* Cursed are those who turn against\\nthe King.\"",
+    "replacementExpression": "\"* Amaldiçoados são os que se voltam contra\\no Rei.\""
+  },
+  "3c0bb241f7a6": {
+    "file": "scripts/battle/enemies/p2/xero.lua",
+    "fileHash": "0be73977db0968007ea761c93b388a6390115e1b3ebc62ff892fd41d1882d48c",
+    "startOffset": 306,
+    "endOffset": 343,
+    "source": "* Fallen spirits linger in the air.",
+    "translation": "* Espíritos caídos pairam no ar.",
+    "originalExpression": "\"* Fallen spirits linger in the air.\"",
+    "replacementExpression": "\"* Espíritos caídos pairam no ar.\""
+  },
+  "1d580c31489b": {
+    "file": "scripts/battle/enemies/p2/xero.lua",
+    "fileHash": "0be73977db0968007ea761c93b388a6390115e1b3ebc62ff892fd41d1882d48c",
+    "startOffset": 354,
+    "endOffset": 382,
+    "source": "* Xero rests for a moment.",
+    "translation": "* Xero descansa por um momento.",
+    "originalExpression": "\"* Xero rests for a moment.\"",
+    "replacementExpression": "\"* Xero descansa por um momento.\""
+  },
+  "2e579ebce019": {
+    "file": "scripts/battle/enemies/p3/beast.lua",
+    "fileHash": "9865ebab2336c8ad0a0c825c410d99818be3017861867d3735a50244276a22d9",
+    "startOffset": 396,
+    "endOffset": 445,
+    "source": "* The audience holds their breath\nin suspense.",
+    "translation": "* A plateia prende a respiração\nem suspense.",
+    "originalExpression": "\"* The audience holds their breath\\nin suspense.\"",
+    "replacementExpression": "\"* A plateia prende a respiração\\nem suspense.\""
+  },
+  "f836b14e348a": {
+    "file": "scripts/battle/enemies/p3/beast.lua",
+    "fileHash": "9865ebab2336c8ad0a0c825c410d99818be3017861867d3735a50244276a22d9",
+    "startOffset": 456,
+    "endOffset": 495,
+    "source": "* The Lord of Fools approves of this.",
+    "translation": "* O Lorde dos Tolos aprova isso.",
+    "originalExpression": "\"* The Lord of Fools approves of this.\"",
+    "replacementExpression": "\"* O Lorde dos Tolos aprova isso.\""
+  },
+  "918f5642ee33": {
+    "file": "scripts/battle/enemies/p3/beast.lua",
+    "fileHash": "9865ebab2336c8ad0a0c825c410d99818be3017861867d3735a50244276a22d9",
+    "startOffset": 506,
+    "endOffset": 534,
+    "source": "* The beast hisses at you.",
+    "translation": "* A fera sibila para você.",
+    "originalExpression": "\"* The beast hisses at you.\"",
+    "replacementExpression": "\"* A fera sibila para você.\""
+  },
+  "06e64911d8b4": {
+    "file": "scripts/battle/enemies/p3/collector.lua",
+    "fileHash": "de9abb73d4fd85a802a9a519e3da2638433fa9b24915a3dd3238970349303c1f",
+    "startOffset": 305,
+    "endOffset": 340,
+    "source": "* The Collector laughs gleefully.",
+    "translation": "* O Colecionador ri alegremente.",
+    "originalExpression": "\"* The Collector laughs gleefully.\"",
+    "replacementExpression": "\"* O Colecionador ri alegremente.\""
+  },
+  "7911f9e70f78": {
+    "file": "scripts/battle/enemies/p3/collector.lua",
+    "fileHash": "de9abb73d4fd85a802a9a519e3da2638433fa9b24915a3dd3238970349303c1f",
+    "startOffset": 351,
+    "endOffset": 388,
+    "source": "* Shattered glass covers the floor.",
+    "translation": "* Vidro despedaçado cobre o chão.",
+    "originalExpression": "\"* Shattered glass covers the floor.\"",
+    "replacementExpression": "\"* Vidro despedaçado cobre o chão.\""
+  },
+  "c9b5d569bb98": {
+    "file": "scripts/battle/enemies/p3/collector.lua",
+    "fileHash": "de9abb73d4fd85a802a9a519e3da2638433fa9b24915a3dd3238970349303c1f",
+    "startOffset": 399,
+    "endOffset": 428,
+    "source": "* Grubfather cheers you on.",
+    "translation": "* Pai Larva torce por você.",
+    "originalExpression": "\"* Grubfather cheers you on.\"",
+    "replacementExpression": "\"* Pai Larva torce por você.\""
+  },
+  "e8926f8b1065": {
+    "file": "scripts/battle/enemies/p3/collector.lua",
+    "fileHash": "de9abb73d4fd85a802a9a519e3da2638433fa9b24915a3dd3238970349303c1f",
+    "startOffset": 439,
+    "endOffset": 459,
+    "source": "* Void given love?",
+    "translation": "* Vazio com amor?",
+    "originalExpression": "\"* Void given love?\"",
+    "replacementExpression": "\"* Vazio com amor?\""
+  },
+  "57fb81cd2fd2": {
+    "file": "scripts/battle/enemies/p3/collector.lua",
+    "fileHash": "de9abb73d4fd85a802a9a519e3da2638433fa9b24915a3dd3238970349303c1f",
+    "startOffset": 470,
+    "endOffset": 515,
+    "source": "* The Collector tries to put you in\na jar.",
+    "translation": "* O Colecionador tenta colocar você em\num frasco.",
+    "originalExpression": "\"* The Collector tries to put you in\\na jar.\"",
+    "replacementExpression": "\"* O Colecionador tenta colocar você em\\num frasco.\""
+  },
+  "ac57a64e233b": {
+    "file": "scripts/battle/enemies/p3/elderhu.lua",
+    "fileHash": "27e8a52de2dac145f0cd31fb5f92f518e4d78047b3e52b8655845715a3048bfe",
+    "startOffset": 327,
+    "endOffset": 353,
+    "source": "* We remember the Elder.",
+    "translation": "* Nós nos lembramos do Ancião.",
+    "originalExpression": "\"* We remember the Elder.\"",
+    "replacementExpression": "\"* Nós nos lembramos do Ancião.\""
+  },
+  "719ed3619691": {
+    "file": "scripts/battle/enemies/p3/elderhu.lua",
+    "fileHash": "27e8a52de2dac145f0cd31fb5f92f518e4d78047b3e52b8655845715a3048bfe",
+    "startOffset": 364,
+    "endOffset": 399,
+    "source": "* Mantises laugh in the distance.",
+    "translation": "* Os louva-a-deus riem à distância.",
+    "originalExpression": "\"* Mantises laugh in the distance.\"",
+    "replacementExpression": "\"* Os louva-a-deus riem à distância.\""
+  },
+  "3c74bc347139": {
+    "file": "scripts/battle/enemies/p3/galien.lua",
+    "fileHash": "12faba9e226e990210244368a3cfbe16d45fe9f360bfd3aa12ac0c9f06262e39",
+    "startOffset": 236,
+    "endOffset": 276,
+    "source": "* A gentle heartbeat pulses above you.",
+    "translation": "* Um suave batimento cardíaco pulsa acima de você.",
+    "originalExpression": "\"* A gentle heartbeat pulses above you.\"",
+    "replacementExpression": "\"* Um suave batimento cardíaco pulsa acima de você.\""
+  },
+  "2a129e897fe6": {
+    "file": "scripts/battle/enemies/p3/galien.lua",
+    "fileHash": "12faba9e226e990210244368a3cfbe16d45fe9f360bfd3aa12ac0c9f06262e39",
+    "startOffset": 287,
+    "endOffset": 327,
+    "source": "* Small spiders crawl under your feet.",
+    "translation": "* Pequenas aranhas rastejam sob seus pés.",
+    "originalExpression": "\"* Small spiders crawl under your feet.\"",
+    "replacementExpression": "\"* Pequenas aranhas rastejam sob seus pés.\""
+  },
+  "8dcbffb0befe": {
+    "file": "scripts/battle/enemies/p3/galien.lua",
+    "fileHash": "12faba9e226e990210244368a3cfbe16d45fe9f360bfd3aa12ac0c9f06262e39",
+    "startOffset": 338,
+    "endOffset": 370,
+    "source": "* It feels like an earthquake.",
+    "translation": "* Parece um terremoto.",
+    "originalExpression": "\"* It feels like an earthquake.\"",
+    "replacementExpression": "\"* Parece um terremoto.\""
+  },
+  "5aca2dce435d": {
+    "file": "scripts/battle/enemies/p3/godtamer.lua",
+    "fileHash": "df6c370377a6f22def79072590549a2807edf00e4a6dc4225eaf0cae3c9f5dac",
+    "startOffset": 305,
+    "endOffset": 342,
+    "source": "* God Tamer poses for the audience.",
+    "translation": "* Domadora de Deuses faz uma pose para a plateia.",
+    "originalExpression": "\"* God Tamer poses for the audience.\"",
+    "replacementExpression": "\"* Domadora de Deuses faz uma pose para a plateia.\""
+  },
+  "b07a80c3849a": {
+    "file": "scripts/battle/enemies/p3/godtamer.lua",
+    "fileHash": "df6c370377a6f22def79072590549a2807edf00e4a6dc4225eaf0cae3c9f5dac",
+    "startOffset": 353,
+    "endOffset": 399,
+    "source": "* God Tamer boasts about how strong\nshe is.",
+    "translation": "* Domadora de Deuses se gaba de quão\nforte ela é.",
+    "originalExpression": "\"* God Tamer boasts about how strong\\nshe is.\"",
+    "replacementExpression": "\"* Domadora de Deuses se gaba de quão\\nforte ela é.\""
+  },
+  "b6babcfb555d": {
+    "file": "scripts/battle/enemies/p3/greyprince.lua",
+    "fileHash": "8dcdc18907ff0a93e240057f242c16e257696c7bb3938ff2ae54ef60d1d6c7c3",
+    "startOffset": 366,
+    "endOffset": 397,
+    "source": "* Bretta faints at the sight.",
+    "translation": "* Bretta desmaia ao ver a cena.",
+    "originalExpression": "\"* Bretta faints at the sight.\"",
+    "replacementExpression": "\"* Bretta desmaia ao ver a cena.\""
+  },
+  "74c93dc34571": {
+    "file": "scripts/battle/enemies/p3/greyprince.lua",
+    "fileHash": "8dcdc18907ff0a93e240057f242c16e257696c7bb3938ff2ae54ef60d1d6c7c3",
+    "startOffset": 408,
+    "endOffset": 436,
+    "source": "* Strength beats strength.",
+    "translation": "* Força vence força.",
+    "originalExpression": "\"* Strength beats strength.\"",
+    "replacementExpression": "\"* Força vence força.\""
+  },
+  "def0bb5521e5": {
+    "file": "scripts/battle/enemies/p3/greyprince.lua",
+    "fileHash": "8dcdc18907ff0a93e240057f242c16e257696c7bb3938ff2ae54ef60d1d6c7c3",
+    "startOffset": 447,
+    "endOffset": 518,
+    "source": "* Zote thinks he has identified your\nweak point, which is your body.",
+    "translation": "* Zote acha que identificou seu ponto\nfraco, que é o seu corpo.",
+    "originalExpression": "\"* Zote thinks he has identified your\\nweak point, which is your body.\"",
+    "replacementExpression": "\"* Zote acha que identificou seu ponto\\nfraco, que é o seu corpo.\""
+  },
+  "7ff2c0eef624": {
+    "file": "scripts/battle/enemies/p3/grimm.lua",
+    "fileHash": "5e7fe558ce5b2f1bad18dd18d395e73d29109c6cc0fcbe32afad240345f0529a",
+    "startOffset": 381,
+    "endOffset": 425,
+    "source": "* The Grimm Troupe is honored to be\nhere.",
+    "translation": "* A Trupe Grimm sente-se honrada em\nestar aqui.",
+    "originalExpression": "\"* The Grimm Troupe is honored to be\\nhere.\"",
+    "replacementExpression": "\"* A Trupe Grimm sente-se honrada em\\nestar aqui.\""
+  },
+  "fcab6dff6213": {
+    "file": "scripts/battle/enemies/p3/grimm.lua",
+    "fileHash": "5e7fe558ce5b2f1bad18dd18d395e73d29109c6cc0fcbe32afad240345f0529a",
+    "startOffset": 436,
+    "endOffset": 495,
+    "source": "* Grimm is the only one that knows\nwhat's going on here.",
+    "translation": "* Grimm é o único que sabe\no que está acontecendo aqui.",
+    "originalExpression": "\"* Grimm is the only one that knows\\nwhat's going on here.\"",
+    "replacementExpression": "\"* Grimm é o único que sabe\\no que está acontecendo aqui.\""
+  },
+  "98542654168e": {
+    "file": "scripts/battle/enemies/p3/grimm.lua",
+    "fileHash": "5e7fe558ce5b2f1bad18dd18d395e73d29109c6cc0fcbe32afad240345f0529a",
+    "startOffset": 506,
+    "endOffset": 550,
+    "source": "* Call and serve in Grimm's dread\nTroupe.",
+    "translation": "* Clame e sirva na temível\nTrupe de Grimm.",
+    "originalExpression": "\"* Call and serve in Grimm's dread\\nTroupe.\"",
+    "replacementExpression": "\"* Clame e sirva na temível\\nTrupe de Grimm.\""
+  },
+  "98faeec0621b": {
+    "file": "scripts/battle/enemies/p3/grimm.lua",
+    "fileHash": "5e7fe558ce5b2f1bad18dd18d395e73d29109c6cc0fcbe32afad240345f0529a",
+    "startOffset": 561,
+    "endOffset": 598,
+    "source": "* The flames are whispering to you.",
+    "translation": "* As chamas estão sussurrando para você.",
+    "originalExpression": "\"* The flames are whispering to you.\"",
+    "replacementExpression": "\"* As chamas estão sussurrando para você.\""
+  },
+  "3fd3cfb7db1b": {
+    "file": "scripts/battle/enemies/p3/hiveknight.lua",
+    "fileHash": "756fea24fcbf9515aa0763238ec8829c1e5981647f964c1cdb82d212fc09bc59",
+    "startOffset": 384,
+    "endOffset": 415,
+    "source": "* Hive Knight buzzes quietly.",
+    "translation": "* Cavaleiro da Colmeia zumbe baixinho.",
+    "originalExpression": "\"* Hive Knight buzzes quietly.\"",
+    "replacementExpression": "\"* Cavaleiro da Colmeia zumbe baixinho.\""
+  },
+  "19b074f362ee": {
+    "file": "scripts/battle/enemies/p3/hiveknight.lua",
+    "fileHash": "756fea24fcbf9515aa0763238ec8829c1e5981647f964c1cdb82d212fc09bc59",
+    "startOffset": 426,
+    "endOffset": 471,
+    "source": "* The audience is buzzing with\nexcitement.",
+    "translation": "* A plateia está zumbindo de\nempolgação.",
+    "originalExpression": "\"* The audience is buzzing with\\nexcitement.\"",
+    "replacementExpression": "\"* A plateia está zumbindo de\\nempolgação.\""
+  },
+  "5e6e9455c7d7": {
+    "file": "scripts/battle/enemies/p3/hornet2.lua",
+    "fileHash": "d04e5ab1d6da33fb127617d0a353b11c0058419bd79e9606ac8b71214c9fe340",
+    "startOffset": 366,
+    "endOffset": 403,
+    "source": "* Silk and ash fly through the air.",
+    "translation": "* Seda e cinzas voam pelo ar.",
+    "originalExpression": "\"* Silk and ash fly through the air.\"",
+    "replacementExpression": "\"* Seda e cinzas voam pelo ar.\""
+  },
+  "94087ba876e7": {
+    "file": "scripts/battle/enemies/p3/hornet2.lua",
+    "fileHash": "d04e5ab1d6da33fb127617d0a353b11c0058419bd79e9606ac8b71214c9fe340",
+    "startOffset": 414,
+    "endOffset": 487,
+    "source": "* She's seen your likes before, but\nis impressed by your skill so far.",
+    "translation": "* Ela já viu outros como você, mas\nestá impressionada com sua habilidade.",
+    "originalExpression": "\"* She's seen your likes before, but\\nis impressed by your skill so far.\"",
+    "replacementExpression": "\"* Ela já viu outros como você, mas\\nestá impressionada com sua habilidade.\""
+  },
+  "75aa768fdd75": {
+    "file": "scripts/battle/enemies/p3/hornet2.lua",
+    "fileHash": "d04e5ab1d6da33fb127617d0a353b11c0058419bd79e9606ac8b71214c9fe340",
+    "startOffset": 498,
+    "endOffset": 531,
+    "source": "* The wind is roaring past you.",
+    "translation": "* O vento ruge ao seu redor.",
+    "originalExpression": "\"* The wind is roaring past you.\"",
+    "replacementExpression": "\"* O vento ruge ao seu redor.\""
+  },
+  "02b7b506407f": {
+    "file": "scripts/battle/enemies/p3/sly.lua",
+    "fileHash": "adee494c5b8e62245e3ac1812b194d4063ac12a18714fd1a77818543b062954d",
+    "startOffset": 375,
+    "endOffset": 445,
+    "source": "* Sly would gladly go easy on you, in\nexchange for all of your Geo.",
+    "translation": "* Sly pegaria leve com você,\nem troca de todo o seu Geo.",
+    "originalExpression": "\"* Sly would gladly go easy on you, in\\nexchange for all of your Geo.\"",
+    "replacementExpression": "\"* Sly pegaria leve com você,\\nem troca de todo o seu Geo.\""
+  },
+  "104b02d45da3": {
+    "file": "scripts/battle/enemies/p3/sly.lua",
+    "fileHash": "adee494c5b8e62245e3ac1812b194d4063ac12a18714fd1a77818543b062954d",
+    "startOffset": 456,
+    "endOffset": 515,
+    "source": "* Sly is proud of his students for\nteaching you so well.",
+    "translation": "* Sly está orgulhoso de seus alunos por\nterem lhe ensinado tão bem.",
+    "originalExpression": "\"* Sly is proud of his students for\\nteaching you so well.\"",
+    "replacementExpression": "\"* Sly está orgulhoso de seus alunos por\\nterem lhe ensinado tão bem.\""
+  },
+  "ccd1d1040e04": {
+    "file": "scripts/battle/enemies/p3/sly.lua",
+    "fileHash": "adee494c5b8e62245e3ac1812b194d4063ac12a18714fd1a77818543b062954d",
+    "startOffset": 526,
+    "endOffset": 557,
+    "source": "* Candles flicker around you.",
+    "translation": "* Velas cintilam ao seu redor.",
+    "originalExpression": "\"* Candles flicker around you.\"",
+    "replacementExpression": "\"* Velas cintilam ao seu redor.\""
+  },
+  "b93f1085cd08": {
+    "file": "scripts/battle/enemies/p3/uumuu.lua",
+    "fileHash": "dc3aeb14afed3779b1352614d76477f209e1b58a3fcd1c1e92c390e98f267ec0",
+    "startOffset": 336,
+    "endOffset": 362,
+    "source": "* Uumuu wriggles around.",
+    "translation": "* Uumuu se contorce por aí.",
+    "originalExpression": "\"* Uumuu wriggles around.\"",
+    "replacementExpression": "\"* Uumuu se contorce por aí.\""
+  },
+  "f2e73942f00c": {
+    "file": "scripts/battle/enemies/p3/uumuu.lua",
+    "fileHash": "dc3aeb14afed3779b1352614d76477f209e1b58a3fcd1c1e92c390e98f267ec0",
+    "startOffset": 373,
+    "endOffset": 411,
+    "source": "* The infection inside Uumuu pulses.",
+    "translation": "* A infecção dentro de Uumuu pulsa.",
+    "originalExpression": "\"* The infection inside Uumuu pulses.\"",
+    "replacementExpression": "\"* A infecção dentro de Uumuu pulsa.\""
+  },
+  "b4ba5b0d9b33": {
+    "file": "scripts/battle/enemies/p3/uumuu.lua",
+    "fileHash": "dc3aeb14afed3779b1352614d76477f209e1b58a3fcd1c1e92c390e98f267ec0",
+    "startOffset": 422,
+    "endOffset": 453,
+    "source": "* Quirrel can't help you now.",
+    "translation": "* Quirrel não pode te ajudar agora.",
+    "originalExpression": "\"* Quirrel can't help you now.\"",
+    "replacementExpression": "\"* Quirrel não pode te ajudar agora.\""
+  },
+  "31012cae05cb": {
+    "file": "scripts/battle/enemies/p4/enragedguardian.lua",
+    "fileHash": "a778e1c212f5383af941840945782a1eb8e06cc5c1fa32c46d02e5fe394f9235",
+    "startOffset": 356,
+    "endOffset": 404,
+    "source": "* Enraged Guardian wants to go back\nto sleep.",
+    "translation": "* Guardião Enfurecido quer voltar\na dormir.",
+    "originalExpression": "\"* Enraged Guardian wants to go back\\nto sleep.\"",
+    "replacementExpression": "\"* Guardião Enfurecido quer voltar\\na dormir.\""
+  },
+  "cb8ffddb745f": {
+    "file": "scripts/battle/enemies/p4/enragedguardian.lua",
+    "fileHash": "a778e1c212f5383af941840945782a1eb8e06cc5c1fa32c46d02e5fe394f9235",
+    "startOffset": 415,
+    "endOffset": 458,
+    "source": "* The floor has been scorched by\nlasers.",
+    "translation": "* O chão foi chamuscado por\nlasers.",
+    "originalExpression": "\"* The floor has been scorched by\\nlasers.\"",
+    "replacementExpression": "\"* O chão foi chamuscado por\\nlasers.\""
+  },
+  "786a03b951e7": {
+    "file": "scripts/battle/enemies/p4/enragedguardian.lua",
+    "fileHash": "a778e1c212f5383af941840945782a1eb8e06cc5c1fa32c46d02e5fe394f9235",
+    "startOffset": 469,
+    "endOffset": 521,
+    "source": "* Enraged Guardian screeches.\nIt sounds familiar.",
+    "translation": "* Guardião Enfurecido guincha.\nParece familiar.",
+    "originalExpression": "\"* Enraged Guardian screeches.\\nIt sounds familiar.\"",
+    "replacementExpression": "\"* Guardião Enfurecido guincha.\\nParece familiar.\""
+  },
+  "47c364619a18": {
+    "file": "scripts/battle/enemies/p4/failedchamp.lua",
+    "fileHash": "e76ffff89ed47fa816f7615626a6f223e6bef13e72228ebe9ac85b57f3e75bc1",
+    "startOffset": 254,
+    "endOffset": 287,
+    "source": "* Failed Champion isn't scared.",
+    "translation": "* Campeão Fracassado não está com medo.",
+    "originalExpression": "\"* Failed Champion isn't scared.\"",
+    "replacementExpression": "\"* Campeão Fracassado não está com medo.\""
+  },
+  "a1e95361d741": {
+    "file": "scripts/battle/enemies/p4/failedchamp.lua",
+    "fileHash": "e76ffff89ed47fa816f7615626a6f223e6bef13e72228ebe9ac85b57f3e75bc1",
+    "startOffset": 298,
+    "endOffset": 346,
+    "source": "* Hegemol is disappointed in Failed\nChampion.",
+    "translation": "* Hegemol está decepcionado com o\nCampeão Fracassado.",
+    "originalExpression": "\"* Hegemol is disappointed in Failed\\nChampion.\"",
+    "replacementExpression": "\"* Hegemol está decepcionado com o\\nCampeão Fracassado.\""
+  },
+  "b00fac9c5c6f": {
+    "file": "scripts/battle/enemies/p4/failedchamp.lua",
+    "fileHash": "e76ffff89ed47fa816f7615626a6f223e6bef13e72228ebe9ac85b57f3e75bc1",
+    "startOffset": 357,
+    "endOffset": 395,
+    "source": "* Strength isn't enough to save you.",
+    "translation": "* Força não é suficiente para salvar você.",
+    "originalExpression": "\"* Strength isn't enough to save you.\"",
+    "replacementExpression": "\"* Força não é suficiente para salvar você.\""
+  },
+  "31769b611c04": {
+    "file": "scripts/battle/enemies/p4/lostkin.lua",
+    "fileHash": "7a2df9de79855f52f77063daac8c032f8a5dc8259315f2fc732dfebbfd2f6054",
+    "startOffset": 423,
+    "endOffset": 462,
+    "source": "* Your sibling looks at you solemnly.",
+    "translation": "* Um parente seu olha para você solenemente.",
+    "originalExpression": "\"* Your sibling looks at you solemnly.\"",
+    "replacementExpression": "\"* Um parente seu olha para você solenemente.\""
+  },
+  "70d4c4fe1916": {
+    "file": "scripts/battle/enemies/p4/lostkin.lua",
+    "fileHash": "7a2df9de79855f52f77063daac8c032f8a5dc8259315f2fc732dfebbfd2f6054",
+    "startOffset": 473,
+    "endOffset": 500,
+    "source": "* It's thinking too much.",
+    "translation": "* Está pensando demais.",
+    "originalExpression": "\"* It's thinking too much.\"",
+    "replacementExpression": "\"* Está pensando demais.\""
+  },
+  "3130d04ec1b3": {
+    "file": "scripts/battle/enemies/p4/lostkin.lua",
+    "fileHash": "7a2df9de79855f52f77063daac8c032f8a5dc8259315f2fc732dfebbfd2f6054",
+    "startOffset": 511,
+    "endOffset": 535,
+    "source": "* An imperfect vessel.",
+    "translation": "* Um receptáculo imperfeito.",
+    "originalExpression": "\"* An imperfect vessel.\"",
+    "replacementExpression": "\"* Um receptáculo imperfeito.\""
+  },
+  "d24a5528f2cd": {
+    "file": "scripts/battle/enemies/p4/markoth.lua",
+    "fileHash": "53c797ffbb845b4523abda07b64bd219feb9bc0dbd39fbc8e7a2b38a29e40b2a",
+    "startOffset": 236,
+    "endOffset": 278,
+    "source": "* The darkness has come to consume\nhim.",
+    "translation": "* A escuridão veio para\nconsumi-lo.",
+    "originalExpression": "\"* The darkness has come to consume\\nhim.\"",
+    "replacementExpression": "\"* A escuridão veio para\\nconsumi-lo.\""
+  },
+  "4e8498de136a": {
+    "file": "scripts/battle/enemies/p4/markoth.lua",
+    "fileHash": "53c797ffbb845b4523abda07b64bd219feb9bc0dbd39fbc8e7a2b38a29e40b2a",
+    "startOffset": 289,
+    "endOffset": 327,
+    "source": "* Dreaming at the edge of the world.",
+    "translation": "* Sonhando na borda do mundo.",
+    "originalExpression": "\"* Dreaming at the edge of the world.\"",
+    "replacementExpression": "\"* Sonhando na borda do mundo.\""
+  },
+  "d4fb6d015adb": {
+    "file": "scripts/battle/enemies/p4/markoth.lua",
+    "fileHash": "53c797ffbb845b4523abda07b64bd219feb9bc0dbd39fbc8e7a2b38a29e40b2a",
+    "startOffset": 338,
+    "endOffset": 385,
+    "source": "* Markoth's shield clinks against your\nnail.",
+    "translation": "* O escudo de Markoth tilinta contra seu\nferrão.",
+    "originalExpression": "\"* Markoth's shield clinks against your\\nnail.\"",
+    "replacementExpression": "\"* O escudo de Markoth tilinta contra seu\\nferrão.\""
+  },
+  "50ae4cea224b": {
+    "file": "scripts/battle/enemies/p4/noeyes.lua",
+    "fileHash": "9785e6fecd251eaf427c312e5fe15844f61ec1bcef0c38cb07da111c5a74c56d",
+    "startOffset": 289,
+    "endOffset": 321,
+    "source": "* No Eyes sings you a lullaby.",
+    "translation": "* Sem Olhos canta uma canção de ninar para você.",
+    "originalExpression": "\"* No Eyes sings you a lullaby.\"",
+    "replacementExpression": "\"* Sem Olhos canta uma canção de ninar para você.\""
+  },
+  "ca10ff768c3e": {
+    "file": "scripts/battle/enemies/p4/noeyes.lua",
+    "fileHash": "9785e6fecd251eaf427c312e5fe15844f61ec1bcef0c38cb07da111c5a74c56d",
+    "startOffset": 332,
+    "endOffset": 364,
+    "source": "* No Eyes misses her children.",
+    "translation": "* Sem Olhos sente falta de seus filhos.",
+    "originalExpression": "\"* No Eyes misses her children.\"",
+    "replacementExpression": "\"* Sem Olhos sente falta de seus filhos.\""
+  },
+  "69d98b69b339": {
+    "file": "scripts/battle/enemies/p4/noeyes.lua",
+    "fileHash": "9785e6fecd251eaf427c312e5fe15844f61ec1bcef0c38cb07da111c5a74c56d",
+    "startOffset": 375,
+    "endOffset": 448,
+    "source": "* It's kinda hard to see. Having eyes\ntends to help with that, though.",
+    "translation": "* É meio difícil enxergar. Ter olhos\ncostuma ajudar com isso, porém.",
+    "originalExpression": "\"* It's kinda hard to see. Having eyes\\ntends to help with that, though.\"",
+    "replacementExpression": "\"* É meio difícil enxergar. Ter olhos\\ncostuma ajudar com isso, porém.\""
+  },
+  "8f6534045427": {
+    "file": "scripts/battle/enemies/p4/purevessel.lua",
+    "fileHash": "80b8b0ffc2d436b81487e6e6e91aba7d4ee818e7d6762de46199bd8a33bb838a",
+    "startOffset": 408,
+    "endOffset": 429,
+    "source": "* No mind to think.",
+    "translation": "* Sem mente para pensar.",
+    "originalExpression": "\"* No mind to think.\"",
+    "replacementExpression": "\"* Sem mente para pensar.\""
+  },
+  "1563b619bfce": {
+    "file": "scripts/battle/enemies/p4/purevessel.lua",
+    "fileHash": "80b8b0ffc2d436b81487e6e6e91aba7d4ee818e7d6762de46199bd8a33bb838a",
+    "startOffset": 440,
+    "endOffset": 461,
+    "source": "* No will to break.",
+    "translation": "* Sem vontade para quebrar.",
+    "originalExpression": "\"* No will to break.\"",
+    "replacementExpression": "\"* Sem vontade para quebrar.\""
+  },
+  "5f1808f4efda": {
+    "file": "scripts/battle/enemies/p4/purevessel.lua",
+    "fileHash": "80b8b0ffc2d436b81487e6e6e91aba7d4ee818e7d6762de46199bd8a33bb838a",
+    "startOffset": 472,
+    "endOffset": 502,
+    "source": "* No voice to cry suffering.",
+    "translation": "* Sem voz para chorar em sofrimento.",
+    "originalExpression": "\"* No voice to cry suffering.\"",
+    "replacementExpression": "\"* Sem voz para chorar em sofrimento.\""
+  },
+  "5c667024e9f6": {
+    "file": "scripts/battle/enemies/p4/purevessel.lua",
+    "fileHash": "80b8b0ffc2d436b81487e6e6e91aba7d4ee818e7d6762de46199bd8a33bb838a",
+    "startOffset": 513,
+    "endOffset": 535,
+    "source": "* No cost too great.",
+    "translation": "* Nenhum preço tão alto.",
+    "originalExpression": "\"* No cost too great.\"",
+    "replacementExpression": "\"* Nenhum preço tão alto.\""
+  },
+  "45087978d633": {
+    "file": "scripts/battle/enemies/p4/purevessel.lua",
+    "fileHash": "80b8b0ffc2d436b81487e6e6e91aba7d4ee818e7d6762de46199bd8a33bb838a",
+    "startOffset": 546,
+    "endOffset": 571,
+    "source": "* Born of God and Void.",
+    "translation": "* Nascido de Deus e do Vazio.",
+    "originalExpression": "\"* Born of God and Void.\"",
+    "replacementExpression": "\"* Nascido de Deus e do Vazio.\""
+  },
+  "a099ca71986d": {
+    "file": "scripts/battle/enemies/p4/soultyrant.lua",
+    "fileHash": "87d6bc9b6604e3ab7f5a863e6a8c1351f5a5f8d3a3ab3a4bf1236c741be7913f",
+    "startOffset": 380,
+    "endOffset": 414,
+    "source": "* Something whispers inside you.",
+    "translation": "* Algo sussurra dentro de você.",
+    "originalExpression": "\"* Something whispers inside you.\"",
+    "replacementExpression": "\"* Algo sussurra dentro de você.\""
+  },
+  "0716c848549b": {
+    "file": "scripts/battle/enemies/p4/soultyrant.lua",
+    "fileHash": "87d6bc9b6604e3ab7f5a863e6a8c1351f5a5f8d3a3ab3a4bf1236c741be7913f",
+    "startOffset": 425,
+    "endOffset": 464,
+    "source": "* The soul in the air is suffocating.",
+    "translation": "* A alma no ar é sufocante.",
+    "originalExpression": "\"* The soul in the air is suffocating.\"",
+    "replacementExpression": "\"* A alma no ar é sufocante.\""
+  },
+  "8c25219b8c81": {
+    "file": "scripts/battle/enemies/p4/traitorlord.lua",
+    "fileHash": "0a15c0ad44cb4763e6db300f8e7ba35456715cb13cfdd987650e02eee98ed0da",
+    "startOffset": 348,
+    "endOffset": 395,
+    "source": "* Traitor Lord is confident he can\nbeat you.",
+    "translation": "* Lorde Traidor está confiante de que pode\nderrotar você.",
+    "originalExpression": "\"* Traitor Lord is confident he can\\nbeat you.\"",
+    "replacementExpression": "\"* Lorde Traidor está confiante de que pode\\nderrotar você.\""
+  },
+  "02063fe9e2cf": {
+    "file": "scripts/battle/enemies/p4/traitorlord.lua",
+    "fileHash": "0a15c0ad44cb4763e6db300f8e7ba35456715cb13cfdd987650e02eee98ed0da",
+    "startOffset": 406,
+    "endOffset": 442,
+    "source": "* The Mantis Lords don't miss him.",
+    "translation": "* Os Lordes Louva-a-Deus não sentem falta dele.",
+    "originalExpression": "\"* The Mantis Lords don't miss him.\"",
+    "replacementExpression": "\"* Os Lordes Louva-a-Deus não sentem falta dele.\""
+  },
+  "f8a34d40bcbe": {
+    "file": "scripts/battle/enemies/p4/traitorlord.lua",
+    "fileHash": "0a15c0ad44cb4763e6db300f8e7ba35456715cb13cfdd987650e02eee98ed0da",
+    "startOffset": 453,
+    "endOffset": 487,
+    "source": "* Mantis traitors watch in envy.",
+    "translation": "* Louva-a-deus traidores observam com inveja.",
+    "originalExpression": "\"* Mantis traitors watch in envy.\"",
+    "replacementExpression": "\"* Louva-a-deus traidores observam com inveja.\""
+  },
+  "142e4405fb6d": {
+    "file": "scripts/battle/enemies/p4/watcherknight.lua",
+    "fileHash": "c0ce4042e2358b0c803f652ac42b68a8536c2219ef3695f53be74ab657e672e8",
+    "startOffset": 328,
+    "endOffset": 363,
+    "source": "* Lurien watches over the battle.",
+    "translation": "* Lurien vigila sobre a batalha.",
+    "originalExpression": "\"* Lurien watches over the battle.\"",
+    "replacementExpression": "\"* Lurien vigila sobre a batalha.\""
+  },
+  "1411fa5386d6": {
+    "file": "scripts/battle/enemies/p4/watcherknight.lua",
+    "fileHash": "c0ce4042e2358b0c803f652ac42b68a8536c2219ef3695f53be74ab657e672e8",
+    "startOffset": 374,
+    "endOffset": 418,
+    "source": "* A chandelier shines brightly above\nyou.",
+    "translation": "* Um lustre brilha intensamente acima\nde você.",
+    "originalExpression": "\"* A chandelier shines brightly above\\nyou.\"",
+    "replacementExpression": "\"* Um lustre brilha intensamente acima\\nde você.\""
+  },
+  "cf9bcef22dce": {
+    "file": "scripts/battle/enemies/p4/whitedefender.lua",
+    "fileHash": "c0f89b2ec29d34f4197901f111b08f2d1fcede88f54ca7c4baa4f647259df69c",
+    "startOffset": 354,
+    "endOffset": 375,
+    "source": "* Smells dignified.",
+    "translation": "* Cheira a dignidade.",
+    "originalExpression": "\"* Smells dignified.\"",
+    "replacementExpression": "\"* Cheira a dignidade.\""
+  },
+  "7cabd4e82c50": {
+    "file": "scripts/battle/enemies/p4/whitedefender.lua",
+    "fileHash": "c0f89b2ec29d34f4197901f111b08f2d1fcede88f54ca7c4baa4f647259df69c",
+    "startOffset": 386,
+    "endOffset": 431,
+    "source": "* Dung Defender won't be upset if\nyou win.",
+    "translation": "* Defensor do Esterco não ficará chateado se\nvocê vencer.",
+    "originalExpression": "\"* Dung Defender won't be upset if\\nyou win.\"",
+    "replacementExpression": "\"* Defensor do Esterco não ficará chateado se\\nvocê vencer.\""
+  },
+  "df49e1a31191": {
+    "file": "scripts/battle/enemies/p4/whitedefender.lua",
+    "fileHash": "c0f89b2ec29d34f4197901f111b08f2d1fcede88f54ca7c4baa4f647259df69c",
+    "startOffset": 442,
+    "endOffset": 494,
+    "source": "* Be glad this isn't the Battle of\nthe Blackwyrm.",
+    "translation": "* Ainda bem que esta não é a Batalha do\nWyrm Negro.",
+    "originalExpression": "\"* Be glad this isn't the Battle of\\nthe Blackwyrm.\"",
+    "replacementExpression": "\"* Ainda bem que esta não é a Batalha do\\nWyrm Negro.\""
+  },
+  "8e40088cca9f": {
+    "file": "scripts/battle/enemies/p4/whitedefender.lua",
+    "fileHash": "c0f89b2ec29d34f4197901f111b08f2d1fcede88f54ca7c4baa4f647259df69c",
+    "startOffset": 505,
+    "endOffset": 533,
+    "source": "* Isma watches with pride.",
+    "translation": "* Isma observa com orgulho.",
+    "originalExpression": "\"* Isma watches with pride.\"",
+    "replacementExpression": "\"* Isma observa com orgulho.\""
+  },
+  "289912b7c9f3": {
+    "file": "scripts/battle/enemies/p5/kristalguardian.lua",
+    "fileHash": "2e493e7cf302585e9ce5dc61b4e4a1efb9448e41f05611c0edb24423d68c5fe3",
+    "startOffset": 646,
+    "endOffset": 682,
+    "source": "* The world is spinning, spinning.",
+    "translation": "* O mundo está girando, girando.",
+    "originalExpression": "\"* The world is spinning, spinning.\"",
+    "replacementExpression": "\"* O mundo está girando, girando.\""
+  },
+  "dbee2700bc6f": {
+    "file": "scripts/battle/enemies/p5/kristalguardian.lua",
+    "fileHash": "2e493e7cf302585e9ce5dc61b4e4a1efb9448e41f05611c0edb24423d68c5fe3",
+    "startOffset": 693,
+    "endOffset": 779,
+    "source": "* You look through the Kristal\nGuardian. For a moment, you see\nHallownest's Crown.",
+    "translation": "* Você enxerga através do Guardião\nKristal. Por um momento, você vê a\nCoroa de Hallownest.",
+    "originalExpression": "\"* You look through the Kristal\\nGuardian. For a moment, you see\\nHallownest's Crown.\"",
+    "replacementExpression": "\"* Você enxerga através do Guardião\\nKristal. Por um momento, você vê a\\nCoroa de Hallownest.\""
+  },
+  "e3b0f2df4660": {
+    "file": "scripts/battle/enemies/p5/kristalguardian.lua",
+    "fileHash": "2e493e7cf302585e9ce5dc61b4e4a1efb9448e41f05611c0edb24423d68c5fe3",
+    "startOffset": 790,
+    "endOffset": 837,
+    "source": "* Screams sing out from within the\ncrystals.",
+    "translation": "* Gritos ecoam de dentro dos\ncristais.",
+    "originalExpression": "\"* Screams sing out from within the\\ncrystals.\"",
+    "replacementExpression": "\"* Gritos ecoam de dentro dos\\ncristais.\""
+  },
+  "0b382866f338": {
+    "file": "scripts/battle/enemies/p5/kristalguardian.lua",
+    "fileHash": "2e493e7cf302585e9ce5dc61b4e4a1efb9448e41f05611c0edb24423d68c5fe3",
+    "startOffset": 848,
+    "endOffset": 888,
+    "source": "* The room gets brighter and brighter.",
+    "translation": "* A sala fica cada vez mais clara.",
+    "originalExpression": "\"* The room gets brighter and brighter.\"",
+    "replacementExpression": "\"* A sala fica cada vez mais clara.\""
+  },
+  "a737374b3b02": {
+    "file": "scripts/battle/enemies/p5/kristalguardian.lua",
+    "fileHash": "2e493e7cf302585e9ce5dc61b4e4a1efb9448e41f05611c0edb24423d68c5fe3",
+    "startOffset": 899,
+    "endOffset": 962,
+    "source": "* Mechanical and infectious heartbeats\nsyncopate in the air.",
+    "translation": "* Batimentos mecânicos e infecciosos\nsincopam no ar.",
+    "originalExpression": "\"* Mechanical and infectious heartbeats\\nsyncopate in the air.\"",
+    "replacementExpression": "\"* Batimentos mecânicos e infecciosos\\nsincopam no ar.\""
+  },
+  "2f4d7254c98b": {
+    "file": "scripts/battle/enemies/p5/kristalguardian.lua",
+    "fileHash": "2e493e7cf302585e9ce5dc61b4e4a1efb9448e41f05611c0edb24423d68c5fe3",
+    "startOffset": 973,
+    "endOffset": 1016,
+    "source": "* A chaotic mixture of shadow and\nlight.",
+    "translation": "* Uma mistura caótica de sombra e\nluz.",
+    "originalExpression": "\"* A chaotic mixture of shadow and\\nlight.\"",
+    "replacementExpression": "\"* Uma mistura caótica de sombra e\\nluz.\""
+  },
+  "22cfc0d0dc3f": {
+    "file": "scripts/battle/enemies/p5/nkg.lua",
+    "fileHash": "deaf20b011436ea4810915466db38e6aa60181a8a1de37ab5fc4437e1c93d42c",
+    "startOffset": 417,
+    "endOffset": 441,
+    "source": "* Nightmare binds all.",
+    "translation": "* O Pesadelo une a todos.",
+    "originalExpression": "\"* Nightmare binds all.\"",
+    "replacementExpression": "\"* O Pesadelo une a todos.\""
+  },
+  "b5f330ceee4a": {
+    "file": "scripts/battle/enemies/p5/nkg.lua",
+    "fileHash": "deaf20b011436ea4810915466db38e6aa60181a8a1de37ab5fc4437e1c93d42c",
+    "startOffset": 452,
+    "endOffset": 494,
+    "source": "* Scarlet flames dance around the\nroom.",
+    "translation": "* Chamas escarlates dançam pela\nsala.",
+    "originalExpression": "\"* Scarlet flames dance around the\\nroom.\"",
+    "replacementExpression": "\"* Chamas escarlates dançam pela\\nsala.\""
+  },
+  "1438b7b42010": {
+    "file": "scripts/battle/enemies/p5/nkg.lua",
+    "fileHash": "deaf20b011436ea4810915466db38e6aa60181a8a1de37ab5fc4437e1c93d42c",
+    "startOffset": 505,
+    "endOffset": 535,
+    "source": "* Bound by ritual and dream.",
+    "translation": "* Vinculado por ritual e sonho.",
+    "originalExpression": "\"* Bound by ritual and dream.\"",
+    "replacementExpression": "\"* Vinculado por ritual e sonho.\""
+  },
+  "90b8398f7679": {
+    "file": "scripts/battle/enemies/p5/nkg.lua",
+    "fileHash": "deaf20b011436ea4810915466db38e6aa60181a8a1de37ab5fc4437e1c93d42c",
+    "startOffset": 546,
+    "endOffset": 589,
+    "source": "* Shadow and fire, dancing and\nfighting.",
+    "translation": "* Sombra e fogo, dançando e\nlutando.",
+    "originalExpression": "\"* Shadow and fire, dancing and\\nfighting.\"",
+    "replacementExpression": "\"* Sombra e fogo, dançando e\\nlutando.\""
+  },
+  "3cc22d1076d5": {
+    "file": "scripts/battle/enemies/p5/radiance.lua",
+    "fileHash": "0c0985b76ec79092de3ebbee7c3768151ca5a6f167e8bb3a62476aac1fbcd9ff",
+    "startOffset": 499,
+    "endOffset": 530,
+    "source": "* Darkness against the Light.",
+    "translation": "* A Escuridão contra a Luz.",
+    "originalExpression": "\"* Darkness against the Light.\"",
+    "replacementExpression": "\"* A Escuridão contra a Luz.\""
+  },
+  "36e3741adce9": {
+    "file": "scripts/battle/enemies/p5/radiance.lua",
+    "fileHash": "0c0985b76ec79092de3ebbee7c3768151ca5a6f167e8bb3a62476aac1fbcd9ff",
+    "startOffset": 541,
+    "endOffset": 571,
+    "source": "* She will not be forgotten.",
+    "translation": "* Ela não será esquecida.",
+    "originalExpression": "\"* She will not be forgotten.\"",
+    "replacementExpression": "\"* Ela não será esquecida.\""
+  },
+  "345019e8d410": {
+    "file": "scripts/battle/enemies/p5/radiance.lua",
+    "fileHash": "0c0985b76ec79092de3ebbee7c3768151ca5a6f167e8bb3a62476aac1fbcd9ff",
+    "startOffset": 582,
+    "endOffset": 635,
+    "source": "* Maybe dreams aren't such great\nthings after all.",
+    "translation": "* Talvez os sonhos não sejam tão\nmaravilhosos no fim das contas.",
+    "originalExpression": "\"* Maybe dreams aren't such great\\nthings after all.\"",
+    "replacementExpression": "\"* Talvez os sonhos não sejam tão\\nmaravilhosos no fim das contas.\""
+  },
+  "ef520fc7a598": {
+    "file": "scripts/battle/enemies/p5/wingednosk.lua",
+    "fileHash": "7e8b8dd8b56e7eae5ed04bc960d502a0e22df675a615af4bcf5b656150ef374e",
+    "startOffset": 386,
+    "endOffset": 420,
+    "source": "* Winged Nosk screeches quietly.",
+    "translation": "* Nosk Alado guincha baixinho.",
+    "originalExpression": "\"* Winged Nosk screeches quietly.\"",
+    "replacementExpression": "\"* Nosk Alado guincha baixinho.\""
+  },
+  "354bff0d7583": {
+    "file": "scripts/battle/enemies/p5/wingednosk.lua",
+    "fileHash": "7e8b8dd8b56e7eae5ed04bc960d502a0e22df675a615af4bcf5b656150ef374e",
+    "startOffset": 431,
+    "endOffset": 465,
+    "source": "* Winged Nosk chews on a corpse.",
+    "translation": "* Nosk Alado mastiga um cadáver.",
+    "originalExpression": "\"* Winged Nosk chews on a corpse.\"",
+    "replacementExpression": "\"* Nosk Alado mastiga um cadáver.\""
+  },
+  "df0cd3c41f5b": {
+    "file": "scripts/battle/enemies/p5/wingednosk.lua",
+    "fileHash": "7e8b8dd8b56e7eae5ed04bc960d502a0e22df675a615af4bcf5b656150ef374e",
+    "startOffset": 476,
+    "endOffset": 514,
+    "source": "* Winged Nosk's head slowly rotates.",
+    "translation": "* A cabeça do Nosk Alado gira lentamente.",
+    "originalExpression": "\"* Winged Nosk's head slowly rotates.\"",
+    "replacementExpression": "\"* A cabeça do Nosk Alado gira lentamente.\""
+  },
+  "0be09b0dddcf": {
+    "file": "scripts/battle/enemies/p5/wingednosk.lua",
+    "fileHash": "7e8b8dd8b56e7eae5ed04bc960d502a0e22df675a615af4bcf5b656150ef374e",
+    "startOffset": 525,
+    "endOffset": 559,
+    "source": "* She's not here to protect you.",
+    "translation": "* Ela não está aqui para proteger você.",
+    "originalExpression": "\"* She's not here to protect you.\"",
+    "replacementExpression": "\"* Ela não está aqui para proteger você.\""
+  },
+  "3c42ac18be7d": {
+    "file": "scripts/data/items/armors/compass.lua",
+    "fileHash": "d89ffe6ab99ba3415759c22e4a788f5f69bf63699bdde018ea6d0a64885ace6c",
+    "startOffset": 204,
+    "endOffset": 221,
+    "source": "The best charm.",
+    "translation": "O melhor amuleto.",
+    "originalExpression": "\"The best charm.\"",
+    "replacementExpression": "\"O melhor amuleto.\""
+  },
+  "d7397703498c": {
+    "file": "scripts/data/items/armors/fury.lua",
+    "fileHash": "5c1222a535b290a4d83023604272de5f8c0e161796fe6296fa26265a5cd09390",
+    "startOffset": 202,
+    "endOffset": 262,
+    "source": "When close to death, the bearer's strength will\nincrease.",
+    "translation": "À beira da morte, a força do portador\naumentará.",
+    "originalExpression": "\"When close to death, the bearer's strength will\\nincrease.\"",
+    "replacementExpression": "\"À beira da morte, a força do portador\\naumentará.\""
+  },
+  "7c91b7e9002f": {
+    "file": "scripts/data/items/armors/steadybody.lua",
+    "fileHash": "730dcdf2878e1736e40d6b940295c7f8e882af034244619f54d2c0618e514f5e",
+    "startOffset": 214,
+    "endOffset": 261,
+    "source": "Allows one to stay steady and keep attacking.",
+    "translation": "Permite manter a firmeza e continuar atacando.",
+    "originalExpression": "\"Allows one to stay steady and keep attacking.\"",
+    "replacementExpression": "\"Permite manter a firmeza e continuar atacando.\""
+  },
+  "84e4c203a547": {
+    "file": "scripts/data/items/armors/unn.lua",
+    "fileHash": "afc298ee66ca54ac5c22637ac1033da454d5314073f95667cc97f3b2603f196c",
+    "startOffset": 201,
+    "endOffset": 264,
+    "source": "While focusing TP, the bearer can shift its\nposition slowly.",
+    "translation": "Ao concentrar TP, o portador pode mudar\nlentamente de posição.",
+    "originalExpression": "\"While focusing TP, the bearer can shift its\\nposition slowly.\"",
+    "replacementExpression": "\"Ao concentrar TP, o portador pode mudar\\nlentamente de posição.\""
+  },
+  "5d1520f19345": {
+    "file": "scripts/data/items/armors/voidheart.lua",
+    "fileHash": "f8eb6259560c2398d889897c8e1240efa29ae67a6ef74dd04fc32a42930986d4",
+    "startOffset": 211,
+    "endOffset": 274,
+    "source": "Unifies the void under the bearer's will.\nCannot be removed.",
+    "translation": "Unifica o vazio sob a vontade do portador.\nNão pode ser removido.",
+    "originalExpression": "\"Unifies the void under the bearer's will.\\nCannot be removed.\"",
+    "replacementExpression": "\"Unifica o vazio sob a vontade do portador.\\nNão pode ser removido.\""
+  },
+  "5f30c990e702": {
+    "file": "scripts/data/party/knight.lua",
+    "fileHash": "e965fd63d55ebbe2aed753ff4d8afc4d075d9f252814bab3b7ce90d2d9810983",
+    "startOffset": 194,
+    "endOffset": 211,
+    "source": "An empty shell.",
+    "translation": "Uma carcaça vazia.",
+    "originalExpression": "\"An empty shell.\"",
+    "replacementExpression": "\"Uma carcaça vazia.\""
+  },
+  "506f9e17e12f": {
+    "file": "scripts/data/party/knight.lua",
+    "fileHash": "e965fd63d55ebbe2aed753ff4d8afc4d075d9f252814bab3b7ce90d2d9810983",
+    "startOffset": 1788,
+    "endOffset": 1796,
+    "source": "Vessel",
+    "translation": "Receptáculo",
+    "originalExpression": "\"Vessel\"",
+    "replacementExpression": "\"Receptáculo\""
+  },
+  "ebca1d79ca19": {
+    "file": "scripts/data/party/knight.lua",
+    "fileHash": "e965fd63d55ebbe2aed753ff4d8afc4d075d9f252814bab3b7ce90d2d9810983",
+    "startOffset": 1843,
+    "endOffset": 1859,
+    "source": "Attuned Vessel",
+    "translation": "Receptáculo Sintonizado",
+    "originalExpression": "\"Attuned Vessel\"",
+    "replacementExpression": "\"Receptáculo Sintonizado\""
+  },
+  "5862ec1f9e7d": {
+    "file": "scripts/data/party/knight.lua",
+    "fileHash": "e965fd63d55ebbe2aed753ff4d8afc4d075d9f252814bab3b7ce90d2d9810983",
+    "startOffset": 1910,
+    "endOffset": 1927,
+    "source": "Ascended Vessel",
+    "translation": "Receptáculo Ascendido",
+    "originalExpression": "\"Ascended Vessel\"",
+    "replacementExpression": "\"Receptáculo Ascendido\""
+  },
+  "426f0e6f4801": {
+    "file": "scripts/data/party/knight.lua",
+    "fileHash": "e965fd63d55ebbe2aed753ff4d8afc4d075d9f252814bab3b7ce90d2d9810983",
+    "startOffset": 1978,
+    "endOffset": 1991,
+    "source": "Pure Vessel",
+    "translation": "Receptáculo Puro",
+    "originalExpression": "\"Pure Vessel\"",
+    "replacementExpression": "\"Receptáculo Puro\""
+  },
+  "f83e82720b37": {
+    "file": "scripts/data/spells/quickfocus.lua",
+    "fileHash": "b5c76ab7925d06dbdba957b913c766317fc102cad6343ae80411b516a9da43a3",
+    "startOffset": 606,
+    "endOffset": 620,
+    "source": "Heal\nfaster",
+    "translation": "Cura mais\nrápida",
+    "originalExpression": "\"Heal\\nfaster\"",
+    "replacementExpression": "\"Cura mais\\nrápida\""
+  },
+  "83ef7d30b185": {
+    "file": "scripts/data/spells/quickfocus.lua",
+    "fileHash": "b5c76ab7925d06dbdba957b913c766317fc102cad6343ae80411b516a9da43a3",
+    "startOffset": 645,
+    "endOffset": 715,
+    "source": "Focuses crystal energy into the user, allowing\nthem to heal faster.",
+    "translation": "Focaliza energia cristalina no usuário,\npermitindo que se cure mais rápido.",
+    "originalExpression": "\"Focuses crystal energy into the user, allowing\\nthem to heal faster.\"",
+    "replacementExpression": "\"Focaliza energia cristalina no usuário,\\npermitindo que se cure mais rápido.\""
+  },
+  "b729455f4396": {
+    "file": "scripts/data/spells/quickslash.lua",
+    "fileHash": "603f531604bd6d067d1900048b42a6359670a2e00556aaf9720947a6cd5d6c29",
+    "startOffset": 628,
+    "endOffset": 644,
+    "source": "Attack\nfaster",
+    "translation": "Ataque mais\nrápido",
+    "originalExpression": "\"Attack\\nfaster\"",
+    "replacementExpression": "\"Ataque mais\\nrápido\""
+  },
+  "7e3cd92b367e": {
+    "file": "scripts/data/spells/quickslash.lua",
+    "fileHash": "603f531604bd6d067d1900048b42a6359670a2e00556aaf9720947a6cd5d6c29",
+    "startOffset": 669,
+    "endOffset": 757,
+    "source": "Concentrates soul into the user's nail, granting\nthem better control of their swings.",
+    "translation": "Concentra alma no ferrão do usuário,\npermitindo controlar melhor os golpes.",
+    "originalExpression": "\"Concentrates soul into the user's nail, granting\\nthem better control of their swings.\"",
+    "replacementExpression": "\"Concentra alma no ferrão do usuário,\\npermitindo controlar melhor os golpes.\""
+  },
+  "6aca55c9982a": {
+    "file": "scripts/data/spells/vengefulspirit.lua",
+    "fileHash": "d38b4ae5931b9ee3a3347ede484ff3c1a6ade678b8b205874320248c3831f031",
+    "startOffset": 155,
+    "endOffset": 170,
+    "source": "Burning\nsoul",
+    "translation": "Alma em\nchamas",
+    "originalExpression": "\"Burning\\nsoul\"",
+    "replacementExpression": "\"Alma em\\nchamas\""
+  },
+  "5bff24bb41c0": {
+    "file": "scripts/data/spells/vengefulspirit.lua",
+    "fileHash": "d38b4ae5931b9ee3a3347ede484ff3c1a6ade678b8b205874320248c3831f031",
+    "startOffset": 195,
+    "endOffset": 255,
+    "source": "A spirit that will fly forward and burn foes\nin its path.",
+    "translation": "Um espírito que voa adiante e queima\nos inimigos em seu caminho.",
+    "originalExpression": "\"A spirit that will fly forward and burn foes\\nin its path.\"",
+    "replacementExpression": "\"Um espírito que voa adiante e queima\\nos inimigos em seu caminho.\""
+  },
+  "d9968d78c56e": {
+    "file": "scripts/data/spells/vengefulspirit.lua",
+    "fileHash": "d38b4ae5931b9ee3a3347ede484ff3c1a6ade678b8b205874320248c3831f031",
+    "startOffset": 408,
+    "endOffset": 437,
+    "source": "* You cast VENGEFUL SPIRIT!",
+    "translation": "* Você conjurou ESPÍRITO VINGATIVO!",
+    "originalExpression": "\"* You cast VENGEFUL SPIRIT!\"",
+    "replacementExpression": "\"* Você conjurou ESPÍRITO VINGATIVO!\""
+  },
+  "2e64aa56988f": {
+    "file": "scripts/objects/world/BindingButton.lua",
+    "fileHash": "063c53e6e909f4cb98581278a1bd481f8f30951c043904d9034d3c5539b25272",
+    "startOffset": 310,
+    "endOffset": 316,
+    "source": "Nail",
+    "translation": "Ferrão",
+    "originalExpression": "\"Nail\"",
+    "replacementExpression": "\"Ferrão\""
+  },
+  "5fcddc400363": {
+    "file": "scripts/objects/world/BindingButton.lua",
+    "fileHash": "063c53e6e909f4cb98581278a1bd481f8f30951c043904d9034d3c5539b25272",
+    "startOffset": 369,
+    "endOffset": 377,
+    "source": "Health",
+    "translation": "Vida",
+    "originalExpression": "\"Health\"",
+    "replacementExpression": "\"Vida\""
+  },
+  "20a2dd7db79e": {
+    "file": "scripts/objects/world/BindingButton.lua",
+    "fileHash": "063c53e6e909f4cb98581278a1bd481f8f30951c043904d9034d3c5539b25272",
+    "startOffset": 430,
+    "endOffset": 439,
+    "source": "Tension",
+    "translation": "Tensão",
+    "originalExpression": "\"Tension\"",
+    "replacementExpression": "\"Tensão\""
+  },
+  "cbe6b69d530c": {
+    "file": "scripts/objects/world/BindingButton.lua",
+    "fileHash": "063c53e6e909f4cb98581278a1bd481f8f30951c043904d9034d3c5539b25272",
+    "startOffset": 495,
+    "endOffset": 502,
+    "source": "Magic",
+    "translation": "Magia",
+    "originalExpression": "\"Magic\"",
+    "replacementExpression": "\"Magia\""
+  },
+  "152f99d1e04b": {
+    "file": "scripts/objects/world/PantheonMenu.lua",
+    "fileHash": "546786db7e3a9963f3b4874aaf2762d11b1ec46f2c6ede1b713a3c29837bf484",
+    "startOffset": 445,
+    "endOffset": 458,
+    "source": "PANTHEON OF",
+    "translation": "PANTEÃO DE",
+    "originalExpression": "\"PANTHEON OF\"",
+    "replacementExpression": "\"PANTEÃO DE\""
+  },
+  "0197149a5396": {
+    "file": "scripts/objects/world/PantheonMenu.lua",
+    "fileHash": "546786db7e3a9963f3b4874aaf2762d11b1ec46f2c6ede1b713a3c29837bf484",
+    "startOffset": 495,
+    "endOffset": 512,
+    "source": "PANTHEON OF THE",
+    "translation": "PANTEÃO DO",
+    "originalExpression": "\"PANTHEON OF THE\"",
+    "replacementExpression": "\"PANTEÃO DO\""
+  },
+  "6fbdd7aecb17": {
+    "file": "scripts/objects/world/PantheonMenu.lua",
+    "fileHash": "546786db7e3a9963f3b4874aaf2762d11b1ec46f2c6ede1b713a3c29837bf484",
+    "startOffset": 957,
+    "endOffset": 965,
+    "source": "MASTER",
+    "translation": "MESTRE",
+    "originalExpression": "\"MASTER\"",
+    "replacementExpression": "\"MESTRE\""
+  },
+  "11d062c539eb": {
+    "file": "scripts/objects/world/PantheonMenu.lua",
+    "fileHash": "546786db7e3a9963f3b4874aaf2762d11b1ec46f2c6ede1b713a3c29837bf484",
+    "startOffset": 1023,
+    "endOffset": 1031,
+    "source": "ARTIST",
+    "translation": "ARTISTA",
+    "originalExpression": "\"ARTIST\"",
+    "replacementExpression": "\"ARTISTA\""
+  },
+  "e9fa9542146c": {
+    "file": "scripts/objects/world/PantheonMenu.lua",
+    "fileHash": "546786db7e3a9963f3b4874aaf2762d11b1ec46f2c6ede1b713a3c29837bf484",
+    "startOffset": 1089,
+    "endOffset": 1095,
+    "source": "SAGE",
+    "translation": "SÁBIO",
+    "originalExpression": "\"SAGE\"",
+    "replacementExpression": "\"SÁBIO\""
+  },
+  "0471a7ca7bc2": {
+    "file": "scripts/objects/world/PantheonMenu.lua",
+    "fileHash": "546786db7e3a9963f3b4874aaf2762d11b1ec46f2c6ede1b713a3c29837bf484",
+    "startOffset": 1153,
+    "endOffset": 1161,
+    "source": "KNIGHT",
+    "translation": "CAVALEIRO",
+    "originalExpression": "\"KNIGHT\"",
+    "replacementExpression": "\"CAVALEIRO\""
+  },
+  "b206198b6cb3": {
+    "file": "scripts/objects/world/PantheonMenu.lua",
+    "fileHash": "546786db7e3a9963f3b4874aaf2762d11b1ec46f2c6ede1b713a3c29837bf484",
+    "startOffset": 1219,
+    "endOffset": 1231,
+    "source": "HALLOWNEST",
+    "translation": "HALLOWNEST",
+    "originalExpression": "\"HALLOWNEST\"",
+    "replacementExpression": "\"HALLOWNEST\""
+  },
+  "d07a88720999": {
+    "file": "scripts/objects/world/PantheonMenu.lua",
+    "fileHash": "546786db7e3a9963f3b4874aaf2762d11b1ec46f2c6ede1b713a3c29837bf484",
+    "startOffset": 1607,
+    "endOffset": 1640,
+    "source": "Seek the gods of Nail and Shell",
+    "translation": "Busque os Deuses do Ferrão e da Carapaça",
+    "originalExpression": "\"Seek the gods of Nail and Shell\"",
+    "replacementExpression": "\"Busque os Deuses do Ferrão e da Carapaça\""
+  },
+  "8521fb47114d": {
+    "file": "scripts/objects/world/PantheonMenu.lua",
+    "fileHash": "546786db7e3a9963f3b4874aaf2762d11b1ec46f2c6ede1b713a3c29837bf484",
+    "startOffset": 1704,
+    "endOffset": 1727,
+    "source": "Seek the God Inspired",
+    "translation": "Busque o Deus inspirado",
+    "originalExpression": "\"Seek the God Inspired\"",
+    "replacementExpression": "\"Busque o Deus inspirado\""
+  },
+  "4c04ba4b659a": {
+    "file": "scripts/objects/world/PantheonMenu.lua",
+    "fileHash": "546786db7e3a9963f3b4874aaf2762d11b1ec46f2c6ede1b713a3c29837bf484",
+    "startOffset": 1791,
+    "endOffset": 1825,
+    "source": "Seek the God of Wealth and Power",
+    "translation": "Busque o Deus da Riqueza e do Poder",
+    "originalExpression": "\"Seek the God of Wealth and Power\"",
+    "replacementExpression": "\"Busque o Deus da Riqueza e do Poder\""
+  },
+  "318cd873f318": {
+    "file": "scripts/objects/world/PantheonMenu.lua",
+    "fileHash": "546786db7e3a9963f3b4874aaf2762d11b1ec46f2c6ede1b713a3c29837bf484",
+    "startOffset": 1889,
+    "endOffset": 1908,
+    "source": "Seek the Pure God",
+    "translation": "Busque o Deus Puro",
+    "originalExpression": "\"Seek the Pure God\"",
+    "replacementExpression": "\"Busque o Deus Puro\""
+  },
+  "d613deb3c0e5": {
+    "file": "scripts/objects/world/PantheonMenu.lua",
+    "fileHash": "546786db7e3a9963f3b4874aaf2762d11b1ec46f2c6ede1b713a3c29837bf484",
+    "startOffset": 1972,
+    "endOffset": 2008,
+    "source": "Seek the Kingdom's Forgotten Light",
+    "translation": "Busque a Luz Esquecida do Reino",
+    "originalExpression": "\"Seek the Kingdom's Forgotten Light\"",
+    "replacementExpression": "\"Busque a Luz Esquecida do Reino\""
+  },
+  "7506ea9f8cc8": {
+    "file": "scripts/objects/world/PantheonMenu.lua",
+    "fileHash": "546786db7e3a9963f3b4874aaf2762d11b1ec46f2c6ede1b713a3c29837bf484",
+    "startOffset": 2451,
+    "endOffset": 2461,
+    "source": "BINDINGS",
+    "translation": "VÍNCULOS",
+    "originalExpression": "\"BINDINGS\"",
+    "replacementExpression": "\"VÍNCULOS\""
+  },
+  "1325ec2432e5": {
+    "file": "scripts/world/cutscenes/credits.lua",
+    "fileHash": "578081f8d0419777e5cd94c73b49be9ef2b61829e4ee4e6a2e7ee35051728500",
+    "startOffset": 412,
+    "endOffset": 460,
+    "source": "[speed:0.5][voice:none]GODHOME\n  by vitellary",
+    "translation": "[speed:0.5][voice:none]GODHOME\n  por vitellary",
+    "originalExpression": "\"[speed:0.5][voice:none]GODHOME\\n  by vitellary\"",
+    "replacementExpression": "\"[speed:0.5][voice:none]GODHOME\\n  por vitellary\""
+  },
+  "0e4819cb5382": {
+    "file": "scripts/world/cutscenes/credits.lua",
+    "fileHash": "578081f8d0419777e5cd94c73b49be9ef2b61829e4ee4e6a2e7ee35051728500",
+    "startOffset": 533,
+    "endOffset": 601,
+    "source": "[speed:0.5][voice:none]KRISTAL\n  by SylviBlossom\n  and Nyakorita",
+    "translation": "[speed:0.5][voice:none]KRISTAL\n  por SylviBlossom\n  e Nyakorita",
+    "originalExpression": "\"[speed:0.5][voice:none]KRISTAL\\n  by SylviBlossom\\n  and Nyakorita\"",
+    "replacementExpression": "\"[speed:0.5][voice:none]KRISTAL\\n  por SylviBlossom\\n  e Nyakorita\""
+  },
+  "cfd1567d5fe2": {
+    "file": "scripts/world/cutscenes/credits.lua",
+    "fileHash": "578081f8d0419777e5cd94c73b49be9ef2b61829e4ee4e6a2e7ee35051728500",
+    "startOffset": 872,
+    "endOffset": 926,
+    "source": "[speed:0.5][voice:none]Original Art\n  by Ari Gibson",
+    "translation": "[speed:0.5][voice:none]Arte Original\n  por Ari Gibson",
+    "originalExpression": "\"[speed:0.5][voice:none]Original Art\\n  by Ari Gibson\"",
+    "replacementExpression": "\"[speed:0.5][voice:none]Arte Original\\n  por Ari Gibson\""
+  },
+  "d90d73ed17af": {
+    "file": "scripts/world/cutscenes/credits.lua",
+    "fileHash": "578081f8d0419777e5cd94c73b49be9ef2b61829e4ee4e6a2e7ee35051728500",
+    "startOffset": 993,
+    "endOffset": 1061,
+    "source": "[speed:0.5][voice:none]Pixel Art\n  by vitellary\n  and mothbeanie",
+    "translation": "[speed:0.5][voice:none]Arte em Pixel\n  por vitellary\n  e mothbeanie",
+    "originalExpression": "\"[speed:0.5][voice:none]Pixel Art\\n  by vitellary\\n  and mothbeanie\"",
+    "replacementExpression": "\"[speed:0.5][voice:none]Arte em Pixel\\n  por vitellary\\n  e mothbeanie\""
+  },
+  "b4563db6573d": {
+    "file": "scripts/world/cutscenes/credits.lua",
+    "fileHash": "578081f8d0419777e5cd94c73b49be9ef2b61829e4ee4e6a2e7ee35051728500",
+    "startOffset": 1332,
+    "endOffset": 1398,
+    "source": "[speed:0.5][voice:none]Music\n  by Chris. Larkin\n  and Toby Fox",
+    "translation": "[speed:0.5][voice:none]Música\n  por Chris. Larkin\n  e Toby Fox",
+    "originalExpression": "\"[speed:0.5][voice:none]Music\\n  by Chris. Larkin\\n  and Toby Fox\"",
+    "replacementExpression": "\"[speed:0.5][voice:none]Música\\n  por Chris. Larkin\\n  e Toby Fox\""
+  },
+  "4290b968bfe3": {
+    "file": "scripts/world/cutscenes/credits.lua",
+    "fileHash": "578081f8d0419777e5cd94c73b49be9ef2b61829e4ee4e6a2e7ee35051728500",
+    "startOffset": 1465,
+    "endOffset": 1537,
+    "source": "[speed:0.5][voice:none]Special Thanks\n  Owen Shirrell\n  SylviBlossom",
+    "translation": "[speed:0.5][voice:none]Agradecimentos Especiais\n  Owen Shirrell\n  SylviBlossom",
+    "originalExpression": "\"[speed:0.5][voice:none]Special Thanks\\n  Owen Shirrell\\n  SylviBlossom\"",
+    "replacementExpression": "\"[speed:0.5][voice:none]Agradecimentos Especiais\\n  Owen Shirrell\\n  SylviBlossom\""
+  },
+  "b90e85fc3a23": {
+    "file": "scripts/world/cutscenes/credits.lua",
+    "fileHash": "578081f8d0419777e5cd94c73b49be9ef2b61829e4ee4e6a2e7ee35051728500",
+    "startOffset": 1740,
+    "endOffset": 1783,
+    "source": "[speed:0.5][voice:none]Thanks for playing",
+    "translation": "[speed:0.5][voice:none]Obrigado por jogar",
+    "originalExpression": "\"[speed:0.5][voice:none]Thanks for playing\"",
+    "replacementExpression": "\"[speed:0.5][voice:none]Obrigado por jogar\""
+  },
+  "1987ea1e8b0e": {
+    "file": "scripts/world/cutscenes/pantheon_end.lua",
+    "fileHash": "b4257f0dd47a1b141cd866a3a623bd3e638d02aefc2a6f757d8f42363f9bb5f7",
+    "startOffset": 1583,
+    "endOffset": 1589,
+    "source": "TIME",
+    "translation": "TEMPO",
+    "originalExpression": "\"TIME\"",
+    "replacementExpression": "\"TEMPO\""
+  },
+  "62e46d4203df": {
+    "file": "scripts/world/events/godstatue.lua",
+    "fileHash": "224afd0c4aadddac10c0eeafdb91e251c8629478806e06a927051bbae33c75a5",
+    "startOffset": 5631,
+    "endOffset": 5636,
+    "source": "???",
+    "translation": "???",
+    "originalExpression": "\"???\"",
+    "replacementExpression": "\"???\""
+  },
+  "1a7236c251ac": {
+    "file": "scripts/world/events/knightstatue.lua",
+    "fileHash": "80e2cb26483231516fda939af9b8d5b02c200217920c4493efee77307827ca1a",
+    "startOffset": 304,
+    "endOffset": 336,
+    "source": "* Not bug, nor beast, nor god.",
+    "translation": "* Nem inseto, nem fera, nem deus.",
+    "originalExpression": "\"* Not bug, nor beast, nor god.\"",
+    "replacementExpression": "\"* Nem inseto, nem fera, nem deus.\""
+  },
+  "9225f87829b5": {
+    "file": "scripts/world/events/knightstatue.lua",
+    "fileHash": "80e2cb26483231516fda939af9b8d5b02c200217920c4493efee77307827ca1a",
+    "startOffset": 387,
+    "endOffset": 418,
+    "source": "Not bug, nor beast,\nnor god.",
+    "translation": "Nem inseto, nem fera,\nnem deus.",
+    "originalExpression": "\"Not bug, nor beast,\\nnor god.\"",
+    "replacementExpression": "\"Nem inseto, nem fera,\\nnem deus.\""
+  },
+  "d28b62295ddd": {
+    "file": "scripts/world/events/knightstatue.lua",
+    "fileHash": "80e2cb26483231516fda939af9b8d5b02c200217920c4493efee77307827ca1a",
+    "startOffset": 480,
+    "endOffset": 500,
+    "source": "* Void given form.",
+    "translation": "* Vazio com forma.",
+    "originalExpression": "\"* Void given form.\"",
+    "replacementExpression": "\"* Vazio com forma.\""
+  },
+  "60b24d98d268": {
+    "file": "scripts/world/events/knightstatue.lua",
+    "fileHash": "80e2cb26483231516fda939af9b8d5b02c200217920c4493efee77307827ca1a",
+    "startOffset": 551,
+    "endOffset": 569,
+    "source": "Void given form.",
+    "translation": "Vazio com forma.",
+    "originalExpression": "\"Void given form.\"",
+    "replacementExpression": "\"Vazio com forma.\""
+  },
+  "01f453e77eec": {
+    "file": "scripts/world/events/knightstatue.lua",
+    "fileHash": "80e2cb26483231516fda939af9b8d5b02c200217920c4493efee77307827ca1a",
+    "startOffset": 630,
+    "endOffset": 651,
+    "source": "* Void given focus.",
+    "translation": "* Vazio com foco.",
+    "originalExpression": "\"* Void given focus.\"",
+    "replacementExpression": "\"* Vazio com foco.\""
+  },
+  "98ad179acbbb": {
+    "file": "scripts/world/events/knightstatue.lua",
+    "fileHash": "80e2cb26483231516fda939af9b8d5b02c200217920c4493efee77307827ca1a",
+    "startOffset": 702,
+    "endOffset": 721,
+    "source": "Void given focus.",
+    "translation": "Vazio com foco.",
+    "originalExpression": "\"Void given focus.\"",
+    "replacementExpression": "\"Vazio com foco.\""
+  },
+  "8e07993ed9f5": {
+    "file": "scripts/world/events/pantheonsave.lua",
+    "fileHash": "5a570321056d139a80aa997305797014f1a3598a7d8006eabf3a1316cbd7c84e",
+    "startOffset": 1217,
+    "endOffset": 1264,
+    "source": "* You rest at the hot spring.\n* HP restored.",
+    "translation": "* Você descansa na fonte termal.\n* HP restaurado.",
+    "originalExpression": "\"* You rest at the hot spring.\\n* HP restored.\"",
+    "replacementExpression": "\"* Você descansa na fonte termal.\\n* HP restaurado.\""
+  },
+  "cc4a2f713256": {
+    "file": "scripts/world/events/stormsstatue.lua",
+    "fileHash": "9a0f237fc84b99aea4c20a986bef7bfb900caf2e538effe5313a083696bc8f51",
+    "startOffset": 962,
+    "endOffset": 1020,
+    "source": "* The statue glows softly,\nemanating a dreamlike light.",
+    "translation": "* A estátua brilha suavemente,\nemanando uma luz onírica.",
+    "originalExpression": "\"* The statue glows softly,\\nemanating a dreamlike light.\"",
+    "replacementExpression": "\"* A estátua brilha suavemente,\\nemanando uma luz onírica.\""
+  },
+  "de5129d1e138": {
+    "file": "scripts/world/events/stormsstatue.lua",
+    "fileHash": "9a0f237fc84b99aea4c20a986bef7bfb900caf2e538effe5313a083696bc8f51",
+    "startOffset": 1045,
+    "endOffset": 1066,
+    "source": "* Enter the statue?",
+    "translation": "* Entrar na estátua?",
+    "originalExpression": "\"* Enter the statue?\"",
+    "replacementExpression": "\"* Entrar na estátua?\""
+  },
+  "4701904ec92b": {
+    "file": "scripts/world/events/stormsstatue.lua",
+    "fileHash": "9a0f237fc84b99aea4c20a986bef7bfb900caf2e538effe5313a083696bc8f51",
+    "startOffset": 1110,
+    "endOffset": 1115,
+    "source": "Yes",
+    "translation": "Sim",
+    "originalExpression": "\"Yes\"",
+    "replacementExpression": "\"Sim\""
+  },
+  "a14926366607": {
+    "file": "scripts/world/events/stormsstatue.lua",
+    "fileHash": "9a0f237fc84b99aea4c20a986bef7bfb900caf2e538effe5313a083696bc8f51",
+    "startOffset": 1117,
+    "endOffset": 1121,
+    "source": "No",
+    "translation": "Não",
+    "originalExpression": "\"No\"",
+    "replacementExpression": "\"Não\""
+  },
+  "538e809ddfba": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 56787,
+    "endOffset": 56816,
+    "source": "Slumbering god of fertility",
+    "translation": "Deusa adormecida da fertilidade",
+    "originalExpression": "\"Slumbering god of fertility\"",
+    "replacementExpression": "\"Deusa adormecida da fertilidade\""
+  },
+  "3e28cda6a91a": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 57296,
+    "endOffset": 57324,
+    "source": "Vicious god of territories",
+    "translation": "Deus feroz dos territórios",
+    "originalExpression": "\"Vicious god of territories\"",
+    "replacementExpression": "\"Deus feroz dos territórios\""
+  },
+  "21e1c049bcf2": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 57755,
+    "endOffset": 57779,
+    "source": "Lonely god of the nest",
+    "translation": "Deus solitário do ninho",
+    "originalExpression": "\"Lonely god of the nest\"",
+    "replacementExpression": "\"Deus solitário do ninho\""
+  },
+  "8a131eb0c257": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 58218,
+    "endOffset": 58242,
+    "source": "Baleful god of regrets",
+    "translation": "Deus funesto dos arrependimentos",
+    "originalExpression": "\"Baleful god of regrets\"",
+    "replacementExpression": "\"Deus funesto dos arrependimentos\""
+  },
+  "7059525f0cd1": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 58408,
+    "endOffset": 58438,
+    "source": "Angry god of the downtrodden",
+    "translation": "Deus irado dos oprimidos",
+    "originalExpression": "\"Angry god of the downtrodden\"",
+    "replacementExpression": "\"Deus irado dos oprimidos\""
+  },
+  "3777cafdf087": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 58960,
+    "endOffset": 58992,
+    "source": "God protector of a fading land",
+    "translation": "Deusa protetora de uma terra decadente",
+    "originalExpression": "\"God protector of a fading land\"",
+    "replacementExpression": "\"Deusa protetora de uma terra decadente\""
+  },
+  "2093eecd93d5": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 59420,
+    "endOffset": 59461,
+    "source": "Restless god of those who band together",
+    "translation": "Deus inquieto daqueles que se unem",
+    "originalExpression": "\"Restless god of those who band together\"",
+    "replacementExpression": "\"Deus inquieto daqueles que se unem\""
+  },
+  "9f52f3ff7375": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 59897,
+    "endOffset": 59925,
+    "source": "Alluring god of motherhood",
+    "translation": "Deusa sedutora da maternidade",
+    "originalExpression": "\"Alluring god of motherhood\"",
+    "replacementExpression": "\"Deusa sedutora da maternidade\""
+  },
+  "7b05c93300f9": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 60353,
+    "endOffset": 60384,
+    "source": "Revered gods of a proud tribe",
+    "translation": "Deusas reverenciadas de uma tribo orgulhosa",
+    "originalExpression": "\"Revered gods of a proud tribe\"",
+    "replacementExpression": "\"Deusas reverenciadas de uma tribo orgulhosa\""
+  },
+  "a90fa1aa30e7": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 60549,
+    "endOffset": 60578,
+    "source": "Noble sister gods of combat",
+    "translation": "Nobres deusas irmãs do combate",
+    "originalExpression": "\"Noble sister gods of combat\"",
+    "replacementExpression": "\"Nobres deusas irmãs do combate\""
+  },
+  "d1436b669b1e": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 61007,
+    "endOffset": 61041,
+    "source": "Lover gods of faith and devotion",
+    "translation": "Deuses amantes da fé e devoção",
+    "originalExpression": "\"Lover gods of faith and devotion\"",
+    "replacementExpression": "\"Deuses amantes da fé e devoção\""
+  },
+  "6d87e0a4b9e5": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 61464,
+    "endOffset": 61486,
+    "source": "Watchful god of duty",
+    "translation": "Deus vigilante do dever",
+    "originalExpression": "\"Watchful god of duty\"",
+    "replacementExpression": "\"Deus vigilante do dever\""
+  },
+  "e59b5bacbb1a": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 61916,
+    "endOffset": 61939,
+    "source": "Lost god of the Abyss",
+    "translation": "Deus perdido do Abismo",
+    "originalExpression": "\"Lost god of the Abyss\"",
+    "replacementExpression": "\"Deus perdido do Abismo\""
+  },
+  "4fa0ea95aeb7": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 62094,
+    "endOffset": 62124,
+    "source": "Broken shell of an empty god",
+    "translation": "Carcaça quebrada de um deus vazio",
+    "originalExpression": "\"Broken shell of an empty god\"",
+    "replacementExpression": "\"Carcaça quebrada de um deus vazio\""
+  },
+  "c11610d0d898": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 62559,
+    "endOffset": 62602,
+    "source": "Deceptive god assuming a protector's form",
+    "translation": "Deus enganador que assume a forma de uma protetora",
+    "originalExpression": "\"Deceptive god assuming a protector's form\"",
+    "replacementExpression": "\"Deus enganador que assume a forma de uma protetora\""
+  },
+  "022c06040c6b": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 62764,
+    "endOffset": 62798,
+    "source": "Everchanging god of the faceless",
+    "translation": "Deus inconstante dos sem-rosto",
+    "originalExpression": "\"Everchanging god of the faceless\"",
+    "replacementExpression": "\"Deus inconstante dos sem-rosto\""
+  },
+  "201d85509b3e": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 63211,
+    "endOffset": 63237,
+    "source": "Joyful god of protection",
+    "translation": "Deus alegre da proteção",
+    "originalExpression": "\"Joyful god of protection\"",
+    "replacementExpression": "\"Deus alegre da proteção\""
+  },
+  "114a16cd4ca7": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 63661,
+    "endOffset": 63687,
+    "source": "Gallant god of the arena",
+    "translation": "Deusa valente da arena",
+    "originalExpression": "\"Gallant god of the arena\"",
+    "replacementExpression": "\"Deusa valente da arena\""
+  },
+  "7c469011339a": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 64212,
+    "endOffset": 64234,
+    "source": "Shining god of greed",
+    "translation": "Deus brilhante da ganância",
+    "originalExpression": "\"Shining god of greed\"",
+    "replacementExpression": "\"Deus brilhante da ganância\""
+  },
+  "07a7b97021b0": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 64670,
+    "endOffset": 64696,
+    "source": "Uncanny god of knowledge",
+    "translation": "Deus inquietante do conhecimento",
+    "originalExpression": "\"Uncanny god of knowledge\"",
+    "replacementExpression": "\"Deus inquietante do conhecimento\""
+  },
+  "bf61b20fea21": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 65111,
+    "endOffset": 65137,
+    "source": "Treacherous god of anger",
+    "translation": "Deus traiçoeiro da ira",
+    "originalExpression": "\"Treacherous god of anger\"",
+    "replacementExpression": "\"Deus traiçoeiro da ira\""
+  },
+  "543949f47070": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 65565,
+    "endOffset": 65599,
+    "source": "False god conjured by the lonely",
+    "translation": "Falso deus conjurado pelos solitários",
+    "originalExpression": "\"False god conjured by the lonely\"",
+    "replacementExpression": "\"Falso deus conjurado pelos solitários\""
+  },
+  "316c4d045429": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 66029,
+    "endOffset": 66057,
+    "source": "Haunted god of the sanctum",
+    "translation": "Deus assombrado do santuário",
+    "originalExpression": "\"Haunted god of the sanctum\"",
+    "replacementExpression": "\"Deus assombrado do santuário\""
+  },
+  "a3d4ded8e640": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 66481,
+    "endOffset": 66508,
+    "source": "Frenzied god of mortality",
+    "translation": "Deus frenético da mortalidade",
+    "originalExpression": "\"Frenzied god of mortality\"",
+    "replacementExpression": "\"Deus frenético da mortalidade\""
+  },
+  "a91967c20a55": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 66669,
+    "endOffset": 66691,
+    "source": "Covetous god of soul",
+    "translation": "Deus cobiçoso da alma",
+    "originalExpression": "\"Covetous god of soul\"",
+    "replacementExpression": "\"Deus cobiçoso da alma\""
+  },
+  "a085ac5f8223": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 67251,
+    "endOffset": 67284,
+    "source": "Kindly god of bravery and honor",
+    "translation": "Deus bondoso da bravura e da honra",
+    "originalExpression": "\"Kindly god of bravery and honor\"",
+    "replacementExpression": "\"Deus bondoso da bravura e da honra\""
+  },
+  "340d93c16eb3": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 67715,
+    "endOffset": 67743,
+    "source": "Sentinel gods of the spire",
+    "translation": "Deuses sentinelas da torre",
+    "originalExpression": "\"Sentinel gods of the spire\"",
+    "replacementExpression": "\"Deuses sentinelas da torre\""
+  },
+  "7e81d20cf949": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 68170,
+    "endOffset": 68204,
+    "source": "Dreamborn god of fear and relief",
+    "translation": "Deusa onírica do medo e alívio",
+    "originalExpression": "\"Dreamborn god of fear and relief\"",
+    "replacementExpression": "\"Deusa onírica do medo e alívio\""
+  },
+  "75e2ad6e162f": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 68615,
+    "endOffset": 68641,
+    "source": "Dreamborn god of gardens",
+    "translation": "Deusa onírica dos jardins",
+    "originalExpression": "\"Dreamborn god of gardens\"",
+    "replacementExpression": "\"Deusa onírica dos jardins\""
+  },
+  "f217281665be": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 69049,
+    "endOffset": 69086,
+    "source": "Dreamborn god of faith and betrayal",
+    "translation": "Deus onírico da fé e traição",
+    "originalExpression": "\"Dreamborn god of faith and betrayal\"",
+    "replacementExpression": "\"Deus onírico da fé e traição\""
+  },
+  "0f9ff50dccc0": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 69492,
+    "endOffset": 69535,
+    "source": "Dreamborn god of meditation and isolation",
+    "translation": "Deus onírico da meditação e isolamento",
+    "originalExpression": "\"Dreamborn god of meditation and isolation\"",
+    "replacementExpression": "\"Deus onírico da meditação e isolamento\""
+  },
+  "f53961b08724": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 69947,
+    "endOffset": 69979,
+    "source": "Dreamborn god of heroic hearts",
+    "translation": "Deus onírico de corações heróicos",
+    "originalExpression": "\"Dreamborn god of heroic hearts\"",
+    "replacementExpression": "\"Deus onírico de corações heróicos\""
+  },
+  "eb08b1151bf5": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 70389,
+    "endOffset": 70418,
+    "source": "Dreamborn god of the beyond",
+    "translation": "Deus onírico do além",
+    "originalExpression": "\"Dreamborn god of the beyond\"",
+    "replacementExpression": "\"Deus onírico do além\""
+  },
+  "3b2452a2edbc": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 70824,
+    "endOffset": 70863,
+    "source": "Dreamborn god of travellers and sages",
+    "translation": "Deus onírico dos viajantes e sábios",
+    "originalExpression": "\"Dreamborn god of travellers and sages\"",
+    "replacementExpression": "\"Deus onírico dos viajantes e sábios\""
+  },
+  "13ac3148ba44": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 71284,
+    "endOffset": 71316,
+    "source": "Loyal brother gods of the nail",
+    "translation": "Deuses irmãos leais do ferrão",
+    "originalExpression": "\"Loyal brother gods of the nail\"",
+    "replacementExpression": "\"Deuses irmãos leais do ferrão\""
+  },
+  "e925d88e331d": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 71768,
+    "endOffset": 71806,
+    "source": "Talented god of artists and creators",
+    "translation": "Deus talentoso dos artistas e criadores",
+    "originalExpression": "\"Talented god of artists and creators\"",
+    "replacementExpression": "\"Deus talentoso dos artistas e criadores\""
+  },
+  "e5e1de919988": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 72245,
+    "endOffset": 72273,
+    "source": "Cunning god of opportunity",
+    "translation": "Deus astuto da oportunidade",
+    "originalExpression": "\"Cunning god of opportunity\"",
+    "replacementExpression": "\"Deus astuto da oportunidade\""
+  },
+  "63ffe81d6c98": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 72710,
+    "endOffset": 72737,
+    "source": "Mighty god of nothingness",
+    "translation": "Poderoso deus do nada",
+    "originalExpression": "\"Mighty god of nothingness\"",
+    "replacementExpression": "\"Poderoso deus do nada\""
+  },
+  "1ea5cf852802": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 73192,
+    "endOffset": 73211,
+    "source": "God of nightmares",
+    "translation": "Deus dos pesadelos",
+    "originalExpression": "\"God of nightmares\"",
+    "replacementExpression": "\"Deus dos pesadelos\""
+  },
+  "ca00076649c8": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 73401,
+    "endOffset": 73431,
+    "source": "Travelling god of the troupe",
+    "translation": "Deus viajante da trupe",
+    "originalExpression": "\"Travelling god of the troupe\"",
+    "replacementExpression": "\"Deus viajante da trupe\""
+  },
+  "985cdd6525f5": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 73839,
+    "endOffset": 73862,
+    "source": "Chaotic god of shadow",
+    "translation": "Deus caótico das sombras",
+    "originalExpression": "\"Chaotic god of shadow\"",
+    "replacementExpression": "\"Deus caótico das sombras\""
+  },
+  "d74e69ad18d4": {
+    "file": "scripts/world/maps/hallofgods/data.lua",
+    "fileHash": "ed4454c9aea02a355fad3c79f947025f1170a383ee72a3d8dd3f3c8d147eca07",
+    "startOffset": 74323,
+    "endOffset": 74347,
+    "source": "Forgotten god of light",
+    "translation": "Deusa esquecida da luz",
+    "originalExpression": "\"Forgotten god of light\"",
+    "replacementExpression": "\"Deusa esquecida da luz\""
+  }
+}

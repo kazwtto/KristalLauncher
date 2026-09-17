@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "goofball-mod.pt-br",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "Sermon's Sang em Português (Brasil)",
+    "en": "Sermon's Sang in Brazilian Portuguese",
+    "es": "Sermon's Sang en portugués de Brasil"
+  },
+  "description": {
+    "pt-BR": "Tradução comunitária dos textos de Sermon's Sang para português do Brasil.",
+    "en": "Community translation of Sermon's Sang text into Brazilian Portuguese.",
+    "es": "Traducción comunitaria de los textos de Sermon's Sang al portugués de Brasil."
+  },
+  "author": "kazwtto",
+  "gameProjectId": "goofball_mod",
+  "gameVersion": "v1.0.9 (Release)",
+  "sourceLanguage": "en",
+  "targetLanguage": "pt-BR",
+  "minimumLauncherVersion": "0.17.48",
+  "textsFile": "texts.json",
+  "textsSha256": "6a6058fe76e575fcc4b1b74504850461bd24793fd15b92eb3dd319388a5870aa"
+}

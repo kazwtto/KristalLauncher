@@ -51,6 +51,9 @@ object PatchPackageInstaller {
         onStageChanged: (PatchInstallStage) -> Unit = {}
     ): PatchInstallResult {
         return runCatching {
+            IdentifierPolicy.requirePatchId(expectedId, "Catalog patch ID")
+            IdentifierPolicy.requirePackageVersion(expectedVersion, "Catalog patch version")
+            require(IdentifierPolicy.isSha256(expectedSha256)) { "Catalog patch checksum is invalid" }
             onStageChanged(PatchInstallStage.DOWNLOADING)
             require(packageUrl.startsWith("https://")) { "Patch downloads must use HTTPS" }
             val connection = URL(packageUrl).openConnection() as HttpURLConnection
@@ -108,6 +111,8 @@ object PatchPackageInstaller {
 
             onStageChanged(PatchInstallStage.VALIDATING)
             val manifest = extractAndValidate(packageFile, extractionRoot)
+            IdentifierPolicy.requirePatchId(manifest.id)
+            IdentifierPolicy.requirePackageVersion(manifest.version, "Patch version")
             if (expectedId != null) require(manifest.id == expectedId) { "The package ID does not match the catalog" }
             if (expectedVersion != null) {
                 require(manifest.version == expectedVersion) { "The package version does not match the catalog" }
@@ -122,7 +127,10 @@ object PatchPackageInstaller {
             }
             validateCapabilities(manifest.capabilities, manifest.operations.map { it.type })
 
-            val patchParent = File(PatchStorage.rootDirectory(context), manifest.id).canonicalFile.apply { mkdirs() }
+            val patchesRoot = PatchStorage.rootDirectory(context).canonicalFile
+            val patchParent = File(patchesRoot, manifest.id).canonicalFile
+            require(patchParent.parentFile == patchesRoot) { "The patch ID resolves outside patch storage" }
+            patchParent.mkdirs()
             val destination = File(patchParent, manifest.version).canonicalFile
             require(destination.parentFile == patchParent.canonicalFile) {
                 "The patch version resolves outside its installation directory"
