@@ -189,8 +189,10 @@ object LoveMetadataParser {
         val selectedMod = selectModCandidate(modCandidates, targetModId, confTitle)
 
         val iconEntry = selectedMod
-            ?.let { findPreferredIcon(indexedEntries, it.folder) }
-            ?: findPreferredIcon(indexedEntries, gameRoot)
+            ?.let { findPrimaryIcon(indexedEntries, it.folder) }
+            ?: findPrimaryIcon(indexedEntries, gameRoot)
+            ?: selectedMod?.let { findPreviewIconFallback(indexedEntries, it.folder) }
+            ?: findPreviewIconFallback(indexedEntries, gameRoot)
         val iconBytes = iconEntry?.let { readEntryBytes(archive, it.entry, MAX_ICON_BYTES) }
         val previewEntry = selectedMod
             ?.let {
@@ -260,7 +262,8 @@ object LoveMetadataParser {
             val root = manifestEntry.path.substringBeforeLast('/', missingDelimiterValue = "")
             val cleanName = fileName.replace(Regex("(?i)\\.(love|zip|exe)$"), "")
             val title = mod.name.takeUnless(::isPlaceholderTitle) ?: cleanName
-            val iconBytes = findPreferredIcon(indexedEntries, root)
+            val iconBytes = (findPrimaryIcon(indexedEntries, root)
+                ?: findPreviewIconFallback(indexedEntries, root))
                 ?.let { readEntryBytes(archive, it.entry, MAX_ICON_BYTES) }
             val previewEntry = findPreviewScriptBackground(archive, indexedEntries, root, root)
                 ?: findEntry(indexedEntries, childPath(root, "bg.png"))
@@ -497,15 +500,18 @@ object LoveMetadataParser {
         return output.toString()
     }
 
-    private fun findPreferredIcon(
+    private fun findPrimaryIcon(
+        entries: List<IndexedEntry>,
+        parent: String
+    ): IndexedEntry? = ICON_FILE_NAMES.firstNotNullOfOrNull { iconName ->
+        val expectedPath = childPath(parent, iconName)
+        entries.find { !it.entry.isDirectory && it.path == expectedPath }
+    }
+
+    private fun findPreviewIconFallback(
         entries: List<IndexedEntry>,
         parent: String
     ): IndexedEntry? {
-        ICON_FILE_NAMES.firstNotNullOfOrNull { iconName ->
-            val expectedPath = childPath(parent, iconName)
-            entries.find { !it.entry.isDirectory && it.path == expectedPath }
-        }?.let { return it }
-
         val previewPrefix = childPath(parent, "preview/")
         return entries.asSequence()
             .filter { indexed ->
@@ -520,7 +526,6 @@ object LoveMetadataParser {
                     .thenBy { it.path }
             )
             .firstOrNull()
-
     }
 
     private fun isPreviewIconFile(fileName: String): Boolean {

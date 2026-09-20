@@ -118,7 +118,7 @@ class GameArchiveTest {
     }
 
     @Test
-    fun previewImagesAreFallbacksForTheGameIconAndBackground() {
+    fun gameRootIconWinsOverSelectedModPreviewFallback() {
         val directory = Files.createTempDirectory("preview-fallback-priority-test").toFile()
         val archiveFile = directory.resolve("preview-fallback-priority.love")
         val gameIcon = "game-icon".toByteArray()
@@ -129,7 +129,7 @@ class GameArchiveTest {
             ZipOutputStream(archiveFile.outputStream()).use { zip ->
                 writeEntry(zip, "main.lua", "return true")
                 writeEntry(zip, "mods/demo/mod.json", """{"id":"demo","name":"Demo"}""")
-                writeEntry(zip, "mods/demo/icon.png", gameIcon.toString(Charsets.UTF_8))
+                writeEntry(zip, "icon.png", gameIcon.toString(Charsets.UTF_8))
                 writeEntry(zip, "mods/demo/preview/icon.png", previewIcon.toString(Charsets.UTF_8))
                 writeEntry(zip, "mods/demo/bg.png", gameBackground.toString(Charsets.UTF_8))
                 writeEntry(zip, "mods/demo/preview/bg.png", previewBackground.toString(Charsets.UTF_8))

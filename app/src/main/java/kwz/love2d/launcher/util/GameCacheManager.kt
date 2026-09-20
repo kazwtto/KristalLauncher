@@ -22,10 +22,10 @@ object GameCacheManager {
     private const val PREF_NAME = "game_cache_settings"
     private const val KEY_FOLDER_URI = "cached_folder_uri"
     private const val KEY_CACHE_SCHEMA = "cache_schema"
-    private const val CACHE_SCHEMA_VERSION = 15
+    private const val CACHE_SCHEMA_VERSION = 16
     // Older cache entries do not contain translationRoot. Reusing them could make a translation
     // scan fall back to the package root and accidentally include Kristal engine scripts.
-    private const val MIN_SUPPORTED_CACHE_SCHEMA_VERSION = 15
+    private const val MIN_SUPPORTED_CACHE_SCHEMA_VERSION = 16
 
     fun hasCache(context: Context): Boolean {
         val cacheFile = File(context.filesDir, CACHE_FILE_NAME)
@@ -62,7 +62,7 @@ object GameCacheManager {
                 if (game.party.isNotEmpty()) jsonObject.put("party", JSONArray(game.party))
 
                 game.icon?.let { bitmap ->
-                    val iconName = "${sha256(game.stableId)}_${game.lastModified}_${game.sizeBytes}.png"
+                    val iconName = "v${CACHE_SCHEMA_VERSION}_${sha256(game.stableId)}_${game.lastModified}_${game.sizeBytes}.png"
                     val iconFile = File(iconDir, iconName)
                     retainedIcons += iconName
                     if (!iconFile.isFile || iconFile.length() == 0L) {
@@ -73,7 +73,7 @@ object GameCacheManager {
                 if (game.previewBackgrounds.isNotEmpty()) {
                     val previewFiles = JSONArray()
                     game.previewBackgrounds.forEachIndexed { index, bitmap ->
-                        val previewName = "${sha256(game.stableId)}_${game.lastModified}_${game.sizeBytes}_$index.png"
+                        val previewName = "v${CACHE_SCHEMA_VERSION}_${sha256(game.stableId)}_${game.lastModified}_${game.sizeBytes}_$index.png"
                         val previewFile = File(previewDir, previewName)
                         retainedPreviews += previewName
                         if (!previewFile.isFile || previewFile.length() == 0L) {
