@@ -13,6 +13,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -31,10 +32,17 @@ import kwz.love2d.launcher.model.CatalogTranslation
 import kwz.love2d.launcher.model.CommunityTranslationInstallResult
 import kwz.love2d.launcher.model.LoveGame
 import kwz.love2d.launcher.model.GamePackageType
+import kwz.love2d.launcher.model.CatalogPatch
+import kwz.love2d.launcher.model.PatchDisplayItem
+import kwz.love2d.launcher.model.PatchInstallResult
 import kwz.love2d.launcher.util.FavoritesManager
 import kwz.love2d.launcher.util.GameLauncher
 import kwz.love2d.launcher.util.NavigationAnimations
 import kwz.love2d.launcher.util.PatchRepository
+import kwz.love2d.launcher.util.PatchCatalogResult
+import kwz.love2d.launcher.util.PatchCatalogService
+import kwz.love2d.launcher.util.PatchPackageInstaller
+import kwz.love2d.launcher.util.PatchManager
 import kwz.love2d.launcher.util.ThemeManager
 import kwz.love2d.launcher.util.TranslationManager
 import kwz.love2d.launcher.util.CommunityTranslationCatalogResult
@@ -43,9 +51,11 @@ import kwz.love2d.launcher.util.CommunityTranslationInstallStage
 import kwz.love2d.launcher.util.CommunityTranslationInstaller
 import kwz.love2d.launcher.util.CommunityTranslationStorage
 import kwz.love2d.launcher.util.VersionUtils
+import kwz.love2d.launcher.util.KristalRuntimeStorage
 import kwz.love2d.launcher.util.showThemed
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -58,6 +68,10 @@ class GameDetailsActivity : AppCompatActivity() {
     private var translationCatalogLoading = false
     private var translationBusyKey: String? = null
     private var translationBusyText: String? = null
+    private lateinit var patchAdapter: GamePatchSettingsAdapter
+    private var patchCatalog: List<CatalogPatch> = emptyList()
+    private var patchCatalogJob: Job? = null
+    private var installingPatchId: String? = null
 
     private val importTranslationDocument = registerForActivityResult(
         ActivityResultContracts.OpenDocument()
@@ -79,6 +93,7 @@ class GameDetailsActivity : AppCompatActivity() {
         favoriteButton = findViewById(R.id.btnDetailsFavoriteTop)
         bindGame()
         bindActions()
+        bindRuntimeSettings()
         bindPatchSettings()
         bindLanguageSettings()
         refreshFavorite()
@@ -92,6 +107,8 @@ class GameDetailsActivity : AppCompatActivity() {
         super.onResume()
         if (::favoriteButton.isInitialized) refreshFavorite()
         if (::translationAdapter.isInitialized) refreshTranslations()
+        if (::patchAdapter.isInitialized) refreshPatchSettings()
+        if (::game.isInitialized) refreshRuntimeSelection()
     }
 
     private fun bindGame() {
@@ -136,21 +153,158 @@ class GameDetailsActivity : AppCompatActivity() {
         }
     }
 
+    private fun bindRuntimeSettings() {
+        val button = findViewById<MaterialButton>(R.id.btnDetailsRuntime)
+        button.visibility = if (game.isKristalMod) View.VISIBLE else View.GONE
+        if (!game.isKristalMod) return
+        button.setOnClickListener { showRuntimeSelector() }
+        refreshRuntimeSelection()
+    }
+
+    private fun refreshRuntimeSelection() {
+        if (!game.isKristalMod) return
+        val runtime = KristalRuntimeStorage.selectedRuntimeForGame(this, game.stableId)
+        findViewById<MaterialButton>(R.id.btnDetailsRuntime).text = runtime?.let {
+            getString(R.string.game_runtime_selected, it.version)
+        } ?: getString(R.string.game_runtime_not_installed)
+    }
+
+    private fun showRuntimeSelector() {
+        val installed = KristalRuntimeStorage.installedRuntimes(this)
+        if (installed.isEmpty()) {
+            MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.game_runtime_choose)
+                .setMessage(R.string.game_runtime_none_available)
+                .setPositiveButton(R.string.kristal_runtime_download) { _, _ ->
+                    startActivity(Intent(this, KristalRuntimeSettingsActivity::class.java))
+                }
+                .setNegativeButton(R.string.cancel, null)
+                .showThemed()
+            return
+        }
+        val global = KristalRuntimeStorage.selectedRuntime(this)
+        val selectedOverrideTag = KristalRuntimeStorage.selectedRuntimeTagForGame(this, game.stableId)
+        val labels = buildList {
+            add(getString(R.string.game_runtime_use_default, global?.version ?: "—"))
+            addAll(installed.map { getString(R.string.kristal_runtime_version, it.version) })
+        }
+        val checked = installed.indexOfFirst { it.tag == selectedOverrideTag }.let { index ->
+            if (index < 0) 0 else index + 1
+        }
+        MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.game_runtime_choose)
+            .setSingleChoiceItems(labels.toTypedArray(), checked) { dialog, which ->
+                val tag = installed.getOrNull(which - 1)?.tag
+                KristalRuntimeStorage.selectForGame(this, game.stableId, tag)
+                refreshRuntimeSelection()
+                dialog.dismiss()
+            }
+            .setNeutralButton(R.string.game_runtime_manage) { _, _ ->
+                startActivity(Intent(this, KristalRuntimeSettingsActivity::class.java))
+            }
+            .setNegativeButton(R.string.cancel, null)
+            .showThemed()
+    }
+
     private fun bindPatchSettings() {
-        val patches = PatchRepository.installedDisplayItems(this)
+        refreshPatchSettings()
+        loadPatchCatalog()
+    }
+
+    private fun refreshPatchSettings() {
+        val patches = PatchRepository.gameDisplayItems(this, game.projectId, patchCatalog)
         findViewById<TextView>(R.id.tvDetailsPatchesEmpty).visibility =
             if (patches.isEmpty()) View.VISIBLE else View.GONE
         findViewById<RecyclerView>(R.id.rvDetailsPatches).apply {
             visibility = if (patches.isEmpty()) View.GONE else View.VISIBLE
             layoutManager = LinearLayoutManager(this@GameDetailsActivity)
-            adapter = GamePatchSettingsAdapter(
+            patchAdapter = GamePatchSettingsAdapter(
                 context = this@GameDetailsActivity,
                 gameId = game.stableId,
                 items = patches,
-                saveImmediately = true
+                saveImmediately = true,
+                onCatalogAction = ::confirmCatalogPatchInstall
             )
+            adapter = patchAdapter
             itemAnimator = null
             isNestedScrollingEnabled = false
+        }
+    }
+
+    private fun loadPatchCatalog() {
+        if (patchCatalogJob?.isActive == true) return
+        patchCatalogJob = lifecycleScope.launch {
+            when (val result = withContext(Dispatchers.IO) {
+                PatchCatalogService.fetch(this@GameDetailsActivity)
+            }) {
+                is PatchCatalogResult.Success -> {
+                    patchCatalog = result.patches
+                    refreshPatchSettings()
+                }
+                is PatchCatalogResult.Failure -> Unit
+            }
+            patchCatalogJob = null
+        }
+    }
+
+    private fun confirmCatalogPatchInstall(item: PatchDisplayItem) {
+        val catalogPatch = item.catalogPatch ?: return
+        MaterialAlertDialogBuilder(this)
+            .setTitle(
+                if (item.updateAvailable) R.string.patch_update_confirm_title
+                else R.string.patch_download_confirm_title
+            )
+            .setMessage(
+                getString(
+                    if (item.updateAvailable) R.string.patch_update_confirm_message
+                    else R.string.game_patch_download_confirm_message,
+                    item.name,
+                    item.version
+                )
+            )
+            .setPositiveButton(
+                if (item.updateAvailable) R.string.patch_update else R.string.patch_download
+            ) { _, _ -> installCatalogPatchForGame(catalogPatch) }
+            .setNegativeButton(R.string.cancel, null)
+            .showThemed()
+    }
+
+    private fun installCatalogPatchForGame(catalogPatch: CatalogPatch) {
+        if (installingPatchId != null) return
+        installingPatchId = catalogPatch.manifest.id
+        if (::patchAdapter.isInitialized) patchAdapter.setInstallingPatch(installingPatchId)
+        lifecycleScope.launch {
+            val result = withContext(Dispatchers.IO) {
+                PatchPackageInstaller.installFromCatalog(
+                    this@GameDetailsActivity,
+                    catalogPatch.packageUrl,
+                    catalogPatch.sha256,
+                    catalogPatch.manifest.id,
+                    catalogPatch.manifest.version
+                )
+            }
+            installingPatchId = null
+            when (result) {
+                is PatchInstallResult.Success -> {
+                    PatchManager.setGamePatchMode(
+                        this@GameDetailsActivity,
+                        game.stableId,
+                        result.patch.manifest.id,
+                        PatchManager.MODE_FORCE_ENABLED
+                    )
+                    Toast.makeText(
+                        this@GameDetailsActivity,
+                        getString(R.string.game_patch_install_success, result.patch.manifest.name.resolve(this@GameDetailsActivity)),
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+                is PatchInstallResult.Failure -> MaterialAlertDialogBuilder(this@GameDetailsActivity)
+                    .setTitle(R.string.patch_install_failed)
+                    .setMessage(result.reason)
+                    .setPositiveButton(R.string.ok, null)
+                    .showThemed()
+            }
+            refreshPatchSettings()
         }
     }
 

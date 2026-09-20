@@ -121,7 +121,7 @@ Replaces an exact UTF-8 fragment. With `required: true`, staging stops when the 
 - Payload sources must begin with `payload/`.
 - The compressed package limit is 25 MiB.
 - Extracted content is limited to 75 MiB and 512 entries.
-- A manifest may contain up to 64 operations and 16 use cases.
+- A manifest may contain up to 128 operations and 16 use cases.
 - Operation sources are limited to 10 MiB while staging a game.
 
 ## Building

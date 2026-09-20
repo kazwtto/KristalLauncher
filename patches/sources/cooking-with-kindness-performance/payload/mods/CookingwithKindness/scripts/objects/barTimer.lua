@@ -30,10 +30,7 @@ function barTimer:getEmploys(employs)
 end
 
 function barTimer:updateUses(uses, employ)
-    local index = self.lookup[employ]
-    if index then
-        self.uses[index] = love.graphics.newText(self.font, uses)
-    end
+    table.insert(self.uses, self.lookup[employ], love.graphics.newText(self.font, uses))
 end
 
 

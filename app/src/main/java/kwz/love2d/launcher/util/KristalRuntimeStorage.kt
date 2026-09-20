@@ -14,6 +14,7 @@ object KristalRuntimeStorage {
     private const val METADATA_FILE = "runtime.json"
     private const val PREFERENCES = "kristal_runtime_preferences"
     private const val SELECTED_TAG = "selected_tag"
+    private const val GAME_SELECTED_TAG_PREFIX = "game_selected_tag_"
 
     fun installedRuntimes(context: Context): List<InstalledKristalRuntime> =
         rootDirectory(context).listFiles().orEmpty()
@@ -31,6 +32,25 @@ object KristalRuntimeStorage {
         return installed.firstOrNull()?.also { fallback ->
             preferences(context).edit().putString(SELECTED_TAG, fallback.tag).apply()
         }
+    }
+
+    fun selectedRuntimeForGame(context: Context, gameId: String): InstalledKristalRuntime? {
+        val installed = installedRuntimes(context)
+        val selectedTag = preferences(context).getString(gameSelectionKey(gameId), null)
+        return installed.firstOrNull { it.tag == selectedTag } ?: selectedRuntime(context)
+    }
+
+    fun selectedRuntimeTagForGame(context: Context, gameId: String): String? =
+        preferences(context).getString(gameSelectionKey(gameId), null)
+
+    fun selectForGame(context: Context, gameId: String, tag: String?): Boolean {
+        if (tag == null) {
+            preferences(context).edit().remove(gameSelectionKey(gameId)).apply()
+            return true
+        }
+        val runtime = installedRuntimes(context).firstOrNull { it.tag == tag } ?: return false
+        preferences(context).edit().putString(gameSelectionKey(gameId), runtime.tag).apply()
+        return true
     }
 
     fun select(context: Context, tag: String): Boolean {
@@ -113,4 +133,6 @@ object KristalRuntimeStorage {
     private fun sha256(value: String): String = MessageDigest.getInstance("SHA-256")
         .digest(value.toByteArray(Charsets.UTF_8))
         .joinToString("") { "%02x".format(it) }
+
+    private fun gameSelectionKey(gameId: String): String = GAME_SELECTED_TAG_PREFIX + sha256(gameId)
 }

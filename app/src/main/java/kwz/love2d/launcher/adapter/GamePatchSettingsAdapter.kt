@@ -22,8 +22,9 @@ class GamePatchSettingsAdapter(
     private val context: Context,
     private val gameId: String,
     private val items: List<PatchDisplayItem>,
-    private val saveImmediately: Boolean = false
-) : RecyclerView.Adapter<GamePatchSettingsAdapter.GamePatchViewHolder>() {
+    private val saveImmediately: Boolean = false,
+    private val onCatalogAction: ((PatchDisplayItem) -> Unit)? = null
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val amoled = ThemeManager.isDeltaruneTheme(context) &&
         ThemeManager.isDeltaruneAmoledEnabled(context)
@@ -31,18 +32,41 @@ class GamePatchSettingsAdapter(
     private val modes = items.associate { item ->
         item.id to PatchManager.getGamePatchMode(context, gameId, item.id)
     }.toMutableMap()
+    private val rows: List<Row> = buildRows(items)
+    private var installingPatchId: String? = null
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GamePatchViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_game_patch_setting, parent, false)
-        ThemeManager.applyDeltaruneStyle(context, view)
-        return GamePatchViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return if (viewType == VIEW_TYPE_HEADER) {
+            val view = LayoutInflater.from(context).inflate(R.layout.item_game_patch_section, parent, false)
+            ThemeManager.applyDeltaruneStyle(context, view)
+            HeaderViewHolder(view)
+        } else {
+            val view = LayoutInflater.from(context).inflate(R.layout.item_game_patch_setting, parent, false)
+            ThemeManager.applyDeltaruneStyle(context, view)
+            GamePatchViewHolder(view)
+        }
     }
 
-    override fun onBindViewHolder(holder: GamePatchViewHolder, position: Int) {
-        holder.bind(items[position])
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (val row = rows[position]) {
+            is Row.Header -> (holder as HeaderViewHolder).bind(row.titleRes)
+            is Row.Patch -> (holder as GamePatchViewHolder).bind(row.item)
+        }
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun getItemViewType(position: Int): Int =
+        if (rows[position] is Row.Header) VIEW_TYPE_HEADER else VIEW_TYPE_PATCH
+
+    override fun getItemCount(): Int = rows.size
+
+    fun setInstallingPatch(patchId: String?) {
+        val affected = listOfNotNull(installingPatchId, patchId).toSet()
+        installingPatchId = patchId
+        affected.forEach { id ->
+            val position = rows.indexOfFirst { it is Row.Patch && it.item.id == id }
+            if (position >= 0) notifyItemChanged(position)
+        }
+    }
 
     fun save() {
         modes.forEach { (patchId, mode) ->
@@ -52,7 +76,7 @@ class GamePatchSettingsAdapter(
 
     fun newlyForcedUnverifiedPatches(): List<String> {
         return items.filter { item ->
-            item.origin == PatchOrigin.IMPORTED &&
+            item.installed && item.origin == PatchOrigin.IMPORTED &&
                 modes[item.id] == PatchManager.MODE_FORCE_ENABLED &&
                 PatchManager.getGamePatchMode(context, gameId, item.id) != PatchManager.MODE_FORCE_ENABLED
         }.map { it.name }
@@ -67,6 +91,7 @@ class GamePatchSettingsAdapter(
         private val inheritButton: MaterialButton = itemView.findViewById(R.id.btnGamePatchInherit)
         private val enabledButton: MaterialButton = itemView.findViewById(R.id.btnGamePatchEnabled)
         private val disabledButton: MaterialButton = itemView.findViewById(R.id.btnGamePatchDisabled)
+        private val actionButton: MaterialButton = itemView.findViewById(R.id.btnGamePatchAction)
         private var boundPatchId: String? = null
         private var binding = false
 
@@ -94,6 +119,17 @@ class GamePatchSettingsAdapter(
             boundPatchId = item.id
             name.text = item.name
             description.text = item.description
+            toggleGroup.visibility = if (item.installed) View.VISIBLE else View.GONE
+            actionButton.visibility = if (!item.installed || item.updateAvailable) View.VISIBLE else View.GONE
+            actionButton.isEnabled = installingPatchId == null
+            actionButton.setText(
+                when {
+                    installingPatchId == item.id -> R.string.patch_downloading
+                    item.updateAvailable -> R.string.patch_update
+                    else -> R.string.patch_download
+                }
+            )
+            actionButton.setOnClickListener { onCatalogAction?.invoke(item) }
             binding = true
             toggleGroup.check(
                 when (modes[item.id]) {
@@ -171,5 +207,35 @@ class GamePatchSettingsAdapter(
             }
         }
 
+    }
+
+    private class HeaderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(titleRes: Int) {
+            (itemView as TextView).setText(titleRes)
+        }
+    }
+
+    private sealed interface Row {
+        data class Header(val titleRes: Int) : Row
+        data class Patch(val item: PatchDisplayItem) : Row
+    }
+
+    private fun buildRows(items: List<PatchDisplayItem>): List<Row> {
+        val dedicated = items.filter { it.compatibleGameProjectIds.isNotEmpty() }
+        val generic = items.filter { it.compatibleGameProjectIds.isEmpty() }
+        if (dedicated.isEmpty()) return generic.map(Row::Patch)
+        return buildList {
+            add(Row.Header(R.string.patch_section_dedicated))
+            addAll(dedicated.map(Row::Patch))
+            if (generic.isNotEmpty()) {
+                add(Row.Header(R.string.patch_section_generic))
+                addAll(generic.map(Row::Patch))
+            }
+        }
+    }
+
+    companion object {
+        private const val VIEW_TYPE_PATCH = 0
+        private const val VIEW_TYPE_HEADER = 1
     }
 }

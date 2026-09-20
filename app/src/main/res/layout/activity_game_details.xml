@@ -143,6 +143,19 @@
                 app:iconGravity="textStart"
                 app:iconPadding="8dp" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDetailsRuntime"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/game_runtime_choose"
+                android:visibility="gone"
+                app:cornerRadius="?attr/kristalCorner20"
+                app:icon="?attr/kristalIconSettings"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"

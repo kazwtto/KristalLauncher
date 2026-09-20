@@ -181,6 +181,8 @@ Yes. ChatGPT (free-tier) was used for optimization, formatting of `.md` files, l
 - [Kristal Engine](https://github.com/KristalTeam/Kristal) — the engine and mod ecosystem targeted by the launcher
 - [LÖVE](https://love2d.org/) — the runtime used to execute games on Android
 - [Pixelarticons](https://github.com/halfmage/pixelarticons) — icons used in the DELTARUNE theme
+- [kristal_rus](https://github.com/neofarsh/kristal_rus) by [neofarsh](https://github.com/neofarsh) — source of the Russian Kristal translation adapted as an optional patch
+- [LazyDesman](https://t.me/lazydesman) — translated sprites and textures used by the `kristal_rus` patch
 
 ## Disclaimer
 

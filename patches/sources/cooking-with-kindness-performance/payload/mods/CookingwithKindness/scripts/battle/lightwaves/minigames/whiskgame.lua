@@ -276,8 +276,7 @@ function WhiskGame:update()
         mix_sprite = "objects/whiskgame/stuff/stage_2"
     end
 
-    if mix_sprite and self.mix_sprite ~= mix_sprite then
-        self.mix_sprite = mix_sprite
+    if mix_sprite and not self.mix:isSprite(mix_sprite) then
         self.mix:setSprite(mix_sprite)
     end
 

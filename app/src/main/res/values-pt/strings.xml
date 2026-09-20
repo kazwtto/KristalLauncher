@@ -278,6 +278,10 @@
     <string name="patch_uninstall_failed">Não foi possível desinstalar o patch.</string>
     <string name="patch_mode_inherit">Herdar</string>
     <string name="game_patches_dialog_summary">Escolha se cada patch deve herdar o padrão global ou ser forçado somente para este jogo.</string>
+    <string name="patch_section_dedicated">Patches dedicados</string>
+    <string name="patch_section_generic">Patches genéricos</string>
+    <string name="game_patch_download_confirm_message">Baixar e validar “%1$s” versão %2$s do catálogo oficial? Ele será ativado somente para este jogo.</string>
+    <string name="game_patch_install_success">“%1$s” foi instalado e ativado para este jogo.</string>
     <string name="patch_game_effective_forced_enabled">Resultado: ativado somente neste jogo</string>
     <string name="patch_game_effective_forced_disabled">Resultado: desativado somente neste jogo</string>
     <string name="patch_game_effective_inherited_enabled">Resultado: ativado pelo padrão global</string>
@@ -296,6 +300,9 @@
     <string name="update_no_release_notes">Esta versão não possui notas de lançamento.</string>
     <string name="update_available_title">Atualização %1$s disponível</string>
     <string name="update_available_message">Uma nova versão do Kristal Launcher está disponível.\n\n%1$s</string>
+    <string name="update_current_version">Atual · %1$s</string>
+    <string name="update_new_version">Nova · %1$s</string>
+    <string name="update_release_notes_title">Novidades</string>
     <string name="update_download">Baixar</string>
     <string name="update_view_release">Ver lançamento</string>
     <string name="update_later">Depois</string>
@@ -375,6 +382,12 @@
     <string name="kristal_runtime_remove_failed">Não foi possível remover o runtime.</string>
     <string name="kristal_runtime_open">Abrir o Kristal Engine</string>
     <string name="kristal_runtime_launch_title">Kristal Engine %1$s</string>
+    <string name="game_runtime_choose">Escolher versão do runtime</string>
+    <string name="game_runtime_selected">Runtime · Kristal %1$s</string>
+    <string name="game_runtime_not_installed">Runtime não instalado</string>
+    <string name="game_runtime_none_available">Baixe pelo menos um runtime do Kristal antes de escolher uma versão para este mod.</string>
+    <string name="game_runtime_use_default">Usar padrão · Kristal %1$s</string>
+    <string name="game_runtime_manage">Gerenciar versões</string>
     <string name="kristal_mod_runtime_required_title">Kristal Engine necessário</string>
     <string name="kristal_mod_runtime_required_message">%1$s é um mod do Kristal e não pode ser executado sozinho. Deseja baixar um runtime do Kristal Engine agora?</string>
     <string name="kristal_mod_runtime_missing_error">Nenhum runtime do Kristal Engine está instalado.</string>

@@ -16,7 +16,7 @@
         "en": "Community translation of Plugged Dream text into Brazilian Portuguese.",
         "es": "Traducción comunitaria de los textos de Plugged Dream al portugués de Brasil."
       },
-      "author": "kazwtto",
+      "author": "dev",
       "gameProjectId": "plugged_dream",
       "gameVersion": "v1.3.0",
       "sourceLanguage": "en",
@@ -25,7 +25,7 @@
       "textsFile": "texts.json",
       "textsSha256": "6c3b060e09262ece24cd0281d8b8b6be1752dc55319929ac0243f3f4d3c0e081",
       "package": "packages/plugged-dream-ptbr-1.0.0.kllang",
-      "sha256": "5aae93f85b5545f1058c62560fc42cdb60ebb99d3f60381706e3e203a2539b02"
+      "sha256": "60922fa3f3235b0b35eb6e8a1f9363a8269ab83a772d4d6b1be3999497b434b9"
     },
     {
       "schemaVersion": 1,
@@ -41,7 +41,7 @@
         "en": "Community translation of Crockerfan08's Chapter 6 text into Brazilian Portuguese.",
         "es": "Traducción comunitaria de los textos de Crockerfan08's Chapter 6 al portugués de Brasil."
       },
-      "author": "kazwtto",
+      "author": "dev",
       "gameProjectId": "crockerplayable",
       "gameVersion": "v1.0.3",
       "sourceLanguage": "en",
@@ -50,7 +50,7 @@
       "textsFile": "texts.json",
       "textsSha256": "3be81a9235e77867c17305a7ba9dffb8b1d356a550648d42a27ad4870017dc88",
       "package": "packages/crockerplayable-ptbr-1.0.1.kllang",
-      "sha256": "c73fbcd6bed93ba05bf53d483868aaa0f41f5375582b98fa266611be1e4a8b81"
+      "sha256": "1e25f7509f2c9ee46f23301666340fb4a1db34fb84ba6564d02e95b59ecf8770"
     },
     {
       "schemaVersion": 1,
@@ -66,7 +66,7 @@
         "en": "Community translation of Frostveil text into Brazilian Portuguese.",
         "es": "Traducción comunitaria de los textos de Frostveil al portugués de Brasil."
       },
-      "author": "kazwtto",
+      "author": "dev",
       "gameProjectId": "chapter_5_weird",
       "gameVersion": "v1.3.1",
       "sourceLanguage": "en",
@@ -75,7 +75,7 @@
       "textsFile": "texts.json",
       "textsSha256": "4166620a54660435bcbdfa4c4db511fa481070be826f0076ff79e87c28cea7c8",
       "package": "packages/chapter-5-weird-ptbr-1.0.0.kllang",
-      "sha256": "6adf8b530b4175e67cb23fd76f1e7130aa7ae70d94abcc4acda3cfcf85c4bbdf"
+      "sha256": "936059e70671ae2b37b2950e4cf11bfbaebf8cac0c534075e0063d60cd426c8e"
     },
     {
       "schemaVersion": 1,
@@ -91,7 +91,7 @@
         "en": "Community translation of Frozen Heart text into Brazilian Portuguese.",
         "es": "Traducción comunitaria de los textos de Frozen Heart al portugués de Brasil."
       },
-      "author": "kazwtto",
+      "author": "dev",
       "gameProjectId": "frozen_heart",
       "gameVersion": "v1.1.5",
       "sourceLanguage": "en",
@@ -100,7 +100,7 @@
       "textsFile": "texts.json",
       "textsSha256": "552289b300d2fe4df5653627ca758dff3e87dd2b63d4c5bbfa56b661f9d1ef72",
       "package": "packages/frozen-heart-ptbr-1.0.0.kllang",
-      "sha256": "6cdaf993022843caf590f3d00df14ffb66abb9c160d0d824325b86735b333c10"
+      "sha256": "15b30cc4e9495b348c935d20e9940bbe7bb16fbd8d20a1d74205e7238b507d15"
     },
     {
       "schemaVersion": 1,
@@ -116,7 +116,7 @@
         "en": "Community translation of Godhome text into Brazilian Portuguese.",
         "es": "Traducción comunitaria de los textos de Godhome al portugués de Brasil."
       },
-      "author": "kazwtto",
+      "author": "dev",
       "gameProjectId": "godhome",
       "gameVersion": "v1.1.7",
       "sourceLanguage": "en",
@@ -125,7 +125,7 @@
       "textsFile": "texts.json",
       "textsSha256": "0397267125623a5ad1c96a58fb46e463b526e503b17b29909d8b8c2d1f43d221",
       "package": "packages/godhome-ptbr-1.0.0.kllang",
-      "sha256": "6672ee60da0a6df2721136c5ce69ee43df230e9e6016e5829d08d2285607d46d"
+      "sha256": "9d756cc77c8d04c239fc178beea69160c8565db5f89329b0ac18dfd03abaaf92"
     },
     {
       "schemaVersion": 1,
@@ -141,7 +141,7 @@
         "en": "Community translation of Sermon's Sang text into Brazilian Portuguese.",
         "es": "Traducción comunitaria de los textos de Sermon's Sang al portugués de Brasil."
       },
-      "author": "kazwtto",
+      "author": "dev",
       "gameProjectId": "goofball_mod",
       "gameVersion": "v1.0.9 (Release)",
       "sourceLanguage": "en",
@@ -150,7 +150,7 @@
       "textsFile": "texts.json",
       "textsSha256": "6a6058fe76e575fcc4b1b74504850461bd24793fd15b92eb3dd319388a5870aa",
       "package": "packages/goofball-mod-ptbr-1.0.0.kllang",
-      "sha256": "b458cedca59803a01011c3dc4a4a7dc123764d9a384da05a9b51bcd4c9b1994b"
+      "sha256": "553979eed275528e7da639ce0ee56ede9ef3928ebb097e01b3c6ec6a8cb0fe3a"
     },
     {
       "schemaVersion": 1,
@@ -166,7 +166,7 @@
         "en": "Community translation of VS Kris text into Brazilian Portuguese.",
         "es": "Traducción comunitaria de los textos de VS Kris al portugués de Brasil."
       },
-      "author": "kazwtto",
+      "author": "dev",
       "gameProjectId": "vs_kris",
       "gameVersion": "v1.0.0",
       "sourceLanguage": "en",
@@ -175,7 +175,7 @@
       "textsFile": "texts.json",
       "textsSha256": "fa9baa21c315c88c2da7df2f1dafe2df49adeebe830c5314a2c11444863fb12d",
       "package": "packages/vs-kris-ptbr-1.0.0.kllang",
-      "sha256": "2ade356ee4cfd3db7441b807f25534ad7b29cfff939e5fe397308243d016a6c8"
+      "sha256": "64d7193b3374985e658b33423dbb1c6e06f6c867c04109ba1533584c1e0dc238"
     },
     {
       "schemaVersion": 1,
@@ -191,7 +191,7 @@
         "en": "Community translation of Wilter Boss Fight text into Brazilian Portuguese.",
         "es": "Traducción comunitaria de los textos de Wilter Boss Fight al portugués de Brasil."
       },
-      "author": "kazwtto",
+      "author": "dev",
       "gameProjectId": "wilter_boss_fight",
       "gameVersion": "v1.0.1",
       "sourceLanguage": "en",
@@ -200,7 +200,7 @@
       "textsFile": "texts.json",
       "textsSha256": "cb38d71d56b6fb2d6fc642a05bbb278507b061c7f4dacdc201ee48af4e325eb4",
       "package": "packages/wilter-boss-fight-ptbr-1.0.0.kllang",
-      "sha256": "5f8c2a243cbf38a1bf6662309e60618accf67b906b028460f5ab23263af3fc15"
+      "sha256": "b8bab7430238e26c8fd7146c6c5ff2b22678d555288f59ef4d698c0f6a574f29"
     },
     {
       "schemaVersion": 1,
@@ -216,7 +216,7 @@
         "en": "Community translation of Star Rune text into Brazilian Portuguese.",
         "es": "Traducción comunitaria de los textos de Star Rune al portugués de Brasil."
       },
-      "author": "kazwtto",
+      "author": "dev",
       "gameProjectId": "starrunefinal",
       "gameVersion": "v2.0.0",
       "sourceLanguage": "en",
@@ -225,7 +225,7 @@
       "textsFile": "texts.json",
       "textsSha256": "e143404e4a4ae3fffe25ce20df2a3f8ee67d1821ce425984a87d82ef29db461e",
       "package": "packages/starrune-ptbr-1.0.0.kllang",
-      "sha256": "8ac59cd664a1dc2c259277a1dc499dcd9c480406ac6a11a1e3798e75069e001d"
+      "sha256": "2bfbe28b2d732aa9681ebd99e15f9daa17ba9746e8eb1ea8afcd0afcf805b3d4"
     },
     {
       "schemaVersion": 1,
@@ -241,7 +241,7 @@
         "en": "Community translation of Deltarune: Fun Town (Lumia) text into Brazilian Portuguese.",
         "es": "Traducción comunitaria de los textos de Deltarune: Fun Town (Lumia) al portugués de Brasil."
       },
-      "author": "kazwtto",
+      "author": "dev",
       "gameProjectId": "funtown",
       "gameVersion": "unversioned",
       "sourceLanguage": "en",
@@ -250,7 +250,7 @@
       "textsFile": "texts.json",
       "textsSha256": "a5cb9a73662267448fc00d39988c3cc683e9d175dbcffe073f8e5e6397624a57",
       "package": "packages/funtown-ptbr-1.0.0.kllang",
-      "sha256": "67772a9b8c705ef11d257beb5f883e48225465076b8fd58efddb9108a3ceb001"
+      "sha256": "ab9e7808cd0abf5f221b0fb3e181ef711fbd955697f72eef15dba4c8615d815c"
     },
     {
       "schemaVersion": 1,
@@ -266,7 +266,7 @@
         "en": "Community translation of DELTARUNE Friendless text into Brazilian Portuguese.",
         "es": "Traducción comunitaria de los textos de DELTARUNE Friendless al portugués de Brasil."
       },
-      "author": "kazwtto",
+      "author": "dev",
       "gameProjectId": "friendless",
       "gameVersion": "v0.3.0",
       "sourceLanguage": "en",
@@ -275,7 +275,257 @@
       "textsFile": "texts.json",
       "textsSha256": "13edcf7eea0ec54715b862605aa7de7e28247ad0692ca7f844e4b863b6ae1942",
       "package": "packages/friendless-ptbr-1.0.0.kllang",
-      "sha256": "c990933c64745888efc6fba891fad39af7dffa0cf683392b11f554aa897a07cc"
+      "sha256": "6895103234cd5be76e8eb8b80ded7f184ae2ac014921646b910258eb3c50d0fa"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "funtown.es",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "Deltarune: Fun Town (Lumia) em Espanhol",
+        "en": "Deltarune: Fun Town (Lumia) in Spanish",
+        "es": "Deltarune: Fun Town (Lumia) en Español"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de Deltarune: Fun Town (Lumia) para espanhol.",
+        "en": "Community translation of Deltarune: Fun Town (Lumia) text into Spanish.",
+        "es": "Traducción comunitaria de los textos de Deltarune: Fun Town (Lumia) al español."
+      },
+      "author": "dev + IA",
+      "gameProjectId": "funtown",
+      "gameVersion": "unversioned",
+      "sourceLanguage": "en",
+      "targetLanguage": "es",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "357eaaba1f8c868989567208f8d09fa0496974a0dbbb10ac068d876f56c44957",
+      "package": "packages/funtown-es-1.0.0.kllang",
+      "sha256": "8f670798c3dae8a200dfbe5ee678de6508bd8c105109a49ca265c403f7bd949e"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "godhome.es",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "Godhome em Espanhol",
+        "en": "Godhome in Spanish",
+        "es": "Godhome en Español"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de Godhome para espanhol.",
+        "en": "Community translation of Godhome text into Spanish.",
+        "es": "Traducción comunitaria de los textos de Godhome al español."
+      },
+      "author": "dev + IA",
+      "gameProjectId": "godhome",
+      "gameVersion": "v1.1.7",
+      "sourceLanguage": "en",
+      "targetLanguage": "es",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "2d0b1b2b0bfb7db6cc04367444e44434ae399621b7a638e83370680c1b2e395b",
+      "package": "packages/godhome-es-1.0.0.kllang",
+      "sha256": "cf473106c12c6336025217d5fe1e77fdd7daf58eeb3f829f576ed7f1df65f3cb"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "crockerplayable.es",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "Crockerfan08's Chapter 6 em Espanhol",
+        "en": "Crockerfan08's Chapter 6 in Spanish",
+        "es": "Crockerfan08's Chapter 6 en Español"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de Crockerfan08's Chapter 6 para espanhol.",
+        "en": "Community translation of Crockerfan08's Chapter 6 text into Spanish.",
+        "es": "Traducción comunitaria de los textos de Crockerfan08's Chapter 6 al español."
+      },
+      "author": "dev + IA",
+      "gameProjectId": "crockerplayable",
+      "gameVersion": "v1.0.3",
+      "sourceLanguage": "en",
+      "targetLanguage": "es",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "6f8582d1150c5e6e9c21cfc654b35443327278fc7bac9fefd71dee927d80eef5",
+      "package": "packages/crockerplayable-es-1.0.0.kllang",
+      "sha256": "b4afb5bb37dba29a496cc0a5f20c1b3133c70b6b0344f7624763b96347139612"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "friendless.es",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "DELTARUNE Friendless em Espanhol",
+        "en": "DELTARUNE Friendless in Spanish",
+        "es": "DELTARUNE Friendless en Español"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de DELTARUNE Friendless para espanhol.",
+        "en": "Community translation of DELTARUNE Friendless text into Spanish.",
+        "es": "Traducción comunitaria de los textos de DELTARUNE Friendless al español."
+      },
+      "author": "dev + IA",
+      "gameProjectId": "friendless",
+      "gameVersion": "v0.3.0",
+      "sourceLanguage": "en",
+      "targetLanguage": "es",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "8a3745739c822f5d8d120abd1ac6f87553b0c842480cbe75dace18e65a0f80ed",
+      "package": "packages/friendless-es-1.0.0.kllang",
+      "sha256": "2229fae0821c07f3e6de64692f7c06f565639256e84cbfa16f41ab81ce091086"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "chapter-5-weird.es",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "DELTARUNE: Frostveil em Espanhol",
+        "en": "DELTARUNE: Frostveil in Spanish",
+        "es": "DELTARUNE: Frostveil en Español"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de DELTARUNE: Frostveil para espanhol.",
+        "en": "Community translation of DELTARUNE: Frostveil text into Spanish.",
+        "es": "Traducción comunitaria de los textos de DELTARUNE: Frostveil al español."
+      },
+      "author": "dev + IA",
+      "gameProjectId": "chapter_5_weird",
+      "gameVersion": "v1.3.1",
+      "sourceLanguage": "en",
+      "targetLanguage": "es",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "22a4e02bc32bfc0e150800e0d410f847681c7c4e874e7b227ce361b01ad363e9",
+      "package": "packages/chapter-5-weird-es-1.0.0.kllang",
+      "sha256": "4f2a6d2d11c69cbe1727a5fd8c26c6fb1f50634c6fc2b2490a67850947760c68"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "starrunefinal.es",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "Star Rune em Espanhol",
+        "en": "Star Rune in Spanish",
+        "es": "Star Rune en Español"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de Star Rune para espanhol.",
+        "en": "Community translation of Star Rune text into Spanish.",
+        "es": "Traducción comunitaria de los textos de Star Rune al español."
+      },
+      "author": "dev + IA",
+      "gameProjectId": "starrunefinal",
+      "gameVersion": "v2.0.0",
+      "sourceLanguage": "en",
+      "targetLanguage": "es",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "659814398966d7915508807a2aabe0ac7f10dfc03b59786f4c4df712cc6b294c",
+      "package": "packages/starrune-es-1.0.0.kllang",
+      "sha256": "d4626a3e2b2d74ebd2e4b2e2fbb8ca6240d0e41feffde5ac62b90fbe9b51b7dc"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "vs-kris.es",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "DELTARUNE: Vessel vs. Kris em Espanhol",
+        "en": "DELTARUNE: Vessel vs. Kris in Spanish",
+        "es": "DELTARUNE: Vessel vs. Kris en Español"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de DELTARUNE: Vessel vs. Kris para espanhol.",
+        "en": "Community translation of DELTARUNE: Vessel vs. Kris text into Spanish.",
+        "es": "Traducción comunitaria de los textos de DELTARUNE: Vessel vs. Kris al español."
+      },
+      "author": "dev + IA",
+      "gameProjectId": "vs_kris",
+      "gameVersion": "v1.0.0",
+      "sourceLanguage": "en",
+      "targetLanguage": "es",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "1d9d1b9c6e267dd556a5980cfaa9990d297080c233c726988341d148f26f9a95",
+      "package": "packages/vs-kris-es-1.0.0.kllang",
+      "sha256": "8328268ce4232fa707954154938b1854788d50e835add2506b9ab13fc9a1f5d8"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "goofball-mod.es",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "Sermon's Sang em Espanhol",
+        "en": "Sermon's Sang in Spanish",
+        "es": "Sermon's Sang en Español"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de Sermon's Sang para espanhol.",
+        "en": "Community translation of Sermon's Sang text into Spanish.",
+        "es": "Traducción comunitaria de los textos de Sermon's Sang al español."
+      },
+      "author": "dev + IA",
+      "gameProjectId": "goofball_mod",
+      "gameVersion": "v1.0.9 (Release)",
+      "sourceLanguage": "en",
+      "targetLanguage": "es",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "82809e99d94a4f16122cb6c3e73a998b9b87d8e3bb4d1b98a6f8586839fc9ba2",
+      "package": "packages/goofball-mod-es-1.0.0.kllang",
+      "sha256": "5e13863bc7d76c1ff00fdfd3ecda0608fc2840f1d34a8816aa5e428a1f2b858b"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "cooking-with-kindness.pt-br",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "Cooking with Kindness em Português (Brasil)",
+        "en": "Cooking with Kindness in Brazilian Portuguese",
+        "es": "Cooking with Kindness en portugués de Brasil"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de Cooking with Kindness para português do Brasil.",
+        "en": "Community translation of Cooking with Kindness text into Brazilian Portuguese.",
+        "es": "Traducción comunitaria de los textos de Cooking with Kindness al portugués de Brasil."
+      },
+      "author": "dev",
+      "gameProjectId": "cooking-with-kindness",
+      "gameVersion": "DEMO v1.0.6",
+      "sourceLanguage": "en",
+      "targetLanguage": "pt-BR",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "73790cdd05c88fef22f431397f1739224017dc614464f9432815bba7d453c82a",
+      "package": "packages/cooking-with-kindness-ptbr-1.0.0.kllang",
+      "sha256": "9a6049f97b553999eb391e4a603bd80bee9494257761419fae5d456f076e6aea"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "cooking-with-kindness.es",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "Cooking with Kindness em Espanhol",
+        "en": "Cooking with Kindness in Spanish",
+        "es": "Cooking with Kindness en Español"
+      },
+      "description": {
+        "pt-BR": "Tradução comunitária dos textos de Cooking with Kindness para espanhol.",
+        "en": "Community translation of Cooking with Kindness text into Spanish.",
+        "es": "Traducción comunitaria de los textos de Cooking with Kindness al español."
+      },
+      "author": "dev + IA",
+      "gameProjectId": "cooking-with-kindness",
+      "gameVersion": "DEMO v1.0.6",
+      "sourceLanguage": "en",
+      "targetLanguage": "es",
+      "minimumLauncherVersion": "0.17.48",
+      "textsFile": "texts.json",
+      "textsSha256": "5b700fe3d097c3fb403bb352432b0c3d393c555b4a4d2601c427c795f893829b",
+      "package": "packages/cooking-with-kindness-es-1.0.0.kllang",
+      "sha256": "2eee6f829ac00ce2d396226b0f8d705ded920ae0eb2f7e87f8712250c4605c87"
     }
   ]
 }

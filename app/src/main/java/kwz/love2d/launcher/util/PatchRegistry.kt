@@ -84,6 +84,7 @@ object PatchRegistry {
             useCases = context.resources.getStringArray(patch.useCasesRes).toList(),
             author = context.getString(R.string.patch_author_launcher),
             category = patch.category,
+            compatibleGameProjectIds = emptyList(),
             origin = PatchOrigin.BUILT_IN,
             trust = PatchTrust.BUILT_IN,
             capabilities = listOf("staged_package"),

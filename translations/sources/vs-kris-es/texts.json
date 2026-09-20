@@ -1,0 +1,2022 @@
+{
+  "9df5f7130196": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 376,
+    "endOffset": 411,
+    "source": "* Because I didn't have a choice.",
+    "translation": "* Porque no tuve elección.",
+    "originalExpression": "\"* Because I didn't have a choice.\"",
+    "replacementExpression": "\"* Porque eu não tive escolha.\""
+  },
+  "7a8c10962519": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 471,
+    "endOffset": 515,
+    "source": "* What[wait:5].[wait:5].[wait:5].[wait:5]?",
+    "translation": "* ¿Qué[wait:5].[wait:5].[wait:5].[wait:5]?",
+    "originalExpression": "\"* What[wait:5].[wait:5].[wait:5].[wait:5]?\"",
+    "replacementExpression": "\"* O quê[wait:5].[wait:5].[wait:5].[wait:5]?\""
+  },
+  "674715452041": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 555,
+    "endOffset": 576,
+    "source": "* What do you mean?",
+    "translation": "* ¿Cómo que qué?",
+    "originalExpression": "\"* What do you mean?\"",
+    "replacementExpression": "\"* Como assim?\""
+  },
+  "a61928fe5c50": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 616,
+    "endOffset": 666,
+    "source": "* When I heared of your world.[wait:5].[wait:5].",
+    "translation": "* Cuando supe de tu mundo.[wait:5].[wait:5].",
+    "originalExpression": "\"* When I heared of your world.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* Quando soube do seu mundo.[wait:5].[wait:5].\""
+  },
+  "afe8106aefb5": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 686,
+    "endOffset": 747,
+    "source": "* There was nothing I desired more than to be a part of it.",
+    "translation": "* No deseaba nada más que formar parte de él.",
+    "originalExpression": "\"* There was nothing I desired more than to be a part of it.\"",
+    "replacementExpression": "\"* Eu não queria nada mais do que fazer parte dele.\""
+  },
+  "723c3c70ddd1": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 767,
+    "endOffset": 789,
+    "source": "* Someone helped me.",
+    "translation": "* Alguien me ayudó.",
+    "originalExpression": "\"* Someone helped me.\"",
+    "replacementExpression": "\"* Alguém me ajudou.\""
+  },
+  "f5bab5390e0f": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 809,
+    "endOffset": 914,
+    "source": "* They made me a [color:yellow]vessel[color:reset].[wait:10]\n* This [color:yellow]vessel[color:reset].",
+    "translation": "* Me hicieron un [color:yellow]receptáculo[color:reset].[wait:10]\n* Este [color:yellow]receptáculo[color:reset].",
+    "originalExpression": "\"* They made me a [color:yellow]vessel[color:reset].[wait:10]\\n* This [color:yellow]vessel[color:reset].\"",
+    "replacementExpression": "\"* Deram-me um [color:yellow]receptáculo[color:reset].[wait:10]\\n* Este [color:yellow]receptáculo[color:reset].\""
+  },
+  "3a9ec5bd7161": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 934,
+    "endOffset": 1014,
+    "source": "* I was supposed to use it to interact with your world, but.[wait:5].[wait:5].",
+    "translation": "* Debía usarlo para interactuar con tu mundo, pero.[wait:5].[wait:5].",
+    "originalExpression": "\"* I was supposed to use it to interact with your world, but.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* Eu devia usá-lo para interagir com seu mundo, mas.[wait:5].[wait:5].\""
+  },
+  "c0a9b251d2ac": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 1034,
+    "endOffset": 1055,
+    "source": "* It got discarded.",
+    "translation": "* Fue descartado.",
+    "originalExpression": "\"* It got discarded.\"",
+    "replacementExpression": "\"* Ele foi descartado.\""
+  },
+  "cdfaba36e5eb": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 1075,
+    "endOffset": 1110,
+    "source": "* I was already stuck inside you.",
+    "translation": "* Yo ya no podía salir de ti.",
+    "originalExpression": "\"* I was already stuck inside you.\"",
+    "replacementExpression": "\"* Eu já não podia sair de você.\""
+  },
+  "56f02fcc7033": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 1130,
+    "endOffset": 1226,
+    "source": "* At first,[wait:5] I thought you were my [color:yellow]vessel[color:reset].[wait:5].[wait:5].",
+    "translation": "* Al principio,[wait:5] creí que eras mi [color:yellow]receptáculo[color:reset].[wait:5].[wait:5].",
+    "originalExpression": "\"* At first,[wait:5] I thought you were my [color:yellow]vessel[color:reset].[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* No começo,[wait:5] achei que era meu [color:yellow]receptáculo[color:reset].[wait:5].[wait:5].\""
+  },
+  "9d54b6b1631e": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 1246,
+    "endOffset": 1300,
+    "source": "* But when I realized you weren't.[wait:5].[wait:5].",
+    "translation": "* Pero cuando vi que no lo eras.[wait:5].[wait:5].",
+    "originalExpression": "\"* But when I realized you weren't.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* Mas quando percebi que não era.[wait:5].[wait:5].\""
+  },
+  "5a283bd12128": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 1320,
+    "endOffset": 1385,
+    "source": "* I wanted to know you.[wait:5]\n* To do what you'd want to do.",
+    "translation": "* Quería conocerte.[wait:5]\n* Hacer lo que tú quisieras.",
+    "originalExpression": "\"* I wanted to know you.[wait:5]\\n* To do what you'd want to do.\"",
+    "replacementExpression": "\"* Eu queria conhecer você.[wait:5]\\n* Fazer o que você quisesse.\""
+  },
+  "3891a008bfd2": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 1405,
+    "endOffset": 1431,
+    "source": "* But.[wait:5].[wait:5].",
+    "translation": "* Pero.[wait:5].[wait:5].",
+    "originalExpression": "\"* But.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* Mas.[wait:5].[wait:5].\""
+  },
+  "ac19867f6c52": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 1451,
+    "endOffset": 1523,
+    "source": "* It was still wrong.[wait:5]\n* I didn't want to control you anymore.",
+    "translation": "* Seguía estando mal.[wait:5]\n* Ya no quería controlarte.",
+    "originalExpression": "\"* It was still wrong.[wait:5]\\n* I didn't want to control you anymore.\"",
+    "replacementExpression": "\"* Ainda era errado.[wait:5]\\n* Eu não queria mais controlar você.\""
+  },
+  "a1bf2b80e22a": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 1543,
+    "endOffset": 1596,
+    "source": "* And now that this has happened.[wait:5].[wait:5].",
+    "translation": "* Y ahora que ha pasado esto.[wait:5].[wait:5].",
+    "originalExpression": "\"* And now that this has happened.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* E agora que isso aconteceu.[wait:5].[wait:5].\""
+  },
+  "3f1e6914a8a0": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 1616,
+    "endOffset": 1654,
+    "source": "* Can't we try to leave that behind?",
+    "translation": "* ¿No podemos dejar eso atrás?",
+    "originalExpression": "\"* Can't we try to leave that behind?\"",
+    "replacementExpression": "\"* Não podemos deixar isso para trás?\""
+  },
+  "78d0bde3e6fe": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 1674,
+    "endOffset": 1712,
+    "source": "* Can we at least TRY to be friends?",
+    "translation": "* ¿Podemos al menos INTENTAR ser amigos?",
+    "originalExpression": "\"* Can we at least TRY to be friends?\"",
+    "replacementExpression": "\"* Podemos ao menos TENTAR uma amizade?\""
+  },
+  "0a9a963ef042": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 1783,
+    "endOffset": 1807,
+    "source": "* I.[wait:5].[wait:5].",
+    "translation": "* Yo.[wait:5].[wait:5].",
+    "originalExpression": "\"* I.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* Eu.[wait:5].[wait:5].\""
+  },
+  "b35a2f56689b": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 2316,
+    "endOffset": 2381,
+    "source": "[speed:0.4][shake:1]Y.[wait:5].[wait:5]. YOU.[wait:5].[wait:5].",
+    "translation": "[speed:0.4][shake:1]T.[wait:5].[wait:5]. TÚ.[wait:5].[wait:5].",
+    "originalExpression": "\"[speed:0.4][shake:1]Y.[wait:5].[wait:5]. YOU.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"[speed:0.4][shake:1]V.[wait:5].[wait:5]. VOCÊ.[wait:5].[wait:5].\""
+  },
+  "82039ab2091e": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 2414,
+    "endOffset": 2493,
+    "source": "[speed:0.4][shake:1]So this is what\nyou wanted all\nalong.[wait:5].[wait:5].",
+    "translation": "[speed:0.4][shake:1]Así que esto era\nlo que querías\nsiempre.[wait:5].[wait:5].",
+    "originalExpression": "\"[speed:0.4][shake:1]So this is what\\nyou wanted all\\nalong.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"[speed:0.4][shake:1]Então era isso\\nque você queria\\ndesde o início.[wait:5].[wait:5].\""
+  },
+  "c03cc55166fd": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 2526,
+    "endOffset": 2607,
+    "source": "[speed:0.4][shake:1]You waited for\nme to let my\nguard down.[wait:5].[wait:5].",
+    "translation": "[speed:0.4][shake:1]Esperaste a que\nbajara la\nguardia.[wait:5].[wait:5].",
+    "originalExpression": "\"[speed:0.4][shake:1]You waited for\\nme to let my\\nguard down.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"[speed:0.4][shake:1]Você esperou\\neu baixar a\\nguarda.[wait:5].[wait:5].\""
+  },
+  "e1f78bfede0f": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 2640,
+    "endOffset": 2707,
+    "source": "[speed:0.4][shake:1].[wait:5].[wait:5].I guess.[wait:5].[wait:5].",
+    "translation": "[speed:0.4][shake:1].[wait:5].[wait:5].Supongo.[wait:5].[wait:5].",
+    "originalExpression": "\"[speed:0.4][shake:1].[wait:5].[wait:5].I guess.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"[speed:0.4][shake:1].[wait:5].[wait:5].Eu acho.[wait:5].[wait:5].\""
+  },
+  "157d8d1089f5": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 2740,
+    "endOffset": 2833,
+    "source": "[speed:0.4][shake:1].[wait:5].[wait:5].I really AM\nAN IDIOT,\naren't I.[wait:5].[wait:5].?",
+    "translation": "[speed:0.4][shake:1].[wait:5].[wait:5].De verdad SOY\nIDIOTA,\n¿no.[wait:5].[wait:5].?",
+    "originalExpression": "\"[speed:0.4][shake:1].[wait:5].[wait:5].I really AM\\nAN IDIOT,\\naren't I.[wait:5].[wait:5].?\"",
+    "replacementExpression": "\"[speed:0.4][shake:1].[wait:5].[wait:5].Eu SOU mesmo\\nUM IDIOTA,\\nnão sou.[wait:5].[wait:5].?\""
+  },
+  "fc6089564a85": {
+    "file": "scripts/battle/cutscenes/kris.lua",
+    "fileHash": "00a9cc15228d0967882e0009f7885942383195b313b97249dd1de4daf422d992",
+    "startOffset": 2866,
+    "endOffset": 2925,
+    "source": "[speed:0.3]H a.[wait:5].[wait:5].\nh a.[wait:5].[wait:5].",
+    "translation": "[speed:0.3]J a.[wait:5].[wait:5].\nj a.[wait:5].[wait:5].",
+    "originalExpression": "\"[speed:0.3]H a.[wait:5].[wait:5].\\nh a.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"[speed:0.3]H a.[wait:5].[wait:5].\\nh a.[wait:5].[wait:5].\""
+  },
+  "c465640921c7": {
+    "file": "scripts/battle/encounters/kris-werid-route.lua",
+    "fileHash": "f2a7ef6e5266b6ba16435e17a2ea880ab050a04b9b63a35d71ebde6c96df8cb6",
+    "startOffset": 372,
+    "endOffset": 397,
+    "source": "* Kris blocks your way.",
+    "translation": "* Kris te bloquea el paso.",
+    "originalExpression": "\"* Kris blocks your way.\"",
+    "replacementExpression": "\"* Kris barra seu caminho.\""
+  },
+  "f98a666e0107": {
+    "file": "scripts/battle/encounters/kris.lua",
+    "fileHash": "281af055f1daf1704e2a49a1de84e0771c6eaab9285d0edb2837173d6d02cd07",
+    "startOffset": 360,
+    "endOffset": 391,
+    "source": "* Kris freed from the chains.",
+    "translation": "* Kris se liberó de las cadenas.",
+    "originalExpression": "\"* Kris freed from the chains.\"",
+    "replacementExpression": "\"* Kris se livrou das correntes.\""
+  },
+  "1095f8f352d0": {
+    "file": "scripts/battle/encounters/kris.lua",
+    "fileHash": "281af055f1daf1704e2a49a1de84e0771c6eaab9285d0edb2837173d6d02cd07",
+    "startOffset": 1627,
+    "endOffset": 1638,
+    "source": "* Choice.",
+    "translation": "* Elección.",
+    "originalExpression": "\"* Choice.\"",
+    "replacementExpression": "\"* Escolha.\""
+  },
+  "cacb0973c4ea": {
+    "file": "scripts/battle/encounters/kris.lua",
+    "fileHash": "281af055f1daf1704e2a49a1de84e0771c6eaab9285d0edb2837173d6d02cd07",
+    "startOffset": 2321,
+    "endOffset": 2346,
+    "source": "* .[wait:10].[wait:10].",
+    "translation": "* .[wait:10].[wait:10].",
+    "originalExpression": "\"* .[wait:10].[wait:10].\"",
+    "replacementExpression": "\"* .[wait:10].[wait:10].\""
+  },
+  "15ad2dd6640a": {
+    "file": "scripts/battle/encounters/kris.lua",
+    "fileHash": "281af055f1daf1704e2a49a1de84e0771c6eaab9285d0edb2837173d6d02cd07",
+    "startOffset": 2393,
+    "endOffset": 2461,
+    "source": "* .[wait:10].[wait:10].[wait:10]why.[wait:10].[wait:10].[wait:10]?",
+    "translation": "* .[wait:10].[wait:10].[wait:10]por qué.[wait:10].[wait:10].[wait:10]?",
+    "originalExpression": "\"* .[wait:10].[wait:10].[wait:10]why.[wait:10].[wait:10].[wait:10]?\"",
+    "replacementExpression": "\"* .[wait:10].[wait:10].[wait:10]por quê.[wait:10].[wait:10].[wait:10]?\""
+  },
+  "987b635e0bde": {
+    "file": "scripts/battle/encounters/kris.lua",
+    "fileHash": "281af055f1daf1704e2a49a1de84e0771c6eaab9285d0edb2837173d6d02cd07",
+    "startOffset": 2508,
+    "endOffset": 2566,
+    "source": "* .[wait:10].[wait:10].[wait:10]why.[wait:10].[wait:10].",
+    "translation": "* .[wait:10].[wait:10].[wait:10]por qué.[wait:10].[wait:10].",
+    "originalExpression": "\"* .[wait:10].[wait:10].[wait:10]why.[wait:10].[wait:10].\"",
+    "replacementExpression": "\"* .[wait:10].[wait:10].[wait:10]por quê.[wait:10].[wait:10].\""
+  },
+  "7af99581b18e": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 982,
+    "endOffset": 1016,
+    "source": "AT 14 DF 6\n* An useless vessel.",
+    "translation": "AT 14 DF 6\n* Un receptáculo inútil.",
+    "originalExpression": "\"AT 14 DF 6\\n* An useless vessel.\"",
+    "replacementExpression": "\"AT 14 DF 6\\n* Um receptáculo inútil.\""
+  },
+  "da93c2faa269": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 1113,
+    "endOffset": 1129,
+    "source": "* In your way.",
+    "translation": "* En tu camino.",
+    "originalExpression": "\"* In your way.\"",
+    "replacementExpression": "\"* No seu caminho.\""
+  },
+  "143d57ce3f39": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 1139,
+    "endOffset": 1175,
+    "source": "* Kris is genuinely scared of you.",
+    "translation": "* Kris de verdad te tiene miedo.",
+    "originalExpression": "\"* Kris is genuinely scared of you.\"",
+    "replacementExpression": "\"* Kris está mesmo com medo de você.\""
+  },
+  "8d0b660593ed": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 1185,
+    "endOffset": 1205,
+    "source": "* End of the line.",
+    "translation": "* Fin del camino.",
+    "originalExpression": "\"* End of the line.\"",
+    "replacementExpression": "\"* Fim da linha.\""
+  },
+  "1c2772be7e8c": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 1215,
+    "endOffset": 1240,
+    "source": "* With you in the dark.",
+    "translation": "* Contigo en la oscuridad.",
+    "originalExpression": "\"* With you in the dark.\"",
+    "replacementExpression": "\"* Com você no escuro.\""
+  },
+  "32b1017a6f43": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 1250,
+    "endOffset": 1273,
+    "source": "* Just another enemy.",
+    "translation": "* Solo otro enemigo.",
+    "originalExpression": "\"* Just another enemy.\"",
+    "replacementExpression": "\"* Só mais um inimigo.\""
+  },
+  "c9a5140f6f1f": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 1283,
+    "endOffset": 1301,
+    "source": "* No matter now.",
+    "translation": "* Ya da igual.",
+    "originalExpression": "\"* No matter now.\"",
+    "replacementExpression": "\"* Agora tanto faz.\""
+  },
+  "72b1b1d9caca": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 3226,
+    "endOffset": 3273,
+    "source": "Of course. [wait:10]Of course\nyou'd fight...",
+    "translation": "Claro. [wait:10]Claro que\npelearías...",
+    "originalExpression": "\"Of course. [wait:10]Of course\\nyou'd fight...\"",
+    "replacementExpression": "\"Claro. [wait:10]Claro que\\nvocê lutaria...\""
+  },
+  "6c272b09855a": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 3287,
+    "endOffset": 3342,
+    "source": "Not like you've done\notherwise,[wait:10] am I right?",
+    "translation": "Como si hicieras\notra cosa,[wait:10] ¿verdad?",
+    "originalExpression": "\"Not like you've done\\notherwise,[wait:10] am I right?\"",
+    "replacementExpression": "\"Como se fizesse\\nalgo diferente,[wait:10] não é?\""
+  },
+  "c1a227fee221": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 3395,
+    "endOffset": 3467,
+    "source": "What wrong?\n[wait:10]Too scared to move?[wait:10]\nYou of all people?",
+    "translation": "¿Qué pasa?\n[wait:10]¿Miedo de moverte?[wait:10]\n¿Tú, precisamente?",
+    "originalExpression": "\"What wrong?\\n[wait:10]Too scared to move?[wait:10]\\nYou of all people?\"",
+    "replacementExpression": "\"O que foi?\\n[wait:10]Medo de se mexer?[wait:10]\\nJusto você?\""
+  },
+  "1b33e2653acc": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 3481,
+    "endOffset": 3542,
+    "source": "It's not like you, Normally,\nyou'd have\nattacked already.",
+    "translation": "No parece propio de ti.\nNormalmente ya\nhabrías atacado.",
+    "originalExpression": "\"It's not like you, Normally,\\nyou'd have\\nattacked already.\"",
+    "replacementExpression": "\"Não parece você. Normalmente,\\njá teria\\natacado.\""
+  },
+  "94525981efd6": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 3659,
+    "endOffset": 3672,
+    "source": "You know...",
+    "translation": "Sabes...",
+    "originalExpression": "\"You know...\"",
+    "replacementExpression": "\"Sabe...\""
+  },
+  "0bbbfc8026a6": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 3686,
+    "endOffset": 3730,
+    "source": "This place was beautiful\nbefore you came.",
+    "translation": "Este lugar era hermoso\nantes que llegaras.",
+    "originalExpression": "\"This place was beautiful\\nbefore you came.\"",
+    "replacementExpression": "\"Este lugar era lindo\\nantes de você chegar.\""
+  },
+  "77decebd29c0": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 3835,
+    "endOffset": 3907,
+    "source": "Worst part is:\nI couldn't appreciate it\nbefore you took\nit from me.",
+    "translation": "Lo peor es que:\nno supe apreciarlo\nhasta que me lo\nquitaste.",
+    "originalExpression": "\"Worst part is:\\nI couldn't appreciate it\\nbefore you took\\nit from me.\"",
+    "replacementExpression": "\"O pior é:\\neu não soube apreciar\\naté você tirar\\nisso de mim.\""
+  },
+  "cdac9ec6d923": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 4012,
+    "endOffset": 4066,
+    "source": "One day,[wait:10] you\ncame and.[wait:10].[wait:10].",
+    "translation": "Un día,[wait:10] tú\nllegaste y.[wait:10].[wait:10].",
+    "originalExpression": "\"One day,[wait:10] you\\ncame and.[wait:10].[wait:10].\"",
+    "replacementExpression": "\"Um dia,[wait:10] você\\nchegou e.[wait:10].[wait:10].\""
+  },
+  "8a32920c61ca": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 4080,
+    "endOffset": 4108,
+    "source": "you tore my\nlife apart...",
+    "translation": "destrozaste\nmi vida...",
+    "originalExpression": "\"you tore my\\nlife apart...\"",
+    "replacementExpression": "\"você destruiu\\nminha vida...\""
+  },
+  "2fe915a90baf": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 4213,
+    "endOffset": 4247,
+    "source": "But it wasn't\njust me you hurt!",
+    "translation": "¡Pero no fui\nla única víctima!",
+    "originalExpression": "\"But it wasn't\\njust me you hurt!\"",
+    "replacementExpression": "\"Mas não foi\\nsó a mim que feriu!\""
+  },
+  "e5dcbac1d405": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 4352,
+    "endOffset": 4414,
+    "source": "You also hurt\nNoelle, and\nBerdly, and\nRalsei, and\nSusie!",
+    "translation": "También heriste a\nNoelle,\nBerdly,\nRalsei y\nSusie!",
+    "originalExpression": "\"You also hurt\\nNoelle, and\\nBerdly, and\\nRalsei, and\\nSusie!\"",
+    "replacementExpression": "\"Também feriu\\nNoelle,\\nBerdly,\\nRalsei e\\nSusie!\""
+  },
+  "0ef086e11ab8": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 4519,
+    "endOffset": 4576,
+    "source": "You destroyed their\nlifes,[wait:5]\nusing my own body!",
+    "translation": "¡Destrozaste sus\nvidas,[wait:5]\nusando mi cuerpo!",
+    "originalExpression": "\"You destroyed their\\nlifes,[wait:5]\\nusing my own body!\"",
+    "replacementExpression": "\"Você destruiu a\\nvida deles,[wait:5]\\nusando meu corpo!\""
+  },
+  "f52ae0413992": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 4590,
+    "endOffset": 4654,
+    "source": "You made me watch,\n[wait:5]powerless,[wait:5] as you\ndid so!",
+    "translation": "Me obligaste a mirar,\n[wait:5]impotente,[wait:5] mientras\nlo hacías!",
+    "originalExpression": "\"You made me watch,\\n[wait:5]powerless,[wait:5] as you\\ndid so!\"",
+    "replacementExpression": "\"Você me fez assistir,\\n[wait:5]sem poder,[wait:5] enquanto\\nfazia isso!\""
+  },
+  "cd623bda5b83": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 4759,
+    "endOffset": 4825,
+    "source": "Ever now,[wait:5] you still\ntry to get away with\nwhat you did!",
+    "translation": "Incluso ahora,[wait:5] aún\nintentas librarte\nde lo que hiciste!",
+    "originalExpression": "\"Ever now,[wait:5] you still\\ntry to get away with\\nwhat you did!\"",
+    "replacementExpression": "\"Mesmo agora,[wait:5] você\\ntenta escapar\\ndo que fez!\""
+  },
+  "d17cbadbfe7c": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 4930,
+    "endOffset": 4963,
+    "source": "I knew people\ncould be evil...",
+    "translation": "Sabía que la gente\npodía ser cruel...",
+    "originalExpression": "\"I knew people\\ncould be evil...\"",
+    "replacementExpression": "\"Eu sabia que gente\\npodia ser cruel...\""
+  },
+  "cf53234c66dd": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 4977,
+    "endOffset": 5034,
+    "source": "But you have proven\nthat to be a HUGE\nunderstatement!",
+    "translation": "¡Pero demostraste\nque eso se quedaba\nMUY corto!",
+    "originalExpression": "\"But you have proven\\nthat to be a HUGE\\nunderstatement!\"",
+    "replacementExpression": "\"Mas você provou\\nque isso era dizer\\nMUITO pouco!\""
+  },
+  "f0d68b9c2eaa": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 5140,
+    "endOffset": 5204,
+    "source": "No matter what you do,[wait:5]\nYou won't get away\nwith this!",
+    "translation": "Hagas lo que hagas,[wait:5]\n¡no escaparás\nde esto!",
+    "originalExpression": "\"No matter what you do,[wait:5]\\nYou won't get away\\nwith this!\"",
+    "replacementExpression": "\"Não importa o que faça,[wait:5]\\nvocê não vai escapar\\ndisso!\""
+  },
+  "793ad0a02f4c": {
+    "file": "scripts/battle/enemies/kris-werid-route.lua",
+    "fileHash": "625fd8d8a5f5817e6d4f0f15b450d7746d65663a24221afcae5b950490359da3",
+    "startOffset": 5218,
+    "endOffset": 5235,
+    "source": "...you can't...",
+    "translation": "...no puedes...",
+    "originalExpression": "\"...you can't...\"",
+    "replacementExpression": "\"...não pode...\""
+  },
+  "67298b28ae7e": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 970,
+    "endOffset": 1008,
+    "source": "AT 14 DF 6\n* They won't listen you.",
+    "translation": "AT 14 DF 6\n* Kris no te escuchará.",
+    "originalExpression": "\"AT 14 DF 6\\n* They won't listen you.\"",
+    "replacementExpression": "\"AT 14 DF 6\\n* Kris não vai te ouvir.\""
+  },
+  "d533f6ae522d": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 1105,
+    "endOffset": 1131,
+    "source": "* Kris drew their blade.",
+    "translation": "* Kris desenvainó la espada.",
+    "originalExpression": "\"* Kris drew their blade.\"",
+    "replacementExpression": "\"* Kris sacou a lâmina.\""
+  },
+  "677200851475": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 1141,
+    "endOffset": 1169,
+    "source": "* The atmosphere is tense.",
+    "translation": "* El ambiente está tenso.",
+    "originalExpression": "\"* The atmosphere is tense.\"",
+    "replacementExpression": "\"* O clima está tenso.\""
+  },
+  "e7f22db44b8f": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 1179,
+    "endOffset": 1199,
+    "source": "* End of the line.",
+    "translation": "* Fin del camino.",
+    "originalExpression": "\"* End of the line.\"",
+    "replacementExpression": "\"* Fim da linha.\""
+  },
+  "cfefd8e9cdbc": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 1209,
+    "endOffset": 1234,
+    "source": "* With you in the dark.",
+    "translation": "* Contigo en la oscuridad.",
+    "originalExpression": "\"* With you in the dark.\"",
+    "replacementExpression": "\"* Com você no escuro.\""
+  },
+  "f07777f904c7": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 1244,
+    "endOffset": 1252,
+    "source": "* End.",
+    "translation": "* Fin.",
+    "originalExpression": "\"* End.\"",
+    "replacementExpression": "\"* Fim.\""
+  },
+  "b997d4e97cf4": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 1262,
+    "endOffset": 1282,
+    "source": "* Is freedom real?",
+    "translation": "* ¿La libertad es real?",
+    "originalExpression": "\"* Is freedom real?\"",
+    "replacementExpression": "\"* Liberdade é real?\""
+  },
+  "a7abfe5d8417": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 1511,
+    "endOffset": 1519,
+    "source": "Reason",
+    "translation": "Razonar",
+    "originalExpression": "\"Reason\"",
+    "replacementExpression": "\"Apelar\""
+  },
+  "1ff4449827e4": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 3228,
+    "endOffset": 3303,
+    "source": "* You tried to say something to Kris.[wait:10]\n* But They didn't listen.",
+    "translation": "* Intentaste decirle algo a Kris.[wait:10]\n* Pero Kris no escuchó.",
+    "originalExpression": "\"* You tried to say something to Kris.[wait:10]\\n* But They didn't listen.\"",
+    "replacementExpression": "\"* Você tentou dizer algo a Kris.[wait:10]\\n* Mas Kris não ouviu.\""
+  },
+  "3e3b1445ab63": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 3426,
+    "endOffset": 3508,
+    "source": "* You told Kris this won't accomplish anything.[wait:10]\n* But they don't care.",
+    "translation": "* Le dijiste a Kris que esto no logrará nada.[wait:10]\n* A Kris no le importa.",
+    "originalExpression": "\"* You told Kris this won't accomplish anything.[wait:10]\\n* But they don't care.\"",
+    "replacementExpression": "\"* Você disse que isso não levará a nada.[wait:10]\\n* Mas Kris não se importa.\""
+  },
+  "06c40181dd66": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 3699,
+    "endOffset": 3821,
+    "source": "* STOP![wait:20] This won't do anything.[wait:5].[wait:5].\n* They won't listen to you, and[wait:10] can you blame them?",
+    "translation": "* ¡ALTO![wait:20] Esto no servirá de nada.[wait:5].[wait:5].\n* Kris no te escuchará y,[wait:10] ¿puedes culparle?",
+    "originalExpression": "\"* STOP![wait:20] This won't do anything.[wait:5].[wait:5].\\n* They won't listen to you, and[wait:10] can you blame them?\"",
+    "replacementExpression": "\"* PARE![wait:20] Isso não vai adiantar.[wait:5].[wait:5].\\n* Kris não vai te ouvir e,[wait:10] dá para culpar?\""
+  },
+  "4d64b36fe761": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 4203,
+    "endOffset": 4252,
+    "source": "What? [wait:10]You thought\nI'd let you hit me?",
+    "translation": "¿Qué? [wait:10]¿Creíste que\ndejaría que me dieras?",
+    "originalExpression": "\"What? [wait:10]You thought\\nI'd let you hit me?\"",
+    "replacementExpression": "\"O quê? [wait:10]Achou que eu ia\\ndeixar você me acertar?\""
+  },
+  "5a05211a7979": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 4266,
+    "endOffset": 4304,
+    "source": "C'mon,[wait:10] I'm not\nthat dense.",
+    "translation": "Vamos,[wait:10] no caigo\nen eso.",
+    "originalExpression": "\"C'mon,[wait:10] I'm not\\nthat dense.\"",
+    "replacementExpression": "\"Qual é,[wait:10] eu não\\ncaio nessa.\""
+  },
+  "8339dc038d2c": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 4318,
+    "endOffset": 4357,
+    "source": "Then again,[wait:10]\nhow'd YOU know?",
+    "translation": "Aunque,[wait:10]\n¿cómo TÚ lo sabrías?",
+    "originalExpression": "\"Then again,[wait:10]\\nhow'd YOU know?\"",
+    "replacementExpression": "\"Pensando bem,[wait:10]\\ncomo VOCÊ saberia?\""
+  },
+  "5c1ad741ba2c": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 4410,
+    "endOffset": 4453,
+    "source": "What wrong?\n[wait:10]Too scared to move?",
+    "translation": "¿Qué pasa?\n[wait:10]¿Miedo de moverte?",
+    "originalExpression": "\"What wrong?\\n[wait:10]Too scared to move?\"",
+    "replacementExpression": "\"O que foi?\\n[wait:10]Medo de se mexer?\""
+  },
+  "6b0bd2afad59": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 4467,
+    "endOffset": 4482,
+    "source": "I understand.",
+    "translation": "Lo entiendo.",
+    "originalExpression": "\"I understand.\"",
+    "replacementExpression": "\"Eu entendo.\""
+  },
+  "570aac02fa5b": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 4496,
+    "endOffset": 4560,
+    "source": "After all,[wait:10] it's not\nevery day you meet\nyour demise.",
+    "translation": "Después de todo,[wait:10] no\ntodos los días conoces\ntu final.",
+    "originalExpression": "\"After all,[wait:10] it's not\\nevery day you meet\\nyour demise.\"",
+    "replacementExpression": "\"Afinal,[wait:10] não é todo\\ndia que você encontra\\nseu fim.\""
+  },
+  "c1bf40ecf28a": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 4676,
+    "endOffset": 4727,
+    "source": "I had a life before\nyou came,[wait:10] you know?",
+    "translation": "Tenía una vida antes\nde que llegaras,[wait:10] ¿sabes?",
+    "originalExpression": "\"I had a life before\\nyou came,[wait:10] you know?\"",
+    "replacementExpression": "\"Eu tinha uma vida antes\\nde você chegar,[wait:10] sabe?\""
+  },
+  "dbd8af0af366": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 4823,
+    "endOffset": 4887,
+    "source": "Maybe it wasn't the greatest,[wait:10]\nbut it was still mine.",
+    "translation": "Quizá no era la mejor,[wait:10]\npero seguía siendo mía.",
+    "originalExpression": "\"Maybe it wasn't the greatest,[wait:10]\\nbut it was still mine.\"",
+    "replacementExpression": "\"Talvez não fosse das melhores,[wait:10]\\nmas ainda era minha.\""
+  },
+  "6e8683741743": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 4992,
+    "endOffset": 5058,
+    "source": "Then,[wait:10] one day\nwithout any warning.[wait:10].[wait:10].",
+    "translation": "Entonces,[wait:10] un día\nsin previo aviso.[wait:10].[wait:10].",
+    "originalExpression": "\"Then,[wait:10] one day\\nwithout any warning.[wait:10].[wait:10].\"",
+    "replacementExpression": "\"Então,[wait:10] um dia\\nsem aviso algum.[wait:10].[wait:10].\""
+  },
+  "2a3308c2b038": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 5072,
+    "endOffset": 5089,
+    "source": "You came along.",
+    "translation": "Apareciste tú.",
+    "originalExpression": "\"You came along.\"",
+    "replacementExpression": "\"Você apareceu.\""
+  },
+  "c088a23e0628": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 5194,
+    "endOffset": 5253,
+    "source": "You CONTTOL me,\n[wait:5]DECIDE for me.[wait:5].[wait:5].",
+    "translation": "Tú me CONTROLAS,\n[wait:5]DECIDES por mí.[wait:5].[wait:5].",
+    "originalExpression": "\"You CONTTOL me,\\n[wait:5]DECIDE for me.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"Você me CONTROLA,\\n[wait:5]DECIDE por mim.[wait:5].[wait:5].\""
+  },
+  "59c5de7fa0f1": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 5267,
+    "endOffset": 5309,
+    "source": "Can you even imagine\nfeeling like that?",
+    "translation": "¿Puedes imaginar\nlo que se siente?",
+    "originalExpression": "\"Can you even imagine\\nfeeling like that?\"",
+    "replacementExpression": "\"Consegue imaginar\\ncomo é sentir isso?\""
+  },
+  "024443203c7b": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 5414,
+    "endOffset": 5459,
+    "source": "Did You think You were\nabove consequences?",
+    "translation": "¿Creíste que estabas\nsin consecuencias?",
+    "originalExpression": "\"Did You think You were\\nabove consequences?\"",
+    "replacementExpression": "\"Você achou que estava\\nacima das consequências?\""
+  },
+  "17ea054c075a": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 5473,
+    "endOffset": 5546,
+    "source": "Did You think\nYou could do[wait:15][shake:2]\nWHATEVER YOU WANTED TO!?",
+    "translation": "¿Creíste que\npodías hacer[wait:15][shake:2]\nLO QUE QUISIERAS!?",
+    "originalExpression": "\"Did You think\\nYou could do[wait:15][shake:2]\\nWHATEVER YOU WANTED TO!?\"",
+    "replacementExpression": "\"Você achou\\nque podia fazer[wait:15][shake:2]\\nO QUE QUISESSE!?\""
+  },
+  "b46863ccfb13": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 5651,
+    "endOffset": 5759,
+    "source": "[shake:2]WHY!?[wait:15] WHY DID YOU DO IT!?[wait:15]\n[shake:1]DID YOU[wait:5].[wait:5].[wait:5].[wait:5]!",
+    "translation": "[shake:2]POR QUÉ!?[wait:15] QUÉ HICISTE!?[wait:15]\n[shake:1]TÚ[wait:5].[wait:5].[wait:5].[wait:5]!",
+    "originalExpression": "\"[shake:2]WHY!?[wait:15] WHY DID YOU DO IT!?[wait:15]\\n[shake:1]DID YOU[wait:5].[wait:5].[wait:5].[wait:5]!\"",
+    "replacementExpression": "\"[shake:2]POR QUÊ!?[wait:15] POR QUE FEZ ISSO!?[wait:15]\\n[shake:1]VOCÊ[wait:5].[wait:5].[wait:5].[wait:5]!\""
+  },
+  "54f3442d94c3": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 5773,
+    "endOffset": 5864,
+    "source": "[wait:5].[wait:5].[wait:5]. did you really\nhate me that much.[wait:5].[wait:5].[wait:5]?",
+    "translation": "[wait:5].[wait:5].[wait:5]. de verdad\nme odiabas tanto.[wait:5].[wait:5].[wait:5]?",
+    "originalExpression": "\"[wait:5].[wait:5].[wait:5]. did you really\\nhate me that much.[wait:5].[wait:5].[wait:5]?\"",
+    "replacementExpression": "\"[wait:5].[wait:5].[wait:5]. você realmente\\nme odiava tanto.[wait:5].[wait:5].[wait:5]?\""
+  },
+  "4307a5f995ff": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 5969,
+    "endOffset": 5995,
+    "source": "Or you were\njust bored?",
+    "translation": "¿O fue solo\npor tedio?",
+    "originalExpression": "\"Or you were\\njust bored?\"",
+    "replacementExpression": "\"Ou foi só\\npor tédio?\""
+  },
+  "415b92528c80": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 6009,
+    "endOffset": 6046,
+    "source": "Maybe you thought\nthis'd be funny.",
+    "translation": "Quizá pensaste\nque sería gracioso.",
+    "originalExpression": "\"Maybe you thought\\nthis'd be funny.\"",
+    "replacementExpression": "\"Talvez achasse\\nisso engraçado.\""
+  },
+  "9be37aa68ff8": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 6184,
+    "endOffset": 6241,
+    "source": "Or maybe You did\nit because[wait:5].[wait:5].[wait:5].",
+    "translation": "O quizá lo hiciste\nporque[wait:5].[wait:5].[wait:5].",
+    "originalExpression": "\"Or maybe You did\\nit because[wait:5].[wait:5].[wait:5].\"",
+    "replacementExpression": "\"Ou talvez tenha feito\\nisso porque[wait:5].[wait:5].[wait:5].\""
+  },
+  "7a80247eafbb": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 6255,
+    "endOffset": 6319,
+    "source": "[wait:5].[wait:5].[wait:5]. because[wait:5].[wait:5].[wait:5].",
+    "translation": "[wait:5].[wait:5].[wait:5]. porque[wait:5].[wait:5].[wait:5].",
+    "originalExpression": "\"[wait:5].[wait:5].[wait:5]. because[wait:5].[wait:5].[wait:5].\"",
+    "replacementExpression": "\"[wait:5].[wait:5].[wait:5]. porque[wait:5].[wait:5].[wait:5].\""
+  },
+  "08fe52e29888": {
+    "file": "scripts/battle/enemies/kris.lua",
+    "fileHash": "d22e1205da372cac9a5c15ba846b89712f1565b25dde6aaa80bfafe83a879240",
+    "startOffset": 6351,
+    "endOffset": 6386,
+    "source": "AT 14 DF 6\n* Too tired to fight.",
+    "translation": "AT 14 DF 6\n* Sin fuerzas para luchar.",
+    "originalExpression": "\"AT 14 DF 6\\n* Too tired to fight.\"",
+    "replacementExpression": "\"AT 14 DF 6\\n* Sem forças para lutar.\""
+  },
+  "cdeee13f9d10": {
+    "file": "scripts/data/items/key/photo.lua",
+    "fileHash": "07fb4f0861f525910aa63c4367fb4245bf48b80d8002c3a1cfcab644bbc14d28",
+    "startOffset": 464,
+    "endOffset": 506,
+    "source": "A photo with your friends.\nBest memory.",
+    "translation": "Una foto con tus amigos.\nMejor recuerdo.",
+    "originalExpression": "\"A photo with your friends.\\nBest memory.\"",
+    "replacementExpression": "\"Uma foto com seus amigos.\\nMelhor lembrança.\""
+  },
+  "2f330cf2afb9": {
+    "file": "scripts/data/items/ultimate_candy.lua",
+    "fileHash": "b07951efb95feab7b7723e7c52a32c410336e0e8e2ae179cd0d11f10b05e5a2d",
+    "startOffset": 309,
+    "endOffset": 325,
+    "source": "ULTIMATE CANDY",
+    "translation": "DULCE SUPREMO",
+    "originalExpression": "\"ULTIMATE CANDY\"",
+    "replacementExpression": "\"DOCE SUPREMO\""
+  },
+  "ed02e53a97b7": {
+    "file": "scripts/data/items/ultimate_candy.lua",
+    "fileHash": "b07951efb95feab7b7723e7c52a32c410336e0e8e2ae179cd0d11f10b05e5a2d",
+    "startOffset": 492,
+    "endOffset": 507,
+    "source": "Best\nhealing",
+    "translation": "Mejor\ncuración",
+    "originalExpression": "\"Best\\nhealing\"",
+    "replacementExpression": "\"Melhor\\ncura\""
+  },
+  "8a24673fd869": {
+    "file": "scripts/data/items/ultimate_candy.lua",
+    "fileHash": "b07951efb95feab7b7723e7c52a32c410336e0e8e2ae179cd0d11f10b05e5a2d",
+    "startOffset": 548,
+    "endOffset": 560,
+    "source": "Perfection",
+    "translation": "Perfección",
+    "originalExpression": "\"Perfection\"",
+    "replacementExpression": "\"Perfeição\""
+  },
+  "9dab9f4ef4ed": {
+    "file": "scripts/data/items/ultimate_candy.lua",
+    "fileHash": "b07951efb95feab7b7723e7c52a32c410336e0e8e2ae179cd0d11f10b05e5a2d",
+    "startOffset": 608,
+    "endOffset": 672,
+    "source": "Sparkles with perfection.\nMust be shared with everyone. +??HP",
+    "translation": "Brilla con perfección.\nDebe compartirse con todos. +??HP",
+    "originalExpression": "\"Sparkles with perfection.\\nMust be shared with everyone. +??HP\"",
+    "replacementExpression": "\"Brilha de perfeição.\\nDeve ser dividido com todos. +??HP\""
+  },
+  "f45e269201d3": {
+    "file": "scripts/data/items/ultimate_candy.lua",
+    "fileHash": "b07951efb95feab7b7723e7c52a32c410336e0e8e2ae179cd0d11f10b05e5a2d",
+    "startOffset": 1588,
+    "endOffset": 1614,
+    "source": "Hey! It's hollow inside!",
+    "translation": "¡Oye! ¡Está hueco por dentro!",
+    "originalExpression": "\"Hey! It's hollow inside!\"",
+    "replacementExpression": "\"Ei! É oco por dentro!\""
+  },
+  "02727f3ba815": {
+    "file": "scripts/data/items/ultimate_candy.lua",
+    "fileHash": "b07951efb95feab7b7723e7c52a32c410336e0e8e2ae179cd0d11f10b05e5a2d",
+    "startOffset": 1633,
+    "endOffset": 1654,
+    "source": "I like the texture!",
+    "translation": "¡Me gusta la textura!",
+    "originalExpression": "\"I like the texture!\"",
+    "replacementExpression": "\"Gostei da textura!\""
+  },
+  "e815128a8f7c": {
+    "file": "scripts/data/items/ultimate_candy.lua",
+    "fileHash": "b07951efb95feab7b7723e7c52a32c410336e0e8e2ae179cd0d11f10b05e5a2d",
+    "startOffset": 1673,
+    "endOffset": 1700,
+    "source": "That was underwhelming...",
+    "translation": "Eso fue decepcionante...",
+    "originalExpression": "\"That was underwhelming...\"",
+    "replacementExpression": "\"Isso foi decepcionante...\""
+  },
+  "b815e7f3f376": {
+    "file": "scripts/data/party/kris.lua",
+    "fileHash": "5490567daf8640b5c3913bba2d01ca7ae43a7badb0adf95fb38d7bd32f004212",
+    "startOffset": 480,
+    "endOffset": 528,
+    "source": "Leader\nCommands the party\nwith various ACTs.",
+    "translation": "Líder\nDirige al grupo\ncon varios ACTs.",
+    "originalExpression": "\"Leader\\nCommands the party\\nwith various ACTs.\"",
+    "replacementExpression": "\"Líder\\nComanda o grupo\\ncom vários ACTs.\""
+  },
+  "4efdff2b67d1": {
+    "file": "scripts/data/party/kris.lua",
+    "fileHash": "5490567daf8640b5c3913bba2d01ca7ae43a7badb0adf95fb38d7bd32f004212",
+    "startOffset": 559,
+    "endOffset": 611,
+    "source": "Tactician\nCommands the party\nby ACTs. Sometimes.",
+    "translation": "Estratega\nDirige al grupo\ncon ACTs. A veces.",
+    "originalExpression": "\"Tactician\\nCommands the party\\nby ACTs. Sometimes.\"",
+    "replacementExpression": "\"Estrategista\\nComanda o grupo\\ncom ACTs. Às vezes.\""
+  },
+  "26317a8e8d75": {
+    "file": "scripts/data/party/vessel.lua",
+    "fileHash": "419329ee0c09977409968a14219d1b2b98715f201f612774fe4525469b75504c",
+    "startOffset": 366,
+    "endOffset": 387,
+    "source": "The Player's\nBody.",
+    "translation": "El cuerpo del\nJugador.",
+    "originalExpression": "\"The Player's\\nBody.\"",
+    "replacementExpression": "\"O corpo do\\nJogador.\""
+  },
+  "704a21e24224": {
+    "file": "scripts/data/party/vessel.lua",
+    "fileHash": "419329ee0c09977409968a14219d1b2b98715f201f612774fe4525469b75504c",
+    "startOffset": 3219,
+    "endOffset": 3243,
+    "source": "This is not the end...",
+    "translation": "Esto no es el fin...",
+    "originalExpression": "\"This is not the end...\"",
+    "replacementExpression": "\"Este não é o fim...\""
+  },
+  "b0c3fac0de90": {
+    "file": "scripts/world/cutscenes/ask.lua",
+    "fileHash": "f0195c7fbc9c70fe5eb93fa624b6acded004a461d969482d506c1f5ea1c2ff61",
+    "startOffset": 853,
+    "endOffset": 871,
+    "source": "CHOICE YOUR PATH",
+    "translation": "ELIGE TU CAMINO",
+    "originalExpression": "\"CHOICE YOUR PATH\"",
+    "replacementExpression": "\"ESCOLHA SEU RUMO\""
+  },
+  "07880a8bdb50": {
+    "file": "scripts/world/cutscenes/ask.lua",
+    "fileHash": "f0195c7fbc9c70fe5eb93fa624b6acded004a461d969482d506c1f5ea1c2ff61",
+    "startOffset": 998,
+    "endOffset": 1008,
+    "source": "PACIFIST",
+    "translation": "PACIFISTA",
+    "originalExpression": "\"PACIFIST\"",
+    "replacementExpression": "\"PACIFISTA\""
+  },
+  "8d7bd62986bc": {
+    "file": "scripts/world/cutscenes/ask.lua",
+    "fileHash": "f0195c7fbc9c70fe5eb93fa624b6acded004a461d969482d506c1f5ea1c2ff61",
+    "startOffset": 1022,
+    "endOffset": 1026,
+    "source": "<<",
+    "translation": "<<",
+    "originalExpression": "\"<<\"",
+    "replacementExpression": "\"<<\""
+  },
+  "47642b9b4611": {
+    "file": "scripts/world/cutscenes/ask.lua",
+    "fileHash": "f0195c7fbc9c70fe5eb93fa624b6acded004a461d969482d506c1f5ea1c2ff61",
+    "startOffset": 1032,
+    "endOffset": 1036,
+    "source": ">>",
+    "translation": ">>",
+    "originalExpression": "\">>\"",
+    "replacementExpression": "\">>\""
+  },
+  "7d1b5fa2c068": {
+    "file": "scripts/world/cutscenes/ask.lua",
+    "fileHash": "f0195c7fbc9c70fe5eb93fa624b6acded004a461d969482d506c1f5ea1c2ff61",
+    "startOffset": 1042,
+    "endOffset": 1055,
+    "source": "WEIRD ROUTE",
+    "translation": "RUTA EXTRAÑA",
+    "originalExpression": "\"WEIRD ROUTE\"",
+    "replacementExpression": "\"ROTA ESTRANHA\""
+  },
+  "e7ce3f69299e": {
+    "file": "scripts/world/cutscenes/ask.lua",
+    "fileHash": "f0195c7fbc9c70fe5eb93fa624b6acded004a461d969482d506c1f5ea1c2ff61",
+    "startOffset": 2086,
+    "endOffset": 2106,
+    "source": "CHOICE FIGHT MUSIC",
+    "translation": "ELIGE LA MÚSICA",
+    "originalExpression": "\"CHOICE FIGHT MUSIC\"",
+    "replacementExpression": "\"ESCOLHA A MÚSICA\""
+  },
+  "03c465dc2a8d": {
+    "file": "scripts/world/cutscenes/ask.lua",
+    "fileHash": "f0195c7fbc9c70fe5eb93fa624b6acded004a461d969482d506c1f5ea1c2ff61",
+    "startOffset": 2233,
+    "endOffset": 2243,
+    "source": "VS. KRIS",
+    "translation": "VS. KRIS",
+    "originalExpression": "\"VS. KRIS\"",
+    "replacementExpression": "\"VS. KRIS\""
+  },
+  "be893ad613fc": {
+    "file": "scripts/world/cutscenes/ask.lua",
+    "fileHash": "f0195c7fbc9c70fe5eb93fa624b6acded004a461d969482d506c1f5ea1c2ff61",
+    "startOffset": 2258,
+    "endOffset": 2272,
+    "source": "BURNING HOPE",
+    "translation": "ESPERANZA ARDE",
+    "originalExpression": "\"BURNING HOPE\"",
+    "replacementExpression": "\"ESPERANÇA ARDENTE\""
+  },
+  "9db724ce459f": {
+    "file": "scripts/world/cutscenes/ask.lua",
+    "fileHash": "f0195c7fbc9c70fe5eb93fa624b6acded004a461d969482d506c1f5ea1c2ff61",
+    "startOffset": 2285,
+    "endOffset": 2299,
+    "source": "YOUR DESTINY",
+    "translation": "TU DESTINO",
+    "originalExpression": "\"YOUR DESTINY\"",
+    "replacementExpression": "\"SEU DESTINO\""
+  },
+  "e2045401e7b5": {
+    "file": "scripts/world/cutscenes/fountain.lua",
+    "fileHash": "19bc4669af9b50f3ac2f31a846580ad1a8e534c5018b05c92b56ffc21e961c5a",
+    "startOffset": 849,
+    "endOffset": 864,
+    "source": "* A fountain.",
+    "translation": "* Una fuente.",
+    "originalExpression": "\"* A fountain.\"",
+    "replacementExpression": "\"* Uma fonte.\""
+  },
+  "9ba7a82eb161": {
+    "file": "scripts/world/cutscenes/fountain.lua",
+    "fileHash": "19bc4669af9b50f3ac2f31a846580ad1a8e534c5018b05c92b56ffc21e961c5a",
+    "startOffset": 888,
+    "endOffset": 940,
+    "source": "* Guess this is it,[wait:5] huh.[wait:5].[wait:5].",
+    "translation": "* Supongo que es esto,[wait:5] ¿eh?[wait:5].[wait:5].",
+    "originalExpression": "\"* Guess this is it,[wait:5] huh.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* Acho que é isso,[wait:5] né.[wait:5].[wait:5].\""
+  },
+  "929860fe8817": {
+    "file": "scripts/world/cutscenes/fountain.lua",
+    "fileHash": "19bc4669af9b50f3ac2f31a846580ad1a8e534c5018b05c92b56ffc21e961c5a",
+    "startOffset": 996,
+    "endOffset": 1047,
+    "source": "* We both know what happened next,[wait:5] right?",
+    "translation": "* Ambos sabemos qué pasó después,[wait:5] ¿no?",
+    "originalExpression": "\"* We both know what happened next,[wait:5] right?\"",
+    "replacementExpression": "\"* Nós dois sabemos o que veio depois,[wait:5] certo?\""
+  },
+  "f79f47846ef7": {
+    "file": "scripts/world/cutscenes/fountain.lua",
+    "fileHash": "19bc4669af9b50f3ac2f31a846580ad1a8e534c5018b05c92b56ffc21e961c5a",
+    "startOffset": 1102,
+    "endOffset": 1146,
+    "source": "* But,[wait:5] whatever.[wait:5].[wait:5].",
+    "translation": "* Pero,[wait:5] da igual.[wait:5].[wait:5].",
+    "originalExpression": "\"* But,[wait:5] whatever.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* Mas,[wait:5] tanto faz.[wait:5].[wait:5].\""
+  },
+  "97039c45b48a": {
+    "file": "scripts/world/cutscenes/fountain.lua",
+    "fileHash": "19bc4669af9b50f3ac2f31a846580ad1a8e534c5018b05c92b56ffc21e961c5a",
+    "startOffset": 1202,
+    "endOffset": 1241,
+    "source": "* We'll face it.[wait:5]\n* Together.",
+    "translation": "* Lo enfrentaremos.[wait:5]\n* Juntos.",
+    "originalExpression": "\"* We'll face it.[wait:5]\\n* Together.\"",
+    "replacementExpression": "\"* Vamos encarar.[wait:5]\\n* Lado a lado.\""
+  },
+  "c3922b9269b1": {
+    "file": "scripts/world/cutscenes/fountain.lua",
+    "fileHash": "19bc4669af9b50f3ac2f31a846580ad1a8e534c5018b05c92b56ffc21e961c5a",
+    "startOffset": 1265,
+    "endOffset": 1275,
+    "source": "* Ready?",
+    "translation": "* ¿Vamos?",
+    "originalExpression": "\"* Ready?\"",
+    "replacementExpression": "\"* Tudo certo?\""
+  },
+  "2946b1c49f3e": {
+    "file": "scripts/world/cutscenes/fountain.lua",
+    "fileHash": "19bc4669af9b50f3ac2f31a846580ad1a8e534c5018b05c92b56ffc21e961c5a",
+    "startOffset": 1302,
+    "endOffset": 1307,
+    "source": "Yes",
+    "translation": "Sí",
+    "originalExpression": "\"Yes\"",
+    "replacementExpression": "\"Sim\""
+  },
+  "7044cd6aaaad": {
+    "file": "scripts/world/cutscenes/fountain.lua",
+    "fileHash": "19bc4669af9b50f3ac2f31a846580ad1a8e534c5018b05c92b56ffc21e961c5a",
+    "startOffset": 1309,
+    "endOffset": 1313,
+    "source": "No",
+    "translation": "No",
+    "originalExpression": "\"No\"",
+    "replacementExpression": "\"Não\""
+  },
+  "c0375d9610dc": {
+    "file": "scripts/world/cutscenes/fountain.lua",
+    "fileHash": "19bc4669af9b50f3ac2f31a846580ad1a8e534c5018b05c92b56ffc21e961c5a",
+    "startOffset": 1395,
+    "endOffset": 1421,
+    "source": "* huh.[wait:5].[wait:5].",
+    "translation": "* eh.[wait:5].[wait:5].",
+    "originalExpression": "\"* huh.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* hã.[wait:5].[wait:5].\""
+  },
+  "c4e359928d0e": {
+    "file": "scripts/world/cutscenes/fountain.lua",
+    "fileHash": "19bc4669af9b50f3ac2f31a846580ad1a8e534c5018b05c92b56ffc21e961c5a",
+    "startOffset": 1449,
+    "endOffset": 1483,
+    "source": "* If be honest,[wait:5] I'm too.",
+    "translation": "* La verdad,[wait:5] yo también.",
+    "originalExpression": "\"* If be honest,[wait:5] I'm too.\"",
+    "replacementExpression": "\"* Sinceramente,[wait:5] eu também.\""
+  },
+  "a01bed1d4150": {
+    "file": "scripts/world/cutscenes/fountain.lua",
+    "fileHash": "19bc4669af9b50f3ac2f31a846580ad1a8e534c5018b05c92b56ffc21e961c5a",
+    "startOffset": 1511,
+    "endOffset": 1552,
+    "source": "* Well,[wait:5] let's get to the point.",
+    "translation": "* Bueno,[wait:5] vayamos al grano.",
+    "originalExpression": "\"* Well,[wait:5] let's get to the point.\"",
+    "replacementExpression": "\"* Bem,[wait:5] vamos ao que interessa.\""
+  },
+  "17f195befd93": {
+    "file": "scripts/world/cutscenes/fountain.lua",
+    "fileHash": "19bc4669af9b50f3ac2f31a846580ad1a8e534c5018b05c92b56ffc21e961c5a",
+    "startOffset": 3307,
+    "endOffset": 3316,
+    "source": "* Cool!",
+    "translation": "* ¡Genial!",
+    "originalExpression": "\"* Cool!\"",
+    "replacementExpression": "\"* Legal!\""
+  },
+  "41a89f8aef3c": {
+    "file": "scripts/world/cutscenes/fountain.lua",
+    "fileHash": "19bc4669af9b50f3ac2f31a846580ad1a8e534c5018b05c92b56ffc21e961c5a",
+    "startOffset": 3344,
+    "endOffset": 3371,
+    "source": "* Let's get to the point.",
+    "translation": "* Vayamos al grano.",
+    "originalExpression": "\"* Let's get to the point.\"",
+    "replacementExpression": "\"* Vamos ao que interessa.\""
+  },
+  "04ec37250db6": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 1921,
+    "endOffset": 1990,
+    "source": "* So.[wait:5].[wait:5].[wait:5] this is you, huh.[wait:5].[wait:5].",
+    "translation": "* Así que.[wait:5].[wait:5].[wait:5] eres tú, ¿eh?[wait:5].[wait:5].",
+    "originalExpression": "\"* So.[wait:5].[wait:5].[wait:5] this is you, huh.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* Então.[wait:5].[wait:5].[wait:5] é você, é.[wait:5].[wait:5].\""
+  },
+  "8f8700246d52": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 3049,
+    "endOffset": 3092,
+    "source": "* YOU're the one who's been possesing me.",
+    "translation": "* TÚ eres quien lleva poseyéndome.",
+    "originalExpression": "\"* YOU're the one who's been possesing me.\"",
+    "replacementExpression": "\"* VOCÊ é quem vem me possuindo.\""
+  },
+  "30e7319fe915": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 3126,
+    "endOffset": 3166,
+    "source": "* Gotta say. It's a bit disappointing.",
+    "translation": "* Debo decirlo. Decepciona un poco.",
+    "originalExpression": "\"* Gotta say. It's a bit disappointing.\"",
+    "replacementExpression": "\"* Tenho que dizer. É meio decepcionante.\""
+  },
+  "8259cb23da06": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 3199,
+    "endOffset": 3236,
+    "source": "* You're not as scary as I thought.",
+    "translation": "* No das tanto miedo como imaginaba.",
+    "originalExpression": "\"* You're not as scary as I thought.\"",
+    "replacementExpression": "\"* Não assusta tanto quanto pensei.\""
+  },
+  "496caf531e6e": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 3269,
+    "endOffset": 3308,
+    "source": "* Oh. Something wrong,[wait:5] buddy?",
+    "translation": "* Oh. ¿Pasa algo,[wait:5] colega?",
+    "originalExpression": "\"* Oh. Something wrong,[wait:5] buddy?\"",
+    "replacementExpression": "\"* Ah. Algo errado,[wait:5] hein?\""
+  },
+  "fd2ffd9ccaa2": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 3343,
+    "endOffset": 3377,
+    "source": "* Scared of what I'LL do to you?",
+    "translation": "* ¿Miedo de lo que YO te haré?",
+    "originalExpression": "\"* Scared of what I'LL do to you?\"",
+    "replacementExpression": "\"* Com medo do que EU vou fazer?\""
+  },
+  "e03a3bdb229f": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 3513,
+    "endOffset": 3540,
+    "source": "* Well, you ought not be.",
+    "translation": "* Bueno, no deberías.",
+    "originalExpression": "\"* Well, you ought not be.\"",
+    "replacementExpression": "\"* Bem, não deveria.\""
+  },
+  "c43110d4c199": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 3574,
+    "endOffset": 3616,
+    "source": "* Because saying you should be scared...",
+    "translation": "* Porque decir que deberías tener miedo...",
+    "originalExpression": "\"* Because saying you should be scared...\"",
+    "replacementExpression": "\"* Porque dizer que devia ter medo...\""
+  },
+  "e892b1df3444": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 3947,
+    "endOffset": 3984,
+    "source": "* Would be a severe understatement.",
+    "translation": "* Sería quedarse muy corto.",
+    "originalExpression": "\"* Would be a severe understatement.\"",
+    "replacementExpression": "\"* Seria pouco perto da verdade.\""
+  },
+  "83e932248cbb": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 4381,
+    "endOffset": 4450,
+    "source": "* So.[wait:5].[wait:5].[wait:5] this is you, huh.[wait:5].[wait:5].",
+    "translation": "* Así que.[wait:5].[wait:5].[wait:5] eres tú, ¿eh?[wait:5].[wait:5].",
+    "originalExpression": "\"* So.[wait:5].[wait:5].[wait:5] this is you, huh.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* Então.[wait:5].[wait:5].[wait:5] é você, é.[wait:5].[wait:5].\""
+  },
+  "24e64e1690bd": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 4716,
+    "endOffset": 4747,
+    "source": "* Eager as always[wait:5] eh?",
+    "translation": "* Con prisa otra vez,[wait:5] ¿eh?",
+    "originalExpression": "\"* Eager as always[wait:5] eh?\"",
+    "replacementExpression": "\"* Com pressa de novo,[wait:5] é?\""
+  },
+  "008c93f46014": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 4782,
+    "endOffset": 4847,
+    "source": "* Not that I expected anything else from you.[wait:5].[wait:5].",
+    "translation": "* No es que esperara otra cosa de ti.[wait:5].[wait:5].",
+    "originalExpression": "\"* Not that I expected anything else from you.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* Não que eu esperasse outra coisa de você.[wait:5].[wait:5].\""
+  },
+  "6f321e1ce02f": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 4893,
+    "endOffset": 4950,
+    "source": "* But if this is what you truly want.[wait:5].[wait:5].",
+    "translation": "* Pero si esto es lo que quieres.[wait:5].[wait:5].",
+    "originalExpression": "\"* But if this is what you truly want.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* Mas se é isso que você quer mesmo.[wait:5].[wait:5].\""
+  },
+  "5c022b527c0d": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 5110,
+    "endOffset": 5137,
+    "source": "* Let's cut to the chase.",
+    "translation": "* Vayamos directo al grano.",
+    "originalExpression": "\"* Let's cut to the chase.\"",
+    "replacementExpression": "\"* Vamos direto ao ponto.\""
+  },
+  "46fa855f3199": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 8062,
+    "endOffset": 8074,
+    "source": "* Damn it.",
+    "translation": "* Maldición.",
+    "originalExpression": "\"* Damn it.\"",
+    "replacementExpression": "\"* Droga.\""
+  },
+  "096b054bf8a3": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 8108,
+    "endOffset": 8148,
+    "source": "* Not even THAT attack could kill you?",
+    "translation": "* ¿Ni ESE ataque pudo matarte?",
+    "originalExpression": "\"* Not even THAT attack could kill you?\"",
+    "replacementExpression": "\"* Nem AQUELE ataque matou você?\""
+  },
+  "fe9435c4aae2": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 8182,
+    "endOffset": 8201,
+    "source": "* Is this a joke?",
+    "translation": "* ¿Esto es una broma?",
+    "originalExpression": "\"* Is this a joke?\"",
+    "replacementExpression": "\"* Isso é uma piada?\""
+  },
+  "b7ffe51ee2e1": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 8254,
+    "endOffset": 8263,
+    "source": "Proceed",
+    "translation": "Procede",
+    "originalExpression": "\"Proceed\"",
+    "replacementExpression": "\"Prossiga\""
+  },
+  "895f1304598b": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 8265,
+    "endOffset": 8273,
+    "source": "Do not",
+    "translation": "No",
+    "originalExpression": "\"Do not\"",
+    "replacementExpression": "\"Não\""
+  },
+  "2c33c6722938": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 8448,
+    "endOffset": 8480,
+    "source": "* .[wait:5].[wait:5].[wait:5]?",
+    "translation": "* .[wait:5].[wait:5].[wait:5]?",
+    "originalExpression": "\"* .[wait:5].[wait:5].[wait:5]?\"",
+    "replacementExpression": "\"* .[wait:5].[wait:5].[wait:5]?\""
+  },
+  "b50b7358074e": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 8518,
+    "endOffset": 8549,
+    "source": "* W-wait, what are you doing?",
+    "translation": "* E-espera, ¿qué estás haciendo?",
+    "originalExpression": "\"* W-wait, what are you doing?\"",
+    "replacementExpression": "\"* E-espera, o que está fazendo?\""
+  },
+  "492ed24716fc": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 9328,
+    "endOffset": 9337,
+    "source": "Proceed",
+    "translation": "Procede",
+    "originalExpression": "\"Proceed\"",
+    "replacementExpression": "\"Prossiga\""
+  },
+  "d4f736acb6c5": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 9339,
+    "endOffset": 9347,
+    "source": "Do not",
+    "translation": "No",
+    "originalExpression": "\"Do not\"",
+    "replacementExpression": "\"Não\""
+  },
+  "ae883e76ccd0": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 9484,
+    "endOffset": 9542,
+    "source": "* No.[wait:5].[wait:5].[wait:5] Don't.[wait:5].[wait:5].",
+    "translation": "* No.[wait:5].[wait:5].[wait:5] No.[wait:5].[wait:5].",
+    "originalExpression": "\"* No.[wait:5].[wait:5].[wait:5] Don't.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* Não.[wait:5].[wait:5].[wait:5] Pare.[wait:5].[wait:5].\""
+  },
+  "9c1a79cdc302": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 9580,
+    "endOffset": 9606,
+    "source": "* Don't come any closer!",
+    "translation": "* ¡No te acerques más!",
+    "originalExpression": "\"* Don't come any closer!\"",
+    "replacementExpression": "\"* Não chegue mais perto!\""
+  },
+  "ba9a350c1231": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 10385,
+    "endOffset": 10394,
+    "source": "Proceed",
+    "translation": "Procede",
+    "originalExpression": "\"Proceed\"",
+    "replacementExpression": "\"Prossiga\""
+  },
+  "93339ca2ebda": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 10396,
+    "endOffset": 10404,
+    "source": "Do not",
+    "translation": "No",
+    "originalExpression": "\"Do not\"",
+    "replacementExpression": "\"Não\""
+  },
+  "37b4b976a09d": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 10541,
+    "endOffset": 10578,
+    "source": "* Please, we can.[wait:5].[wait:5].",
+    "translation": "* Por favor, podemos.[wait:5].[wait:5].",
+    "originalExpression": "\"* Please, we can.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* Por favor, podemos.[wait:5].[wait:5].\""
+  },
+  "a9d671eed082": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 10616,
+    "endOffset": 10641,
+    "source": "* We can talk this out!",
+    "translation": "* ¡Podemos hablarlo!",
+    "originalExpression": "\"* We can talk this out!\"",
+    "replacementExpression": "\"* Podemos conversar!\""
+  },
+  "9942a221d95f": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 11420,
+    "endOffset": 11429,
+    "source": "Proceed",
+    "translation": "Procede",
+    "originalExpression": "\"Proceed\"",
+    "replacementExpression": "\"Prossiga\""
+  },
+  "0bbd04a10b31": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 11431,
+    "endOffset": 11439,
+    "source": "Do not",
+    "translation": "No",
+    "originalExpression": "\"Do not\"",
+    "replacementExpression": "\"Não\""
+  },
+  "731eb7af2eba": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 11576,
+    "endOffset": 11622,
+    "source": "*[shake:1] C'mon! You don't have to do this!",
+    "translation": "*[shake:1] ¡Vamos! ¡No tienes que hacerlo!",
+    "originalExpression": "\"*[shake:1] C'mon! You don't have to do this!\"",
+    "replacementExpression": "\"*[shake:1] Qual é! Você não precisa fazer isso!\""
+  },
+  "06c78a0b0e0c": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 12397,
+    "endOffset": 12406,
+    "source": "Proceed",
+    "translation": "Procede",
+    "originalExpression": "\"Proceed\"",
+    "replacementExpression": "\"Prossiga\""
+  },
+  "61f5c3ec00eb": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 12408,
+    "endOffset": 12416,
+    "source": "Do not",
+    "translation": "No",
+    "originalExpression": "\"Do not\"",
+    "replacementExpression": "\"Não\""
+  },
+  "c0762719a4e5": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 12551,
+    "endOffset": 12588,
+    "source": "*[shake:3] STOP! GET AWAY FROM ME!!",
+    "translation": "*[shake:3] ¡ALTO! ¡ALÉJATE DE MÍ!!",
+    "originalExpression": "\"*[shake:3] STOP! GET AWAY FROM ME!!\"",
+    "replacementExpression": "\"*[shake:3] PARE! FIQUE LONGE DE MIM!!\""
+  },
+  "c325a0d47c21": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 13370,
+    "endOffset": 13379,
+    "source": "Proceed",
+    "translation": "Procede",
+    "originalExpression": "\"Proceed\"",
+    "replacementExpression": "\"Prossiga\""
+  },
+  "976a5529aaf5": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 13381,
+    "endOffset": 13389,
+    "source": "Do not",
+    "translation": "No",
+    "originalExpression": "\"Do not\"",
+    "replacementExpression": "\"Não\""
+  },
+  "184e9d603648": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 13650,
+    "endOffset": 13672,
+    "source": "* I'm sorry, guys...",
+    "translation": "* Lo siento, chicos...",
+    "originalExpression": "\"* I'm sorry, guys...\"",
+    "replacementExpression": "\"* Desculpem, pessoal...\""
+  },
+  "05e803fff990": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 13710,
+    "endOffset": 13742,
+    "source": "* I couldn't protect any of...",
+    "translation": "* No pude proteger a ninguno de...",
+    "originalExpression": "\"* I couldn't protect any of...\"",
+    "replacementExpression": "\"* Não pude proteger nenhum de...\""
+  },
+  "7af169712441": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 13780,
+    "endOffset": 13825,
+    "source": "* .[wait:5].[wait:5].Just get it over with.",
+    "translation": "* .[wait:5].[wait:5].Acaba de una vez.",
+    "originalExpression": "\"* .[wait:5].[wait:5].Just get it over with.\"",
+    "replacementExpression": "\"* .[wait:5].[wait:5].Só acaba logo com isso.\""
+  },
+  "ababb486cef8": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 14595,
+    "endOffset": 14604,
+    "source": "Proceed",
+    "translation": "Procede",
+    "originalExpression": "\"Proceed\"",
+    "replacementExpression": "\"Prossiga\""
+  },
+  "2389aea13789": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 14606,
+    "endOffset": 14614,
+    "source": "Do not",
+    "translation": "No",
+    "originalExpression": "\"Do not\"",
+    "replacementExpression": "\"Não\""
+  },
+  "4a9a1b3e24f8": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 16421,
+    "endOffset": 16438,
+    "source": "* I'm so sorry.",
+    "translation": "* Lo siento mucho.",
+    "originalExpression": "\"* I'm so sorry.\"",
+    "replacementExpression": "\"* Eu sinto muito.\""
+  },
+  "c7c5eae58341": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 16472,
+    "endOffset": 16489,
+    "source": "* I had no idea",
+    "translation": "* No tenía idea.",
+    "originalExpression": "\"* I had no idea\"",
+    "replacementExpression": "\"* Eu não sabia.\""
+  },
+  "4adb1e7b7b0e": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 16523,
+    "endOffset": 16556,
+    "source": "* I should've asked you before.",
+    "translation": "* Debí haberte preguntado antes.",
+    "originalExpression": "\"* I should've asked you before.\"",
+    "replacementExpression": "\"* Eu devia ter perguntado antes.\""
+  },
+  "89a76e2d4d14": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 16590,
+    "endOffset": 16613,
+    "source": "* .[wait:5].[wait:5].",
+    "translation": "* .[wait:5].[wait:5].",
+    "originalExpression": "\"* .[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* .[wait:5].[wait:5].\""
+  },
+  "8d3e2f54fcd5": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 16647,
+    "endOffset": 16693,
+    "source": "* So you're from another world,[wait:5] huh?",
+    "translation": "* Así que vienes de otro mundo,[wait:5] ¿eh?",
+    "originalExpression": "\"* So you're from another world,[wait:5] huh?\"",
+    "replacementExpression": "\"* Então você é de outro mundo,[wait:5] é?\""
+  },
+  "c7942ce270a1": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 16728,
+    "endOffset": 16777,
+    "source": "* .[wait:5].[wait:5].did you.[wait:5].[wait:5].",
+    "translation": "* .[wait:5].[wait:5].tú.[wait:5].[wait:5].",
+    "originalExpression": "\"* .[wait:5].[wait:5].did you.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* .[wait:5].[wait:5].você.[wait:5].[wait:5].\""
+  },
+  "1ccefeb26b31": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 16811,
+    "endOffset": 16859,
+    "source": "* .[wait:5].[wait:5].use this world to escape?",
+    "translation": "* .[wait:5].[wait:5].¿usaste este mundo para huir?",
+    "originalExpression": "\"* .[wait:5].[wait:5].use this world to escape?\"",
+    "replacementExpression": "\"* .[wait:5].[wait:5].usou este mundo para fugir?\""
+  },
+  "4d96e3a32ebc": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 16894,
+    "endOffset": 16944,
+    "source": "* If you did,[wait:5] I think.[wait:5].[wait:5].",
+    "translation": "* Si lo hiciste,[wait:5] creo que.[wait:5].[wait:5].",
+    "originalExpression": "\"* If you did,[wait:5] I think.[wait:5].[wait:5].\"",
+    "replacementExpression": "\"* Se usou,[wait:5] eu acho.[wait:5].[wait:5].\""
+  },
+  "08957f285f47": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 16979,
+    "endOffset": 17005,
+    "source": "* I can understand that.",
+    "translation": "* Puedo entenderlo.",
+    "originalExpression": "\"* I can understand that.\"",
+    "replacementExpression": "\"* Eu entendo isso.\""
+  },
+  "1584e4ac52d6": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 17040,
+    "endOffset": 17087,
+    "source": "* Sometimes,[wait:5] you just want to escape.",
+    "translation": "* A veces,[wait:5] solo quieres escapar.",
+    "originalExpression": "\"* Sometimes,[wait:5] you just want to escape.\"",
+    "replacementExpression": "\"* Às vezes,[wait:5] você só quer fugir.\""
+  },
+  "ecaed0bc9ce5": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 17213,
+    "endOffset": 17241,
+    "source": "* .[wait:5].[wait:5].well.",
+    "translation": "* .[wait:5].[wait:5].bueno.",
+    "originalExpression": "\"* .[wait:5].[wait:5].well.\"",
+    "replacementExpression": "\"* .[wait:5].[wait:5].bem.\""
+  },
+  "1f42164ce657": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 17275,
+    "endOffset": 17315,
+    "source": "* We won't get anywhere standing here.",
+    "translation": "* No llegaremos a nada quedándonos aquí.",
+    "originalExpression": "\"* We won't get anywhere standing here.\"",
+    "replacementExpression": "\"* Parados aqui não vamos a lugar nenhum.\""
+  },
+  "c6fcc133c576": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 17349,
+    "endOffset": 17388,
+    "source": "* Let's find a way out,[wait:5] okay?",
+    "translation": "* Busquemos una salida,[wait:5] ¿sí?",
+    "originalExpression": "\"* Let's find a way out,[wait:5] okay?\"",
+    "replacementExpression": "\"* Vamos achar uma saída,[wait:5] certo?\""
+  },
+  "d2e6db67068d": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 17741,
+    "endOffset": 17804,
+    "source": "[noskip][speed:0.7]* Kris joined the party for real.[wait:30]",
+    "translation": "[noskip][speed:0.7]* Kris se unió al grupo de verdad.[wait:30]",
+    "originalExpression": "\"[noskip][speed:0.7]* Kris joined the party for real.[wait:30]\"",
+    "replacementExpression": "\"[noskip][speed:0.7]* Kris entrou no grupo de verdade.[wait:30]\""
+  },
+  "04851f17d18d": {
+    "file": "scripts/world/cutscenes/kris_encounter.lua",
+    "fileHash": "2200d13256b5c54cfaa9a371297415f5a61c16a2a26923cbfcd91fef9626d5fc",
+    "startOffset": 17829,
+    "endOffset": 17842,
+    "source": "* Let's go.",
+    "translation": "* Vamos.",
+    "originalExpression": "\"* Let's go.\"",
+    "replacementExpression": "\"* Vamos.\""
+  },
+  "42f95148ca32": {
+    "file": "scripts/world/cutscenes/room1.lua",
+    "fileHash": "bb1c721d1ef7a3636fc43e0f17d6ed303f06da581e34042d6928df532a25ed70",
+    "startOffset": 415,
+    "endOffset": 442,
+    "source": "* The wall seems cracked.",
+    "translation": "* La pared parece agrietada.",
+    "originalExpression": "\"* The wall seems cracked.\"",
+    "replacementExpression": "\"* A parede parece rachada.\""
+  },
+  "5bb7df034b02": {
+    "file": "scripts/world/cutscenes/room1.lua",
+    "fileHash": "bb1c721d1ef7a3636fc43e0f17d6ed303f06da581e34042d6928df532a25ed70",
+    "startOffset": 834,
+    "endOffset": 880,
+    "source": "* Hey,[wait:5] think I can break\nthis wall?",
+    "translation": "* Oye,[wait:5] ¿puedo romper\nesta pared?",
+    "originalExpression": "\"* Hey,[wait:5] think I can break\\nthis wall?\"",
+    "replacementExpression": "\"* Ei,[wait:5] acha que consigo\\nquebrar esta parede?\""
+  },
+  "c9253288d4be": {
+    "file": "scripts/world/cutscenes/room1.lua",
+    "fileHash": "bb1c721d1ef7a3636fc43e0f17d6ed303f06da581e34042d6928df532a25ed70",
+    "startOffset": 2275,
+    "endOffset": 2289,
+    "source": "* Guess not.",
+    "translation": "* Parece que no.",
+    "originalExpression": "\"* Guess not.\"",
+    "replacementExpression": "\"* Acho que não.\""
+  },
+  "e277b726546a": {
+    "file": "scripts/world/cutscenes/secret/start.lua",
+    "fileHash": "b4c73bb6e5c85cb0dac4b3713305bc0a6b8a8e827bcd7ec0c78c41399d0d85a6",
+    "startOffset": 846,
+    "endOffset": 866,
+    "source": "* (It's your bed.)",
+    "translation": "* (Es tu cama.)",
+    "originalExpression": "\"* (It's your bed.)\"",
+    "replacementExpression": "\"* (É a sua cama.)\""
+  },
+  "9a52c405497a": {
+    "file": "scripts/world/cutscenes/secret/start.lua",
+    "fileHash": "b4c73bb6e5c85cb0dac4b3713305bc0a6b8a8e827bcd7ec0c78c41399d0d85a6",
+    "startOffset": 890,
+    "endOffset": 915,
+    "source": "* (Will you go to bed?)",
+    "translation": "* (¿Irás a dormir?)",
+    "originalExpression": "\"* (Will you go to bed?)\"",
+    "replacementExpression": "\"* (Você vai dormir?)\""
+  },
+  "b1aa93e0046f": {
+    "file": "scripts/world/cutscenes/secret/start.lua",
+    "fileHash": "b4c73bb6e5c85cb0dac4b3713305bc0a6b8a8e827bcd7ec0c78c41399d0d85a6",
+    "startOffset": 962,
+    "endOffset": 969,
+    "source": "Sleep",
+    "translation": "Dormir",
+    "originalExpression": "\"Sleep\"",
+    "replacementExpression": "\"Dormir\""
+  },
+  "83b30eb7e3f9": {
+    "file": "scripts/world/cutscenes/secret/start.lua",
+    "fileHash": "b4c73bb6e5c85cb0dac4b3713305bc0a6b8a8e827bcd7ec0c78c41399d0d85a6",
+    "startOffset": 971,
+    "endOffset": 979,
+    "source": "Do not",
+    "translation": "No",
+    "originalExpression": "\"Do not\"",
+    "replacementExpression": "\"Não\""
+  },
+  "244a52b89ea0": {
+    "file": "scripts/world/cutscenes/secret/start.lua",
+    "fileHash": "b4c73bb6e5c85cb0dac4b3713305bc0a6b8a8e827bcd7ec0c78c41399d0d85a6",
+    "startOffset": 1369,
+    "endOffset": 1396,
+    "source": "* (You will sleep later.)",
+    "translation": "* (Dormirás más tarde.)",
+    "originalExpression": "\"* (You will sleep later.)\"",
+    "replacementExpression": "\"* (Você vai dormir depois.)\""
+  },
+  "43ab4a3d6d16": {
+    "file": "scripts/world/cutscenes/secret/start.lua",
+    "fileHash": "b4c73bb6e5c85cb0dac4b3713305bc0a6b8a8e827bcd7ec0c78c41399d0d85a6",
+    "startOffset": 1553,
+    "endOffset": 1606,
+    "source": "* The drawer is mostly empty,[wait:5] except for...",
+    "translation": "* El cajón está casi vacío,[wait:5] salvo por...",
+    "originalExpression": "\"* The drawer is mostly empty,[wait:5] except for...\"",
+    "replacementExpression": "\"* A gaveta está quase vazia,[wait:5] exceto por...\""
+  },
+  "a201d8d4b554": {
+    "file": "scripts/world/cutscenes/secret/start.lua",
+    "fileHash": "b4c73bb6e5c85cb0dac4b3713305bc0a6b8a8e827bcd7ec0c78c41399d0d85a6",
+    "startOffset": 1634,
+    "endOffset": 1686,
+    "source": "* A coupon book.[wait:10]\n* All coupons are gone.",
+    "translation": "* Una cuponera.[wait:10]\n* Ya no queda ninguno.",
+    "originalExpression": "\"* A coupon book.[wait:10]\\n* All coupons are gone.\"",
+    "replacementExpression": "\"* Um livro de cupons.[wait:10]\\n* Todos já foram usados.\""
+  },
+  "4e233c58496e": {
+    "file": "scripts/world/cutscenes/secret/start.lua",
+    "fileHash": "b4c73bb6e5c85cb0dac4b3713305bc0a6b8a8e827bcd7ec0c78c41399d0d85a6",
+    "startOffset": 1727,
+    "endOffset": 1768,
+    "source": "* There's nothing useful in the drawer.",
+    "translation": "* No hay nada útil en el cajón.",
+    "originalExpression": "\"* There's nothing useful in the drawer.\"",
+    "replacementExpression": "\"* Não há nada útil na gaveta.\""
+  },
+  "4fb207f99ebe": {
+    "file": "scripts/world/maps/a_familiar_place_werid/data.lua",
+    "fileHash": "ea41134a4e768055366718ba56f675daebab054f57ef128da7f10cc8a79d015b",
+    "startOffset": 9370,
+    "endOffset": 9399,
+    "source": "* You're filled with power.",
+    "translation": "* Te llenas de poder.",
+    "originalExpression": "\"* You're filled with power.\"",
+    "replacementExpression": "\"* Você se enche de poder.\""
+  },
+  "2e4ef1981c4c": {
+    "file": "scripts/world/maps/toriel/data.lua",
+    "fileHash": "ef3eabd5dbe06998f588fc57e519820fb4d971cbf8867d9ce15ee951dbca1eec",
+    "startOffset": 7638,
+    "endOffset": 7657,
+    "source": "* This is a lamp.",
+    "translation": "* Esto es una lámpara.",
+    "originalExpression": "\"* This is a lamp.\"",
+    "replacementExpression": "\"* Isto é um abajur.\""
+  },
+  "613ed0c6293e": {
+    "file": "scripts/world/maps/toriel/data.lua",
+    "fileHash": "ef3eabd5dbe06998f588fc57e519820fb4d971cbf8867d9ce15ee951dbca1eec",
+    "startOffset": 7684,
+    "endOffset": 7728,
+    "source": "* Under the lamp you found a trading card.",
+    "translation": "* Bajo la lámpara hallaste una carta.",
+    "originalExpression": "\"* Under the lamp you found a trading card.\"",
+    "replacementExpression": "\"* Achou uma carta colecionável sob o abajur.\""
+  },
+  "156f36795a11": {
+    "file": "scripts/world/maps/toriel/data.lua",
+    "fileHash": "ef3eabd5dbe06998f588fc57e519820fb4d971cbf8867d9ce15ee951dbca1eec",
+    "startOffset": 7755,
+    "endOffset": 7822,
+    "source": "* It has a mage on it.[wait:10]\n* With surprisingly low magicka.",
+    "translation": "* Tiene un mago.[wait:10]\n* Con sorprendentemente poca magia.",
+    "originalExpression": "\"* It has a mage on it.[wait:10]\\n* With surprisingly low magicka.\"",
+    "replacementExpression": "\"* Tem um mago nela.[wait:10]\\n* Com magia bem baixa.\""
+  },
+  "0ab0b0adb5c5": {
+    "file": "scripts/world/maps/toriel/data.lua",
+    "fileHash": "ef3eabd5dbe06998f588fc57e519820fb4d971cbf8867d9ce15ee951dbca1eec",
+    "startOffset": 8512,
+    "endOffset": 8606,
+    "source": "* There are CDs under the bed.[wait:10]\n* Classical,[wait:5] jazz,[wait:5] religious ska...",
+    "translation": "* Hay CDs bajo la cama.[wait:10]\n* Clásica,[wait:5] jazz,[wait:5] ska religioso...",
+    "originalExpression": "\"* There are CDs under the bed.[wait:10]\\n* Classical,[wait:5] jazz,[wait:5] religious ska...\"",
+    "replacementExpression": "\"* Há CDs sob a cama.[wait:10]\\n* Clássica,[wait:5] jazz,[wait:5] ska religioso...\""
+  },
+  "aabe73f026b5": {
+    "file": "scripts/world/maps/toriel/data.lua",
+    "fileHash": "ef3eabd5dbe06998f588fc57e519820fb4d971cbf8867d9ce15ee951dbca1eec",
+    "startOffset": 8633,
+    "endOffset": 8669,
+    "source": "* Some of the discs are scratched.",
+    "translation": "* Algunos discos están rayados.",
+    "originalExpression": "\"* Some of the discs are scratched.\"",
+    "replacementExpression": "\"* Alguns discos estão arranhados.\""
+  },
+  "18792a2b6254": {
+    "file": "scripts/world/maps/toriel/data.lua",
+    "fileHash": "ef3eabd5dbe06998f588fc57e519820fb4d971cbf8867d9ce15ee951dbca1eec",
+    "startOffset": 8696,
+    "endOffset": 8801,
+    "source": "* There's also a game console.[wait:10]\n* It has one normal controller,[wait:5] and one knock-off one.",
+    "translation": "* También hay una consola.[wait:10]\n* Tiene un mando normal,[wait:5] y uno de imitación.",
+    "originalExpression": "\"* There's also a game console.[wait:10]\\n* It has one normal controller,[wait:5] and one knock-off one.\"",
+    "replacementExpression": "\"* Também há um videogame.[wait:10]\\n* Tem um controle normal,[wait:5] e um pirata.\""
+  },
+  "6a6019f1d2ec": {
+    "file": "scripts/world/maps/toriel/data.lua",
+    "fileHash": "ef3eabd5dbe06998f588fc57e519820fb4d971cbf8867d9ce15ee951dbca1eec",
+    "startOffset": 8828,
+    "endOffset": 8868,
+    "source": "* The controllers are missing buttons.",
+    "translation": "* A los mandos les faltan botones.",
+    "originalExpression": "\"* The controllers are missing buttons.\"",
+    "replacementExpression": "\"* Faltam botões nos controles.\""
+  },
+  "340dbc6e2e10": {
+    "file": "scripts/world/maps/toriel/data.lua",
+    "fileHash": "ef3eabd5dbe06998f588fc57e519820fb4d971cbf8867d9ce15ee951dbca1eec",
+    "startOffset": 9204,
+    "endOffset": 9294,
+    "source": "* It's a computer desk.[wait:10]\n* There are many boxes under it filled with old books.",
+    "translation": "* Es un escritorio.[wait:10]\n* Debajo hay cajas llenas de libros viejos.",
+    "originalExpression": "\"* It's a computer desk.[wait:10]\\n* There are many boxes under it filled with old books.\"",
+    "replacementExpression": "\"* É uma mesa de computador.[wait:10]\\n* Há caixas embaixo, cheias de livros velhos.\""
+  },
+  "b6f7b4eb67d6": {
+    "file": "scripts/world/maps/toriel/data.lua",
+    "fileHash": "ef3eabd5dbe06998f588fc57e519820fb4d971cbf8867d9ce15ee951dbca1eec",
+    "startOffset": 9321,
+    "endOffset": 9406,
+    "source": "* Two letters are scratched into the desk,[wait:5] followed by an unfinished third.",
+    "translation": "* Hay dos letras rayadas en el escritorio,[wait:5] seguidas de una tercera sin terminar.",
+    "originalExpression": "\"* Two letters are scratched into the desk,[wait:5] followed by an unfinished third.\"",
+    "replacementExpression": "\"* Duas letras estão riscadas na mesa,[wait:5] seguidas de uma terceira incompleta.\""
+  },
+  "387b55078eb5": {
+    "file": "scripts/world/maps/toriel/data.lua",
+    "fileHash": "ef3eabd5dbe06998f588fc57e519820fb4d971cbf8867d9ce15ee951dbca1eec",
+    "startOffset": 9433,
+    "endOffset": 9448,
+    "source": "* \"Kni...\".",
+    "translation": "* \"Kni...\".",
+    "originalExpression": "\"* \\\"Kni...\\\".\"",
+    "replacementExpression": "\"* \\\"Kni...\\\".\""
+  },
+  "a6948f709fb9": {
+    "file": "scripts/world/maps/toriel/data.lua",
+    "fileHash": "ef3eabd5dbe06998f588fc57e519820fb4d971cbf8867d9ce15ee951dbca1eec",
+    "startOffset": 11173,
+    "endOffset": 11190,
+    "source": "* It's stained.",
+    "translation": "* Está manchado.",
+    "originalExpression": "\"* It's stained.\"",
+    "replacementExpression": "\"* Tem uma mancha.\""
+  }
+}

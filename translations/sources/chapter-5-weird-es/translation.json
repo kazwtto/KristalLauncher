@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "chapter-5-weird.es",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "DELTARUNE: Frostveil em Espanhol",
+    "en": "DELTARUNE: Frostveil in Spanish",
+    "es": "DELTARUNE: Frostveil en Español"
+  },
+  "description": {
+    "pt-BR": "Tradução comunitária dos textos de DELTARUNE: Frostveil para espanhol.",
+    "en": "Community translation of DELTARUNE: Frostveil text into Spanish.",
+    "es": "Traducción comunitaria de los textos de DELTARUNE: Frostveil al español."
+  },
+  "author": "dev + IA",
+  "gameProjectId": "chapter_5_weird",
+  "gameVersion": "v1.3.1",
+  "sourceLanguage": "en",
+  "targetLanguage": "es",
+  "minimumLauncherVersion": "0.17.48",
+  "textsFile": "texts.json",
+  "textsSha256": "22a4e02bc32bfc0e150800e0d410f847681c7c4e874e7b227ce361b01ad363e9"
+}

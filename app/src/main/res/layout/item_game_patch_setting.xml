@@ -87,5 +87,15 @@
                 app:backgroundTint="@color/segmented_button_background"
                 app:strokeWidth="0dp" />
         </kwz.love2d.launcher.ui.PatchSegmentedButtonGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGamePatchAction"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/patch_download"
+            android:visibility="gone"
+            app:cornerRadius="?attr/kristalCorner20" />
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "vs-kris.es",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "DELTARUNE: Vessel vs. Kris em Espanhol",
+    "en": "DELTARUNE: Vessel vs. Kris in Spanish",
+    "es": "DELTARUNE: Vessel vs. Kris en Español"
+  },
+  "description": {
+    "pt-BR": "Tradução comunitária dos textos de DELTARUNE: Vessel vs. Kris para espanhol.",
+    "en": "Community translation of DELTARUNE: Vessel vs. Kris text into Spanish.",
+    "es": "Traducción comunitaria de los textos de DELTARUNE: Vessel vs. Kris al español."
+  },
+  "author": "dev + IA",
+  "gameProjectId": "vs_kris",
+  "gameVersion": "v1.0.0",
+  "sourceLanguage": "en",
+  "targetLanguage": "es",
+  "minimumLauncherVersion": "0.17.48",
+  "textsFile": "texts.json",
+  "textsSha256": "1d9d1b9c6e267dd556a5980cfaa9990d297080c233c726988341d148f26f9a95"
+}

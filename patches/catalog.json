@@ -33,7 +33,7 @@
         "en": "Clarifies that this general patch is intended for compatible Kristal Engine games. The hook acts only when the required APIs are available.",
         "es": "Aclara que este parche general está destinado a juegos compatibles de Kristal Engine. El hook solo actúa cuando las API necesarias están disponibles."
       },
-      "author": "kazwtto",
+      "author": "dev",
       "category": "performance",
       "minimumLauncherVersion": "0.17.0",
       "priority": 100,
@@ -46,7 +46,55 @@
       "dependencies": [],
       "conflicts": [],
       "package": "packages/kristal-general-performance-0.0.2.klpatch",
-      "sha256": "7570480c427659bca311102e8e2cec8b6f8dfbc143670e78211dd941572d26b3"
+      "sha256": "2ce528dc59351973090100f7daaa501003107f55f790424a901de087f332cf66"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "cooking-with-kindness.mobile-performance",
+      "version": "0.4.1",
+      "name": {
+        "pt-BR": "Otimização móvel e de batalhas para Cooking with Kindness",
+        "en": "Mobile and battle optimization for Cooking with Kindness",
+        "es": "Optimización móvil y de batallas para Cooking with Kindness"
+      },
+      "description": {
+        "pt-BR": "Patch conservador dedicado a Cooking with Kindness DEMO v1.0.6. Corrige gargalos estruturais da LightBattle, reduz canvases da interface de batalha e corrige falhas do tutorial da Toriel no Android.",
+        "en": "Conservative patch dedicated to Cooking with Kindness DEMO v1.0.6. Fixes structural LightBattle bottlenecks, reduces battle UI canvases, and fixes Toriel tutorial failures on Android.",
+        "es": "Parche conservador dedicado a Cooking with Kindness DEMO v1.0.6. Corrige cuellos de botella estructurales de LightBattle, reduce los canvases de la interfaz de batalla y corrige fallos del tutorial de Toriel en Android."
+      },
+      "useCases": [
+        {
+          "pt-BR": "A introdução da primeira batalha fica extremamente lenta no Android.",
+          "en": "The first battle introduction becomes extremely slow on Android.",
+          "es": "La introducción de la primera batalla se vuelve extremadamente lenta en Android."
+        },
+        {
+          "pt-BR": "O jogo fecha quando o primeiro minijogo ou tutorial da Toriel começa.",
+          "en": "The game closes when Toriel's first tutorial or minigame starts.",
+          "es": "El juego se cierra cuando empieza el primer tutorial o minijuego de Toriel."
+        }
+      ],
+      "releaseNotes": {
+        "pt-BR": "Atualiza o patch dedicado para 0.4.1, incluindo as correções estruturais da 0.4.0 e a correção da regressão no desenho do fundo da Toriel.",
+        "en": "Updates the dedicated patch to 0.4.1, including the structural 0.4.0 fixes and the Toriel background drawing regression fix.",
+        "es": "Actualiza el parche dedicado a 0.4.1, incluidas las correcciones estructurales de 0.4.0 y la corrección de la regresión al dibujar el fondo de Toriel."
+      },
+      "author": "dev",
+      "category": "performance",
+      "compatibleGameProjectIds": [
+        "cooking-with-kindness"
+      ],
+      "minimumLauncherVersion": "0.17.0",
+      "priority": 140,
+      "capabilities": [
+        "staged_package",
+        "inject_files",
+        "edit_lua"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "package": "packages/cooking-with-kindness-mobile-performance-0.4.1.klpatch",
+      "sha256": "35707b17945bd2129c02f57d901b85d00749bf529feb8c545fa413328c1e1022"
     },
     {
       "schemaVersion": 1,
@@ -79,7 +127,7 @@
         "en": "Adds the exact labels used by the current Kristal Engine options, including game start, settings, cursor, FPS, and window scale.",
         "es": "Agrega las etiquetas exactas utilizadas por las opciones actuales de Kristal Engine, incluidos inicio del juego, ajustes, cursor, FPS y escala de ventana."
       },
-      "author": "kazwtto",
+      "author": "dev",
       "category": "localization",
       "minimumLauncherVersion": "0.1.0",
       "priority": 200,
@@ -92,7 +140,7 @@
       "dependencies": [],
       "conflicts": [],
       "package": "packages/kristal-ptbr-2.3.4.klpatch",
-      "sha256": "8049e312ae6564bebe7a124e8b9c29a92b2d5180811277f4f2937208919c0112"
+      "sha256": "7de61939ecca1c93db0fd023aece4d9833f0eabfca89beddbecbbea7505c2110"
     },
     {
       "schemaVersion": 1,
@@ -125,7 +173,7 @@
         "en": "First release of the Kristal Engine Spanish translation.",
         "es": "Primera versión de la traducción de Kristal Engine al español."
       },
-      "author": "kazwtto",
+      "author": "dev + IA",
       "category": "localization",
       "minimumLauncherVersion": "0.1.0",
       "priority": 200,
@@ -140,7 +188,51 @@
         "kristal.ptbr"
       ],
       "package": "packages/kristal-es-0.0.1.klpatch",
-      "sha256": "ff1af44afee737eb922bb821e131b4eeff200c0e8f4e1c48aba2000f4c480706"
+      "sha256": "f228c44abad4e8dc2401b28badc295745de119180e24f25c77238d02d29a247c"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "kristal.ru",
+      "version": "1.0.0",
+      "name": {
+        "pt-BR": "Kristal Engine em Russo",
+        "en": "Kristal Engine in Russian",
+        "es": "Kristal Engine en Ruso"
+      },
+      "description": {
+        "pt-BR": "Adapta a tradução comunitária kristal_rus, incluindo textos, fontes e elementos gráficos russos. A cobertura original ainda é parcial.",
+        "en": "Adapts the kristal_rus community translation, including Russian text, fonts, and interface graphics. Upstream coverage is still partial.",
+        "es": "Adapta la traducción comunitaria kristal_rus, incluidos textos, fuentes y gráficos de interfaz en ruso. La cobertura original aún es parcial."
+      },
+      "useCases": [
+        {
+          "pt-BR": "Você quer usar menus, personagens, magias e gráficos russos fornecidos pelo projeto kristal_rus.",
+          "en": "You want the Russian menus, characters, spells, and graphics supplied by kristal_rus.",
+          "es": "Quieres usar los menús, personajes, hechizos y gráficos rusos proporcionados por kristal_rus."
+        }
+      ],
+      "releaseNotes": {
+        "pt-BR": "Primeira adaptação do projeto kristal_rus para o formato de patch do Kristal Launcher.",
+        "en": "First adaptation of kristal_rus to the Kristal Launcher patch format.",
+        "es": "Primera adaptación de kristal_rus al formato de parche de Kristal Launcher."
+      },
+      "author": "neofarsh; sprites and textures by LazyDesman",
+      "category": "localization",
+      "minimumLauncherVersion": "0.17.48",
+      "priority": 200,
+      "capabilities": [
+        "staged_package",
+        "inject_files",
+        "edit_lua",
+        "runtime_hook"
+      ],
+      "dependencies": [],
+      "conflicts": [
+        "kristal.ptbr",
+        "kristal.es"
+      ],
+      "package": "packages/kristal-ru-1.0.0.klpatch",
+      "sha256": "d346f27873b451313f6f09047d3c3f8a4cb8eea2f212f90f89177d12de6495d7"
     }
   ]
 }

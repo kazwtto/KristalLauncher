@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "starrunefinal.es",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "Star Rune em Espanhol",
+    "en": "Star Rune in Spanish",
+    "es": "Star Rune en Español"
+  },
+  "description": {
+    "pt-BR": "Tradução comunitária dos textos de Star Rune para espanhol.",
+    "en": "Community translation of Star Rune text into Spanish.",
+    "es": "Traducción comunitaria de los textos de Star Rune al español."
+  },
+  "author": "dev + IA",
+  "gameProjectId": "starrunefinal",
+  "gameVersion": "v2.0.0",
+  "sourceLanguage": "en",
+  "targetLanguage": "es",
+  "minimumLauncherVersion": "0.17.48",
+  "textsFile": "texts.json",
+  "textsSha256": "659814398966d7915508807a2aabe0ac7f10dfc03b59786f4c4df712cc6b294c"
+}

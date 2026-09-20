@@ -126,10 +126,9 @@ function TorielOvenGame:update()
         if not self.handSpawned then self:toriHand() end -- Start the toriel hand cutscene
     end
 
-    if pie_sprite and self.pie_sprite ~= pie_sprite then
-        self.pie_sprite = pie_sprite
-        self.pie:setSprite(pie_sprite)
-    end
+    if pie_sprite and not self.pie:isSprite(pie_sprite) then
+            self.pie:setSprite(pie_sprite)
+        end
 
     -- End the minigame if the timer reaches 0
     if self.counter <= 0 and not self.is_scoring then

@@ -62,7 +62,7 @@ object GameLauncher {
 
     fun launchGame(activity: AppCompatActivity, game: LoveGame) {
         val kristalRuntime = if (game.isKristalMod) {
-            KristalRuntimeStorage.selectedRuntime(activity) ?: run {
+            KristalRuntimeStorage.selectedRuntimeForGame(activity, game.stableId) ?: run {
                 showMissingKristalRuntimeDialog(activity, game)
                 return
             }

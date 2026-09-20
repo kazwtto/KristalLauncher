@@ -31,7 +31,8 @@ function lighttest:update()
 end
 
 function lighttest:draw()
-    super.draw(self)
+    -- The aggregate light renderer draws this event. The original draw path
+    -- produced no pixels here; it only (accidentally) updated the event twice.
 end
 
 return lighttest

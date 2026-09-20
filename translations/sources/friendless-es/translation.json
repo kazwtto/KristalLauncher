@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "friendless.es",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "DELTARUNE Friendless em Espanhol",
+    "en": "DELTARUNE Friendless in Spanish",
+    "es": "DELTARUNE Friendless en Español"
+  },
+  "description": {
+    "pt-BR": "Tradução comunitária dos textos de DELTARUNE Friendless para espanhol.",
+    "en": "Community translation of DELTARUNE Friendless text into Spanish.",
+    "es": "Traducción comunitaria de los textos de DELTARUNE Friendless al español."
+  },
+  "author": "dev + IA",
+  "gameProjectId": "friendless",
+  "gameVersion": "v0.3.0",
+  "sourceLanguage": "en",
+  "targetLanguage": "es",
+  "minimumLauncherVersion": "0.17.48",
+  "textsFile": "texts.json",
+  "textsSha256": "8a3745739c822f5d8d120abd1ac6f87553b0c842480cbe75dace18e65a0f80ed"
+}

@@ -19,6 +19,7 @@ object PatchRepository {
                 useCases = patch.manifest.useCases.map { it.resolve(context) },
                 author = patch.manifest.author,
                 category = patch.manifest.category,
+                compatibleGameProjectIds = patch.manifest.compatibleGameProjectIds,
                 origin = patch.origin,
                 trust = if (patch.origin == PatchOrigin.OFFICIAL) PatchTrust.VERIFIED else PatchTrust.UNVERIFIED,
                 capabilities = patch.manifest.capabilities,
@@ -44,6 +45,7 @@ object PatchRepository {
                 useCases = patch.manifest.useCases.map { it.resolve(context) },
                 author = patch.manifest.author,
                 category = patch.manifest.category,
+                compatibleGameProjectIds = patch.manifest.compatibleGameProjectIds,
                 origin = PatchOrigin.OFFICIAL,
                 trust = PatchTrust.VERIFIED,
                 capabilities = patch.manifest.capabilities,
@@ -59,6 +61,30 @@ object PatchRepository {
                 installedPatch = installedPatch
             )
         }
+    }
+
+    fun gameDisplayItems(
+        context: Context,
+        gameProjectId: String?,
+        catalog: List<CatalogPatch>
+    ): List<PatchDisplayItem> {
+        val installedItems = installedDisplayItems(context)
+        val installedById = installedItems.associateBy(PatchDisplayItem::id)
+        val catalogItems = catalogDisplayItems(context, catalog)
+        val catalogById = catalogItems.associateBy(PatchDisplayItem::id)
+        val projectId = gameProjectId?.trim().orEmpty()
+
+        val dedicated = (installedItems + catalogItems)
+            .asSequence()
+            .filter { item -> item.compatibleGameProjectIds.any { it.equals(projectId, ignoreCase = true) } }
+            .map { item -> catalogById[item.id] ?: installedById.getValue(item.id) }
+            .distinctBy(PatchDisplayItem::id)
+            .sortedBy { it.name.lowercase() }
+            .toList()
+        val generic = installedItems
+            .filter { it.compatibleGameProjectIds.isEmpty() }
+            .sortedBy { it.name.lowercase() }
+        return dedicated + generic
     }
 
     fun activationProblems(context: Context, patchId: String): ActivationProblems {

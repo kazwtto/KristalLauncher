@@ -203,6 +203,10 @@ function Customerencounter:update()
 
     Game:setFlag("clockAngle", self.clockAngle)
 
+    if not self.notimer then
+        self.displaytimer:update() -- Preserve normal customer timer synchronization.
+    end
+
     if Game:getFlag("nextin") == true then
         self.customernext = self.customernext + 1
         self.customer = self.customerqueue[self.customernext]

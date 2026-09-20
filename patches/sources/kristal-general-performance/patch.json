@@ -24,7 +24,7 @@
       "es": "Los efectos que alternan canvases presentan picos de renderizado en Android."
     }
   ],
-  "author": "kazwtto",
+  "author": "dev",
   "category": "performance",
   "minimumLauncherVersion": "0.17.0",
   "priority": 100,

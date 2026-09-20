@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
 import kwz.love2d.launcher.R
 import kwz.love2d.launcher.model.CatalogTranslation
@@ -62,12 +61,12 @@ class CommunityTranslationAdapter(
         private val summary: TextView = root.findViewById(R.id.tvTranslationProgress)
         private val warning: ImageButton = root.findViewById(R.id.btnTranslationVersionWarning)
         private val edit: ImageButton = root.findViewById(R.id.btnEditTranslation)
-        private val download: MaterialButton = root.findViewById(R.id.btnDownloadTranslation)
+        private val download: ImageButton = root.findViewById(R.id.btnDownloadTranslation)
 
         fun bind(item: TranslationDisplayItem) {
             val busy = busyKey == item.key
             name.text = item.name
-            summary.text = item.summary
+            summary.text = if (busy) busyText ?: root.context.getString(R.string.translation_downloading) else item.summary
             root.isCheckable = item.selectable
             root.isChecked = item.selectable && item.selected
             warning.visibility = if (item.versionWarning != null) View.VISIBLE else View.GONE
@@ -76,11 +75,10 @@ class CommunityTranslationAdapter(
                 item.action == TranslationItemAction.DOWNLOAD || item.action == TranslationItemAction.UPDATE
             ) View.VISIBLE else View.GONE
             download.isEnabled = !busy
-            download.text = when {
-                busy -> busyText ?: root.context.getString(R.string.translation_downloading)
-                item.action == TranslationItemAction.UPDATE -> root.context.getString(R.string.translation_update)
-                else -> root.context.getString(R.string.translation_download)
-            }
+            download.contentDescription = root.context.getString(
+                if (item.action == TranslationItemAction.UPDATE) R.string.translation_update
+                else R.string.translation_download
+            )
             root.isEnabled = !busy
             root.alpha = if (busy) 0.8f else 1f
             root.setOnClickListener { if (item.selectable && !busy) onSelect(item) }

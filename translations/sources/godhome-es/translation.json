@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "godhome.es",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "Godhome em Espanhol",
+    "en": "Godhome in Spanish",
+    "es": "Godhome en Español"
+  },
+  "description": {
+    "pt-BR": "Tradução comunitária dos textos de Godhome para espanhol.",
+    "en": "Community translation of Godhome text into Spanish.",
+    "es": "Traducción comunitaria de los textos de Godhome al español."
+  },
+  "author": "dev + IA",
+  "gameProjectId": "godhome",
+  "gameVersion": "v1.1.7",
+  "sourceLanguage": "en",
+  "targetLanguage": "es",
+  "minimumLauncherVersion": "0.17.48",
+  "textsFile": "texts.json",
+  "textsSha256": "2d0b1b2b0bfb7db6cc04367444e44434ae399621b7a638e83370680c1b2e395b"
+}

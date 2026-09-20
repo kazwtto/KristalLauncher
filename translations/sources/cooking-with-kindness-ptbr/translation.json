@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "cooking-with-kindness.pt-br",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "Cooking with Kindness em Português (Brasil)",
+    "en": "Cooking with Kindness in Brazilian Portuguese",
+    "es": "Cooking with Kindness en portugués de Brasil"
+  },
+  "description": {
+    "pt-BR": "Tradução comunitária dos textos de Cooking with Kindness para português do Brasil.",
+    "en": "Community translation of Cooking with Kindness text into Brazilian Portuguese.",
+    "es": "Traducción comunitaria de los textos de Cooking with Kindness al portugués de Brasil."
+  },
+  "author": "dev",
+  "gameProjectId": "cooking-with-kindness",
+  "gameVersion": "DEMO v1.0.6",
+  "sourceLanguage": "en",
+  "targetLanguage": "pt-BR",
+  "minimumLauncherVersion": "0.17.48",
+  "textsFile": "texts.json",
+  "textsSha256": "73790cdd05c88fef22f431397f1739224017dc614464f9432815bba7d453c82a"
+}

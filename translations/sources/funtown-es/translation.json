@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "funtown.es",
+  "version": "1.0.0",
+  "name": {
+    "pt-BR": "Deltarune: Fun Town (Lumia) em Espanhol",
+    "en": "Deltarune: Fun Town (Lumia) in Spanish",
+    "es": "Deltarune: Fun Town (Lumia) en Español"
+  },
+  "description": {
+    "pt-BR": "Tradução comunitária dos textos de Deltarune: Fun Town (Lumia) para espanhol.",
+    "en": "Community translation of Deltarune: Fun Town (Lumia) text into Spanish.",
+    "es": "Traducción comunitaria de los textos de Deltarune: Fun Town (Lumia) al español."
+  },
+  "author": "dev + IA",
+  "gameProjectId": "funtown",
+  "gameVersion": "unversioned",
+  "sourceLanguage": "en",
+  "targetLanguage": "es",
+  "minimumLauncherVersion": "0.17.48",
+  "textsFile": "texts.json",
+  "textsSha256": "357eaaba1f8c868989567208f8d09fa0496974a0dbbb10ac068d876f56c44957"
+}

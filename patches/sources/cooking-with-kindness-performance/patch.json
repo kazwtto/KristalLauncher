@@ -1,71 +1,96 @@
 {
   "schemaVersion": 1,
   "id": "cooking-with-kindness.mobile-performance",
-  "version": "0.1.1",
+  "version": "0.4.1",
   "name": {
     "pt-BR": "Otimização móvel e de batalhas para Cooking with Kindness",
     "en": "Mobile and battle optimization for Cooking with Kindness",
     "es": "Optimización móvil y de batallas para Cooking with Kindness"
   },
   "description": {
-    "pt-BR": "Patch dedicado a Cooking with Kindness DEMO v1.0.6 que reduz custo de iluminação, logs e alocações repetidas, além de evitar a transição de batalha pesada no Android.",
-    "en": "Patch dedicated to Cooking with Kindness DEMO v1.0.6 that reduces lighting cost, logging, and repeated allocations, and avoids the expensive battle transition on Android.",
-    "es": "Parche dedicado a Cooking with Kindness DEMO v1.0.6 que reduce el costo de iluminación, registros y asignaciones repetidas, y evita la transición de batalla pesada en Android."
+    "pt-BR": "Patch conservador para Cooking with Kindness DEMO v1.0.6. A 0.4.1 mantém as correções da 0.4.0 e corrige uma regressão de draw do fundo da Toriel; a 0.4.0 corrige gargalos estruturais da LightBattle, reduz drasticamente canvases da Battle UI e corrige crashes do tutorial da Toriel/ControlsDisplay no Android.",
+    "en": "Conservative patch for Cooking with Kindness DEMO v1.0.6. Version 0.4.1 keeps the 0.4.0 fixes and corrects a Toriel background draw regression; 0.4.0 fixes structural LightBattle bottlenecks, drastically reduces Battle UI canvases, and fixes Toriel tutorial/ControlsDisplay crashes on Android.",
+    "es": "Parche conservador para Cooking with Kindness DEMO v1.0.6. La versión 0.4.1 mantiene las correcciones de 0.4.0 y corrige una regresión del fondo de Toriel; 0.4.0 corrige cuellos estructurales de LightBattle, reduce los canvases de la UI y corrige cierres del tutorial de Toriel/ControlsDisplay en Android."
   },
   "useCases": [
     {
-      "pt-BR": "A demo perde muitos quadros ou fecha ao entrar nas áreas grandes de CORE Square.",
-      "en": "The demo drops many frames or closes when entering the large CORE Square areas.",
-      "es": "La demo pierde muchos cuadros o se cierra al entrar en las zonas grandes de CORE Square."
+      "pt-BR": "A introdução da primeira batalha fica extremamente lenta no Android.",
+      "en": "The first battle introduction becomes extremely slow on Android.",
+      "es": "La introducción de la primera batalla se vuelve extremadamente lenta en Android."
     },
     {
-      "pt-BR": "O jogo consome muita memória de GPU em celular ou emulador, mesmo sem efeitos visuais complexos na tela.",
-      "en": "The game uses excessive GPU memory on a phone or emulator even without complex effects on screen.",
-      "es": "El juego usa demasiada memoria de GPU en un teléfono o emulador incluso sin efectos complejos en pantalla."
-    },
-    {
-      "pt-BR": "Tutoriais, minijogos ou batalhas de clientes travam ou perdem FPS durante o cronômetro e as animações.",
-      "en": "Tutorials, minigames, or customer battles freeze or lose FPS while timers and animations are active.",
-      "es": "Los tutoriales, minijuegos o batallas de clientes se congelan o pierden FPS mientras los temporizadores y animaciones están activos."
+      "pt-BR": "O jogo fecha quando o primeiro minigame/tutorial da Toriel começa.",
+      "en": "The game closes when Toriel first tutorial/minigame starts.",
+      "es": "El juego se cierra cuando empieza el primer tutorial/minijuego de Toriel."
     }
   ],
-  "author": "kazwtto",
+  "author": "dev",
   "category": "performance",
+  "compatibleGameProjectIds": [
+    "cooking-with-kindness"
+  ],
   "minimumLauncherVersion": "0.17.0",
   "priority": 140,
   "capabilities": [
     "staged_package",
     "inject_files",
-    "edit_lua",
-    "runtime_hook"
+    "edit_lua"
   ],
   "dependencies": [],
-  "conflicts": [
-    "kristal.general-performance"
-  ],
+  "conflicts": [],
   "operations": [
     {
       "type": "inject",
-      "source": "payload/mods/CookingwithKindness/scripts/world/events/beeglighttest.lua",
-      "target": "mods/CookingwithKindness/scripts/world/events/beeglighttest.lua",
+      "source": "payload/mods/CookingwithKindness/libraries/magical-glass-redux/scripts/lightbattle/lightsoul.lua",
+      "target": "mods/CookingwithKindness/libraries/magical-glass-redux/scripts/lightbattle/lightsoul.lua",
       "replaceExisting": true
     },
     {
       "type": "inject",
-      "source": "payload/mods/CookingwithKindness/scripts/world/events/lighttest.lua",
-      "target": "mods/CookingwithKindness/scripts/world/events/lighttest.lua",
+      "source": "payload/mods/CookingwithKindness/libraries/magical-glass-redux/scripts/lightbattle/ui/itemdescbox.lua",
+      "target": "mods/CookingwithKindness/libraries/magical-glass-redux/scripts/lightbattle/ui/itemdescbox.lua",
       "replaceExisting": true
     },
     {
       "type": "inject",
-      "source": "payload/mods/CookingwithKindness/scripts/world/events/betterlayering.lua",
-      "target": "mods/CookingwithKindness/scripts/world/events/betterlayering.lua",
+      "source": "payload/mods/CookingwithKindness/libraries/magical-glass-redux/scripts/lightbattle/ui/lightattackbar.lua",
+      "target": "mods/CookingwithKindness/libraries/magical-glass-redux/scripts/lightbattle/ui/lightattackbar.lua",
       "replaceExisting": true
     },
     {
       "type": "inject",
-      "source": "payload/mods/CookingwithKindness/scripts/objects/barTimer.lua",
-      "target": "mods/CookingwithKindness/scripts/objects/barTimer.lua",
+      "source": "payload/mods/CookingwithKindness/libraries/magical-glass-redux/scripts/lightbattle/ui/lightattackbox.lua",
+      "target": "mods/CookingwithKindness/libraries/magical-glass-redux/scripts/lightbattle/ui/lightattackbox.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/libraries/magical-glass-redux/scripts/lightbattle/ui/lightbattleui.lua",
+      "target": "mods/CookingwithKindness/libraries/magical-glass-redux/scripts/lightbattle/ui/lightbattleui.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/libraries/magical-glass-redux/scripts/lightbattle/ui/lightstatusdisplay.lua",
+      "target": "mods/CookingwithKindness/libraries/magical-glass-redux/scripts/lightbattle/ui/lightstatusdisplay.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/libraries/magical-glass-redux/scripts/lightbattle/ui/lighttensionbar.lua",
+      "target": "mods/CookingwithKindness/libraries/magical-glass-redux/scripts/lightbattle/ui/lighttensionbar.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/bullets/fry_block_bullet.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/bullets/fry_block_bullet.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/bullets/indicator_bullet.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/bullets/indicator_bullet.lua",
       "replaceExisting": true
     },
     {
@@ -76,14 +101,134 @@
     },
     {
       "type": "inject",
-      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/whiskgame.lua",
-      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/whiskgame.lua",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightenemies/toriel.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightenemies/toriel.lua",
       "replaceExisting": true
     },
     {
       "type": "inject",
-      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/torielwhiskgame.lua",
-      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/torielwhiskgame.lua",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightenemies/vulkin.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightenemies/vulkin.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/LightMinigameWave.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/LightMinigameWave.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/burgertimegame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/burgertimegame.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/coconutgame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/coconutgame.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/dogwalkgame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/dogwalkgame.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/footlongsteps/footlongslicegame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/footlongsteps/footlongslicegame.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/fry_packing_game_big.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/fry_packing_game_big.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/grill_games/fry_packing_game.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/grill_games/fry_packing_game.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/grill_games/juicinggame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/grill_games/juicinggame.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/grill_games/pattyflipgame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/grill_games/pattyflipgame.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/grill_games/slicinggameburger.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/grill_games/slicinggameburger.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/hotdogpetpet.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/hotdogpetpet.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/icecreamconegame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/icecreamconegame.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/keylimelabyrinthgame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/keylimelabyrinthgame.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/mawzz_games/assemblyline.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/mawzz_games/assemblyline.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/mawzz_games/divinggame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/mawzz_games/divinggame.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/mawzz_games/final_wave.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/mawzz_games/final_wave.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/mawzz_games/fishinggame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/mawzz_games/fishinggame.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/mawzz_games/money_tree.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/mawzz_games/money_tree.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/mawzz_games/surfinggame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/mawzz_games/surfinggame.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/meatballgame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/meatballgame.lua",
       "replaceExisting": true
     },
     {
@@ -94,8 +239,32 @@
     },
     {
       "type": "inject",
-      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/torielovengame.lua",
-      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/torielovengame.lua",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/pancakegame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/pancakegame.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/saladtossgame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/saladtossgame.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/shmup/sauceshmupgame_base.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/shmup/sauceshmupgame_base.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/slicinggame_new.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/slicinggame_new.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/stirgame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/stirgame.lua",
       "replaceExisting": true
     },
     {
@@ -106,13 +275,135 @@
     },
     {
       "type": "inject",
-      "source": "payload/cwk_performance/runtime.lua",
-      "target": "cwk_performance/runtime.lua"
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/torielovengame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/torielovengame.lua",
+      "replaceExisting": true
     },
     {
-      "type": "append_text",
-      "source": "payload/bootstrap.lua",
-      "target": "main.lua"
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/torielwhiskgame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/torielwhiskgame.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/trickortreatgame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/trickortreatgame.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/battle/lightwaves/minigames/whiskgame.lua",
+      "target": "mods/CookingwithKindness/scripts/battle/lightwaves/minigames/whiskgame.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/hooks/lightbattle.lua",
+      "target": "mods/CookingwithKindness/scripts/hooks/lightbattle.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/hooks/text.lua",
+      "target": "mods/CookingwithKindness/scripts/hooks/text.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/objects/ControlsDisplay.lua",
+      "target": "mods/CookingwithKindness/scripts/objects/ControlsDisplay.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/objects/barTimer.lua",
+      "target": "mods/CookingwithKindness/scripts/objects/barTimer.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/objects/flyswatter game/flyswatter.lua",
+      "target": "mods/CookingwithKindness/scripts/objects/flyswatter game/flyswatter.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/objects/ice cream cone game/icecreamconescoop.lua",
+      "target": "mods/CookingwithKindness/scripts/objects/ice cream cone game/icecreamconescoop.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/objects/key lime labyrinth game/labyrinth.lua",
+      "target": "mods/CookingwithKindness/scripts/objects/key lime labyrinth game/labyrinth.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/objects/mawzz games/DiveGameMap.lua",
+      "target": "mods/CookingwithKindness/scripts/objects/mawzz games/DiveGameMap.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/objects/mawzz games/MoneyTreeSpawner.lua",
+      "target": "mods/CookingwithKindness/scripts/objects/mawzz games/MoneyTreeSpawner.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/objects/mawzz games/Whirlpool.lua",
+      "target": "mods/CookingwithKindness/scripts/objects/mawzz games/Whirlpool.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/objects/salad tosser/saladbowl.lua",
+      "target": "mods/CookingwithKindness/scripts/objects/salad tosser/saladbowl.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/objects/saucin shmup game/sauceenemy.lua",
+      "target": "mods/CookingwithKindness/scripts/objects/saucin shmup game/sauceenemy.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/objects/saucin shmup game/sauceshmupbottle.lua",
+      "target": "mods/CookingwithKindness/scripts/objects/saucin shmup game/sauceshmupbottle.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/objects/stirring game/soupbubble.lua",
+      "target": "mods/CookingwithKindness/scripts/objects/stirring game/soupbubble.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/world/events/beeglighttest.lua",
+      "target": "mods/CookingwithKindness/scripts/world/events/beeglighttest.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/world/events/betterlayering.lua",
+      "target": "mods/CookingwithKindness/scripts/world/events/betterlayering.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/world/events/lighttest.lua",
+      "target": "mods/CookingwithKindness/scripts/world/events/lighttest.lua",
+      "replaceExisting": true
+    },
+    {
+      "type": "inject",
+      "source": "payload/mods/CookingwithKindness/scripts/world/events/puddlereflections.lua",
+      "target": "mods/CookingwithKindness/scripts/world/events/puddlereflections.lua",
+      "replaceExisting": true
     }
   ]
 }

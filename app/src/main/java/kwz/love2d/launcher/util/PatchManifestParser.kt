@@ -9,7 +9,7 @@ import org.json.JSONObject
 object PatchManifestParser {
 
     const val SUPPORTED_SCHEMA_VERSION = 1
-    private const val MAX_OPERATIONS = 64
+    private const val MAX_OPERATIONS = 128
     private const val MAX_TEXT_LENGTH = 64 * 1024
     private val supportedOperations = setOf("inject", "append_text", "replace_text")
 
@@ -34,6 +34,10 @@ object PatchManifestParser {
         val author = root.requireShortString("author", 160)
         val category = root.optString("category", "compatibility").trim().ifBlank { "compatibility" }
         require(category.length <= 80) { "Patch category is too large" }
+        val compatibleGameProjectIds = parseStringList(root.optJSONArray("compatibleGameProjectIds"))
+        require(compatibleGameProjectIds.all(IdentifierPolicy::isGameProjectId)) {
+            "Invalid compatible game project identifier"
+        }
         val minimumLauncherVersion = root.optString("minimumLauncherVersion", "")
             .trim()
             .takeIf { it.isNotBlank() }
@@ -62,6 +66,7 @@ object PatchManifestParser {
             useCases = useCases,
             author = author,
             category = category,
+            compatibleGameProjectIds = compatibleGameProjectIds,
             minimumLauncherVersion = minimumLauncherVersion,
             capabilities = capabilities,
             dependencies = dependencies,

@@ -139,8 +139,7 @@ function OvenGame:update()
         elseif self.counter <= 3 then pie_sprite = "objects/ovengame/pie_3"
         elseif self.counter <= 6 then pie_sprite = "objects/ovengame/pie_2" end
 
-        if pie_sprite and self.pie_sprite ~= pie_sprite then
-            self.pie_sprite = pie_sprite
+        if pie_sprite and not self.pie:isSprite(pie_sprite) then
             self.pie:setSprite(pie_sprite)
         end
     end
