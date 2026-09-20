@@ -5,7 +5,7 @@
     {
       "schemaVersion": 1,
       "id": "kristal.general-performance",
-      "version": "0.0.2",
+      "version": "0.0.3",
       "name": {
         "pt-BR": "Otimização geral para jogos Kristal Engine",
         "en": "General performance optimization for Kristal Engine games",
@@ -45,8 +45,8 @@
       ],
       "dependencies": [],
       "conflicts": [],
-      "package": "packages/kristal-general-performance-0.0.2.klpatch",
-      "sha256": "2ce528dc59351973090100f7daaa501003107f55f790424a901de087f332cf66"
+      "package": "packages/kristal-general-performance-0.0.3.klpatch",
+      "sha256": "04e805891e98eec3934e4bcd40f36fc71b4ae92afa8fafdcf1fcf5c689050a75"
     },
     {
       "schemaVersion": 1,
@@ -99,7 +99,7 @@
     {
       "schemaVersion": 1,
       "id": "kristal.ptbr",
-      "version": "2.3.4",
+      "version": "2.3.5",
       "name": {
         "pt-BR": "Kristal Engine em Português (Brasil)",
         "en": "Kristal Engine in Brazilian Portuguese",
@@ -139,13 +139,13 @@
       ],
       "dependencies": [],
       "conflicts": [],
-      "package": "packages/kristal-ptbr-2.3.4.klpatch",
-      "sha256": "7de61939ecca1c93db0fd023aece4d9833f0eabfca89beddbecbbea7505c2110"
+      "package": "packages/kristal-ptbr-2.3.5.klpatch",
+      "sha256": "20fcfc889272b72100b46857cbe336560637e4a07ca24b5a9d78247a6b78aa7a"
     },
     {
       "schemaVersion": 1,
       "id": "kristal.es",
-      "version": "0.0.1",
+      "version": "0.0.2",
       "name": {
         "pt-BR": "Kristal Engine em Espanhol",
         "en": "Kristal Engine in Spanish",
@@ -187,8 +187,8 @@
       "conflicts": [
         "kristal.ptbr"
       ],
-      "package": "packages/kristal-es-0.0.1.klpatch",
-      "sha256": "f228c44abad4e8dc2401b28badc295745de119180e24f25c77238d02d29a247c"
+      "package": "packages/kristal-es-0.0.2.klpatch",
+      "sha256": "2eb10e28f4398f61d1cb0d15a95b26e79fa5097c745db8c237c41f94ce66f583"
     },
     {
       "schemaVersion": 1,

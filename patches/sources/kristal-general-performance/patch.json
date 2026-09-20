@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "kristal.general-performance",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "name": {
     "pt-BR": "Otimização geral para jogos Kristal Engine",
     "en": "General performance optimization for Kristal Engine games",

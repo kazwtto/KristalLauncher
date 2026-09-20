@@ -5,7 +5,7 @@
     {
       "schemaVersion": 1,
       "id": "plugged-dream.pt-br",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "name": {
         "pt-BR": "Plugged Dream em Português (Brasil)",
         "en": "Plugged Dream in Brazilian Portuguese",
@@ -24,13 +24,13 @@
       "minimumLauncherVersion": "0.17.48",
       "textsFile": "texts.json",
       "textsSha256": "6c3b060e09262ece24cd0281d8b8b6be1752dc55319929ac0243f3f4d3c0e081",
-      "package": "packages/plugged-dream-ptbr-1.0.0.kllang",
-      "sha256": "60922fa3f3235b0b35eb6e8a1f9363a8269ab83a772d4d6b1be3999497b434b9"
+      "package": "packages/plugged-dream-ptbr-1.0.1.kllang",
+      "sha256": "90f34c113f4c20e9061b6f924c0a512dc479e44ac710ccb96d915d0a248faf84"
     },
     {
       "schemaVersion": 1,
       "id": "crockerplayable.pt-br",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "name": {
         "pt-BR": "Crockerfan08's Chapter 6 em Português (Brasil)",
         "en": "Crockerfan08's Chapter 6 in Brazilian Portuguese",
@@ -49,13 +49,13 @@
       "minimumLauncherVersion": "0.17.48",
       "textsFile": "texts.json",
       "textsSha256": "3be81a9235e77867c17305a7ba9dffb8b1d356a550648d42a27ad4870017dc88",
-      "package": "packages/crockerplayable-ptbr-1.0.1.kllang",
-      "sha256": "1e25f7509f2c9ee46f23301666340fb4a1db34fb84ba6564d02e95b59ecf8770"
+      "package": "packages/crockerplayable-ptbr-1.0.2.kllang",
+      "sha256": "b48a9d4289a5375be3d304c2069cba50baab96c26cc4dd201c476b4024f5ce73"
     },
     {
       "schemaVersion": 1,
       "id": "chapter-5-weird.pt-br",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "name": {
         "pt-BR": "Frostveil em Português (Brasil)",
         "en": "Frostveil in Brazilian Portuguese",
@@ -74,13 +74,13 @@
       "minimumLauncherVersion": "0.17.48",
       "textsFile": "texts.json",
       "textsSha256": "4166620a54660435bcbdfa4c4db511fa481070be826f0076ff79e87c28cea7c8",
-      "package": "packages/chapter-5-weird-ptbr-1.0.0.kllang",
-      "sha256": "936059e70671ae2b37b2950e4cf11bfbaebf8cac0c534075e0063d60cd426c8e"
+      "package": "packages/chapter-5-weird-ptbr-1.0.1.kllang",
+      "sha256": "49fd2d6dcfb7403a222d534b6cbd49700f8a3a85ad5eccc034b1e5c500e73ff0"
     },
     {
       "schemaVersion": 1,
       "id": "frozen-heart.pt-br",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "name": {
         "pt-BR": "Frozen Heart em Português (Brasil)",
         "en": "Frozen Heart in Brazilian Portuguese",
@@ -99,13 +99,13 @@
       "minimumLauncherVersion": "0.17.48",
       "textsFile": "texts.json",
       "textsSha256": "552289b300d2fe4df5653627ca758dff3e87dd2b63d4c5bbfa56b661f9d1ef72",
-      "package": "packages/frozen-heart-ptbr-1.0.0.kllang",
-      "sha256": "15b30cc4e9495b348c935d20e9940bbe7bb16fbd8d20a1d74205e7238b507d15"
+      "package": "packages/frozen-heart-ptbr-1.0.1.kllang",
+      "sha256": "119eb98614e0f6cf7313d129b10dc852aa4d71deda5a144eb61856bbd8512c4b"
     },
     {
       "schemaVersion": 1,
       "id": "godhome.pt-br",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "name": {
         "pt-BR": "Godhome em Português (Brasil)",
         "en": "Godhome in Brazilian Portuguese",
@@ -124,13 +124,13 @@
       "minimumLauncherVersion": "0.17.48",
       "textsFile": "texts.json",
       "textsSha256": "0397267125623a5ad1c96a58fb46e463b526e503b17b29909d8b8c2d1f43d221",
-      "package": "packages/godhome-ptbr-1.0.0.kllang",
-      "sha256": "9d756cc77c8d04c239fc178beea69160c8565db5f89329b0ac18dfd03abaaf92"
+      "package": "packages/godhome-ptbr-1.0.1.kllang",
+      "sha256": "cb6bd17c4b0048f29d464155c7a584452de2aeef3d36b25ba1ff59b7b5b03932"
     },
     {
       "schemaVersion": 1,
       "id": "goofball-mod.pt-br",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "name": {
         "pt-BR": "Sermon's Sang em Português (Brasil)",
         "en": "Sermon's Sang in Brazilian Portuguese",
@@ -149,13 +149,13 @@
       "minimumLauncherVersion": "0.17.48",
       "textsFile": "texts.json",
       "textsSha256": "6a6058fe76e575fcc4b1b74504850461bd24793fd15b92eb3dd319388a5870aa",
-      "package": "packages/goofball-mod-ptbr-1.0.0.kllang",
-      "sha256": "553979eed275528e7da639ce0ee56ede9ef3928ebb097e01b3c6ec6a8cb0fe3a"
+      "package": "packages/goofball-mod-ptbr-1.0.1.kllang",
+      "sha256": "954223227957f947fa5eb7d263764bae0e567c68e653b97b75ed2fafc9054224"
     },
     {
       "schemaVersion": 1,
       "id": "vs-kris.pt-br",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "name": {
         "pt-BR": "VS Kris em Português (Brasil)",
         "en": "VS Kris in Brazilian Portuguese",
@@ -174,13 +174,13 @@
       "minimumLauncherVersion": "0.17.48",
       "textsFile": "texts.json",
       "textsSha256": "fa9baa21c315c88c2da7df2f1dafe2df49adeebe830c5314a2c11444863fb12d",
-      "package": "packages/vs-kris-ptbr-1.0.0.kllang",
-      "sha256": "64d7193b3374985e658b33423dbb1c6e06f6c867c04109ba1533584c1e0dc238"
+      "package": "packages/vs-kris-ptbr-1.0.1.kllang",
+      "sha256": "f88c90995c7f207a516761702fa29b8dae6bf97717774b8a13469453d7052448"
     },
     {
       "schemaVersion": 1,
       "id": "wilter-boss-fight.pt-br",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "name": {
         "pt-BR": "Wilter Boss Fight em Português (Brasil)",
         "en": "Wilter Boss Fight in Brazilian Portuguese",
@@ -199,13 +199,13 @@
       "minimumLauncherVersion": "0.17.48",
       "textsFile": "texts.json",
       "textsSha256": "cb38d71d56b6fb2d6fc642a05bbb278507b061c7f4dacdc201ee48af4e325eb4",
-      "package": "packages/wilter-boss-fight-ptbr-1.0.0.kllang",
-      "sha256": "b8bab7430238e26c8fd7146c6c5ff2b22678d555288f59ef4d698c0f6a574f29"
+      "package": "packages/wilter-boss-fight-ptbr-1.0.1.kllang",
+      "sha256": "64d59dafeaa4409f902cb3d4dce492b1f5d0a4a906779118082d986cf57a22ef"
     },
     {
       "schemaVersion": 1,
       "id": "starrunefinal.pt-br",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "name": {
         "pt-BR": "Star Rune em Português (Brasil)",
         "en": "Star Rune in Brazilian Portuguese",
@@ -224,13 +224,13 @@
       "minimumLauncherVersion": "0.17.48",
       "textsFile": "texts.json",
       "textsSha256": "e143404e4a4ae3fffe25ce20df2a3f8ee67d1821ce425984a87d82ef29db461e",
-      "package": "packages/starrune-ptbr-1.0.0.kllang",
-      "sha256": "2bfbe28b2d732aa9681ebd99e15f9daa17ba9746e8eb1ea8afcd0afcf805b3d4"
+      "package": "packages/starrune-ptbr-1.0.1.kllang",
+      "sha256": "692706d082a9f2fc162fbcdc682f13f5812c5cec6cb9b3b0c60ecd87469a2146"
     },
     {
       "schemaVersion": 1,
       "id": "funtown.pt-br",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "name": {
         "pt-BR": "Deltarune: Fun Town (Lumia) em Português (Brasil)",
         "en": "Deltarune: Fun Town (Lumia) in Brazilian Portuguese",
@@ -249,13 +249,13 @@
       "minimumLauncherVersion": "0.17.48",
       "textsFile": "texts.json",
       "textsSha256": "a5cb9a73662267448fc00d39988c3cc683e9d175dbcffe073f8e5e6397624a57",
-      "package": "packages/funtown-ptbr-1.0.0.kllang",
-      "sha256": "ab9e7808cd0abf5f221b0fb3e181ef711fbd955697f72eef15dba4c8615d815c"
+      "package": "packages/funtown-ptbr-1.0.1.kllang",
+      "sha256": "2d925c4949a9c78329f2bb2a585323ad6e7c2c791f86fd8e344e82ee61b804b8"
     },
     {
       "schemaVersion": 1,
       "id": "friendless.pt-br",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "name": {
         "pt-BR": "DELTARUNE Friendless em Português (Brasil)",
         "en": "DELTARUNE Friendless in Brazilian Portuguese",
@@ -274,8 +274,8 @@
       "minimumLauncherVersion": "0.17.48",
       "textsFile": "texts.json",
       "textsSha256": "13edcf7eea0ec54715b862605aa7de7e28247ad0692ca7f844e4b863b6ae1942",
-      "package": "packages/friendless-ptbr-1.0.0.kllang",
-      "sha256": "6895103234cd5be76e8eb8b80ded7f184ae2ac014921646b910258eb3c50d0fa"
+      "package": "packages/friendless-ptbr-1.0.1.kllang",
+      "sha256": "81626afc63d61661b9c4f847586c24e2f15108e89b3aeadcb99f6a75a3d3da79"
     },
     {
       "schemaVersion": 1,

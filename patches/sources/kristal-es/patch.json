@@ -1,7 +1,7 @@
 {
     "schemaVersion":  1,
     "id":  "kristal.es",
-    "version":  "0.0.1",
+    "version":  "0.0.2",
     "name":  {
                  "pt-BR":  "Kristal Engine em Espanhol",
                  "en":  "Kristal Engine in Spanish",

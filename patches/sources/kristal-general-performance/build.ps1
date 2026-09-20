@@ -6,7 +6,7 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem
 
 $sourceRoot = $PSScriptRoot
 $patchesRoot = Split-Path (Split-Path $sourceRoot -Parent) -Parent
-$packageOutput = Join-Path $patchesRoot "packages\kristal-general-performance-0.0.2.klpatch"
+$packageOutput = Join-Path $patchesRoot "packages\kristal-general-performance-0.0.3.klpatch"
 $temporaryArchive = "$packageOutput.tmp.zip"
 
 if (Test-Path -LiteralPath $temporaryArchive) {
