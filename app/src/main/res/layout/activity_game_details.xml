@@ -177,7 +177,11 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:checked="true"
-                    android:text="@string/action_patches" />
+                    android:text="@string/action_patches"
+                    android:textColor="@color/segmented_button_text"
+                    app:backgroundTint="@color/segmented_button_background"
+                    app:cornerRadius="?attr/kristalCorner24"
+                    app:strokeColor="@color/segmented_button_stroke" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/tabDetailsLanguages"
@@ -185,7 +189,11 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/community_languages" />
+                    android:text="@string/community_languages"
+                    android:textColor="@color/segmented_button_text"
+                    app:backgroundTint="@color/segmented_button_background"
+                    app:cornerRadius="?attr/kristalCorner24"
+                    app:strokeColor="@color/segmented_button_stroke" />
             </com.google.android.material.button.MaterialButtonToggleGroup>
 
             <FrameLayout
@@ -263,11 +271,23 @@
                             android:layout_height="match_parent"
                             android:duplicateParentState="true"
                             android:gravity="center_vertical"
-                            android:paddingHorizontal="14dp"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="48dp"
                             android:text="@string/translation_original_game"
                             android:textColor="@color/segmented_button_text"
                             android:textSize="15sp"
                             android:textStyle="bold" />
+
+                        <ImageButton
+                            android:id="@+id/btnLanguagesExperimentalInfo"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="@string/translation_experimental_info_action"
+                            android:padding="9dp"
+                            android:src="?attr/kristalIconWarning"
+                            app:tint="?attr/colorOnSurfaceVariant" />
                     </com.google.android.material.card.MaterialCardView>
 
                     <androidx.recyclerview.widget.RecyclerView

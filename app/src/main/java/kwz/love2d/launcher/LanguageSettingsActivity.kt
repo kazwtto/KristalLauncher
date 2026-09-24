@@ -1,17 +1,18 @@
 package kwz.love2d.launcher
 
+import kwz.love2d.launcher.ui.ControllerNavigationActivity
+
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import androidx.activity.OnBackPressedCallback
-import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.radiobutton.MaterialRadioButton
 import kwz.love2d.launcher.util.LanguageManager
 import kwz.love2d.launcher.util.NavigationAnimations
 import kwz.love2d.launcher.util.ThemeManager
 
-class LanguageSettingsActivity : AppCompatActivity() {
+class LanguageSettingsActivity : ControllerNavigationActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         ThemeManager.applyActivityTheme(this)

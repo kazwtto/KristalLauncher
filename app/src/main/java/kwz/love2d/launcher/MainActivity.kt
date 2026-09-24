@@ -1,5 +1,7 @@
 package kwz.love2d.launcher
 
+import kwz.love2d.launcher.ui.ControllerNavigationActivity
+
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -16,7 +18,6 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
@@ -39,8 +40,11 @@ import kwz.love2d.launcher.util.GameLauncher
 import kwz.love2d.launcher.util.KristalRuntimeStorage
 import kwz.love2d.launcher.util.GameScanner
 import kwz.love2d.launcher.util.CommunityTranslationCatalogService
+import kwz.love2d.launcher.util.GameDetailsDataCache
+import kwz.love2d.launcher.util.PatchCatalogService
 import kwz.love2d.launcher.util.NavigationAnimations
 import kwz.love2d.launcher.util.ThemeManager
+import kwz.love2d.launcher.util.TvGameLibrary
 import kwz.love2d.launcher.util.showThemed
 import kwz.love2d.launcher.util.UpdateChecker
 import kwz.love2d.launcher.util.UpdateCheckResult
@@ -53,7 +57,43 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : ControllerNavigationActivity() {
+
+    override fun onDirectionalFocus(from: View, direction: Int): View? {
+        if (::etSearch.isInitialized && from === etSearch && direction == View.FOCUS_UP) {
+            return topAppBar.findViewById(R.id.action_view_mode)
+        }
+        if (::topAppBar.isInitialized && direction == View.FOCUS_DOWN &&
+            from.parent === topAppBar.findViewById<View>(R.id.action_view_mode)?.parent
+        ) {
+            return etSearch
+        }
+        return null
+    }
+
+    override fun firstFocusTarget(): View? =
+        if (::rvGames.isInitialized) {
+            btnSelectFolderEmpty.takeIf { it.isShown } ?: run {
+                val firstVisible = (rvGames.layoutManager as? LinearLayoutManager)
+                    ?.findFirstVisibleItemPosition()
+                    ?.takeIf { it != RecyclerView.NO_POSITION } ?: 0
+                rvGames.findViewHolderForAdapterPosition(firstVisible)?.itemView
+                    ?: findViewById(R.id.btnFilter)
+            }
+        } else {
+            super.firstFocusTarget()
+        }
+
+    override fun onTabDirection(direction: Int): Boolean {
+        if (!::bottomNavigation.isInitialized) return false
+        val tabs = intArrayOf(R.id.navigation_library, R.id.navigation_recent, R.id.navigation_favorites)
+        val current = tabs.indexOf(bottomNavigation.selectedItemId).coerceAtLeast(0)
+        val next = (current + direction).coerceIn(tabs.indices)
+        if (next == current) return true
+        bottomNavigation.selectedItemId = tabs[next]
+        bottomNavigation.findViewById<View>(tabs[next])?.requestFocusFromTouch()
+        return true
+    }
 
     private lateinit var rvGames: RecyclerView
     private lateinit var swipeRefresh: SwipeRefreshLayout
@@ -76,6 +116,7 @@ class MainActivity : AppCompatActivity() {
     private var isGridView = false
     private var currentTabId = R.id.navigation_library
     private var scanJob: Job? = null
+    private var detailsWarmJob: Job? = null
 
     private val folderPickerLauncher = registerForActivityResult(
         ActivityResultContracts.OpenDocumentTree()
@@ -122,7 +163,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigation = findViewById(R.id.bottomNavigation)
 
         val prefs = getSharedPreferences("launcher_prefs", Context.MODE_PRIVATE)
-        isGridView = prefs.getBoolean("is_grid_view", false)
+        isGridView = prefs.getBoolean("is_grid_view", TvGameLibrary.isTelevision(this))
 
         setupRecyclerView()
         setupBottomNavigation()
@@ -133,16 +174,16 @@ class MainActivity : AppCompatActivity() {
                 scanFolder(uri, forceRefresh = true)
             } else {
                 swipeRefresh.isRefreshing = false
-                folderPickerLauncher.launch(null)
+                chooseGamesFolder()
             }
         }
 
         btnSelectFolderEmpty.setOnClickListener {
-            folderPickerLauncher.launch(null)
+            chooseGamesFolder()
         }
 
         fabAddGames.setOnClickListener {
-            folderPickerLauncher.launch(null)
+            chooseGamesFolder()
         }
 
         fabKristalRuntime.setOnClickListener {
@@ -177,6 +218,11 @@ class MainActivity : AppCompatActivity() {
         // display repository translations immediately instead of requiring a second visit.
         lifecycleScope.launch(Dispatchers.IO) {
             CommunityTranslationCatalogService.fetch(this@MainActivity)
+            withContext(Dispatchers.Main) { scheduleDetailsWarm() }
+        }
+        lifecycleScope.launch(Dispatchers.IO) {
+            PatchCatalogService.fetch(this@MainActivity)
+            withContext(Dispatchers.Main) { scheduleDetailsWarm() }
         }
 
         checkForUpdatesAutomatically()
@@ -221,6 +267,15 @@ class MainActivity : AppCompatActivity() {
             }
         } else {
             applyCurrentTabFilter()
+            if (allGamesList.isNotEmpty()) scheduleDetailsWarm()
+        }
+    }
+
+    private fun scheduleDetailsWarm() {
+        val games = allGamesList
+        detailsWarmJob?.cancel()
+        detailsWarmJob = lifecycleScope.launch(Dispatchers.IO) {
+            GameDetailsDataCache.warm(this@MainActivity, games)
         }
     }
 
@@ -367,10 +422,18 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_view_mode -> {
+                val focusedGamePosition = currentFocus?.let { focused ->
+                    rvGames.findContainingViewHolder(focused)?.bindingAdapterPosition
+                }?.takeIf { it != RecyclerView.NO_POSITION }
                 isGridView = !isGridView
                 saveViewMode(isGridView)
                 setupRecyclerView()
                 displayGames(displayedGamesList)
+                focusedGamePosition?.let { position ->
+                    rvGames.post {
+                        rvGames.findViewHolderForAdapterPosition(position)?.itemView?.requestFocusFromTouch()
+                    }
+                }
                 invalidateOptionsMenu()
                 true
             }
@@ -386,11 +449,24 @@ class MainActivity : AppCompatActivity() {
                 AddGamesTutorialDialog.show(
                     context = this,
                     folderAlreadySelected = selectedFolderUri != null,
-                    onChooseFolder = { folderPickerLauncher.launch(null) }
+                    onChooseFolder = ::chooseGamesFolder
                 )
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun chooseGamesFolder() {
+        if (TvGameLibrary.isTelevision(this)) {
+            val directory = TvGameLibrary.directory(this)
+            MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.tv_games_folder_button)
+                .setMessage(getString(R.string.tv_games_folder_hint, directory?.absolutePath.orEmpty()))
+                .setPositiveButton(R.string.ok, null)
+                .showThemed()
+        } else {
+            folderPickerLauncher.launch(null)
         }
     }
 
@@ -424,6 +500,7 @@ class MainActivity : AppCompatActivity() {
                     if (cachedGames.isNotEmpty() && selectedFolderUri == folderUri) {
                         allGamesList = cachedGames
                         applyCurrentTabFilter()
+                        scheduleDetailsWarm()
                         progressBar.visibility = View.GONE
                     }
                 }
@@ -438,8 +515,12 @@ class MainActivity : AppCompatActivity() {
 
                 if (selectedFolderUri == folderUri) {
                     allGamesList = games
-                    applyCurrentTabFilter()
                     progressBar.visibility = View.GONE
+                    applyCurrentTabFilter()
+                    scheduleDetailsWarm()
+                    if (games.isEmpty() && TvGameLibrary.isLibraryUri(this@MainActivity, folderUri)) {
+                        btnSelectFolderEmpty.requestFocusFromTouch()
+                    }
                     swipeRefresh.isRefreshing = false
                     if (scanResult.failedFiles.isNotEmpty()) {
                         Toast.makeText(
@@ -511,8 +592,17 @@ class MainActivity : AppCompatActivity() {
                 btnSelectFolderEmpty.visibility = View.GONE
             } else {
                 tvEmptyState.setText(R.string.no_games_found)
-                tvSelectedFolderPath.text = selectedFolderUri?.path
-                btnSelectFolderEmpty.visibility = View.GONE
+                if (selectedFolderUri?.let { TvGameLibrary.isLibraryUri(this, it) } == true) {
+                    tvSelectedFolderPath.text = getString(
+                        R.string.tv_games_folder_hint,
+                        selectedFolderUri?.path.orEmpty()
+                    )
+                    btnSelectFolderEmpty.setText(R.string.tv_games_folder_button)
+                    btnSelectFolderEmpty.visibility = View.VISIBLE
+                } else {
+                    tvSelectedFolderPath.text = selectedFolderUri?.path
+                    btnSelectFolderEmpty.visibility = View.GONE
+                }
             }
         } else {
             emptyStateLayout.visibility = View.GONE

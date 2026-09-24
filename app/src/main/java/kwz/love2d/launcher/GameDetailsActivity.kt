@@ -1,9 +1,12 @@
 package kwz.love2d.launcher
 
+import kwz.love2d.launcher.ui.ControllerNavigationActivity
+
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.res.ColorStateList
+import android.content.res.Configuration
 import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Bundle
@@ -16,7 +19,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
@@ -39,13 +41,12 @@ import kwz.love2d.launcher.util.FavoritesManager
 import kwz.love2d.launcher.util.GameLauncher
 import kwz.love2d.launcher.util.NavigationAnimations
 import kwz.love2d.launcher.util.PatchRepository
-import kwz.love2d.launcher.util.PatchCatalogResult
 import kwz.love2d.launcher.util.PatchCatalogService
+import kwz.love2d.launcher.util.GameDetailsDataCache
 import kwz.love2d.launcher.util.PatchPackageInstaller
 import kwz.love2d.launcher.util.PatchManager
 import kwz.love2d.launcher.util.ThemeManager
 import kwz.love2d.launcher.util.TranslationManager
-import kwz.love2d.launcher.util.CommunityTranslationCatalogResult
 import kwz.love2d.launcher.util.CommunityTranslationCatalogService
 import kwz.love2d.launcher.util.CommunityTranslationInstallStage
 import kwz.love2d.launcher.util.CommunityTranslationInstaller
@@ -55,23 +56,30 @@ import kwz.love2d.launcher.util.KristalRuntimeStorage
 import kwz.love2d.launcher.util.showThemed
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class GameDetailsActivity : AppCompatActivity() {
+class GameDetailsActivity : ControllerNavigationActivity() {
+
+    override fun onTabDirection(direction: Int): Boolean {
+        val tabs = findViewById<MaterialButtonToggleGroup>(R.id.gameDetailsTabs)
+        val next = if (direction > 0) R.id.tabDetailsLanguages else R.id.tabDetailsPatches
+        if (tabs.checkedButtonId != next) tabs.check(next)
+        findViewById<View>(next).requestFocusFromTouch()
+        return true
+    }
 
     private lateinit var game: LoveGame
     private lateinit var favoriteButton: ImageButton
     private lateinit var translationAdapter: CommunityTranslationAdapter
     private var catalogTranslations: List<CatalogTranslation> = emptyList()
-    private var translationCatalogLoading = false
     private var translationBusyKey: String? = null
     private var translationBusyText: String? = null
     private lateinit var patchAdapter: GamePatchSettingsAdapter
     private var patchCatalog: List<CatalogPatch> = emptyList()
-    private var patchCatalogJob: Job? = null
     private var installingPatchId: String? = null
+    private var hasResumed = false
+    private var initialSnapshot: GameDetailsDataCache.Snapshot? = null
 
     private val importTranslationDocument = registerForActivityResult(
         ActivityResultContracts.OpenDocument()
@@ -89,6 +97,7 @@ class GameDetailsActivity : AppCompatActivity() {
             finish()
             return
         }
+        initialSnapshot = GameDetailsDataCache.get(this, game)
 
         favoriteButton = findViewById(R.id.btnDetailsFavoriteTop)
         bindGame()
@@ -105,6 +114,10 @@ class GameDetailsActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        if (!hasResumed) {
+            hasResumed = true
+            return
+        }
         if (::favoriteButton.isInitialized) refreshFavorite()
         if (::translationAdapter.isInitialized) refreshTranslations()
         if (::patchAdapter.isInitialized) refreshPatchSettings()
@@ -124,7 +137,15 @@ class GameDetailsActivity : AppCompatActivity() {
         )
 
         val icon = findViewById<ImageView>(R.id.ivDetailsIcon)
-        val iconSize = (resources.displayMetrics.widthPixels * DETAILS_ICON_WIDTH_RATIO).toInt()
+        val metrics = resources.displayMetrics
+        val iconSize = if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            minOf(
+                (metrics.widthPixels * 0.12f).toInt(),
+                (metrics.heightPixels * 0.24f).toInt()
+            )
+        } else {
+            (metrics.widthPixels * DETAILS_ICON_WIDTH_RATIO).toInt()
+        }
         icon.layoutParams = icon.layoutParams.apply {
             width = iconSize
             height = iconSize
@@ -207,12 +228,18 @@ class GameDetailsActivity : AppCompatActivity() {
     }
 
     private fun bindPatchSettings() {
-        refreshPatchSettings()
-        loadPatchCatalog()
+        patchCatalog = initialSnapshot?.catalogPatches ?: PatchCatalogService.cachedPatches(this)
+        showPatchSettings(
+            initialSnapshot?.patchItems
+                ?: PatchRepository.gameDisplayItems(this, game.projectId, patchCatalog)
+        )
     }
 
     private fun refreshPatchSettings() {
-        val patches = PatchRepository.gameDisplayItems(this, game.projectId, patchCatalog)
+        showPatchSettings(PatchRepository.gameDisplayItems(this, game.projectId, patchCatalog))
+    }
+
+    private fun showPatchSettings(patches: List<PatchDisplayItem>) {
         findViewById<TextView>(R.id.tvDetailsPatchesEmpty).visibility =
             if (patches.isEmpty()) View.VISIBLE else View.GONE
         findViewById<RecyclerView>(R.id.rvDetailsPatches).apply {
@@ -228,22 +255,6 @@ class GameDetailsActivity : AppCompatActivity() {
             adapter = patchAdapter
             itemAnimator = null
             isNestedScrollingEnabled = false
-        }
-    }
-
-    private fun loadPatchCatalog() {
-        if (patchCatalogJob?.isActive == true) return
-        patchCatalogJob = lifecycleScope.launch {
-            when (val result = withContext(Dispatchers.IO) {
-                PatchCatalogService.fetch(this@GameDetailsActivity)
-            }) {
-                is PatchCatalogResult.Success -> {
-                    patchCatalog = result.patches
-                    refreshPatchSettings()
-                }
-                is PatchCatalogResult.Failure -> Unit
-            }
-            patchCatalogJob = null
         }
     }
 
@@ -286,6 +297,7 @@ class GameDetailsActivity : AppCompatActivity() {
             installingPatchId = null
             when (result) {
                 is PatchInstallResult.Success -> {
+                    GameDetailsDataCache.invalidate(game)
                     PatchManager.setGamePatchMode(
                         this@GameDetailsActivity,
                         game.stableId,
@@ -350,22 +362,48 @@ class GameDetailsActivity : AppCompatActivity() {
             TranslationManager.clearSelection(this, game.stableId)
             refreshTranslations()
         }
+        findViewById<ImageButton>(R.id.btnLanguagesExperimentalInfo).setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.translation_experimental_title)
+                .setMessage(R.string.translation_experimental_message)
+                .setPositiveButton(android.R.string.ok, null)
+                .showThemed()
+        }
         findViewById<MaterialButton>(R.id.btnCreateTranslation).setOnClickListener {
             createTranslation()
         }
         findViewById<MaterialButton>(R.id.btnImportTranslation).setOnClickListener {
             importTranslationDocument.launch(arrayOf("application/zip", "application/octet-stream"))
         }
-        catalogTranslations = CommunityTranslationCatalogService.cachedTranslations(this)
-        refreshTranslations()
-        fetchCommunityTranslations()
+        catalogTranslations = initialSnapshot?.catalogTranslations
+            ?: CommunityTranslationCatalogService.cachedTranslations(this)
+        refreshTranslations(initialSnapshot)
     }
 
-    private fun refreshTranslations() {
+    private fun refreshTranslations(snapshot: GameDetailsDataCache.Snapshot? = null) {
+        val state = buildTranslationState(catalogTranslations, snapshot)
+        findViewById<MaterialCardView>(R.id.cardOriginalLanguage).isChecked = state.originalSelected
+        translationAdapter.update(state.items, translationBusyKey, translationBusyText)
+        findViewById<TextView>(R.id.tvDetailsLanguagesStatus).apply {
+            visibility = if (state.items.isEmpty()) View.VISIBLE else View.GONE
+            text = getString(R.string.translation_none_available)
+        }
+    }
+
+    private data class TranslationState(
+        val items: List<TranslationDisplayItem>,
+        val originalSelected: Boolean
+    )
+
+    private fun buildTranslationState(
+        catalogTranslations: List<CatalogTranslation>,
+        snapshot: GameDetailsDataCache.Snapshot?
+    ): TranslationState {
         val selectedProjectId = TranslationManager.selectedProjectId(this, game.stableId)
         val selectedCommunityId = TranslationManager.selectedCommunityTranslationId(this, game.stableId)
-        val projects = TranslationManager.projectsForGame(this, game.stableId)
-        val installed = CommunityTranslationStorage.installedForGame(this, game.projectId)
+        val projects = snapshot?.projects ?: TranslationManager.projectsForGame(this, game.stableId)
+        val installed = snapshot?.installedTranslations
+            ?: CommunityTranslationStorage.installedForGame(this, game.projectId)
         val matchingCatalog = catalogTranslations
             .filter { it.manifest.gameProjectId.equals(game.projectId, ignoreCase = true) }
             .associateBy { it.manifest.id }
@@ -431,32 +469,7 @@ class GameDetailsActivity : AppCompatActivity() {
                     )
                 }
         }
-        findViewById<MaterialCardView>(R.id.cardOriginalLanguage).isChecked =
-            selectedProjectId == null && selectedCommunityId == null
-        translationAdapter.update(items, translationBusyKey, translationBusyText)
-        findViewById<TextView>(R.id.tvDetailsLanguagesStatus).apply {
-            visibility = if (!translationCatalogLoading && items.isEmpty()) View.VISIBLE else View.GONE
-            text = getString(R.string.translation_none_available)
-        }
-    }
-
-    private fun fetchCommunityTranslations() {
-        translationCatalogLoading = true
-        findViewById<ProgressBar>(R.id.progressTranslationScan).visibility = View.VISIBLE
-        lifecycleScope.launch {
-            val result = withContext(Dispatchers.IO) {
-                CommunityTranslationCatalogService.fetch(this@GameDetailsActivity)
-            }
-            translationCatalogLoading = false
-            findViewById<ProgressBar>(R.id.progressTranslationScan).visibility = View.GONE
-            catalogTranslations = when (result) {
-                is CommunityTranslationCatalogResult.Success -> result.translations
-                is CommunityTranslationCatalogResult.Failure ->
-                    CommunityTranslationCatalogService.cachedTranslations(this@GameDetailsActivity)
-                        .ifEmpty { catalogTranslations }
-            }
-            refreshTranslations()
-        }
+        return TranslationState(items, selectedProjectId == null && selectedCommunityId == null)
     }
 
     private fun installCommunityTranslation(catalog: CatalogTranslation) {
@@ -501,6 +514,7 @@ class GameDetailsActivity : AppCompatActivity() {
             translationBusyText = null
             when (result) {
                 is CommunityTranslationInstallResult.Success -> {
+                    GameDetailsDataCache.invalidate(game)
                     TranslationManager.selectCommunityTranslation(
                         this@GameDetailsActivity,
                         game.stableId,
@@ -564,6 +578,7 @@ class GameDetailsActivity : AppCompatActivity() {
             createButton.isEnabled = true
             importButton.isEnabled = true
             result.onSuccess { project ->
+                GameDetailsDataCache.invalidate(game)
                 refreshTranslations()
                 openTranslationEditor(project.id)
             }.onFailure {
@@ -594,6 +609,7 @@ class GameDetailsActivity : AppCompatActivity() {
             createButton.isEnabled = true
             importButton.isEnabled = true
             result.onSuccess { project ->
+                GameDetailsDataCache.invalidate(game)
                 refreshTranslations()
                 openTranslationEditor(project.id)
             }.onFailure {

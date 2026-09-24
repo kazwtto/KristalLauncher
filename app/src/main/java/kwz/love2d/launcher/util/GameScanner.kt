@@ -147,6 +147,11 @@ object GameScanner {
         context: Context,
         folderUri: Uri
     ): List<GameFileCandidate> {
+        if (TvGameLibrary.isLibraryUri(context, folderUri)) {
+            return TvGameLibrary.directory(context)?.listFiles().orEmpty()
+                .filter { it.isFile && isSupportedGameName(it.name) }
+                .map { GameFileCandidate(Uri.fromFile(it), it.name, it.length(), it.lastModified()) }
+        }
         return try {
             queryDocumentProvider(context, folderUri)
         } catch (error: SecurityException) {

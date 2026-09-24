@@ -6,6 +6,7 @@ import android.graphics.Typeface
 import android.graphics.drawable.GradientDrawable
 import android.view.Gravity
 import android.view.KeyEvent
+import android.view.InputDevice
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
@@ -82,6 +83,8 @@ object LoveOverlayManager {
                             cornerRadius = if (deltarune) 0f else 24 * density
                         }
                         setPadding(0, (16 * density).toInt(), 0, (16 * density).toInt())
+                        isFocusable = true
+                        isClickable = true
                         setOnClickListener { activity.finish() }
                     }
 
@@ -96,6 +99,8 @@ object LoveOverlayManager {
                             cornerRadius = if (deltarune) 0f else 24 * density
                         }
                         setPadding(0, (16 * density).toInt(), 0, (16 * density).toInt())
+                        isFocusable = true
+                        isClickable = true
                         layoutParams = LinearLayout.LayoutParams(
                             LinearLayout.LayoutParams.MATCH_PARENT,
                             LinearLayout.LayoutParams.WRAP_CONTENT
@@ -113,6 +118,17 @@ object LoveOverlayManager {
                         menuPanel.post { ThemeManager.applyDeltaruneStyle(activity, menuPanel) }
                     }
 
+                    val focusListener = View.OnFocusChangeListener { view, focused ->
+                        val button = view as TextView
+                        button.alpha = if (focused) 1f else 0.82f
+                        (button.background as? GradientDrawable)?.setStroke(
+                            if (focused) (2 * density).toInt() else 0,
+                            if (focused) Color.WHITE else Color.TRANSPARENT
+                        )
+                    }
+                    btnExit.onFocusChangeListener = focusListener
+                    btnResume.onFocusChangeListener = focusListener
+
                     overlayContainer.addView(menuPanel, panelParams)
                     overlayContainer.setOnClickListener { hideOverlay(overlayContainer, menuPanel) }
                     menuPanel.setOnClickListener { }
@@ -128,17 +144,56 @@ object LoveOverlayManager {
                     val originalCallback = activity.window.callback
                     activity.window.callback = object : WindowCallbackAdapter(originalCallback) {
                         override fun dispatchKeyEvent(event: KeyEvent): Boolean {
-                            if (event.keyCode == KeyEvent.KEYCODE_BACK) {
+                            val menuVisible = overlayContainer.visibility == View.VISIBLE
+                            val gamepad = event.source and InputDevice.SOURCE_GAMEPAD == InputDevice.SOURCE_GAMEPAD ||
+                                event.source and InputDevice.SOURCE_JOYSTICK == InputDevice.SOURCE_JOYSTICK
+                            val toggle = event.keyCode == KeyEvent.KEYCODE_BACK ||
+                                (event.keyCode == KeyEvent.KEYCODE_ESCAPE && event.isCtrlPressed) ||
+                                (gamepad && event.keyCode == KeyEvent.KEYCODE_BUTTON_MODE)
+                            if (toggle) {
                                 if (event.action == KeyEvent.ACTION_UP) {
-                                    if (overlayContainer.visibility == View.VISIBLE) {
+                                    if (menuVisible) {
                                         hideOverlay(overlayContainer, menuPanel)
                                     } else {
                                         showOverlay(overlayContainer, menuPanel)
+                                        btnResume.requestFocusFromTouch()
+                                    }
+                                }
+                                return true
+                            }
+                            if (menuVisible) {
+                                if (event.action == KeyEvent.ACTION_DOWN) {
+                                    when (event.keyCode) {
+                                        KeyEvent.KEYCODE_BUTTON_B -> hideOverlay(overlayContainer, menuPanel)
+                                        KeyEvent.KEYCODE_ESCAPE -> hideOverlay(overlayContainer, menuPanel)
+                                        KeyEvent.KEYCODE_BUTTON_A,
+                                        KeyEvent.KEYCODE_DPAD_CENTER,
+                                        KeyEvent.KEYCODE_ENTER,
+                                        KeyEvent.KEYCODE_SPACE -> {
+                                            (if (btnExit.hasFocus()) btnExit else btnResume).performClick()
+                                        }
+                                        KeyEvent.KEYCODE_DPAD_UP -> btnExit.requestFocusFromTouch()
+                                        KeyEvent.KEYCODE_DPAD_DOWN -> btnResume.requestFocusFromTouch()
                                     }
                                 }
                                 return true
                             }
                             return super.dispatchKeyEvent(event)
+                        }
+
+                        override fun dispatchGenericMotionEvent(event: MotionEvent): Boolean {
+                            if (overlayContainer.visibility != View.VISIBLE ||
+                                event.source and InputDevice.SOURCE_JOYSTICK != InputDevice.SOURCE_JOYSTICK
+                            ) return super.dispatchGenericMotionEvent(event)
+                            if (event.action == MotionEvent.ACTION_MOVE) {
+                                val vertical = event.getAxisValue(MotionEvent.AXIS_HAT_Y).let { hat ->
+                                    if (kotlin.math.abs(hat) > 0.5f) hat
+                                    else event.getAxisValue(MotionEvent.AXIS_Y)
+                                }
+                                if (vertical < -0.65f) btnExit.requestFocusFromTouch()
+                                if (vertical > 0.65f) btnResume.requestFocusFromTouch()
+                            }
+                            return true
                         }
                     }
                 } catch (e: Exception) {
@@ -209,5 +264,6 @@ object LoveOverlayManager {
     private open class WindowCallbackAdapter(private val wrapped: Window.Callback) : Window.Callback by wrapped {
         override fun dispatchTouchEvent(event: MotionEvent): Boolean = wrapped.dispatchTouchEvent(event)
         override fun dispatchKeyEvent(event: KeyEvent): Boolean = wrapped.dispatchKeyEvent(event)
+        override fun dispatchGenericMotionEvent(event: MotionEvent): Boolean = wrapped.dispatchGenericMotionEvent(event)
     }
 }

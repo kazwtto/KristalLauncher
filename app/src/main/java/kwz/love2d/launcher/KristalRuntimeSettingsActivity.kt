@@ -1,5 +1,7 @@
 package kwz.love2d.launcher
 
+import kwz.love2d.launcher.ui.ControllerNavigationActivity
+
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -8,7 +10,6 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -32,7 +33,18 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runInterruptible
 import kotlinx.coroutines.withContext
 
-class KristalRuntimeSettingsActivity : AppCompatActivity() {
+class KristalRuntimeSettingsActivity : ControllerNavigationActivity() {
+
+    override fun onDirectionalFocus(from: View, direction: Int): View? {
+        if (from.id != R.id.btnBack || direction != View.FOCUS_DOWN ||
+            !::recyclerView.isInitialized) return null
+        for (position in 0 until recyclerView.childCount) {
+            val action = recyclerView.getChildAt(position)
+                ?.findViewById<View>(R.id.btnRuntimeAction)
+            if (action?.isShown == true && action.isEnabled) return action
+        }
+        return findViewById(R.id.btnRefreshRuntimes)
+    }
 
     private lateinit var adapter: KristalRuntimeAdapter
     private lateinit var recyclerView: RecyclerView

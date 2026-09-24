@@ -1,5 +1,7 @@
 package kwz.love2d.launcher
 
+import kwz.love2d.launcher.ui.ControllerNavigationActivity
+
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -9,7 +11,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.OnBackPressedCallback
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -19,6 +20,7 @@ import kwz.love2d.launcher.util.FolderPermissionManager
 import kwz.love2d.launcher.util.LanguageManager
 import kwz.love2d.launcher.util.NavigationAnimations
 import kwz.love2d.launcher.util.ThemeManager
+import kwz.love2d.launcher.util.TvGameLibrary
 import kwz.love2d.launcher.util.showThemed
 import kwz.love2d.launcher.util.UpdateChecker
 import kwz.love2d.launcher.ui.UpdatePrompter
@@ -29,7 +31,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : ControllerNavigationActivity() {
 
     private lateinit var btnBack: ImageView
     private lateinit var btnLanguage: LinearLayout
@@ -144,7 +146,18 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         btnChangeFolder.setOnClickListener {
-            folderPickerLauncher.launch(null)
+            if (TvGameLibrary.isTelevision(this)) {
+                MaterialAlertDialogBuilder(this)
+                    .setTitle(R.string.tv_games_folder_button)
+                    .setMessage(getString(
+                        R.string.tv_games_folder_hint,
+                        TvGameLibrary.directory(this)?.absolutePath.orEmpty()
+                    ))
+                    .setPositiveButton(R.string.ok, null)
+                    .showThemed()
+            } else {
+                folderPickerLauncher.launch(null)
+            }
         }
 
         btnClearFolder.setOnClickListener {
@@ -205,6 +218,14 @@ class SettingsActivity : AppCompatActivity() {
 
     private fun updateFolderUI() {
         val uri = FolderPermissionManager.getSavedFolderUri(this)
+        btnClearFolder.visibility = if (uri != null && TvGameLibrary.isLibraryUri(this, uri)) {
+            android.view.View.GONE
+        } else {
+            android.view.View.VISIBLE
+        }
+        if (TvGameLibrary.isTelevision(this)) {
+            btnChangeFolder.setText(R.string.tv_games_folder_button)
+        }
         if (uri != null) {
             tvCurrentFolderPath.text = uri.path ?: uri.toString()
         } else {

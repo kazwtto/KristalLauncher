@@ -67,10 +67,18 @@ object PatchRepository {
         context: Context,
         gameProjectId: String?,
         catalog: List<CatalogPatch>
+    ): List<PatchDisplayItem> = gameDisplayItems(
+        gameProjectId,
+        installedDisplayItems(context),
+        catalogDisplayItems(context, catalog)
+    )
+
+    fun gameDisplayItems(
+        gameProjectId: String?,
+        installedItems: List<PatchDisplayItem>,
+        catalogItems: List<PatchDisplayItem>
     ): List<PatchDisplayItem> {
-        val installedItems = installedDisplayItems(context)
         val installedById = installedItems.associateBy(PatchDisplayItem::id)
-        val catalogItems = catalogDisplayItems(context, catalog)
         val catalogById = catalogItems.associateBy(PatchDisplayItem::id)
         val projectId = gameProjectId?.trim().orEmpty()
 

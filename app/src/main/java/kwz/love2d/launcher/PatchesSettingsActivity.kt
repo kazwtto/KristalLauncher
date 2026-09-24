@@ -1,5 +1,7 @@
 package kwz.love2d.launcher
 
+import kwz.love2d.launcher.ui.ControllerNavigationActivity
+
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
@@ -10,7 +12,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.OnBackPressedCallback
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -37,7 +38,15 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class PatchesSettingsActivity : AppCompatActivity() {
+class PatchesSettingsActivity : ControllerNavigationActivity() {
+
+    override fun onTabDirection(direction: Int): Boolean {
+        if (!::tabs.isInitialized) return false
+        val target = if (direction > 0) R.id.btnDiscoverTab else R.id.btnInstalledTab
+        if (tabs.checkedButtonId != target) tabs.check(target)
+        findViewById<View>(target).requestFocusFromTouch()
+        return true
+    }
 
     private lateinit var adapter: PatchAdapter
     private lateinit var recyclerView: RecyclerView

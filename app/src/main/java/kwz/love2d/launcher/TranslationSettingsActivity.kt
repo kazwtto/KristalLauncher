@@ -1,5 +1,7 @@
 package kwz.love2d.launcher
 
+import kwz.love2d.launcher.ui.ControllerNavigationActivity
+
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
@@ -9,7 +11,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
-import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputLayout
@@ -19,7 +20,7 @@ import kwz.love2d.launcher.util.TranslationManager
 import kwz.love2d.launcher.util.showThemed
 import java.util.Locale
 
-class TranslationSettingsActivity : AppCompatActivity() {
+class TranslationSettingsActivity : ControllerNavigationActivity() {
     private lateinit var projectId: String
     private lateinit var nameInput: EditText
     private lateinit var authorInput: EditText

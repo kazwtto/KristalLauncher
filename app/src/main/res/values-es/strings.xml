@@ -7,6 +7,8 @@
     <string name="select_folder_dialog_desc">Selecciona la carpeta donde guardas tus juegos (.love) para empezar a jugar.</string>
     <string name="no_games_found">No se encontraron juegos en la carpeta seleccionada.</string>
     <string name="select_folder_prompt">Toca el botón para seleccionar la carpeta de tus juegos.</string>
+    <string name="tv_games_folder_button">Carpeta de juegos</string>
+    <string name="tv_games_folder_hint">Copia juegos .love, .zip o .exe a %1$s y vuelve a cargar la biblioteca.</string>
     <string name="launch_game">Jugar</string>
     <string name="search_hint">Buscar juegos…</string>
     <string name="refresh_folder">Recargar Carpeta</string>
@@ -393,6 +395,9 @@
     <string name="kristal_mod_invalid_error">Este mod de Kristal no tiene un ID válido.</string>
     <string name="back">Volver</string>
     <string name="community_languages">Idiomas</string>
+    <string name="translation_experimental_info_action">Acerca de los idiomas experimentales</string>
+    <string name="translation_experimental_title">Función experimental</string>
+    <string name="translation_experimental_message">Los idiomas de la comunidad aún son experimentales. Es posible que una traducción no funcione correctamente con todos los juegos o versiones.</string>
     <string name="community_languages_summary">Elige una traducción de la comunidad para este juego o crea la tuya. Los archivos del motor nunca se incluyen.</string>
     <string name="translation_original_game">Idioma original</string>
     <string name="translation_create">Crear traducción</string>

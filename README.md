@@ -6,7 +6,7 @@
         <img src="https://raw.githubusercontent.com/kazwtto/KristalLauncher/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" width="96" alt="Kristal Launcher icon">
       </td>
       <td align="left">
-        <h1>Kristal Launcher</h1>
+        <img src="https://raw.githubusercontent.com/kazwtto/KristalLauncher/main/artwork/launcher_title.png" width="300" alt="Kristal Launcher">
         <p>Play Kristal Engine games and mods on Android device.</p>
       </td>
     </tr>
@@ -57,13 +57,15 @@ If Kristal Launcher is useful to you, you can support its continued development:
 - [DELTARUNE: Frozen Heart](https://gamejolt.com/games/frozen-heart/659908)
 - [DELTARUNE: Friendless](https://gamejolt.com/games/deltarunefriendless/1077489)
 - [DELTARUNE: Frostveil](https://gamejolt.com/games/deltarune_frostveil/1058015)
+- [DELTARUNE - Ralsei: Prince of Darkness](https://gamejolt.com/games/another-ralsei-bossfight/1038068)
+- [Sermon's Sang](https://gamejolt.com/games/goofyball/1056998)
   - Requires the Nil Arithmetic & Audio Sanitization patch.
 - [StarRune](https://gamejolt.com/games/starrune/716680)
   - Requires the RGBA16 Conversion patch.
 - [Godhome](https://gamebanana.com/mods/376524)
   - Requires the Shaders patch.
 - [UNDERTALE: Cooking with Kindness](https://gamejolt.com/games/cooking_with_kindness/900285)
-  - works but VERY SLOW. An optimization patch is under development.
+  - works but VERY SLOW. Requires Optimization Patch (experimental).
 
 ## Features
 

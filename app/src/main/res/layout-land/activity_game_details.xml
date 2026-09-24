@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gameDetailsRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.43"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp">
+
+            <FrameLayout
+                android:id="@+id/detailsHero"
+                android:layout_width="match_parent"
+                android:layout_height="116dp">
+
+                <ImageButton
+                    android:id="@+id/btnDetailsClose"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="top|start"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/game_details_close"
+                    android:padding="12dp"
+                    android:src="?attr/kristalIconArrowBack"
+                    app:tint="?attr/colorOnSurface" />
+
+                <ImageButton
+                    android:id="@+id/btnDetailsFavoriteTop"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="top|end"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/game_details_favorite"
+                    android:padding="12dp"
+                    android:src="?attr/kristalIconFavorite"
+                    app:tint="?attr/colorOnSurfaceVariant" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivDetailsIcon"
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_launcher" />
+            </FrameLayout>
+
+            <Space
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tvDetailsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxLines="2"
+                android:textAlignment="center"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Deltarune: Plugged Dream" />
+
+            <TextView
+                android:id="@+id/tvDetailsDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="3"
+                android:textAlignment="center"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textSize="13sp"
+                tools:text="Freedom. That's what you want, right?" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDetailsVersion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/bg_badge_demo"
+                    android:paddingHorizontal="7dp"
+                    android:paddingVertical="2dp"
+                    android:textColor="?attr/colorOnSecondaryContainer"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:backgroundTint="?attr/colorSecondaryContainer"
+                    tools:text="v1.3.0"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvDetailsEngine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/bg_badge_demo"
+                    android:paddingHorizontal="7dp"
+                    android:paddingVertical="2dp"
+                    android:textColor="?attr/colorOnTertiaryContainer"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:backgroundTint="?attr/colorTertiaryContainer"
+                    tools:text="Kristal v0.10.0-dev"
+                    tools:visibility="visible" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDetailsRuntime"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/game_runtime_choose"
+            android:visibility="gone"
+            app:cornerRadius="?attr/kristalCorner20"
+            app:icon="?attr/kristalIconSettings"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDetailsPlay"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="@string/launch_game"
+            android:text="@string/launch_game"
+            android:textSize="15sp"
+            app:cornerRadius="?attr/kristalCorner24"
+            app:icon="?attr/kristalIconPlay"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="?attr/colorOutline" />
+
+    <LinearLayout
+        android:id="@+id/detailsContent"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.57"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="12dp">
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/gameDetailsTabs"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/tabDetailsPatches"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/action_patches"
+                android:textColor="@color/segmented_button_text"
+                app:backgroundTint="@color/segmented_button_background"
+                app:cornerRadius="?attr/kristalCorner24"
+                app:strokeColor="@color/segmented_button_stroke" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/tabDetailsLanguages"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/community_languages"
+                android:textColor="@color/segmented_button_text"
+                app:backgroundTint="@color/segmented_button_background"
+                app:cornerRadius="?attr/kristalCorner24"
+                app:strokeColor="@color/segmented_button_stroke" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/detailsPatchesContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/game_patches_dialog_summary"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvDetailsPatchesEmpty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/patch_installed_empty"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvDetailsPatches"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:clipToPadding="false"
+                    android:paddingBottom="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/detailsLanguagesContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/community_languages_summary"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardOriginalLanguage"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:checkable="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/segmented_button_background"
+                    app:cardCornerRadius="?attr/kristalCorner16"
+                    app:cardElevation="0dp"
+                    app:checkedIcon="@null"
+                    app:strokeColor="@color/segmented_button_stroke"
+                    app:strokeWidth="1dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:duplicateParentState="true"
+                        android:gravity="center_vertical"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="48dp"
+                        android:text="@string/translation_original_game"
+                        android:textColor="@color/segmented_button_text"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/btnLanguagesExperimentalInfo"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="end|center_vertical"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/translation_experimental_info_action"
+                        android:padding="9dp"
+                        android:src="?attr/kristalIconWarning"
+                        app:tint="?attr/colorOnSurfaceVariant" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvDetailsLanguages"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:clipToPadding="false"
+                    android:paddingBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tvDetailsLanguagesStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingVertical="12dp"
+                    android:text="@string/translation_none_available"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+
+                <ProgressBar
+                    android:id="@+id/progressTranslationScan"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="8dp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnImportTranslation"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:text="@string/translation_import"
+                        app:icon="?attr/kristalIconImport"
+                        app:iconGravity="textStart" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCreateTranslation"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:text="@string/translation_create_short"
+                        app:icon="?attr/kristalIconAdd"
+                        app:iconGravity="textStart" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

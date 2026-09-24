@@ -3,9 +3,9 @@
   "id": "cooking-with-kindness.mobile-performance",
   "version": "0.4.1",
   "name": {
-    "pt-BR": "Otimização móvel e de batalhas para Cooking with Kindness",
-    "en": "Mobile and battle optimization for Cooking with Kindness",
-    "es": "Optimización móvil y de batallas para Cooking with Kindness"
+    "pt-BR": "Otimização para Cooking with Kindness",
+    "en": "Optimization for Cooking with Kindness",
+    "es": "Optimización para Cooking with Kindness"
   },
   "description": {
     "pt-BR": "Patch conservador para Cooking with Kindness DEMO v1.0.6. A 0.4.1 mantém as correções da 0.4.0 e corrige uma regressão de draw do fundo da Toriel; a 0.4.0 corrige gargalos estruturais da LightBattle, reduz drasticamente canvases da Battle UI e corrige crashes do tutorial da Toriel/ControlsDisplay no Android.",

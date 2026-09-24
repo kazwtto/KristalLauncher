@@ -27,6 +27,13 @@ object PatchCatalogService {
     private const val MAX_CACHE_AGE_MS = 7L * 24 * 60 * 60 * 1000
     private val checksumPattern = Regex("^[a-fA-F0-9]{64}$")
 
+    fun cachedPatches(context: Context): List<CatalogPatch> {
+        val cached = cacheFile(context)
+        val age = System.currentTimeMillis() - cached.lastModified()
+        if (!cached.isFile || age !in 0..MAX_CACHE_AGE_MS) return emptyList()
+        return runCatching { parseCatalog(cached.readText(Charsets.UTF_8)) }.getOrDefault(emptyList())
+    }
+
     fun fetch(context: Context): PatchCatalogResult {
         return try {
             val catalogJson = downloadCatalog()

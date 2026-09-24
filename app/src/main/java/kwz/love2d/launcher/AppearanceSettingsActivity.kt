@@ -1,5 +1,7 @@
 package kwz.love2d.launcher
 
+import kwz.love2d.launcher.ui.ControllerNavigationActivity
+
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
@@ -12,7 +14,6 @@ import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
-import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.color.MaterialColors
 import com.google.android.material.materialswitch.MaterialSwitch
@@ -21,7 +22,7 @@ import kwz.love2d.launcher.ui.DeltaruneSquareSwitch
 import kwz.love2d.launcher.util.NavigationAnimations
 import kwz.love2d.launcher.util.ThemeManager
 
-class AppearanceSettingsActivity : AppCompatActivity() {
+class AppearanceSettingsActivity : ControllerNavigationActivity() {
 
     private var applyingTheme = false
 

@@ -194,6 +194,7 @@ object GameLauncher {
         val patchesEnabled = PatchManager.hasAnyPatchEnabled(context, game.stableId)
         val translationPlan = TranslationManager.activePlan(context, game)
         val translationState = TranslationManager.stateFingerprint(context, game)
+        val launcherDetectionState = LauncherDetectionBridge.fingerprint()
         val appUpdateTime = context.packageManager.getPackageInfo(context.packageName, 0).lastUpdateTime
         val sourceFingerprint = if (metadata.lastModified > 0L && metadata.size >= 0L) {
             sha256("${resolvedUri}|${metadata.size}|${metadata.lastModified}|${game.archiveEntryPath.orEmpty()}")
@@ -206,43 +207,62 @@ object GameLauncher {
             "${it.tag}|${it.file.length()}|${it.file.lastModified()}"
         }.orEmpty()
         val baseKey = sha256("$sourceFingerprint|$appUpdateTime|${game.packageType}|$runtimeFingerprint")
-        val cacheKey = sha256("$baseKey|$patchState|$translationState")
+        val cacheKey = sha256("$baseKey|$patchState|$translationState|$launcherDetectionState")
         val stagedDirectory = File(context.filesDir, "staged").apply { mkdirs() }
         val baseFile = File(stagedDirectory, "base_$baseKey.love")
         val stagedFile = File(stagedDirectory, "game_$cacheKey.love")
 
-        val transformationsEnabled = patchesEnabled || translationPlan != null
-        val activeFile = if (transformationsEnabled) stagedFile else baseFile
-        if (isReusableStagedPackage(activeFile)) {
-            trimStagedCopies(stagedDirectory, activeFile, baseFile)
-            return activeFile
+        if (isReusableStagedPackage(stagedFile)) {
+            trimStagedCopies(stagedDirectory, stagedFile, baseFile)
+            return stagedFile
         }
 
         ensureBaseGame(context, resolvedUri, game, kristalRuntime, baseFile)
-        if (!transformationsEnabled) {
-            trimStagedCopies(stagedDirectory, baseFile, baseFile)
-            return baseFile
-        }
 
         stagedFile.delete()
         val temporaryFile = File(stagedDirectory, "${stagedFile.name}.building")
+        val patchedFile = File(stagedDirectory, "${stagedFile.name}.patched.building")
         temporaryFile.delete()
+        patchedFile.delete()
         try {
-            when (
-                val result = PatchManager.writePatchedGame(
-                    context,
-                    baseFile,
-                    temporaryFile,
-                    game.stableId,
-                    translationPlan
-                )
-            ) {
-                is PatchApplicationResult.Success -> Unit
-                is PatchApplicationResult.Failure -> throw IllegalArgumentException(result.reason, result.cause)
+            val transformationsEnabled = patchesEnabled || translationPlan != null
+            var bridgeSource = baseFile
+            var appliedPatchIds = emptyList<String>()
+            if (transformationsEnabled) {
+                when (
+                    val result = PatchManager.writePatchedGame(
+                        context,
+                        baseFile,
+                        patchedFile,
+                        game.stableId,
+                        translationPlan
+                    )
+                ) {
+                    is PatchApplicationResult.Success -> {
+                        appliedPatchIds = result.appliedPatchIds
+                        bridgeSource = patchedFile.takeIf(File::isFile) ?: baseFile
+                    }
+                    is PatchApplicationResult.Failure -> throw IllegalArgumentException(result.reason, result.cause)
+                }
             }
-            check(temporaryFile.renameTo(stagedFile)) { "Could not publish the patched game" }
+            LauncherDetectionBridge.writeInstrumentedGame(
+                sourceFile = bridgeSource,
+                outputFile = temporaryFile,
+                environment = LauncherEnvironmentInfo(
+                    packageType = if (game.isKristalMod) "mod" else "executable",
+                    isKristalMod = game.isKristalMod,
+                    gameVersion = game.version,
+                    engineVersion = game.engineVer,
+                    runtimeTag = kristalRuntime?.tag,
+                    runtimeVersion = kristalRuntime?.version,
+                    activePatchIds = appliedPatchIds,
+                    translationLanguage = translationPlan?.targetLanguage
+                )
+            )
+            check(temporaryFile.renameTo(stagedFile)) { "Could not publish the staged game" }
         } finally {
             temporaryFile.delete()
+            patchedFile.delete()
         }
         trimStagedCopies(stagedDirectory, stagedFile, baseFile)
         return stagedFile

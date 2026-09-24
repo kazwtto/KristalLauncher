@@ -1,5 +1,7 @@
 package kwz.love2d.launcher
 
+import kwz.love2d.launcher.ui.ControllerNavigationActivity
+
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -11,7 +13,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,7 +24,7 @@ import kwz.love2d.launcher.util.NavigationAnimations
 import kwz.love2d.launcher.util.ThemeManager
 import kwz.love2d.launcher.util.TranslationManager
 
-class TranslationEditorActivity : AppCompatActivity() {
+class TranslationEditorActivity : ControllerNavigationActivity() {
     private lateinit var projectId: String
     private lateinit var adapter: TranslationEntryAdapter
     private lateinit var progress: TextView

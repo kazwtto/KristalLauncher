@@ -13,8 +13,9 @@ object FolderPermissionManager {
     fun getSavedFolderUri(context: Context): Uri? {
         val value = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
             .getString(KEY_FOLDER_URI, null)
-            ?: return null
+            ?: return TvGameLibrary.defaultFolderUri(context)
         return runCatching { Uri.parse(value) }.getOrNull()
+            ?: TvGameLibrary.defaultFolderUri(context)
     }
 
     @Throws(SecurityException::class)
@@ -25,13 +26,13 @@ object FolderPermissionManager {
             .edit()
             .putString(KEY_FOLDER_URI, uri.toString())
             .apply()
-        if (previous != null && previous != uri) {
+        if (previous != null && previous != uri && previous.scheme == "content") {
             release(context, previous)
         }
     }
 
     fun clearFolder(context: Context) {
-        getSavedFolderUri(context)?.let { release(context, it) }
+        getSavedFolderUri(context)?.takeIf { it.scheme == "content" }?.let { release(context, it) }
         context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
             .edit()
             .remove(KEY_FOLDER_URI)

@@ -1,18 +1,19 @@
 package kwz.love2d.launcher
 
+import kwz.love2d.launcher.ui.ControllerNavigationActivity
+
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
-import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputLayout
 import kwz.love2d.launcher.util.NavigationAnimations
 import kwz.love2d.launcher.util.ThemeManager
 import kwz.love2d.launcher.util.TranslationManager
 
-class TranslationEntryActivity : AppCompatActivity() {
+class TranslationEntryActivity : ControllerNavigationActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         ThemeManager.applyActivityTheme(this)
         super.onCreate(savedInstanceState)
