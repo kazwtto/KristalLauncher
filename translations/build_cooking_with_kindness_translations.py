@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-"""Build Cooking with Kindness text-only community translations."""
+"""Build Cooking with Kindness community translations from text and JSON sources."""
 
 from __future__ import annotations
 
 import argparse
 import json
-import shutil
 import zipfile
 from pathlib import Path
 
@@ -16,6 +15,8 @@ from build_text_packages import (
     relative_script_path,
     sha256,
 )
+from prepare_cooking_json_payloads import prepare as prepare_json_payloads
+from repack_translation_packages import rebuild
 
 
 PROJECT = {
@@ -68,7 +69,7 @@ def manifest_for(language: dict, texts_hash: str) -> dict:
     return {
         "schemaVersion": 1,
         "id": language["package_id"],
-        "version": "1.0.0",
+        "version": "1.0.1",
         "name": language["name"],
         "description": language["description"],
         "author": language["author"],
@@ -76,46 +77,10 @@ def manifest_for(language: dict, texts_hash: str) -> dict:
         "gameVersion": PROJECT["game_version"],
         "sourceLanguage": "en",
         "targetLanguage": language["target"],
-        "minimumLauncherVersion": "0.17.48",
+        "minimumLauncherVersion": "0.17.49",
         "textsFile": "texts.json",
         "textsSha256": texts_hash,
     }
-
-
-def validate_package(package_path: Path, archive: Path) -> None:
-    with zipfile.ZipFile(package_path) as package:
-        names = [entry.filename for entry in package.infolist() if not entry.is_dir()]
-        if names != ["translation.json", "texts.json"]:
-            raise RuntimeError(f"Unexpected package entries: {names}")
-        manifest = json.loads(package.read("translation.json"))
-        texts_bytes = package.read("texts.json")
-        if sha256(texts_bytes) != manifest["textsSha256"]:
-            raise RuntimeError(f"{package_path.name}: text checksum mismatch")
-        replacements = json.loads(texts_bytes)
-
-    with zipfile.ZipFile(archive) as game:
-        raw_by_name = {
-            entry.filename: game.read(entry)
-            for entry in game.infolist()
-            if not entry.is_dir()
-        }
-
-    grouped: dict[str, list[dict]] = {}
-    for item in replacements.values():
-        grouped.setdefault(item["file"], []).append(item)
-    for relative, items in grouped.items():
-        archive_name = f"{PROJECT['mod_root']}/{relative}"
-        raw = raw_by_name.get(archive_name)
-        if raw is None or any(sha256(raw) != item["fileHash"] for item in items):
-            raise RuntimeError(f"{package_path.name}: source hash mismatch for {archive_name}")
-        source = raw.decode("utf-8")
-        ordered = sorted(items, key=lambda item: item["startOffset"])
-        for left, right in zip(ordered, ordered[1:]):
-            if right["startOffset"] < left["endOffset"]:
-                raise RuntimeError(f"{package_path.name}: overlapping replacements in {relative}")
-        for item in ordered:
-            if source[item["startOffset"] : item["endOffset"]] != item["originalExpression"]:
-                raise RuntimeError(f"{package_path.name}: source range mismatch in {relative}")
 
 
 def build_language(
@@ -129,7 +94,7 @@ def build_language(
     entries: list,
     raw_by_name: dict[str, bytes],
     expected_ids: set[str],
-) -> dict:
+) -> str:
     dialogue_path = source_root / language["dialogue_file"]
     dialogues = json.loads(dialogue_path.read_text("utf-8-sig"))
     if set(dialogues) != expected_ids:
@@ -182,26 +147,15 @@ def build_language(
         raise RuntimeError(f"{dialogue_path.name}: {len(missing)} entries do not map to game scripts")
 
     source_dir = repo / "translations" / "sources" / language["slug"]
-    if source_dir.exists():
-        shutil.rmtree(source_dir)
-    source_dir.mkdir(parents=True)
+    source_dir.mkdir(parents=True, exist_ok=True)
     texts_bytes = (json.dumps(output, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
     manifest = manifest_for(language, sha256(texts_bytes))
     manifest_bytes = (json.dumps(manifest, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
     (source_dir / "texts.json").write_bytes(texts_bytes)
     (source_dir / "translation.json").write_bytes(manifest_bytes)
 
-    package_path = repo / "translations" / "packages" / f"{language['slug']}-1.0.0.kllang"
-    with zipfile.ZipFile(package_path, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as package:
-        package.writestr("translation.json", manifest_bytes)
-        package.writestr("texts.json", texts_bytes)
-    validate_package(package_path, source_root / PROJECT["archive"])
-
-    catalog_entry = dict(manifest)
-    catalog_entry["package"] = f"packages/{package_path.name}"
-    catalog_entry["sha256"] = sha256(package_path.read_bytes())
     print(f"{language['target']}: {len(output)} validated replacements")
-    return catalog_entry
+    return language["slug"]
 
 
 def update_catalog(path: Path, entries: list[dict]) -> None:
@@ -242,7 +196,7 @@ def main() -> int:
             if not entry.is_dir()
         }
 
-    catalog_entries = [
+    source_slugs = [
         build_language(
             tool,
             language,
@@ -256,6 +210,11 @@ def main() -> int:
             expected_ids,
         )
         for language in LANGUAGES
+    ]
+    prepare_json_payloads(archive, repo)
+    catalog_entries = [
+        rebuild(repo / "translations" / "sources" / slug, repo / "translations" / "packages")
+        for slug in source_slugs
     ]
     update_catalog(repo / "translations" / "catalog.json", catalog_entries)
     update_catalog(repo / "app" / "src" / "main" / "assets" / "community_translation_catalog.json", catalog_entries)

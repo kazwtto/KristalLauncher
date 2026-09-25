@@ -11,8 +11,8 @@ android {
         applicationId = "kwz.love2d.launcher"
         minSdk = 24
         targetSdk = 34
-        versionCode = 65
-        versionName = "0.17.48"
+        versionCode = 66
+        versionName = "0.17.49"
 
         buildConfigField("String", "GITHUB_REPOSITORY_URL", "\"https://github.com/kazwtto/KristalLauncher\"")
         buildConfigField("String", "GITHUB_API_URL", "\"https://api.github.com/repos/kazwtto/KristalLauncher\"")

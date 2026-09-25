@@ -45,11 +45,12 @@ object CommunityTranslationManifestParser {
                 val item = filesArray.getJSONObject(index)
                 val source = item.requiredString("source")
                 val target = item.requiredString("target")
+                val scope = item.optString("scope", "game")
                 require(PatchManifestParser.isSafeArchivePath(source) && source.startsWith("payload/")) {
                     "Invalid translation payload path"
                 }
-                require(isSafeGameTarget(target)) { "Translation target is outside game scripts: $target" }
-                require(targets.add(target.lowercase())) { "Duplicate translation target: $target" }
+                require(isSafeGameTarget(target, scope)) { "Translation target is outside game data: $target" }
+                require(targets.add("$scope:${target.lowercase()}")) { "Duplicate translation target: $target" }
                 val sourceSha256 = item.requiredString("sourceSha256")
                 val translatedSha256 = item.requiredString("translatedSha256")
                 require(IdentifierPolicy.isSha256(sourceSha256) && IdentifierPolicy.isSha256(translatedSha256)) {
@@ -60,7 +61,8 @@ object CommunityTranslationManifestParser {
                         source = source,
                         target = target,
                         sourceSha256 = sourceSha256.lowercase(),
-                        translatedSha256 = translatedSha256.lowercase()
+                        translatedSha256 = translatedSha256.lowercase(),
+                        scope = scope
                     )
                 )
             }
@@ -105,10 +107,16 @@ object CommunityTranslationManifestParser {
         return LocalizedText(values)
     }
 
-    private fun isSafeGameTarget(path: String): Boolean {
+    private fun isSafeGameTarget(path: String, scope: String): Boolean {
         if (!PatchManifestParser.isSafeArchivePath(path)) return false
         val normalized = path.replace('\\', '/').trimStart('/').lowercase()
-        return normalized.startsWith("scripts/") && normalized.endsWith(".lua")
+        return when (scope) {
+            "game" -> (normalized.startsWith("scripts/") &&
+                (normalized.endsWith(".lua") || normalized.endsWith(".json"))) ||
+                (normalized.startsWith("data/") && normalized.endsWith(".json"))
+            "package" -> normalized == "dialoguedump.json" || normalized == "data/i18n.json"
+            else -> false
+        }
     }
 
     private fun JSONObject.requiredString(name: String): String =

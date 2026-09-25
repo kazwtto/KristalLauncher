@@ -480,7 +480,7 @@
     {
       "schemaVersion": 1,
       "id": "cooking-with-kindness.pt-br",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "name": {
         "pt-BR": "Cooking with Kindness em Português (Brasil)",
         "en": "Cooking with Kindness in Brazilian Portuguese",
@@ -496,16 +496,32 @@
       "gameVersion": "DEMO v1.0.6",
       "sourceLanguage": "en",
       "targetLanguage": "pt-BR",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.49",
       "textsFile": "texts.json",
       "textsSha256": "73790cdd05c88fef22f431397f1739224017dc614464f9432815bba7d453c82a",
-      "package": "packages/cooking-with-kindness-ptbr-1.0.0.kllang",
-      "sha256": "9a6049f97b553999eb391e4a603bd80bee9494257761419fae5d456f076e6aea"
+      "files": [
+        {
+          "source": "payload/dialoguedump.json",
+          "target": "dialoguedump.json",
+          "scope": "package",
+          "sourceSha256": "0e1ee6da73c781b01b3f8b0b83dd6e5c1f7ec124863ba981865bd649fdf603b9",
+          "translatedSha256": "1841b3b7937d052225b4b6594cc4594baabf3f9ff954f3b488ecb8563f16dfbe"
+        },
+        {
+          "source": "payload/data/i18n.json",
+          "target": "data/i18n.json",
+          "scope": "package",
+          "sourceSha256": "ba9a10ac66f72adbbfb12e6b2be601beb852b5f2fb4379e6730a3a934e4d8972",
+          "translatedSha256": "bc8529d8682ffa7f318fb909f56b0ad1471b3808c3e078cd6880010291650b34"
+        }
+      ],
+      "package": "packages/cooking-with-kindness-ptbr-1.0.1.kllang",
+      "sha256": "245218a48c7eb7ba4981895fb99173519dd736e1ffb10aa783256e11a99c885d"
     },
     {
       "schemaVersion": 1,
       "id": "cooking-with-kindness.es",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "name": {
         "pt-BR": "Cooking with Kindness em Espanhol",
         "en": "Cooking with Kindness in Spanish",
@@ -521,11 +537,27 @@
       "gameVersion": "DEMO v1.0.6",
       "sourceLanguage": "en",
       "targetLanguage": "es",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.49",
       "textsFile": "texts.json",
       "textsSha256": "5b700fe3d097c3fb403bb352432b0c3d393c555b4a4d2601c427c795f893829b",
-      "package": "packages/cooking-with-kindness-es-1.0.0.kllang",
-      "sha256": "2eee6f829ac00ce2d396226b0f8d705ded920ae0eb2f7e87f8712250c4605c87"
+      "files": [
+        {
+          "source": "payload/dialoguedump.json",
+          "target": "dialoguedump.json",
+          "scope": "package",
+          "sourceSha256": "0e1ee6da73c781b01b3f8b0b83dd6e5c1f7ec124863ba981865bd649fdf603b9",
+          "translatedSha256": "ed2789baa5fb96aced51192765a529832b1250c9586f77731efb9f7e8a606c8f"
+        },
+        {
+          "source": "payload/data/i18n.json",
+          "target": "data/i18n.json",
+          "scope": "package",
+          "sourceSha256": "ba9a10ac66f72adbbfb12e6b2be601beb852b5f2fb4379e6730a3a934e4d8972",
+          "translatedSha256": "786c8aa21d0fb9f5dd5846f91a37b2be932bdf451a3b428c3d91aba1797d1496"
+        }
+      ],
+      "package": "packages/cooking-with-kindness-es-1.0.1.kllang",
+      "sha256": "10a512dc8163c083587f0c5212cb9308f3ff6767dff375e0dcf31e9733a81382"
     }
   ]
 }

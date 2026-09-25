@@ -210,6 +210,7 @@ object PatchManager {
         val existingEntries = mutableSetOf<String>()
         val externalTargetDigests = mutableMapOf<String, String>()
         val appliedTranslationFiles = mutableSetOf<String>()
+        val appliedTranslationTexts = mutableSetOf<String>()
         var hasMainLua = false
         var textPatchChanged = false
         var entryCount = 0
@@ -251,6 +252,7 @@ object PatchManager {
                         }
                         if (translationReplacements.isNotEmpty()) {
                             bytes = TranslationManager.applyToLua(bytes, translationReplacements)
+                            appliedTranslationTexts += normalizedName
                         }
                         if (normalizedName == "main.lua") {
                             // Kristal compiles its built-in shaders while main.lua loads
@@ -298,6 +300,10 @@ object PatchManager {
                 val missingTranslationFiles = translationPlan?.filesByPath.orEmpty().keys - appliedTranslationFiles
                 require(missingTranslationFiles.isEmpty()) {
                     "Translation targets are missing from this game: ${missingTranslationFiles.first()}"
+                }
+                val missingTranslationTexts = translationPlan?.replacementsByPath.orEmpty().keys - appliedTranslationTexts
+                require(missingTranslationTexts.isEmpty()) {
+                    "Translation text targets are missing from this game: ${missingTranslationTexts.first()}"
                 }
 
                 if (builtInFlags.hasRuntimePatches) {

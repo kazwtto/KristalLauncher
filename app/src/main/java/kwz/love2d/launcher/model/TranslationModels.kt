@@ -71,7 +71,8 @@ data class CommunityTranslationFile(
     val source: String,
     val target: String,
     val sourceSha256: String,
-    val translatedSha256: String
+    val translatedSha256: String,
+    val scope: String = "game"
 )
 
 data class CommunityTranslationManifest(

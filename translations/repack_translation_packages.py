@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild selected text-only translation packages and synchronize catalogs."""
+"""Rebuild selected translation packages and synchronize catalogs."""
 
 from __future__ import annotations
 
@@ -22,6 +22,13 @@ def save_json(path: Path, value: dict) -> None:
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", "utf-8")
 
 
+def write_package_file(package: zipfile.ZipFile, name: str, content: bytes) -> None:
+    entry = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
+    entry.compress_type = zipfile.ZIP_DEFLATED
+    entry.external_attr = 0o644 << 16
+    package.writestr(entry, content, compress_type=zipfile.ZIP_DEFLATED, compresslevel=9)
+
+
 def rebuild(source_dir: Path, packages_dir: Path) -> dict:
     manifest_path = source_dir / "translation.json"
     texts_path = source_dir / "texts.json"
@@ -36,18 +43,30 @@ def rebuild(source_dir: Path, packages_dir: Path) -> dict:
     package_name = f"{source_dir.name}-{manifest['version']}.kllang"
     package_path = packages_dir / package_name
     manifest_bytes = manifest_path.read_bytes()
+    payloads = []
+    for item in manifest.get("files", []):
+        source = item["source"]
+        payload_path = source_dir / source
+        if not payload_path.is_file() or sha256(payload_path.read_bytes()) != item["translatedSha256"]:
+            raise RuntimeError(f"{source_dir.name}: invalid payload {source}")
+        payloads.append((source, payload_path.read_bytes()))
     with zipfile.ZipFile(package_path, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as package:
-        package.writestr("translation.json", manifest_bytes)
-        package.writestr("texts.json", texts_bytes)
+        write_package_file(package, "translation.json", manifest_bytes)
+        write_package_file(package, "texts.json", texts_bytes)
+        for source, payload in payloads:
+            write_package_file(package, source, payload)
 
     with zipfile.ZipFile(package_path) as package:
         names = [entry.filename for entry in package.infolist() if not entry.is_dir()]
-        if names != ["translation.json", "texts.json"]:
+        if names != ["translation.json", "texts.json", *(source for source, _ in payloads)]:
             raise RuntimeError(f"{package_name}: unexpected entries {names}")
         packaged_manifest = json.loads(package.read("translation.json"))
         packaged_texts = package.read("texts.json")
         if sha256(packaged_texts) != packaged_manifest["textsSha256"]:
             raise RuntimeError(f"{package_name}: packaged text checksum mismatch")
+        for item in packaged_manifest.get("files", []):
+            if sha256(package.read(item["source"])) != item["translatedSha256"]:
+                raise RuntimeError(f"{package_name}: packaged file checksum mismatch")
 
     catalog_entry = dict(manifest)
     catalog_entry["package"] = f"packages/{package_name}"

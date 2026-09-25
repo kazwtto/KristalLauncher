@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "cooking-with-kindness.pt-br",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": {
     "pt-BR": "Cooking with Kindness em Português (Brasil)",
     "en": "Cooking with Kindness in Brazilian Portuguese",
@@ -17,7 +17,23 @@
   "gameVersion": "DEMO v1.0.6",
   "sourceLanguage": "en",
   "targetLanguage": "pt-BR",
-  "minimumLauncherVersion": "0.17.48",
+  "minimumLauncherVersion": "0.17.49",
   "textsFile": "texts.json",
-  "textsSha256": "73790cdd05c88fef22f431397f1739224017dc614464f9432815bba7d453c82a"
+  "textsSha256": "73790cdd05c88fef22f431397f1739224017dc614464f9432815bba7d453c82a",
+  "files": [
+    {
+      "source": "payload/dialoguedump.json",
+      "target": "dialoguedump.json",
+      "scope": "package",
+      "sourceSha256": "0e1ee6da73c781b01b3f8b0b83dd6e5c1f7ec124863ba981865bd649fdf603b9",
+      "translatedSha256": "1841b3b7937d052225b4b6594cc4594baabf3f9ff954f3b488ecb8563f16dfbe"
+    },
+    {
+      "source": "payload/data/i18n.json",
+      "target": "data/i18n.json",
+      "scope": "package",
+      "sourceSha256": "ba9a10ac66f72adbbfb12e6b2be601beb852b5f2fb4379e6730a3a934e4d8972",
+      "translatedSha256": "bc8529d8682ffa7f318fb909f56b0ad1471b3808c3e078cd6880010291650b34"
+    }
+  ]
 }

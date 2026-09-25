@@ -264,45 +264,7 @@ object TranslationManager {
             IdentifierPolicy.requireTranslationId(installed.manifest.id)
             IdentifierPolicy.requirePackageVersion(installed.manifest.version, "Translation version")
             val targetRoot = translationTargetRoot(game) ?: return null
-            installed.manifest.textsFile?.let { relativePath ->
-                val textFile = CommunityTranslationStorage.safeChild(installed.directory, relativePath)
-                val relativeReplacements = CommunityTranslationTextParser.parse(
-                    textFile.readText(Charsets.UTF_8)
-                )
-                val replacements = relativeReplacements.mapKeys { (relative, _) ->
-                    listOf(targetRoot.trim('/'), relative.trim('/'))
-                        .filter(String::isNotBlank)
-                        .joinToString("/")
-                        .lowercase(Locale.ROOT)
-                        .also { require(PatchManifestParser.isSafeArchivePath(it)) }
-                }
-                return TranslationPlan(
-                    projectId = installed.manifest.id,
-                    targetLanguage = installed.manifest.targetLanguage,
-                    sourceFingerprint = installed.sha256,
-                    replacementsByPath = replacements
-                )
-            }
-            val files = installed.manifest.files.associate { entry ->
-                val target = listOf(targetRoot.trim('/'), entry.target.trim('/'))
-                    .filter(String::isNotBlank)
-                    .joinToString("/")
-                    .lowercase(Locale.ROOT)
-                require(PatchManifestParser.isSafeArchivePath(target)) {
-                    "Translation target path is unsafe"
-                }
-                target to TranslationFileReplacement(
-                    sourceSha256 = entry.sourceSha256,
-                    translatedSha256 = entry.translatedSha256,
-                    file = CommunityTranslationStorage.safeChild(installed.directory, entry.source)
-                )
-            }
-            return TranslationPlan(
-                projectId = installed.manifest.id,
-                targetLanguage = installed.manifest.targetLanguage,
-                sourceFingerprint = installed.sha256,
-                filesByPath = files
-            )
+            return communityPlan(installed, targetRoot)
         }
 
         val projectId = selectedProjectId(context, game.stableId) ?: return null
@@ -345,6 +307,47 @@ object TranslationManager {
             }
         if (replacements.isEmpty()) return null
         return TranslationPlan(project.id, project.targetLanguage, project.sourceFingerprint, replacements)
+    }
+
+    internal fun communityPlan(installed: InstalledCommunityTranslation, targetRoot: String): TranslationPlan {
+        val replacements = installed.manifest.textsFile?.let { relativePath ->
+            val textFile = CommunityTranslationStorage.safeChild(installed.directory, relativePath)
+            CommunityTranslationTextParser.parse(textFile.readText(Charsets.UTF_8)).mapKeys { (relative, _) ->
+                listOf(targetRoot.trim('/'), relative.trim('/'))
+                    .filter(String::isNotBlank)
+                    .joinToString("/")
+                    .lowercase(Locale.ROOT)
+                    .also { require(PatchManifestParser.isSafeArchivePath(it)) }
+            }
+        }.orEmpty()
+        val files = installed.manifest.files.associate { entry ->
+            val target = listOf(
+                targetRoot.trim('/').takeIf { entry.scope == "game" }.orEmpty(),
+                entry.target.trim('/')
+            )
+                .filter(String::isNotBlank)
+                .joinToString("/")
+                .lowercase(Locale.ROOT)
+            require(PatchManifestParser.isSafeArchivePath(target)) {
+                "Translation target path is unsafe"
+            }
+            target to TranslationFileReplacement(
+                sourceSha256 = entry.sourceSha256,
+                translatedSha256 = entry.translatedSha256,
+                file = CommunityTranslationStorage.safeChild(installed.directory, entry.source)
+            )
+        }
+        require(files.size == installed.manifest.files.size) { "Duplicate translation file target" }
+        require(files.keys.intersect(replacements.keys).isEmpty()) {
+            "Translation replaces and edits the same game file"
+        }
+        return TranslationPlan(
+            projectId = installed.manifest.id,
+            targetLanguage = installed.manifest.targetLanguage,
+            sourceFingerprint = installed.sha256,
+            replacementsByPath = replacements,
+            filesByPath = files
+        )
     }
 
     private fun selectedCommunityTranslation(
