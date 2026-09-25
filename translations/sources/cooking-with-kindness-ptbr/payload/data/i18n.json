@@ -6150,10 +6150,10 @@
     "english": "* Esvazie os bolsos e depois conversamos."
   },
   "worldcutscene-laundermat-text-trenchcoat-18": {
-    "english": "* Ah,[wait:5] você já fez \".. gooddeeds ..\" boa ação pela Praça.[wait:10] Perfeito."
+    "english": "* Ah,[wait:5] você já fez \\\".. gooddeeds ..\\\" boa ação pela Praça.[wait:10] Perfeito."
   },
   "worldcutscene-laundermat-text-trenchcoat-19": {
-    "english": "* Ah,[wait:5] você já fez \".. gooddeeds ..\" boas ações pela Praça.[wait:10] Perfeito."
+    "english": "* Ah,[wait:5] você já fez \\\".. gooddeeds ..\\\" boas ações pela Praça.[wait:10] Perfeito."
   },
   "worldcutscene-laundermat-text-trenchcoat-20": {
     "english": "* Dê uma olhada e escolha o que chamar sua atenção,[wait:5] heh heh heh."
@@ -6198,10 +6198,10 @@
     "english": "* Esvazie os bolsos e depois conversamos."
   },
   "worldcutscene-laundermat-text-trenchcoat-34": {
-    "english": "* Ah,[wait:5] você fez \".. gooddeeds ..\" boa ação.[wait:10] Nada melhor que ver gente ajudando gente."
+    "english": "* Ah,[wait:5] você fez \\\".. gooddeeds ..\\\" boa ação.[wait:10] Nada melhor que ver gente ajudando gente."
   },
   "worldcutscene-laundermat-text-trenchcoat-35": {
-    "english": "* Ah,[wait:5] você fez \".. gooddeeds ..\" boas ações.[wait:10] Nada melhor que ver gente ajudando gente."
+    "english": "* Ah,[wait:5] você fez \\\".. gooddeeds ..\\\" boas ações.[wait:10] Nada melhor que ver gente ajudando gente."
   },
   "worldcutscene-laundermat-text-trenchcoat-36": {
     "english": "* Dê uma olhada e escolha o que chamar sua atenção,[wait:5] heh heh heh."
@@ -11478,7 +11478,7 @@
     "english": "ARTISTA PRINCIPAL\\nNikazio\\n\\nSPRITES\\nNikazio   LightMoonCream    Radiaction\\nSnrona      Wolfkitty42     Sockhead\\nMose    Celcel512     Shadow of Roserade"
   },
   "worldcutscene-general-standaloneText-eviltext-6": {
-    "english": "COMPOSITOR PRINCIPAL\\nHayden \"Mose\" Danneman\\n\\nMÚSICA\\nCZenith          Mose\\nMatMan    Pastalight\\nCOM AJUDA DE\\nCody B."
+    "english": "COMPOSITOR PRINCIPAL\\nHayden \\\"Mose\\\" Danneman\\n\\nMÚSICA\\nCZenith          Mose\\nMatMan    Pastalight\\nCOM AJUDA DE\\nCody B."
   },
   "worldcutscene-general-standaloneText-eviltext-7": {
     "english": "ROTEIRISTAS\\nShadow of Roserade  \\nSnrona         MatMan\\n\\nVOZ DE MAWZZ\\nMatMan\\n"

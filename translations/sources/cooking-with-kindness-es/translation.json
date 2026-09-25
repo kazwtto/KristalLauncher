@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "cooking-with-kindness.es",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": {
     "pt-BR": "Cooking with Kindness em Espanhol",
     "en": "Cooking with Kindness in Spanish",
@@ -26,14 +26,14 @@
       "target": "dialoguedump.json",
       "scope": "package",
       "sourceSha256": "0e1ee6da73c781b01b3f8b0b83dd6e5c1f7ec124863ba981865bd649fdf603b9",
-      "translatedSha256": "ed2789baa5fb96aced51192765a529832b1250c9586f77731efb9f7e8a606c8f"
+      "translatedSha256": "c27f07d58f694b411b4bcdfcae10b0b8b5a592e15ddae0decf2011cb53c47f20"
     },
     {
       "source": "payload/data/i18n.json",
       "target": "data/i18n.json",
       "scope": "package",
       "sourceSha256": "ba9a10ac66f72adbbfb12e6b2be601beb852b5f2fb4379e6730a3a934e4d8972",
-      "translatedSha256": "786c8aa21d0fb9f5dd5846f91a37b2be932bdf451a3b428c3d91aba1797d1496"
+      "translatedSha256": "0daf8af57370e075f2ab3134c64ecabc70fc8ea7f834512fa77345c7585e4ab5"
     }
   ]
 }

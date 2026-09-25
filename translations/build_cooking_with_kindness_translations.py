@@ -69,7 +69,7 @@ def manifest_for(language: dict, texts_hash: str) -> dict:
     return {
         "schemaVersion": 1,
         "id": language["package_id"],
-        "version": "1.0.1",
+        "version": "1.0.2",
         "name": language["name"],
         "description": language["description"],
         "author": language["author"],

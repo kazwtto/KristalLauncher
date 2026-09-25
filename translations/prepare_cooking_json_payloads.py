@@ -12,12 +12,24 @@ from pathlib import Path
 
 FILES = ("dialoguedump.json", "data/i18n.json")
 LANGUAGES = (("cooking-with-kindness-ptbr", "ptbr"), ("cooking-with-kindness-es", "es"))
-VERSION = "1.0.1"
+VERSION = "1.0.2"
 MINIMUM_LAUNCHER_VERSION = "0.17.49"
 
 
 def sha256(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
+
+
+def escape_lua_string_quotes(value: str) -> str:
+    """The game's _s() compiles normal dialogue inside a Lua quoted string."""
+    escaped = []
+    preceding_backslashes = 0
+    for char in value:
+        if char == '"' and preceding_backslashes % 2 == 0:
+            escaped.append("\\")
+        escaped.append(char)
+        preceding_backslashes = preceding_backslashes + 1 if char == "\\" else 0
+    return "".join(escaped)
 
 
 def prepare(game_path: Path, repo: Path) -> None:
@@ -48,6 +60,8 @@ def prepare(game_path: Path, repo: Path) -> None:
                 if translation is not None and not isinstance(translation, str):
                     raise ValueError(f"{source_path}: invalid translation at {key}")
                 effective = translation if translation and translation.strip() else item["english"]
+                if effective != item["english"] and "Ⓥ" not in item["english"]:
+                    effective = escape_lua_string_quotes(effective)
                 translated_count += effective != item["english"]
                 payload[key] = {**item, "english": effective}
 

@@ -6150,10 +6150,10 @@
     "english": "* Vacía los bolsillos y entonces hablamos."
   },
   "worldcutscene-laundermat-text-trenchcoat-18": {
-    "english": "* Ah,[wait:5] ya has hecho \".. gooddeeds ..\" buena acción por la Plaza.[wait:10] Perfecto."
+    "english": "* Ah,[wait:5] ya has hecho \\\".. gooddeeds ..\\\" buena acción por la Plaza.[wait:10] Perfecto."
   },
   "worldcutscene-laundermat-text-trenchcoat-19": {
-    "english": "* Ah,[wait:5] ya has hecho \".. gooddeeds ..\" buenas acciones por la Plaza.[wait:10] Perfecto."
+    "english": "* Ah,[wait:5] ya has hecho \\\".. gooddeeds ..\\\" buenas acciones por la Plaza.[wait:10] Perfecto."
   },
   "worldcutscene-laundermat-text-trenchcoat-20": {
     "english": "* Echa un vistazo y elige lo que te llame la atención,[wait:5] je, je, je."
@@ -6198,10 +6198,10 @@
     "english": "* Vacía los bolsillos y entonces hablamos."
   },
   "worldcutscene-laundermat-text-trenchcoat-34": {
-    "english": "* Ah,[wait:5] has hecho \".. gooddeeds ..\" buena acción.[wait:10] Nada mejor que ver a la gente ayudándose."
+    "english": "* Ah,[wait:5] has hecho \\\".. gooddeeds ..\\\" buena acción.[wait:10] Nada mejor que ver a la gente ayudándose."
   },
   "worldcutscene-laundermat-text-trenchcoat-35": {
-    "english": "* Ah,[wait:5] has hecho \".. gooddeeds ..\" buenas acciones.[wait:10] Nada mejor que ver a la gente ayudándose."
+    "english": "* Ah,[wait:5] has hecho \\\".. gooddeeds ..\\\" buenas acciones.[wait:10] Nada mejor que ver a la gente ayudándose."
   },
   "worldcutscene-laundermat-text-trenchcoat-36": {
     "english": "* Echa un vistazo y elige lo que te llame la atención,[wait:5] je, je, je."
@@ -9417,7 +9417,7 @@
     "english": "Chum,[wait:5] un hecho\\nobjetivo de la vida es que\\nlas explosiones molan."
   },
   "battlecutscene-mawzzboss-battlerText-firsttime_chests-2": {
-    "english": "¿Y qué si eso \"causa\\ndaños a la propiedad\" \\ny \"arriesga la integridad\\nestructural social\"?"
+    "english": "¿Y qué si eso \\\"causa\\ndaños a la propiedad\\\" \\ny \\\"arriesga la integridad\\nestructural social\\\"?"
   },
   "battlecutscene-mawzzboss-battlerText-firsttime_chests-3": {
     "english": "Si un edificio\\nno aguanta una\\nexplosión de vez\\nen cuando,[wait:5] \\nno merece\\nexistir."
@@ -11478,7 +11478,7 @@
     "english": "ARTISTA PRINCIPAL\\nNikazio\\n\\nSPRITES\\nNikazio   LightMoonCream    Radiaction\\nSnrona      Wolfkitty42     Sockhead\\nMose    Celcel512     Shadow of Roserade"
   },
   "worldcutscene-general-standaloneText-eviltext-6": {
-    "english": "COMPOSITOR PRINCIPAL\\nHayden \"Mose\" Danneman\\n\\nMÚSICA\\nCZenith          Mose\\nMatMan    Pastalight\\nCON AYUDA DE\\nCody B."
+    "english": "COMPOSITOR PRINCIPAL\\nHayden \\\"Mose\\\" Danneman\\n\\nMÚSICA\\nCZenith          Mose\\nMatMan    Pastalight\\nCON AYUDA DE\\nCody B."
   },
   "worldcutscene-general-standaloneText-eviltext-7": {
     "english": "GUIONISTAS\\nShadow of Roserade  \\nSnrona         MatMan\\n\\nVOZ DE MAWZZ\\nMatMan\\n"
