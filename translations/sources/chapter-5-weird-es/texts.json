@@ -657,7 +657,7 @@
     "source": "* You posed for {lua1}",
     "translation": "* Posaste para {lua1}",
     "originalExpression": "\"* You posed for \" .. enemy.name",
-    "replacementExpression": "\"* Você posou para \" .. (enemy.name)"
+    "replacementExpression": "\"* Posaste para \" .. (enemy.name)"
   },
   "f4314b8445ea": {
     "file": "scripts/battle/cutscenes/starflight.lua",
@@ -797,7 +797,7 @@
     "source": "Elapsed: {lua1}",
     "translation": "Transcurrido: {lua1}",
     "originalExpression": "\"Elapsed: \" .. clock",
-    "replacementExpression": "\"Decorrido: \" .. (clock)"
+    "replacementExpression": "\"Transcurrido: \" .. (clock)"
   },
   "01c4ee66c9f2": {
     "file": "scripts/battle/encounters/duo_third.lua",
@@ -1087,7 +1087,7 @@
     "source": "* {lua1} straightened the\nCrystaller's hat.",
     "translation": "* {lua1} enderezó el\nsombrero de Crystaller.",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \" straightened the\\nCrystaller's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" ajeitou o chapéu\\nde Crystaller.\""
+    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" enderezó el\\nsombrero de Crystaller.\""
   },
   "d4cde008ae63": {
     "file": "scripts/battle/enemies/crystaleerv2.lua",
@@ -1257,7 +1257,7 @@
     "source": "* {lua1} straightened the\nCrystaller's hat.",
     "translation": "* {lua1} enderezó el\nsombrero de Crystaller.",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \" straightened the\\nCrystaller's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" ajeitou o chapéu\\nde Crystaller.\""
+    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" enderezó el\\nsombrero de Crystaller.\""
   },
   "bac474f19b1a": {
     "file": "scripts/battle/enemies/crystarymn.lua",
@@ -1487,7 +1487,7 @@
     "source": "* {lua1} straightened the\ncrystaller's hat.",
     "translation": "* {lua1} enderezó el sombrero\nde Crystaller.",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \" straightened the\\ncrystaller's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" ajeitou o chapéu\\nde Crystaller.\""
+    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" enderezó el sombrero\\nde Crystaller.\""
   },
   "640e03934966": {
     "file": "scripts/battle/enemies/dummy.lua",
@@ -1637,7 +1637,7 @@
     "source": "* {lua1} straightened the\ndummy's hat.",
     "translation": "* {lua1} enderezó el\nsombrero del muñeco.",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \" straightened the\\ndummy's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" ajeitou o\\nchapéu do boneco.\""
+    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" enderezó el\\nsombrero del muñeco.\""
   },
   "b7f15ceadca1": {
     "file": "scripts/battle/enemies/dummy.lua",
@@ -1647,7 +1647,7 @@
     "source": "* You survived {lua1} turns.",
     "translation": "* Sobreviviste {lua1} turnos.",
     "originalExpression": "\"* You survived \" .. Game.battle.turn_count - 1 .. \" turns.\"",
-    "replacementExpression": "\"* Você sobreviveu \" .. (Game.battle.turn_count - 1) .. \" turnos.\""
+    "replacementExpression": "\"* Sobreviviste \" .. (Game.battle.turn_count - 1) .. \" turnos.\""
   },
   "632656963d0d": {
     "file": "scripts/battle/enemies/icepalace_babycrystal.lua",
@@ -1787,7 +1787,7 @@
     "source": "* {lua1} straightened the\ncrystaller's hat.",
     "translation": "* {lua1} enderezó el sombrero\nde Crystaller.",
     "originalExpression": "\"* \"..battler.chara:getName()..\" straightened the\\ncrystaller's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" ajeitou o chapéu\\nde Crystaller.\""
+    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" enderezó el sombrero\\nde Crystaller.\""
   },
   "16c718429cad": {
     "file": "scripts/battle/enemies/noelle.lua",
@@ -2597,7 +2597,7 @@
     "source": "* {lua1} straightened the\ncrystaller's hat.",
     "translation": "* {lua1} enderezó el sombrero\nde Crystaller.",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \" straightened the\\ncrystaller's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" ajeitou o chapéu\\nde Crystaller.\""
+    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" enderezó el sombrero\\nde Crystaller.\""
   },
   "6d5e4e00928c": {
     "file": "scripts/battle/enemies/snowralvur.lua",
@@ -2967,7 +2967,7 @@
     "source": "* {lua1} straightened the\ncrystaller's hat.",
     "translation": "* {lua1} enderezó el sombrero\nde Crystaller.",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \" straightened the\\ncrystaller's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" ajeitou o chapéu\\nde Crystaller.\""
+    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" enderezó el sombrero\\nde Crystaller.\""
   },
   "35af2d066d5f": {
     "file": "scripts/battle/waves/n_final.lua",
@@ -4717,7 +4717,7 @@
     "source": "[noskip]* {lua1} used {lua2}[wait:396]",
     "translation": "[noskip]* {lua1} usó {lua2}[wait:396]",
     "originalExpression": "\"[noskip]* \" .. user.chara:getName() .. \" used \" .. self:getCastName() .. \"[wait:396]\"",
-    "replacementExpression": "\"[noskip]* \" .. (user.chara:getName()) .. \" usou \" .. (self:getCastName()) .. \"[wait:396]\""
+    "replacementExpression": "\"[noskip]* \" .. (user.chara:getName()) .. \" usó \" .. (self:getCastName()) .. \"[wait:396]\""
   },
   "71090f81b925": {
     "file": "scripts/data/spells/Nivalis.lua",
@@ -4747,7 +4747,7 @@
     "source": "[noskip]* {lua1} used {lua2}[wait:396]",
     "translation": "[noskip]* {lua1} usó {lua2}[wait:396]",
     "originalExpression": "\"[noskip]* \" .. user.chara:getName() .. \" used \" .. self:getCastName() .. \"[wait:396]\"",
-    "replacementExpression": "\"[noskip]* \" .. (user.chara:getName()) .. \" usou \" .. (self:getCastName()) .. \"[wait:396]\""
+    "replacementExpression": "\"[noskip]* \" .. (user.chara:getName()) .. \" usó \" .. (self:getCastName()) .. \"[wait:396]\""
   },
   "92eaa065482a": {
     "file": "scripts/data/spells/Nivalis_noelle.lua",
@@ -4767,7 +4767,7 @@
     "source": "[noskip]* {lua1} used {lua2}[wait:396]",
     "translation": "[noskip]* {lua1} usó {lua2}[wait:396]",
     "originalExpression": "\"[noskip]* \" .. user.chara:getName() .. \" used \" .. self:getCastName() .. \"[wait:396]\"",
-    "replacementExpression": "\"[noskip]* \" .. (user.chara:getName()) .. \" usou \" .. (self:getCastName()) .. \"[wait:396]\""
+    "replacementExpression": "\"[noskip]* \" .. (user.chara:getName()) .. \" usó \" .. (self:getCastName()) .. \"[wait:396]\""
   },
   "8218e87cfe97": {
     "file": "scripts/data/spells/ultra_heal.lua",
@@ -4857,7 +4857,7 @@
     "source": "* {lua1} used {lua2}!",
     "translation": "* ¡{lua1} usó {lua2}!",
     "originalExpression": "\"* \" .. user.chara:getName() .. \" used \" .. self:getCastName() .. \"!\"",
-    "replacementExpression": "\"* \" .. (user.chara:getName()) .. \" usou \" .. (self:getCastName()) .. \"!\""
+    "replacementExpression": "\"* ¡\" .. (user.chara:getName()) .. \" usó \" .. (self:getCastName()) .. \"!\""
   },
   "b009083930e3": {
     "file": "scripts/hooks/DarkEquipMenu.lua",
@@ -4887,7 +4887,7 @@
     "source": "Attack Mode : {lua1}",
     "translation": "Modo de ataque : {lua1}",
     "originalExpression": "\"Attack Mode : \" .. Game.battle.PROTON_SLICER_MODE",
-    "replacementExpression": "\"Modo de Ataque : \" .. (Game.battle.PROTON_SLICER_MODE)"
+    "replacementExpression": "\"Modo de ataque : \" .. (Game.battle.PROTON_SLICER_MODE)"
   },
   "c98302de4432": {
     "file": "scripts/hooks/Encounter.lua",
@@ -4897,7 +4897,7 @@
     "source": "Attack Mode : {lua1}",
     "translation": "Modo de ataque : {lua1}",
     "originalExpression": "\"Attack Mode : \" .. Game.battle.PROTON_SLICER_MODE",
-    "replacementExpression": "\"Modo de Ataque : \" .. (Game.battle.PROTON_SLICER_MODE)"
+    "replacementExpression": "\"Modo de ataque : \" .. (Game.battle.PROTON_SLICER_MODE)"
   },
   "93896a1ae387": {
     "file": "scripts/hooks/Encounter.lua",
@@ -4907,7 +4907,7 @@
     "source": "Attack Mode : {lua1}",
     "translation": "Modo de ataque : {lua1}",
     "originalExpression": "\"Attack Mode : \" .. Game.battle.PROTON_SLICER_MODE",
-    "replacementExpression": "\"Modo de Ataque : \" .. (Game.battle.PROTON_SLICER_MODE)"
+    "replacementExpression": "\"Modo de ataque : \" .. (Game.battle.PROTON_SLICER_MODE)"
   },
   "04bc4771c3d4": {
     "file": "scripts/hooks/Encounter.lua",
@@ -4917,7 +4917,7 @@
     "source": "Attack Mode : {lua1}",
     "translation": "Modo de ataque : {lua1}",
     "originalExpression": "\"Attack Mode : \" .. Game.battle.PROTON_SLICER_MODE",
-    "replacementExpression": "\"Modo de Ataque : \" .. (Game.battle.PROTON_SLICER_MODE)"
+    "replacementExpression": "\"Modo de ataque : \" .. (Game.battle.PROTON_SLICER_MODE)"
   },
   "b36f176e777b": {
     "file": "scripts/hooks/Encounter.lua",
@@ -4927,7 +4927,7 @@
     "source": "Attack Mode : {lua1}",
     "translation": "Modo de ataque : {lua1}",
     "originalExpression": "\"Attack Mode : \" .. Game.battle.PROTON_SLICER_MODE",
-    "replacementExpression": "\"Modo de Ataque : \" .. (Game.battle.PROTON_SLICER_MODE)"
+    "replacementExpression": "\"Modo de ataque : \" .. (Game.battle.PROTON_SLICER_MODE)"
   },
   "fbb07fe37884": {
     "file": "scripts/hooks/Encounter.lua",
@@ -9087,7 +9087,7 @@
     "source": "* (You have fought them {lua1} times.)",
     "translation": "* (Has luchado contra ellos {lua1} veces.)",
     "originalExpression": "\"* (You have fought them \" .. Game:getFlag(\"count_anomaly\") .. \" times.)\"",
-    "replacementExpression": "\"* (Você enfrentou esse grupo \" .. (Game:getFlag(\"count_anomaly\")) .. \" vezes.)\""
+    "replacementExpression": "\"* (Has luchado contra ellos \" .. (Game:getFlag(\"count_anomaly\")) .. \" veces.)\""
   },
   "e0793d790976": {
     "file": "scripts/world/cutscenes/dwcuts_main.lua",
@@ -9157,7 +9157,7 @@
     "source": "* (You have fought them {lua1} times.)",
     "translation": "* (Has luchado contra ellos {lua1} veces.)",
     "originalExpression": "\"* (You have fought them \" .. Game:getFlag(\"count_anomaly\") .. \" times.)\"",
-    "replacementExpression": "\"* (Você enfrentou esse grupo \" .. (Game:getFlag(\"count_anomaly\")) .. \" vezes.)\""
+    "replacementExpression": "\"* (Has luchado contra ellos \" .. (Game:getFlag(\"count_anomaly\")) .. \" veces.)\""
   },
   "e48509a9a41e": {
     "file": "scripts/world/cutscenes/dwcuts_main.lua",
@@ -9607,7 +9607,7 @@
     "source": "* (Inside was [color:{lua1}]{lua2}[color:reset]!)",
     "translation": "* (¡Dentro había [color:{lua1}]{lua2}[color:reset]!)",
     "originalExpression": "\"* (Inside was [color:\" .. result.color .. \"]\" .. result.name .. \"[color:reset]!)\"",
-    "replacementExpression": "\"* (Dentro havia [color:\" .. (result.color) .. \"]\" .. (result.name) .. \"[color:reset]!)\""
+    "replacementExpression": "\"* (¡Dentro había [color:\" .. (result.color) .. \"]\" .. (result.name) .. \"[color:reset]!)\""
   },
   "5d851dbc89c5": {
     "file": "scripts/world/cutscenes/dwcuts_main.lua",
@@ -9627,7 +9627,7 @@
     "source": "* (Inside was [color:{lua1}]{lua2}[color:reset]!)",
     "translation": "* (¡Dentro había [color:{lua1}]{lua2}[color:reset]!)",
     "originalExpression": "\"* (Inside was [color:\" .. result.color .. \"]\" .. result.name .. \"[color:reset]!)\"",
-    "replacementExpression": "\"* (Dentro havia [color:\" .. (result.color) .. \"]\" .. (result.name) .. \"[color:reset]!)\""
+    "replacementExpression": "\"* (¡Dentro había [color:\" .. (result.color) .. \"]\" .. (result.name) .. \"[color:reset]!)\""
   },
   "4f4218ab3afd": {
     "file": "scripts/world/cutscenes/dwcuts_main.lua",
@@ -9647,7 +9647,7 @@
     "source": "* (Inside was [color:{lua1}]{lua2}[color:reset]!)",
     "translation": "* (¡Dentro había [color:{lua1}]{lua2}[color:reset]!)",
     "originalExpression": "\"* (Inside was [color:\" .. result.color .. \"]\" .. result.name .. \"[color:reset]!)\"",
-    "replacementExpression": "\"* (Dentro havia [color:\" .. (result.color) .. \"]\" .. (result.name) .. \"[color:reset]!)\""
+    "replacementExpression": "\"* (¡Dentro había [color:\" .. (result.color) .. \"]\" .. (result.name) .. \"[color:reset]!)\""
   },
   "749dc0181b8f": {
     "file": "scripts/world/cutscenes/dwcuts_main.lua",
@@ -9667,7 +9667,7 @@
     "source": "* (Inside was [color:{lua1}]{lua2}[color:reset]!)",
     "translation": "* (¡Dentro había [color:{lua1}]{lua2}[color:reset]!)",
     "originalExpression": "\"* (Inside was [color:\" .. result.color .. \"]\" .. result.name .. \"[color:reset]!)\"",
-    "replacementExpression": "\"* (Dentro havia [color:\" .. (result.color) .. \"]\" .. (result.name) .. \"[color:reset]!)\""
+    "replacementExpression": "\"* (¡Dentro había [color:\" .. (result.color) .. \"]\" .. (result.name) .. \"[color:reset]!)\""
   },
   "9d91cb739505": {
     "file": "scripts/world/cutscenes/dwcuts_main.lua",
@@ -9687,7 +9687,7 @@
     "source": "* (Inside was [color:{lua1}]{lua2}[color:reset]!)",
     "translation": "* (¡Dentro había [color:{lua1}]{lua2}[color:reset]!)",
     "originalExpression": "\"* (Inside was [color:\" .. result.color .. \"]\" .. result.name .. \"[color:reset]!)\"",
-    "replacementExpression": "\"* (Dentro havia [color:\" .. (result.color) .. \"]\" .. (result.name) .. \"[color:reset]!)\""
+    "replacementExpression": "\"* (¡Dentro había [color:\" .. (result.color) .. \"]\" .. (result.name) .. \"[color:reset]!)\""
   },
   "be0586c4856a": {
     "file": "scripts/world/cutscenes/dwcuts_main.lua",
@@ -11227,7 +11227,7 @@
     "source": "Pitch: {lua1}",
     "translation": "Tono: {lua1}",
     "originalExpression": "\"Pitch: \" .. string.format(\"%.2f\", pitchval)",
-    "replacementExpression": "\"Tom: \" .. (string.format(\"%.2f\", pitchval))"
+    "replacementExpression": "\"Tono: \" .. (string.format(\"%.2f\", pitchval))"
   },
   "8e8eb040eea7": {
     "file": "scripts/world/cutscenes/dwcuts_main.lua",
@@ -11237,7 +11237,7 @@
     "source": "Pitch: {lua1}",
     "translation": "Tono: {lua1}",
     "originalExpression": "\"Pitch: \" .. string.format(\"%.2f\", pitchval)",
-    "replacementExpression": "\"Tom: \" .. (string.format(\"%.2f\", pitchval))"
+    "replacementExpression": "\"Tono: \" .. (string.format(\"%.2f\", pitchval))"
   },
   "1c923678f268": {
     "file": "scripts/world/cutscenes/dwcuts_main.lua",
@@ -13037,7 +13037,7 @@
     "source": "* {lua1}.[wait:5] Okay.",
     "translation": "* {lua1}.[wait:5] Bien.",
     "originalExpression": "\"* \" .. member.name .. \".[wait:5] Okay.\"",
-    "replacementExpression": "\"* \" .. (member.name) .. \".[wait:5] Certo.\""
+    "replacementExpression": "\"* \" .. (member.name) .. \".[wait:5] Bien.\""
   },
   "dedf0f8a6bcc": {
     "file": "scripts/world/cutscenes/dwcuts_other.lua",
@@ -13047,7 +13047,7 @@
     "source": "* Maximum damage: [color:red]{lua1}\n[color:reset]* 1 frame off: [color:yellow]{lua2}\n[color:reset]* 2 frames off: {lua3}",
     "translation": "* Daño máximo: [color:red]{lua1}\n[color:reset]* 1 fotograma de diferencia: [color:yellow]{lua2}\n[color:reset]* 2 fotogramas de diferencia: {lua3}",
     "originalExpression": "\"* Maximum damage: [color:red]\" .. max_damage_rounded * 55 ..\r\n                        \"\\n[color:reset]* 1 frame off: [color:yellow]\" .. one_frame_off_rounded * 55 ..\r\n                        \"\\n[color:reset]* 2 frames off: \" .. two_frames_off_rounded * 55",
-    "replacementExpression": "\"* Dano máximo: [color:red]\" .. (max_damage_rounded * 55) .. \"\\n[color:reset]* 1 quadro fora: [color:yellow]\" .. (one_frame_off_rounded * 55) .. \"\\n[color:reset]* 2 quadros fora: \" .. (two_frames_off_rounded * 55)"
+    "replacementExpression": "\"* Daño máximo: [color:red]\" .. (max_damage_rounded * 55) .. \"\\n[color:reset]* 1 fotograma de diferencia: [color:yellow]\" .. (one_frame_off_rounded * 55) .. \"\\n[color:reset]* 2 fotogramas de diferencia: \" .. (two_frames_off_rounded * 55)"
   },
   "50982b9bf525": {
     "file": "scripts/world/cutscenes/dwcuts_other.lua",
@@ -13067,7 +13067,7 @@
     "source": "* {lua1}, huh?[wait:4] Alright,[wait:5] here it is!",
     "translation": "* {lua1}, ¿eh?[wait:4] Bien,[wait:5] ¡aquí está!",
     "originalExpression": "\"* \" .. member.name .. \", huh?[wait:4] Alright,[wait:5] here it is!\"",
-    "replacementExpression": "\"* \" .. (member.name) .. \", é?[wait:4] Certo,[wait:5] aqui está!\""
+    "replacementExpression": "\"* \" .. (member.name) .. \", ¿eh?[wait:4] Bien,[wait:5] ¡aquí está!\""
   },
   "a3c89bc339c5": {
     "file": "scripts/world/cutscenes/dwcuts_other.lua",
@@ -13077,7 +13077,7 @@
     "source": "* Maximum damage: [color:red]{lua1}\n[color:reset]* 1 frame off: [color:yellow]{lua2}\n[color:reset]* 2 frames off: {lua3}",
     "translation": "* Daño máximo: [color:red]{lua1}\n[color:reset]* 1 fotograma de diferencia: [color:yellow]{lua2}\n[color:reset]* 2 fotogramas de diferencia: {lua3}",
     "originalExpression": "\"* Maximum damage: [color:red]\" .. max_damage_rounded ..\r\n                    \"\\n[color:reset]* 1 frame off: [color:yellow]\" .. one_frame_off_rounded ..\r\n                    \"\\n[color:reset]* 2 frames off: \" .. two_frames_off_rounded",
-    "replacementExpression": "\"* Dano máximo: [color:red]\" .. (max_damage_rounded) .. \"\\n[color:reset]* 1 quadro fora: [color:yellow]\" .. (one_frame_off_rounded) .. \"\\n[color:reset]* 2 quadros fora: \" .. (two_frames_off_rounded)"
+    "replacementExpression": "\"* Daño máximo: [color:red]\" .. (max_damage_rounded) .. \"\\n[color:reset]* 1 fotograma de diferencia: [color:yellow]\" .. (one_frame_off_rounded) .. \"\\n[color:reset]* 2 fotogramas de diferencia: \" .. (two_frames_off_rounded)"
   },
   "6d60bc02a087": {
     "file": "scripts/world/cutscenes/dwcuts_other.lua",

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "plugged-dream.pt-br",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": {
     "pt-BR": "Plugged Dream em Português (Brasil)",
     "en": "Plugged Dream in Brazilian Portuguese",
@@ -19,5 +19,5 @@
   "targetLanguage": "pt-BR",
   "minimumLauncherVersion": "0.17.48",
   "textsFile": "texts.json",
-  "textsSha256": "6c3b060e09262ece24cd0281d8b8b6be1752dc55319929ac0243f3f4d3c0e081"
+  "textsSha256": "f9eea1481024a26b1df4c3e108deb3625fb3f4743c470b56fb969befde734053"
 }

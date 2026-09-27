@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "crockerplayable.es",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": {
     "pt-BR": "Crockerfan08's Chapter 6 em Espanhol",
     "en": "Crockerfan08's Chapter 6 in Spanish",
@@ -19,5 +19,5 @@
   "targetLanguage": "es",
   "minimumLauncherVersion": "0.17.48",
   "textsFile": "texts.json",
-  "textsSha256": "6f8582d1150c5e6e9c21cfc654b35443327278fc7bac9fefd71dee927d80eef5"
+  "textsSha256": "96bde464d71741e53d6bfb22e22ac9d7f89b5462a3b2172339bebf03e5baee8c"
 }

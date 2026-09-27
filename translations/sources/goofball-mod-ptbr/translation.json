@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "goofball-mod.pt-br",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": {
     "pt-BR": "Sermon's Sang em Português (Brasil)",
     "en": "Sermon's Sang in Brazilian Portuguese",
@@ -19,5 +19,5 @@
   "targetLanguage": "pt-BR",
   "minimumLauncherVersion": "0.17.48",
   "textsFile": "texts.json",
-  "textsSha256": "6a6058fe76e575fcc4b1b74504850461bd24793fd15b92eb3dd319388a5870aa"
+  "textsSha256": "c4311b1137674f44b03f5046edd87019b9b5478ad4ab30bd9a192f5bb8083f9e"
 }

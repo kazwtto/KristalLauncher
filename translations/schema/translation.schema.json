@@ -35,7 +35,7 @@
         "required": ["source", "target", "sourceSha256", "translatedSha256"],
         "properties": {
           "source": { "type": "string" },
-          "target": { "type": "string" },
+          "target": { "type": "string", "pattern": "^(?:scripts/.+\\.lua|dialoguedump\\.json|data/i18n\\.json)$" },
           "scope": { "enum": ["game", "package"] },
           "sourceSha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
           "translatedSha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "frozen-heart.pt-br",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": {
     "pt-BR": "Frozen Heart em Português (Brasil)",
     "en": "Frozen Heart in Brazilian Portuguese",
@@ -19,5 +19,5 @@
   "targetLanguage": "pt-BR",
   "minimumLauncherVersion": "0.17.48",
   "textsFile": "texts.json",
-  "textsSha256": "552289b300d2fe4df5653627ca758dff3e87dd2b63d4c5bbfa56b661f9d1ef72"
+  "textsSha256": "6a1f4658330db6ccfd6713dcbafcdf3bdb4231f456897c9741eeae880ebc9850"
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "vs-kris.es",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": {
     "pt-BR": "DELTARUNE: Vessel vs. Kris em Espanhol",
     "en": "DELTARUNE: Vessel vs. Kris in Spanish",
@@ -19,5 +19,5 @@
   "targetLanguage": "es",
   "minimumLauncherVersion": "0.17.48",
   "textsFile": "texts.json",
-  "textsSha256": "1d9d1b9c6e267dd556a5980cfaa9990d297080c233c726988341d148f26f9a95"
+  "textsSha256": "7a5e9f6636d405c719949eb272356a20268f89a91214413462e9032cb382ee38"
 }

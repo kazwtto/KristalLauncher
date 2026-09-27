@@ -9277,7 +9277,7 @@
     "source": "* {lua1} straightened the\nBroomHatter's hat.",
     "translation": "* {lua1} enderezó el\nsombrero de BroomHatter.",
     "originalExpression": "\"* \"..battler.chara:getName()..\" straightened the\\nBroomHatter's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" endireitou o\\nchapéu de BroomHatter.\""
+    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" enderezó el\\nsombrero de BroomHatter.\""
   },
   "ab753ec9980a": {
     "file": "scripts/battle/enemies/broom_hatter.lua",
@@ -9577,7 +9577,7 @@
     "source": "* {lua1} straightened the\nBroomHatter's hat.",
     "translation": "* {lua1} enderezó el\nsombrero de BroomHatter.",
     "originalExpression": "\"* \"..battler.chara:getName()..\" straightened the\\nBroomHatter's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" endireitou o\\nchapéu de BroomHatter.\""
+    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" enderezó el\\nsombrero de BroomHatter.\""
   },
   "b403435b4928": {
     "file": "scripts/battle/enemies/broom_hatter_fr.lua",
@@ -12057,7 +12057,7 @@
     "source": "* {lua1} straightened the\ndummy's hat.",
     "translation": "* {lua1} enderezó el\nsombrero del muñeco.",
     "originalExpression": "\"* \"..battler.chara.name..\" straightened the\\ndummy's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara.name) .. \" ajeitou o\\nchapéu do boneco.\""
+    "replacementExpression": "\"* \" .. (battler.chara.name) .. \" enderezó el\\nsombrero del muñeco.\""
   },
   "640e03934966": {
     "file": "scripts/battle/enemies/dummy.lua",
@@ -12177,7 +12177,7 @@
     "source": "* {lua1} straightened the\ndummy's hat.",
     "translation": "* {lua1} enderezó el\nsombrero del muñeco.",
     "originalExpression": "\"* \"..battler.chara.name..\" straightened the\\ndummy's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara.name) .. \" ajeitou o\\nchapéu do boneco.\""
+    "replacementExpression": "\"* \" .. (battler.chara.name) .. \" enderezó el\\nsombrero del muñeco.\""
   },
   "31a6d355ce6e": {
     "file": "scripts/battle/enemies/dummy_alt.lua",
@@ -12297,7 +12297,7 @@
     "source": "* {lua1} straightened the\ndummy's hat.",
     "translation": "* {lua1} enderezó el\nsombrero del muñeco.",
     "originalExpression": "\"* \"..battler.chara.name..\" straightened the\\ndummy's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara.name) .. \" ajeitou o\\nchapéu do boneco.\""
+    "replacementExpression": "\"* \" .. (battler.chara.name) .. \" enderezó el\\nsombrero del muñeco.\""
   },
   "594745d62b1a": {
     "file": "scripts/battle/enemies/dummyori.lua",
@@ -12437,7 +12437,7 @@
     "source": "* {lua1} straightened the\ndummy's hat.",
     "translation": "* {lua1} enderezó el\nsombrero del muñeco.",
     "originalExpression": "\"* \"..battler.chara:getName()..\" straightened the\\ndummy's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" ajeitou o\\nchapéu do boneco.\""
+    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" enderezó el\\nsombrero del muñeco.\""
   },
   "cb4ca95e5f9f": {
     "file": "scripts/battle/enemies/dummyx.lua",
@@ -13167,7 +13167,7 @@
     "source": "* {lua1} didn't know what to do.",
     "translation": "* {lua1} no sabía qué hacer.",
     "originalExpression": "\"* \"..battler.chara:getName()..\" didn't know what to do.\"",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" não sabia o que fazer.\""
+    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" no sabía qué hacer.\""
   },
   "23e6d40167a2": {
     "file": "scripts/battle/enemies/foley.lua",
@@ -15497,7 +15497,7 @@
     "source": "* {lua1} straightened the\ndummy's hat.",
     "translation": "* {lua1} enderezó el\nsombrero del muñeco.",
     "originalExpression": "\"* \"..battler.chara.name..\" straightened the\\ndummy's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara.name) .. \" ajeitou o\\nchapéu do boneco.\""
+    "replacementExpression": "\"* \" .. (battler.chara.name) .. \" enderezó el\\nsombrero del muñeco.\""
   },
   "9695fc4c380d": {
     "file": "scripts/battle/enemies/king_ddd.lua",
@@ -21257,7 +21257,7 @@
     "source": "* You stabilize yourself. ({lua1}%)",
     "translation": "* Te estabilizas. ({lua1}%)",
     "originalExpression": "\"* You stabilize yourself. (\" .. self.struggleprocess .. \"%)\"",
-    "replacementExpression": "\"* Você recupera a estabilidade. (\" .. (self.struggleprocess) .. \"%)\""
+    "replacementExpression": "\"* Te estabilizas. (\" .. (self.struggleprocess) .. \"%)\""
   },
   "fd1a1ea6d7e9": {
     "file": "scripts/battle/enemies/mirati.lua",
@@ -21367,7 +21367,7 @@
     "source": "* You stabilize yourself. ({lua1}%)",
     "translation": "* Te estabilizas. ({lua1}%)",
     "originalExpression": "\"* You stabilize yourself. (\" .. self.struggleprocess .. \"%)\"",
-    "replacementExpression": "\"* Você recupera a estabilidade. (\" .. (self.struggleprocess) .. \"%)\""
+    "replacementExpression": "\"* Te estabilizas. (\" .. (self.struggleprocess) .. \"%)\""
   },
   "23fe91242d3b": {
     "file": "scripts/battle/enemies/mirati.lua",
@@ -21477,7 +21477,7 @@
     "source": "* You stabilize yourself. ({lua1}%)",
     "translation": "* Te estabilizas. ({lua1}%)",
     "originalExpression": "\"* You stabilize yourself. (\" .. self.struggleprocess .. \"%)\"",
-    "replacementExpression": "\"* Você recupera a estabilidade. (\" .. (self.struggleprocess) .. \"%)\""
+    "replacementExpression": "\"* Te estabilizas. (\" .. (self.struggleprocess) .. \"%)\""
   },
   "0928ec90cd58": {
     "file": "scripts/battle/enemies/mirati.lua",
@@ -21587,7 +21587,7 @@
     "source": "* You stabilize yourself. ({lua1}%)",
     "translation": "* Te estabilizas. ({lua1}%)",
     "originalExpression": "\"* You stabilize yourself. (\" .. self.struggleprocess .. \"%)\"",
-    "replacementExpression": "\"* Você recupera a estabilidade. (\" .. (self.struggleprocess) .. \"%)\""
+    "replacementExpression": "\"* Te estabilizas. (\" .. (self.struggleprocess) .. \"%)\""
   },
   "87f05fe3860f": {
     "file": "scripts/battle/enemies/mirati.lua",
@@ -21917,7 +21917,7 @@
     "source": "* You stabilize yourself. ({lua1}%)",
     "translation": "* Te estabilizas. ({lua1}%)",
     "originalExpression": "\"* You stabilize yourself. (\" .. self.struggleprocess .. \"%)\"",
-    "replacementExpression": "\"* Você recupera a estabilidade. (\" .. (self.struggleprocess) .. \"%)\""
+    "replacementExpression": "\"* Te estabilizas. (\" .. (self.struggleprocess) .. \"%)\""
   },
   "f23f332525b1": {
     "file": "scripts/battle/enemies/mirati_w.lua",
@@ -22027,7 +22027,7 @@
     "source": "* You stabilize yourself. ({lua1}%)",
     "translation": "* Te estabilizas. ({lua1}%)",
     "originalExpression": "\"* You stabilize yourself. (\" .. self.struggleprocess .. \"%)\"",
-    "replacementExpression": "\"* Você recupera a estabilidade. (\" .. (self.struggleprocess) .. \"%)\""
+    "replacementExpression": "\"* Te estabilizas. (\" .. (self.struggleprocess) .. \"%)\""
   },
   "093facfc4972": {
     "file": "scripts/battle/enemies/mirati_w.lua",
@@ -22137,7 +22137,7 @@
     "source": "* You stabilize yourself. ({lua1}%)",
     "translation": "* Te estabilizas. ({lua1}%)",
     "originalExpression": "\"* You stabilize yourself. (\" .. self.struggleprocess .. \"%)\"",
-    "replacementExpression": "\"* Você recupera a estabilidade. (\" .. (self.struggleprocess) .. \"%)\""
+    "replacementExpression": "\"* Te estabilizas. (\" .. (self.struggleprocess) .. \"%)\""
   },
   "f64703d17bce": {
     "file": "scripts/battle/enemies/mirati_w.lua",
@@ -22247,7 +22247,7 @@
     "source": "* You stabilize yourself. ({lua1}%)",
     "translation": "* Te estabilizas. ({lua1}%)",
     "originalExpression": "\"* You stabilize yourself. (\" .. self.struggleprocess .. \"%)\"",
-    "replacementExpression": "\"* Você recupera a estabilidade. (\" .. (self.struggleprocess) .. \"%)\""
+    "replacementExpression": "\"* Te estabilizas. (\" .. (self.struggleprocess) .. \"%)\""
   },
   "4401025d9bf9": {
     "file": "scripts/battle/enemies/mirati_w.lua",
@@ -22687,7 +22687,7 @@
     "source": "* {lua1} cooked up a cure!",
     "translation": "* ¡{lua1} preparó una cura!",
     "originalExpression": "\"* \"..battler.chara:getName()..\" cooked up a cure!\"",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" preparou uma cura!\""
+    "replacementExpression": "\"* ¡\" .. (battler.chara:getName()) .. \" preparó una cura!\""
   },
   "6a85859a280d": {
     "file": "scripts/battle/enemies/monomonokun.lua",
@@ -27087,7 +27087,7 @@
     "source": "* {lua1} straightened the\ndummy's hat.",
     "translation": "* {lua1} enderezó el\nsombrero del muñeco.",
     "originalExpression": "\"* \"..battler.chara.name..\" straightened the\\ndummy's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara.name) .. \" ajeitou o\\nchapéu do boneco.\""
+    "replacementExpression": "\"* \" .. (battler.chara.name) .. \" enderezó el\\nsombrero del muñeco.\""
   },
   "8bf68a45139d": {
     "file": "scripts/battle/enemies/tac_a0.lua",
@@ -27277,7 +27277,7 @@
     "source": "* {lua1} straightened the\ndummy's hat.",
     "translation": "* {lua1} enderezó el\nsombrero del muñeco.",
     "originalExpression": "\"* \"..battler.chara.name..\" straightened the\\ndummy's hat.\"",
-    "replacementExpression": "\"* \" .. (battler.chara.name) .. \" ajeitou o\\nchapéu do boneco.\""
+    "replacementExpression": "\"* \" .. (battler.chara.name) .. \" enderezó el\\nsombrero del muñeco.\""
   },
   "c168bb02227a": {
     "file": "scripts/battle/enemies/true_tree.lua",
@@ -28097,7 +28097,7 @@
     "source": "* {lua1} doesn't pick\nWaddle Doo's eye.",
     "translation": "* {lua1} no le pica\nel ojo a Waddle Doo.",
     "originalExpression": "\"* \"..battler.chara:getName()..\" doesn't pick\\nWaddle Doo's eye.\"",
-    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" não cutuca\\no olho de Waddle Doo.\""
+    "replacementExpression": "\"* \" .. (battler.chara:getName()) .. \" no le pica\\nel ojo a Waddle Doo.\""
   },
   "0e4fb9f4833e": {
     "file": "scripts/battle/enemies/wendy.lua",

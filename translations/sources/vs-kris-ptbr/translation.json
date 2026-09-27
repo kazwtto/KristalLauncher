@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "vs-kris.pt-br",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": {
     "pt-BR": "VS Kris em Português (Brasil)",
     "en": "VS Kris in Brazilian Portuguese",
@@ -19,5 +19,5 @@
   "targetLanguage": "pt-BR",
   "minimumLauncherVersion": "0.17.48",
   "textsFile": "texts.json",
-  "textsSha256": "fa9baa21c315c88c2da7df2f1dafe2df49adeebe830c5314a2c11444863fb12d"
+  "textsSha256": "374eb2c300d605d655599bbb4f75a66a6c7bd9f0490a0590a698cedb6bed070a"
 }

@@ -215,9 +215,9 @@
     "startOffset": 1389,
     "endOffset": 1460,
     "source": "* The audience can't see what's\ngoing on, but assumes you're losing.",
-    "translation": "* A plateia não consegue ver o que está\nacontecendo, mas assume que você está perdendo.",
+    "translation": "* A plateia não vê o que acontece,\nmas supõe que você está perdendo.",
     "originalExpression": "\"* The audience can't see what's\\ngoing on, but assumes you're losing.\"",
-    "replacementExpression": "\"* A plateia não consegue ver o que está\\nacontecendo, mas assume que você está perdendo.\""
+    "replacementExpression": "\"* A plateia não vê o que acontece,\\nmas supõe que você está perdendo.\""
   },
   "ec61f40ac63a": {
     "file": "scripts/battle/encounters/p2/mantislords.lua",
@@ -335,9 +335,9 @@
     "startOffset": 1219,
     "endOffset": 1290,
     "source": "* This bug is [color:yellow]pissing[color:reset] the Oblobble\noff...",
-    "translation": "* Esse inseto está [color:yellow]deixando[color:reset]\no Oblobble puto...",
+    "translation": "* Esse inseto está [color:yellow]irritando[color:reset]\no Oblobble...",
     "originalExpression": "\"* This bug is [color:yellow]pissing[color:reset] the Oblobble\\noff...\"",
-    "replacementExpression": "\"* Esse inseto está [color:yellow]deixando[color:reset]\\no Oblobble puto...\""
+    "replacementExpression": "\"* Esse inseto está [color:yellow]irritando[color:reset]\\no Oblobble...\""
   },
   "4810abd4a83d": {
     "file": "scripts/battle/encounters/p2/sheo.lua",

@@ -25,9 +25,9 @@
     "startOffset": 210,
     "endOffset": 281,
     "source": "WAHHH!! WAHHH!! YOU HEAR ME??\nAwarded by facing sixteen cry attacks.",
-    "translation": "BUÁÁ!! BUÁÁ!! TÁ OUVINDO??\nPor encarar dezesseis ataques de choro.",
+    "translation": "BUÁÁ!! BUÁÁ!! ESTÁ OUVINDO??\nPor encarar dezesseis ataques de choro.",
     "originalExpression": "\"WAHHH!! WAHHH!! YOU HEAR ME??\\nAwarded by facing sixteen cry attacks.\"",
-    "replacementExpression": "\"BUÁÁ!! BUÁÁ!! TÁ OUVINDO??\\nPor encarar dezesseis ataques de choro.\""
+    "replacementExpression": "\"BUÁÁ!! BUÁÁ!! ESTÁ OUVINDO??\\nPor encarar dezesseis ataques de choro.\""
   },
   "f11936094eae": {
     "file": "scripts/ach/4goofball.lua",
@@ -35,9 +35,9 @@
     "startOffset": 243,
     "endOffset": 302,
     "source": "Give the man a break!\nAwarded by tiring Priest Goofball.",
-    "translation": "Dá um descanso pro homem!\nPor cansar o Padre Bobalhão.",
+    "translation": "Dê um descanso ao homem!\nPor cansar o Padre Bobalhão.",
     "originalExpression": "\"Give the man a break!\\nAwarded by tiring Priest Goofball.\"",
-    "replacementExpression": "\"Dá um descanso pro homem!\\nPor cansar o Padre Bobalhão.\""
+    "replacementExpression": "\"Dê um descanso ao homem!\\nPor cansar o Padre Bobalhão.\""
   },
   "d35a79b7443e": {
     "file": "scripts/ach/5.lua",
@@ -65,9 +65,9 @@
     "startOffset": 242,
     "endOffset": 293,
     "source": "You know what??! No more content for you! Begone!",
-    "translation": "Quer saber?! Acabou o conteúdo pra você! XÔ!",
+    "translation": "Quer saber?! Acabou o conteúdo para você! XÔ!",
     "originalExpression": "\"You know what??! No more content for you! Begone!\"",
-    "replacementExpression": "\"Quer saber?! Acabou o conteúdo pra você! XÔ!\""
+    "replacementExpression": "\"Quer saber?! Acabou o conteúdo para você! XÔ!\""
   },
   "21f832dc0a53": {
     "file": "scripts/battle/cutscenes/priestGoofball.lua",

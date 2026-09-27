@@ -185,9 +185,9 @@
     "startOffset": 7612,
     "endOffset": 7655,
     "source": "AND THE ONLY THING\n[wait:8]YOU CAN DO...",
-    "translation": "E A ÚNICA COISsSA\n[wait:8]QUE VOCÊ PODE FAZER...",
+    "translation": "E A ÚNICA COISsSA\n[wait:8]QUE PODE FAZER...",
     "originalExpression": "\"AND THE ONLY THING\\n[wait:8]YOU CAN DO...\"",
-    "replacementExpression": "\"E A ÚNICA COISsSA\\n[wait:8]QUE VOCÊ PODE FAZER...\""
+    "replacementExpression": "\"E A ÚNICA COISsSA\\n[wait:8]QUE PODE FAZER...\""
   },
   "c2d2aa1d4f30": {
     "file": "scripts/battle/cutscenes/eternal_lumia.lua",
@@ -1395,9 +1395,9 @@
     "startOffset": 2479,
     "endOffset": 2535,
     "source": "* I WANTED TO BE ALIVE!\nI WANTED TO MEAN SsSOMETHING!",
-    "translation": "* EU QUERIA CONTINUAR VIVENDO!\nEU QUERIA SsSIGNIFICAR ALGO!",
+    "translation": "* EU QUERIA EsSsTAR VIVA!\nEU QUERIA SsSIGNIFICAR ALGO!",
     "originalExpression": "\"* I WANTED TO BE ALIVE!\\nI WANTED TO MEAN SsSOMETHING!\"",
-    "replacementExpression": "\"* EU QUERIA CONTINUAR VIVENDO!\\nEU QUERIA SsSIGNIFICAR ALGO!\""
+    "replacementExpression": "\"* EU QUERIA EsSsTAR VIVA!\\nEU QUERIA SsSIGNIFICAR ALGO!\""
   },
   "fa73c4339a14": {
     "file": "scripts/world/cutscenes/eternal_lumia_encounter.lua",

@@ -36,7 +36,7 @@
     "english": "* A pia agora está impecável.[wait:5]\\n* E sem pelos."
   },
   "worldcutscene-apartment-text-sink-4": {
-    "english": "* Tem pelo branco preso na pia.[wait:5] Se você ganhasse uma moeda por cada vez.[wait:5].[wait:5]."
+    "english": "* Tem pelo branco na pia.[wait:5] Se ganhasse uma moeda por isso...[wait:5].[wait:5]."
   },
   "worldcutscene-apartment-text-dishes-1": {
     "english": "* Desculpe pela bagunça.\\n* Eu, [wait:5]ahn,[wait:5] não esperava visitas."
@@ -63,7 +63,7 @@
     "english": "* Parece o verso de uma Polaroid."
   },
   "worldcutscene-apartment-text-photo-2": {
-    "english": "* Uma lua e estrelas foram desenhadas por toda parte com marcador verde."
+    "english": "* Há lua e estrelas desenhadas com marcador verde."
   },
   "worldcutscene-apartment-text-photo-3": {
     "english": "* Ah,[wait:5] aquele desenho?"
@@ -81,7 +81,7 @@
     "english": "* É só um rabisco,[wait:5] mas..."
   },
   "worldcutscene-apartment-text-photo-8": {
-    "english": "* Ver aquelas estrelas... [wait:5]\\nMe lembra que toda a minha esperança...[wait:5] Todo o meu esforço..."
+    "english": "* Ver essas estrelas... [wait:5]\\nLembra toda minha esperança...[wait:5] Todo meu esforço..."
   },
   "worldcutscene-apartment-text-photo-9": {
     "english": "* Está levando a alguma coisa![wait:5]\\n* Algo real!"
@@ -90,7 +90,7 @@
     "english": "* Algo importante!\\n[wait:5]* Algo que importa!"
   },
   "worldcutscene-apartment-text-photo-11": {
-    "english": "* Então não desista![wait:5]\\n* Nunca deixe de ter esperança nem de sonhar. "
+    "english": "* Então não desista![wait:5]\\n* Nunca abandone esperança e sonhos. "
   },
   "worldcutscene-apartment-text-photo-12": {
     "english": "* Esse é o meu lema,[wait:5] pelo menos."
@@ -99,19 +99,19 @@
     "english": "* Parece o verso de uma Polaroid."
   },
   "worldcutscene-apartment-text-photo-14": {
-    "english": "* Uma lua e estrelas foram desenhadas por toda parte com marcador verde."
+    "english": "* Há lua e estrelas desenhadas com marcador verde."
   },
   "worldcutscene-apartment-text-photo-15": {
     "english": "* Parece o verso de uma Polaroid."
   },
   "worldcutscene-apartment-text-photo-16": {
-    "english": "* Uma lua e estrelas foram desenhadas por toda parte com marcador verde."
+    "english": "* Há lua e estrelas desenhadas com marcador verde."
   },
   "worldcutscene-apartment-text-photo-17": {
     "english": "* Parece o verso de uma Polaroid."
   },
   "worldcutscene-apartment-text-photo-18": {
-    "english": "* Uma lua e estrelas foram desenhadas por toda parte com marcador verde."
+    "english": "* Há lua e estrelas desenhadas com marcador verde."
   },
   "worldcutscene-apartment-text-drawer-1": {
     "english": "* Na minha opinião profissional,[wait:5] esta é claramente a lâmpada inferior."
@@ -144,7 +144,7 @@
     "english": "* Essa é a minha rede.[wait:5]\\n* É onde durmo à noite."
   },
   "worldcutscene-apartment-text-hammock-2": {
-    "english": "* Hã?\\n* Por que eu não durmo simplesmente na cama?"
+    "english": "* Hã?\\n* Por que não durmo na cama?"
   },
   "worldcutscene-apartment-text-hammock-3": {
     "english": "* Ah, sabe como é.\\n* Motivos normais."
@@ -177,7 +177,7 @@
     "english": "* A geladeira está cheia de ingredientes de COZINHA bem organizados."
   },
   "worldcutscene-apartment-text-fridge-8": {
-    "english": "* E está ligada na tomada,[wait:5] também."
+    "english": "* Também está na tomada,[wait:5]."
   },
   "worldcutscene-apartment-text-fridge-9": {
     "english": "* A geladeira está cheia até a \\nborda com dezenas de diferentes \\ningredientes de COZINHA."
@@ -207,7 +207,7 @@
     "english": "* Pode ficar com a cama.[wait:5]\\n* Tenho dormido naquela rede há meses."
   },
   "worldcutscene-apartment-text-spawn-6": {
-    "english": "* Pode descansar à vontade,[wait:5] você provavelmente precisa depois de tudo isso."
+    "english": "* Descanse à vontade,[wait:5] deve precisar depois de tudo."
   },
   "worldcutscene-apartment-text-luna1-1": {
     "english": "* O que acha?[wait:5]\\n* Lugar bem legal,[wait:5] \\nnão é?"
@@ -243,7 +243,7 @@
     "english": "* Quando ele se aposentou,[wait:5] ainda tinha acesso ao lugar,[wait:5] então me deixou usá-lo."
   },
   "worldcutscene-apartment-text-luna1-12": {
-    "english": "* Isso quer dizer que não sou eu quem paga por isto."
+    "english": "* Então não sou eu quem paga."
   },
   "worldcutscene-apartment-text-luna1-13": {
     "english": "* É meu pai!"
@@ -258,7 +258,7 @@
     "english": "* Além disso,[wait:5] quando nosso restaurante fizer sucesso,[wait:5] vamos pagar tudo de volta."
   },
   "worldcutscene-apartment-text-luna1-17": {
-    "english": "* Tenho certeza de que ele vai adorar.[wait:5]\\n* Vai até ficar orgulhoso."
+    "english": "* Ele vai adorar, certeza.[wait:5]\\n* E se orgulhar."
   },
   "worldcutscene-apartment-text-luna1-18": {
     "english": "* Precisa de alguma coisa para conseguir dormir bem?"
@@ -276,7 +276,7 @@
     "english": "* Já tive! [wait:5]\\n* Medo do escuro![wait:5]\\n* Quando eu era uma larva!"
   },
   "worldcutscene-apartment-text-luna1-23": {
-    "english": "* E não tenho mais![wait:5]\\n* Porque já consigo me virar por conta própria!"
+    "english": "* E não tenho mais![wait:5]\\n* Já sei me virar!"
   },
   "worldcutscene-apartment-text-luna1-24": {
     "english": "* ...[wait:5]Enfim, não se preocupe![wait:5]\\n* Tem luzes noturnas na parede."
@@ -294,7 +294,7 @@
     "english": "* Hora de acordar,[wait:5] Sunny!"
   },
   "worldcutscene-apartment-text-dayThreeMorning-3": {
-    "english": "* Levante,[wait:5] estou fazendo o café da manhã!"
+    "english": "* Levante,[wait:5] tem café da manhã!"
   },
   "worldcutscene-apartment-text-dayThreeMorning-4": {
     "english": "* Aqui está."
@@ -309,7 +309,7 @@
     "english": "* Hoje é o dia! Mal consigo acreditar!"
   },
   "worldcutscene-apartment-text-dayThreeMorning-8": {
-    "english": "* Dá para acreditar,[wait:5] Sunny?[wait:5] Agora somos um restaurante[wait:5] classificado de verdade!"
+    "english": "* Acredita,[wait:5] Sunny?[wait:5] Agora somos,[wait:5] um restaurante ranqueado!"
   },
   "worldcutscene-apartment-text-dayThreeMorning-9": {
     "english": "* Quando acordei e lembrei,[wait:5] não consegui conter a empolgação!"
@@ -339,7 +339,7 @@
     "english": "* Quem é?"
   },
   "worldcutscene-apartment-text-dayThreeMorning-18": {
-    "english": "[voice:courier][font:courier]* Quem eu sou não importa.[wait:5] Tenho uma mensagem para uma tal de[wait:5] Luna."
+    "english": "[voice:courier][font:courier]* Não importa quem sou.[wait:5] Tenho mensagem para[wait:5] Luna."
   },
   "worldcutscene-apartment-text-dayThreeMorning-19": {
     "english": "* Ah![wait:5]\\n* Sou eu![wait:5]"
@@ -414,7 +414,7 @@
     "english": "* Ugh[wait:2].[wait:2].[wait:2].[wait:2] Que tolice."
   },
   "worldcutscene-apartment-text-dayThreeMorning-43": {
-    "english": "* Agora entendo por que ele está tão animado com vocês."
+    "english": "* Não admira ele estar tão animado com vocês."
   },
   "worldcutscene-apartment-text-dayThreeMorning-44": {
     "english": "* É melhor esse pagamento valer a pena."
@@ -459,7 +459,7 @@
     "english": "* Ele adorou e me deu um cheque em branco para manter o restaurante para sempre!"
   },
   "worldcutscene-apartment-text-dayFiveMorning-12": {
-    "english": "* Eu sei que ainda nem chegamos à classificação dois,[wait:5] mas..."
+    "english": "* Ainda nem chegamos ao nível dois,[wait:5] mas..."
   },
   "worldcutscene-apartment-text-dayFiveMorning-13": {
     "english": "* Isso só quer dizer que não devemos perder mais tempo!"
@@ -483,7 +483,7 @@
     "english": "Claro"
   },
   "worldcutscene-bridge-text-bridge-4": {
-    "english": "* Ai, meu Deus,[wait:5] ai, nossa,[wait:5] ai, biscoitos,[wait:5] o que estou fazendo?"
+    "english": "* Ai,[wait:5] meu Deus,[wait:5] droga,[wait:5] o que estou fazendo?"
   },
   "worldcutscene-bridge-text-bridge-5": {
     "english": "* Não tenho tempo para isso!"
@@ -519,7 +519,7 @@
     "english": "* Quero dizer-[wait:5] é claro que está."
   },
   "worldcutscene-bridge-text-bridge-16": {
-    "english": "* Eu sabia que estava com tudo sob controle desde o começo!"
+    "english": "* Sabia que tinha tudo sob controle!"
   },
   "worldcutscene-bridge-text-bridge-17": {
     "english": "* Desculpe por acordar você assim,[wait:5] deve estar sem entender nada."
@@ -558,7 +558,7 @@
     "english": "* Tanto faz![wait:5] Não tenho muito tempo!"
   },
   "worldcutscene-bridge-screenDialogueText-bridge-29": {
-    "english": "[voice:ut]* É assustador.[wait:30] Estou com tanto medo.[wait:60]"
+    "english": "[voice:ut]* Dá medo.[wait:30] Muito medo.[wait:60]"
   },
   "worldcutscene-bridge-screenDialogueText-bridge-30": {
     "english": "[voice:ut]* Mas eu tenho que fazer isso.[wait:20] \\n* Seria melhor para todos.[wait:60]"
@@ -588,7 +588,7 @@
     "english": "Órgão"
   },
   "worldcutscene-coffee_in-text-gravestone-1": {
-    "english": "* É uma jukebox em forma de lápide![wait:5]\\n* Você tenta tocar uma música."
+    "english": "* É uma vitrola em forma de lápide![wait:5]\\n* Você tenta tocar uma música."
   },
   "worldcutscene-coffee_in-text-gravestone-2": {
     "english": "* [speed:0.1]..."
@@ -597,7 +597,7 @@
     "english": "* Está quebrada."
   },
   "worldcutscene-coffee_in-text-gravestone-4": {
-    "english": "* Talvez uma jukebox melhorasse o clima...[wait:5] \\n* Ou talvez se eu adicionasse um..."
+    "english": "* Talvez uma vitrola dê clima...[wait:5] \\n* Ou se eu pusesse um..."
   },
   "worldcutscene-coffee_in-text-gravestone-5": {
     "english": "* Ah,[wait:5] não,[wait:5] isso seria demais,[wait:5] com certeza! [wait:5]E se estragasse o ambiente?!"
@@ -612,7 +612,7 @@
     "english": "* Desculpe,[wait:5] sobre o que estávamos falando?"
   },
   "worldcutscene-coffee_in-text-gravestone-9": {
-    "english": "* Agora esta jukebox só toca silêncio..."
+    "english": "* Agora esta vitrola só toca silêncio..."
   },
   "worldcutscene-coffee_in-text-draculatte-7": {
     "english": "* VVocẽ gostaria de comprar um café neste belo dia?"
@@ -648,7 +648,7 @@
     "english": "* BBem-vvindo,[wait:5] ao Coffee-In!"
   },
   "worldcutscene-coffee_in-text-draculatte-18": {
-    "english": "* Olá de novo, meu amigo![wait:5]\\n* BBem-vvindo ao Coffee-In!"
+    "english": "* Olá de novo, camarada![wait:5]\\n* É bom ter vvocê no Coffee-In!"
   },
   "worldcutscene-coffee_in-text-draculatte-19": {
     "english": "* Minhas mais sinceras desculpas pela falta temporária,"
@@ -666,7 +666,7 @@
     "english": "* Receio ter que limitar os clientes a apenas uma xícara por dia."
   },
   "worldcutscene-coffee_in-text-draculatte-24": {
-    "english": "* Café deve ser consumido com responsabilidade."
+    "english": "* Beba café com responsabilidade."
   },
   "worldcutscene-coffee_in-text-draculatte-25": {
     "english": "* Não vvou deixar que o outro dia\\nse repita."
@@ -675,19 +675,19 @@
     "english": "* VVolte amanhã se quiser mais!"
   },
   "worldcutscene-coffee_in-text-draculatte-27": {
-    "english": "* Ah! BBem-vvindo de vvolta, amigo!"
+    "english": "* Ah! Que bom vver vvocê, camarada!"
   },
   "worldcutscene-coffee_in-text-draculatte-28": {
     "english": "* Hmm...[wait:5]\\n* Coffee-In,[wait:5] onde o café deixa você morceg-"
   },
   "worldcutscene-coffee_in-text-draculatte-29": {
-    "english": "* Ah,[wait:5] olá,[wait:5] meu amigo![wait:5]\\n* VVeio provar nosso café?"
+    "english": "* Ah,[wait:5] olá,[wait:5] camarada![wait:5]\\n* VVeio provar nosso café?"
   },
   "worldcutscene-coffee_in-text-draculatte-30": {
-    "english": "* Ah,[wait:5] olá de novo,[wait:5] meu amigo![wait:5]\\n* VVoltou para provar nosso café?"
+    "english": "* Ah,[wait:5] olá de novo,[wait:5] camarada![wait:5]\\n* VVoltou para provar nosso café?"
   },
   "worldcutscene-coffee_in-text-draculatte-31": {
-    "english": "* BBem,[wait:5] se é izto,[wait:5] sinto muito,[wait:5] amigo.[wait:5]\\n* Já ficamos sem café!"
+    "english": "* BBem,[wait:5] se é izto,[wait:5] sinto muito,[wait:5] camarada.[wait:5]\\n* Já ficamos sem café!"
   },
   "worldcutscene-coffee_in-text-draculatte-32": {
     "english": "* Sim,[wait:5] sim.[wait:5] Um monstro bbranco entrou e pediu todo o nosso estoque bem cedo!"
@@ -774,7 +774,7 @@
     "english": "* Sim,[wait:5] é bem impressionante,[wait:5] não?"
   },
   "worldcutscene-coffee_in-text-draculatte-60": {
-    "english": "* Basta uma melodia simples e o café fica pronto![wait:5]\\n* Tenho bastante orgulho disso."
+    "english": "* Uma melodia e o café sai![wait:5]\\n* Tenho orgulho disso."
   },
   "worldcutscene-coffee_in-text-draculatte-61": {
     "english": "* Uma pena que não esteja funcionando \\nno momento..."
@@ -807,7 +807,7 @@
     "english": "* Ah! \\n* BBem..."
   },
   "worldcutscene-coffee_in-text-draculatte-71": {
-    "english": "* Tudo começou quando eu era um morceguinho bem pequeno..."
+    "english": "* Tudo começou quando eu era um morceguinho..."
   },
   "worldcutscene-coffee_in-text-draculatte-72": {
     "english": "* Isso continua por 10 minutos."
@@ -837,7 +837,7 @@
     "english": "* Para seguir seu sonho,[wait:5] mostrar ao mundo seu interesse,[wait:5] \\nsua verdadeira paixão!"
   },
   "worldcutscene-coffee_in-text-draculatte-81": {
-    "english": "* Uma arte maravilhosa e bela, com a qual nenhuma outra poderia se comparar...!-"
+    "english": "* Uma arte sublime, sem igual...!-"
   },
   "worldcutscene-coffee_in-text-draculatte-82": {
     "english": "* Acro-morcego-bacias."
@@ -846,7 +846,7 @@
     "english": "* Uau...[wait:5] \\n* Que legal!"
   },
   "worldcutscene-coffee_in-text-draculatte-84": {
-    "english": "* Eu não sabia que proprietários podiam simplesmente sumir do nada assim!"
+    "english": "* Nem sabia que locadores podiam sumir assim!"
   },
   "worldcutscene-coffee_in-text-draculatte-85": {
     "english": "* BBem,[wait:5] sim,[wait:5] ele era bastante etéreo."
@@ -882,19 +882,19 @@
     "english": "* ...[wait:10]Não."
   },
   "worldcutscene-coffee_in-text-disco-1": {
-    "english": "* Groovy! [wait:5]Este lugar é groovy![wait:5] Tem todas as minhas músicas favoritas!"
+    "english": "* Maneiro! [wait:5]Este lugar é maneiro![wait:5] Tem minhas músicas favoritas!"
   },
   "worldcutscene-coffee_in-text-disco-2": {
     "english": "* Com Dave por perto..."
   },
   "worldcutscene-coffee_in-text-disco-3": {
-    "english": "* Você nunca vai achar músicas disco tão boas em nenhuma outra jukebox do Subsolo!"
+    "english": "* Você nunca vai achar músicas disco tão boas em nenhuma outra vitrola do Subsolo!"
   },
   "worldcutscene-coffee_in-text-disco-4": {
     "english": "* É bom poder ouvir disco de novo."
   },
   "worldcutscene-coffee_in-text-disco-5": {
-    "english": "* Groovy! [wait:5]Este lugar é groovy![wait:5] Tem todas as minhas músicas favoritas!"
+    "english": "* Maneiro! [wait:5]Este lugar é maneiro![wait:5] Tem minhas músicas favoritas!"
   },
   "worldcutscene-coffee_in-text-disco-6": {
     "english": "* Mas desta vez é sério!"
@@ -921,7 +921,7 @@
     "english": "* Finalmente![wait:5]\\n* A disco está voltando,[wait:5] panqueca!"
   },
   "worldcutscene-coffee_in-text-disco-14": {
-    "english": "* Eu sabia que podia contar com você,[wait:5] pequeno Casanova."
+    "english": "* Sabia que podia contar com você,[wait:5] Casanova."
   },
   "worldcutscene-coffee_in-text-disco-15": {
     "english": "* Erm...[wait:5] O procedimento será seguro?[wait:5]\\n* Afinal,[wait:5] izto é minha propriedade."
@@ -957,16 +957,16 @@
     "english": "* Não precisa pagar, "
   },
   "worldcutscene-coffee_in-text-disco-26": {
-    "english": "* Groovy! [wait:5]Este lugar é groovy![wait:5] Tem todas as minhas músicas favoritas!"
+    "english": "* Maneiro! [wait:5]Este lugar é maneiro![wait:5] Tem minhas músicas favoritas!"
   },
   "worldcutscene-coffee_in-text-disco-27": {
-    "english": "* Você nunca vai achar músicas disco tão boas em nenhuma outra jukebox do Subsolo!"
+    "english": "* Você nunca vai achar músicas disco tão boas em nenhuma outra vitrola do Subsolo!"
   },
   "worldcutscene-coffee_in-text-disco-28": {
     "english": "* ...[wait:5]Ei,[wait:5] espere aí![wait:5]\\n* Esta coisa está quebrada![wait:5]\\n* Que droga."
   },
   "worldcutscene-coffee_in-text-disco-29": {
-    "english": "* Certo,[wait:5] pequeno Casanova,[wait:5] \\nfaça um favor para mim."
+    "english": "* Certo,[wait:5] Casanova,[wait:5] \\nme faça um favor."
   },
   "worldcutscene-coffee_in-text-disco-30": {
     "english": "* Se quiser curtir o groove com \\nisto,[wait:5] precisa achar alguém para \\nconsertar esta coisa!"
@@ -978,16 +978,16 @@
     "english": "* Sem música,[wait:5] acho que vou ter que virar uma rainha disco no armário..."
   },
   "worldcutscene-coffee_in-text-disco-33": {
-    "english": "* Nem pensar!\\n[wait:5]* Com música ou sem,[wait:5] esta gata vai continuar groovy!"
+    "english": "* Nem pensar!\\n[wait:5]* Com música ou sem,[wait:5] esta gata segue no embalo!"
   },
   "worldcutscene-coffee_in-text-dj-1": {
     "english": "* Outro dia,[wait:5] outra festa trazida de volta à vida pelo DJ Necrodance!"
   },
   "worldcutscene-coffee_in-text-dj-2": {
-    "english": "* Agora que nosso trabalho aqui acabou,[wait:5] precisamos voltar para o nosso povo."
+    "english": "* Trabalho feito,[wait:5] é hora de voltar ao nosso povo."
   },
   "worldcutscene-coffee_in-text-dj-3": {
-    "english": "* Talvez nunca mais nos encontremos."
+    "english": "* Talvez nunca mais nos vejamos."
   },
   "worldcutscene-coffee_in-text-dj-4": {
     "english": "* Yo,[wait:5] yo,[wait:5] yo!\\n* DJ Necrodance na área!"
@@ -999,7 +999,7 @@
     "english": "* Com nossa ajuda,[wait:5] a galera vai poder curtir de verdade aqui!"
   },
   "worldcutscene-coffee_in-text-dj-7": {
-    "english": "* Como é?[wait:5]\\n* A jukebox do Coffee-In morreu?"
+    "english": "* Como é?[wait:5]\\n* A vitrola do Coffee-In morreu?"
   },
   "worldcutscene-coffee_in-text-dj-8": {
     "english": "* Yo,[wait:5] isso não dá, parça.[wait:5] Alguém precisa trazer aquele lugar de volta à vida."
@@ -1029,7 +1029,7 @@
     "english": "* ...[wait:5]Não me diga que ele escreveu errado na placa..."
   },
   "worldcutscene-coffee_in-text-genie-6": {
-    "english": "* De qualquer forma,[wait:5] receio que a \\nhospedaria esteja cheia no momento."
+    "english": "* Enfim,[wait:5] receio que a \\nhospedaria esteja lotada."
   },
   "worldcutscene-coffee_in-text-genie-7": {
     "english": "* Afinal,[wait:5] é apenas um quarto.\\n"
@@ -1116,7 +1116,7 @@
     "english": "* É por isso que adoro o Coffee-In.[wait:5]\\n* É realmente o lugar perfeito para alguém como eu."
   },
   "worldcutscene-coffee_in-text-mummy-3": {
-    "english": "* Além disso,[wait:5] gosto de amaldiçoar quem\\nabre a porta.[wait:5] \\n* Só de brincadeira."
+    "english": "* Também,[wait:5] amaldiçoo quem\\nabre a porta.[wait:5] \\n* Só por graça."
   },
   "worldcutscene-coffee_in-text-mummy-4": {
     "english": "* Hã?\\n[wait:5] * Como amaldiçoo as pessoas?\\n[wait:5]* É magia?"
@@ -1149,7 +1149,7 @@
     "english": "* Está viva!\\n[wait:5]* Agora podemos animar isto de verdade!"
   },
   "worldcutscene-coffee_in-text-ritual-5": {
-    "english": "* Groovy!\\n[wait:5]* Você é a alma da festa,[wait:5] DJ!"
+    "english": "* Maneiro!\\n[wait:5]* Você é a alma da festa,[wait:5] DJ!"
   },
   "worldcutscene-coffee_in-text-ritual-6": {
     "english": "* Favor Concluído! \\n[color:yellow]Necromancia Disco."
@@ -1185,7 +1185,7 @@
     "english": "Você está bem, Sunny?"
   },
   "worldcutscene-core_square-textChoicer-treeguy-2": {
-    "english": "Suspirar melancolicamente"
+    "english": "Suspirar"
   },
   "worldcutscene-core_square-textChoicer-treeguy-3": {
     "english": "Não..."
@@ -1320,10 +1320,10 @@
     "english": "* ...E as cobras."
   },
   "worldcutscene-core_square-text-save-1": {
-    "english": "* (É muita coisa para absorver...\\n[wait:5]Mesmo assim, você continua determinado!)"
+    "english": "* (É muita coisa...\\n[wait:5]Mas você mantém a determinação!)"
   },
   "worldcutscene-core_square-text-save-2": {
-    "english": "* (Luna paira logo atrás de você, [wait:5]com os olhos brilhando de esperança.)"
+    "english": "* (Luna paira atrás de você, [wait:5]olhos cheios de esperança.)"
   },
   "worldcutscene-core_square-text-save-3": {
     "english": "* (A oportunidade de ajudar uma nova amizade enche você de determinação!)"
@@ -1365,7 +1365,7 @@
     "english": "* Ora,[wait:5] não é assim que se trata um trabalhador essencial como eu,[wait:5] não acha?"
   },
   "worldcutscene-core_square-text-sned-11": {
-    "english": "* Suspiro...[wait:5]\\n* A vida de um carteiro-caracol é \\numa luta de verdade."
+    "english": "* Suspiro...[wait:5]\\n* Vida de homem-caracol é \\ndura mesmo."
   },
   "worldcutscene-core_square-text-sned-12": {
     "english": "* Ei![wait:5] Ouvi dizer que a máquina de café do Coffee-In voltou a funcionar!"
@@ -1437,10 +1437,10 @@
     "english": "* Volte quando for alguém que eu nunca conheci!"
   },
   "worldcutscene-core_square-text-origami-14": {
-    "english": "* Oh,[wait:5] olá![wait:5] Você parece \\nser novo por aqui!"
+    "english": "* Ah,[wait:5] olá![wait:5] Não vi você \\npor aqui antes!"
   },
   "worldcutscene-core_square-text-origami-15": {
-    "english": "* Bem-vindo![wait:5] À![wait:5] \\n* Praça do NÚCLEO![wait:5]\\n* O centro social de Hotland!"
+    "english": "* Boas-vindas![wait:5] À![wait:5] \\n* Praça do NÚCLEO![wait:5]\\n* O centro social de Hotland!"
   },
   "worldcutscene-core_square-text-origami-16": {
     "english": "* Não sei de onde você veio,[wait:5] estranho,[wait:5] mas espero que aproveite a estadia!"
@@ -1491,7 +1491,7 @@
     "english": "*[wait:20] Ou você poderia-"
   },
   "worldcutscene-core_square-text-grubguy-11": {
-    "english": "* SUSPIRO! \\n* De fato,[wait:5] não há nada a fazer além de esperar...[wait:5] e[shake][speed:0.2] morrer de fome..."
+    "english": "* SUSPIRO! \\n* Só resta esperar...[wait:5] e[wait:5][shake][speed:0.2] morrer..."
   },
   "worldcutscene-core_square-text-grubguy-12": {
     "english": "*[wait:20] ...Sabe,[wait:5] Sunny,[wait:5] talvez possamos tentar de novo outra hora."
@@ -1503,7 +1503,7 @@
     "english": "* Certo,[wait:5] se você diz."
   },
   "worldcutscene-core_square-text-wormworm-3": {
-    "english": "* O que foi?[wait:5]\\n* Estou bloqueando o caminho?"
+    "english": "* O quê?[wait:5]\\n* Bloqueio o caminho?"
   },
   "worldcutscene-core_square-text-wormworm-4": {
     "english": "* Oh,[wait:5] mil desculpas.\\n[wait:5]* Vou sair do caminho."
@@ -1515,13 +1515,13 @@
     "english": "* Como slime,[wait:5] continuo indignado."
   },
   "worldcutscene-core_square-text-floppyfish-1": {
-    "english": "* Sou um peixe molenga.\\n[wait:5]* Veja como eu me debato."
+    "english": "* Sou peixe molenga.\\n[wait:5]* Veja eu tombar."
   },
   "worldcutscene-core_square-text-floppyfish-2": {
     "english": "* Plof Plof Plof Plof Plof Plof Plof Plof Plof Plof Plof Plof Plof."
   },
   "worldcutscene-core_square-text-mason-1": {
-    "english": "* Argh...[wait:5] Dá para acreditar?[wait:5]\\n* Usando minha imagem assim...[wait:5]\\n* E sem direitos autorais,[wait:5] ainda por cima!"
+    "english": "* Argh...[wait:5] Dá para acreditar?[wait:5]\\n* Usando minha imagem assim...[wait:5]\\n* E sem royalties,[wait:5] ainda!"
   },
   "worldcutscene-core_square-text-mason-2": {
     "english": "* \\\"Apartamentos Estilo Humano\\\"?[wait:5]\\n* É nisso que querem que você acredite!"
@@ -1530,7 +1530,7 @@
     "english": "* Espere só.[wait:5]\\n* Meus advogados entrarão em contato...\\n"
   },
   "worldcutscene-core_square-text-mason-4": {
-    "english": "* Hã?\\n[wait:5]* Quem exatamente eu estou processando?"
+    "english": "* Hã?\\n[wait:5]* Quem estou processando?"
   },
   "worldcutscene-core_square-text-mason-5": {
     "english": "* Não é óbvio,[wait:5] cabeça de bloco?!\\n[wait:5]* Os prédios!"
@@ -1578,7 +1578,7 @@
     "english": "* DROGA!!\\n[wait:5]* VOCÊ ESTRAGOU TUDO!!"
   },
   "worldcutscene-core_square-text-eyeguy-2": {
-    "english": "* Eu estava desafiando esta lâmpada para um duelo de olhares.\\n[wait:5]* E eu estava ganhando,[wait:5] também!"
+    "english": "* Desafiei esta lâmpada num duelo de olhares.\\n[wait:5]* E eu ganhava,[wait:5] viu!"
   },
   "worldcutscene-core_square-text-eyeguy-3": {
     "english": "* O clube de encarar lâmpadas vai ter tanta vergonha de mim..."
@@ -1623,7 +1623,7 @@
     "english": "* Não preciso me preocupar com o que o clube de encarar lâmpadas pensa."
   },
   "worldcutscene-core_square-text-eyeguy-17": {
-    "english": "* Estou indo para coisas maiores e melhores.\\n[wait:5]* E mais BRILHANTES!"
+    "english": "* Vou atrás de algo maior e melhor.\\n[wait:5]* E mais BRILHANTE!"
   },
   "worldcutscene-core_square-text-eyeguy-18": {
     "english": "* Você não gostaria de...[wait:5]\\n* Conhecer nosso restaurante,[wait:5] gostaria?"
@@ -1680,7 +1680,7 @@
     "english": "* Sunny,[wait:5] é?[wait:5] \\n* Você emite radiação eletromagnética?"
   },
   "worldcutscene-core_square-text-treeguy-18": {
-    "english": "* Então você não me serve.[wait:5]\\n* Vou procurar diversão em outro lugar!"
+    "english": "* Então você não me serve.[wait:5]\\n* Vou me divertir longe daqui!"
   },
   "worldcutscene-core_square-text-treeguy-19": {
     "english": "* Droga..."
@@ -1701,7 +1701,7 @@
     "english": "* Ou posso ir para casa e não \\nvisitá-la."
   },
   "worldcutscene-core_square-text-treeguy-25": {
-    "english": "* E jogar Jogos de Árvore.\\n[wait:5]* Jogos para Árvores.\\n[wait:5]* Jogos de Árvore."
+    "english": "* E jogar Jogos-Árvore.\\n[wait:5]* Jogos para Árvores.\\n[wait:5]* Jogos-Árvore."
   },
   "worldcutscene-core_square-text-treeguy-26": {
     "english": "* Isso parece muito mais divertido \\ndo que visitar minha avó."
@@ -1743,7 +1743,7 @@
     "english": "* Essas crianças...[wait:5] \\n* Sempre correndo como se o mundo fosse de vocês!"
   },
   "worldcutscene-core_square-text-oldguy-13": {
-    "english": "* Bah! Parem de ser preguiçosos![wait:5] \\n* Sem ética de trabalho![wait:5] \\n* Sem iniciativa!"
+    "english": "* Bah! Parem com a moleza![wait:5] \\n* Sem ética![wait:5] \\n* Sem garra!"
   },
   "worldcutscene-core_square-text-oldguy-14": {
     "english": "* Aposto que vocês nem sabem a sorte que têm por ter o NÚCLEO!"
@@ -1857,16 +1857,16 @@
     "english": "* Dizem que será algo revolucionário.\\n[wait:5]* Uma tecnologia maluca da superfície."
   },
   "worldcutscene-core_square-text-constructionslime-4": {
-    "english": "* Não entendo o entusiasmo...[wait:5]\\n* Mas eu também vivo debaixo de uma pedra.[wait:5]\\n* Literalmente."
+    "english": "* Não entendo a empolgação...[wait:5]\\n* Mas vivo sob uma pedra.[wait:5]\\n* Literalmente."
   },
   "worldcutscene-core_square-text-constructionslime-5": {
     "english": "* Dê alguns dias e terminaremos o trabalho aqui,[wait:5] \\ncerto, jovem?"
   },
   "worldcutscene-core_square-text-constructionslime-6": {
-    "english": "* Isso![wait:5] Continuamos trabalhando quase nada quase!"
+    "english": "* Isso![wait:5] Ainda quase sem trabalhar!"
   },
   "worldcutscene-core_square-text-stop-1": {
-    "english": "* Desculpe,[wait:5] jovem.\\n* Não posso deixar você passar,[wait:5] de jeito nenhum."
+    "english": "* Foi mal,[wait:5] parceiro.\\n* Não posso deixar passar,[wait:5] senhor."
   },
   "worldcutscene-core_square-text-stop-2": {
     "english": "* A migração dos pequeninos está cruzando o caminho.[wait:5] Isso só ocorre uma vez por geração."
@@ -1986,16 +1986,16 @@
     "english": "* Agora estou falido."
   },
   "worldcutscene-core_square-text-venn-1": {
-    "english": "* ENCONTRE MINHAS MUITAS PÁGINAS."
+    "english": "* ACHE MINHAS PÁGINAS."
   },
   "worldcutscene-core_square-text-venn-2": {
     "english": "* Favor Aceito! \\n[color:yellow]Encontre Muitas Páginas."
   },
   "worldcutscene-core_square-text-venn-3": {
-    "english": "* ENCONTRE MINHAS MUITAS PÁGINAS."
+    "english": "* ACHE MINHAS PÁGINAS."
   },
   "worldcutscene-core_square-text-venn-4": {
-    "english": "* VOCÊ ENCONTROU MINHAS MUITAS PÁGINAS."
+    "english": "* VOCÊ ACHOU MINHAS PÁGINAS."
   },
   "worldcutscene-core_square-text-venn-5": {
     "english": "* BOM           TRABALHO"
@@ -2007,7 +2007,7 @@
     "english": "* MINHAS PÁGINAS.[wait:5] ERAM MUITAS."
   },
   "worldcutscene-core_square-text-page-1": {
-    "english": "* (Você encontrou uma página!)"
+    "english": "* (Achou uma página!)"
   },
   "worldcutscene-core_square-text-page-2": {
     "english": "* Uma página normal,[wait:5] única."
@@ -2064,13 +2064,13 @@
     "english": "* NÃO![wait:5]\\n* PLANO RUIM![wait:5]\\n* VOLTAR A PENSAR."
   },
   "worldcutscene-core_square-text-bighorny-1": {
-    "english": "* As garotas me chamam de GRANDÃO CHIFRUDO."
+    "english": "* As garotas me chamam de CHIFRUDO."
   },
   "worldcutscene-core_square-text-bighorny-2": {
     "english": "* Me chamam assim por causa do meu CHIFRE FORTE e IMPRESSIONANTE."
   },
   "worldcutscene-core_square-text-bighorny-3": {
-    "english": "* Não existe nenhum outro motivo para as garotas me chamarem assim."
+    "english": "* É só por isso que as garotas me chamam assim."
   },
   "worldcutscene-core_square-text-balloon-13": {
     "english": "* Sinceramente,[wait:5] é muito estranho que ainda não tenha derretido."
@@ -2163,7 +2163,7 @@
     "english": "* Emprego real![wait:5]\\n* Dinheiro real!\\n[wait:5]* Chapéu real!"
   },
   "worldcutscene-core_square-text-worm-3": {
-    "english": "* Agora posso viver de forma totalmente irresponsável!"
+    "english": "* Agora posso viver sem responsabilidade!"
   },
   "worldcutscene-core_square-text-worm-4": {
     "english": "* Fumar!\\n[wait:5]* Bungee jumping![wait:5]\\n* Energéticos em excesso!"
@@ -2259,7 +2259,7 @@
     "english": "* Podemos conseguir qualquer coisa.[wait:5]\\n * Vamos ver o céu!"
   },
   "worldcutscene-core_square-text-hippomolerat-13": {
-    "english": "* ...[wait:5]Fico feliz que você ainda tenha esperança."
+    "english": "* ...[wait:5]Que bom que ainda tem esperança."
   },
   "worldcutscene-core_square-text-hippomolerat-14": {
     "english": "* Talvez, se essa esperança tornar o Subsolo mais suportável,[wait:5] seja melhor acreditar do que se desesperar."
@@ -2388,7 +2388,7 @@
     "english": "* Com meu mais sagrado instrumento,[wait:5] rasgarei a terra \\ne te libertarei!"
   },
   "worldcutscene-core_square-text-penguin-10": {
-    "english": "* Companheiro cavaleiro...[wait:5] Vá embora!\\n[wait:5]* Não devo receber tua ajuda."
+    "english": "* Nobre cavaleiro...[wait:5] Fora!\\n[wait:5]* Não devo aceitar tua ajuda."
   },
   "worldcutscene-core_square-text-penguin-11": {
     "english": "* Não te preocupes com minha luta.[wait:5] Conheces o velho mandamento,[wait:5] certamente."
@@ -2397,13 +2397,13 @@
     "english": "* Onde há um buraco também há um objetivo!"
   },
   "worldcutscene-core_square-text-hatstack-1": {
-    "english": "* eu me arrumei para visitar o hive......."
+    "english": "* eu me arrumei para visitar o colmeia......."
   },
   "worldcutscene-core_square-text-hatstack-2": {
     "english": "* agora estou elegante para nada........"
   },
   "worldcutscene-core_square-text-hatstack-3": {
-    "english": "* talvez ser elegante já seja sua própria recompensa."
+    "english": "* talvez ser elegante já seja recompensa."
   },
   "worldcutscene-core_square-text-geoff-1": {
     "english": "* Eu e meu amigo,[wait:5] não vemos as coisas do mesmo jeito,[wait:5] \\nsabe?"
@@ -2412,7 +2412,7 @@
     "english": "* Se ao menos houvesse um jeito de ficarmos na mesma página."
   },
   "worldcutscene-core_square-text-geoff-3": {
-    "english": "* Ou no mesmo nível,[wait:5] por assim dizer."
+    "english": "* Ou no mesmo nível,[wait:5] digamos."
   },
   "worldcutscene-core_square-text-geoff-4": {
     "english": "* Hã?[wait:5]\\n* Como ficamos amigos?"
@@ -2421,13 +2421,13 @@
     "english": "* Oh,[wait:5] essa história é engraçada."
   },
   "worldcutscene-core_square-text-geoff-6": {
-    "english": "* Nós dois estávamos esperando para \\nentrar numa montanha-russa."
+    "english": "* Esperávamos juntos para \\nandar na montanha-russa."
   },
   "worldcutscene-core_square-text-geoff-7": {
     "english": "* Mas nenhum dos dois atingia a altura mínima."
   },
   "worldcutscene-core_square-text-geoff-8": {
-    "english": "* No nosso ponto mais baixo,[wait:5] estávamos \\nlá um para o outro."
+    "english": "* Na pior,[wait:5] estávamos \\num com o outro."
   },
   "worldcutscene-core_square-text-geoff-9": {
     "english": "* ...Ou no meu caso,[wait:5] seria \\no mais alto?"
@@ -2451,7 +2451,7 @@
     "english": "* Queria que ele fosse um pouco \\nmais pé no chão."
   },
   "worldcutscene-core_square-text-keith-4": {
-    "english": "* ...Ou talvez eu possa ficar mais \\ncom a cabeça no céu?"
+    "english": "* ...Ou talvez ficar mais \\nno mundo da lua?"
   },
   "worldcutscene-core_square-text-keith-5": {
     "english": "* Hã?[wait:5]\\n* Por que somos amigos,[wait:5] então?"
@@ -2496,7 +2496,7 @@
     "english": "* Veja,[wait:5] estou pesquisando a vida dos humanos que caíram no Subsolo."
   },
   "worldcutscene-core_square-text-shirley-14": {
-    "english": "* Esta estátua poderia ser uma fonte primária inestimável,[wait:5] \\nmas, infelizmente..."
+    "english": "* Esta estátua seria fonte primária valiosa,[wait:5] \\nmas, pena..."
   },
   "worldcutscene-core_square-text-shirley-15": {
     "english": "* Sempre posso deixar a pesquisa \\nsobre esse humano \\npara depois."
@@ -2520,7 +2520,7 @@
     "english": "* Procure o departamento de história quando estiver lá,[wait:5] provavelmente estarei no meu escritório."
   },
   "worldcutscene-core_square-text-shirley-22": {
-    "english": "* Enfim,[wait:5] preciso ir.[wait:5]\\n* Jovem escudeiro,[wait:5] espero\\nencontrar você novamente!"
+    "english": "* Enfim,[wait:5] preciso ir.[wait:5]\\n* Jovem escudeiro,[wait:5] espero\\nrevê-lo!"
   },
   "worldcutscene-core_square-text-shirley-23": {
     "english": "* Favor Aceito! \\n[color:yellow]A História dos Humanos e Monstros."
@@ -2541,7 +2541,7 @@
     "english": "* Bem,[wait:5] se realmente tiver interesse,[wait:5] espero que assista a uma das minhas aulas na UH."
   },
   "worldcutscene-core_square-text-shirley-29": {
-    "english": "* Procure o departamento de história quando estiver lá,[wait:5] você \\nprovavelmente me encontrará no escritório."
+    "english": "* Procure o departamento de história quando estiver lá,[wait:5] você \\ndeve me achar no escritório."
   },
   "worldcutscene-core_square-text-shirley-30": {
     "english": "* Enfim,[wait:5] preciso ir.[wait:5]\\n* Jovem escudeiro,[wait:5] espero encontrar \\nvocê de novo!"
@@ -2592,7 +2592,7 @@
     "english": "* Sempre dizem que sou \\\"descolado\\\" ou \\\"frio\\\".[wait:5]\\n* Acham que sou idiota?"
   },
   "worldcutscene-core_square-text-smokestack-17": {
-    "english": "* Viu?\\n[wait:5]* É exatamente disso que estou falando!"
+    "english": "* Viu?\\n[wait:5]* É disso que falo!"
   },
   "worldcutscene-core_square-text-smokestack-18": {
     "english": "* Talvez eu deva aceitar.\\n[wait:5]* Vou para Snowdin e começo a comer cubos de gelo."
@@ -2601,10 +2601,10 @@
     "english": "* Ei,[wait:5] pegue leve,[wait:5] esquentadinho.\\n[wait:5]* Você tem tipo dois anos."
   },
   "worldcutscene-core_square-text-smokestack-20": {
-    "english": "* Mas você não está errado.[wait:5] Eu SOU quente.[wait:5]\\n* Que bom que alguém finalmente percebeu. "
+    "english": "* Mas você tem razão.[wait:5] Eu SOU quente.[wait:5]\\n* Enfim alguém notou. "
   },
   "worldcutscene-core_square-text-smokestack-21": {
-    "english": "* Isso vai resolver minhas inseguranças.[wait:5]\\n* Talvez eu consiga esfriar a cabeça."
+    "english": "* Isso cura minhas inseguranças.[wait:5]\\n* Talvez eu esfrie."
   },
   "worldcutscene-core_square-text-smokestack-22": {
     "english": "* ...[wait:5]Espere..."
@@ -2616,7 +2616,7 @@
     "english": "* Como carvão no café da manhã \\ntodos os dias."
   },
   "worldcutscene-core_square-text-smokestack-25": {
-    "english": "* O quê,[wait:5] quer minha rotina de cuidados com a pele também,[wait:5] ou algo assim?"
+    "english": "* O quê,[wait:5] quer até minha rotina de pele,[wait:5] é isso?"
   },
   "worldcutscene-core_square-text-smokestack-26": {
     "english": "* Nada muito complicado,[wait:5] sabe.\\n[wait:15]* Óleo."
@@ -2712,7 +2712,7 @@
     "english": "* Este é mesmo o fim?[wait:5]\\n* Meu amor estava condenado desde o início?"
   },
   "worldcutscene-core_square-text-lavar-9": {
-    "english": "* Não![wait:5] Não posso perder a esperança!\\n[wait:5]* Ainda existe uma solução!"
+    "english": "* Não![wait:5] Não posso desistir!\\n[wait:5]* Ainda há solução!"
   },
   "worldcutscene-core_square-text-lavar-10": {
     "english": "* Existe um tipo de flor à prova de fogo.[wait:5]\\n* A flor Relógio de Sol."
@@ -2733,7 +2733,7 @@
     "english": "* Se eu tivesse uma flor Relógio de Sol que não pegasse fogo também quando eu tocasse."
   },
   "worldcutscene-core_square-text-lavar-16": {
-    "english": "* Lava me ama...[wait:5] Lava não me ama...[wait:5]\\n* Lava me ama...[wait:5] Lava não me ama...[wait:5]\\n* Lava me ama...[wait:5] Lava não me ama!"
+    "english": "* Lava me ama...[wait:5] Não me ama...[wait:5]\\n* Lava me ama...[wait:5] Não me ama...[wait:5]\\n* Lava me ama...[wait:5] Não me ama!"
   },
   "worldcutscene-core_square-text-lavar-17": {
     "english": "* Oh, meu pobre coração![wait:5]\\n* Eu sabia,[wait:5] eu sabia!"
@@ -2790,7 +2790,7 @@
     "english": "* Como aquela garota vermelha estranha que vive me seguindo. "
   },
   "worldcutscene-core_square-text-cass-8": {
-    "english": "* Ela é totalmente obcecada por mim.\\n[wait:5]* Só estou ESPERANDO ela \\nme chamar para sair!"
+    "english": "* Ela é louca por mim.\\n[wait:5]* Só ESPERO ela \\nme chamar!"
   },
   "worldcutscene-core_square-text-cass-9": {
     "english": "* Heh.[wait:5]\\n* É.[wait:5]\\n* A qualquer momento."
@@ -2829,7 +2829,7 @@
     "english": "* Isto é uma desgraça![wait:5] Fechar este restaurante...[wait:5] Dá para imaginar a audácia?"
   },
   "worldcutscene-core_square-text-octomom-2": {
-    "english": "* Vocês vão estragar o passeio turístico do meu maravilhoso marido!"
+    "english": "* Vão estragar o passeio do meu marido!"
   },
   "worldcutscene-core_square-text-octomom-3": {
     "english": "* As reservas estavam fechadas,[wait:5] então decidi vir reclamar pessoalmente."
@@ -2841,7 +2841,7 @@
     "english": "* Estamos procurando meu irmão,[wait:5] você viu ele?"
   },
   "worldcutscene-core_square-text-frogger3-3": {
-    "english": "* Ele se parece comigo, só que muito mais legal."
+    "english": "* É igual a mim, só que mais legal."
   },
   "worldcutscene-core_square-text-frogger3-4": {
     "english": "* Bem,[wait:5] se vir ele,[wait:5] por favor me avise."
@@ -2859,22 +2859,22 @@
     "english": "* De volta ao habitat natural!"
   },
   "worldcutscene-core_square-text-whaley-3": {
-    "english": "* Quanto tempo faz?[wait:5] Não está feliz de reencontrar seu amigo Whaley?"
+    "english": "* Quanto tempo![wait:5] Que tal rever seu camarada Whaley?"
   },
   "worldcutscene-core_square-text-whaley-4": {
-    "english": "* Whaley sabe tuuuuuudo sobre você,[wait:5] amigo!\\n[wait:5]* Porque somos amigos,[wait:5] sim sim!"
+    "english": "* Whaley sabe tuuuuuudo sobre você,[wait:5] camarada!\\n[wait:5]* Porque somos amigos,[wait:5] sim sim!"
   },
   "worldcutscene-core_square-text-whaley-5": {
     "english": "* Baleia,[wait:5] baleia,[wait:5] baleia.[wait:5]\\n* Que dia liiiindo,[wait:5] não é?"
   },
   "worldcutscene-core_square-text-whaley-6": {
-    "english": "* Quem sou eu?[wait:5]\\n* Baleia,[wait:5] sou Whaley, o amigo favorito de todo mundo!"
+    "english": "* Quem sou eu?[wait:5]\\n* Baleia,[wait:5] sou Whaley, camarada de todos!"
   },
   "worldcutscene-core_square-text-whaley-7": {
-    "english": "* O que foi, amigo?\\n[wait:5]* Você não conhece Whaley?"
+    "english": "* O que foi, camarada?\\n[wait:5]* Você não conhece Whaley?"
   },
   "worldcutscene-core_square-text-whaley-8": {
-    "english": "* Baleia,[wait:5] Whaley sabe tuuuuuudo sobre você,[wait:5] amigo!\\n[wait:5]* Porque somos amigos,[wait:5] sim sim!"
+    "english": "* Baleia,[wait:5] Whaley sabe tuuuuuudo sobre você,[wait:5] camarada!\\n[wait:5]* Porque somos amigos,[wait:5] sim sim!"
   },
   "worldcutscene-core_square-text-whaley-9": {
     "english": "* Hum?[wait:5] Por que estou na fonte memorial real?[wait:5] Isso é permitido?"
@@ -2886,19 +2886,19 @@
     "english": "* De qualquer baleia,[wait:5] não importa.\\n[wait:5]* Isto tudo é só diversão boba."
   },
   "worldcutscene-core_square-text-whaley-12": {
-    "english": "* Você gosta de diversão,[wait:5] não gosta,[wait:5] amigo?"
+    "english": "* Gosta de diversão,[wait:5] não,[wait:5] camarada?"
   },
   "worldcutscene-core_square-text-whaley-13": {
-    "english": "* Nadando por aí como se não houvesse amanhã,[wait:5] amigo?"
+    "english": "* Nadando por aí como se não houvesse amanhã,[wait:5] camarada?"
   },
   "worldcutscene-core_square-text-whaley-14": {
     "english": "* Aah,[wait:5] não fique tão confuso!\\n[wait:5]* Aqui somos todos amigos,[wait:5] \\nsim sim!"
   },
   "worldcutscene-core_square-text-whaley-15": {
-    "english": "* Baleia,[wait:5] amigo...[wait:10]\\n* Não importa!\\n[wait:5]* Isto tudo é só diversão boba!"
+    "english": "* Baleia,[wait:5] camarada...[wait:10]\\n* Não importa!\\n[wait:5]* Isto tudo é só diversão boba!"
   },
   "worldcutscene-core_square-text-whaley-16": {
-    "english": "* Você gosta de diversão,[wait:5] não gosta,[wait:5] amigo?"
+    "english": "* Gosta de diversão,[wait:5] não,[wait:5] camarada?"
   },
   "worldcutscene-core_square-text-whaley-17": {
     "english": "* Na verdade,[wait:5] acho que já fomos baleia além disso![wait:5]\\n* Você e eu não somos só amigos."
@@ -2910,22 +2910,22 @@
     "english": "* Só melhores amigos cuidam um do outro assim,[wait:5] sim sim! "
   },
   "worldcutscene-core_square-text-whaley-20": {
-    "english": "* Aposto que isso soa muito bom,[wait:5] não soa, amigo?"
+    "english": "* Aposto que isso soa muito bom,[wait:5] não soa, camarada?"
   },
   "worldcutscene-core_square-text-whaley-21": {
-    "english": "* Enfim-baleia,[wait:5] não quero sobrebaleiar você,[wait:5] melhor amigo,[wait:5] \\nentão vou me baleiar daqui!"
+    "english": "* Enfim-baleia,[wait:5] não quero sobrebaleiar,[wait:5] amigão,[wait:5] \\nentão balei-fui!"
   },
   "worldcutscene-core_square-text-whaley-22": {
     "english": "* Só lembre,[wait:5] amigos sempre estão lá uns pelos outros,[wait:5] \\nsim sim!"
   },
   "worldcutscene-core_square-text-whaley-23": {
-    "english": "[noskip]* Baleia,[wait:5] amigo,[wait:5] parece que está pulando o que eu digo."
+    "english": "[noskip]* Baleia,[wait:5] camarada,[wait:5] parece que está pulando o que eu digo."
   },
   "worldcutscene-core_square-text-whaley-24": {
     "english": "[noskip]* Isso não é muito gentil,[wait:5] é?"
   },
   "worldcutscene-core_square-text-whaley-25": {
-    "english": "* Acho que posso mostrar uma diversão baleiosa quando nos encontrarmos de novo!"
+    "english": "* Vai ser uma diversão baleial quando nos virmos!"
   },
   "worldcutscene-core_square-text-whaley-26": {
     "english": "* Será que você vai sair do seu balei-o para me achar de novo?[wait:5]\\n* Fique de olho em mim..."
@@ -2958,10 +2958,10 @@
     "english": "* (Você obteve um Beterritmo!)"
   },
   "worldcutscene-core_square-text-dance_r-9": {
-    "english": "* Use-a para manter o ritmo da comida."
+    "english": "* Use isso para manter o ritmo da comida."
   },
   "worldcutscene-core_square-text-dance_r-10": {
-    "english": "* Favor Concluído! \\n[color:yellow]Dance Dance Squarevolution."
+    "english": "* Favor Concluído! \\n[color:yellow]Dança Dança Quadravolução."
   },
   "worldcutscene-core_square-text-dance_r-11": {
     "english": "* Observe nossa dança intricada."
@@ -2973,7 +2973,7 @@
     "english": "* Gosto de dançar,[wait:5] longas danças na praia,[wait:5] e de um certo macaco vermelho."
   },
   "worldcutscene-core_square-text-dance_r-14": {
-    "english": "* O quê?[wait:5] O mais azul dos irmãos forma está me procurando perto do Hive?"
+    "english": "* O quê?[wait:5] O mais azul dos irmãos forma está me procurando perto do a Colmeia?"
   },
   "worldcutscene-core_square-text-dance_r-15": {
     "english": "* Claro![wait:5] Aquela área precisa de entretenimento desde que aqueles três saíram em lua de mel."
@@ -2991,7 +2991,7 @@
     "english": "* Encontre-os e diga onde me achar para podermos dançar juntos de novo."
   },
   "worldcutscene-core_square-text-dance_r-20": {
-    "english": "* Favor Aceito! \\n[color:yellow]Dance Dance Squarevolution."
+    "english": "* Favor Aceito! \\n[color:yellow]Dança Dança Quadravolução."
   },
   "worldcutscene-core_square-text-dance_b-1": {
     "english": "* Sou o irmão mais azul,[wait:5] mas sozinho também sou o irmão mais azul(triste)."
@@ -3018,10 +3018,10 @@
     "english": "* (Você obteve um Beterritmo!)"
   },
   "worldcutscene-core_square-text-dance_b-9": {
-    "english": "* Use-a para manter o ritmo da comida."
+    "english": "* Use isso para manter o ritmo da comida."
   },
   "worldcutscene-core_square-text-dance_b-10": {
-    "english": "* Favor Concluído! \\n[color:yellow]Dance Dance Squarevolution."
+    "english": "* Favor Concluído! \\n[color:yellow]Dança Dança Quadravolução."
   },
   "worldcutscene-core_square-text-dance_b-11": {
     "english": "* Observe nossa dança intricada."
@@ -3051,7 +3051,7 @@
     "english": "* Encontre-os e diga onde me achar para podermos dançar juntos de novo."
   },
   "worldcutscene-core_square-text-dance_b-20": {
-    "english": "* Favor Aceito! \\n[color:yellow]Dance Dance Squarevolution."
+    "english": "* Favor Aceito! \\n[color:yellow]Dança Dança Quadravolução."
   },
   "worldcutscene-core_square-text-dance_g-1": {
     "english": "* Sou o irmão mais verde,[wait:5] mas sozinho também sou o irmão mais triste."
@@ -3078,10 +3078,10 @@
     "english": "* (Você obteve um Beterritmo!)"
   },
   "worldcutscene-core_square-text-dance_g-9": {
-    "english": "* Use-a para manter o ritmo da comida."
+    "english": "* Use isso para manter o ritmo da comida."
   },
   "worldcutscene-core_square-text-dance_g-10": {
-    "english": "* Favor Concluído! \\n[color:yellow]Dance Dance Squarevolution."
+    "english": "* Favor Concluído! \\n[color:yellow]Dança Dança Quadravolução."
   },
   "worldcutscene-core_square-text-dance_g-11": {
     "english": "* Observe nossa dança intricada."
@@ -3099,7 +3099,7 @@
     "english": "* Vou sim,[wait:5] desde que aquela criatura maligna na água não olhe para mim de novo."
   },
   "worldcutscene-core_square-text-dance_g-16": {
-    "english": "* O quê?[wait:5] O mais azul dos irmãos forma está me procurando perto do Hive?"
+    "english": "* O quê?[wait:5] O mais azul dos irmãos forma está me procurando perto do a Colmeia?"
   },
   "worldcutscene-core_square-text-dance_g-17": {
     "english": "* Claro![wait:5] Aquela área precisa de entretenimento desde que aqueles três saíram em lua de mel."
@@ -3111,7 +3111,7 @@
     "english": "* Encontre-os e diga onde me achar para podermos dançar juntos de novo."
   },
   "worldcutscene-core_square-text-dance_g-20": {
-    "english": "* Favor Aceito! \\n[color:yellow]Dance Dance Squarevolution."
+    "english": "* Favor Aceito! \\n[color:yellow]Dança Dança Quadravolução."
   },
   "worldcutscene-core_square-text-dance_g2-1": {
     "english": "* Adoramos dançar!"
@@ -3138,7 +3138,7 @@
     "english": "* Valeu por me confundir com um gato.[wait:5] Eu precisava disso."
   },
   "worldcutscene-core_square-text-funnyCatGuy-6": {
-    "english": "* Aqui,[wait:5] pode ficar com isto como agradecimento!"
+    "english": "* Tome,[wait:5] isto é pelo favor!"
   },
   "worldcutscene-core_square-text-funnyCatGuy-7": {
     "english": "* Ou poderia, se tivesse espaço..."
@@ -3219,7 +3219,7 @@
     "english": "* Parece que seu restaurante\\njá tem o primeiro fã!"
   },
   "worldcutscene-eclipse0-text-spider-3": {
-    "english": "* Esta aranha não é um bug.[wait:5]\\n[wait:5]* É uma feature."
+    "english": "* Esta aranha não é um erro.[wait:5]\\n[wait:5]* É um recurso."
   },
   "worldcutscene-eclipse0-text-spider-4": {
     "english": "* A aranha se pergunta quem vai consertar isso."
@@ -3264,7 +3264,7 @@
     "english": "* Não é mesmo?"
   },
   "worldcutscene-eclipse0-text-restaurantenter1_old-8": {
-    "english": "* Encontre comigo na cozinha quando estiver tudo pronto."
+    "english": "* Me encontre na cozinha quando puder."
   },
   "worldcutscene-eclipse0-text-restaurantenter1-1": {
     "english": "* Hmm...[wait:5] Bem...[wait:5] Certamente já teve dias melhores."
@@ -3279,7 +3279,7 @@
     "english": "* Então precisamos atender alguns clientes hoje."
   },
   "worldcutscene-eclipse0-text-restaurantenter1-5": {
-    "english": "* Sem tempo a perder![wait:5]\\n* Encontre comigo na cozinha quando estiver tudo pronto!"
+    "english": "* Sem tempo a perder![wait:5]\\n* Me ache na cozinha quando puder!"
   },
   "worldcutscene-eclipse0-text-restaurantenter2-4": {
     "english": "* É aqui que você vai trabalhar."
@@ -3462,7 +3462,7 @@
     "english": "* M-Mawzz![wait:5] O que-"
   },
   "worldcutscene-eclipse1-text-grillby_intro-15": {
-    "english": "* Chega de tagarelar,[wait:5] pelúcia![wait:5] Eu já entendi o que está acontecendo."
+    "english": "* Sem papo,[wait:5] pelúcia![wait:5] Já entendi tudo."
   },
   "worldcutscene-eclipse1-text-grillby_intro-16": {
     "english": "* O que vocês têm nas mãos é um [color:yellow]Cliente Especial[color:white]!"
@@ -3606,7 +3606,7 @@
     "english": "* Bem-vindo ao Eclipse,[wait:5] Grillby!"
   },
   "worldcutscene-eclipse1-text-post_grillby-41": {
-    "english": "* Espero que possamos trabalhar juntos para tornar meu sonho realidade."
+    "english": "* Espero que juntos tornemos meu sonho real."
   },
   "worldcutscene-eclipse1-text-post_grillby-42": {
     "english": "* ................."
@@ -3636,7 +3636,7 @@
     "english": "* Negócios,[wait:5] dinheiro para mastigar,[wait:5] você sabe como é!"
   },
   "worldcutscene-eclipse1-text-post_grillby-51": {
-    "english": "* Tentem não virar o barco enquanto eu não estiver aqui."
+    "english": "* Não virem o barco enquanto eu estiver fora."
   },
   "worldcutscene-eclipse1-text-post_grillby-52": {
     "english": "* GUAHAHAHA!"
@@ -3828,7 +3828,7 @@
     "english": "* Quer dizer,[wait:5] este é o Eclipse,[wait:5] então talvez seja bom!"
   },
   "worldcutscene-eclipse1-text-endday4-12": {
-    "english": "* Ficar no mundo da lua?[wait:10] \\n* É[wait:5] uma piada..."
+    "english": "* Viajar?[wait:10] \\n* É[wait:5] piada..."
   },
   "worldcutscene-eclipse1-text-endday4-13": {
     "english": "* ..........estou bem."
@@ -3906,7 +3906,7 @@
     "english": "* Bem,[wait:5] está ficando tarde.[wait:5] Devemos voltar."
   },
   "worldcutscene-eclipse1-text-endday4-38": {
-    "english": "* O Eclipse não vai subir de classificação sozinho!"
+    "english": "* O Eclipse não sobe de nível sozinho!"
   },
   "worldcutscene-eclipse1-text-endday5-5": {
     "english": "* Mais um dia concluído![wait:5]\\n* Ótimo trabalho, pessoal!"
@@ -3981,7 +3981,7 @@
     "english": "* ...........até amanhã."
   },
   "worldcutscene-eclipse1-text-endday5-29": {
-    "english": "* ...Hmm...[wait:20][face:happy] Pelo menos admiro o entusiasmo dele pelo Eclipse,[wait:5] isso eu admito!"
+    "english": "* ...Hmm...[wait:20][face:happy] Ao menos admiro o entusiasmo dele pelo Eclipse![wait:5]"
   },
   "worldcutscene-eclipse1-text-endday5-30": {
     "english": "* É reconfortante ver alguém tão animado para trabalhar aqui!"
@@ -4026,7 +4026,7 @@
     "english": "* Finalmente chegando ao lago grande..."
   },
   "worldcutscene-eclipse1-text-endday5-44": {
-    "english": "* Quase traz uma lágrima aos meus olhos,[wait:5] de verdade!"
+    "english": "* Quase me faz chorar,[wait:5] sério!"
   },
   "worldcutscene-eclipse1-text-endday5-45": {
     "english": "* Sempre soube que você era um bom investimento!"
@@ -4116,7 +4116,7 @@
     "english": "* Sério?[wait:5] Você acha...?"
   },
   "worldcutscene-eclipse1-text-post_mawzz-7": {
-    "english": "* Pode apostar suas pelagens que acho!"
+    "english": "* Pode apostar que sim!"
   },
   "worldcutscene-eclipse1-text-post_mawzz-8": {
     "english": "* S-Sim![wait:5] Aposto que aguentaríamos até o rei!"
@@ -4272,10 +4272,10 @@
     "english": "* (Saber que Luna precisa dos seus cuidados enche você de determinação.)"
   },
   "worldcutscene-eclipse1-text-save-3": {
-    "english": "* (O Eclipse, agora Classificação 1,[wait:5] \\nbrilha com uma nova vida.)"
+    "english": "* (O Eclipse, agora Nível 1,[wait:5] \\nganha nova vida.)"
   },
   "worldcutscene-eclipse1-text-save-4": {
-    "english": "* (Pensar em ajudar Luna \\na chegar à classificação máxima\\nenche você de determinação.)"
+    "english": "* (Ajudar Luna \\na chegar ao topo\\nenche você de determinação.)"
   },
   "worldcutscene-eclipse1-text-save-5": {
     "english": "* (A presença do novo colega de trabalho enche você de determinação.)"
@@ -4296,7 +4296,7 @@
     "english": "* Então não se preocupe.[wait:5]\\n* Como pode ver,[wait:5] estou muito bem."
   },
   "worldcutscene-eclipse1-text-lunatalk-7": {
-    "english": "* Quando recebi meu primeiro trabalho acadêmico grande..."
+    "english": "* Quando recebi meu primeiro trabalho grande..."
   },
   "worldcutscene-eclipse1-text-lunatalk-8": {
     "english": "* Fiquei sob tanto estresse para entregar antes do prazo,"
@@ -4326,7 +4326,7 @@
     "english": "* ...[wait:5]\\n* ...Por favor.\\n[wait:5] * Está ficando ruim."
   },
   "worldcutscene-eclipse1-text-lunatalk-17": {
-    "english": "* Fico feliz que tenha gostado \\nda minha piada,[wait:5] Sunny."
+    "english": "* Que bom que gostou \\nda piada,[wait:5] Sunny."
   },
   "worldcutscene-eclipse1-text-lunatalk-18": {
     "english": "* ...[wait:5]Diga...[wait:5]"
@@ -4368,7 +4368,7 @@
     "english": "* Não sei,[wait:5] Waterfall,[wait:5] eu acho?"
   },
   "worldcutscene-eclipse1-text-lunatalk-31": {
-    "english": "* Talvez eu pudesse mudar para um restaurante de frutos do mar...?"
+    "english": "* Talvez eu mude para frutos do mar...?"
   },
   "worldcutscene-eclipse1-text-lunatalk-32": {
     "english": "* Ack![wait:5] Vamos parar de pensar em hipóteses!"
@@ -4614,7 +4614,7 @@
     "english": "* \\\"Frio.\\\""
   },
   "worldcutscene-eclipse_ext-text-ice_tube-6": {
-    "english": "* O que teria acontecido\\nse ninguém tivesse resgatado você?"
+    "english": "* O que aconteceria\\nsem o resgate?"
   },
   "worldcutscene-eclipse_ext-text-ice_tube-7": {
     "english": "* Acabaram suas piadas de gelo."
@@ -4626,7 +4626,7 @@
     "english": "* Ele já deveria estar aqui...[wait:5]\\n* Onde ele está?"
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-11": {
-    "english": "* Chegou o seu camarada!\\n[wait:5]* Pronto para os negócios![wait:5]\\n* GWAHAHA!"
+    "english": "* Olha eu aqui!\\n[wait:5]* Hora do negócio![wait:5]\\n* GWAHAHA!"
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-12": {
     "english": "* Oh![wait:5] Você é-"
@@ -4680,7 +4680,7 @@
     "english": "* Um restaurante que iria-"
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-29": {
-    "english": "* Poupe a historinha triste,[wait:5] camarada.[wait:5]\\n* Vamos ao que interessa."
+    "english": "* Chega de drama,[wait:5] pelúcia.[wait:5]\\n* Vamos ao ponto."
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-30": {
     "english": "* Preciso de dinheiro adiantado se quer meu investimento.[wait:5] É fin-ança básica!"
@@ -4710,7 +4710,7 @@
     "english": "* Isto importa muito para mim,[wait:5] se eu não conseguir..."
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-39": {
-    "english": "* P-Por favor, reconsidere![wait:5]\\n* Eu faria qualquer coisa para tornar meu sonho realidade!"
+    "english": "* P-Por favor, reconsidere![wait:5]\\n* Faço tudo pelo meu sonho!"
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-40": {
     "english": "*[wait:5] ...Qualquer coisa?[wait:5]\\n* Por um restaurante mixuruca?"
@@ -4788,10 +4788,10 @@
     "english": "* Ahn...[wait:5]\\n* Quanto era mesmo?"
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-65": {
-    "english": "* ...[wait:5]Quem é esse?[wait:5]\\n* Um...[wait:5] amigo seu?"
+    "english": "* ...[wait:5]Quem é?[wait:5]\\n* Um...[wait:5] camarada seu?"
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-66": {
-    "english": "* Hã?[wait:5] Sunny?[wait:5]\\n* Um amigo?[wait:5] Er..."
+    "english": "* Hã?[wait:5] Sunny?[wait:5]\\n* Camarada?[wait:5] Er..."
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-67": {
     "english": "* Está com roupa de chef..."
@@ -4806,7 +4806,7 @@
     "english": "* Só dois jovens de olhos brilhantes contra o mundo!"
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-71": {
-    "english": "* Inspirador de verdade![wait:5]\\n* Agora essa é uma história que dá para vender!"
+    "english": "* Inspirador de verdade![wait:5]\\n* Essa história vende!"
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-72": {
     "english": "* Sério?![wait:5]\\n* Você acha?"
@@ -4833,7 +4833,7 @@
     "english": "* Com o camaradinha ao seu lado,"
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-80": {
-    "english": "* Eu me sentiria muito mais seguro com meu investimento."
+    "english": "* Eu confiaria mais no investimento."
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-81": {
     "english": "* Ei,[wait:5] camarada.[wait:5] O que acha?"
@@ -4842,7 +4842,7 @@
     "english": "* Vocês dois têm o que é preciso para chegar ao topo?"
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-83": {
-    "english": "* Quanta confiança![wait:5]\\n* Gostei de você,[wait:5] camarada."
+    "english": "* Que confiança![wait:5]\\n* Gostei,[wait:5] camarada."
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-84": {
     "english": "* Você tem disposição para este tipo de negócio,[wait:5] sem dúvida."
@@ -4926,7 +4926,7 @@
     "english": "* Não importa!\\n[wait:5]* Você já assinou o contrato!"
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-111": {
-    "english": "* Os pagamentos começam hoje à noite.\\n[wait:5]* Só 30G por dia,[wait:5] porque sou muito generoso."
+    "english": "* Pagamentos começam hoje.\\n[wait:5]* Só 30G ao dia,[wait:5] sou generoso."
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-112": {
     "english": "* Aproveite seu restaurante."
@@ -4941,13 +4941,13 @@
     "english": "* ..."
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-116": {
-    "english": "* Meu Deus!\\n[wait:10]* Eu consegui![wait:5]\\n* Finalmente,[wait:5] depois de tanto tempo!"
+    "english": "* Meu Deus!\\n[wait:10]* Eu consegui![wait:5]\\n* Enfim,[wait:5] depois de tanto!"
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-117": {
-    "english": "* Meu sonho finalmente está se tornando realidade!"
+    "english": "* Meu sonho enfim está virando realidade!"
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-118": {
-    "english": "* Eu sabia que conseguiria por conta própria!"
+    "english": "* Sabia que daria conta sozinho!"
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-119": {
     "english": "* ...[wait:5]Espere..."
@@ -4977,7 +4977,7 @@
     "english": "* Ahn...[wait:5] Bem baixas,[wait:5] eu acho."
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-128": {
-    "english": "* Dois monstros se encontram por acaso e descobrem que seus nomes combinam..."
+    "english": "* Dois monstros se encontram e veem que têm nomes iguais..."
   },
   "worldcutscene-eclipse_ext-text-mawzzmeet-129": {
     "english": "* Parece tirado direto de uma história!"
@@ -5028,7 +5028,7 @@
     "english": "* [font:main_italic]Cof[wait:2] Cof.\\n[font:main_mono][wait:5]* Cof-!"
   },
   "worldcutscene-eclipse_ext-text-day3_start-5": {
-    "english": "* Droga-!\\n[wait:5]* Por que agora,[wait:5] de todos os momentos?"
+    "english": "* Droga-!\\n[wait:5]* Por que justo agora,[wait:5]?"
   },
   "worldcutscene-eclipse_ext-text-day3_start-6": {
     "english": "* Vamos,[wait:5] Luna.\\n[wait:5]* Se controle."
@@ -5067,7 +5067,7 @@
     "english": "* Temos um dia inteiro de trabalho pela frente!"
   },
   "worldcutscene-eclipse_ext-text-day3_start-18": {
-    "english": "* Classificação 2,[wait:3] aí vamos nós!"
+    "english": "* Nível 2,[wait:3] lá vamos nós!"
   },
   "worldcutscene-elevator_room-textChoicer-eclipse_1_rank_up-1": {
     "english": ""
@@ -5079,7 +5079,7 @@
     "english": "* [speed:1.2]Bom dia, Sunny! [wait:2]\\n* Dormiu bem?[wait:10]"
   },
   "worldcutscene-elevator_room-text-eclipse_1_rank_up-4": {
-    "english": "* [speed:1.2]Desculpe por deixar você sem companhia,[wait:5] eu estava sem tempo.[wait:10]"
+    "english": "* [speed:1.2]Desculpe sumir,[wait:5] andei sem tempo.[wait:10]"
   },
   "worldcutscene-elevator_room-text-eclipse_1_rank_up-5": {
     "english": "* [speed:1.2]Tenho trabalhado no Eclipse durante a última...[wait:10]"
@@ -5127,10 +5127,10 @@
     "english": "* Oh,[wait:5] você nem viu o interior!"
   },
   "worldcutscene-elevator_room-text-eclipse_1_rank_up-20": {
-    "english": "* Sem mais buracos.[wait:5] \\n* Sem mais vazamentos de lava."
+    "english": "* Sem buracos.[wait:5] \\n* Sem lava vazando."
   },
   "worldcutscene-elevator_room-text-eclipse_1_rank_up-21": {
-    "english": "* E acima de tudo,[wait:5] chega daquele cinza escuro e sem graça!"
+    "english": "* E acima de tudo,[wait:5] chega do cinza sem graça!"
   },
   "worldcutscene-elevator_room-text-eclipse_1_rank_up-22": {
     "english": "* Olhe,[wait:5] até usei a lava do balde para fazer aquela lâmpada!"
@@ -5181,7 +5181,7 @@
     "english": "* \\\"...e conceder oficialmente a classificação de-\\\""
   },
   "worldcutscene-elevator_room-text-eclipse_1_rank_up-38": {
-    "english": "* Incrível![wait:5] \\n* Somos oficialmente um restaurante classificado!"
+    "english": "* Incrível![wait:5] \\n* Agora somos classificados!"
   },
   "worldcutscene-elevator_room-text-eclipse_1_rank_up-39": {
     "english": "* É a,[wait:5] hã[wait:8][speed:0.5]...[speed:1][wait:5] \\n* Classificação mais baixa,[wait:15] mas[wait:10] veja pelo lado bom."
@@ -5202,7 +5202,7 @@
     "english": "* Que o Subsolo já viu!"
   },
   "worldcutscene-elevator_room-text-eclipse_1_rank_up-45": {
-    "english": "* Só precisamos de mais PRESTÍGIO para subir de classificação."
+    "english": "* Só falta PRESTÍGIO para subir de nível."
   },
   "worldcutscene-elevator_room-text-eclipse_1_rank_up-46": {
     "english": "* Então só precisamos garantir que todos-"
@@ -5217,7 +5217,7 @@
     "english": "* Bem,[wait:5] o que estamos esperando?"
   },
   "worldcutscene-elevator_room-text-eclipse_1_rank_up-50": {
-    "english": "* O Eclipse não vai subir de classificação sozinho!"
+    "english": "* O Eclipse não sobe de nível sozinho!"
   },
   "worldcutscene-elevator_room-text-eclipse_1_rank_up-51": {
     "english": "* Vamos COZINHar!"
@@ -5271,7 +5271,7 @@
     "english": "* .[wait:10].[wait:10].[wait:10]Está fervendo."
   },
   "worldcutscene-general-text-cell-13": {
-    "english": "* Seu telefone molhado agora está fervendo."
+    "english": "* Seu celular molhado está fervendo."
   },
   "worldcutscene-general-text-cell-14": {
     "english": "* Isso faz dele uma linha quente?"
@@ -5286,7 +5286,7 @@
     "english": "* Você espera que as pessoas não achem que está dando um gelo nelas."
   },
   "worldcutscene-general-text-cell-18": {
-    "english": "* Finalmente,[wait:5] depois de todo esse tempo,"
+    "english": "* Finalmente,[wait:5] depois de tanto tempo,"
   },
   "worldcutscene-general-text-cell-19": {
     "english": "* Você finalmente pode usar o celular."
@@ -5304,7 +5304,7 @@
     "english": "* Sem nenhum número para ligar,[wait:5] ele é inútil."
   },
   "worldcutscene-general-text-cell-24": {
-    "english": "* Se você está vendo isto, eu fiz uma merda enorme.\\n* Envie um relatório de bug ou algo assim."
+    "english": "* Se vê isto, fiz merda grande.\\n* Envie um relatório de erro."
   },
   "worldcutscene-general-text-gameover-5": {
     "english": "* Sunny."
@@ -5331,7 +5331,7 @@
     "english": "* Eu prometo,[wait:5] eu prometo que-[wait:5] Nós conseguimos![wait:5] Só por favor-[wait:5]"
   },
   "worldcutscene-general-text-gameover-13": {
-    "english": "* Não precisa de promessas vazias, pelúcia."
+    "english": "* Sem promessas vazias, pelúcia."
   },
   "worldcutscene-general-text-gameover-14": {
     "english": "* Afinal,[wait:5] sua assinatura vale muito mais que sua palavra."
@@ -5394,13 +5394,13 @@
     "english": "* Baleia,[wait:5] baleia,[wait:5] baleia.[wait:10]\\n* Veja quem apareceu."
   },
   "worldcutscene-general-text-whalecheck-3": {
-    "english": "* Tanta vontade assim de falar com seu velho amigo Whaley de novo?"
+    "english": "* Sentiu saudade do velho Whaley?"
   },
   "worldcutscene-general-text-whalecheck-4": {
     "english": "* Baleia,[wait:5] que encantador!"
   },
   "worldcutscene-general-text-whalecheck-5": {
-    "english": "[noskip]* Baleia,[wait:5] amigo,[wait:5] parece que está pulando o que eu digo."
+    "english": "[noskip]* Baleia,[wait:5] camarada,[wait:5] parece que está pulando o que eu digo."
   },
   "worldcutscene-general-text-whalecheck-6": {
     "english": "[noskip]* Isso não é muito gentil,[wait:5] é?"
@@ -5412,7 +5412,7 @@
     "english": "[noskip]* A ponto de deixar você voltar para onde deveria estar."
   },
   "worldcutscene-general-text-whalecheck-9": {
-    "english": "[noskip]* Faça um favor para mim,[wait:5] amigo."
+    "english": "[noskip]* Me faça um favor,[wait:5] camarada."
   },
   "worldcutscene-general-text-whalecheck-10": {
     "english": "[noskip]* E volte para onde estava."
@@ -5430,10 +5430,10 @@
     "english": "* Baleia,[wait:5] baleia,[wait:5] baleia.[wait:10]\\n* Veja quem apareceu."
   },
   "worldcutscene-general-text-whalecheck-15": {
-    "english": "* Você não deveria estar aqui,[wait:5] amigo."
+    "english": "* Você não deveria estar aqui,[wait:5] camarada."
   },
   "worldcutscene-general-text-whalecheck-16": {
-    "english": "* Mas quem liga para isso aqui,[wait:5] não é,[wait:5] amigo?"
+    "english": "* Mas quem liga para isso aqui,[wait:5] não é,[wait:5] camarada?"
   },
   "worldcutscene-general-text-whalecheck-17": {
     "english": "* Não é muito mais divertido \\nnão levar isso a sério?"
@@ -5451,7 +5451,7 @@
     "english": "* Ainda assim,[wait:5] é bem arriscado,[wait:5] o que está fazendo."
   },
   "worldcutscene-general-text-whalecheck-22": {
-    "english": "[noskip]* Baleia,[wait:5] amigo,[wait:5] parece que está pulando o que eu digo."
+    "english": "[noskip]* Baleia,[wait:5] camarada,[wait:5] parece que está pulando o que eu digo."
   },
   "worldcutscene-general-text-whalecheck-23": {
     "english": "[noskip]* Isso não é muito gentil,[wait:5] é?"
@@ -5463,7 +5463,7 @@
     "english": "[noskip]* A ponto de deixar você voltar para onde deveria estar."
   },
   "worldcutscene-general-text-whalecheck-26": {
-    "english": "[noskip]* Faça um favor para mim,[wait:5] amigo."
+    "english": "[noskip]* Me faça um favor,[wait:5] camarada."
   },
   "worldcutscene-general-text-whalecheck-27": {
     "english": "[noskip]* E volte para onde estava."
@@ -5475,7 +5475,7 @@
     "english": "* E ainda estamos nos divertindo aqui,[wait:5] não estamos?[wait:10]"
   },
   "worldcutscene-general-text-whalecheck-30": {
-    "english": "* Então que tal fazer um favor para seu amigo Whaley,"
+    "english": "* Então que tal fazer um favor para seu camarada Whaley,"
   },
   "worldcutscene-general-text-whalecheck-31": {
     "english": "* E voltar para onde deveria estar."
@@ -5493,7 +5493,7 @@
     "english": "[voice:ut]* Pessoas ruins tiram dos outros.[wait:10]"
   },
   "worldcutscene-general-screenDialogueText-evildream-5": {
-    "english": "[voice:ut]* Pessoas ruins machucam os outros.[wait:10]"
+    "english": "[voice:ut]* Gente ruim machuca os outros.[wait:10]"
   },
   "worldcutscene-general-screenDialogueText-evildream-6": {
     "english": "[voice:ut]* Pessoas ruins só pensam em si mesmas.[wait:10]"
@@ -5544,19 +5544,19 @@
     "english": "* Uma salsicha-d'água.[wait:5]\\n* Boa para fazer cachorro-quente."
   },
   "worldcutscene-home-text-watersausage-3": {
-    "english": "* E cachorros molhados,[wait:5] também."
+    "english": "* E cães molhados,[wait:5] também."
   },
   "worldcutscene-home-text-shoes-1": {
     "english": "* ..."
   },
   "worldcutscene-home-text-shoes-2": {
-    "english": "* Uma caixa de sapatos infantis em vários tamanhos diferentes."
+    "english": "* Uma caixa de sapatos infantis de vários tamanhos."
   },
   "worldcutscene-home-text-shoes-3": {
     "english": "* É melhor não perguntar."
   },
   "worldcutscene-home-text-mirror-1": {
-    "english": "* Você não consegue encarar\\nos próprios olhos."
+    "english": "* Você não encara\\nseus olhos."
   },
   "worldcutscene-home-text-mirror-2": {
     "english": "* Você é uma boa pessoa."
@@ -5589,10 +5589,10 @@
     "english": "* ..."
   },
   "worldcutscene-home-text-tools-2": {
-    "english": "* As ferramentas tiveram as pontas desgastadas."
+    "english": "* As ferramentas foram gastas."
   },
   "worldcutscene-home-text-tools-3": {
-    "english": "* Você sente que estão tratando você como criança."
+    "english": "* Isso soa meio condescendente."
   },
   "worldcutscene-home-text-bed-1": {
     "english": "* Foi bom enquanto durou."
@@ -5601,10 +5601,10 @@
     "english": "* Você já dormiu o bastante,[wait:5]\\né hora de seguir com seu\\ndia."
   },
   "worldcutscene-home-text-breakfast-1": {
-    "english": "* Você vai sentir falta de comer tão bem,[wait:5]\\nmas é melhor assim."
+    "english": "* Vai sentir falta disto,[wait:5]\\nmas é melhor assim."
   },
   "worldcutscene-home-text-breakfast-2": {
-    "english": "* Parece que o café da manhã está pronto!"
+    "english": "* O café da manhã está pronto!"
   },
   "worldcutscene-home-text-breakfast-3": {
     "english": "* Mas primeiro você deveria falar\\ncom Toriel.[wait:5]"
@@ -5625,13 +5625,13 @@
     "english": "* Você não se lembra da última \\nvez em que se sentiu tão à vontade."
   },
   "worldcutscene-home-text-chair2-1": {
-    "english": "* A poltrona de leitura de Toriel."
+    "english": "* Poltrona de leitura da Toriel."
   },
   "worldcutscene-home-text-chair2-2": {
     "english": "* Você gostava de ler nela,[wait:5] mesmo\\nsendo grande demais para você."
   },
   "worldcutscene-home-text-chair2-3": {
-    "english": "* A poltrona de leitura de Toriel."
+    "english": "* Poltrona de leitura da Toriel."
   },
   "worldcutscene-home-text-chair2-4": {
     "english": "* Você gostava de ler nela,[wait:5] mesmo\\nsendo grande demais para você."
@@ -5703,7 +5703,7 @@
     "english": "* Feche os olhos."
   },
   "worldcutscene-home-text-kitchen-6": {
-    "english": "* Você recebeu o Avental Costurado à Mão!"
+    "english": "* Você ganhou o Avental Feito à Mão!"
   },
   "worldcutscene-home-text-kitchen-7": {
     "english": "* Seu próprio avental,[wait:5] costurado com amor."
@@ -5775,7 +5775,7 @@
     "english": "* Sem tempo."
   },
   "worldcutscene-home-text-toys-2": {
-    "english": "* Brinquedos.\\n[wait:5]* Você já passou muito da idade deles. "
+    "english": "* Brinquedos.\\n[wait:5]* Já passou da idade. "
   },
   "worldcutscene-home-text-bucket-1": {
     "english": "* Sem tempo."
@@ -5793,7 +5793,7 @@
     "english": "* ..."
   },
   "worldcutscene-home-text-bed2-2": {
-    "english": "* Você tem quase certeza de que esta cama é\\ntamanho queen."
+    "english": "* Parece que esta cama é\\nQueen size."
   },
   "worldcutscene-home-text-chair-1": {
     "english": "* Sem tempo."
@@ -5802,7 +5802,7 @@
     "english": "* É uma cadeira."
   },
   "worldcutscene-home-text-chair-3": {
-    "english": "* Por algum motivo,[wait:5] você não\\nconsegue evitar a tristeza por ela\\nnão ter um nome."
+    "english": "* Por algum motivo,[wait:5] dá\\ntristeza saber que\\nnão tem nome."
   },
   "worldcutscene-home-text-shelf-1": {
     "english": "* Sem tempo."
@@ -5844,7 +5844,7 @@
     "english": "* Toriel está esperando por você na cozinha!"
   },
   "worldcutscene-home-text-nogo-3": {
-    "english": "* Você está com fome demais para explorar\\nas Ruínas,[wait:5] primeiro o café da manhã!"
+    "english": "* Fome demais para explorar\\nas Ruínas,[wait:5] café primeiro!"
   },
   "worldcutscene-home-text-basement-1": {
     "english": "* Esta é a saída.[wait:5]\\n* Toriel diz que não é seguro."
@@ -5892,7 +5892,7 @@
     "english": "* (A visão do \\\"Lar\\\" enche você de um sentimento sufocante,[wait:5] e conflitante.)"
   },
   "worldcutscene-home-text-save-3": {
-    "english": "* (...[wait:5]Ainda assim, você permanece determinado.)"
+    "english": "* (...[wait:5]Mas a determinação persiste.)"
   },
   "worldcutscene-home-text-instant_favor-1": {
     "english": "* Favores adicionados!"
@@ -5922,7 +5922,7 @@
     "english": "* \\\"Todos[wait:5] os Guardas[wait:5] Merecem[wait:50] Ossos\\\"."
   },
   "worldcutscene-home-text-noback-1": {
-    "english": "* Agora não dá mais para voltar."
+    "english": "* Sem volta agora."
   },
   "worldcutscene-home-screenDialogueText-rosetest-1": {
     "english": "* Teste para ShadowOfRoserade"
@@ -5967,7 +5967,7 @@
     "english": "Correio Caracol"
   },
   "worldcutscene-joe_quizma-choicer-jq-10": {
-    "english": "Courier"
+    "english": "Mensageiro"
   },
   "worldcutscene-joe_quizma-choicer-jq-11": {
     "english": "Sned"
@@ -5997,13 +5997,13 @@
     "english": "Ervilhas da Pipi"
   },
   "worldcutscene-joe_quizma-text-jq-20": {
-    "english": "* Ooooolááá, caro participante![wait:5]\\n* Eu sou o mestre de cerimônias das perguntas e respostas..."
+    "english": "* Ooooolááá, participante![wait:5]\\n* Sou o mestre do quiz..."
   },
   "worldcutscene-joe_quizma-text-jq-21": {
-    "english": "* QUIZMASTER![wait:10]\\n* JOE!!\\n[wait:10]* QUIZMA!!!"
+    "english": "* MESTRE DO QUIZ![wait:10]\\n* JOE!!\\n[wait:10]* QUIZMA!!!"
   },
   "worldcutscene-joe_quizma-text-jq-22": {
-    "english": "* Você parece novo por aqui!\\n[wait:5]* Sem problema,[wait:5] as regras são elementares!"
+    "english": "* Primeira vez por aqui!\\n[wait:5]* Sem problema,[wait:5] as regras são fáceis!"
   },
   "worldcutscene-joe_quizma-text-jq-23": {
     "english": "* REGRAS DO QUIZ![wait:5]\\n* Eu faço perguntas,[wait:5] e você responde!"
@@ -6024,7 +6024,7 @@
     "english": "* Oh céus,[wait:5] receio que esteja errado...[wait:5] E isso significa que o quiz acabou!"
   },
   "worldcutscene-joe_quizma-text-jq-29": {
-    "english": "* Mas não se desespere![wait:5] Talvez da próxima vez você mereça o título de quizmaster."
+    "english": "* Mas não se desespere![wait:5] Talvez da próxima vez você mereça o título de mestre do quiz."
   },
   "worldcutscene-joe_quizma-text-jq-30": {
     "english": "* Até lá,[wait:5] continue quizando![wait:5]\\n* E adeus de \\n* JOE![wait:5] QUIZMA!"
@@ -6063,7 +6063,7 @@
     "english": "* Quizgunta 4:[wait:5] Qual é o restaurante mais popular do Subsolo?"
   },
   "worldcutscene-joe_quizma-text-jq-42": {
-    "english": "* Incrível![wait:5] Você provou que é um verdadeiro QUIZMASTER!"
+    "english": "* Incrível![wait:5] Você provou que é um verdadeiro MESTRE DO QUIZ!"
   },
   "worldcutscene-joe_quizma-text-jq-43": {
     "english": "* Pegue seu prêmio![wait:5] É um presente certificado Quizma!"
@@ -6237,7 +6237,7 @@
     "english": "* Bem,[wait:5] volte com boas ações debaixo do avental se quiser coisa boa."
   },
   "worldcutscene-laundermat-text-sock-1": {
-    "english": "* ....o Olá..[wait:5]\\n* Bem  Bem-vindo à la Lavanderia."
+    "english": "* ....o Olá..[wait:5]\\n* B  Boas-vindas à Lavanderia."
   },
   "worldcutscene-laundermat-text-sock-2": {
     "english": "*   Você que er lavar sua sua roupa?[wait:5] Só depo site seu GGGG na mmmáquina."
@@ -6252,7 +6252,7 @@
     "english": "* Olhe a bolada que consegui arrancar da Lavanderia![wait:10]\\n* Eu amo dia de lavar roupa!"
   },
   "worldcutscene-laundermat-text-moneybags-2": {
-    "english": "* Agora posso comprar 2 cachorros-quentes."
+    "english": "* Agora compro 2 cachorros-quentes."
   },
   "worldcutscene-laundermat-text-boxers-1": {
     "english": "* Quando esse ciclo de lavagem vai acabar?"
@@ -6273,7 +6273,7 @@
     "english": "* Há um bilhete na lateral da máquina."
   },
   "worldcutscene-laundermat-text-laundering_machine-8": {
-    "english": "* \\\"Como usar a máquina de lavagem de dinheiro:\\\""
+    "english": "* \\\"Como usar a lavadora de dinheiro:\\\""
   },
   "worldcutscene-laundermat-text-laundering_machine-9": {
     "english": "* \\\"Basta depositar seu dinheiro,[wait:5] e ele renderá juros a cada dia que passar.\\\""
@@ -6282,7 +6282,7 @@
     "english": "* \\\"Porém,[wait:5] lembre-se de que não é possível retirar no mesmo dia em que depositar.\\\""
   },
   "worldcutscene-laundermat-text-laundering_machine-11": {
-    "english": "* \\\"Além disso,[wait:5] sim,[wait:5] isto é legal.[wait:10]\\n* Confie em mim,[wait:5] sou um bilhete.\\\""
+    "english": "* \\\"E,[wait:5] sim,[wait:5] é legal.[wait:10]\\n* Confie,[wait:5] sou um bilhete.\\\""
   },
   "worldcutscene-laundermat-text-laundering_machine-12": {
     "english": "* (Você tenta interagir com a máquina,[wait:5] mas ela está selada.)"
@@ -6291,7 +6291,7 @@
     "english": "* (Uma terrível sensação diz que você vai precisar daquele dinheiro hoje.)"
   },
   "worldcutscene-laundermat-text-laundering_machine-14": {
-    "english": "* (Você torce muito para que esta tenha sido uma boa decisão.)"
+    "english": "* (Tomara que tenha sido uma boa ideia.)"
   },
   "worldcutscene-office-textChoicer-courier-1": {
     "english": ""
@@ -6312,7 +6312,7 @@
     "english": "  \\n Determinação."
   },
   "worldcutscene-office-text-office_enter-1": {
-    "english": "* Bem-vindos ao tanque dos tubarões,[wait:5] camaradas!"
+    "english": "* Bem-vindos ao tanque,[wait:5] camaradas!"
   },
   "worldcutscene-office-text-office_enter-2": {
     "english": "* É aqui que vamos expandir e melhorar o restaurante de vocês!"
@@ -6351,7 +6351,7 @@
     "english": "* Quer dizer.[wait:5]\\n* Hã..."
   },
   "worldcutscene-office-text-courier-11": {
-    "english": "* Crânio de gaivota![wait:5] Pontual como sempre![wait:5] Tenho um novo serviço para você."
+    "english": "* Crânio de Gaivota![wait:5] Pontual como sempre![wait:5] Tenho trabalho para você."
   },
   "worldcutscene-office-text-courier-12": {
     "english": "* Ah, não."
@@ -6390,7 +6390,7 @@
     "english": "* Conhecido apenas por um título que arrepiava a espinha de quem o ouvia..."
   },
   "worldcutscene-office-text-courier-24": {
-    "english": "* O Courier!"
+    "english": "* O Mensageiro!"
   },
   "worldcutscene-office-text-courier-25": {
     "english": "* Certo!\\n* Bem,[wait:5] eu sou Luna,[wait:5] gerente do Eclipse!"
@@ -6402,10 +6402,10 @@
     "english": "* Ter a oportunidade de compartilhar nossa comida com todo mundo é maravilhoso!"
   },
   "worldcutscene-office-text-courier-28": {
-    "english": "* Tenho certeza de que será um prazer trabalhar com você,[wait:5] Sr. Courier."
+    "english": "* Tenho certeza de que será um prazer trabalhar com você,[wait:5] Sr. Mensageiro."
   },
   "worldcutscene-office-text-courier-29": {
-    "english": "* O Courier!"
+    "english": "* O Mensageiro!"
   },
   "worldcutscene-office-text-courier-30": {
     "english": "* Oh."
@@ -6432,10 +6432,10 @@
     "english": "* Que pena!"
   },
   "worldcutscene-office-text-courier-38": {
-    "english": "* Parece que Crânio de Gaivota vai perder todas aquelas guloseimas doces,[wait:5] e saborosas!"
+    "english": "* Crânio de Gaivota vai perder essas delícias![wait:5]"
   },
   "worldcutscene-office-text-courier-39": {
-    "english": "* Elas estão quase IMPLORANDO para alguém dar umas bicadas nelas,[wait:5] também..."
+    "english": "* Elas estão IMPLORANDO por umas bicadas,[wait:5] também..."
   },
   "worldcutscene-office-text-courier-40": {
     "english": "* ..."
@@ -6450,7 +6450,7 @@
     "english": "* Mas não por causa das guloseimas![wait:5] Por motivos totalmente diferentes."
   },
   "worldcutscene-office-text-courier-44": {
-    "english": "* Não relacionados.[wait:5]\\n* Motivos sem guloseimas."
+    "english": "* Nada a ver.[wait:5]\\n* Não é por doces."
   },
   "worldcutscene-office-text-courier-45": {
     "english": "* Sou um profissional,[wait:5] muito acima de me rebaixar por simples \\\"guloseimas\\\"."
@@ -6471,7 +6471,7 @@
     "english": "* O quê?[wait:5]\\n* Isso não é necessário-[wait:10]"
   },
   "worldcutscene-office-text-courier-51": {
-    "english": "* Oh![wait:5] Eu adoraria![wait:5]\\n* Venha,[wait:5] Sr. Courier,[wait:5] você vai adorar."
+    "english": "* Oh![wait:5] Eu adoraria![wait:5]\\n* Venha,[wait:5] Sr. Mensageiro,[wait:5] você vai adorar."
   },
   "worldcutscene-office-text-courier-52": {
     "english": "* Eu e Sunny-[wait:10]"
@@ -6516,7 +6516,7 @@
     "english": "* ..."
   },
   "worldcutscene-office-text-courier-66": {
-    "english": "* Sabe,[wait:5] eu não estava mentindo quando disse que gostei da ambição de Luna."
+    "english": "* Sabe,[wait:5] não menti ao elogiar a ambição de Luna."
   },
   "worldcutscene-office-text-courier-67": {
     "english": "* Há uma verdadeira faísca de quem sabe correr atrás,[wait:5] sem dúvida!"
@@ -6555,13 +6555,13 @@
     "english": "* Ah,[wait:5] mas estou pregando para convertido.[wait:5] Você sabe disso melhor que ninguém."
   },
   "worldcutscene-office-text-courier-79": {
-    "english": "* Como eu disse,[wait:5] camarada,[wait:5] vocês dois são sardinhas na mesma lata!"
+    "english": "* Como eu disse,[wait:5] camarada,[wait:5] vocês são sardinhas numa lata!"
   },
   "worldcutscene-office-text-courier-80": {
     "english": "* E você?[wait:5]\\n* O que está ganhando com isso?"
   },
   "worldcutscene-office-text-courier-81": {
-    "english": "* Quero entender.[wait:5]\\n* O que você tem determinação para fazer?"
+    "english": "* Quero entender.[wait:5]\\n* O que decidiu fazer?"
   },
   "worldcutscene-office-text-courier-82": {
     "english": "* ..."
@@ -6591,19 +6591,19 @@
     "english": "* Não tem sentido."
   },
   "worldcutscene-office-text-courier-91": {
-    "english": "* Nós dois sabemos que esta história só pode acabar de um jeito."
+    "english": "* Sabemos que isso só acaba de um jeito."
   },
   "worldcutscene-office-text-courier-92": {
     "english": "* E receio que não seja bom para nenhum de vocês."
   },
   "worldcutscene-office-text-courier-93": {
-    "english": "* Hã?[wait:5] Então por que estou investindo nisto,[wait:5] é isso?"
+    "english": "* Hã?[wait:5] Então por que invisto nisso,[wait:5]?"
   },
   "worldcutscene-office-text-courier-94": {
     "english": "* GUAHAHAHA!"
   },
   "worldcutscene-office-text-courier-95": {
-    "english": "* Oh,[wait:5] camarada,[wait:5] eu disse que não seria bom para VOCÊ."
+    "english": "* Ah,[wait:5] camarada,[wait:5] eu disse que não é bom para VOCÊ."
   },
   "worldcutscene-office-text-courier-96": {
     "english": "* Quanto a mim?[wait:5]\\n* Bem,[wait:5] camarada,[wait:5] digamos apenas..."
@@ -6627,7 +6627,7 @@
     "english": "* Imagine,[wait:5] hipoteticamente,[wait:5] que você tivesse algum tipo de poder especial."
   },
   "worldcutscene-office-text-courier-103": {
-    "english": "* Por que desperdiçar isso num restaurante qualquer?"
+    "english": "* Por que gastar isso num simples restaurante?"
   },
   "worldcutscene-office-text-courier-104": {
     "english": "* Com um poder desses,[wait:5] o mundo é sua ostra![wait:5] Você poderia fazer qualquer coisa!"
@@ -6645,13 +6645,13 @@
     "english": "* Mas quanta bondade existe de verdade quando você não tem nada a perder?"
   },
   "worldcutscene-office-text-courier-109": {
-    "english": "* Você acha que está sendo \\\"altruísta\\\",[wait:5] mas encare os fatos."
+    "english": "* Acha que é \\\"altruísta\\\",[wait:5] mas encare os fatos."
   },
   "worldcutscene-office-text-courier-110": {
     "english": "* Você é tão egoísta quanto o resto de nós."
   },
   "worldcutscene-office-text-courier-111": {
-    "english": "* Então vá em frente![wait:5]\\n* Continue saltitando por aí,[wait:5] bancando o herói nobre."
+    "english": "* Então vá![wait:5]\\n* Siga desfilando,[wait:5] como nobre herói."
   },
   "worldcutscene-office-text-courier-112": {
     "english": "* Se isso ajuda você a dormir à noite."
@@ -6684,7 +6684,7 @@
     "english": "* Queria ver quanto mais OURO e PRESTÍGIO conseguiria?"
   },
   "worldcutscene-office-text-courier-122": {
-    "english": "* Talvez tenha pensado que conseguiria chegar a uma classificação ainda maior!"
+    "english": "* Talvez achasse que daria para subir ainda mais!"
   },
   "worldcutscene-office-text-courier-123": {
     "english": "* Agora isso seria o tipo de ousadia que eu respeito!"
@@ -6711,7 +6711,7 @@
     "english": "*[font:main_italic] Apenas uma ALMA num pote.[font:reset]"
   },
   "worldcutscene-office-text-courier-131": {
-    "english": "* Certo,[wait:5] mostrei cada canto do Eclipse ao Sr. Courier!"
+    "english": "* Certo,[wait:5] mostrei cada canto do Eclipse ao Sr. Mensageiro!"
   },
   "worldcutscene-office-text-courier-132": {
     "english": "* Mas está ficando bem tarde,[wait:5] então deveríamos fechar."
@@ -6738,7 +6738,7 @@
     "english": "* Afinal,[wait:5] passei uma noite inteira reformando o Eclipse."
   },
   "worldcutscene-office-text-courier-140": {
-    "english": "* Qualquer coisa para fazê-lo resistir ao teste do tempo!"
+    "english": "* O que for preciso para durar!"
   },
   "worldcutscene-office-text-courier-141": {
     "english": "* Enfim,[wait:5] vamos,[wait:5] Sunny.\\n[wait:5]* Amanhã é outro dia!"
@@ -6747,7 +6747,7 @@
     "english": "* Pense no que eu disse,[wait:5] camarada."
   },
   "worldcutscene-office-text-courier-143": {
-    "english": "* Considere isso um conselho fin-anceiro!"
+    "english": "* Tome como conselho fin-anceiro!"
   },
   "worldcutscene-office-text-no_leave-1": {
     "english": "* Vamos, camarada!\\n[wait:5]* Não precisa ter medo. Eu não mordo!"
@@ -6774,7 +6774,7 @@
     "english": "* Convença.[wait:5]\\n* Asgore a construir uma rodovia."
   },
   "worldcutscene-office-text-mawzzmobile-7": {
-    "english": "* Confie em mim,[wait:5] camarada.\\n[wait:5]* A rodovia será ótima para a economia!"
+    "english": "* Confie,[wait:5] camarada.\\n[wait:5]* A rodovia ajudará a economia!"
   },
   "worldcutscene-office-text-mawzzmobile-8": {
     "english": "* Ninguém mais tem carro,[wait:5] então trânsito não será problema."
@@ -6837,7 +6837,7 @@
     "english": "* Riqueza líquida sempre,[wait:5] camarada!"
   },
   "worldcutscene-office-text-safe-6": {
-    "english": "* É por isso que aquele cofre é à prova d'água,[wait:5] entendeu?"
+    "english": "* Por isso o cofre é estanque,[wait:5] sacou?"
   },
   "worldcutscene-office-text-safe-7": {
     "english": "* Cofre do Mawzz.[wait:5]\\n* Dá para ouvir líquido lá dentro."
@@ -6858,7 +6858,7 @@
     "english": "[voice:ut]* Pessoas ruins tiram dos outros.[wait:10]"
   },
   "worldcutscene-office-screenDialogueText-courier-148": {
-    "english": "[voice:ut]* Pessoas ruins machucam os outros.[wait:10]"
+    "english": "[voice:ut]* Gente ruim machuca os outros.[wait:10]"
   },
   "worldcutscene-office-screenDialogueText-courier-149": {
     "english": "[voice:ut]* Pessoas ruins só pensam em si mesmas.[wait:10]"
@@ -6885,7 +6885,7 @@
     "english": "* Que dia..."
   },
   "worldcutscene-roof-text-day_1_roof-8": {
-    "english": "* Depois de tanto tempo,[wait:5] finalmente voltei ao caminho para realizar meu sonho."
+    "english": "* Depois de tanto,[wait:5] voltei ao caminho do meu sonho."
   },
   "worldcutscene-roof-text-day_1_roof-9": {
     "english": "* Luna,[wait:5] gerente do..."
@@ -6894,7 +6894,7 @@
     "english": "[wait:20]* Bem,[wait:5] nós não pensamos num nome de verdade,[wait:5] pensamos?"
   },
   "worldcutscene-roof-text-day_1_roof-11": {
-    "english": "* Hmmm.[wait:5][speed:0.1]..[speed:1][wait:25] \\n* Tenho certeza de que uma hora vou pensar em algo."
+    "english": "* Hmmm.[wait:5][speed:0.1]..[speed:1][wait:25] \\n* Uma hora eu penso em algo."
   },
   "worldcutscene-roof-text-day_1_roof-12": {
     "english": "* Muito obrigado,[wait:5] Sunny![wait:5] Você ajudou demais!"
@@ -6906,7 +6906,7 @@
     "english": "* Não,[wait:5] ainda temos um longo caminho até esse sonho se realizar."
   },
   "worldcutscene-roof-text-day_1_roof-15": {
-    "english": "* Mas mesmo assim,[wait:5] hoje demos um grande passo na direção dele!"
+    "english": "* Mas ainda assim,[wait:5] hoje foi um grande passo!"
   },
   "worldcutscene-roof-text-day_1_roof-16": {
     "english": "* Dia após dia,[wait:5] pouco a pouco,[wait:5] finalmente chegaremos às estrelas!"
@@ -6924,13 +6924,13 @@
     "english": "* [speed:0.5]..."
   },
   "worldcutscene-roof-text-day_1_roof-21": {
-    "english": "* Espere...[wait:5] \\n* Esqueci que você não consegue voar."
+    "english": "* Espere...[wait:5] \\n* Esqueci que não voa."
   },
   "worldcutscene-roof-text-day_1_roof-22": {
     "english": "* Opa."
   },
   "worldcutscene-roof-text-day_1_roof-23": {
-    "english": "* Aqui,[wait:5] deixe eu tentar ajudar você a subir."
+    "english": "* Aqui,[wait:5] tento ajudar você a levantar."
   },
   "worldcutscene-roof-text-day_1_roof-24": {
     "english": "* Cof...[wait:5]\\n*[font:main_italic] Cof Cof-[wait:5][font:main_mono]\\n* Uff..."
@@ -6954,7 +6954,7 @@
     "english": "* Você veio de Snowdin,[wait:5] certo?"
   },
   "worldcutscene-roof-text-day_1_roof-31": {
-    "english": "* Você estava congelando quando encontrei você,[wait:5] então foi o que presumi."
+    "english": "* Você estava gelando quando o encontrei,[wait:5] então imaginei."
   },
   "worldcutscene-roof-text-day_1_roof-32": {
     "english": "* Bem impressionante,[wait:5] não é?"
@@ -7017,7 +7017,7 @@
     "english": "* Sei como vamos chamar o restaurante!"
   },
   "worldcutscene-roof-text-day_1_roof-52": {
-    "english": "* O Sol e a Lua se juntando,[wait:5] um evento que acontece uma vez\\nna vida...!"
+    "english": "* Sol e Lua juntos,[wait:5] um evento único-\\nna vida...!"
   },
   "worldcutscene-roof-text-day_1_roof-53": {
     "english": "* É isso![wait:5] \\n* O Eclipse![wait:5] \\n* É perfeito!"
@@ -7029,7 +7029,7 @@
     "english": "* ...Tudo neste cantinho de Hotland."
   },
   "worldcutscene-roof-text-day_1_roof-56": {
-    "english": "* Um restaurante de que todo mundo vai gostar."
+    "english": "* Um restaurante para todos."
   },
   "worldcutscene-roof-text-day_1_roof-57": {
     "english": "* Tão bom,[wait:5] que até o próprio Rei ficaria feliz em comer nele!"
@@ -7044,7 +7044,7 @@
     "english": "* Você realmente provou seu valor hoje!"
   },
   "worldcutscene-roof-text-day_1_roof-61": {
-    "english": "* Sei que pode parecer absurdo,[wait:5] mas de algum jeito,[wait:5] de alguma forma..."
+    "english": "* Sei que parece absurdo,[wait:5] mas de algum modo,[wait:5]..."
   },
   "worldcutscene-roof-text-day_1_roof-62": {
     "english": "* Tenho a sensação de que este restaurante-"
@@ -7053,7 +7053,7 @@
     "english": "* Não,[wait:5] o Eclipse!-"
   },
   "worldcutscene-roof-text-day_1_roof-64": {
-    "english": "* Vai nos ajudar a ver o céu de verdade algum dia."
+    "english": "* Vai nos ajudar a ver o céu real um dia."
   },
   "worldcutscene-roof-text-day_1_roof-65": {
     "english": "* Sei que provavelmente é só um desejo,[wait:5] mas..."
@@ -7113,16 +7113,16 @@
     "english": "[voice:ut]* O começo de uma vida totalmente nova...[wait:60]"
   },
   "worldcutscene-roof-screenDialogueText-day_1_roof-84": {
-    "english": "[voice:ut]* Um jeito de fazer os outros felizes.[wait:60]"
+    "english": "[voice:ut]* Um jeito de alegrar os outros.[wait:60]"
   },
   "worldcutscene-roof-screenDialogueText-day_1_roof-85": {
     "english": "[voice:ut]* Talvez Luna tenha razão.[wait:10] \\n* Isto realmente vai \\nser algo especial.[wait:60]"
   },
   "worldcutscene-sicko-text-apartment1-1": {
-    "english": "* Você olha para dentro do apartamento..."
+    "english": "* Você olha no apartamento..."
   },
   "worldcutscene-sicko-text-apartment1-2": {
-    "english": "* Você vê um quarto cheio de livros\\ne lugares aconchegantes para ler."
+    "english": "* Um quarto cheio de livros\\ne cantos para ler."
   },
   "worldcutscene-sicko-text-apartment1-3": {
     "english": "* ...Oh![wait:5]\\n* Um monstro de óculos está sentado num pufe no canto."
@@ -7137,7 +7137,7 @@
     "english": "* Por algum motivo...[wait:5] Dá um pouco de vontade de chorar."
   },
   "worldcutscene-sicko-text-apartment2-1": {
-    "english": "* Você olha para dentro do apartamento..."
+    "english": "* Você olha no apartamento..."
   },
   "worldcutscene-sicko-text-apartment2-2": {
     "english": "* Você vê um quarto tentando em vão afastar o calor."
@@ -7149,22 +7149,22 @@
     "english": "* Parece estar tentando não derreter..."
   },
   "worldcutscene-sicko-text-apartment2-5": {
-    "english": "* Ele faz um joinha meio gosmento para você."
+    "english": "* Um joinha gosmento para você."
   },
   "worldcutscene-sicko-text-apartment2-6": {
     "english": "* Parece que só está se refrescando..."
   },
   "worldcutscene-sicko-text-apartment2-7": {
-    "english": "* Você conseguiu umas informações de doido.[wait:5]\\n* Ou algo assim..."
+    "english": "* Conseguiu papo de maluco.[wait:5]\\n* Ou algo assim..."
   },
   "worldcutscene-sicko-text-apartment3-1": {
-    "english": "* Você olha para dentro do apartamento..."
+    "english": "* Você olha no apartamento..."
   },
   "worldcutscene-sicko-text-apartment3-2": {
     "english": "* Há um monstro encarando você no escuro!"
   },
   "worldcutscene-sicko-text-apartment3-3": {
-    "english": "* Ele sibila para você,[wait:5] mas você late de volta!"
+    "english": "* Sibila para você,[wait:5] mas você late!"
   },
   "worldcutscene-sicko-text-apartment3-4": {
     "english": "* Você se sente mal por isso...[wait:5] Mas os olhos assentem em respeito...?"
@@ -7173,16 +7173,16 @@
     "english": "* Você não entende bem o que isso significa."
   },
   "worldcutscene-sicko-text-apartment3-6": {
-    "english": "* (Você conseguiu umas informações de doido.[wait:5]\\n* Ou algo assim...)"
+    "english": "* (Conseguiu papo de maluco.[wait:5]\\n* Ou algo assim...)"
   },
   "worldcutscene-sicko-text-apartment3-7": {
     "english": "* Parece que só está se refrescando..."
   },
   "worldcutscene-sicko-text-apartment3-8": {
-    "english": "* As luzes estão acesas,[wait:5] mas não há\\nninguém em casa..."
+    "english": "* Luzes acesas,[wait:5] mas não há\\nninguém..."
   },
   "worldcutscene-sicko-text-apartment4-1": {
-    "english": "* Você olha para dentro do apartamento..."
+    "english": "* Você olha no apartamento..."
   },
   "worldcutscene-sicko-text-apartment4-2": {
     "english": "* Você vê um quarto com aquecedores\\ndemais considerando a situação."
@@ -7197,10 +7197,10 @@
     "english": "* ...Hã."
   },
   "worldcutscene-sicko-text-apartment4-6": {
-    "english": "* (Você conseguiu umas informações de doido.[wait:5]\\n* Ou algo assim...)"
+    "english": "* (Conseguiu papo de maluco.[wait:5]\\n* Ou algo assim...)"
   },
   "worldcutscene-sicko-text-apartment5-1": {
-    "english": "* Você olha para dentro do apartamento..."
+    "english": "* Você olha no apartamento..."
   },
   "worldcutscene-sicko-text-apartment5-2": {
     "english": "* Você vê uma imponente esfera\\nmística sobre um pedestal."
@@ -7218,7 +7218,7 @@
     "english": "* Parece que você terá que\\nvoltar quando tiver mais afinidade mágica..."
   },
   "worldcutscene-sicko-text-apartment6-1": {
-    "english": "* Você olha para dentro do apartamento..."
+    "english": "* Você olha no apartamento..."
   },
   "worldcutscene-sicko-text-apartment6-2": {
     "english": "* Parece um dormitório.[wait:5]\\n* Uma faixa da Universidade de Hotland está na parede."
@@ -7230,7 +7230,7 @@
     "english": "* Parece que é melhor não incomodar..."
   },
   "worldcutscene-sicko-text-apartment6-5": {
-    "english": "* (Você conseguiu umas informações de doido.[wait:5]\\n* Ou algo assim...)"
+    "english": "* (Conseguiu papo de maluco.[wait:5]\\n* Ou algo assim...)"
   },
   "worldcutscene-sicko-text-apartment6-6": {
     "english": "* Um cheiro abafado emana do apartamento..."
@@ -7239,10 +7239,10 @@
     "english": "* Você se pergunta se isso significa que a prova foi bem ou mal..."
   },
   "worldcutscene-sicko-text-apartment6-8": {
-    "english": "* (Você conseguiu umas informações de doido.[wait:5]\\n* Ou algo assim...)"
+    "english": "* (Conseguiu papo de maluco.[wait:5]\\n* Ou algo assim...)"
   },
   "worldcutscene-sicko-text-apartment7-1": {
-    "english": "* Você olha para dentro do apartamento..."
+    "english": "* Você olha no apartamento..."
   },
   "worldcutscene-sicko-text-apartment7-2": {
     "english": "* Uma torta deliciosa está esfriando no parapeito."
@@ -7260,10 +7260,10 @@
     "english": "* Você acha que deve ser parecido com observar abelhas."
   },
   "worldcutscene-sicko-text-apartment7-7": {
-    "english": "* (Você conseguiu umas informações de doido.[wait:5]\\n* Ou algo assim...)"
+    "english": "* (Conseguiu papo de maluco.[wait:5]\\n* Ou algo assim...)"
   },
   "worldcutscene-sicko-text-apartment8-1": {
-    "english": "* Você olha para dentro do apartamento..."
+    "english": "* Você olha no apartamento..."
   },
   "worldcutscene-sicko-text-apartment8-2": {
     "english": "* ...Oh![wait:5]\\n* A criança está debaixo das cobertas."
@@ -7278,7 +7278,7 @@
     "english": "* Você faz um gesto de fechar a boca com zíper e pisca."
   },
   "worldcutscene-sicko-text-apartment8-6": {
-    "english": "* (Você conseguiu umas informações de doido.[wait:5]\\n* Ou algo assim...)"
+    "english": "* (Conseguiu papo de maluco.[wait:5]\\n* Ou algo assim...)"
   },
   "worldcutscene-sicko-text-apartment8-7": {
     "english": "* Parece o quarto de uma criança.[wait:5] Provavelmente está dormindo."
@@ -7296,7 +7296,7 @@
     "english": "* Juntar as peças com o pouco que se vê...[wait:5] Ha ha!"
   },
   "worldcutscene-sicko-text-sicko-5": {
-    "english": "* Hmm,[wait:5] há algo em você...\\n[wait:5]* Você conhece essa sensação,[wait:5] não conhece?"
+    "english": "* Hmm,[wait:5] há algo em você...\\n[wait:5]* Conhece a sensação,[wait:5] certo?"
   },
   "worldcutscene-sicko-text-sicko-6": {
     "english": "* Ha ha![wait:5] Sim![wait:5]\\n* De doido para doido!"
@@ -7410,7 +7410,7 @@
     "english": "* Veremos como isso se desenvolve no futuro..."
   },
   "worldcutscene-sicko-text-sicko-43": {
-    "english": "* Pronto, trocamos informações de esquisitão!"
+    "english": "* Trocamos nossas fofocas de doido!"
   },
   "worldcutscene-sicko-text-sicko-44": {
     "english": "* Volte com mais informações,[wait:5] colega doido!"
@@ -7464,13 +7464,13 @@
     "english": "* Então você precisa regá-la toda manhã, todos os dias, sem falhar."
   },
   "worldcutscene-time_ltd-text-time_rabbit-11": {
-    "english": "* Este exercício testará sua pontualidade e persistência.\\n[wait:5]* Mas você parece ter responsabilidade suficiente."
+    "english": "* Este exercício testará sua pontualidade e persistência.\\n[wait:5]* Mas você parece responsável."
   },
   "worldcutscene-time_ltd-text-time_rabbit-12": {
     "english": "* Agora,[wait:5] não vamos perder mais tempo.[wait:5]\\n* Boa sorte."
   },
   "worldcutscene-time_ltd-text-time_rabbit-13": {
-    "english": "* (Você recebeu a Semente de Relógio de Sol!)"
+    "english": "* (Você recebeu a Semente-Solar!)"
   },
   "worldcutscene-time_ltd-text-time_rabbit-14": {
     "english": "* Se quiser cultivar uma flor Relógio de Sol,[wait:5] podemos dar uma semente e algumas dicas de cuidado."
@@ -7494,13 +7494,13 @@
     "english": "* Então você precisa regá-la toda manhã, todos os dias, sem falhar."
   },
   "worldcutscene-time_ltd-text-time_rabbit-21": {
-    "english": "* Este exercício testará sua pontualidade e persistência.\\n[wait:5]* Mas você parece ter responsabilidade suficiente."
+    "english": "* Este exercício testará sua pontualidade e persistência.\\n[wait:5]* Mas você parece responsável."
   },
   "worldcutscene-time_ltd-text-time_rabbit-22": {
     "english": "* Agora,[wait:5] não vamos perder mais tempo.[wait:5]\\n* Boa sorte."
   },
   "worldcutscene-time_ltd-text-time_rabbit-23": {
-    "english": "* (Você recebeu a Semente de Relógio de Sol!)"
+    "english": "* (Você recebeu a Semente-Solar!)"
   },
   "worldcutscene-time_ltd-text-time_rabbit-24": {
     "english": "* Lembre-se de regar essa semente todos os dias."
@@ -7512,7 +7512,7 @@
     "english": "Ⓥ\"* Hoje é \" .. day_name .. \",[wait:5] dia \" .. day_number .. suffix .. \" do mês.\""
   },
   "worldcutscene-time_ltd-text-time_rabbit-27": {
-    "english": "* Bem-vindo à Time Ltd.\\n[wait:5]* Onde tempo e pontualidade são valorizados acima de tudo."
+    "english": "* Boas-vindas à Time Ltd.\\n[wait:5]* Onde tempo e pontualidade valem mais que tudo."
   },
   "worldcutscene-time_ltd-text-time_rabbit-28": {
     "english": "* Aquela criança está exibindo exatamente o tipo de comportamento que condeno."
@@ -7524,7 +7524,7 @@
     "english": "Ⓥ\"* Hoje é \" .. day_name .. \",[wait:5] dia \" .. day_number .. suffix .. \" do mês.\""
   },
   "worldcutscene-time_ltd-text-time_rabbit-31": {
-    "english": "* Bem-vindo à Time Ltd.\\n[wait:5]* Onde tempo e pontualidade são valorizados acima de tudo."
+    "english": "* Boas-vindas à Time Ltd.\\n[wait:5]* Onde tempo e pontualidade valem mais que tudo."
   },
   "worldcutscene-time_ltd-text-time_rabbit-32": {
     "english": "* Pode examinar nossa coleção de relógios,[wait:5] mas não demore."
@@ -7548,7 +7548,7 @@
     "english": "* Tic-Tac.\\n[wait:5]* Mais tempo gasto.\\n[wait:5]* Talvez nunca o recupere."
   },
   "worldcutscene-time_ltd-text-train-1": {
-    "english": "* Sou um grande cliente daqui,[wait:5] os relógios que vendem me ajudam a sempre chegar no horário."
+    "english": "* Sou cliente fiel,[wait:5] os relógios daqui me mantêm pontual."
   },
   "worldcutscene-time_ltd-text-train-2": {
     "english": "* Não dá para subestimar o poder de uma boa agenda."
@@ -7605,7 +7605,7 @@
     "english": "* [emote:impatient]Mas você ainda é um peixinho num lago só um pouco menos pequeno![wait:5]\\n* Tem que crescer![wait:5]\\n* Expandir![wait:5]\\n* Explorar novos caminhos de lucratividade,[wait:5] sacou?"
   },
   "shop-mawzz_new-startDialogue-006": {
-    "english": "* [emote:laugh]É por isso que eu estou aqui![wait:5]\\n* Seu amigo Mawzz entende uma coisa\\nou duas sobre ganhar G!\\n[wait:5]* Você quer que seu estabelecimento fique popular,[wait:5] não quer?"
+    "english": "* [emote:laugh]Por isso estou aqui![wait:5]\\n* Mawzz entende uma coisa\\nou duas sobre ganhar G!\\n[wait:5]* Quer seu negócio popular,[wait:5] certo?"
   },
   "shop-mawzz_new-startDialogue-007": {
     "english": "* [emote:laugh]Bem,[wait:5] camarada,[wait:5] comigo nas fin-anças,[wait:5] você vai ficar tão popular que até atravessa\\na barreira e chega à superfíshie!"
@@ -7635,13 +7635,13 @@
     "english": "* Menos conversa,[wait:5] mais gastos!"
   },
   "shop-mawzz_new-startDialogue-016": {
-    "english": "* ...Investimento.[wait:5] Quis dizer investimento."
+    "english": "* ...Investir.[wait:5] Quis dizer investir."
   },
   "shop-mawzz_new-startDialogue-017": {
     "english": "* Sabe,[wait:5] camarada,[wait:5] eu respeito o que você fez com o lugar,[wait:5] de verdade!"
   },
   "shop-mawzz_new-startDialogue-018": {
-    "english": "* Quero dizer,[wait:5] você já tinha uma base muito boa,[wait:5] mas mesmo assim![wait:5]\\n* Você fez um trabalho maravilhoooso."
+    "english": "* Digo,[wait:5] você já tinha boa base,[wait:5] mas mesmo assim![wait:5]\\n* Fez um trabalho maravilhoooso."
   },
   "shop-mawzz_new-startDialogue-019": {
     "english": "* [wait:5]...Maaaaas...[wait:5]\\n* Ainda pode ficar melhor![wait:5]\\n* Não parece meio vazio agora?"
@@ -7668,7 +7668,7 @@
     "english": "* Pensando bem,[wait:5] eu realmente não sei quase nada sobre o que estou fazendo."
   },
   "shop-mawzz_new-startDialogue-027": {
-    "english": "* Então pergunto de novo,[wait:5] por que estou aqui?"
+    "english": "* Então pergunto:[wait:5] por que estou aqui?"
   },
   "shop-mawzz_new-startDialogue-028": {
     "english": "* Acho que teremos que descobrir."
@@ -7731,7 +7731,7 @@
     "english": "Vou pedir\\num favor para\\nentregar coisas\\npara você!"
   },
   "shop-mawzz_new-registerUpgrade-008": {
-    "english": "Deli"
+    "english": "Delicatessen"
   },
   "shop-mawzz_new-registerTalk-001": {
     "english": "Seu Papel"
@@ -7758,7 +7758,7 @@
     "english": "* O que quer,[wait:5] camarada?[wait:5]\\n* De olho em alguma coisa?"
   },
   "shop-mawzz_new-shop_text-002": {
-    "english": "* Vá em frente,[wait:5] camarada![wait:5]\\n* Dê uma olhada nas melhorias."
+    "english": "* Vá,[wait:5] camarada![wait:5]\\n* Veja as melhorias."
   },
   "shop-mawzz_new-leaving_text-001": {
     "english": "* Até mais,[wait:5] camarada!"
@@ -7806,10 +7806,10 @@
     "english": "Vamos![wait:5]\\nNão vá\\namarelar!"
   },
   "shop-mawzz_new-upgrades_deny_text-001": {
-    "english": "* É aqui que vou colocar todas as melhorias que você pode conseguir."
+    "english": "* Aqui vão todas as melhorias disponíveis."
   },
   "shop-mawzz_new-upgrades_deny_text-002": {
-    "english": "* Melhorias dão acesso a \\ncoisas novas![wait:5] Novas vantagens para seu \\nnegócio,[wait:5] coisas novas para fazer a cada dia,[wait:5] facilidades..."
+    "english": "* Melhorias liberam \\ncoisas novas![wait:5] Vantagens no \\nnegócio,[wait:5] ações diárias,[wait:5] facilidades..."
   },
   "shop-mawzz_new-upgrades_deny_text-003": {
     "english": "* Lembre-se,[wait:5] algumas delas podem aumentar seus custos diários,[wait:5] também."
@@ -7818,7 +7818,7 @@
     "english": "* Ah,[wait:5] e olhe só![wait:5]\\n[wait:5]* Uma melhoria,[wait:5] por conta da casa![wait:5]\\n* Que sorte.[wait:5]\\n* Vá em frente e compre!"
   },
   "shop-sniksnak_new-startDialogue-001": {
-    "english": "* Bem-vindo de volta,[wait:5] estimado cliente..!"
+    "english": "* Que bom ver você,[wait:5] cliente VIP..!"
   },
   "shop-sniksnak_new-startDialogue-002": {
     "english": "* Você tem um restaurante popular..."
@@ -7860,7 +7860,7 @@
     "english": "[talk:false]* "
   },
   "shop-sniksnak_new-startDialogue-015": {
-    "english": "*[talk:false][wait:60][talk:true] Foi,[talk:false][wait:5][talk:true] hã...\\n*[talk:false][wait:5][talk:true] Principalmente ideia dele."
+    "english": "*[talk:false][wait:60][talk:true] Foi,[talk:false][wait:5][talk:true] hã...\\n*[talk:false][wait:5][talk:true] Ideia dele."
   },
   "shop-sniksnak_new-startDialogue-016": {
     "english": "[talk:false]* "
@@ -7905,7 +7905,7 @@
     "english": "* [talk:true](Pssiu.[talk:false][wait:5][talk:true] Mana.)"
   },
   "shop-sniksnak_new-startDialogue-030": {
-    "english": "* E esta é nossa loja de alimentos saudáveis!"
+    "english": "* E esta é nossa loja saudável!"
   },
   "shop-sniksnak_new-startDialogue-031": {
     "english": "* Mercados comuns ficam abarrotados de porcaria..."
@@ -7935,7 +7935,7 @@
     "english": "* [wait:20]Mas isso não é problema para nós![talk:false][wait:5][talk:true]\\n* Somos os melhores amigos do mundo!"
   },
   "shop-sniksnak_new-startDialogue-040": {
-    "english": "* [talk:true]Estamos tão em sintonia,[talk:false][wait:5][talk:true] que terminamos as frases um do outro-[talk:false]"
+    "english": "* [talk:true]Tão em sintonia,[talk:false][wait:5][talk:true] que completamos um ao outro-[talk:false]"
   },
   "shop-sniksnak_new-startDialogue-041": {
     "english": "[talk:false]* "
@@ -7971,7 +7971,7 @@
     "english": "* [talk:false][wait:40][talk:true]...[talk:false][wait:5][talk:true]Certo."
   },
   "shop-sniksnak_new-startDialogue-052": {
-    "english": "* Quer saber de onde \\ntiramos todos estes ingredientes saudáveis?[talk:false][wait:5]\\n"
+    "english": "* Quer saber de onde \\nvêm estes ingredientes?[talk:false][wait:5]\\n"
   },
   "shop-sniksnak_new-startDialogue-053": {
     "english": "* Bem,[talk:false][wait:5][talk:true] estimado cliente,[talk:false][wait:5][talk:true] tudo o que precisa saber..."
@@ -8025,13 +8025,13 @@
     "english": "* ..."
   },
   "shop-sniksnak_new-startDialogue-070": {
-    "english": "* Por que nossos nomes são tão parecidos?[wait:10]\\n* Ah,[talk:false][wait:5][talk:true] essa história é engraçada!"
+    "english": "* Nomes tão parecidos?[wait:10]\\n* Ah,[talk:false][wait:5][talk:true] longa história!"
   },
   "shop-sniksnak_new-startDialogue-071": {
     "english": "* Bobagem,[talk:false][wait:5][talk:true] irmã!"
   },
   "shop-sniksnak_new-startDialogue-072": {
-    "english": "* Nossos nomes foram claramente um presente pensado com carinho."
+    "english": "* Nossos nomes foram um presente carinhoso."
   },
   "shop-sniksnak_new-startDialogue-073": {
     "english": "* Como um par fofo de suéteres combinando!"
@@ -8151,7 +8151,7 @@
     "english": "[talk:false]* \\n\\n\\n\\n[wait:40][talk:true]* ...Snik-[talk:false][emote:idle]"
   },
   "shop-sniksnak_new-standaloneText-002": {
-    "english": "* Bem-vindo,[wait:5] estimado cliente,[wait:5] à...[talk:false] \\n[wait:32][talk:true]& Snak's!"
+    "english": "* Boas-vindas,[wait:5] cliente VIP,[wait:5] à...[talk:false] \\n[wait:32][talk:true]& Snak's!"
   },
   "shop-sniksnak_new-standaloneText-003": {
     "english": "* Vender? [talk:false][wait:10][talk:true]O quê?[talk:false]"
@@ -8214,7 +8214,7 @@
     "english": "[keeper:2]* [talk:true]Desculpe! Você não pode pagar![talk:false][emote:idle]"
   },
   "shop-sniksnak_new-buy_no_space_text-001": {
-    "english": "[keeper:2]* [talk:true]Seu carrinho está cheio demais![talk:false][emote:idle]"
+    "english": "[keeper:2]* [talk:true]Seu carrinho está lotado![talk:false][emote:idle]"
   },
   "shop-sniksnak_new-talkmenu_text-001": {
     "english": "[keeper:2]* [talk:true]Como podemos ajudar?[talk:false][emote:idle]"
@@ -8241,19 +8241,19 @@
     "english": "* Parece que uma preferência\\nfoi revelada!"
   },
   "battlecutscene-democustomers-text-licketBlep-1": {
-    "english": "* Você faz uma careta com a língua para Licket.[wait:5] Licket retribui."
+    "english": "* Você mostra a língua a Licket.[wait:5] Licket retribui."
   },
   "battlecutscene-democustomers-text-catamariMeow-1": {
-    "english": "* Você mia para Catamari.[wait:5]\\nO gato mia de volta.[wait:5] De repente você sente vontade de erva-dos-gatos."
+    "english": "* Você mia para Catamari.[wait:5]\\nO gato mia de volta.[wait:5] Dá vontade de catnip."
   },
   "battlecutscene-democustomers-text-catamariMeow-2": {
-    "english": "* Você mia para Catamari.[wait:5]\\nO gato mia de volta.[wait:5] De repente você sente vontade de erva-dos-gatos."
+    "english": "* Você mia para Catamari.[wait:5]\\nO gato mia de volta.[wait:5] Dá vontade de catnip."
   },
   "battlecutscene-democustomers-text-catamariPet-1": {
-    "english": "* Você faz carinho no gato.[wait:5]\\nA bola parece com ciúmes."
+    "english": "* Você acaricia o gato.[wait:5]\\nA bola sente ciúmes."
   },
   "battlecutscene-democustomers-text-catamariPet-2": {
-    "english": "* Você faz carinho na bola.[wait:5] Ela parece satisfeita. [wait:5]Não vai mais atrapalhar enquanto você COZINHa."
+    "english": "* Você acaricia a bola.[wait:5] Ela fica satisfeita. [wait:5]Não atrapalhará mais o COZINHar."
   },
   "battlecutscene-democustomers-text-catamariPet-3": {
     "english": "* Você faz carinho no gato e na bola.[wait:5]\\n* Todo mundo fica feliz com isso."
@@ -8271,7 +8271,7 @@
     "english": "* Você tenta confortar Mimi,[wait:5] mas ela ainda está insegura."
   },
   "battlecutscene-democustomers-text-mimiComfort-2": {
-    "english": "* Você diz algumas palavras gentis.[wait:5] Mimi fica lisonjeada."
+    "english": "* Você elogia Mimi.[wait:5] Ela fica lisonjeada."
   },
   "battlecutscene-democustomers-text-mimiUnlock-1": {
     "english": "* Você tenta destrancar o baú,[wait:5] mas não tem uma chave."
@@ -8286,7 +8286,7 @@
     "english": "* Não parece se abalar..."
   },
   "battlecutscene-democustomers-text-pumpkid_treat-1": {
-    "english": "* Você diz a Pumpkid que crianças boazinhas também ganham doces.[wait:5]"
+    "english": "* Você diz a Pumpkid que criança boa ganha doce.[wait:5]"
   },
   "battlecutscene-democustomers-text-vulkinEducate-1": {
     "english": "* Você explica os ataques verdes a Vulkin.[wait:5] Parece confuso."
@@ -8313,7 +8313,7 @@
     "english": "* Parece que uma preferência foi revelada!"
   },
   "battlecutscene-democustomers-text-shoebertUntie-1": {
-    "english": "* Você desamarra os cadarços de Shoebert.[wait:5] Ele parece aliviado."
+    "english": "* Você solta os cadarços de Shoebert.[wait:5] Ele relaxa."
   },
   "battlecutscene-democustomers-text-shoebertUntie-2": {
     "english": "* erro."
@@ -8457,7 +8457,7 @@
     "english": "Exigências específicas,[wait:5] ingredientes de que gostam,[wait:5] o que quiser!"
   },
   "battlecutscene-democustomers-battlerText-grillbyspeak-6": {
-    "english": "Até coisas que você talvez não descubra de outro jeito."
+    "english": "Até coisas que talvez não descubra."
   },
   "battlecutscene-democustomers-battlerText-grillbyspeak-7": {
     "english": "Tudo em troca de apenas alguns segundos do seu tempo."
@@ -8517,7 +8517,7 @@
     "english": "* Certo, camarada,[wait:5] atenção!\\n* Diferente dos pedidos comuns,"
   },
   "battlecutscene-grillboss-text-start-2": {
-    "english": "* Os pedidos de [color:yellow][face:wideeye]CLIENTES ESPECIAIS\\n[color:white][face:smile_r]serão mais longos,[wait:3] com mais etapas."
+    "english": "* [color:yellow][face:wideeye]CLIENTES ESPECIAIS\\n[color:white][face:smile_r]terão pedidos mais longos,[wait:3] com mais etapas."
   },
   "battlecutscene-grillboss-text-start-3": {
     "english": "* Mas não esquente com isso,[wait:3] camarada."
@@ -8532,7 +8532,7 @@
     "english": "* É que eles têm gostos muito específicos,[wait:3] entende?"
   },
   "battlecutscene-grillboss-text-start-7": {
-    "english": "* Você não pode simplesmente desligar o cérebro e [color:green]COZINHar!"
+    "english": "* Não dá para desligar o cérebro e [color:green]COZINHar!"
   },
   "battlecutscene-grillboss-text-start-8": {
     "english": "* Você precisa descobrir o que querem e como querem,"
@@ -8637,7 +8637,7 @@
     "english": "Nos molhos\\nquero relish\\ne ketchup,[wait:3]\\nmas SEM mostarda."
   },
   "battlecutscene-grillboss-battlerText-ask_real-4": {
-    "english": "Só adicione os\\nvegetais depois que\\no resto do\\nhambúrguer estiver pronto\\ne com molho."
+    "english": "Só ponha os\\nvegetais depois\\nque o resto do\\nhambúrguer estiver\\npronto e com molho."
   },
   "battlecutscene-grillboss-battlerText-ask_real-5": {
     "english": "Quero batatas\\nfritas,[wait:3] mas não\\ndas de mercado,[wait:3]\\ncongeladas."
@@ -8661,7 +8661,7 @@
     "english": "[speed:1.25]Nos molhos\\nquero relish\\ne ketchup,\\nmas SEM mostarda.[wait:1]"
   },
   "battlecutscene-grillboss-battlerText-encourage_2-7": {
-    "english": "[speed:1.25]Só adicione os\\nvegetais depois que\\no resto do\\nhambúrguer estiver pronto\\ne com molho.[wait:1]"
+    "english": "[speed:1.25]Só ponha os\\nvegetais depois\\nque o resto do\\nhambúrguer estiver\\npronto e com molho.[wait:1]"
   },
   "battlecutscene-grillboss-battlerText-encourage_2-8": {
     "english": "[speed:1.25]Quero batatas\\nfritas, mas não\\ndas congeladas\\nde mercado.[wait:1]"
@@ -8682,10 +8682,10 @@
     "english": "...Cru demais. Não serve."
   },
   "battlecutscene-grillboss-battlerText-perfect-1": {
-    "english": "Hambúrguer perfeitamente\\nbem passado,"
+    "english": "Carne bem passada,\\nperfeita,"
   },
   "battlecutscene-grillboss-battlerText-perfect-2": {
-    "english": "Escuro e crocante\\nde um jeito\\nsatisfatório."
+    "english": "Escuro e crocante\\nna medida\\ncerta."
   },
   "battlecutscene-grillboss-battlerText-perfect-3": {
     "english": "Parece delicioso."
@@ -8736,7 +8736,7 @@
     "english": ".....tente mais uma\\nvez."
   },
   "battlecutscene-grillboss-battlerText-perfectcut-1": {
-    "english": ".....trabalho de faca\\nimpressionante."
+    "english": ".....corte de faca\\nimpecável."
   },
   "battlecutscene-grillboss-battlerText-perfectcut-2": {
     "english": ".....agora está tudo pronto para \\nmontar o hambúrguer."
@@ -8757,13 +8757,13 @@
     "english": ".......os vegetais\\nparecem triturados."
   },
   "battlecutscene-grillboss-battlerText-badcut-2": {
-    "english": ".....péssimo trabalho de faca."
+    "english": ".....cortes ruins."
   },
   "battlecutscene-grillboss-battlerText-uncut-1": {
     "english": ".......não esqueça \\nmeu pedido."
   },
   "battlecutscene-grillboss-battlerText-uncut-2": {
-    "english": ".....os vegetais vêm\\ndepois que a carne e\\nos condimentos estiverem prontos."
+    "english": ".....os vegetais vêm\\ndepois da carne e\\ncondimentos prontos."
   },
   "battlecutscene-grillboss-battlerText-flies-1": {
     "english": "....isto viola normas de \\nsaúde e segurança."
@@ -8832,7 +8832,7 @@
     "english": "* Você pergunta como Luna quer\\nas panquecas."
   },
   "battlecutscene-grillbytutorial-text-compliment-1": {
-    "english": "* Você diz a Luna que seu sorriso é muito bonito."
+    "english": "* Você elogia o sorriso de Luna."
   },
   "battlecutscene-grillbytutorial-battlerText-start-1": {
     "english": "Vou ser o\\ncliente de novo."
@@ -8847,7 +8847,7 @@
     "english": "Agora,[wait:5] rápido,[wait:5] peça ajuda ao Grillby![wait:5]\\nVocê pode fazer isso no menu SERVIR!"
   },
   "battlecutscene-grillbytutorial-battlerText-ask-2": {
-    "english": "Por que eu contaria para você,[wait:5] virador de hambúrguer?"
+    "english": "Por que te contar,[wait:5] vira-hambúrguer?"
   },
   "battlecutscene-grillbytutorial-battlerText-ask-3": {
     "english": "(Tente pedir ajuda ao Grillby no menu SERVIR!)"
@@ -8877,7 +8877,7 @@
     "english": "* Luna deu a você um punhado de INGREDIENTES."
   },
   "battlecutscene-ingredienttutorial-text-start-2": {
-    "english": "* Eles foram adicionados ao seu buraco de INGREDIENTES."
+    "english": "* Foram para o buraco de INGREDIENTES."
   },
   "battlecutscene-ingredienttutorial-battlerText-start-3": {
     "english": "Oh,[wait:5] certo!"
@@ -9033,7 +9033,7 @@
     "english": "Ah,[wait:5] e não se preocupe com o tempo passando durante as AÇÕES."
   },
   "battlecutscene-lunatutorial-battlerText-first_pancakes-17": {
-    "english": "O tempo é descontado automaticamente depois de usar uma AÇÃO."
+    "english": "Após uma AÇÃO, o tempo cai sozinho."
   },
   "battlecutscene-lunatutorial-battlerText-early_luna_pancakes-1": {
     "english": "O-Oh!"
@@ -9048,7 +9048,7 @@
     "english": "Por que você fez isso?"
   },
   "battlecutscene-lunatutorial-battlerText-early_luna_pancakes-5": {
-    "english": "(Será que Sunny sabia da minha preferência secreta...?)"
+    "english": "(Será que sabiam da minha preferência...?)"
   },
   "battlecutscene-lunatutorial-battlerText-early_luna_pancakes-6": {
     "english": "H-hmm,[wait:5] bem...,"
@@ -9072,7 +9072,7 @@
     "english": "Certo,[wait:5] parece que entendeu!"
   },
   "battlecutscene-lunatutorial-battlerText-second_pancakes-2": {
-    "english": "Parece que já dá para começar o trabalho de verdade!"
+    "english": "Parece hora de começar de verdade!"
   },
   "battlecutscene-lunatutorial-battlerText-second_pancakes-3": {
     "english": "Muito bem,[wait:2] Sunny!"
@@ -9156,7 +9156,7 @@
     "english": "Espera,[wait:10] você não\\nacha meu estilo de\\npanqueca estranho,[wait:3] também,[wait:5] acha?"
   },
   "battlecutscene-lunatutorial-battlerText-third_times_the_charm-3": {
-    "english": "Bem-[wait:10] alguns clientes podem ter preferências ainda mais estranhas,"
+    "english": "Bem-[wait:10] alguns clientes têm gostos mais estranhos,"
   },
   "battlecutscene-lunatutorial-battlerText-third_times_the_charm-4": {
     "english": "Mas como podemos dizer que somos o Melhor Restaurante do Subsolo.[wait:2].[wait:2]."
@@ -9192,10 +9192,10 @@
     "english": "É, isto está muito queimado."
   },
   "battlecutscene-lunatutorial-battlerText-burnt-3": {
-    "english": "Um pouco de fumaça preta não tem problema..."
+    "english": "Fumaça preta é aceitável..."
   },
   "battlecutscene-lunatutorial-battlerText-burnt-4": {
-    "english": "Mas geralmente significa que você passou do ponto desse lado."
+    "english": "Mas isso costuma indicar que esse lado passou do ponto."
   },
   "battlecutscene-lunatutorial-battlerText-out_of_time-1": {
     "english": "Oh,[wait:5] já levamos\\ntanto tempo assim??"
@@ -9306,7 +9306,7 @@
     "english": "Vamos falar de negócios."
   },
   "battlecutscene-mawzzboss-battlerText-enter-14": {
-    "english": "Essa coisa toda de cronômetro que vocês vinham usando?"
+    "english": "Esse cronômetro que vocês usam?"
   },
   "battlecutscene-mawzzboss-battlerText-enter-15": {
     "english": "Acho que falta um pouco de nuance..."
@@ -9366,10 +9366,10 @@
     "english": "Sabe,[wait:10]\\nsempre quis fazer o chefão malvado num daqueles videogames,[wait:5] chum."
   },
   "battlecutscene-mawzzboss-battlerText-firsttime_rpg-2": {
-    "english": "Eles sempre ficam com os sprites mais legais!"
+    "english": "Eles sempre ganham sprites melhores!"
   },
   "battlecutscene-mawzzboss-battlerText-firsttime_rpg-3": {
-    "english": "E ainda ganham música de chefe incrível!"
+    "english": "E música épica de chefe!"
   },
   "battlecutscene-mawzzboss-battlerText-firsttime_diving-1": {
     "english": "Sabe,[wait:5] se eu TIVESSE que escolher outro trabalho,"
@@ -9390,7 +9390,7 @@
     "english": "[shake:1]DUAS SEMANAS,[wait:5] CHUM!"
   },
   "battlecutscene-mawzzboss-battlerText-firsttime_moneytree-4": {
-    "english": "Então,[wait:5] quando o cobrador de impostos apareceu,"
+    "english": "Então,[wait:5] quando o fiscal veio,"
   },
   "battlecutscene-mawzzboss-battlerText-firsttime_moneytree-5": {
     "english": "Usei ele mesmo para tapar o buraco!"
@@ -9462,7 +9462,7 @@
     "english": "E no setor de serviços,[wait:5] o cliente sempre tem razão!"
   },
   "battlecutscene-mawzzboss-battlerText-dialogue_2-3": {
-    "english": "Então isso significa que você tem que me escutar,[wait:5] chum!"
+    "english": "Então escute,[wait:5] camarada!"
   },
   "battlecutscene-mawzzboss-battlerText-dialogue_3-1": {
     "english": "Talvez não acredite,[wait:3] mas eu venci por conta própria!"
@@ -9510,7 +9510,7 @@
     "english": "Eu ajudo a resolver esse problema e ainda tiro um belo lucro!"
   },
   "battlecutscene-mawzzboss-battlerText-dialogue_8-1": {
-    "english": "Quero dizer,[wait:5]\\né uma situação em que todo mundo ganha,[wait:3] eu digo!"
+    "english": "Digo,[wait:5]\\né bom para todo mundo,[wait:3] digo!"
   },
   "battlecutscene-mawzzboss-battlerText-dialogue_8-2": {
     "english": "Uma ganhapalooza!"
@@ -9654,7 +9654,7 @@
     "english": "Não só o dobro,[wait:5] mas o triplo do que pedi?"
   },
   "battlecutscene-mawzzboss-battlerText-first_goal_reached-17": {
-    "english": "Você é uma máquina de fazer dinheiro!"
+    "english": "Você é fera em fazer dinheiro!"
   },
   "battlecutscene-mawzzboss-battlerText-first_goal_reached-18": {
     "english": "Sério,[wait:5] parece até que está tentando me impressionar,"
@@ -9672,7 +9672,7 @@
     "english": "Mas está claro que você gosta de superar expectativas,"
   },
   "battlecutscene-mawzzboss-battlerText-first_goal_reached-23": {
-    "english": "então tenho certeza de que tira isto de letra!"
+    "english": "então você tira isto de letra!"
   },
   "battlecutscene-mawzzboss-battlerText-first_goal_reached-24": {
     "english": "Ora, veja só!"
@@ -9690,7 +9690,7 @@
     "english": "[shake:1]ESPERA!"
   },
   "battlecutscene-mawzzboss-battlerText-first_goal_reached-29": {
-    "english": "Acabei de receber\\ninformações pertinentes\\npelo meu fone\\nque com certeza está\\nna minha orelha!"
+    "english": "Acabei de receber\\ninformações úteis\\npelo meu fone\\nque com certeza está\\nno ouvido!"
   },
   "battlecutscene-mawzzboss-battlerText-first_goal_reached-30": {
     "english": "Parece que a\\neconomia entrou\\nnum período de\\ninflação,"
@@ -9708,7 +9708,7 @@
     "english": "Uau,[wait:10]\\na economia\\nNÃO está nada bem,\\nchum."
   },
   "battlecutscene-mawzzboss-battlerText-first_goal_reached-35": {
-    "english": "Espero que tenha uma reserva para emergências,"
+    "english": "Espero que tenha uma reserva,"
   },
   "battlecutscene-mawzzboss-battlerText-first_goal_reached-36": {
     "english": "Porque agora vai [wait:5]PRECISAR MESMO dela!"
@@ -9726,7 +9726,7 @@
     "english": "VOCÊ É UMA MÁQUINA DE MILAGRES!"
   },
   "battlecutscene-mawzzboss-battlerText-final-5": {
-    "english": "Quero dizer, olhe para estas belezinhas!"
+    "english": "Olhe essas belezas!"
   },
   "battlecutscene-mawzzboss-battlerText-final-6": {
     "english": "É uma das maiores quantidades de G que já vi na vida!"
@@ -9786,13 +9786,13 @@
     "english": "Comida de monstro é \\nbem diferente \\nde comida humana."
   },
   "battlecutscene-torieltutorial-battlerText-start-3": {
-    "english": "Você pode estar acostumado a cozinhar com\\ningredientes físicos,"
+    "english": "Talvez cozinhe mais com ingredientes\\nfísicos,"
   },
   "battlecutscene-torieltutorial-battlerText-start-4": {
     "english": "Mas no Subsolo,[wait:5] \\nvocê precisa aprender a \\nCOZINHAR com MAGIA."
   },
   "battlecutscene-torieltutorial-battlerText-start-5": {
-    "english": "Para COZINHAR com ingredientes MÁGICOS,[wait:5] você precisa de um condutor para sua alma."
+    "english": "Para COZINHAR ingredientes MÁGICOS,[wait:5] sua alma precisa de um condutor."
   },
   "battlecutscene-torieltutorial-battlerText-start-6": {
     "english": "Algo para canalizar seus desejos pelo que está COZINHANDO."
@@ -9801,7 +9801,7 @@
     "english": "Aqui.[wait:5] \\nPegue isto."
   },
   "battlecutscene-torieltutorial-battlerText-start-8": {
-    "english": "Utensílios culinários são os melhores condutores para COZINHAR com magia."
+    "english": "Utensílios são os melhores condutores para COZINHAR com magia."
   },
   "battlecutscene-torieltutorial-battlerText-start-9": {
     "english": "Não se preocupe com os detalhes do que está fazendo."
@@ -9840,7 +9840,7 @@
     "english": "Perfeito!\\n[wait:5]A torta está pronta."
   },
   "battlecutscene-torieltutorial-battlerText-step3-2": {
-    "english": "Fico feliz por ter conseguido ensinar você,[wait:5] minha criança."
+    "english": "Que bom que pude ensinar você,[wait:5] minha criança."
   },
   "battlecutscene-torieltutorial-battlerText-step3-3": {
     "english": "Se algum dia quiser COZINHAR de novo,[wait:5] me avise."
@@ -9870,10 +9870,10 @@
     "english": "Ha ha!"
   },
   "battlecutscene-torieltutorial-battlerText-talk-10": {
-    "english": "Oh,[wait:5] você é tão engraçado,[wait:5] minha criança!"
+    "english": "Oh,[wait:5] você é uma graça,[wait:5] minha criança!"
   },
   "battlecutscene-torieltutorial-battlerText-talk-11": {
-    "english": "Veja,[wait:5] aqui no Subsolo,[wait:5] não temos\\nclima,[wait:5] propriamente dito."
+    "english": "Veja,[wait:5] no Subsolo,[wait:5] não há\\nclima,[wait:5] por assim dizer."
   },
   "battlecutscene-torieltutorial-battlerText-talk-12": {
     "english": "Algumas áreas têm algo parecido com chuva ou neve..."
@@ -9933,7 +9933,7 @@
     "english": "Ha ha ha!"
   },
   "battlecutscene-torieltutorial-battlerText-joke-5": {
-    "english": "Fico feliz que goste das minhas piadas tanto quanto eu."
+    "english": "Que bom que gosta das minhas piadas."
   },
   "battlecutscene-torieltutorial-battlerText-joke-6": {
     "english": "Faz muito tempo desde que tive alguém com quem compartilhá-las."
@@ -10119,10 +10119,10 @@
     "english": "[[color:yellow]Frio[color:white]]\\n\\n[[color:yellow]Vegetal[color:white]]"
   },
   "item-sniksnak_1-chilly_chilli-description": {
-    "english": "* Uma pimenta gelada originalmente cultivada em Snowdin."
+    "english": "* Pimenta gelada, típica de Snowdin."
   },
   "item-sniksnak_1-chilly_chilli-check": {
-    "english": "* Uma pimenta gelada originalmente cultivada em Snowdin."
+    "english": "* Pimenta gelada, típica de Snowdin."
   },
   "item-sniksnak_1-electric_carrot-name": {
     "english": "Cenoura Elétrica"
@@ -10263,10 +10263,10 @@
     "english": "[[color:yellow]Doce[color:white]]\\n\\n[[color:yellow]Brilhante[color:white]]"
   },
   "item-ingredient-chocolate_coin-description": {
-    "english": "* Uma pequena moeda de chocolate em papel brilhante."
+    "english": "* Uma moedinha de chocolate em papel brilhante."
   },
   "item-ingredient-chocolate_coin-check": {
-    "english": "* Uma pequena moeda de chocolate em papel brilhante."
+    "english": "* Uma moedinha de chocolate em papel brilhante."
   },
   "item-ingredient-iceberg_salad-name": {
     "english": "Alface Iceberg"
@@ -10299,7 +10299,7 @@
     "english": "* Uma barra de doce popular entre gatos."
   },
   "item-ingredient-kitcatnip-check": {
-    "english": "* Uma barra de doce vegana popular entre gatos."
+    "english": "* Doce vegano popular entre gatos."
   },
   "item-ingredient-maraschino_cherry_bomb-name": {
     "english": "Bomba Cereja M."
@@ -10314,10 +10314,10 @@
     "english": "[[color:yellow]Picante[color:white]]\\n\\n[[color:yellow]Destrutivo[color:white]]\\n\\n[[color:red]Perigoso[color:white]]"
   },
   "item-ingredient-maraschino_cherry_bomb-description": {
-    "english": "Uma frutinha vermelha cristalizada de sabor explosivo! Popular entre quem adora doces."
+    "english": "Fruta vermelha cristalizada e explosiva! Adorada por quem ama doces."
   },
   "item-ingredient-maraschino_cherry_bomb-check": {
-    "english": "Uma frutinha vermelha cristalizada de sabor explosivo! Popular entre quem adora doces."
+    "english": "Fruta vermelha cristalizada e explosiva! Adorada por quem ama doces."
   },
   "item-undertale-coffee_item-name": {
     "english": "Café"
@@ -10425,16 +10425,16 @@
     "english": "Uma carta emitida pela RUGAE, para seu apartamento."
   },
   "item-undertale-sundialseed-name": {
-    "english": "Semente de Relógio de Sol"
+    "english": "Semente-Solar"
   },
   "item-undertale-sundialseed-short_name": {
     "english": "Semente"
   },
   "item-undertale-sundialseed-serious_name": {
-    "english": "Semente de Relógio de Sol"
+    "english": "Semente-Solar"
   },
   "item-undertale-sundialseed-description": {
-    "english": "Uma semente da rara Planta Relógio de Sol."
+    "english": "Semente da rara Planta Relógio."
   },
   "item-undertale-sundialseed-check": {
     "english": "* Deve ser plantada em um vaso e \\nregada todos os dias."
@@ -10554,7 +10554,7 @@
     "english": "Ⓥ{\n            [\"idgoeshere\"] = {\n                \"Uau!! Dá para sentir a explosão!!\"\n            }\n        }"
   },
   "lightenemies-dino-ingredient_dialogue-spice_rice": {
-    "english": "Ⓥ{\n            [\"idgoeshere\"] = {\n                \"QUENTE QUENTE QUENTE!!! EU ESTOU CONSEGUINDO!!! AI!!\"\n            }\n        }"
+    "english": "Ⓥ{\n            [\"idgoeshere\"] = {\n                \"QUENTE QUENTE QUENTE!!! CONSEGUI!!! AI!!\"\n            }\n        }"
   },
   "lightenemies-dino-ingredient_dialogue-chili": {
     "english": "Ⓥ{\n            [\"idgoeshere\"] = {\n                \"Gah!! Isto está gelado!! Minha chama interior...\"\n            }\n        }"
@@ -10653,7 +10653,7 @@
     "english": "* A CULINÁRIA de verdade começa."
   },
   "lightenemies-grillby-text-003": {
-    "english": "* O fogo de Grillby faz seus óculos brilharem como os de um garoto de anime."
+    "english": "* O fogo de Grillby faz os óculos brilharem como em anime."
   },
   "lightenemies-grillby-text-004": {
     "english": "* Grillby ajeita os óculos."
@@ -10713,7 +10713,7 @@
     "english": "[wave:3][speed:0.5]vou te lamber."
   },
   "lightenemies-licket-dialogue-002": {
-    "english": "Pronto para lamber tudo até ficar limpo!"
+    "english": "Pronto para lamber tudo!"
   },
   "lightenemies-licket-dialogue-003": {
     "english": "Pbbbt."
@@ -10749,7 +10749,7 @@
     "english": "Ⓥ{\n            [\"idgoeshere\"] = {\n                \"Finalmente...[wait:5] A cereja no topo...\"\n            }\n        }"
   },
   "lightenemies-licket-ingredient_dialogue-spice_rice": {
-    "english": "Ⓥ{\n            [\"idgoeshere\"] = {\n                \"AI![wait:5] MINHA LÍNGUA ESTÁ QUEIMANDO!!!\"\n            }\n        }"
+    "english": "Ⓥ{\n            [\"idgoeshere\"] = {\n                \"AI![wait:5] MINHA LÍNGUA QUEIMA!!!\"\n            }\n        }"
   },
   "lightenemies-licket-ingredient_dialogue-freeze_fry": {
     "english": "Ⓥ{\n            [\"idgoeshere\"] = {\n                \"Quantas lambidas seriam necessárias para chegar à batata...\"\n            }\n        }"
@@ -10800,7 +10800,7 @@
     "english": "* Cheira a sal marinho."
   },
   "lightenemies-mawzz-text-003": {
-    "english": "* Mawzz abre ainda mais o sorriso.[wait:5]\\n* Seu dente de ouro brilha como uma estrela."
+    "english": "* Mawzz sorri ainda mais.[wait:5]\\n* O dente de ouro brilha como estrela."
   },
   "lightenemies-mawzz-text-004": {
     "english": "* Luna observa de longe e faz 4 sinais de positivo para você."
@@ -10821,7 +10821,7 @@
     "english": "* O terno de Mawzz aperta contra seu peito arfante."
   },
   "lightenemies-mawzz-text-010": {
-    "english": "* Mawzz está curioso para ver o que você fará em seguida."
+    "english": "* Mawzz quer ver seu próximo passo."
   },
   "lightenemies-mawzz-text-011": {
     "english": "* Mawzz flexiona sem motivo.[wait:5]\\n* O público imaginário desmaia."
@@ -10875,7 +10875,7 @@
     "english": "Ⓥ{[\"idgoeshere\"] = {\"Eu adoro gatos![wait:5]\\\\nSão muito fáceis de vender!\"}}"
   },
   "lightenemies-mawzz-ingredient_dialogue-balloon_pop": {
-    "english": "Ⓥ{[\"idgoeshere\"] = {\"Balões...[wait:5]\\\\nPerfeitos para arrancar dinheiro de crianças!\"}}"
+    "english": "Ⓥ{[\"idgoeshere\"] = {\"Balões...[wait:5]\\nÓtimos para enganar crianças!\"}}"
   },
   "lightenemies-mawzz-ingredient_dialogue-red_herring": {
     "english": "Ⓥ{[\"idgoeshere\"] = {\"Espera,[wait:5] CHUM![wait:5]\", \"Tem uma coisa sobre mim que preciso contar antes de-\"}}"
@@ -10920,10 +10920,10 @@
     "english": "* Você pensa em elogiar o baú de Mimi,[wait:5] mas isso pode soar estranho..."
   },
   "lightenemies-mimi-text-002": {
-    "english": "* Mimi se remexe desconfortavelmente dentro do baú."
+    "english": "* Mimi se remexe no baú."
   },
   "lightenemies-mimi-text-003": {
-    "english": "* Um olho espreita timidamente pelo buraco da fechadura."
+    "english": "* Um olho espreita tímido pela fechadura."
   },
   "lightenemies-mimi-text-004": {
     "english": "* Mimi saiu da caixa!"
@@ -10965,7 +10965,7 @@
     "english": "[wave:3][speed:0.4]Me dê meu doce,[wait:5]\\nmweh heh!"
   },
   "lightenemies-pumpkid-dialogue-003": {
-    "english": "[wave:3][speed:0.4]Fantasmas e monstros\\npor toda parte!"
+    "english": "[wave:3][speed:0.4]Fantasmas e almas\\naos montes!"
   },
   "lightenemies-pumpkid-dialogue-004": {
     "english": "[wave:3][speed:0.4]Por que está\\ndemorando tanto??"
@@ -10980,7 +10980,7 @@
     "english": "[wave:3][speed:0.4]Cuidado!\\n[wait:5]Eu mordo!!"
   },
   "lightenemies-pumpkid-check-001": {
-    "english": "Doces Gostosos! \\n[wait:5]* Esta criança veio pedir doces ou travessuras![wait:5]"
+    "english": "Doces! \\n[wait:5]* Veio pedir doces ou sustos![wait:5]"
   },
   "lightenemies-pumpkid-check-002": {
     "english": "Mas onde você vai encontrar os doces...?"
@@ -11058,25 +11058,25 @@
     "english": "Que melodia é\\nessa...?"
   },
   "lightenemies-shoebert-dialogue-004": {
-    "english": "Espere só até\\neu contar ao meu amigo\\nCrach\\nsobre este lugar!"
+    "english": "Vou contar\\nao meu amigo\\nCrach\\ndeste lugar!"
   },
   "lightenemies-shoebert-dialogue-005": {
-    "english": "Espere só até\\neu contar ao meu amigo\\nToezart\\nsobre este lugar!"
+    "english": "Vou contar\\nao meu amigo\\nToezart\\ndeste lugar!"
   },
   "lightenemies-shoebert-dialogue-006": {
-    "english": "Espere só até\\neu contar ao meu amigo\\nBeetoeven\\nsobre este lugar!"
+    "english": "Vou contar\\nao meu amigo\\nBeetoeven\\ndeste lugar!"
   },
   "lightenemies-shoebert-dialogue-007": {
-    "english": "Espere só até\\neu contar ao meu amigo\\nSchoemann\\nsobre este lugar!"
+    "english": "Vou contar\\nao meu amigo\\nSchoemann\\ndeste lugar!"
   },
   "lightenemies-shoebert-dialogue-008": {
-    "english": "Espere só até\\neu contar ao meu amigo\\nShoepin\\nsobre este lugar!"
+    "english": "Vou contar\\nao meu amigo\\nShoepin\\ndeste lugar!"
   },
   "lightenemies-shoebert-dialogue-009": {
-    "english": "Espere só até\\neu contar ao meu amigo\\nMendelssohle\\nsobre este lugar!"
+    "english": "Vou contar\\nao meu amigo\\nMendelssohle\\ndeste lugar!"
   },
   "lightenemies-shoebert-dialogue-010": {
-    "english": "Espere só até\\neu contar ao meu amigo\\nJordan\\nsobre este lugar!"
+    "english": "Vou contar\\nao meu amigo\\nJordan\\ndeste lugar!"
   },
   "lightenemies-shoebert-check-001": {
     "english": "Um Sanduíche Longo \\n[wait:5]* Mas o que vai entre os pães...?"
@@ -11097,7 +11097,7 @@
     "english": "* Cheira a meias de academia."
   },
   "lightenemies-shoebert-text-003": {
-    "english": "* Cheira a pão de fermentação natural."
+    "english": "* Cheira a fermento."
   },
   "lightenemies-shoebert-text-004": {
     "english": "* Por um instante,[wait:5] você achou ter ouvido um piano."
@@ -11379,25 +11379,25 @@
     "english": "Ⓥ\"* Isto é um teste do despejo de diálogos do Grillby. Isto é o boneco.\""
   },
   "grillbyDialogueDump-Froggit": {
-    "english": "Ⓥ{\n            \"* Froggit.[wait:10] Um verdadeiro glutão por moscas.\\\\n[wait:10]* .........não me identifico.\",\n            \"* Também gosta de um ingrediente específico cheio de molho...\",\n            \"* Talvez você possa atrair um enxame maior para satisfazê-lo?\",\n            \"* Moscas são famosas por adorar tensão romântica...\",\n            \"[face:blush]* .........Não que eu saiba algo sobre isso.\"\n        }"
+    "english": "Ⓥ{\n            \"* Froggit.[wait:10] Um verdadeiro glutão por moscas.\\\\n[wait:10]* .........não me identifico.\",\n            \"* Também gosta de certo ingrediente com molho...\",\n            \"* Talvez você possa atrair um enxame maior para satisfazê-lo?\",\n            \"* Moscas são famosas por adorar tensão romântica...\",\n            \"[face:blush]* .........Não que eu saiba algo sobre isso.\"\n        }"
   },
   "grillbyDialogueDump-Licket": {
-    "english": "Ⓥ{\n            \"* Licket.[wait:10] Monstro animado que adora sorvete.\",\n            \"* Você pode usar animação para fazê-lo revelar a preferência.\",\n            \"* Não gosta só de sorvete,[wait:5] qualquer coisa fria serve.\",\n            \"* Evite coisas quentes ou picantes.[wait:5]\\\\n* Queimariam a língua dele.\",\n            \"* Embora haja uma exceção picante...\",\n            \"* Algo que combine bem com sorvete...\"\n        }"
+    "english": "Ⓥ{\n            \"* Licket.[wait:10] Monstro animado que adora sorvete.\",\n            \"* Use animação para revelar a preferência.\",\n            \"* Não gosta só de sorvete,[wait:5] qualquer coisa fria serve.\",\n            \"* Evite calor ou pimenta.[wait:5]\\\\n* Queimariam a língua dele.\",\n            \"* Embora haja uma exceção picante...\",\n            \"* Algo que combine bem com sorvete...\"\n        }"
   },
   "grillbyDialogueDump-Saladino": {
     "english": "Ⓥ{\n            \"* Saladino.[wait:10] Jovem e ambicioso.[wait:10] Familiar?\",\n            \"* Cozinhar a salada é simples,[wait:5] mas os ingredientes...\",\n            \"* Cuspir fogo...[wait:10]\\\\n* Comida picante pode ser promissora.\",\n            \"* Evite o frio.[wait:10]\\\\n* Ele apaga o fogo.\",\n            \"* .........[wait:10]Eu...[wait:10] gosto deste cliente.\"\n        }"
   },
   "grillbyDialogueDump-Catamari": {
-    "english": "Ⓥ{\n            \"* Catamari.[wait:10]\\n* Dois monstros.[wait:10]\\n* Bem temperamentais.\",\n            \"* A bola vai atrapalhar sua COZINHA.[wait:10]\\n* Tente acalmá-la.\",\n            \"* Com ela irritada,[wait:5] você não consegue deixar a comida perfeita.[wait:10]\\n*[face:serious] Inaceitável.\",\n            \"[face:neutral_l]* Embora pareçam diferentes,[wait:5] são mais parecidos do que parece.\",\n            \"[face:neutral_l]* Tente coisas que gatos gostam.[wait:5]\", \"* A bola é mais fácil de agradar do que parece.\",\n            \"[face:neutral_l]* Há uma marca rara de doce que gatos adoram.[wait:10] Isso também pode ajudar,[wait:5].\"\n        }"
+    "english": "Ⓥ{\n            \"* Catamari.[wait:10]\\n* Dois monstros.[wait:10]\\n* Bem temperamentais.\",\n            \"* A bola vai atrapalhar sua COZINHA.[wait:10]\\n* Tente acalmá-la.\",\n            \"* Irritada,[wait:5] impede a comida perfeita.[wait:10]\\n*[face:serious] Inaceitável.\",\n            \"[face:neutral_l]* Embora pareçam diferentes,[wait:5] são mais parecidos do que parece.\",\n            \"[face:neutral_l]* Tente coisas que gatos gostam.[wait:5]\", \"* A bola é mais fácil de agradar do que parece.\",\n            \"[face:neutral_l]* Há uma marca rara de doce que gatos adoram.[wait:10] Isso também pode ajudar,[wait:5].\"\n        }"
   },
   "grillbyDialogueDump-Mimi": {
-    "english": "Ⓥ{\n            \"* Mimi.[wait:10] Tímida.[wait:10]\\\\n.........Eu entendo.\",\n            \"* ....difícil aproveitar as coisas quando você está......[wait:10] escondida numa caixa.\",\n            \"* Mas........[wait:10] você é bom em fazer as pessoas saírem da própria casca,[wait:5] então...\",\n            \"* Enfim.[wait:10] Destrancar com comida deve ser fácil.\",\n            \"* Só pegue a chave antes de fazer a torta,[wait:5].\"\n        }"
+    "english": "Ⓥ{\n            \"* Mimi.[wait:10] Tímida.[wait:10]\\\\n.........Eu entendo.\",\n            \"* ....difícil curtir algo quando fica......[wait:10] numa caixa.\",\n            \"* Mas........[wait:10] você sabe fazer as pessoas saírem da própria casca,[wait:5] então...\",\n            \"* Enfim.[wait:10] Destrancar com comida deve ser fácil.\",\n            \"* Só pegue a chave antes de fazer a torta,[wait:5].\"\n        }"
   },
   "grillbyDialogueDump-Pumpkid": {
     "english": "Ⓥ{\n            \"* Pumpkid.[wait:10] \\\\n* Uma criança obcecada por um certo feriado.\",\n            \"[face:neutral_l]* .....Nunca comemorei,[wait:5] mas enfim.\",\n            \"[face:neutral]* Adora doces e qualquer coisa que dê arrepios.\",\n            \"[face:neutral]* Crie uma fantasia e consiga o máximo de doces possível.\",\n            \"[face:confusion]* Qual fantasia seria mais eficaz?[wait:10]\\\\n* A criança talvez saiba.\",\n            \"[face:neutral]* Siga o que ela diz e mostra.[wait:10]\\\\n* Mais doces.\",\n            \"[face:neutral_l]* Casas maiores também dão mais doces.\",\n            \"[face:blush]* ..........parece divertido.[wait:10]\\\\n* Comemorar.\"\n        }"
   },
   "grillbyDialogueDump-Vulkin": {
-    "english": "Ⓥ{\n            \"* Vulkin.[wait:10]\\n* Terrorista gastronômico de coração mole, mas perigoso.\",\n            \"* Lava não faz bem à saúde.[wait:10][face:serious] Nem para elementais de fogo.\",\n            \"[face:neutral]* Não aprecia o sabor refinado de relish.\",\n            \"[face:serious]* .......mas o cliente sempre tem razão,[wait:5] então...[wait:5] Ugh.[wait:5] Incentive a ajudar.\",\n            \"[face:neutral]* Adora qualquer coisa quente ou vermelha...[wait:5][face:confusion] Algum molho ou ingrediente assim?\",\n            \"[face:neutral]* Gosta de carinho.[wait:10]\\n* Trate bem o cão.\", \"*[face:serious] .......mas não esqueça os crimes culinários.\"\n        }"
+    "english": "Ⓥ{\n            \"* Vulkin.[wait:10]\\n* Terrorista culinário gentil, mas perigoso.\",\n            \"* Lava não faz bem à saúde.[wait:10][face:serious] Nem para elementais de fogo.\",\n            \"[face:neutral]* Não aprecia o sabor refinado de relish.\",\n            \"[face:serious]* .......mas o cliente sempre tem razão,[wait:5] então...[wait:5] Ugh.[wait:5] Incentive a ajudar.\",\n            \"[face:neutral]* Adora qualquer coisa quente ou vermelha...[wait:5][face:confusion] Algum molho ou ingrediente assim?\",\n            \"[face:neutral]* Gosta de carinho.[wait:10]\\n* Trate bem o cão.\", \"*[face:serious] .......mas não esqueça os crimes culinários.\"\n        }"
   },
   "grillbyDialogueDump-Shoebert": {
     "english": "Ⓥ{\n            \"* Shoebert.[wait:10]\\\\n* É um sapato.\",\n            \"[face:happy]* Também compôs uma das minhas músicas favoritas.\",\n            \"[face:neutral]* Toeccata em Fá menor,[wait:5] parte da sua grande sinfonia de sapatos.\",\n            \"* Tem gosto variado.[wait:10]\\\\n* Queda por fungos.\",\n            \"* Parece com a língua presa.[wait:10] Tente ajudá-lo a explicar melhor o pedido.\",\n            \"* Quando souber o que ele quer, escolha a etapa certa de COZINHAR.\",\n            \"* ....ou apele para o amor dele pela música.\"\n        }"
@@ -11496,10 +11496,10 @@
     "english": "AJUDA ADICIONAL\\nGoblinGuard     Doc     Sirius\\nLeaderfuzzy    Venn November\\nWoodMan  Keffen   Lavacake1212\\nAndrew Cunningham          Roy\\nBbappleboy"
   },
   "worldcutscene-general-standaloneText-eviltext-12": {
-    "english": "AGRADECIMENTOS ESPECIAIS\\nJoeTheCool    Aku    StarlightSam\\nAkumakon Staff    Chloe H.      Aida C.\\nLaurentheFlute   ACDS   Kate Shrike"
+    "english": "AGRADECIMENTOS\\nJoeTheCool    Aku    StarlightSam\\nAkumakon Staff    Chloe H.      Aida C.\\nLaurentheFlute   ACDS   Kate Shrike"
   },
   "worldcutscene-general-standaloneText-eviltext-13": {
-    "english": "AGRADECIMENTOS ESPECIAIS\\nToby Fox e a equipe de Undertale\\nPor motivos óbvios.\\n\\nEquipe de Undertale Yellow\\nPor provar que era possível.\\n\\nKhanShotFirst\\nPor ter a ideia."
+    "english": "AGRADECIMENTOS\\nToby Fox e a equipe de Undertale\\nPor motivos óbvios.\\n\\nEquipe de Undertale Yellow\\nPor provar que era possível.\\n\\nKhanShotFirst\\nPor ter a ideia."
   },
   "worldcutscene-general-standaloneText-eviltext-14": {
     "english": "OBRIGADO\\nPOR JOGAR.\\n\\nEsperamos que volte\\nao Eclipse em breve!"
@@ -11535,10 +11535,10 @@
     "english": "Necromancia Disco"
   },
   "questDescription-disco-0": {
-    "english": "Que pesadelo!\\nA jukebox premium do Coffee-In quebrou! Mas o pessoal quer dançar. Encontre alguém nos próximos dias para consertá-la e deixar tudo afinado."
+    "english": "Que pesadelo!\\nA vitrola premium do Coffee-In quebrou! Mas o pessoal quer dançar. Encontre alguém nos próximos dias para consertá-la e deixar tudo afinado."
   },
   "questDescription-disco-1": {
-    "english": "Volte ao Coffee-In para ver DJ Necrodance reviver a jukebox."
+    "english": "Volte ao Coffee-In para ver DJ Necrodance reviver a vitrola."
   },
   "questDescription-disco-2": {
     "english": "A disco nunca morre!"
@@ -11577,7 +11577,7 @@
     "english": "Você encontrou uma (1) página.\\nDeve devolvê-la."
   },
   "questDescription-cold-1": {
-    "english": "O balão está se sentindo bem mais fresco agora. Bom trabalho! "
+    "english": "O balão está bem mais fresco. Bom trabalho! "
   },
   "questDescription-elementyuri-1": {
     "english": "Procure uma flor Relógio de Sol. Parece que a Time Ltd. talvez tenha algumas dessas flores para ajudar a marcar o tempo.\\nTente procurar lá!"
@@ -11730,13 +11730,13 @@
     "english": "SWITCH"
   },
   "main_menu-settings-controls-button-gamepadstyle": {
-    "english": "ESTILO DOS BOTÕES DO GAMEPAD"
+    "english": "ESTILO DE BOTÕES"
   },
   "main_menu-settings-controls-button-keyboardbinds": {
     "english": "ATALHOS DO TECLADO"
   },
   "main_menu-settings-controls-button-gamepadbinds": {
-    "english": "BOTÕES DO GAMEPAD"
+    "english": "BOTÕES DO CONTROLE"
   },
   "main_menu-settings-basic-button-bind-DOWN": {
     "english": "BAIXO"
@@ -11763,7 +11763,7 @@
     "english": "REDEFINIR TECLAS"
   },
   "main_menu-settings-gamepad-display-title": {
-    "english": "GAMEPAD"
+    "english": "CONTROLE"
   },
   "main_menu-settings-gamepad-button-back": {
     "english": "VOLTAR"
@@ -11808,7 +11808,7 @@
     "english": "Ruínas - Casa"
   },
   "mapname-tundra/tundra3CWK": {
-    "english": "Snowdin - Estrada dos Troncos"
+    "english": "Snowdin - Via Troncos"
   },
   "menu-savemenu-save": {
     "english": "Salvar"
@@ -11865,7 +11865,7 @@
     "english": "* Tem certeza de que não quer perguntar de novo?"
   },
   "main_menu-settings-controls-button-autorun": {
-    "english": "CORRIDA AUTOMÁTICA"
+    "english": "CORRER AUTO"
   },
   "main_menu-settings-main-button-controls": {
     "english": "CONTROLES"

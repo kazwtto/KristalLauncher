@@ -5455,9 +5455,9 @@
     "startOffset": 6074,
     "endOffset": 6163,
     "source": "* I don't know why I'm not,[wait:5] though.[wait:5]\n* It must be a weird mental thing.",
-    "translation": "* Aunque no sé por qué no la tengo.[wait:5]\n* Debe ser alguna cosa mental rara.[wait:5]",
+    "translation": "* Aunque no sé por qué no,[wait:5] la verdad.[wait:5]\n* Debe ser alguna cosa mental rara.",
     "originalExpression": "\"* I don't know why I'm not,[wait:5] though.[wait:5]\\n* It must be a weird mental thing.\"",
-    "replacementExpression": "\"* Aunque no sé por qué no la tengo.[wait:5]\\n* Debe ser alguna cosa mental rara.[wait:5]\""
+    "replacementExpression": "\"* Aunque no sé por qué no,[wait:5] la verdad.[wait:5]\\n* Debe ser alguna cosa mental rara.\""
   },
   "6362240a7aac": {
     "file": "scripts/lightshops/mawzz.lua",
@@ -5925,9 +5925,9 @@
     "startOffset": 6074,
     "endOffset": 6163,
     "source": "* I don't know why I'm not,[wait:5] though.[wait:5]\n* It must be a weird mental thing.",
-    "translation": "* Aunque no sé por qué no la tengo.[wait:5]\n* Debe ser alguna cosa mental rara.[wait:5]",
+    "translation": "* Aunque no sé por qué no,[wait:5] la verdad.[wait:5]\n* Debe ser alguna cosa mental rara.",
     "originalExpression": "\"* I don't know why I'm not,[wait:5] though.[wait:5]\\n* It must be a weird mental thing.\"",
-    "replacementExpression": "\"* Aunque no sé por qué no la tengo.[wait:5]\\n* Debe ser alguna cosa mental rara.[wait:5]\""
+    "replacementExpression": "\"* Aunque no sé por qué no,[wait:5] la verdad.[wait:5]\\n* Debe ser alguna cosa mental rara.\""
   },
   "41e2b6483624": {
     "file": "scripts/lightshops/old/mawzz.lua",
@@ -7235,9 +7235,9 @@
     "startOffset": 5189,
     "endOffset": 5278,
     "source": "* I don't know why I'm not,[wait:5] though.[wait:5]\n* It must be a weird mental thing.",
-    "translation": "* Aunque no sé por qué no la tengo.[wait:5]\n* Debe ser alguna cosa mental rara.[wait:5]",
+    "translation": "* Aunque no sé por qué no,[wait:5] la verdad.[wait:5]\n* Debe ser alguna cosa mental rara.",
     "originalExpression": "\"* I don't know why I'm not,[wait:5] though.[wait:5]\\n* It must be a weird mental thing.\"",
-    "replacementExpression": "\"* Aunque no sé por qué no la tengo.[wait:5]\\n* Debe ser alguna cosa mental rara.[wait:5]\""
+    "replacementExpression": "\"* Aunque no sé por qué no,[wait:5] la verdad.[wait:5]\\n* Debe ser alguna cosa mental rara.\""
   },
   "b301d04655f7": {
     "file": "scripts/lightshops/test.lua",
@@ -7795,9 +7795,9 @@
     "startOffset": 5189,
     "endOffset": 5278,
     "source": "* I don't know why I'm not,[wait:5] though.[wait:5]\n* It must be a weird mental thing.",
-    "translation": "* Aunque no sé por qué no la tengo.[wait:5]\n* Debe ser alguna cosa mental rara.[wait:5]",
+    "translation": "* Aunque no sé por qué no,[wait:5] la verdad.[wait:5]\n* Debe ser alguna cosa mental rara.",
     "originalExpression": "\"* I don't know why I'm not,[wait:5] though.[wait:5]\\n* It must be a weird mental thing.\"",
-    "replacementExpression": "\"* Aunque no sé por qué no la tengo.[wait:5]\\n* Debe ser alguna cosa mental rara.[wait:5]\""
+    "replacementExpression": "\"* Aunque no sé por qué no,[wait:5] la verdad.[wait:5]\\n* Debe ser alguna cosa mental rara.\""
   },
   "4d5b863a2453": {
     "file": "scripts/lightshops/test/test.lua",
@@ -8775,9 +8775,9 @@
     "startOffset": 6125,
     "endOffset": 6214,
     "source": "* I don't know why I'm not,[wait:5] though.[wait:5]\n* It must be a weird mental thing.",
-    "translation": "* Aunque no sé por qué no la tengo.[wait:5]\n* Debe ser alguna cosa mental rara.[wait:5]",
+    "translation": "* Aunque no sé por qué no,[wait:5] la verdad.[wait:5]\n* Debe ser alguna cosa mental rara.",
     "originalExpression": "\"* I don't know why I'm not,[wait:5] though.[wait:5]\\n* It must be a weird mental thing.\"",
-    "replacementExpression": "\"* Aunque no sé por qué no la tengo.[wait:5]\\n* Debe ser alguna cosa mental rara.[wait:5]\""
+    "replacementExpression": "\"* Aunque no sé por qué no,[wait:5] la verdad.[wait:5]\\n* Debe ser alguna cosa mental rara.\""
   },
   "b75b3baa4f3c": {
     "file": "scripts/shops/dark_test.lua",

@@ -5455,9 +5455,9 @@
     "startOffset": 6074,
     "endOffset": 6163,
     "source": "* I don't know why I'm not,[wait:5] though.[wait:5]\n* It must be a weird mental thing.",
-    "translation": "* Mas não sei por que não estou.[wait:5]\n* Deve ser alguma coisa mental estranha.[wait:5]",
+    "translation": "* Não sei por que não estou,[wait:5] porém.[wait:5]\n* Deve ser alguma coisa mental estranha.",
     "originalExpression": "\"* I don't know why I'm not,[wait:5] though.[wait:5]\\n* It must be a weird mental thing.\"",
-    "replacementExpression": "\"* Mas não sei por que não estou.[wait:5]\\n* Deve ser alguma coisa mental estranha.[wait:5]\""
+    "replacementExpression": "\"* Não sei por que não estou,[wait:5] porém.[wait:5]\\n* Deve ser alguma coisa mental estranha.\""
   },
   "6362240a7aac": {
     "file": "scripts/lightshops/mawzz.lua",
@@ -5925,9 +5925,9 @@
     "startOffset": 6074,
     "endOffset": 6163,
     "source": "* I don't know why I'm not,[wait:5] though.[wait:5]\n* It must be a weird mental thing.",
-    "translation": "* Mas não sei por que não estou.[wait:5]\n* Deve ser alguma coisa mental estranha.[wait:5]",
+    "translation": "* Não sei por que não estou,[wait:5] porém.[wait:5]\n* Deve ser alguma coisa mental estranha.",
     "originalExpression": "\"* I don't know why I'm not,[wait:5] though.[wait:5]\\n* It must be a weird mental thing.\"",
-    "replacementExpression": "\"* Mas não sei por que não estou.[wait:5]\\n* Deve ser alguma coisa mental estranha.[wait:5]\""
+    "replacementExpression": "\"* Não sei por que não estou,[wait:5] porém.[wait:5]\\n* Deve ser alguma coisa mental estranha.\""
   },
   "41e2b6483624": {
     "file": "scripts/lightshops/old/mawzz.lua",
@@ -7235,9 +7235,9 @@
     "startOffset": 5189,
     "endOffset": 5278,
     "source": "* I don't know why I'm not,[wait:5] though.[wait:5]\n* It must be a weird mental thing.",
-    "translation": "* Mas não sei por que não estou.[wait:5]\n* Deve ser alguma coisa mental estranha.[wait:5]",
+    "translation": "* Não sei por que não estou,[wait:5] porém.[wait:5]\n* Deve ser alguma coisa mental estranha.",
     "originalExpression": "\"* I don't know why I'm not,[wait:5] though.[wait:5]\\n* It must be a weird mental thing.\"",
-    "replacementExpression": "\"* Mas não sei por que não estou.[wait:5]\\n* Deve ser alguma coisa mental estranha.[wait:5]\""
+    "replacementExpression": "\"* Não sei por que não estou,[wait:5] porém.[wait:5]\\n* Deve ser alguma coisa mental estranha.\""
   },
   "b301d04655f7": {
     "file": "scripts/lightshops/test.lua",
@@ -7795,9 +7795,9 @@
     "startOffset": 5189,
     "endOffset": 5278,
     "source": "* I don't know why I'm not,[wait:5] though.[wait:5]\n* It must be a weird mental thing.",
-    "translation": "* Mas não sei por que não estou.[wait:5]\n* Deve ser alguma coisa mental estranha.[wait:5]",
+    "translation": "* Não sei por que não estou,[wait:5] porém.[wait:5]\n* Deve ser alguma coisa mental estranha.",
     "originalExpression": "\"* I don't know why I'm not,[wait:5] though.[wait:5]\\n* It must be a weird mental thing.\"",
-    "replacementExpression": "\"* Mas não sei por que não estou.[wait:5]\\n* Deve ser alguma coisa mental estranha.[wait:5]\""
+    "replacementExpression": "\"* Não sei por que não estou,[wait:5] porém.[wait:5]\\n* Deve ser alguma coisa mental estranha.\""
   },
   "4d5b863a2453": {
     "file": "scripts/lightshops/test/test.lua",
@@ -8775,9 +8775,9 @@
     "startOffset": 6125,
     "endOffset": 6214,
     "source": "* I don't know why I'm not,[wait:5] though.[wait:5]\n* It must be a weird mental thing.",
-    "translation": "* Mas não sei por que não estou.[wait:5]\n* Deve ser alguma coisa mental estranha.[wait:5]",
+    "translation": "* Não sei por que não estou,[wait:5] porém.[wait:5]\n* Deve ser alguma coisa mental estranha.",
     "originalExpression": "\"* I don't know why I'm not,[wait:5] though.[wait:5]\\n* It must be a weird mental thing.\"",
-    "replacementExpression": "\"* Mas não sei por que não estou.[wait:5]\\n* Deve ser alguma coisa mental estranha.[wait:5]\""
+    "replacementExpression": "\"* Não sei por que não estou,[wait:5] porém.[wait:5]\\n* Deve ser alguma coisa mental estranha.\""
   },
   "b75b3baa4f3c": {
     "file": "scripts/shops/dark_test.lua",
@@ -11615,9 +11615,9 @@
     "startOffset": 4438,
     "endOffset": 4500,
     "source": "* It makes me feel all...[wait:5] Anxious,[wait:5] you know?",
-    "translation": "* Isso me deixa tão...[wait:5] ansioso,[wait:5] sabe?",
+    "translation": "* Isso me deixa tão...[wait:5] ansiosa,[wait:5] sabe?",
     "originalExpression": "\"* It makes me feel all...[wait:5] Anxious,[wait:5] you know?\"",
-    "replacementExpression": "\"* Isso me deixa tão...[wait:5] ansioso,[wait:5] sabe?\""
+    "replacementExpression": "\"* Isso me deixa tão...[wait:5] ansiosa,[wait:5] sabe?\""
   },
   "48c84f9476fe": {
     "file": "scripts/world/cutscenes/old/talk_light_CWK.lua",
@@ -12445,9 +12445,9 @@
     "startOffset": 4438,
     "endOffset": 4500,
     "source": "* It makes me feel all...[wait:5] Anxious,[wait:5] you know?",
-    "translation": "* Isso me deixa tão...[wait:5] ansioso,[wait:5] sabe?",
+    "translation": "* Isso me deixa tão...[wait:5] ansiosa,[wait:5] sabe?",
     "originalExpression": "\"* It makes me feel all...[wait:5] Anxious,[wait:5] you know?\"",
-    "replacementExpression": "\"* Isso me deixa tão...[wait:5] ansioso,[wait:5] sabe?\""
+    "replacementExpression": "\"* Isso me deixa tão...[wait:5] ansiosa,[wait:5] sabe?\""
   },
   "24790086294d": {
     "file": "scripts/world/cutscenes/talk_light_CWK.lua",

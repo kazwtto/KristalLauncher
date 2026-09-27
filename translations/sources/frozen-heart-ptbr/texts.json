@@ -1955,9 +1955,9 @@
     "startOffset": 13055,
     "endOffset": 13064,
     "source": "(Tired)",
-    "translation": "(Cansado)",
+    "translation": "(Cansada)",
     "originalExpression": "\"(Tired)\"",
-    "replacementExpression": "\"(Cansado)\""
+    "replacementExpression": "\"(Cansada)\""
   },
   "541f6af95f28": {
     "file": "scripts/battle/encounters/noelle_battle.lua",
@@ -4395,9 +4395,9 @@
     "startOffset": 6676,
     "endOffset": 6766,
     "source": "YOU HAVE NO REASON TO\n[Unsign Copy] KRIS!! THIS IS\nTHE [Honestest] DEAL EVER\nMADE!!!!",
-    "translation": "VOCÊ NÃO TEM MOTIVO PARA\n[Desassinar Cópia], KRIS!! ESTE É\nO ACORDO MAIS [Honestíssimo]\nJÁ FEITO!!!!",
+    "translation": "VOCÊ NÃO TEM MOTIVO PARA\n[Desassinar Cópia], KRIS!! ESTE É\nO ACORDO [Mais Honesto]\nJÁ FEITO!!!!",
     "originalExpression": "\"YOU HAVE NO REASON TO\\n[Unsign Copy] KRIS!! THIS IS\\nTHE [Honestest] DEAL EVER\\nMADE!!!!\"",
-    "replacementExpression": "\"VOCÊ NÃO TEM MOTIVO PARA\\n[Desassinar Cópia], KRIS!! ESTE É\\nO ACORDO MAIS [Honestíssimo]\\nJÁ FEITO!!!!\""
+    "replacementExpression": "\"VOCÊ NÃO TEM MOTIVO PARA\\n[Desassinar Cópia], KRIS!! ESTE É\\nO ACORDO [Mais Honesto]\\nJÁ FEITO!!!!\""
   },
   "63b8b2001cce": {
     "file": "scripts/battle/enemies/Spamton_NEO.lua",
@@ -6565,9 +6565,9 @@
     "startOffset": 14729,
     "endOffset": 14738,
     "source": "(Tired)",
-    "translation": "(Cansado)",
+    "translation": "(Cansada)",
     "originalExpression": "\"(Tired)\"",
-    "replacementExpression": "\"(Cansado)\""
+    "replacementExpression": "\"(Cansada)\""
   },
   "aad5d209950e": {
     "file": "scripts/battle/enemies/noelle.lua",
@@ -6685,9 +6685,9 @@
     "startOffset": 15962,
     "endOffset": 16001,
     "source": "* [speed:0.4]ki-[wait:3]killing me...",
-    "translation": "* [speed:0.4]ma-[wait:3]matar eu...",
+    "translation": "* [speed:0.4]me ma-[wait:3]matar...",
     "originalExpression": "\"* [speed:0.4]ki-[wait:3]killing me...\"",
-    "replacementExpression": "\"* [speed:0.4]ma-[wait:3]matar eu...\""
+    "replacementExpression": "\"* [speed:0.4]me ma-[wait:3]matar...\""
   },
   "d6665abd1945": {
     "file": "scripts/battle/enemies/noelle.lua",
@@ -6957,7 +6957,7 @@
     "source": "* ([color:{lua1}]{lua2}+{lua3}kris{lua4}->Kris jumps![color:reset]\n[color:{lua5}]{lua6}+{lua7}susie{lua8}->Susie jumps![color:reset]\n[color:{lua9}]{lua10}+{lua11}ralsei{lua12}->Ralsei jumps![color:reset])",
     "translation": "* ([color:{lua1}]{lua2}+{lua3}kris{lua4}->Kris pula![color:reset]\n[color:{lua5}]{lua6}+{lua7}susie{lua8}->Susie pula![color:reset]\n[color:{lua9}]{lua10}+{lua11}ralsei{lua12}->Ralsei pula![color:reset])",
     "originalExpression": "\"* ([color:\"..Utils.rgbToHex({Game.battle.party[1].chara:getColor()})..\"]\"..Input.getText(\"up\")..\"+\"..self.input[\"kris\"]..\"->Kris jumps![color:reset]\\n[color:\"..Utils.rgbToHex({Game.battle.party[2].chara:getColor()})..\"]\"..Input.getText(\"up\")..\"+\"..self.input[\"susie\"]..\"->Susie jumps![color:reset]\\n[color:\"..Utils.rgbToHex({Game.battle.party[3].chara:getColor()})..\"]\"..Input.getText(\"up\")..\"+\"..self.input[\"ralsei\"]..\"->Ralsei jumps![color:reset])\"",
-    "replacementExpression": "\"* ([color:\" .. (Utils.rgbToHex({Game.battle.party[1].chara:getColor()})) .. \"]\" .. (Input.getText(\"up\")) .. \"+\" .. (self.input[) .. \"kris\" .. (]) .. \"->Kris pula![color:reset]\\n[color:\" .. (Utils.rgbToHex({Game.battle.party[2].chara:getColor()})) .. \"]\" .. (Input.getText(\"up\")) .. \"+\" .. (self.input[) .. \"susie\" .. (]) .. \"->Susie pula![color:reset]\\n[color:\" .. (Utils.rgbToHex({Game.battle.party[3].chara:getColor()})) .. \"]\" .. (Input.getText(\"up\")) .. \"+\" .. (self.input[) .. \"ralsei\" .. (]) .. \"->Ralsei pula![color:reset])\""
+    "replacementExpression": "\"* ([color:\" .. (Utils.rgbToHex({Game.battle.party[1].chara:getColor()})) .. \"]\" .. (Input.getText(\"up\")) .. \"+\" .. (self.input[\"kris\"]) .. \"->Kris pula![color:reset]\\n[color:\" .. (Utils.rgbToHex({Game.battle.party[2].chara:getColor()})) .. \"]\" .. (Input.getText(\"up\")) .. \"+\" .. (self.input[\"susie\"]) .. \"->Susie pula![color:reset]\\n[color:\" .. (Utils.rgbToHex({Game.battle.party[3].chara:getColor()})) .. \"]\" .. (Input.getText(\"up\")) .. \"+\" .. (self.input[\"ralsei\"]) .. \"->Ralsei pula![color:reset])\""
   },
   "cc8f01156496": {
     "file": "scripts/battle/waves/secret/final.lua",
@@ -7357,7 +7357,7 @@
     "source": "\n[color:yellow]FROZEN HEART[color:reset]\n\nBy\nSimbel{lua1}",
     "translation": "\n[color:yellow]FROZEN HEART[color:reset]\n\nPor\nSimbel{lua1}",
     "originalExpression": "\"\\n[color:yellow]FROZEN HEART[color:reset]\\n\\nBy\\nSimbel\"..(Kristal.Config[\"beat_once\"] and \"\\n\\n[color:#999999]Press \"..Input.getText(\"menu\")..\" to speed up\" or \"\")",
-    "replacementExpression": "\"\\n[color:yellow]FROZEN HEART[color:reset]\\n\\nPor\\nSimbel\" .. ((Kristal.Config[\"beat_once\"] and \"\\n\\n[color:#999999]Press \"..Input.getText(\"menu\")..\" to speed up\" or \"\"))"
+    "replacementExpression": "\"\\n[color:yellow]FROZEN HEART[color:reset]\\n\\nPor\\nSimbel\" .. ((Kristal.Config[\"beat_once\"] and \"\\n\\n[color:#999999]Pressione \" .. (Input.getText(\"menu\")) .. \" para acelerar\" or \"\"))"
   },
   "c6de2f68866e": {
     "file": "scripts/world/cutscenes/CREDITS.lua",
@@ -10445,9 +10445,9 @@
     "startOffset": 688,
     "endOffset": 750,
     "source": "* I never saw you wear anything like this,[wait:0.5] though.",
-    "translation": "* Mas eu nunca vi você usar nada assim,[wait:0.5].",
+    "translation": "* Mas eu nunca vi você usar nada assim.[wait:0.5]",
     "originalExpression": "\"* I never saw you wear anything like this,[wait:0.5] though.\"",
-    "replacementExpression": "\"* Mas eu nunca vi você usar nada assim,[wait:0.5].\""
+    "replacementExpression": "\"* Mas eu nunca vi você usar nada assim.[wait:0.5]\""
   },
   "8847d5f0bd30": {
     "file": "scripts/world/cutscenes/interactable_noelle_room.lua",
@@ -14275,9 +14275,9 @@
     "startOffset": 21831,
     "endOffset": 21889,
     "source": "* I Hope You Are Ready To Have Me As Your Wacky Roommate",
-    "translation": "* Espero Que Esteja Pronta Para Ser Minha Colega De Quarto",
+    "translation": "* Espero Que Esteja Pronto Para Me Ter Como Sua Colega De Quarto Maluca",
     "originalExpression": "\"* I Hope You Are Ready To Have Me As Your Wacky Roommate\"",
-    "replacementExpression": "\"* Espero Que Esteja Pronta Para Ser Minha Colega De Quarto\""
+    "replacementExpression": "\"* Espero Que Esteja Pronto Para Me Ter Como Sua Colega De Quarto Maluca\""
   },
   "706193ce91fe": {
     "file": "scripts/world/cutscenes/overworld.lua",
@@ -15275,9 +15275,9 @@
     "startOffset": 6994,
     "endOffset": 7004,
     "source": "* Ugh...",
-    "translation": "* Aff...",
+    "translation": "* Ugh...",
     "originalExpression": "\"* Ugh...\"",
-    "replacementExpression": "\"* Aff...\""
+    "replacementExpression": "\"* Ugh...\""
   },
   "893aa2a9d3bf": {
     "file": "scripts/world/cutscenes/secret.lua",
@@ -16815,9 +16815,9 @@
     "startOffset": 157,
     "endOffset": 184,
     "source": "* (Holy shit, is that..?)",
-    "translation": "* (Caralho, aquilo é..? )",
+    "translation": "* (Caramba, aquilo é..?)",
     "originalExpression": "\"* (Holy shit, is that..?)\"",
-    "replacementExpression": "\"* (Caralho, aquilo é..? )\""
+    "replacementExpression": "\"* (Caramba, aquilo é..?)\""
   },
   "ce324874355a": {
     "file": "scripts/world/cutscenes/wobblything.lua",

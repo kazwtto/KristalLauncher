@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "godhome.es",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": {
     "pt-BR": "Godhome em Espanhol",
     "en": "Godhome in Spanish",
@@ -19,5 +19,5 @@
   "targetLanguage": "es",
   "minimumLauncherVersion": "0.17.48",
   "textsFile": "texts.json",
-  "textsSha256": "2d0b1b2b0bfb7db6cc04367444e44434ae399621b7a638e83370680c1b2e395b"
+  "textsSha256": "f438990ac1d0e1f5aa4dc880979ff9a4a512478079b0c59c92d047451fae06cd"
 }

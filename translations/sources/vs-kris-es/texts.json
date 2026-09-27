@@ -795,9 +795,9 @@
     "startOffset": 5414,
     "endOffset": 5459,
     "source": "Did You think You were\nabove consequences?",
-    "translation": "¿Creíste que estabas\nsin consecuencias?",
+    "translation": "¿Te creías por encima\nde las consecuencias?",
     "originalExpression": "\"Did You think You were\\nabove consequences?\"",
-    "replacementExpression": "\"Você achou que estava\\nacima das consequências?\""
+    "replacementExpression": "\"¿Te creías por encima\\nde las consecuencias?\""
   },
   "17ea054c075a": {
     "file": "scripts/battle/enemies/kris.lua",

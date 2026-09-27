@@ -25,9 +25,9 @@
     "startOffset": 2229,
     "endOffset": 2306,
     "source": "* You plug controller into the console, preparing to press the combination!",
-    "translation": "* Você pluga o controle no console, pronto pra digitar a combinação!",
+    "translation": "* Você pluga o controle no console, pronto para digitar a combinação!",
     "originalExpression": "\"* You plug controller into the console, preparing to press the combination!\"",
-    "replacementExpression": "\"* Você pluga o controle no console, pronto pra digitar a combinação!\""
+    "replacementExpression": "\"* Você pluga o controle no console, pronto para digitar a combinação!\""
   },
   "3213d2fd9d87": {
     "file": "scripts/battle/cutscenes/cheatheal.lua",
@@ -35,9 +35,9 @@
     "startOffset": 2358,
     "endOffset": 2426,
     "source": "* Press the buttons on the screen correctly to activate CHEATHEAL!",
-    "translation": "* Aperte os botões na tela corretamente pra ativar o CURAHACK!",
+    "translation": "* Aperte os botões na tela corretamente para ativar o CURAHACK!",
     "originalExpression": "\"* Press the buttons on the screen correctly to activate CHEATHEAL!\"",
-    "replacementExpression": "\"* Aperte os botões na tela corretamente pra ativar o CURAHACK!\""
+    "replacementExpression": "\"* Aperte os botões na tela corretamente para ativar o CURAHACK!\""
   },
   "7e7568260ca8": {
     "file": "scripts/battle/cutscenes/cheatheal.lua",
@@ -215,9 +215,9 @@
     "startOffset": 1643,
     "endOffset": 1722,
     "source": "* (Try using the new [color:yellow]ACTs[color:reset] to connect to RAMBHACK!)",
-    "translation": "* (Tente usar as novas [color:yellow]AÇÕES[color:reset] pra se conectar ao RAMBHACK!)",
+    "translation": "* (Tente usar as novas [color:yellow]AÇÕES[color:reset] para se conectar ao RAMBHACK!)",
     "originalExpression": "\"* (Try using the new [color:yellow]ACTs[color:reset] to connect to RAMBHACK!)\"",
-    "replacementExpression": "\"* (Tente usar as novas [color:yellow]AÇÕES[color:reset] pra se conectar ao RAMBHACK!)\""
+    "replacementExpression": "\"* (Tente usar as novas [color:yellow]AÇÕES[color:reset] para se conectar ao RAMBHACK!)\""
   },
   "0a30c65e954b": {
     "file": "scripts/battle/cutscenes/romb.lua",
@@ -375,9 +375,9 @@
     "startOffset": 3509,
     "endOffset": 3565,
     "source": "KRIS, [wait:5]YOU'RE MISSING \nSO MUCH, [wait:5]BUDDY!",
-    "translation": "KRIS, [wait:5]TÁ PERDENDO \nTANTA COISA, [wait:5]AMIGÃO!",
+    "translation": "KRIS, [wait:5]ESTÁ PERDENDO \nTANTA COISA, [wait:5]AMIGÃO!",
     "originalExpression": "\"KRIS, [wait:5]YOU'RE MISSING \\nSO MUCH, [wait:5]BUDDY!\"",
-    "replacementExpression": "\"KRIS, [wait:5]TÁ PERDENDO \\nTANTA COISA, [wait:5]AMIGÃO!\""
+    "replacementExpression": "\"KRIS, [wait:5]ESTÁ PERDENDO \\nTANTA COISA, [wait:5]AMIGÃO!\""
   },
   "50d7466cdfc9": {
     "file": "scripts/battle/cutscenes/romb.lua",
@@ -475,9 +475,9 @@
     "startOffset": 4418,
     "endOffset": 4465,
     "source": "He was probably a \nkey for your \nhappiness.",
-    "translation": "Ele devia ser a \nchave pra sua \nfelicidade.",
+    "translation": "Ele devia ser a \nchave para sua \nfelicidade.",
     "originalExpression": "\"He was probably a \\nkey for your \\nhappiness.\"",
-    "replacementExpression": "\"Ele devia ser a \\nchave pra sua \\nfelicidade.\""
+    "replacementExpression": "\"Ele devia ser a \\nchave para sua \\nfelicidade.\""
   },
   "2a23c0495260": {
     "file": "scripts/battle/cutscenes/romb.lua",

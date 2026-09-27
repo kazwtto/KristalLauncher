@@ -795,9 +795,9 @@
     "startOffset": 5414,
     "endOffset": 5459,
     "source": "Did You think You were\nabove consequences?",
-    "translation": "Você achou que estava\nacima das consequências?",
+    "translation": "Você se achava acima\ndas consequências?",
     "originalExpression": "\"Did You think You were\\nabove consequences?\"",
-    "replacementExpression": "\"Você achou que estava\\nacima das consequências?\""
+    "replacementExpression": "\"Você se achava acima\\ndas consequências?\""
   },
   "17ea054c075a": {
     "file": "scripts/battle/enemies/kris.lua",

@@ -347,7 +347,7 @@
     "source": "* {lua1} straightened the\ndummy's hat.",
     "translation": "* {lua1} ajeitou o\nchapéu do boneco.",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \" straightened the\\ndummy's hat.\"",
-    "replacementExpression": "\"* {lua1} ajeitou o\\nchapéu do boneco.\""
+    "replacementExpression": "\"* \" .. battler.chara:getName() .. \" ajeitou o\\nchapéu do boneco.\""
   },
   "b6ed2b3df0b3": {
     "file": "scripts/battle/enemies/kitty.lua",
@@ -457,7 +457,7 @@
     "source": "* {lua1} straightened the\nkitty's hat.",
     "translation": "* {lua1} ajeitou o\nchapéu do gatinho.",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \" straightened the\\nkitty's hat.\"",
-    "replacementExpression": "\"* {lua1} ajeitou o\\nchapéu do gatinho.\""
+    "replacementExpression": "\"* \" .. battler.chara:getName() .. \" ajeitou o\\nchapéu do gatinho.\""
   },
   "8b3164c6d527": {
     "file": "scripts/battle/enemies/lancerspawn.lua",
@@ -657,7 +657,7 @@
     "source": "* {lua1}'s SOUL shone brighter!",
     "translation": "* A ALMA de {lua1} brilhou mais forte!",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \"'s SOUL shone brighter!\"",
-    "replacementExpression": "\"* A ALMA de {lua1} brilhou mais forte!\""
+    "replacementExpression": "\"* A ALMA de \" .. battler.chara:getName() .. \" brilhou mais forte!\""
   },
   "ddb0eef35c23": {
     "file": "scripts/battle/enemies/lancerspawn.lua",
@@ -667,7 +667,7 @@
     "source": "* {lua1}'s SOUL emitted a brilliant light!",
     "translation": "* A ALMA de {lua1} emitiu uma luz brilhante!",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \"'s SOUL emitted a brilliant light!\"",
-    "replacementExpression": "\"* A ALMA de {lua1} emitiu uma luz brilhante!\""
+    "replacementExpression": "\"* A ALMA de \" .. battler.chara:getName() .. \" emitiu uma luz brilhante!\""
   },
   "a55eb13dcdc7": {
     "file": "scripts/battle/enemies/lancerspawn.lua",
@@ -1037,7 +1037,7 @@
     "source": "* {lua1} tried to \"[color:yellow]ACT[color:reset]\"...\n* But, the enemy couldn't understand!",
     "translation": "* {lua1} tentou \"[color:yellow]AGIR[color:reset]\"...\n* Mas o inimigo não entendeu!",
     "originalExpression": "\n                \"* \" .. battler.chara:getName()\n                    .. \" tried to \\\"[color:yellow]ACT[color:reset]\\\"...\\n* But, the enemy couldn't understand!\"\n            ",
-    "replacementExpression": "\n* {lua1} tentou \"[color:yellow]AGIR[color:reset]\"...\\n* Mas o inimigo não entendeu!\n"
+    "replacementExpression": "\n                \"* \" .. battler.chara:getName()\n                    .. \" tentou \\\"[color:yellow]AGIR[color:reset]\\\"...\\n* Mas o inimigo não entendeu!\"\n            "
   },
   "ba2fcfa7f24b": {
     "file": "scripts/battle/enemies/lancerspawn.lua",
@@ -1147,7 +1147,7 @@
     "source": "* {lua1}'s SOUL shone brighter!",
     "translation": "* A ALMA de {lua1} brilhou mais forte!",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \"'s SOUL shone brighter!\"",
-    "replacementExpression": "\"* A ALMA de {lua1} brilhou mais forte!\""
+    "replacementExpression": "\"* A ALMA de \" .. battler.chara:getName() .. \" brilhou mais forte!\""
   },
   "d466e8a58991": {
     "file": "scripts/battle/enemies/pippins.lua",
@@ -1157,7 +1157,7 @@
     "source": "* {lua1}'s SOUL emitted a brilliant light!",
     "translation": "* A ALMA de {lua1} emitiu uma luz brilhante!",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \"'s SOUL emitted a brilliant light!\"",
-    "replacementExpression": "\"* A ALMA de {lua1} emitiu uma luz brilhante!\""
+    "replacementExpression": "\"* A ALMA de \" .. battler.chara:getName() .. \" emitiu uma luz brilhante!\""
   },
   "258da62f3415": {
     "file": "scripts/battle/enemies/pippins.lua",
@@ -1167,7 +1167,7 @@
     "source": "* {lua1} tried to \"[color:yellow]ACT[color:reset]\"...\n* But, the enemy couldn't understand!",
     "translation": "* {lua1} tentou \"[color:yellow]AGIR[color:reset]\"...\n* Mas o inimigo não entendeu!",
     "originalExpression": "\n                \"* \" .. battler.chara:getName()\n                    .. \" tried to \\\"[color:yellow]ACT[color:reset]\\\"...\\n* But, the enemy couldn't understand!\"\n            ",
-    "replacementExpression": "\n* {lua1} tentou \"[color:yellow]AGIR[color:reset]\"...\\n* Mas o inimigo não entendeu!\n"
+    "replacementExpression": "\n                \"* \" .. battler.chara:getName()\n                    .. \" tentou \\\"[color:yellow]AGIR[color:reset]\\\"...\\n* Mas o inimigo não entendeu!\"\n            "
   },
   "bfb9a39df25b": {
     "file": "scripts/battle/enemies/pippins.lua",
@@ -1317,7 +1317,7 @@
     "source": "* {lua1}'s SOUL shone brighter!",
     "translation": "* A ALMA de {lua1} brilhou mais forte!",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \"'s SOUL shone brighter!\"",
-    "replacementExpression": "\"* A ALMA de {lua1} brilhou mais forte!\""
+    "replacementExpression": "\"* A ALMA de \" .. battler.chara:getName() .. \" brilhou mais forte!\""
   },
   "8f90da6633c9": {
     "file": "scripts/battle/enemies/rudinn.lua",
@@ -1327,7 +1327,7 @@
     "source": "* {lua1}'s SOUL emitted a brilliant light!",
     "translation": "* A ALMA de {lua1} emitiu uma luz brilhante!",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \"'s SOUL emitted a brilliant light!\"",
-    "replacementExpression": "\"* A ALMA de {lua1} emitiu uma luz brilhante!\""
+    "replacementExpression": "\"* A ALMA de \" .. battler.chara:getName() .. \" emitiu uma luz brilhante!\""
   },
   "2e9303058b7d": {
     "file": "scripts/battle/enemies/rudinn.lua",
@@ -1337,7 +1337,7 @@
     "source": "* {lua1} tried to \"[color:yellow]ACT[color:reset]\"...\n* But, the enemy couldn't understand!",
     "translation": "* {lua1} tentou \"[color:yellow]AGIR[color:reset]\"...\n* Mas o inimigo não entendeu!",
     "originalExpression": "\n                \"* \" .. battler.chara:getName()\n                    .. \" tried to \\\"[color:yellow]ACT[color:reset]\\\"...\\n* But, the enemy couldn't understand!\"\n            ",
-    "replacementExpression": "\n* {lua1} tentou \"[color:yellow]AGIR[color:reset]\"...\\n* Mas o inimigo não entendeu!\n"
+    "replacementExpression": "\n                \"* \" .. battler.chara:getName()\n                    .. \" tentou \\\"[color:yellow]AGIR[color:reset]\\\"...\\n* Mas o inimigo não entendeu!\"\n            "
   },
   "da9fa97bedc2": {
     "file": "scripts/battle/enemies/rudinn.lua",
@@ -1427,7 +1427,7 @@
     "source": "* {lua1}'s SOUL shone brighter!",
     "translation": "* A ALMA de {lua1} brilhou mais forte!",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \"'s SOUL shone brighter!\"",
-    "replacementExpression": "\"* A ALMA de {lua1} brilhou mais forte!\""
+    "replacementExpression": "\"* A ALMA de \" .. battler.chara:getName() .. \" brilhou mais forte!\""
   },
   "4e4029e05941": {
     "file": "scripts/battle/enemies/tasque.lua",
@@ -1437,7 +1437,7 @@
     "source": "* {lua1}'s SOUL emitted a brilliant light!",
     "translation": "* A ALMA de {lua1} emitiu uma luz brilhante!",
     "originalExpression": "\"* \" .. battler.chara:getName() .. \"'s SOUL emitted a brilliant light!\"",
-    "replacementExpression": "\"* A ALMA de {lua1} emitiu uma luz brilhante!\""
+    "replacementExpression": "\"* A ALMA de \" .. battler.chara:getName() .. \" emitiu uma luz brilhante!\""
   },
   "6ca843c1cff2": {
     "file": "scripts/battle/enemies/tasque.lua",
@@ -1447,7 +1447,7 @@
     "source": "* {lua1} tried to \"[color:yellow]ACT[color:reset]\"...\n* But, the enemy couldn't understand!",
     "translation": "* {lua1} tentou \"[color:yellow]AGIR[color:reset]\"...\n* Mas o inimigo não entendeu!",
     "originalExpression": "\n                \"* \" .. battler.chara:getName()\n                    .. \" tried to \\\"[color:yellow]ACT[color:reset]\\\"...\\n* But, the enemy couldn't understand!\"\n            ",
-    "replacementExpression": "\n* {lua1} tentou \"[color:yellow]AGIR[color:reset]\"...\\n* Mas o inimigo não entendeu!\n"
+    "replacementExpression": "\n                \"* \" .. battler.chara:getName()\n                    .. \" tentou \\\"[color:yellow]AGIR[color:reset]\\\"...\\n* Mas o inimigo não entendeu!\"\n            "
   },
   "da5351f2ed2a": {
     "file": "scripts/battle/enemies/tasque.lua",
@@ -1967,7 +1967,7 @@
     "source": "{lua1}\n[wait:0.25s]* But the enemy wasn't [color:blue]TIRED[color:reset]...",
     "translation": "{lua1}\n[wait:0.25s]* Mas o inimigo não estava [color:blue]CANSADO[color:reset]...",
     "originalExpression": "message .. \"\\n[wait:0.25s]* But the enemy wasn't [color:blue]TIRED[color:reset]...\"",
-    "replacementExpression": "m{lua1}\\n[wait:0.25s]* Mas o ini\\migo não estava [color:blue]CANSADO[color:reset]...m"
+    "replacementExpression": "message .. \"\\n[wait:0.25s]* Mas o inimigo não estava [color:blue]CANSADO[color:reset]...\""
   },
   "d98a999d8862": {
     "file": "scripts/data/spells/soul_buster.lua",
@@ -2007,7 +2007,7 @@
     "source": "* {lua1} used {lua2}!",
     "translation": "* {lua1} usou {lua2}!",
     "originalExpression": "\"* \" .. user.chara:getName() .. \" used \" .. self:getCastName() .. \"!\"",
-    "replacementExpression": "\"* {lua1} usou {lua2}!\""
+    "replacementExpression": "\"* \" .. user.chara:getName() .. \" usou \" .. self:getCastName() .. \"!\""
   },
   "57abddf1fb13": {
     "file": "scripts/data/spells/ultimate_heal.lua",
@@ -2367,7 +2367,7 @@
     "source": "[instant]Hello!![wait:10]\n\nThanks for trying out the project...\nThis is still a HEAVY WORK IN PROGRESS!!! It will be updated when videos come out.[wait:10]\nI apologize for any potential bugs found...[wait:10]\n\nIf you find any, Please let me know in the discord!",
     "translation": "[instant]Olá!![wait:10]\n\nAgradeço por testar o projeto...\nIsto ainda está MUITO EM DESENVOLVIMENTO!!! Será atualizado quando saírem vídeos.[wait:10]\nPeço desculpas por qualquer possível erro encontrado...[wait:10]\n\nSe achar algum, por favor, avise no Discord!",
     "originalExpression": "\n        \"[instant]Hello!![wait:10]\\n\\n\" .. \"Thanks for trying out the project...\\n\"\n            .. \"This is still a HEAVY WORK IN PROGRESS!!! It will be updated when videos come out.[wait:10]\\n\"\n            .. \"I apologize for any potential bugs found...[wait:10]\\n\\nIf you find any, Please let me know in the discord!\"\n    ",
-    "replacementExpression": "\n[instant]Olá!![wait:10]\\n\\nAgradeço por testar o projeto...\\nIsto ainda está MUITO EM DESENVOLVIMENTO!!! Será atualizado quando saírem vídeos.[wait:10]\\nPeço desculpas por qualquer possível erro encontrado...[wait:10]\\n\\nSe achar algum, por favor, avise no Discord!\n"
+    "replacementExpression": "\n        \"[instant]Olá!![wait:10]\\n\\nAgradeço por testar o projeto...\\nIsto ainda está MUITO EM DESENVOLVIMENTO!!! Será atualizado quando saírem vídeos.[wait:10]\\nPeço desculpas por qualquer possível erro encontrado...[wait:10]\\n\\nSe achar algum, por favor, avise no Discord!\"\n    "
   },
   "9204e48b0ca2": {
     "file": "scripts/world/cutscenes/dogchk.lua",
@@ -3387,7 +3387,7 @@
     "source": "[voice:susiehushed]* {lua1}???",
     "translation": "[voice:susiehushed]* {lua1}???",
     "originalExpression": "\"[voice:susiehushed]* \".. Game.save_name ..\"???\"",
-    "replacementExpression": "\"[voice:susiehushed]* {lua1}???\""
+    "replacementExpression": "\"[voice:susiehushed]* \".. Game.save_name ..\"???\""
   },
   "9be84fb008e7": {
     "file": "scripts/world/cutscenes/results.lua",
@@ -3587,7 +3587,7 @@
     "source": "*[voice:susiehushed] {lua1}...",
     "translation": "*[voice:susiehushed] {lua1}...",
     "originalExpression": "\"*[voice:susiehushed] \" .. Game.save_name ..\"...\"",
-    "replacementExpression": "\"*[voice:susiehushed] {lua1}...\""
+    "replacementExpression": "\"*[voice:susiehushed] \" .. Game.save_name ..\"...\""
   },
   "0e9c310e7166": {
     "file": "scripts/world/cutscenes/results.lua",
@@ -3737,7 +3737,7 @@
     "source": "*[voice:susiehushed] C'mon,[wait:5]{lua1}.",
     "translation": "*[voice:susiehushed] Vamos,[wait:5]{lua1}.",
     "originalExpression": "\"*[voice:susiehushed] C'mon,[wait:5]\" .. Game.save_name ..\".\"",
-    "replacementExpression": "\"*[voice:susiehushed] Vamos,[wait:5]{lua1}.\""
+    "replacementExpression": "\"*[voice:susiehushed] Vamos,[wait:5]\" .. Game.save_name ..\".\""
   },
   "a4653ab7973f": {
     "file": "scripts/world/cutscenes/results.lua",
@@ -3787,7 +3787,7 @@
     "source": "[color:yellow]{lua1} SECONDS!",
     "translation": "[color:yellow]{lua1} SEGUNDOS!",
     "originalExpression": "\"[color:yellow]\" .. content .. \" SECONDS!\"",
-    "replacementExpression": "\"[color:yellow]{lua1} SEGUNDOS!\""
+    "replacementExpression": "\"[color:yellow]\" .. content .. \" SEGUNDOS!\""
   },
   "57f27a79e8c9": {
     "file": "scripts/world/cutscenes/results.lua",
@@ -3957,7 +3957,7 @@
     "source": "[font:small][color:AAAAAA]PB: {lua1}",
     "translation": "[font:small][color:AAAAAA]RECORDE: {lua1}",
     "originalExpression": "\"[font:small][color:AAAAAA]PB: \".. Game.RUNTIMER:getBest()",
-    "replacementExpression": "\"[font:small][color:AAAAAA]RECORDE: {lua1}\""
+    "replacementExpression": "\"[font:small][color:AAAAAA]RECORDE: \".. Game.RUNTIMER:getBest()"
   },
   "bda3c653837c": {
     "file": "scripts/world/cutscenes/results.lua",
@@ -3987,7 +3987,7 @@
     "source": "PB:{lua1}",
     "translation": "RECORDE:{lua1}",
     "originalExpression": "\"PB:\" .. Game:getFlag(\"DogCheckMinigamePoint\", 0)",
-    "replacementExpression": "\"RECORDE:{lua1}\""
+    "replacementExpression": "\"RECORDE:\" .. Game:getFlag(\"DogCheckMinigamePoint\", 0)"
   },
   "5d5c4a1700ed": {
     "file": "scripts/world/maps/dogcheck/map.lua",
@@ -3997,7 +3997,7 @@
     "source": "POINTS:{lua1}",
     "translation": "PONTOS:{lua1}",
     "originalExpression": "\"POINTS:\" .. self.clicknum",
-    "replacementExpression": "\"PONTOS:{lua1}\""
+    "replacementExpression": "\"PONTOS:\" .. self.clicknum"
   },
   "2dd9eb7b829c": {
     "file": "scripts/world/maps/glassfield/palaceview/data.lua",

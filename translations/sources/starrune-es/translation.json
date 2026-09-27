@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "starrunefinal.es",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": {
     "pt-BR": "Star Rune em Espanhol",
     "en": "Star Rune in Spanish",
@@ -19,5 +19,5 @@
   "targetLanguage": "es",
   "minimumLauncherVersion": "0.17.48",
   "textsFile": "texts.json",
-  "textsSha256": "659814398966d7915508807a2aabe0ac7f10dfc03b59786f4c4df712cc6b294c"
+  "textsSha256": "6413df900a4cdb39e01e6f89b8e457d16632212a57af1a0114d6d88117cc9973"
 }

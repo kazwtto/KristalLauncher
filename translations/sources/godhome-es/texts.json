@@ -217,7 +217,7 @@
     "source": "* The audience can't see what's\ngoing on, but assumes you're losing.",
     "translation": "* El público no ve qué está pasando,\npero supone que vas perdiendo.",
     "originalExpression": "\"* The audience can't see what's\\ngoing on, but assumes you're losing.\"",
-    "replacementExpression": "\"* A plateia não consegue ver o que está\\nacontecendo, mas assume que você está perdendo.\""
+    "replacementExpression": "\"* El público no ve qué está pasando,\\npero supone que vas perdiendo.\""
   },
   "ec61f40ac63a": {
     "file": "scripts/battle/encounters/p2/mantislords.lua",
@@ -337,7 +337,7 @@
     "source": "* This bug is [color:yellow]pissing[color:reset] the Oblobble\noff...",
     "translation": "* Este bicho está [color:yellow]cabreando[color:reset] al Oblobble\nde verdad...",
     "originalExpression": "\"* This bug is [color:yellow]pissing[color:reset] the Oblobble\\noff...\"",
-    "replacementExpression": "\"* Esse inseto está [color:yellow]deixando[color:reset]\\no Oblobble puto...\""
+    "replacementExpression": "\"* Este bicho está [color:yellow]cabreando[color:reset] al Oblobble\\nde verdad...\""
   },
   "4810abd4a83d": {
     "file": "scripts/battle/encounters/p2/sheo.lua",

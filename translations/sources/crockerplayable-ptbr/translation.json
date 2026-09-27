@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "crockerplayable.pt-br",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "name": {
     "pt-BR": "Crockerfan08's Chapter 6 em Português (Brasil)",
     "en": "Crockerfan08's Chapter 6 in Brazilian Portuguese",
@@ -19,5 +19,5 @@
   "targetLanguage": "pt-BR",
   "minimumLauncherVersion": "0.17.48",
   "textsFile": "texts.json",
-  "textsSha256": "3be81a9235e77867c17305a7ba9dffb8b1d356a550648d42a27ad4870017dc88"
+  "textsSha256": "edde1052ea020f9513fa719da7dea0f6233ed35688f7da8ee98a32db3a526994"
 }
