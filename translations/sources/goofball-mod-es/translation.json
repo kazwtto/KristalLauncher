@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "goofball-mod.es",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "name": {
     "pt-BR": "Sermon's Sang em Espanhol",
     "en": "Sermon's Sang in Spanish",
@@ -17,7 +17,17 @@
   "gameVersion": "v1.0.9 (Release)",
   "sourceLanguage": "en",
   "targetLanguage": "es",
-  "minimumLauncherVersion": "0.17.48",
+  "minimumLauncherVersion": "0.17.53",
   "textsFile": "texts.json",
-  "textsSha256": "82809e99d94a4f16122cb6c3e73a998b9b87d8e3bb4d1b98a6f8586839fc9ba2"
+  "textsSha256": "82809e99d94a4f16122cb6c3e73a998b9b87d8e3bb4d1b98a6f8586839fc9ba2",
+  "fonts": [
+    {
+      "source": "fonts/plain.png",
+      "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+    },
+    {
+      "source": "fonts/plain.json",
+      "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+    }
+  ]
 }

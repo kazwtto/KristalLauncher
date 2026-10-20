@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "cooking-with-kindness.es",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "name": {
     "pt-BR": "Cooking with Kindness em Espanhol",
     "en": "Cooking with Kindness in Spanish",
@@ -17,7 +17,7 @@
   "gameVersion": "DEMO v1.0.6",
   "sourceLanguage": "en",
   "targetLanguage": "es",
-  "minimumLauncherVersion": "0.17.50",
+  "minimumLauncherVersion": "0.17.53",
   "files": [
     {
       "source": "payload/dialoguedump.json",
@@ -32,6 +32,16 @@
       "scope": "package",
       "sourceSha256": "ba9a10ac66f72adbbfb12e6b2be601beb852b5f2fb4379e6730a3a934e4d8972",
       "translatedSha256": "629513f7ea09c2bdf569c119cd819e54a9cbceeafa5aa4bf7c6f6bd3b5c85c4c"
+    }
+  ],
+  "fonts": [
+    {
+      "source": "fonts/plain.png",
+      "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+    },
+    {
+      "source": "fonts/plain.json",
+      "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
     }
   ]
 }

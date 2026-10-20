@@ -43,6 +43,7 @@ object CommunityTranslationStorage {
         val metadata = JSONObject(metadataFile.readText(Charsets.UTF_8))
         val sha256 = metadata.optString("sha256", "").trim()
         require(IdentifierPolicy.isSha256(sha256))
+        TranslationFonts.read(directory, manifest.fonts)
         manifest.files.forEach { file ->
             val payload = safeChild(directory, file.source)
             require(payload.isFile && payload.length() in 1..(8L * 1024 * 1024))

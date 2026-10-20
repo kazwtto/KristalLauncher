@@ -247,7 +247,7 @@ object TranslationManager {
 
     fun stateFingerprint(context: Context, game: LoveGame): String {
         selectedCommunityTranslation(context, game)?.let { installed ->
-            return sha256("package|${installed.manifest.id}|${installed.manifest.version}|${installed.sha256}")
+            return sha256("${TranslationSafety.REVISION}|package|${installed.manifest.id}|${installed.manifest.version}|${installed.sha256}")
         }
         val projectId = selectedProjectId(context, game.stableId) ?: return "original"
         val project = project(context, projectId) ?: return "original"
@@ -256,13 +256,62 @@ object TranslationManager {
         val content = entries.asSequence()
             .filter { it.translatedText.isNotBlank() }
             .joinToString("\n") { "${it.id}:${sha256(it.translatedText)}" }
-        return sha256("${project.id}|${project.sourceFingerprint}|$content")
+        return sha256("${TranslationSafety.REVISION}|${project.id}|${project.sourceFingerprint}|$content")
+    }
+
+    internal fun communityPlan(installed: InstalledCommunityTranslation, targetRoot: String): TranslationPlan {
+            IdentifierPolicy.requireTranslationId(installed.manifest.id)
+            IdentifierPolicy.requirePackageVersion(installed.manifest.version, "Translation version")
+            val replacements = installed.manifest.textsFile?.let { relativePath ->
+                val textFile = CommunityTranslationStorage.safeChild(installed.directory, relativePath)
+                val relativeReplacements = CommunityTranslationTextParser.parse(
+                    textFile.readText(Charsets.UTF_8)
+                )
+                relativeReplacements.mapKeys { (relative, _) ->
+                    listOf(targetRoot.trim('/'), relative.trim('/'))
+                        .filter(String::isNotBlank)
+                        .joinToString("/")
+                        .lowercase(Locale.ROOT)
+                        .also { require(PatchManifestParser.isSafeArchivePath(it)) }
+                }
+            }.orEmpty()
+            val files = installed.manifest.files.associate { entry ->
+                val target = listOf(
+                    targetRoot.trim('/').takeIf { entry.scope == "game" }.orEmpty(),
+                    entry.target.trim('/')
+                )
+                    .filter(String::isNotBlank)
+                    .joinToString("/")
+                    .lowercase(Locale.ROOT)
+                require(PatchManifestParser.isSafeArchivePath(target)) {
+                    "Translation target path is unsafe"
+                }
+                target to TranslationFileReplacement(
+                    sourceSha256 = entry.sourceSha256,
+                    translatedSha256 = entry.translatedSha256,
+                    file = CommunityTranslationStorage.safeChild(installed.directory, entry.source)
+                )
+            }
+            require(replacements.keys.intersect(files.keys).isEmpty()) {
+                "Translation contains text and file replacements for the same target"
+            }
+            return TranslationPlan(
+                projectId = installed.manifest.id,
+                targetLanguage = installed.manifest.targetLanguage,
+                sourceFingerprint = installed.sha256,
+                filesByPath = files,
+                replacementsByPath = replacements,
+                targetRoot = targetRoot,
+                fontsByPath = TranslationFonts.read(installed.directory, installed.manifest.fonts).mapKeys { (name, _) ->
+                    listOf(targetRoot.trim('/'), "assets/fonts", name)
+                        .filter(String::isNotBlank).joinToString("/")
+                        .also { require(PatchManifestParser.isSafeArchivePath(it)) }
+                }
+            )
     }
 
     fun activePlan(context: Context, game: LoveGame): TranslationPlan? {
         selectedCommunityTranslation(context, game)?.let { installed ->
-            IdentifierPolicy.requireTranslationId(installed.manifest.id)
-            IdentifierPolicy.requirePackageVersion(installed.manifest.version, "Translation version")
             val targetRoot = translationTargetRoot(game) ?: return null
             return communityPlan(installed, targetRoot)
         }
@@ -306,48 +355,7 @@ object TranslationManager {
                 }
             }
         if (replacements.isEmpty()) return null
-        return TranslationPlan(project.id, project.targetLanguage, project.sourceFingerprint, replacements)
-    }
-
-    internal fun communityPlan(installed: InstalledCommunityTranslation, targetRoot: String): TranslationPlan {
-        val replacements = installed.manifest.textsFile?.let { relativePath ->
-            val textFile = CommunityTranslationStorage.safeChild(installed.directory, relativePath)
-            CommunityTranslationTextParser.parse(textFile.readText(Charsets.UTF_8)).mapKeys { (relative, _) ->
-                listOf(targetRoot.trim('/'), relative.trim('/'))
-                    .filter(String::isNotBlank)
-                    .joinToString("/")
-                    .lowercase(Locale.ROOT)
-                    .also { require(PatchManifestParser.isSafeArchivePath(it)) }
-            }
-        }.orEmpty()
-        val files = installed.manifest.files.associate { entry ->
-            val target = listOf(
-                targetRoot.trim('/').takeIf { entry.scope == "game" }.orEmpty(),
-                entry.target.trim('/')
-            )
-                .filter(String::isNotBlank)
-                .joinToString("/")
-                .lowercase(Locale.ROOT)
-            require(PatchManifestParser.isSafeArchivePath(target)) {
-                "Translation target path is unsafe"
-            }
-            target to TranslationFileReplacement(
-                sourceSha256 = entry.sourceSha256,
-                translatedSha256 = entry.translatedSha256,
-                file = CommunityTranslationStorage.safeChild(installed.directory, entry.source)
-            )
-        }
-        require(files.size == installed.manifest.files.size) { "Duplicate translation file target" }
-        require(files.keys.intersect(replacements.keys).isEmpty()) {
-            "Translation replaces and edits the same game file"
-        }
-        return TranslationPlan(
-            projectId = installed.manifest.id,
-            targetLanguage = installed.manifest.targetLanguage,
-            sourceFingerprint = installed.sha256,
-            replacementsByPath = replacements,
-            filesByPath = files
-        )
+        return TranslationPlan(project.id, project.targetLanguage, project.sourceFingerprint, replacements, targetRoot = project.targetRoot)
     }
 
     private fun selectedCommunityTranslation(
@@ -376,13 +384,27 @@ object TranslationManager {
         return game.translationRoot?.trim('/')
     }
 
-    fun applyToLua(source: ByteArray, replacements: List<TranslationReplacement>): ByteArray {
+    fun applyToLua(
+        source: ByteArray,
+        replacements: List<TranslationReplacement>,
+        jsonLabels: Map<String, TranslationSafety.JsonLabel> = emptyMap()
+    ): ByteArray {
         val fileHash = TranslationExtractor.sha256(source)
         require(replacements.all { it.fileHash == fileHash }) {
             "The game script changed after this translation was created"
         }
         var text = source.toString(Charsets.UTF_8)
-        replacements.sortedByDescending(TranslationReplacement::startOffset).forEach { replacement ->
+        replacements.forEach { replacement ->
+            require(replacement.startOffset >= 0 && replacement.endOffset <= text.length &&
+                replacement.endOffset > replacement.startOffset) { "Invalid translation source range" }
+            replacement.originalExpression?.let {
+                require(text.substring(replacement.startOffset, replacement.endOffset) == it) {
+                    "Translation source expression changed: ${replacement.entryId}"
+                }
+            }
+        }
+        TranslationSafety.protect(source, replacements, jsonLabels)
+            .sortedByDescending(TranslationReplacement::startOffset).forEach { replacement ->
             require(replacement.startOffset in 0..text.length && replacement.endOffset in replacement.startOffset..text.length) {
                 "Invalid translation location: ${replacement.entryId}"
             }
@@ -531,13 +553,28 @@ object TranslationManager {
     }
 
     fun validationError(source: String, translated: String): ValidationError? = when {
-        printfTokens(source) != printfTokens(translated) -> ValidationError.FORMAT_PLACEHOLDER
+        printfTokens(source) != printfTokens(translated) ||
+            dynamicTokens(source) != dynamicTokens(translated) -> ValidationError.FORMAT_PLACEHOLDER
         controlTags(source) != controlTags(translated) -> ValidationError.CONTROL_TAG
         else -> null
     }
 
     private fun printfTokens(value: String) = PRINTF.findAll(value.replace("%%", "")).map { it.value }.toList()
-    private fun controlTags(value: String) = CONTROL_TAG.findAll(value).map { it.groupValues[1] }.toList()
+    // Android's ICU regex parser requires both literal braces to be escaped.
+    internal const val DYNAMIC_PLACEHOLDER_PATTERN = "\\{lua\\d+\\}"
+    private fun dynamicTokens(value: String) = Regex(DYNAMIC_PLACEHOLDER_PATTERN).findAll(value).map { it.value }.toList()
+    private fun controlTags(value: String) = CONTROL_TAG.findAll(value).mapNotNull { match ->
+        val name = match.groupValues[1]
+        val arguments = match.value.substringAfter(':', "").removeSuffix("]")
+        when {
+            // A multi-argument reaction embeds visible prose as its first argument.
+            // Coordinates, face and actor remain identifiers; a single argument is a reaction ID.
+            name == "react" && ',' in arguments -> "[react:${arguments.substringAfter(',')}]"
+            name in CONTROL_COMMANDS || (':' in match.value && name.first().isLowerCase()) -> match.value
+            // Unknown bracketed prose such as [Angel] is not a Kristal modifier.
+            else -> null
+        }
+    }.toList()
     private fun selectionKey(gameStableId: String) = "game_${sha256(gameStableId)}"
     private fun packageSelectionKey(gameStableId: String) = "package_${sha256(gameStableId)}"
     private fun normalizeLanguageTag(tag: String) = tag.trim().replace('_', '-').take(32)
@@ -568,6 +605,11 @@ object TranslationManager {
     // natural percentages cannot make a valid translation fail validation.
     private val PRINTF = Regex("%(?:[-+#0]*\\d*(?:\\.\\d+)?[cdiouxXeEfgGaAspq])")
     private val CONTROL_TAG = Regex("\\[([A-Za-z_][A-Za-z0-9_]*)(?::[^]]*)?]")
+    private val CONTROL_COMMANDS = setOf(
+        "color", "font", "style", "shake", "wave", "image", "bind", "button", "offset", "indent", "spacing",
+        "voice", "noskip", "speed", "instant", "stopinstant", "wait", "func", "talk", "sound", "next",
+        "react", "face", "miniface", "portrait", "actor"
+    )
     private const val MAX_IMPORT_FILE_BYTES = 4 * 1024 * 1024
     private const val MAX_IMPORT_TOTAL_BYTES = 8 * 1024 * 1024
     private const val MAX_EDITABLE_JSON_BYTES = 16L * 1024 * 1024

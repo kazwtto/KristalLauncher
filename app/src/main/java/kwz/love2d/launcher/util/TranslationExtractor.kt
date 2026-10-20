@@ -34,7 +34,11 @@ object TranslationExtractor {
         "GonerChoice" to setOf(2),
         "registerAct" to setOf(0, 1),
         "registerShortAct" to setOf(0, 1),
+        "registerActFor" to setOf(1, 2),
+        "registerShortActFor" to setOf(1, 2),
         "registerTalk" to setOf(0),
+        "registerTalkAfter" to setOf(0),
+        "replaceTalk" to setOf(0),
         "TrophyMessage" to setOf(2, 3)
     )
 
@@ -163,8 +167,8 @@ object TranslationExtractor {
             if (accepted != null && call.argumentIndex in accepted) {
                 val kind = when (call.name) {
                     "choicer", "GonerChoice" -> "choice"
-                    "registerAct", "registerShortAct" -> "battle_ui"
-                    "registerTalk" -> "shop_ui"
+                    "registerAct", "registerShortAct", "registerActFor", "registerShortActFor" -> "battle_ui"
+                    "registerTalk", "registerTalkAfter", "replaceTalk" -> "shop_ui"
                     "infoText" -> "battle_text"
                     else -> "dialogue"
                 }
@@ -217,7 +221,7 @@ object TranslationExtractor {
         return CallContext(name, argumentIndex)
     }
 
-    private fun lexStrings(source: String): List<LuaStringToken> {
+    internal fun lexStrings(source: String): List<LuaStringToken> {
         val result = mutableListOf<LuaStringToken>()
         var index = 0
         var line = 1
@@ -284,10 +288,10 @@ object TranslationExtractor {
         return Triple(contentStart, closeStart + close.length, close)
     }
 
-    private fun maskComments(source: String, mask: CharArray) {
+    internal fun maskComments(source: String, mask: CharArray) {
         var index = 0
         while (index < source.length - 1) {
-            if (source[index] == '-' && source[index + 1] == '-') {
+            if (mask[index] == '-' && mask[index + 1] == '-') {
                 val longComment = longBracket(source, index + 2)
                 val end = longComment?.second
                     ?: source.indexOf('\n', index).let { if (it < 0) source.length else it }
@@ -359,7 +363,7 @@ object TranslationExtractor {
         else -> value
     }
 
-    private data class LuaStringToken(val start: Int, val end: Int, val value: String, val line: Int)
+    internal data class LuaStringToken(val start: Int, val end: Int, val value: String, val line: Int)
     private data class CallContext(val name: String, val argumentIndex: Int)
 
     private val FIELD_ASSIGNMENT = Regex("(?:self\\.)?([A-Za-z_][A-Za-z0-9_]*)\\s*=\\s*$")

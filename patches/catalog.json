@@ -99,7 +99,7 @@
     {
       "schemaVersion": 1,
       "id": "kristal.ptbr",
-      "version": "2.3.5",
+      "version": "2.3.8",
       "name": {
         "pt-BR": "Kristal Engine em Português (Brasil)",
         "en": "Kristal Engine in Brazilian Portuguese",
@@ -139,13 +139,13 @@
       ],
       "dependencies": [],
       "conflicts": [],
-      "package": "packages/kristal-ptbr-2.3.5.klpatch",
-      "sha256": "20fcfc889272b72100b46857cbe336560637e4a07ca24b5a9d78247a6b78aa7a"
+      "package": "packages/kristal-ptbr-2.3.8.klpatch",
+      "sha256": "4c6bfd3381a6475d0d5c02cfaa05631a11b5af142cb7f43460d71e10d55beed4"
     },
     {
       "schemaVersion": 1,
       "id": "kristal.es",
-      "version": "0.0.2",
+      "version": "0.0.4",
       "name": {
         "pt-BR": "Kristal Engine em Espanhol",
         "en": "Kristal Engine in Spanish",
@@ -187,8 +187,8 @@
       "conflicts": [
         "kristal.ptbr"
       ],
-      "package": "packages/kristal-es-0.0.2.klpatch",
-      "sha256": "2eb10e28f4398f61d1cb0d15a95b26e79fa5097c745db8c237c41f94ce66f583"
+      "package": "packages/kristal-es-0.0.4.klpatch",
+      "sha256": "703edaff24258959c687e388d2e8969b30db279b52326b87186d2ef27cb8f4d9"
     },
     {
       "schemaVersion": 1,

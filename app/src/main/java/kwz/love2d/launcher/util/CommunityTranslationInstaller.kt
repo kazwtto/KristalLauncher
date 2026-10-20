@@ -4,7 +4,6 @@ import android.content.Context
 import kwz.love2d.launcher.BuildConfig
 import kwz.love2d.launcher.model.CatalogTranslation
 import kwz.love2d.launcher.model.CommunityTranslationInstallResult
-import org.json.JSONObject
 import java.io.BufferedInputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -142,6 +141,7 @@ object CommunityTranslationInstaller {
         val manifest = CommunityTranslationManifestParser.parse(manifestJson)
         val allowedFiles = manifest.files.mapTo(mutableSetOf("translation.json")) { it.source }
         manifest.textsFile?.let(allowedFiles::add)
+        manifest.fonts.forEach { allowedFiles.add(it.source) }
         require(entries.filterNot { it.isDirectory }.all { it.name in allowedFiles }) {
             "Translation package contains undeclared files"
         }
@@ -163,15 +163,11 @@ object CommunityTranslationInstaller {
                 }
             }
         }
+        TranslationFonts.read(destination, manifest.fonts)
         manifest.files.forEach { file ->
             val payload = CommunityTranslationStorage.safeChild(destination, file.source)
             require(payload.isFile && TranslationExtractor.sha256(payload.readBytes()) == file.translatedSha256) {
                 "Translation payload checksum is invalid: ${file.target}"
-            }
-            if (file.target.endsWith(".json", ignoreCase = true)) {
-                require(JSONObject(payload.readText(Charsets.UTF_8)).length() > 0) {
-                    "Translation JSON is empty: ${file.target}"
-                }
             }
         }
         manifest.textsFile?.let { relativePath ->

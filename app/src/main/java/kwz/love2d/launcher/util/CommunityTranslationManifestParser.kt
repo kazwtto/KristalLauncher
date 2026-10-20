@@ -1,6 +1,7 @@
 package kwz.love2d.launcher.util
 
 import kwz.love2d.launcher.model.CommunityTranslationFile
+import kwz.love2d.launcher.model.CommunityTranslationFont
 import kwz.love2d.launcher.model.CommunityTranslationManifest
 import kwz.love2d.launcher.model.LocalizedText
 import org.json.JSONObject
@@ -68,6 +69,19 @@ object CommunityTranslationManifestParser {
             }
         }
 
+        val fonts = root.optJSONArray("fonts")?.let { array ->
+            require(array.length() == 2) { "Translation font requires an image and metadata pair" }
+            val parsed = (0 until array.length()).map { index ->
+                val item = array.getJSONObject(index)
+                val source = item.requiredString("source")
+                require(source in setOf("fonts/plain.png", "fonts/plain.json")) { "Invalid translation font path" }
+                val checksum = item.requiredString("sha256")
+                require(IdentifierPolicy.isSha256(checksum)) { "Invalid translation font checksum" }
+                CommunityTranslationFont(source, checksum.lowercase())
+            }
+            require(parsed.map { it.source }.toSet().size == 2) { "Duplicate translation font path" }
+            parsed
+        }.orEmpty()
         val minimumLauncherVersion = root.optString("minimumLauncherVersion", "")
             .trim()
             .takeIf(String::isNotBlank)
@@ -90,7 +104,8 @@ object CommunityTranslationManifestParser {
             minimumLauncherVersion = minimumLauncherVersion,
             textsFile = textsFile,
             textsSha256 = textsSha256?.lowercase(),
-            files = files
+            files = files,
+            fonts = fonts
         )
     }
 
@@ -111,9 +126,7 @@ object CommunityTranslationManifestParser {
         if (!PatchManifestParser.isSafeArchivePath(path)) return false
         val normalized = path.replace('\\', '/').trimStart('/').lowercase()
         return when (scope) {
-            "game" -> (normalized.startsWith("scripts/") &&
-                (normalized.endsWith(".lua") || normalized.endsWith(".json"))) ||
-                (normalized.startsWith("data/") && normalized.endsWith(".json"))
+            "game" -> normalized.startsWith("scripts/") && normalized.endsWith(".lua")
             "package" -> normalized == "dialoguedump.json" || normalized == "data/i18n.json"
             else -> false
         }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "cooking-with-kindness.pt-br",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "name": {
     "pt-BR": "Cooking with Kindness em Português (Brasil)",
     "en": "Cooking with Kindness in Brazilian Portuguese",
@@ -17,7 +17,7 @@
   "gameVersion": "DEMO v1.0.6",
   "sourceLanguage": "en",
   "targetLanguage": "pt-BR",
-  "minimumLauncherVersion": "0.17.50",
+  "minimumLauncherVersion": "0.17.53",
   "files": [
     {
       "source": "payload/dialoguedump.json",
@@ -32,6 +32,16 @@
       "scope": "package",
       "sourceSha256": "ba9a10ac66f72adbbfb12e6b2be601beb852b5f2fb4379e6730a3a934e4d8972",
       "translatedSha256": "6f34b99cf30b6e2c702e6f3958c77e45581b0c3b5a5bb9764f3e8018bf5ae299"
+    }
+  ],
+  "fonts": [
+    {
+      "source": "fonts/plain.png",
+      "sha256": "a12c99894e8bc7fbb07bc797e1de56a7e16abd02cf6e5ba346470abec7fb6632"
+    },
+    {
+      "source": "fonts/plain.json",
+      "sha256": "ec79c92670ae26ccf8250e2939ab1983da86dc66b2138f10ed0cf90e33e60d19"
     }
   ]
 }

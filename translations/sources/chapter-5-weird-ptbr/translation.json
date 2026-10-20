@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "chapter-5-weird.pt-br",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "name": {
     "pt-BR": "Frostveil em Português (Brasil)",
     "en": "Frostveil in Brazilian Portuguese",
@@ -17,7 +17,17 @@
   "gameVersion": "v1.3.1",
   "sourceLanguage": "en",
   "targetLanguage": "pt-BR",
-  "minimumLauncherVersion": "0.17.48",
+  "minimumLauncherVersion": "0.17.53",
   "textsFile": "texts.json",
-  "textsSha256": "4166620a54660435bcbdfa4c4db511fa481070be826f0076ff79e87c28cea7c8"
+  "textsSha256": "4166620a54660435bcbdfa4c4db511fa481070be826f0076ff79e87c28cea7c8",
+  "fonts": [
+    {
+      "source": "fonts/plain.png",
+      "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+    },
+    {
+      "source": "fonts/plain.json",
+      "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+    }
+  ]
 }

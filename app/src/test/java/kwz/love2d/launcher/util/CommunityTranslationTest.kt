@@ -1,132 +1,55 @@
 package kwz.love2d.launcher.util
 
 import kwz.love2d.launcher.model.TranslationFileReplacement
-import kwz.love2d.launcher.model.InstalledCommunityTranslation
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertThrows
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.nio.file.Files
 
 class CommunityTranslationTest {
     @Test
-    fun combinesLuaTextsAndPackageRootJsonInOnePlan() {
-        val directory = Files.createTempDirectory("community-translation-plan").toFile()
+    fun combinesTextAndFileReplacementsWithoutSilentlyOverwritingTargets() {
+        val directory = Files.createTempDirectory("mixed-translation-test").toFile()
         try {
-            directory.resolve("texts.json").writeText(
-                """{
-                  "a1b2c3d4e5f6": {
-                    "file": "scripts/test.lua",
-                    "fileHash": "${"a".repeat(64)}",
-                    "startOffset": 0,
-                    "endOffset": 3,
-                    "source": "Hello",
-                    "translation": "Olá",
-                    "originalExpression": "\"Hello\"",
-                    "replacementExpression": "\"Olá\""
-                  }
-                }""".trimIndent()
+            directory.resolve("texts.json").writeText("""{
+              "a1b2c3d4e5f6": {
+                "file": "scripts/test.lua", "fileHash": "${"a".repeat(64)}",
+                "startOffset": 0, "endOffset": 7,
+                "source": "Hello", "translation": "Olá",
+                "originalExpression": "\"Hello\"", "replacementExpression": "\"Olá\""
+              }
+            }""")
+            val manifest = CommunityTranslationManifestParser.parse("""{
+              "schemaVersion": 1, "id": "demo.pt-br", "version": "1.0.0",
+              "name": "Demo", "description": "Translation", "author": "dev",
+              "gameProjectId": "demo", "gameVersion": "1.0.0",
+              "sourceLanguage": "en", "targetLanguage": "pt-BR",
+              "textsFile": "texts.json", "textsSha256": "${"a".repeat(64)}",
+              "files": [{"source": "payload/dialoguedump.json",
+                "target": "dialoguedump.json", "scope": "package",
+                "sourceSha256": "${"a".repeat(64)}", "translatedSha256": "${"b".repeat(64)}"}]
+            }""")
+            val installed = kwz.love2d.launcher.model.InstalledCommunityTranslation(
+                manifest, directory, "c".repeat(64)
             )
-            directory.resolve("payload").mkdirs()
-            directory.resolve("payload/dialoguedump.json").writeText("{}")
-            val manifest = CommunityTranslationManifestParser.parse(
-                """{
-                  "schemaVersion": 1,
-                  "id": "cooking-with-kindness.pt-br",
-                  "version": "1.0.1",
-                  "name": "Cooking translation",
-                  "description": "Cooking translation",
-                  "author": "dev",
-                  "gameProjectId": "cooking-with-kindness",
-                  "gameVersion": "DEMO v1.0.6",
-                  "sourceLanguage": "en",
-                  "targetLanguage": "pt-BR",
-                  "textsFile": "texts.json",
-                  "textsSha256": "${"a".repeat(64)}",
-                  "files": [{
-                    "source": "payload/dialoguedump.json",
-                    "target": "dialoguedump.json",
-                    "scope": "package",
-                    "sourceSha256": "${"b".repeat(64)}",
-                    "translatedSha256": "${"c".repeat(64)}"
-                  }]
-                }""".trimIndent()
-            )
-            val installed = InstalledCommunityTranslation(manifest, directory, "d".repeat(64))
-            val plan = TranslationManager.communityPlan(installed, "mods/CookingwithKindness")
-            assertTrue("mods/cookingwithkindness/scripts/test.lua" in plan.replacementsByPath)
-            assertTrue("dialoguedump.json" in plan.filesByPath)
-        } finally {
-            assertTrue(directory.deleteRecursively())
-        }
-    }
-
-    @Test
-    fun acceptsGameDataJsonAndNarrowPackageRootJson() {
-        val manifest = CommunityTranslationManifestParser.parse(
-            """
-            {
-              "schemaVersion": 1,
-              "id": "cooking-with-kindness.pt-br",
-              "version": "1.0.1",
-              "name": "Cooking translation",
-              "description": "Cooking translation",
-              "author": "dev",
-              "gameProjectId": "cooking-with-kindness",
-              "gameVersion": "DEMO v1.0.6",
-              "sourceLanguage": "en",
-              "targetLanguage": "pt-BR",
-              "textsFile": "texts.json",
-              "textsSha256": "${"a".repeat(64)}",
-              "files": [
-                {
-                  "source": "payload/dialoguedump.json",
-                  "target": "dialoguedump.json",
-                  "scope": "package",
-                  "sourceSha256": "${"b".repeat(64)}",
-                  "translatedSha256": "${"c".repeat(64)}"
-                },
-                {
-                  "source": "payload/data/dialogue.json",
-                  "target": "data/dialogue.json",
-                  "sourceSha256": "${"d".repeat(64)}",
-                  "translatedSha256": "${"e".repeat(64)}"
-                }
-              ]
+            val plan = TranslationManager.communityPlan(installed, "mods/demo")
+            assertEquals(setOf("mods/demo/scripts/test.lua"), plan.replacementsByPath.keys)
+            assertEquals(setOf("dialoguedump.json"), plan.filesByPath.keys)
+            assertTrue(TranslationManager.communityPlan(
+                installed.copy(manifest = manifest.copy(textsFile = null, textsSha256 = null)),
+                "mods/demo"
+            ).replacementsByPath.isEmpty())
+            assertTrue(TranslationManager.communityPlan(
+                installed.copy(manifest = manifest.copy(files = emptyList())), "mods/demo"
+            ).filesByPath.isEmpty())
+            val conflicting = manifest.files.single().copy(target = "scripts/test.lua", scope = "game")
+            org.junit.Assert.assertThrows(IllegalArgumentException::class.java) {
+                TranslationManager.communityPlan(
+                    installed.copy(manifest = manifest.copy(files = listOf(conflicting))), "mods/demo"
+                )
             }
-            """.trimIndent()
-        )
-        assertEquals("package", manifest.files[0].scope)
-        assertEquals("game", manifest.files[1].scope)
-        assertEquals("texts.json", manifest.textsFile)
-    }
-
-    @Test
-    fun rejectsArbitraryPackageRootJson() {
-        assertThrows(IllegalArgumentException::class.java) {
-            CommunityTranslationManifestParser.parse(
-                """
-                {
-                  "schemaVersion": 1,
-                  "id": "unsafe.translation",
-                  "version": "1.0.0",
-                  "name": "Unsafe",
-                  "description": "Unsafe",
-                  "author": "test",
-                  "gameProjectId": "demo_game",
-                  "gameVersion": "1.0.0",
-                  "sourceLanguage": "en",
-                  "targetLanguage": "pt-BR",
-                  "files": [{
-                    "source": "payload/config.json",
-                    "target": "config.json",
-                    "scope": "package",
-                    "sourceSha256": "${"a".repeat(64)}",
-                    "translatedSha256": "${"b".repeat(64)}"
-                  }]
-                }
-                """.trimIndent()
-            )
+        } finally {
+            directory.deleteRecursively()
         }
     }
 
@@ -185,6 +108,37 @@ class CommunityTranslationTest {
             }
             """.trimIndent()
         )
+    }
+
+    @Test
+    fun acceptsOnlyTheTwoGameOwnedPackageJsonTargets() {
+        fun manifest(target: String) = """
+            {
+              "schemaVersion": 1,
+              "id": "cooking-with-kindness.pt-br",
+              "version": "1.0.3",
+              "name": "Cooking with Kindness",
+              "description": "Translation",
+              "author": "dev",
+              "gameProjectId": "cooking-with-kindness",
+              "gameVersion": "DEMO v1.0.6",
+              "sourceLanguage": "en",
+              "targetLanguage": "pt-BR",
+              "files": [{
+                "source": "payload/$target",
+                "target": "$target",
+                "scope": "package",
+                "sourceSha256": "${"a".repeat(64)}",
+                "translatedSha256": "${"b".repeat(64)}"
+              }]
+            }
+        """.trimIndent()
+
+        assertEquals("package", CommunityTranslationManifestParser.parse(manifest("dialoguedump.json")).files.single().scope)
+        assertEquals("package", CommunityTranslationManifestParser.parse(manifest("data/i18n.json")).files.single().scope)
+        assertTrue(runCatching {
+            CommunityTranslationManifestParser.parse(manifest("src/engine/menu.json"))
+        }.isFailure)
     }
 
     @Test

@@ -701,6 +701,8 @@ return {
         ["LightCandy"] = "DoceIluminado",
         ["Like a sash...?"] = "Como uma faixa...?",
         ["Like my old school."] = "Como minha velha escola.",
+        ["Load Game"] = "Carregar Jogo",
+        ["Load game"] = "Carregar jogo",
         ["LoadedDisk"] = "DisqtCarreg",
         ["Loading mods..."] = "Carregando mods...",
         ["LodeStone"] = "PedraPolo",

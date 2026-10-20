@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "plugged-dream.pt-br",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "name": {
     "pt-BR": "Plugged Dream em Português (Brasil)",
     "en": "Plugged Dream in Brazilian Portuguese",
@@ -17,7 +17,17 @@
   "gameVersion": "v1.3.0",
   "sourceLanguage": "en",
   "targetLanguage": "pt-BR",
-  "minimumLauncherVersion": "0.17.48",
+  "minimumLauncherVersion": "0.17.53",
   "textsFile": "texts.json",
-  "textsSha256": "f9eea1481024a26b1df4c3e108deb3625fb3f4743c470b56fb969befde734053"
+  "textsSha256": "f9eea1481024a26b1df4c3e108deb3625fb3f4743c470b56fb969befde734053",
+  "fonts": [
+    {
+      "source": "fonts/plain.png",
+      "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+    },
+    {
+      "source": "fonts/plain.json",
+      "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+    }
+  ]
 }

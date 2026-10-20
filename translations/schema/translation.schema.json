@@ -28,6 +28,16 @@
     "minimumLauncherVersion": { "type": "string", "pattern": "^[0-9]+(?:\\.[0-9]+){0,3}(?:-[0-9A-Za-z]+(?:[.-][0-9A-Za-z]+)*)?(?:\\+[0-9A-Za-z]+(?:[.-][0-9A-Za-z]+)*)?$", "maxLength": 64 },
     "textsFile": { "const": "texts.json" },
     "textsSha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+    "fonts": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": {
+        "type": "object", "required": ["source", "sha256"],
+        "properties": {
+          "source": { "enum": ["fonts/plain.png", "fonts/plain.json"] },
+          "sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" }
+        }
+      }
+    },
     "files": {
       "type": "array",
       "items": {

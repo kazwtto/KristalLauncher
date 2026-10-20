@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "starrunefinal.es",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "name": {
     "pt-BR": "Star Rune em Espanhol",
     "en": "Star Rune in Spanish",
@@ -17,7 +17,17 @@
   "gameVersion": "v2.0.0",
   "sourceLanguage": "en",
   "targetLanguage": "es",
-  "minimumLauncherVersion": "0.17.48",
+  "minimumLauncherVersion": "0.17.53",
   "textsFile": "texts.json",
-  "textsSha256": "6413df900a4cdb39e01e6f89b8e457d16632212a57af1a0114d6d88117cc9973"
+  "textsSha256": "6413df900a4cdb39e01e6f89b8e457d16632212a57af1a0114d6d88117cc9973",
+  "fonts": [
+    {
+      "source": "fonts/plain.png",
+      "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+    },
+    {
+      "source": "fonts/plain.json",
+      "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+    }
+  ]
 }

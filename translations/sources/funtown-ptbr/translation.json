@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "funtown.pt-br",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "name": {
     "pt-BR": "Deltarune: Fun Town (Lumia) em Português (Brasil)",
     "en": "Deltarune: Fun Town (Lumia) in Brazilian Portuguese",
@@ -17,7 +17,17 @@
   "gameVersion": "unversioned",
   "sourceLanguage": "en",
   "targetLanguage": "pt-BR",
-  "minimumLauncherVersion": "0.17.48",
+  "minimumLauncherVersion": "0.17.53",
   "textsFile": "texts.json",
-  "textsSha256": "1250d6050788911f0926d8b9e3000348ffdc29287c37b026e1bb37084315ad81"
+  "textsSha256": "1250d6050788911f0926d8b9e3000348ffdc29287c37b026e1bb37084315ad81",
+  "fonts": [
+    {
+      "source": "fonts/plain.png",
+      "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+    },
+    {
+      "source": "fonts/plain.json",
+      "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
     "schemaVersion":  1,
     "id":  "kristal.ptbr",
-    "version":  "2.3.5",
+    "version":  "2.3.8",
     "name":  {
                  "pt-BR":  "Kristal Engine em Português (Brasil)",
                  "en":  "Kristal Engine in Brazilian Portuguese",
@@ -55,6 +55,18 @@
                            "type":  "append_text",
                            "source":  "payload/bootstrap.lua",
                            "target":  "main.lua"
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/fonts/plain.json",
+                           "target":  "assets/fonts/plain.json",
+                           "replaceExisting":  true
+                       },
+                       {
+                           "type":  "inject",
+                           "source":  "payload/graphics/assets/fonts/plain.png",
+                           "target":  "assets/fonts/plain.png",
+                           "replaceExisting":  true
                        },
                        {
                            "type":  "inject",

@@ -206,17 +206,30 @@ object PatchManager {
         }
         validateOperationCollisions(resolvedOperations)
         val operationsByTarget = resolvedOperations.groupBy { it.operation.target.lowercase(Locale.ROOT) }
+        val fontAssets = translationPlan?.fontsByPath.orEmpty().entries
+            .associateBy { it.key.lowercase(Locale.ROOT) }
+        require(fontAssets.keys.intersect(operationsByTarget.keys).isEmpty()) {
+            "Translation font conflicts with an enabled patch"
+        }
         val processedOperations = mutableSetOf<ResolvedOperation>()
         val existingEntries = mutableSetOf<String>()
         val externalTargetDigests = mutableMapOf<String, String>()
         val appliedTranslationFiles = mutableSetOf<String>()
-        val appliedTranslationTexts = mutableSetOf<String>()
         var hasMainLua = false
         var textPatchChanged = false
         var entryCount = 0
         var totalUncompressed = 0L
 
         CommonsZipFile.builder().setFile(sourceFile).get().use { sourceZip ->
+            val jsonLabels = translationPlan?.filesByPath?.get("dialoguedump.json")?.let { replacement ->
+                val entry = sourceZip.getEntry("dialoguedump.json")
+                    ?: error("Translation JSON target is missing")
+                val original = sourceZip.getInputStream(entry).use {
+                    readEntryBytesLimited(it, MAX_TRANSFORMED_ENTRY_BYTES)
+                }
+                val translated = TranslationManager.applyFileReplacement(original, replacement)
+                TranslationSafety.jsonLabels(original, translated)
+            }.orEmpty()
             ZipArchiveOutputStream(outputFile).use { zipOutput ->
                 val entries = sourceZip.entries
                 while (entries.hasMoreElements()) {
@@ -232,14 +245,27 @@ object PatchManager {
                     require(existingEntries.add(normalizedName)) { "Duplicate entry in staged game: $entryName" }
                     if (normalizedName == "main.lua") hasMainLua = true
 
+                    val fontBytes = fontAssets[normalizedName]?.value
+                    if (fontBytes != null) {
+                        totalUncompressed += fontBytes.size
+                        require(totalUncompressed <= MAX_TOTAL_UNCOMPRESSED_BYTES)
+                        writeArchiveEntry(zipOutput, entryName, fontBytes, entry.time)
+                        continue
+                    }
+
                     val targetOperations = operationsByTarget[normalizedName].orEmpty()
                     val translationReplacements = translationPlan?.replacementsByPath?.get(normalizedName).orEmpty()
                     val translationFile = translationPlan?.filesByPath?.get(normalizedName)
+                    val translationRoot = translationPlan?.targetRoot.orEmpty().trim('/').lowercase(Locale.ROOT)
+                    val scriptPrefix = if (translationRoot.isEmpty()) "scripts/" else "$translationRoot/scripts/"
+                    val protectJsonSelectors = jsonLabels.isNotEmpty() &&
+                        normalizedName.startsWith(scriptPrefix) && normalizedName.endsWith(".lua")
+                    val translateRenderer = translationPlan != null && TranslationSafety.isRenderer(normalizedName)
                     val needsTransformation = normalizedName == "main.lua" ||
                         (builtInFlags.text && normalizedName in textPatchTargets) ||
                         targetOperations.isNotEmpty() ||
                         translationReplacements.isNotEmpty() ||
-                        translationFile != null
+                        translationFile != null || protectJsonSelectors || translateRenderer
 
                     if (needsTransformation) {
                         var bytes = sourceZip.getInputStream(entry).use { input ->
@@ -250,9 +276,8 @@ object PatchManager {
                             bytes = TranslationManager.applyFileReplacement(bytes, translationFile)
                             appliedTranslationFiles += normalizedName
                         }
-                        if (translationReplacements.isNotEmpty()) {
-                            bytes = TranslationManager.applyToLua(bytes, translationReplacements)
-                            appliedTranslationTexts += normalizedName
+                        if (translationReplacements.isNotEmpty() || protectJsonSelectors) {
+                            bytes = TranslationManager.applyToLua(bytes, translationReplacements, jsonLabels)
                         }
                         if (normalizedName == "main.lua") {
                             // Kristal compiles its built-in shaders while main.lua loads
@@ -274,6 +299,16 @@ object PatchManager {
                         targetOperations.forEach { resolved ->
                             bytes = applyExternalOperation(bytes, resolved, targetExists = true)
                             processedOperations.add(resolved)
+                        }
+                        if (protectJsonSelectors && targetOperations.isNotEmpty()) {
+                            bytes = TranslationManager.applyToLua(bytes, emptyList(), jsonLabels)
+                        }
+                        // Run presentation changes after optional patches so they cannot
+                        // overwrite the renderer or remove the canonical-label bootstrap.
+                        if (translateRenderer) bytes = TranslationSafety.render(bytes, normalizedName)
+                        if (translationPlan != null && normalizedName == "main.lua") {
+                            val bootstrap = "__kristal_launcher_translation = require(\"kristal_launcher.translation_labels\")\n"
+                            bytes = bootstrap.toByteArray(Charsets.UTF_8) + bytes
                         }
                         if (targetOperations.isNotEmpty()) {
                             externalTargetDigests[normalizedName] = sha256(bytes)
@@ -297,17 +332,27 @@ object PatchManager {
                 }
 
                 require(hasMainLua) { "The staged package does not contain main.lua" }
+                fontAssets.filterKeys { it !in existingEntries }.forEach { (normalizedPath, asset) ->
+                    val (path, bytes) = asset
+                    totalUncompressed += bytes.size
+                    require(totalUncompressed <= MAX_TOTAL_UNCOMPRESSED_BYTES)
+                    require(existingEntries.add(normalizedPath))
+                    writeArchiveEntry(zipOutput, path, bytes, 0L)
+                }
                 val missingTranslationFiles = translationPlan?.filesByPath.orEmpty().keys - appliedTranslationFiles
                 require(missingTranslationFiles.isEmpty()) {
                     "Translation targets are missing from this game: ${missingTranslationFiles.first()}"
                 }
-                val missingTranslationTexts = translationPlan?.replacementsByPath.orEmpty().keys - appliedTranslationTexts
-                require(missingTranslationTexts.isEmpty()) {
-                    "Translation text targets are missing from this game: ${missingTranslationTexts.first()}"
-                }
 
                 if (builtInFlags.hasRuntimePatches) {
                     injectAndroidPatchesScript(context, zipOutput, existingEntries)
+                }
+                if (translationPlan != null) {
+                    require(existingEntries.add(TranslationSafety.RUNTIME_PATH)) {
+                        "Game conflicts with the translation presentation module"
+                    }
+                    val runtime = context.assets.open("translation_labels.lua").use { it.readBytes() }
+                    writeArchiveEntry(zipOutput, TranslationSafety.RUNTIME_PATH, runtime, 0L)
                 }
                 if (builtInFlags.gamepad) {
                     injectGamepadAssets(context, zipOutput, existingEntries)

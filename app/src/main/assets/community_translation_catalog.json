@@ -5,7 +5,7 @@
     {
       "schemaVersion": 1,
       "id": "plugged-dream.pt-br",
-      "version": "1.0.2",
+      "version": "1.0.4",
       "name": {
         "pt-BR": "Plugged Dream em Português (Brasil)",
         "en": "Plugged Dream in Brazilian Portuguese",
@@ -21,16 +21,26 @@
       "gameVersion": "v1.3.0",
       "sourceLanguage": "en",
       "targetLanguage": "pt-BR",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "f9eea1481024a26b1df4c3e108deb3625fb3f4743c470b56fb969befde734053",
-      "package": "packages/plugged-dream-ptbr-1.0.2.kllang",
-      "sha256": "2ff959ed239bf644e1db114c9c9f0a110afe2fa31efe5ec5b7d8346404975a43"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/plugged-dream-ptbr-1.0.4.kllang",
+      "sha256": "5db487f1bb8feeba455d028012507938e5520769a6381fe568a6163d720361fa"
     },
     {
       "schemaVersion": 1,
       "id": "crockerplayable.pt-br",
-      "version": "1.0.3",
+      "version": "1.0.5",
       "name": {
         "pt-BR": "Crockerfan08's Chapter 6 em Português (Brasil)",
         "en": "Crockerfan08's Chapter 6 in Brazilian Portuguese",
@@ -46,16 +56,26 @@
       "gameVersion": "v1.0.3",
       "sourceLanguage": "en",
       "targetLanguage": "pt-BR",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "edde1052ea020f9513fa719da7dea0f6233ed35688f7da8ee98a32db3a526994",
-      "package": "packages/crockerplayable-ptbr-1.0.3.kllang",
-      "sha256": "c332dd45fa5dad6a503016bc4883f6f466f0a44997dcc5ed750dd2c34d608315"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/crockerplayable-ptbr-1.0.5.kllang",
+      "sha256": "0a23a3c8e7633cffe304ea2345db7809236ce51f86c7a4e9ec317ca4b27e3c74"
     },
     {
       "schemaVersion": 1,
       "id": "chapter-5-weird.pt-br",
-      "version": "1.0.1",
+      "version": "1.0.3",
       "name": {
         "pt-BR": "Frostveil em Português (Brasil)",
         "en": "Frostveil in Brazilian Portuguese",
@@ -71,16 +91,26 @@
       "gameVersion": "v1.3.1",
       "sourceLanguage": "en",
       "targetLanguage": "pt-BR",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "4166620a54660435bcbdfa4c4db511fa481070be826f0076ff79e87c28cea7c8",
-      "package": "packages/chapter-5-weird-ptbr-1.0.1.kllang",
-      "sha256": "49fd2d6dcfb7403a222d534b6cbd49700f8a3a85ad5eccc034b1e5c500e73ff0"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/chapter-5-weird-ptbr-1.0.3.kllang",
+      "sha256": "092da492e591157eca12ae491c53d9dff11ce0986db3402e6131f916beba0a84"
     },
     {
       "schemaVersion": 1,
       "id": "frozen-heart.pt-br",
-      "version": "1.0.2",
+      "version": "1.0.4",
       "name": {
         "pt-BR": "Frozen Heart em Português (Brasil)",
         "en": "Frozen Heart in Brazilian Portuguese",
@@ -96,16 +126,26 @@
       "gameVersion": "v1.1.5",
       "sourceLanguage": "en",
       "targetLanguage": "pt-BR",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "6a1f4658330db6ccfd6713dcbafcdf3bdb4231f456897c9741eeae880ebc9850",
-      "package": "packages/frozen-heart-ptbr-1.0.2.kllang",
-      "sha256": "aeebbc2810658c794ac4d1e85d1353acdc313c2c251dfafe27a81b46efd9b7d4"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/frozen-heart-ptbr-1.0.4.kllang",
+      "sha256": "98acbe986db3792cca16fe41850ba55e4d0d07d6280b2d04bf643d5f87e1a33d"
     },
     {
       "schemaVersion": 1,
       "id": "godhome.pt-br",
-      "version": "1.0.2",
+      "version": "1.0.4",
       "name": {
         "pt-BR": "Godhome em Português (Brasil)",
         "en": "Godhome in Brazilian Portuguese",
@@ -121,16 +161,26 @@
       "gameVersion": "v1.1.7",
       "sourceLanguage": "en",
       "targetLanguage": "pt-BR",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "96c2670226c439a4a1428ed96f8c397481c22ed7d692ac585429b832e163c7b1",
-      "package": "packages/godhome-ptbr-1.0.2.kllang",
-      "sha256": "c087759d3af49c2820d2bddb65e2bf045c7f0213176fe506f07fdb9ee0755445"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/godhome-ptbr-1.0.4.kllang",
+      "sha256": "28e9544287f7e486f7900ce0b424713aa5ce7e23b47f56b6894469bc52a0f595"
     },
     {
       "schemaVersion": 1,
       "id": "goofball-mod.pt-br",
-      "version": "1.0.2",
+      "version": "1.0.5",
       "name": {
         "pt-BR": "Sermon's Sang em Português (Brasil)",
         "en": "Sermon's Sang in Brazilian Portuguese",
@@ -146,16 +196,26 @@
       "gameVersion": "v1.0.9 (Release)",
       "sourceLanguage": "en",
       "targetLanguage": "pt-BR",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
-      "textsSha256": "c4311b1137674f44b03f5046edd87019b9b5478ad4ab30bd9a192f5bb8083f9e",
-      "package": "packages/goofball-mod-ptbr-1.0.2.kllang",
-      "sha256": "44ac21e547950a152f89dc48d8c766dbd2b9ed61f1b151ec543235488fc36889"
+      "textsSha256": "768e182813bd25684be383b9f0eee885aced2f3ed9ad23d11ba91615dfce6664",
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/goofball-mod-ptbr-1.0.5.kllang",
+      "sha256": "03019216508b5eacc62ffc89f87704dff805d36f221722eaa514abbde2af3030"
     },
     {
       "schemaVersion": 1,
       "id": "vs-kris.pt-br",
-      "version": "1.0.2",
+      "version": "1.0.4",
       "name": {
         "pt-BR": "VS Kris em Português (Brasil)",
         "en": "VS Kris in Brazilian Portuguese",
@@ -171,16 +231,26 @@
       "gameVersion": "v1.0.0",
       "sourceLanguage": "en",
       "targetLanguage": "pt-BR",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "374eb2c300d605d655599bbb4f75a66a6c7bd9f0490a0590a698cedb6bed070a",
-      "package": "packages/vs-kris-ptbr-1.0.2.kllang",
-      "sha256": "c5e521931ef7df3602fcac1f262707d140a60a4dab0bbbab6cd6771cff5608ed"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/vs-kris-ptbr-1.0.4.kllang",
+      "sha256": "7b16dabb55f81df5980389d4b32f36e08368a5c47519b827389d4a4ce373d089"
     },
     {
       "schemaVersion": 1,
       "id": "wilter-boss-fight.pt-br",
-      "version": "1.0.1",
+      "version": "1.0.3",
       "name": {
         "pt-BR": "Wilter Boss Fight em Português (Brasil)",
         "en": "Wilter Boss Fight in Brazilian Portuguese",
@@ -196,16 +266,26 @@
       "gameVersion": "v1.0.1",
       "sourceLanguage": "en",
       "targetLanguage": "pt-BR",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "cb38d71d56b6fb2d6fc642a05bbb278507b061c7f4dacdc201ee48af4e325eb4",
-      "package": "packages/wilter-boss-fight-ptbr-1.0.1.kllang",
-      "sha256": "64d59dafeaa4409f902cb3d4dce492b1f5d0a4a906779118082d986cf57a22ef"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/wilter-boss-fight-ptbr-1.0.3.kllang",
+      "sha256": "422f96744d126e807ec4789db87eeefd5a279bf1fb4460e58098b6df6b7a19cc"
     },
     {
       "schemaVersion": 1,
       "id": "starrunefinal.pt-br",
-      "version": "1.0.1",
+      "version": "1.0.3",
       "name": {
         "pt-BR": "Star Rune em Português (Brasil)",
         "en": "Star Rune in Brazilian Portuguese",
@@ -221,16 +301,26 @@
       "gameVersion": "v2.0.0",
       "sourceLanguage": "en",
       "targetLanguage": "pt-BR",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "e143404e4a4ae3fffe25ce20df2a3f8ee67d1821ce425984a87d82ef29db461e",
-      "package": "packages/starrune-ptbr-1.0.1.kllang",
-      "sha256": "692706d082a9f2fc162fbcdc682f13f5812c5cec6cb9b3b0c60ecd87469a2146"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/starrune-ptbr-1.0.3.kllang",
+      "sha256": "3ba418d08d31640c52c3e12a79f618701f0248b8cb0408760d5ff0ab0ae72f1d"
     },
     {
       "schemaVersion": 1,
       "id": "funtown.pt-br",
-      "version": "1.0.2",
+      "version": "1.0.4",
       "name": {
         "pt-BR": "Deltarune: Fun Town (Lumia) em Português (Brasil)",
         "en": "Deltarune: Fun Town (Lumia) in Brazilian Portuguese",
@@ -246,16 +336,26 @@
       "gameVersion": "unversioned",
       "sourceLanguage": "en",
       "targetLanguage": "pt-BR",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "1250d6050788911f0926d8b9e3000348ffdc29287c37b026e1bb37084315ad81",
-      "package": "packages/funtown-ptbr-1.0.2.kllang",
-      "sha256": "26bfe97c09734ba8faec1e2dfe78e65d9d6003a2622f6ab57defc74f78b44e84"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/funtown-ptbr-1.0.4.kllang",
+      "sha256": "b421c3fcd1b689d012325c9fc5bd00ee8e0048a2d39f13123d35fdb412545eb8"
     },
     {
       "schemaVersion": 1,
       "id": "friendless.pt-br",
-      "version": "1.0.1",
+      "version": "1.0.3",
       "name": {
         "pt-BR": "DELTARUNE Friendless em Português (Brasil)",
         "en": "DELTARUNE Friendless in Brazilian Portuguese",
@@ -271,16 +371,26 @@
       "gameVersion": "v0.3.0",
       "sourceLanguage": "en",
       "targetLanguage": "pt-BR",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "13edcf7eea0ec54715b862605aa7de7e28247ad0692ca7f844e4b863b6ae1942",
-      "package": "packages/friendless-ptbr-1.0.1.kllang",
-      "sha256": "81626afc63d61661b9c4f847586c24e2f15108e89b3aeadcb99f6a75a3d3da79"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/friendless-ptbr-1.0.3.kllang",
+      "sha256": "b50a50b626204428386932cda532fb8ec64a8de25b186c6938beb1f43c5d0bc9"
     },
     {
       "schemaVersion": 1,
       "id": "funtown.es",
-      "version": "1.0.0",
+      "version": "1.0.2",
       "name": {
         "pt-BR": "Deltarune: Fun Town (Lumia) em Espanhol",
         "en": "Deltarune: Fun Town (Lumia) in Spanish",
@@ -296,16 +406,26 @@
       "gameVersion": "unversioned",
       "sourceLanguage": "en",
       "targetLanguage": "es",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "357eaaba1f8c868989567208f8d09fa0496974a0dbbb10ac068d876f56c44957",
-      "package": "packages/funtown-es-1.0.0.kllang",
-      "sha256": "8f670798c3dae8a200dfbe5ee678de6508bd8c105109a49ca265c403f7bd949e"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/funtown-es-1.0.2.kllang",
+      "sha256": "acf08c79267348a9a24417c740b3b9530c4ff7d629aca6c0ea0b65650b009f0f"
     },
     {
       "schemaVersion": 1,
       "id": "godhome.es",
-      "version": "1.0.1",
+      "version": "1.0.3",
       "name": {
         "pt-BR": "Godhome em Espanhol",
         "en": "Godhome in Spanish",
@@ -321,16 +441,26 @@
       "gameVersion": "v1.1.7",
       "sourceLanguage": "en",
       "targetLanguage": "es",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "f438990ac1d0e1f5aa4dc880979ff9a4a512478079b0c59c92d047451fae06cd",
-      "package": "packages/godhome-es-1.0.1.kllang",
-      "sha256": "3e1888a0c26bfb1a06d5773bdacee8b6c0f4d786bd2056c7a4dd0b3afc8237eb"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/godhome-es-1.0.3.kllang",
+      "sha256": "722c3fa6157d7f9363ed803abe1e6d0cd8df278ff1d4c1e238829eb2f0cf6525"
     },
     {
       "schemaVersion": 1,
       "id": "crockerplayable.es",
-      "version": "1.0.1",
+      "version": "1.0.3",
       "name": {
         "pt-BR": "Crockerfan08's Chapter 6 em Espanhol",
         "en": "Crockerfan08's Chapter 6 in Spanish",
@@ -346,16 +476,26 @@
       "gameVersion": "v1.0.3",
       "sourceLanguage": "en",
       "targetLanguage": "es",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "96bde464d71741e53d6bfb22e22ac9d7f89b5462a3b2172339bebf03e5baee8c",
-      "package": "packages/crockerplayable-es-1.0.1.kllang",
-      "sha256": "1f054216d82e512e22d25580f6d9c153e6ccc375a332b9f324364370ec6ff8e8"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/crockerplayable-es-1.0.3.kllang",
+      "sha256": "69be6886fa73d643ffd70e639197d4f844377519753dcb2afe0959c07090a0e9"
     },
     {
       "schemaVersion": 1,
       "id": "friendless.es",
-      "version": "1.0.0",
+      "version": "1.0.2",
       "name": {
         "pt-BR": "DELTARUNE Friendless em Espanhol",
         "en": "DELTARUNE Friendless in Spanish",
@@ -371,16 +511,26 @@
       "gameVersion": "v0.3.0",
       "sourceLanguage": "en",
       "targetLanguage": "es",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "8a3745739c822f5d8d120abd1ac6f87553b0c842480cbe75dace18e65a0f80ed",
-      "package": "packages/friendless-es-1.0.0.kllang",
-      "sha256": "2229fae0821c07f3e6de64692f7c06f565639256e84cbfa16f41ab81ce091086"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/friendless-es-1.0.2.kllang",
+      "sha256": "74a75e0a6c4cf67ad8e7323a537815d0d35ccc34cb4b658505f7c4de13378205"
     },
     {
       "schemaVersion": 1,
       "id": "chapter-5-weird.es",
-      "version": "1.0.1",
+      "version": "1.0.3",
       "name": {
         "pt-BR": "DELTARUNE: Frostveil em Espanhol",
         "en": "DELTARUNE: Frostveil in Spanish",
@@ -396,16 +546,26 @@
       "gameVersion": "v1.3.1",
       "sourceLanguage": "en",
       "targetLanguage": "es",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "d252c0741abddd3189bee61f9e9f53539f6d5a5d3937b1d429c92eccb0385882",
-      "package": "packages/chapter-5-weird-es-1.0.1.kllang",
-      "sha256": "d1e5fe12b5ba928327374c3260af1efd9e1fbb3820c69ae931142a93b1c83fe2"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/chapter-5-weird-es-1.0.3.kllang",
+      "sha256": "555c1d33bac8db96f7382d8e78b7f1613b84b079f62871f7606522ee211c6d16"
     },
     {
       "schemaVersion": 1,
       "id": "starrunefinal.es",
-      "version": "1.0.1",
+      "version": "1.0.3",
       "name": {
         "pt-BR": "Star Rune em Espanhol",
         "en": "Star Rune in Spanish",
@@ -421,16 +581,26 @@
       "gameVersion": "v2.0.0",
       "sourceLanguage": "en",
       "targetLanguage": "es",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "6413df900a4cdb39e01e6f89b8e457d16632212a57af1a0114d6d88117cc9973",
-      "package": "packages/starrune-es-1.0.1.kllang",
-      "sha256": "166571383c83c4550374a7e7402340551c6ec5a2f48a58220dd96d3e99bf65a9"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/starrune-es-1.0.3.kllang",
+      "sha256": "faad2a09793b9b9956f1ca8d50de4dcbee97a0d35ffb0d4c7f7d8f33e2b52a75"
     },
     {
       "schemaVersion": 1,
       "id": "vs-kris.es",
-      "version": "1.0.1",
+      "version": "1.0.3",
       "name": {
         "pt-BR": "DELTARUNE: Vessel vs. Kris em Espanhol",
         "en": "DELTARUNE: Vessel vs. Kris in Spanish",
@@ -446,16 +616,26 @@
       "gameVersion": "v1.0.0",
       "sourceLanguage": "en",
       "targetLanguage": "es",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "7a5e9f6636d405c719949eb272356a20268f89a91214413462e9032cb382ee38",
-      "package": "packages/vs-kris-es-1.0.1.kllang",
-      "sha256": "721e0c28d82fa586cc411291ba6349d46f83a2667185ae273902050c24a86de8"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/vs-kris-es-1.0.3.kllang",
+      "sha256": "120669ce93d21e24a3c66c58d6d4a2346d545d4583562e81b87aff35fc304632"
     },
     {
       "schemaVersion": 1,
       "id": "goofball-mod.es",
-      "version": "1.0.0",
+      "version": "1.0.2",
       "name": {
         "pt-BR": "Sermon's Sang em Espanhol",
         "en": "Sermon's Sang in Spanish",
@@ -471,16 +651,26 @@
       "gameVersion": "v1.0.9 (Release)",
       "sourceLanguage": "en",
       "targetLanguage": "es",
-      "minimumLauncherVersion": "0.17.48",
+      "minimumLauncherVersion": "0.17.53",
       "textsFile": "texts.json",
       "textsSha256": "82809e99d94a4f16122cb6c3e73a998b9b87d8e3bb4d1b98a6f8586839fc9ba2",
-      "package": "packages/goofball-mod-es-1.0.0.kllang",
-      "sha256": "5e13863bc7d76c1ff00fdfd3ecda0608fc2840f1d34a8816aa5e428a1f2b858b"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/goofball-mod-es-1.0.2.kllang",
+      "sha256": "f2e345a34ff27e674e3602df091b1587c06a8836268143c231aeb351f77d7cbe"
     },
     {
       "schemaVersion": 1,
       "id": "cooking-with-kindness.pt-br",
-      "version": "1.0.4",
+      "version": "1.0.6",
       "name": {
         "pt-BR": "Cooking with Kindness em Português (Brasil)",
         "en": "Cooking with Kindness in Brazilian Portuguese",
@@ -496,7 +686,7 @@
       "gameVersion": "DEMO v1.0.6",
       "sourceLanguage": "en",
       "targetLanguage": "pt-BR",
-      "minimumLauncherVersion": "0.17.50",
+      "minimumLauncherVersion": "0.17.53",
       "files": [
         {
           "source": "payload/dialoguedump.json",
@@ -513,13 +703,23 @@
           "translatedSha256": "6f34b99cf30b6e2c702e6f3958c77e45581b0c3b5a5bb9764f3e8018bf5ae299"
         }
       ],
-      "package": "packages/cooking-with-kindness-ptbr-1.0.4.kllang",
-      "sha256": "c8e3a82ce42982704b0c908285c751494009f4820f08206cb991b4d291bec824"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/cooking-with-kindness-ptbr-1.0.6.kllang",
+      "sha256": "31ca0b0d72bea2303a4a63220909e81e215c2d757633d8ce93a0b7d6cfaf2a58"
     },
     {
       "schemaVersion": 1,
       "id": "cooking-with-kindness.es",
-      "version": "1.0.4",
+      "version": "1.0.6",
       "name": {
         "pt-BR": "Cooking with Kindness em Espanhol",
         "en": "Cooking with Kindness in Spanish",
@@ -535,7 +735,7 @@
       "gameVersion": "DEMO v1.0.6",
       "sourceLanguage": "en",
       "targetLanguage": "es",
-      "minimumLauncherVersion": "0.17.50",
+      "minimumLauncherVersion": "0.17.53",
       "files": [
         {
           "source": "payload/dialoguedump.json",
@@ -552,8 +752,18 @@
           "translatedSha256": "629513f7ea09c2bdf569c119cd819e54a9cbceeafa5aa4bf7c6f6bd3b5c85c4c"
         }
       ],
-      "package": "packages/cooking-with-kindness-es-1.0.4.kllang",
-      "sha256": "040451b4936a5d1f260f23be1729c9b68e618265a7d22b42a858785f9a3c709f"
+      "fonts": [
+        {
+          "source": "fonts/plain.png",
+          "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+        },
+        {
+          "source": "fonts/plain.json",
+          "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+        }
+      ],
+      "package": "packages/cooking-with-kindness-es-1.0.6.kllang",
+      "sha256": "caf55a16c421918ce699140d5f1f03da8dc312f2bb55fac3ce4f6a9bd583bf95"
     }
   ]
 }

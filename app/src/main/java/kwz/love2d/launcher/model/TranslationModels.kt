@@ -64,7 +64,9 @@ data class TranslationPlan(
     val targetLanguage: String,
     val sourceFingerprint: String,
     val replacementsByPath: Map<String, List<TranslationReplacement>> = emptyMap(),
-    val filesByPath: Map<String, TranslationFileReplacement> = emptyMap()
+    val filesByPath: Map<String, TranslationFileReplacement> = emptyMap(),
+    val targetRoot: String = "",
+    val fontsByPath: Map<String, ByteArray> = emptyMap()
 )
 
 data class CommunityTranslationFile(
@@ -74,6 +76,8 @@ data class CommunityTranslationFile(
     val translatedSha256: String,
     val scope: String = "game"
 )
+
+data class CommunityTranslationFont(val source: String, val sha256: String)
 
 data class CommunityTranslationManifest(
     val schemaVersion: Int,
@@ -89,7 +93,8 @@ data class CommunityTranslationManifest(
     val minimumLauncherVersion: String?,
     val textsFile: String?,
     val textsSha256: String?,
-    val files: List<CommunityTranslationFile>
+    val files: List<CommunityTranslationFile>,
+    val fonts: List<CommunityTranslationFont> = emptyList()
 )
 
 data class CatalogTranslation(

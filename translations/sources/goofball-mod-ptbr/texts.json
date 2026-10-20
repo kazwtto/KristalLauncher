@@ -3695,9 +3695,9 @@
     "startOffset": 2308,
     "endOffset": 2387,
     "source": "* Our adventure was fun,[wait:5] but I can't make you seal the dark fountain,",
-    "translation": "* Nossa aventura foi legal,[wait:5] mas não posso deixar vocês selarem a fonte,",
+    "translation": "* Nossa aventura foi legal,[wait:5] mas não posso deixa-los selar a fonte,",
     "originalExpression": "\"* Our adventure was fun,[wait:5] but I can't make you seal the dark fountain,\"",
-    "replacementExpression": "\"* Nossa aventura foi legal,[wait:5] mas não posso deixar vocês selarem a fonte,\""
+    "replacementExpression": "\"* Nossa aventura foi legal,[wait:5] mas não posso deixa-los selar a fonte,\""
   },
   "3465ef25f372": {
     "file": "scripts/world/cutscenes/intro.lua",

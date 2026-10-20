@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "godhome.es",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "name": {
     "pt-BR": "Godhome em Espanhol",
     "en": "Godhome in Spanish",
@@ -17,7 +17,17 @@
   "gameVersion": "v1.1.7",
   "sourceLanguage": "en",
   "targetLanguage": "es",
-  "minimumLauncherVersion": "0.17.48",
+  "minimumLauncherVersion": "0.17.53",
   "textsFile": "texts.json",
-  "textsSha256": "f438990ac1d0e1f5aa4dc880979ff9a4a512478079b0c59c92d047451fae06cd"
+  "textsSha256": "f438990ac1d0e1f5aa4dc880979ff9a4a512478079b0c59c92d047451fae06cd",
+  "fonts": [
+    {
+      "source": "fonts/plain.png",
+      "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
+    },
+    {
+      "source": "fonts/plain.json",
+      "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
+    }
+  ]
 }
