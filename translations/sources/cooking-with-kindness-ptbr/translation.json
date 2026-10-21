@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "cooking-with-kindness.pt-br",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "name": {
     "pt-BR": "Cooking with Kindness em Português (Brasil)",
     "en": "Cooking with Kindness in Brazilian Portuguese",
@@ -37,11 +37,11 @@
   "fonts": [
     {
       "source": "fonts/plain.png",
-      "sha256": "a12c99894e8bc7fbb07bc797e1de56a7e16abd02cf6e5ba346470abec7fb6632"
+      "sha256": "d966e0bde4326a3e13a92ee62fb6e2d6f5dac055e1013a139fb5afbfc41c4987"
     },
     {
       "source": "fonts/plain.json",
-      "sha256": "ec79c92670ae26ccf8250e2939ab1983da86dc66b2138f10ed0cf90e33e60d19"
+      "sha256": "9af479dc92fc1450304443789c3667855ffc91858d28a7b2fac7af0f38c3d09b"
     }
   ]
 }
