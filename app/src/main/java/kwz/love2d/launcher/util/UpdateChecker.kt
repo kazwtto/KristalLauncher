@@ -2,7 +2,9 @@ package kwz.love2d.launcher.util
 
 import android.content.Context
 import kwz.love2d.launcher.BuildConfig
+import org.json.JSONArray
 import org.json.JSONObject
+import org.json.JSONTokener
 import java.io.ByteArrayOutputStream
 import java.net.HttpURLConnection
 import java.net.URL
@@ -25,10 +27,11 @@ object UpdateChecker {
 
     private const val PREFS_NAME = "launcher_prefs"
     private const val PREF_AUTOMATIC_UPDATES = "automatic_update_checks"
+    private const val PREF_INCLUDE_PRERELEASES = "include_prerelease_updates"
     private const val PREF_LAST_CHECK = "last_update_check"
     private const val PREF_LAST_NOTIFIED_VERSION = "last_notified_update_version"
     private const val AUTOMATIC_INTERVAL_MS = 24L * 60 * 60 * 1000
-    private const val MAX_RESPONSE_BYTES = 1024 * 1024
+    private const val MAX_RESPONSE_BYTES = 4 * 1024 * 1024
 
     fun isAutomaticCheckEnabled(context: Context): Boolean {
         return preferences(context).getBoolean(PREF_AUTOMATIC_UPDATES, true)
@@ -36,6 +39,18 @@ object UpdateChecker {
 
     fun setAutomaticCheckEnabled(context: Context, enabled: Boolean) {
         preferences(context).edit().putBoolean(PREF_AUTOMATIC_UPDATES, enabled).apply()
+    }
+
+    fun isPrereleaseCheckEnabled(context: Context): Boolean =
+        preferences(context).getBoolean(PREF_INCLUDE_PRERELEASES, false)
+
+    fun setPrereleaseCheckEnabled(context: Context, enabled: Boolean) {
+        if (isPrereleaseCheckEnabled(context) == enabled) return
+        preferences(context).edit()
+            .putBoolean(PREF_INCLUDE_PRERELEASES, enabled)
+            .remove(PREF_LAST_CHECK)
+            .remove(PREF_LAST_NOTIFIED_VERSION)
+            .apply()
     }
 
     fun getLastCheckTime(context: Context): Long {
@@ -57,8 +72,9 @@ object UpdateChecker {
     }
 
     fun check(context: Context): UpdateCheckResult {
+        val includePrereleases = isPrereleaseCheckEnabled(context)
         val result = try {
-            val release = fetchLatestRelease()
+            val release = fetchLatestRelease(includePrereleases)
             if (release != null && VersionUtils.isNewer(release.version, BuildConfig.VERSION_NAME)) {
                 UpdateCheckResult.Available(release)
             } else {
@@ -67,15 +83,23 @@ object UpdateChecker {
         } catch (error: Exception) {
             UpdateCheckResult.Failure(error.message ?: "Update check failed")
         }
-        preferences(context).edit().putLong(PREF_LAST_CHECK, System.currentTimeMillis()).apply()
+        // A channel change must not inherit the previous channel's check interval.
+        if (isPrereleaseCheckEnabled(context) == includePrereleases) {
+            preferences(context).edit().putLong(PREF_LAST_CHECK, System.currentTimeMillis()).apply()
+        }
         return result
     }
 
-    private fun fetchLatestRelease(): AppUpdateInfo? {
-        val connection = URL("${BuildConfig.GITHUB_API_URL}/releases/latest").openConnection() as HttpURLConnection
+    internal fun releaseEndpoint(includePrereleases: Boolean): String =
+        if (includePrereleases) "/releases?per_page=100" else "/releases/latest"
+
+    private fun fetchLatestRelease(includePrereleases: Boolean): AppUpdateInfo? {
+        val connection = URL(BuildConfig.GITHUB_API_URL + releaseEndpoint(includePrereleases))
+            .openConnection() as HttpURLConnection
         connection.connectTimeout = 12_000
         connection.readTimeout = 20_000
         connection.instanceFollowRedirects = true
+        connection.useCaches = false
         connection.setRequestProperty("Accept", "application/vnd.github+json")
         connection.setRequestProperty("X-GitHub-Api-Version", "2022-11-28")
         connection.setRequestProperty("User-Agent", "KristalLauncher/${BuildConfig.VERSION_NAME}")
@@ -89,40 +113,61 @@ object UpdateChecker {
             require(responseCode in 200..299) {
                 "GitHub returned HTTP $responseCode"
             }
-            val json = JSONObject(readLimitedResponse(connection))
-            val tagName = json.optString("tag_name", "").trim()
-            require(tagName.isNotBlank()) { "The latest release does not have a version tag" }
-            val releaseUrl = json.optString("html_url", BuildConfig.GITHUB_REPOSITORY_URL)
-            val apkAssets = mutableListOf<Pair<String, String>>()
-            val assets = json.optJSONArray("assets")
-            if (assets != null) {
-                for (index in 0 until assets.length()) {
-                    val asset = assets.getJSONObject(index)
-                    val name = asset.optString("name", "")
-                    val url = asset.optString("browser_download_url", "")
-                    if (name.endsWith(".apk", ignoreCase = true) && url.startsWith("https://")) {
-                        apkAssets += name to url
-                    }
-                }
-            }
-            val apkUrl = apkAssets.firstOrNull {
-                it.first.contains("KristalLauncher", ignoreCase = true) &&
-                    it.first.contains("-release", ignoreCase = true)
-            }?.second ?: apkAssets.firstOrNull {
-                !it.first.contains("debug", ignoreCase = true)
-            }?.second
-            val safeReleaseUrl = releaseUrl.takeIf { it.startsWith("https://") }
-                ?: BuildConfig.GITHUB_REPOSITORY_URL
-            AppUpdateInfo(
-                version = tagName.removePrefix("v").removePrefix("V"),
-                title = json.optString("name", tagName).ifBlank { tagName },
-                releaseNotes = json.optString("body", "").take(8_000),
-                releaseUrl = safeReleaseUrl,
-                downloadUrl = apkUrl ?: safeReleaseUrl
-            )
+            parseReleaseResponse(readLimitedResponse(connection), includePrereleases)
         } finally {
             connection.disconnect()
         }
+    }
+
+    internal fun parseReleaseResponse(response: String, includePrereleases: Boolean): AppUpdateInfo? {
+        val payload = JSONTokener(response).nextValue()
+        val releases = when (payload) {
+            is JSONObject -> listOf(payload)
+            is JSONArray -> {
+                require(payload.length() <= 100) { "GitHub returned too many releases" }
+                (0 until payload.length()).mapNotNull { payload.optJSONObject(it) }
+            }
+            else -> error("GitHub returned an invalid release response")
+        }
+        return releases.asSequence()
+            .filterNot { it.optBoolean("draft", false) }
+            .filter { includePrereleases || !it.optBoolean("prerelease", false) }
+            .mapNotNull(::parseRelease)
+            .maxWithOrNull { left, right -> VersionUtils.compare(left.version, right.version) }
+    }
+
+    private fun parseRelease(json: JSONObject): AppUpdateInfo? {
+        val tagName = json.optString("tag_name", "").trim()
+        val version = tagName.removePrefix("v").removePrefix("V")
+        if (!IdentifierPolicy.isPackageVersion(version)) return null
+        val releaseUrl = json.optString("html_url", BuildConfig.GITHUB_REPOSITORY_URL)
+        val apkAssets = mutableListOf<Pair<String, String>>()
+        val assets = json.optJSONArray("assets")
+        if (assets != null) {
+            for (index in 0 until assets.length()) {
+                val asset = assets.getJSONObject(index)
+                val name = asset.optString("name", "")
+                val url = asset.optString("browser_download_url", "")
+                if (name.endsWith(".apk", ignoreCase = true) && url.startsWith("https://")) {
+                    apkAssets += name to url
+                }
+            }
+        }
+        val apkUrl = apkAssets.firstOrNull {
+            it.first.contains("KristalLauncher", ignoreCase = true) &&
+                it.first.contains("-release", ignoreCase = true)
+        }?.second ?: apkAssets.firstOrNull {
+            !it.first.contains("debug", ignoreCase = true)
+        }?.second
+        val safeReleaseUrl = releaseUrl.takeIf { it.startsWith("https://") }
+            ?: BuildConfig.GITHUB_REPOSITORY_URL
+        return AppUpdateInfo(
+            version = version,
+            title = json.optString("name", tagName).ifBlank { tagName },
+            releaseNotes = json.optString("body", "").take(8_000),
+            releaseUrl = safeReleaseUrl,
+            downloadUrl = apkUrl ?: safeReleaseUrl
+        )
     }
 
     private fun readLimitedResponse(connection: HttpURLConnection): String {

@@ -177,7 +177,6 @@ class TranslationEditorActivity : ControllerNavigationActivity() {
             val intent = Intent(Intent.ACTION_EDIT)
                 .setDataAndType(uri, "application/json")
                 .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
-            check(intent.resolveActivity(packageManager) != null) { "No JSON editor is installed" }
             externalEditFile = file
             externalEditPending = true
             startActivity(Intent.createChooser(intent, getString(R.string.translation_edit_external)))

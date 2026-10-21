@@ -6,24 +6,32 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.button.MaterialButtonToggleGroup
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.color.MaterialColors
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import androidx.core.content.ContextCompat
 import kwz.love2d.launcher.R
 import kwz.love2d.launcher.model.PatchDisplayItem
 import kwz.love2d.launcher.model.PatchOrigin
 import kwz.love2d.launcher.util.PatchManager
+import kwz.love2d.launcher.util.PatchRecommendations
 import kwz.love2d.launcher.util.ThemeManager
+import kwz.love2d.launcher.util.showThemed
 
 class GamePatchSettingsAdapter(
     private val context: Context,
     private val gameId: String,
     private val items: List<PatchDisplayItem>,
     private val saveImmediately: Boolean = false,
-    private val onCatalogAction: ((PatchDisplayItem) -> Unit)? = null
+    private val onCatalogAction: ((PatchDisplayItem) -> Unit)? = null,
+    gameProjectId: String? = null,
+    gameVersion: String? = null
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val amoled = ThemeManager.isDeltaruneTheme(context) &&
@@ -32,6 +40,7 @@ class GamePatchSettingsAdapter(
     private val modes = items.associate { item ->
         item.id to PatchManager.getGamePatchMode(context, gameId, item.id)
     }.toMutableMap()
+    private val recommendations = PatchRecommendations.forGame(gameProjectId, gameVersion)
     private val rows: List<Row> = buildRows(items)
     private var installingPatchId: String? = null
 
@@ -86,6 +95,9 @@ class GamePatchSettingsAdapter(
         private val card = itemView as MaterialCardView
         private val cardContent: View = itemView.findViewById(R.id.gamePatchCardContent)
         private val name: TextView = itemView.findViewById(R.id.tvGamePatchName)
+        private val recommendedBadge: LinearLayout = itemView.findViewById(R.id.gamePatchRecommendedBadge)
+        private val recommendedIcon: ImageView = itemView.findViewById(R.id.gamePatchRecommendedIcon)
+        private val recommendedLabel: TextView = itemView.findViewById(R.id.gamePatchRecommendedLabel)
         private val description: TextView = itemView.findViewById(R.id.tvGamePatchDescription)
         private val toggleGroup: MaterialButtonToggleGroup = itemView.findViewById(R.id.gamePatchModeGroup)
         private val inheritButton: MaterialButton = itemView.findViewById(R.id.btnGamePatchInherit)
@@ -118,6 +130,26 @@ class GamePatchSettingsAdapter(
         fun bind(item: PatchDisplayItem) {
             boundPatchId = item.id
             name.text = item.name
+            val recommendation = recommendations[item.id]
+            recommendedBadge.visibility = if (recommendation == null) View.GONE else View.VISIBLE
+            if (recommendation != null) {
+                val green = ContextCompat.getColor(context, R.color.patch_recommended_green)
+                card.strokeWidth = (context.resources.displayMetrics.density * 1.5f + 0.5f)
+                    .toInt().coerceAtLeast(1)
+                card.strokeColor = green
+                recommendedIcon.imageTintList = ColorStateList.valueOf(green)
+                recommendedLabel.setTextColor(green)
+                recommendedBadge.setOnClickListener {
+                    MaterialAlertDialogBuilder(context)
+                        .setTitle(R.string.patch_recommended)
+                        .setMessage(recommendation.reasonRes)
+                        .setPositiveButton(android.R.string.ok, null)
+                        .showThemed()
+                }
+            } else {
+                card.strokeWidth = 0
+                recommendedBadge.setOnClickListener(null)
+            }
             description.text = item.description
             toggleGroup.visibility = if (item.installed) View.VISIBLE else View.GONE
             actionButton.visibility = if (!item.installed || item.updateAvailable) View.VISIBLE else View.GONE
@@ -174,8 +206,17 @@ class GamePatchSettingsAdapter(
 
             card.setCardBackgroundColor(Color.BLACK)
             card.backgroundTintList = ColorStateList.valueOf(Color.BLACK)
-            card.strokeWidth = (context.resources.displayMetrics.density + 0.5f).toInt().coerceAtLeast(1)
-            card.strokeColor = outline
+            val recommended = boundPatchId in recommendations
+            card.strokeWidth = if (recommended) {
+                (context.resources.displayMetrics.density * 1.5f + 0.5f).toInt().coerceAtLeast(1)
+            } else {
+                (context.resources.displayMetrics.density + 0.5f).toInt().coerceAtLeast(1)
+            }
+            card.strokeColor = if (recommended) {
+                ContextCompat.getColor(context, R.color.patch_recommended_green)
+            } else {
+                outline
+            }
             cardContent.setBackgroundColor(Color.BLACK)
 
             val checkedState = intArrayOf(android.R.attr.state_checked)
@@ -222,7 +263,9 @@ class GamePatchSettingsAdapter(
 
     private fun buildRows(items: List<PatchDisplayItem>): List<Row> {
         val dedicated = items.filter { it.compatibleGameProjectIds.isNotEmpty() }
+            .sortedBy { it.id !in recommendations }
         val generic = items.filter { it.compatibleGameProjectIds.isEmpty() }
+            .sortedBy { it.id !in recommendations }
         if (dedicated.isEmpty()) return generic.map(Row::Patch)
         return buildList {
             add(Row.Header(R.string.patch_section_dedicated))

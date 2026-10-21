@@ -44,7 +44,13 @@ This was originally a study project to learn Gradle and Kotlin.
 
 If Kristal Launcher is useful to you, you can support its continued development:
 
+<!-- GitHub Markdown blocks iframes. Preserve the embed for compatible HTML renderers:
+<iframe src="https://github.com/sponsors/kazwtto/button" title="Sponsor kazwtto" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
+-->
+
 <p align="center">
+  <a href="https://github.com/sponsors/kazwtto">GitHub Sponsors</a>
+  &nbsp;
   <a href="https://ko-fi.com/P5P0EJA8E"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support Kristal Launcher on Ko-fi"></a>
   &nbsp;
   <a href="https://www.paypal.com/donate/?business=XPXE646QWFWSC&amp;no_recurring=0&amp;currency_code=BRL"><img src="https://img.shields.io/badge/Donate-PayPal-0070BA?style=for-the-badge&amp;logo=paypal&amp;logoColor=white" alt="Donate to Kristal Launcher with PayPal"></a>
@@ -56,9 +62,9 @@ If Kristal Launcher is useful to you, you can support its continued development:
 - [DELTARUNE: PluggedDream](https://gamejolt.com/games/pluggeddream/1019739)
 - [DELTARUNE: Frozen Heart](https://gamejolt.com/games/frozen-heart/659908)
 - [DELTARUNE: Friendless](https://gamejolt.com/games/deltarunefriendless/1077489)
-- [DELTARUNE: Frostveil](https://gamejolt.com/games/deltarune_frostveil/1058015)
 - [DELTARUNE - Ralsei: Prince of Darkness](https://gamejolt.com/games/another-ralsei-bossfight/1038068)
-- [Sermon's Sang](https://gamejolt.com/games/goofyball/1056998)
+- [DELTARUNE: Sermon's Sang](https://gamejolt.com/games/goofyball/1056998)
+- [DELTARUNE: Frostveil](https://gamejolt.com/games/deltarune_frostveil/1058015)
   - Requires the Nil Arithmetic & Audio Sanitization patch.
 - [StarRune](https://gamejolt.com/games/starrune/716680)
   - Requires the RGBA16 Conversion patch.

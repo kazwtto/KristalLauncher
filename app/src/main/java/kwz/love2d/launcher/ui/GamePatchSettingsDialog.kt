@@ -69,7 +69,10 @@ object GamePatchSettingsDialog {
         recyclerView.setBackgroundColor(surface)
 
         val patches = PatchRepository.installedDisplayItems(context)
-        val adapter = GamePatchSettingsAdapter(dialogContext, game.stableId, patches)
+        val adapter = GamePatchSettingsAdapter(
+            dialogContext, game.stableId, patches,
+            gameProjectId = game.projectId, gameVersion = game.version
+        )
         recyclerView.layoutManager = LinearLayoutManager(dialogContext)
         recyclerView.adapter = adapter
 

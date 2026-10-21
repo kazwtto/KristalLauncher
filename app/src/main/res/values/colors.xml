@@ -17,6 +17,7 @@
     <color name="badge_demo_text">#146C43</color>
     <color name="patch_unverified_container">#FFE6BD</color>
     <color name="patch_unverified_text">#764B00</color>
+    <color name="patch_recommended_green">#167647</color>
     
     <!-- Legacy compatibility aliases -->
     <color name="bg_dark">#F7F8FC</color>

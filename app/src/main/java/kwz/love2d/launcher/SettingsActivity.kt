@@ -124,6 +124,26 @@ class SettingsActivity : ControllerNavigationActivity() {
             if (deltarune) switchAutomaticUpdatesDeltarune.toggle()
         }
 
+        val prereleaseSwitch = findViewById<MaterialSwitch>(R.id.switchPrereleaseUpdates)
+        val prereleaseSquareSwitch = findViewById<DeltaruneSquareSwitch>(R.id.switchPrereleaseUpdatesDeltarune)
+        val prereleaseLabel = findViewById<TextView>(R.id.tvPrereleaseUpdatesDeltarune)
+        prereleaseSwitch.visibility = if (deltarune) android.view.View.GONE else android.view.View.VISIBLE
+        prereleaseLabel.visibility = if (deltarune) android.view.View.VISIBLE else android.view.View.GONE
+        prereleaseSquareSwitch.visibility = if (deltarune) android.view.View.VISIBLE else android.view.View.GONE
+        val prereleasesEnabled = UpdateChecker.isPrereleaseCheckEnabled(this)
+        prereleaseSwitch.isChecked = prereleasesEnabled
+        prereleaseSquareSwitch.setChecked(prereleasesEnabled)
+        val onPrereleaseChanged: (Boolean) -> Unit = { enabled ->
+            UpdateChecker.setPrereleaseCheckEnabled(this, enabled)
+            updateLastUpdateCheckLabel()
+        }
+        prereleaseSwitch.setOnCheckedChangeListener { _, enabled -> onPrereleaseChanged(enabled) }
+        prereleaseSquareSwitch.setOnCheckedChangeListener { _, enabled -> onPrereleaseChanged(enabled) }
+        findViewById<LinearLayout>(R.id.rowPrereleaseUpdates).setOnClickListener {
+            if (deltarune) prereleaseSquareSwitch.toggle()
+            else prereleaseSwitch.toggle()
+        }
+
         btnCheckUpdates.setOnClickListener { checkForUpdatesManually() }
         findViewById<MaterialButton>(R.id.btnOpenRepository).setOnClickListener {
             UpdatePrompter.openUrl(this, BuildConfig.GITHUB_REPOSITORY_URL)

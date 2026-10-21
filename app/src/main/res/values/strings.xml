@@ -293,6 +293,8 @@
 
     <!-- About and updates -->
     <string name="update_automatic_checks">Check for updates automatically</string>
+    <string name="update_include_prereleases">Include pre-release versions</string>
+    <string name="update_include_prereleases_summary">Check for test versions alongside stable releases.</string>
     <string name="update_check_now">Check now</string>
     <string name="update_checking">Checking…</string>
     <string name="update_never_checked">No update check has been performed.</string>
@@ -468,4 +470,9 @@
     <string name="translation_filter_pending">Pending</string>
     <string name="translation_filter_translated">Translated</string>
     <string name="translation_filter_all_types">All types</string>
+    <string name="patch_recommended">Recommended</string>
+    <string name="patch_recommendation_frostveil">Frostveil requires the Nil Arithmetic &amp; Audio Sanitization patch to avoid missing numeric and audio state failures.</string>
+    <string name="patch_recommendation_starrune">StarRune requires RGBA16 Conversion for images that Android cannot load in their original format.</string>
+    <string name="patch_recommendation_godhome">Godhome requires the Shaders patch to adapt desktop shaders to Android graphics.</string>
+    <string name="patch_recommendation_cooking">For Cooking with Kindness DEMO v1.0.6, this experimental optimization addresses severe battle slowdowns and Toriel tutorial failures on Android.</string>
 </resources>

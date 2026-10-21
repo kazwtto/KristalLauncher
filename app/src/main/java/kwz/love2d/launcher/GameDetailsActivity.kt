@@ -250,7 +250,9 @@ class GameDetailsActivity : ControllerNavigationActivity() {
                 gameId = game.stableId,
                 items = patches,
                 saveImmediately = true,
-                onCatalogAction = ::confirmCatalogPatchInstall
+                onCatalogAction = ::confirmCatalogPatchInstall,
+                gameProjectId = game.projectId,
+                gameVersion = game.version
             )
             adapter = patchAdapter
             itemAnimator = null
