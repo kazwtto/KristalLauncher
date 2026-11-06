@@ -15,6 +15,21 @@ object KristalRuntimeStorage {
     private const val PREFERENCES = "kristal_runtime_preferences"
     private const val SELECTED_TAG = "selected_tag"
     private const val GAME_SELECTED_TAG_PREFIX = "game_selected_tag_"
+    private const val CHANNEL_FILTER = "channel_filter"
+
+    fun channelFilter(context: Context): kwz.love2d.launcher.model.RuntimeChannelFilter =
+        runCatching {
+            kwz.love2d.launcher.model.RuntimeChannelFilter.valueOf(
+                preferences(context).getString(CHANNEL_FILTER, null).orEmpty()
+            )
+        }.getOrDefault(kwz.love2d.launcher.model.RuntimeChannelFilter.ALL)
+
+    fun setChannelFilter(
+        context: Context,
+        filter: kwz.love2d.launcher.model.RuntimeChannelFilter
+    ) {
+        preferences(context).edit().putString(CHANNEL_FILTER, filter.name).apply()
+    }
 
     fun installedRuntimes(context: Context): List<InstalledKristalRuntime> =
         rootDirectory(context).listFiles().orEmpty()

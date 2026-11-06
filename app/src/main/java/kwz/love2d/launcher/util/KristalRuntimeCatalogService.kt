@@ -17,20 +17,25 @@ object KristalRuntimeCatalogService {
     private const val MAX_RESPONSE_BYTES = 4 * 1024 * 1024
     private const val MAX_CACHE_AGE_MS = 7L * 24 * 60 * 60 * 1000
     private const val MAX_RELEASES = 100
+    // Kristal's nightly builds are CI artifacts, not GitHub Releases. This is the link
+    // recommended by the Kristal wiki (kristal.cc/wiki/downloading).
+    private const val NIGHTLY_URL = "https://nightly.link/KristalTeam/Kristal/workflows/ci/main/output.zip"
 
     fun fetch(context: Context): KristalRuntimeCatalogResult {
         return try {
             val json = downloadCatalog()
             val releases = parseCatalog(json)
             writeCacheAtomically(cacheFile(context), json)
-            KristalRuntimeCatalogResult.Success(releases, fromCache = false)
+            KristalRuntimeCatalogResult.Success(releases + nightlyRelease(), fromCache = false)
         } catch (networkError: Exception) {
             val cached = cacheFile(context)
             val age = System.currentTimeMillis() - cached.lastModified()
             if (cached.isFile && age in 0..MAX_CACHE_AGE_MS) {
                 runCatching { parseCatalog(cached.readText(Charsets.UTF_8)) }
                     .fold(
-                        onSuccess = { KristalRuntimeCatalogResult.Success(it, fromCache = true) },
+                        onSuccess = {
+                            KristalRuntimeCatalogResult.Success(it + nightlyRelease(), fromCache = true)
+                        },
                         onFailure = {
                             KristalRuntimeCatalogResult.Failure(
                                 networkError.message ?: "Kristal release catalog is unavailable"
@@ -44,6 +49,18 @@ object KristalRuntimeCatalogService {
             }
         }
     }
+
+    /** The latest dev build. Re-download it (remove, then download) to update. */
+    internal fun nightlyRelease() = KristalRuntimeRelease(
+        tag = "nightly",
+        version = "nightly",
+        assetName = "kristal-nightly-love.zip",
+        downloadUrl = NIGHTLY_URL,
+        sizeBytes = 0L,
+        sha256 = null,
+        publishedAt = null,
+        prerelease = true
+    )
 
     private fun downloadCatalog(): String {
         val connection = URL(BuildConfig.KRISTAL_RELEASES_API_URL).openConnection() as HttpURLConnection
@@ -124,8 +141,12 @@ object KristalRuntimeCatalogService {
 
     internal fun isSupportedRuntimeAsset(name: String): Boolean {
         val normalized = name.lowercase()
-        return normalized.startsWith("kristal-") &&
-            (normalized.endsWith(".love") || normalized.endsWith("-love.zip"))
+        if (!normalized.startsWith("kristal")) return false
+        if (normalized.endsWith(".love") || normalized.endsWith("-love.zip")) return true
+        // Dev / nightly builds are not always named exactly like stable ones.
+        return normalized.endsWith(".zip") &&
+            "love" in normalized &&
+            listOf("win", "mac", "linux", "android", "example").none { it in normalized }
     }
 
     private fun runtimeAssetPriority(name: String): Int =

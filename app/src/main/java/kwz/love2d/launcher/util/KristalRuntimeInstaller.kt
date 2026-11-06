@@ -16,7 +16,7 @@ import java.util.zip.ZipFile
 
 object KristalRuntimeInstaller {
 
-    private const val MAX_DOWNLOAD_SIZE = 128L * 1024 * 1024
+    private const val MAX_DOWNLOAD_SIZE = 300L * 1024 * 1024
     private const val MAX_RUNTIME_SIZE = 256L * 1024 * 1024
     private const val BUFFER_SIZE = 64 * 1024
     private const val PROGRESS_UPDATE_INTERVAL_MS = 100L
@@ -145,7 +145,22 @@ object KristalRuntimeInstaller {
                 )
                 .toList()
             val entry = candidates.firstOrNull()
-                ?: throw IllegalArgumentException("Runtime archive does not contain kristal.love")
+            if (entry == null) {
+                // Some wrappers hold another "-love.zip" instead of a bare .love file.
+                val nested = zip.entries().asSequence()
+                    .firstOrNull { !it.isDirectory && it.name.endsWith("-love.zip", ignoreCase = true) }
+                    ?: throw IllegalArgumentException("Runtime archive does not contain kristal.love")
+                val temporary = File(destination.parentFile, "nested-runtime.zip")
+                try {
+                    zip.getInputStream(nested).use { input ->
+                        FileOutputStream(temporary).use { output -> input.copyTo(output, BUFFER_SIZE) }
+                    }
+                    extractLoveRuntime(temporary, destination)
+                } finally {
+                    temporary.delete()
+                }
+                return
+            }
             require(entry.size in 1..MAX_RUNTIME_SIZE) { "Runtime package has an invalid size" }
             zip.getInputStream(entry).use { input ->
                 FileOutputStream(destination).use { output ->

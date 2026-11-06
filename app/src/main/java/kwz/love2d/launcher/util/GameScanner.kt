@@ -2,6 +2,8 @@ package kwz.love2d.launcher.util
 
 import android.content.Context
 import android.net.Uri
+import android.os.Build
+import android.os.Environment
 import android.provider.DocumentsContract
 import androidx.documentfile.provider.DocumentFile
 import kwz.love2d.launcher.model.LoveGame
@@ -14,6 +16,7 @@ import kotlinx.coroutines.supervisorScope
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit
 import kotlinx.coroutines.withContext
+import java.io.File
 import java.util.Locale
 import kotlin.coroutines.coroutineContext
 
@@ -110,16 +113,18 @@ object GameScanner {
         candidate: GameFileCandidate
     ): CandidateParseResult {
         return try {
+            val parsedGames = LoveMetadataParser.parseLoveFiles(
+                context = context,
+                uri = candidate.uri,
+                fileName = candidate.name,
+                sizeBytes = candidate.sizeBytes,
+                lastModified = candidate.lastModified
+            )
             CandidateParseResult(
                 sourceKey = candidate.uri.toString(),
-                games = LoveMetadataParser.parseLoveFiles(
-                    context = context,
-                    uri = candidate.uri,
-                    fileName = candidate.name,
-                    sizeBytes = candidate.sizeBytes,
-                    lastModified = candidate.lastModified
-                ),
-                failedFileName = null
+                games = parsedGames,
+                // An unrecognized file used to disappear silently; now it is reported.
+                failedFileName = if (parsedGames.isEmpty()) candidate.name else null
             )
         } catch (error: CancellationException) {
             throw error
@@ -166,6 +171,7 @@ object GameScanner {
         context: Context,
         folderUri: Uri
     ): List<GameFileCandidate> {
+        queryAllFilesFolder(folderUri)?.let { return it }
         val parentDocumentId = DocumentsContract.getTreeDocumentId(folderUri)
         val childrenUri = DocumentsContract.buildChildDocumentsUriUsingTree(folderUri, parentDocumentId)
         val resolver = context.contentResolver
@@ -194,6 +200,25 @@ object GameScanner {
         } ?: throw IllegalStateException("The games folder provider returned no cursor")
 
         return results
+    }
+
+    /**
+     * Some phones refuse to open files of the shared Download folder through the document
+     * picker ("externalstorage has no access"). With "All files access" the folder is read
+     * directly instead, which avoids that restriction.
+     */
+    private fun queryAllFilesFolder(folderUri: Uri): List<GameFileCandidate>? {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R || !Environment.isExternalStorageManager()) {
+            return null
+        }
+        val documentId = runCatching { DocumentsContract.getTreeDocumentId(folderUri) }.getOrNull()
+            ?: return null
+        if (!documentId.startsWith("primary:")) return null
+        val directory = File(Environment.getExternalStorageDirectory(), documentId.removePrefix("primary:"))
+        val files = directory.listFiles() ?: return null
+        return files
+            .filter { it.isFile && isSupportedGameName(it.name) }
+            .map { GameFileCandidate(Uri.fromFile(it), it.name, it.length(), it.lastModified()) }
     }
 
     private fun queryDocumentFileFallback(context: Context, folderUri: Uri): List<GameFileCandidate> {

@@ -98,7 +98,12 @@ class KristalRuntimeAdapter(
                     val size = item.release?.sizeBytes ?: item.installed?.file?.length() ?: 0L
                     if (size > 0L) add(formatBytes(size))
                     if (item.release?.prerelease == true) {
-                        add(context.getString(R.string.kristal_runtime_prerelease))
+                        add(
+                            context.getString(
+                                if (item.tag == "nightly") R.string.kristal_runtime_nightly
+                                else R.string.kristal_runtime_prerelease
+                            )
+                        )
                     }
                 }.joinToString(" · ")
             }
