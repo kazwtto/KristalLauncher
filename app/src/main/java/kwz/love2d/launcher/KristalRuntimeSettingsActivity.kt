@@ -13,7 +13,9 @@ import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.button.MaterialButtonToggleGroup
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kwz.love2d.launcher.model.RuntimeChannelFilter
 import kwz.love2d.launcher.adapter.KristalRuntimeAdapter
 import kwz.love2d.launcher.model.KristalRuntimeCatalogResult
 import kwz.love2d.launcher.model.KristalRuntimeDisplayItem
@@ -77,8 +79,32 @@ class KristalRuntimeSettingsActivity : ControllerNavigationActivity() {
             override fun handleOnBackPressed() = finishWithAnimation()
         })
 
+        setupChannelFilter()
         showItems()
         loadCatalog()
+    }
+
+    private fun setupChannelFilter() {
+        val group = findViewById<MaterialButtonToggleGroup>(R.id.runtimeChannelGroup)
+        group.check(
+            when (KristalRuntimeStorage.channelFilter(this)) {
+                RuntimeChannelFilter.ALL -> R.id.btnChannelAll
+                RuntimeChannelFilter.STABLE -> R.id.btnChannelStable
+                RuntimeChannelFilter.PRERELEASE -> R.id.btnChannelPre
+                RuntimeChannelFilter.DEV -> R.id.btnChannelDev
+            }
+        )
+        group.addOnButtonCheckedListener { _, checkedId, isChecked ->
+            if (!isChecked) return@addOnButtonCheckedListener
+            val filter = when (checkedId) {
+                R.id.btnChannelStable -> RuntimeChannelFilter.STABLE
+                R.id.btnChannelPre -> RuntimeChannelFilter.PRERELEASE
+                R.id.btnChannelDev -> RuntimeChannelFilter.DEV
+                else -> RuntimeChannelFilter.ALL
+            }
+            KristalRuntimeStorage.setChannelFilter(this, filter)
+            showItems()
+        }
     }
 
     override fun onResume() {
@@ -125,11 +151,15 @@ class KristalRuntimeSettingsActivity : ControllerNavigationActivity() {
     }
 
     private fun showItems() {
-        val items = KristalRuntimeRepository.displayItems(this, releases)
+        val filter = KristalRuntimeStorage.channelFilter(this)
+        val items = KristalRuntimeRepository.displayItems(this, releases, filter)
         adapter.submitItems(items)
         if (items.isNotEmpty()) {
             emptyState.visibility = View.GONE
             recyclerView.visibility = View.VISIBLE
+        } else if (releases.isNotEmpty()) {
+            emptyState.visibility = View.VISIBLE
+            emptyMessage.text = getString(R.string.kristal_runtime_channel_empty)
         }
     }
 

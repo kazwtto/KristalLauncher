@@ -11,7 +11,43 @@ data class KristalRuntimeRelease(
     val sha256: String?,
     val publishedAt: String?,
     val prerelease: Boolean
-)
+) {
+    val channel: RuntimeChannel
+        get() = RuntimeChannel.of(tag, assetName, prerelease)
+}
+
+/** Which kind of Kristal build a runtime is. */
+enum class RuntimeChannel {
+    STABLE,
+    PRERELEASE,
+    DEV;
+
+    companion object {
+        fun of(tag: String, assetName: String, prerelease: Boolean): RuntimeChannel {
+            val text = "$tag $assetName".lowercase()
+            return when {
+                "dev" in text || "nightly" in text -> DEV
+                prerelease || "beta" in text || "alpha" in text -> PRERELEASE
+                else -> STABLE
+            }
+        }
+    }
+}
+
+/** What the runtime list shows. ALL keeps every build visible. */
+enum class RuntimeChannelFilter {
+    ALL,
+    STABLE,
+    PRERELEASE,
+    DEV;
+
+    fun accepts(channel: RuntimeChannel): Boolean = when (this) {
+        ALL -> true
+        STABLE -> channel == RuntimeChannel.STABLE
+        PRERELEASE -> channel == RuntimeChannel.PRERELEASE
+        DEV -> channel == RuntimeChannel.DEV
+    }
+}
 
 data class InstalledKristalRuntime(
     val tag: String,
@@ -29,7 +65,10 @@ data class KristalRuntimeDisplayItem(
     val installed: InstalledKristalRuntime?,
     val selected: Boolean,
     val recommended: Boolean
-)
+) {
+    val channel: RuntimeChannel
+        get() = release?.channel ?: RuntimeChannel.of(tag, "", false)
+}
 
 enum class KristalRuntimeInstallStage {
     DOWNLOADING,

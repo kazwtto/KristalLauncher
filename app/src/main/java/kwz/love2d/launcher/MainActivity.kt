@@ -4,6 +4,9 @@ import kwz.love2d.launcher.ui.ControllerNavigationActivity
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
+import android.os.Environment
+import android.provider.Settings
 import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
@@ -113,6 +116,8 @@ class MainActivity : ControllerNavigationActivity() {
     private var allGamesList: List<LoveGame> = emptyList()
     private var displayedGamesList: List<LoveGame> = emptyList()
     private var selectedFolderUri: Uri? = null
+    private var allFilesPromptShown = false
+    private var waitingForAllFilesAccess = false
     private var isGridView = false
     private var currentTabId = R.id.navigation_library
     private var scanJob: Job? = null
@@ -242,8 +247,40 @@ class MainActivity : ControllerNavigationActivity() {
         }
     }
 
+    private fun offerAllFilesAccess() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) return
+        if (Environment.isExternalStorageManager() || allFilesPromptShown) return
+        allFilesPromptShown = true
+        MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.all_files_access_title)
+            .setMessage(R.string.all_files_access_message)
+            .setNegativeButton(android.R.string.cancel, null)
+            .setPositiveButton(R.string.all_files_access_allow) { _, _ ->
+                waitingForAllFilesAccess = true
+                val appIntent = Intent(
+                    Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION,
+                    Uri.parse("package:$packageName")
+                )
+                try {
+                    startActivity(appIntent)
+                } catch (_: Exception) {
+                    startActivity(Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION))
+                }
+            }
+            .show()
+    }
+
     override fun onResume() {
         super.onResume()
+        if (waitingForAllFilesAccess) {
+            waitingForAllFilesAccess = false
+            val folder = FolderPermissionManager.getSavedFolderUri(this)
+            if (folder != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.R &&
+                Environment.isExternalStorageManager()
+            ) {
+                scanFolder(folder, forceRefresh = true)
+            }
+        }
         updateKristalRuntimeButton()
         lifecycleScope.launch(Dispatchers.IO) {
             GameCacheManager.clearRuntimeGameCopies(this@MainActivity)
@@ -523,6 +560,7 @@ class MainActivity : ControllerNavigationActivity() {
                     }
                     swipeRefresh.isRefreshing = false
                     if (scanResult.failedFiles.isNotEmpty()) {
+                        offerAllFilesAccess()
                         Toast.makeText(
                             this@MainActivity,
                             getString(

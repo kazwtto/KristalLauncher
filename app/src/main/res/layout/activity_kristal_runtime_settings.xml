@@ -54,6 +54,48 @@
         android:textColor="?attr/colorOnSurfaceVariant"
         android:textSize="13sp" />
 
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/runtimeChannelGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="12dp"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnChannelAll"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/kristal_runtime_channel_all" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnChannelStable"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/kristal_runtime_channel_stable" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnChannelPre"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/kristal_runtime_channel_pre" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnChannelDev"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/kristal_runtime_channel_dev" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
